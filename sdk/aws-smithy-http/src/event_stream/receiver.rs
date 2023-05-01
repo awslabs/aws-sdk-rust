@@ -128,7 +128,7 @@ impl StdError for ReceiverError {}
 /// Receives Smithy-modeled messages out of an Event Stream.
 #[derive(Debug)]
 pub struct Receiver<T, E> {
-    unmarshaller: Box<dyn UnmarshallMessage<Output = T, Error = E> + Send>,
+    unmarshaller: Box<dyn UnmarshallMessage<Output = T, Error = E> + Send + Sync>,
     decoder: MessageFrameDecoder,
     buffer: RecvBuf,
     body: SdkBody,
@@ -143,7 +143,7 @@ pub struct Receiver<T, E> {
 impl<T, E> Receiver<T, E> {
     /// Creates a new `Receiver` with the given message unmarshaller and SDK body.
     pub fn new(
-        unmarshaller: impl UnmarshallMessage<Output = T, Error = E> + Send + 'static,
+        unmarshaller: impl UnmarshallMessage<Output = T, Error = E> + Send + Sync + 'static,
         body: SdkBody,
     ) -> Self {
         Receiver {
@@ -548,10 +548,10 @@ mod tests {
         );
     }
 
-    fn assert_send<T: Send>() {}
+    fn assert_send_and_sync<T: Send + Sync>() {}
 
     #[tokio::test]
-    async fn receiver_is_send() {
-        assert_send::<Receiver<(), ()>>();
+    async fn receiver_is_send_and_sync() {
+        assert_send_and_sync::<Receiver<(), ()>>();
     }
 }
