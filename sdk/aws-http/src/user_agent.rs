@@ -575,9 +575,8 @@ impl From<InvalidHeaderValue> for UserAgentStageError {
     }
 }
 
-lazy_static::lazy_static! {
-    static ref X_AMZ_USER_AGENT: HeaderName = HeaderName::from_static("x-amz-user-agent");
-}
+#[allow(clippy::declare_interior_mutable_const)] // we will never mutate this
+const X_AMZ_USER_AGENT: HeaderName = HeaderName::from_static("x-amz-user-agent");
 
 impl MapRequest for UserAgentStage {
     type Error = UserAgentStageError;
@@ -593,10 +592,8 @@ impl MapRequest for UserAgentStage {
                 .ok_or(UserAgentStageErrorKind::UserAgentMissing)?;
             req.headers_mut()
                 .append(USER_AGENT, HeaderValue::try_from(ua.ua_header())?);
-            req.headers_mut().append(
-                X_AMZ_USER_AGENT.clone(),
-                HeaderValue::try_from(ua.aws_ua_header())?,
-            );
+            req.headers_mut()
+                .append(X_AMZ_USER_AGENT, HeaderValue::try_from(ua.aws_ua_header())?);
 
             Ok(req)
         })
@@ -779,7 +776,7 @@ mod test {
             .get(USER_AGENT)
             .expect("UA header should be set");
         req.headers()
-            .get(&*X_AMZ_USER_AGENT)
+            .get(&X_AMZ_USER_AGENT)
             .expect("UA header should be set");
     }
 }

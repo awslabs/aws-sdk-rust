@@ -13,14 +13,15 @@ targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
 [dependencies]
+http = "0.2.3"
 tracing = "0.1"
-
-[dependencies.aws-types]
-path = "../aws-types"
-version = "0.55.1"
 
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
+version = "0.55.1"
+
+[dependencies.aws-http]
+path = "../aws-http"
 version = "0.55.1"
 
 [dependencies.aws-sigv4]
@@ -33,6 +34,14 @@ version = "0.55.1"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
+version = "0.55.1"
+
+[dependencies.aws-smithy-types]
+path = "../aws-smithy-types"
+version = "0.55.1"
+
+[dependencies.aws-types]
+path = "../aws-types"
 version = "0.55.1"
 
 [dev-dependencies]

@@ -1,6 +1,9 @@
 allowed_external_types = [
     "aws_credential_types::*",
     "aws_sigv4::*",
+    "aws_smithy_http::body::SdkBody",
     "aws_smithy_runtime_api::*",
     "aws_types::*",
+    "http::request::Request",
+    "http::response::Response",
 ]

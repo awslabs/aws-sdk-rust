@@ -3,14 +3,37 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//! Errors related to smithy interceptors
+//! Errors related to Smithy interceptors
 
 use std::fmt;
+
+macro_rules! interceptor_error_fn {
+    ($fn_name:ident => $error_kind:ident (with source)) => {
+        #[doc = concat!("Create a new error indicating a failure with a ", stringify!($fn_name), " interceptor.")]
+        pub fn $fn_name(
+            source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
+        ) -> Self {
+            Self {
+                kind: ErrorKind::$error_kind,
+                source: Some(source.into()),
+            }
+        }
+    };
+    ($fn_name:ident => $error_kind:ident (invalid $thing:ident access)) => {
+        #[doc = concat!("Create a new error indicating that an interceptor tried to access the ", stringify!($thing), " out of turn.")]
+        pub fn $fn_name() -> Self {
+            Self {
+                kind: ErrorKind::$error_kind,
+                source: None,
+            }
+        }
+    }
+}
 
 /// A generic error that behaves itself in async contexts
 pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
 
-/// An error related to smithy interceptors.
+/// An error related to Smithy interceptors.
 #[derive(Debug)]
 pub struct InterceptorError {
     kind: ErrorKind,
@@ -18,205 +41,30 @@ pub struct InterceptorError {
 }
 
 impl InterceptorError {
-    /// Create a new error indicating a failure withing a read_before_execution interceptor
-    pub fn read_before_execution(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadBeforeExecution,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a modify_before_serialization interceptor
-    pub fn modify_before_serialization(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ModifyBeforeSerialization,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_before_serialization interceptor
-    pub fn read_before_serialization(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadBeforeSerialization,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_after_serialization interceptor
-    pub fn read_after_serialization(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadAfterSerialization,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a modify_before_retry_loop interceptor
-    pub fn modify_before_retry_loop(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ModifyBeforeRetryLoop,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_before_attempt interceptor
-    pub fn read_before_attempt(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadBeforeAttempt,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a modify_before_signing interceptor
-    pub fn modify_before_signing(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ModifyBeforeSigning,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_before_signing interceptor
-    pub fn read_before_signing(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadBeforeSigning,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_after_signing interceptor
-    pub fn read_after_signing(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadAfterSigning,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a modify_before_transmit interceptor
-    pub fn modify_before_transmit(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ModifyBeforeTransmit,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_before_transmit interceptor
-    pub fn read_before_transmit(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadBeforeTransmit,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_after_transmit interceptor
-    pub fn read_after_transmit(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadAfterTransmit,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a modify_before_deserialization interceptor
-    pub fn modify_before_deserialization(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ModifyBeforeDeserialization,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_before_deserialization interceptor
-    pub fn read_before_deserialization(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadBeforeDeserialization,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_after_deserialization interceptor
-    pub fn read_after_deserialization(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadAfterDeserialization,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a modify_before_attempt_completion interceptor
-    pub fn modify_before_attempt_completion(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ModifyBeforeAttemptCompletion,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_after_attempt interceptor
-    pub fn read_after_attempt(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadAfterAttempt,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a modify_before_completion interceptor
-    pub fn modify_before_completion(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ModifyBeforeCompletion,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating a failure withing a read_after_execution interceptor
-    pub fn read_after_execution(
-        source: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>,
-    ) -> Self {
-        Self {
-            kind: ErrorKind::ReadAfterExecution,
-            source: Some(source.into()),
-        }
-    }
-    /// Create a new error indicating that an interceptor tried to access the request out of turn
-    pub fn invalid_request_access() -> Self {
-        Self {
-            kind: ErrorKind::InvalidRequestAccess,
-            source: None,
-        }
-    }
-    /// Create a new error indicating that an interceptor tried to access the response out of turn
-    pub fn invalid_response_access() -> Self {
-        Self {
-            kind: ErrorKind::InvalidResponseAccess,
-            source: None,
-        }
-    }
-    /// Create a new error indicating that an interceptor tried to access the input out of turn
-    pub fn invalid_input_access() -> Self {
-        Self {
-            kind: ErrorKind::InvalidInputAccess,
-            source: None,
-        }
-    }
-    /// Create a new error indicating that an interceptor tried to access the output out of turn
-    pub fn invalid_output_access() -> Self {
-        Self {
-            kind: ErrorKind::InvalidOutputAccess,
-            source: None,
-        }
-    }
+    interceptor_error_fn!(read_before_execution => ReadBeforeExecution (with source));
+    interceptor_error_fn!(modify_before_serialization => ModifyBeforeSerialization (with source));
+    interceptor_error_fn!(read_before_serialization => ReadBeforeSerialization (with source));
+    interceptor_error_fn!(read_after_serialization => ReadAfterSerialization (with source));
+    interceptor_error_fn!(modify_before_retry_loop => ModifyBeforeRetryLoop (with source));
+    interceptor_error_fn!(read_before_attempt => ReadBeforeAttempt (with source));
+    interceptor_error_fn!(modify_before_signing => ModifyBeforeSigning (with source));
+    interceptor_error_fn!(read_before_signing => ReadBeforeSigning (with source));
+    interceptor_error_fn!(read_after_signing => ReadAfterSigning (with source));
+    interceptor_error_fn!(modify_before_transmit => ModifyBeforeTransmit (with source));
+    interceptor_error_fn!(read_before_transmit => ReadBeforeTransmit (with source));
+    interceptor_error_fn!(read_after_transmit => ReadAfterTransmit (with source));
+    interceptor_error_fn!(modify_before_deserialization => ModifyBeforeDeserialization (with source));
+    interceptor_error_fn!(read_before_deserialization => ReadBeforeDeserialization (with source));
+    interceptor_error_fn!(read_after_deserialization => ReadAfterDeserialization (with source));
+    interceptor_error_fn!(modify_before_attempt_completion => ModifyBeforeAttemptCompletion (with source));
+    interceptor_error_fn!(read_after_attempt => ReadAfterAttempt (with source));
+    interceptor_error_fn!(modify_before_completion => ModifyBeforeCompletion (with source));
+    interceptor_error_fn!(read_after_execution => ReadAfterExecution (with source));
+
+    interceptor_error_fn!(invalid_request_access => InvalidRequestAccess (invalid request access));
+    interceptor_error_fn!(invalid_response_access => InvalidResponseAccess (invalid response access));
+    interceptor_error_fn!(invalid_input_access => InvalidInputAccess (invalid input access));
+    interceptor_error_fn!(invalid_output_access => InvalidOutputAccess (invalid output access));
 }
 
 #[derive(Debug)]
@@ -259,7 +107,6 @@ enum ErrorKind {
     ModifyBeforeCompletion,
     /// An error occurred within the read_after_execution interceptor
     ReadAfterExecution,
-    // There is no InvalidModeledRequestAccess because it's always accessible
     /// An interceptor tried to access the request out of turn
     InvalidRequestAccess,
     /// An interceptor tried to access the response out of turn
@@ -270,81 +117,50 @@ enum ErrorKind {
     InvalidOutputAccess,
 }
 
+macro_rules! display_interceptor_err {
+    ($self:ident, $f:ident, $(($error_kind:ident => $fn_name:ident ($($option:tt)+)),)+) => {
+        {
+        use ErrorKind::*;
+        match &$self.kind {
+            $($error_kind => display_interceptor_err!($f, $fn_name, ($($option)+)),)+
+        }
+    }
+    };
+    ($f:ident, $fn_name:ident, (interceptor error)) => {
+        $f.write_str(concat!(stringify!($fn_name), " interceptor encountered an error"))
+    };
+    ($f:ident, $fn_name:ident, (invalid access $name:ident $message:literal)) => {
+        $f.write_str(concat!("tried to access the ", stringify!($name), " ", $message))
+    };
+}
+
 impl fmt::Display for InterceptorError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        use ErrorKind::*;
-        match &self.kind {
-            ReadBeforeExecution => {
-                write!(f, "read_before_execution interceptor encountered an error")
-            }
-            ModifyBeforeSerialization => write!(
-                f,
-                "modify_before_serialization interceptor encountered an error"
-            ),
-            ReadBeforeSerialization => write!(
-                f,
-                "read_before_serialization interceptor encountered an error"
-            ),
-            ReadAfterSerialization => write!(
-                f,
-                "read_after_serialization interceptor encountered an error"
-            ),
-            ModifyBeforeRetryLoop => write!(
-                f,
-                "modify_before_retry_loop interceptor encountered an error"
-            ),
-            ReadBeforeAttempt => write!(f, "read_before_attempt interceptor encountered an error"),
-            ModifyBeforeSigning => {
-                write!(f, "modify_before_signing interceptor encountered an error")
-            }
-            ReadBeforeSigning => write!(f, "read_before_signing interceptor encountered an error"),
-            ReadAfterSigning => write!(f, "read_after_signing interceptor encountered an error"),
-            ModifyBeforeTransmit => {
-                write!(f, "modify_before_transmit interceptor encountered an error")
-            }
-            ReadBeforeTransmit => {
-                write!(f, "read_before_transmit interceptor encountered an error")
-            }
-            ReadAfterTransmit => write!(f, "read_after_transmit interceptor encountered an error"),
-            ModifyBeforeDeserialization => write!(
-                f,
-                "modify_before_deserialization interceptor encountered an error"
-            ),
-            ReadBeforeDeserialization => write!(
-                f,
-                "read_before_deserialization interceptor encountered an error"
-            ),
-            ReadAfterDeserialization => write!(
-                f,
-                "read_after_deserialization interceptor encountered an error"
-            ),
-            ModifyBeforeAttemptCompletion => write!(
-                f,
-                "modify_before_attempt_completion interceptor encountered an error"
-            ),
-            ReadAfterAttempt => write!(f, "read_after_attempt interceptor encountered an error"),
-            ModifyBeforeCompletion => write!(
-                f,
-                "modify_before_completion interceptor encountered an error"
-            ),
-            ReadAfterExecution => {
-                write!(f, "read_after_execution interceptor encountered an error")
-            }
-            InvalidRequestAccess => {
-                write!(f, "tried to access request before request serialization")
-            }
-            InvalidResponseAccess => {
-                write!(f, "tried to access response before transmitting a request")
-            }
-            InvalidInputAccess => write!(
-                f,
-                "tried to access the input before response deserialization"
-            ),
-            InvalidOutputAccess => write!(
-                f,
-                "tried to access the output before response deserialization"
-            ),
-        }
+        display_interceptor_err!(self, f,
+            (ReadBeforeExecution => read_before_execution (interceptor error)),
+            (ModifyBeforeSerialization => modify_before_serialization (interceptor error)),
+            (ReadBeforeSerialization => read_before_serialization (interceptor error)),
+            (ReadAfterSerialization => read_after_serialization (interceptor error)),
+            (ModifyBeforeRetryLoop => modify_before_retry_loop (interceptor error)),
+            (ReadBeforeAttempt => read_Before_attempt (interceptor error)),
+            (ModifyBeforeSigning => modify_before_signing (interceptor error)),
+            (ReadBeforeSigning => read_before_signing (interceptor error)),
+            (ReadAfterSigning => read_after_signing (interceptor error)),
+            (ModifyBeforeTransmit => modify_before_transmit (interceptor error)),
+            (ReadBeforeTransmit => read_before_transmit (interceptor error)),
+            (ReadAfterTransmit => read_after_transmit (interceptor error)),
+            (ModifyBeforeDeserialization => modify_before_deserialization (interceptor error)),
+            (ReadBeforeDeserialization => read_before_deserialization (interceptor error)),
+            (ReadAfterDeserialization => read_after_deserialization (interceptor error)),
+            (ModifyBeforeAttemptCompletion => modify_before_attempt_completion (interceptor error)),
+            (ReadAfterAttempt => read_after_attempt (interceptor error)),
+            (ModifyBeforeCompletion => modify_before_completion (interceptor error)),
+            (ReadAfterExecution => read_after_execution (interceptor error)),
+            (InvalidRequestAccess => invalid_request_access (invalid access request "before request serialization")),
+            (InvalidResponseAccess => invalid_response_access (invalid access response "before transmitting a request")),
+            (InvalidInputAccess => invalid_input_access (invalid access input "after request serialization")),
+            (InvalidOutputAccess => invalid_output_access (invalid access output "before response deserialization")),
+        )
     }
 }
 

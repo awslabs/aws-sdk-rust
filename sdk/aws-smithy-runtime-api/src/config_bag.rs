@@ -10,7 +10,6 @@
 //! 1. A new layer of configuration may be applied onto an existing configuration structure without modifying it or taking ownership.
 //! 2. No lifetime shenanigans to deal with
 use aws_smithy_http::property_bag::PropertyBag;
-use std::any::type_name;
 use std::fmt::Debug;
 use std::ops::Deref;
 use std::sync::Arc;
@@ -19,6 +18,7 @@ use std::sync::Arc;
 ///
 /// [`ConfigBag`] is the "unlocked" form of the bag. Only the top layer of the bag may be unlocked.
 #[must_use]
+#[derive(Debug)]
 pub struct ConfigBag {
     head: Layer,
     tail: Option<FrozenConfigBag>,
@@ -27,7 +27,7 @@ pub struct ConfigBag {
 /// Layered Configuration Structure
 ///
 /// [`FrozenConfigBag`] is the "locked" form of the bag.
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 #[must_use]
 pub struct FrozenConfigBag(Arc<ConfigBag>);
 
@@ -55,6 +55,7 @@ enum Value<T> {
     ExplicitlyUnset,
 }
 
+#[derive(Debug)]
 struct Layer {
     name: &'static str,
     props: PropertyBag,
@@ -122,7 +123,6 @@ impl ConfigBag {
     pub fn get<T: Send + Sync + Debug + 'static>(&self) -> Option<&T> {
         let mut source = vec![];
         let out = self.sourced_get(&mut source);
-        println!("searching for {:?} {:#?}", type_name::<T>(), source);
         out
     }
 

@@ -7,8 +7,9 @@ pub mod context;
 pub mod error;
 
 use crate::config_bag::ConfigBag;
+use aws_smithy_types::error::display::DisplayErrorContext;
 pub use context::InterceptorContext;
-pub use error::InterceptorError;
+pub use error::{BoxError, InterceptorError};
 use std::sync::{Arc, Mutex};
 
 macro_rules! interceptor_trait_fn {
@@ -18,7 +19,7 @@ macro_rules! interceptor_trait_fn {
             &self,
             context: &InterceptorContext<TxReq, TxRes>,
             cfg: &mut ConfigBag,
-        ) -> Result<(), InterceptorError> {
+        ) -> Result<(), BoxError> {
             let _ctx = context;
             let _cfg = cfg;
             Ok(())
@@ -30,7 +31,7 @@ macro_rules! interceptor_trait_fn {
             &self,
             context: &mut InterceptorContext<TxReq, TxRes>,
             cfg: &mut ConfigBag,
-        ) -> Result<(), InterceptorError> {
+        ) -> Result<(), BoxError> {
             let _ctx = context;
             let _cfg = cfg;
             Ok(())
@@ -544,8 +545,8 @@ pub type SharedInterceptor<TxReq, TxRes> = Arc<dyn Interceptor<TxReq, TxRes> + S
 
 #[derive(Debug)]
 struct Inner<TxReq, TxRes> {
-    client_interceptors: Vec<Arc<dyn Interceptor<TxReq, TxRes> + Send + Sync>>,
-    operation_interceptors: Vec<Arc<dyn Interceptor<TxReq, TxRes> + Send + Sync>>,
+    client_interceptors: Vec<SharedInterceptor<TxReq, TxRes>>,
+    operation_interceptors: Vec<SharedInterceptor<TxReq, TxRes>>,
 }
 
 // The compiler isn't smart enough to realize that TxReq and TxRes don't need to implement `Clone`
@@ -591,41 +592,33 @@ macro_rules! interceptor_impl_fn {
         interceptor_impl_fn!(mut context, $name, $name);
     };
     (context, $outer_name:ident, $inner_name:ident) => {
-        pub fn $outer_name(
-            &self,
-            context: &InterceptorContext<TxReq, TxRes>,
-            cfg: &mut ConfigBag,
-        ) -> Result<(), InterceptorError> {
-            // Since interceptors can modify the interceptor list (since its in the config bag), copy the list ahead of time.
-            // This should be cheap since the interceptors inside the list are Arcs.
-            let client_interceptors = self.inner.lock().unwrap().client_interceptors.clone();
-            for interceptor in client_interceptors {
-                interceptor.$inner_name(context, cfg)?;
-            }
-            let operation_interceptors = self.inner.lock().unwrap().operation_interceptors.clone();
-            for interceptor in operation_interceptors {
-                interceptor.$inner_name(context, cfg)?;
-            }
-            Ok(())
-        }
+        interceptor_impl_fn!(
+            $outer_name,
+            $inner_name(context: &InterceptorContext<TxReq, TxRes>)
+        );
     };
     (mut context, $outer_name:ident, $inner_name:ident) => {
+        interceptor_impl_fn!(
+            $outer_name,
+            $inner_name(context: &mut InterceptorContext<TxReq, TxRes>)
+        );
+    };
+    ($outer_name:ident, $inner_name:ident ($context:ident : $context_ty:ty)) => {
         pub fn $outer_name(
             &self,
-            context: &mut InterceptorContext<TxReq, TxRes>,
+            $context: $context_ty,
             cfg: &mut ConfigBag,
         ) -> Result<(), InterceptorError> {
-            // Since interceptors can modify the interceptor list (since its in the config bag), copy the list ahead of time.
-            // This should be cheap since the interceptors inside the list are Arcs.
-            let client_interceptors = self.inner.lock().unwrap().client_interceptors.clone();
-            for interceptor in client_interceptors {
-                interceptor.$inner_name(context, cfg)?;
+            let mut result: Result<(), BoxError> = Ok(());
+            for interceptor in self.interceptors() {
+                if let Err(new_error) = interceptor.$inner_name($context, cfg) {
+                    if let Err(last_error) = result {
+                        tracing::debug!("{}", DisplayErrorContext(&*last_error));
+                    }
+                    result = Err(new_error);
+                }
             }
-            let operation_interceptors = self.inner.lock().unwrap().operation_interceptors.clone();
-            for interceptor in operation_interceptors {
-                interceptor.$inner_name(context, cfg)?;
-            }
-            Ok(())
+            result.map_err(InterceptorError::$inner_name)
         }
     };
 }
@@ -633,6 +626,22 @@ macro_rules! interceptor_impl_fn {
 impl<TxReq, TxRes> Interceptors<TxReq, TxRes> {
     pub fn new() -> Self {
         Self::default()
+    }
+
+    fn interceptors(&self) -> Vec<SharedInterceptor<TxReq, TxRes>> {
+        // Since interceptors can modify the interceptor list (since its in the config bag), copy the list ahead of time.
+        // This should be cheap since the interceptors inside the list are Arcs.
+        // TODO(enableNewSmithyRuntime): Remove the ability for interceptors to modify the interceptor list and then simplify this
+        let mut interceptors = self.inner.lock().unwrap().client_interceptors.clone();
+        interceptors.extend(
+            self.inner
+                .lock()
+                .unwrap()
+                .operation_interceptors
+                .iter()
+                .cloned(),
+        );
+        interceptors
     }
 
     pub fn register_client_interceptor(
