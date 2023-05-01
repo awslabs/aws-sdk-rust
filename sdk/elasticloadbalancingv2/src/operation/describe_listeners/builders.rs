@@ -8,16 +8,17 @@ pub use crate::operation::describe_listeners::_describe_listeners_input::Describ
 /// <p>Describes the specified listeners or the listeners for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either a load balancer or one or more listeners.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeListenersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_listeners::builders::DescribeListenersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_listeners::builders::DescribeListenersInputBuilder,
+}
 impl DescribeListenersFluentBuilder  {
     /// Creates a new `DescribeListeners`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_listeners::DescribeListeners, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeListenersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_listeners::paginator::DescribeListenersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_listeners::paginator::DescribeListenersPaginator {
-                            crate::operation::describe_listeners::paginator::DescribeListenersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_listeners::paginator::DescribeListenersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_listeners::paginator::DescribeListenersPaginator {
+                                crate::operation::describe_listeners::paginator::DescribeListenersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_arn(input.into());

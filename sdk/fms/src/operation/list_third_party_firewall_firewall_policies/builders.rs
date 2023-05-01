@@ -8,16 +8,17 @@ pub use crate::operation::list_third_party_firewall_firewall_policies::_list_thi
 /// <p>Retrieves a list of all of the third-party firewall policies that are associated with the third-party firewall administrator's account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListThirdPartyFirewallFirewallPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_third_party_firewall_firewall_policies::builders::ListThirdPartyFirewallFirewallPoliciesInputBuilder,
+}
 impl ListThirdPartyFirewallFirewallPoliciesFluentBuilder  {
     /// Creates a new `ListThirdPartyFirewallFirewallPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListThirdPartyFirewallFirewallPoliciesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator {
-                            crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator {
+                                crate::operation::list_third_party_firewall_firewall_policies::paginator::ListThirdPartyFirewallFirewallPoliciesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the third-party firewall vendor.</p>
     pub fn third_party_firewall(mut self, input: crate::types::ThirdPartyFirewall) -> Self {
         self.inner = self.inner.third_party_firewall(input);

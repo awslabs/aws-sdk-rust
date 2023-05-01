@@ -17,16 +17,17 @@ pub use crate::operation::associate_address::_associate_address_input::Associate
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateAddressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_address::builders::AssociateAddressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_address::builders::AssociateAddressInputBuilder,
+}
 impl AssociateAddressFluentBuilder  {
     /// Creates a new `AssociateAddress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_address::AssociateAddress, aws_http::retry::AwsResponseRetryClassifier,>,

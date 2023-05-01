@@ -8,16 +8,17 @@ pub use crate::operation::get_aws_default_service_quota::_get_aws_default_servic
 /// <p>Retrieves the default value for the specified quota. The default value does not reflect any quota increases.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAWSDefaultServiceQuotaFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_aws_default_service_quota::builders::GetAwsDefaultServiceQuotaInputBuilder,
+}
 impl GetAWSDefaultServiceQuotaFluentBuilder  {
     /// Creates a new `GetAWSDefaultServiceQuota`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuota, aws_http::retry::AwsResponseRetryClassifier,>,

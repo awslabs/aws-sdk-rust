@@ -8,16 +8,17 @@ pub use crate::operation::delete_namespace::_delete_namespace_input::DeleteNames
 /// <p>Deletes a namespace from the current account. If the namespace still contains one or more services, the request fails.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNamespaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_namespace::builders::DeleteNamespaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_namespace::builders::DeleteNamespaceInputBuilder,
+}
 impl DeleteNamespaceFluentBuilder  {
     /// Creates a new `DeleteNamespace`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_namespace::DeleteNamespace, aws_http::retry::AwsResponseRetryClassifier,>,

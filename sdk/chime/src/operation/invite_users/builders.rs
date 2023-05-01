@@ -8,16 +8,17 @@ pub use crate::operation::invite_users::_invite_users_input::InviteUsersInputBui
 /// <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime <code>Team</code> account. Only <code>Team</code> account types are currently supported for this action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InviteUsersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::invite_users::builders::InviteUsersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::invite_users::builders::InviteUsersInputBuilder,
+}
 impl InviteUsersFluentBuilder  {
     /// Creates a new `InviteUsers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::invite_users::InviteUsers, aws_http::retry::AwsResponseRetryClassifier,>,

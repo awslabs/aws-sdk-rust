@@ -8,16 +8,17 @@ pub use crate::operation::add_tags_to_vault::_add_tags_to_vault_input::AddTagsTo
 /// <p>This operation adds the specified tags to a vault. Each tag is composed of a key and a value. Each vault can have up to 10 tags. If your request would cause the tag limit for the vault to be exceeded, the operation throws the <code>LimitExceededException</code> error. If a tag already exists on the vault under a specified key, the existing key value will be overwritten. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon S3 Glacier Resources</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddTagsToVaultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_tags_to_vault::builders::AddTagsToVaultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_tags_to_vault::builders::AddTagsToVaultInputBuilder,
+}
 impl AddTagsToVaultFluentBuilder  {
     /// Creates a new `AddTagsToVault`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_tags_to_vault::AddTagsToVault, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_dataflow_endpoint_group::_delete_dataflow_endpo
 /// <p>Deletes a dataflow endpoint group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDataflowEndpointGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupInputBuilder,
+}
 impl DeleteDataflowEndpointGroupFluentBuilder  {
     /// Creates a new `DeleteDataflowEndpointGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroup, aws_http::retry::AwsResponseRetryClassifier,>,

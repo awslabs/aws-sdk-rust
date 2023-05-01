@@ -8,16 +8,17 @@ pub use crate::operation::import_catalog_to_glue::_import_catalog_to_glue_input:
 /// <p>Imports an existing Amazon Athena Data Catalog to Glue.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportCatalogToGlueFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_catalog_to_glue::builders::ImportCatalogToGlueInputBuilder,
+}
 impl ImportCatalogToGlueFluentBuilder  {
     /// Creates a new `ImportCatalogToGlue`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_catalog_to_glue::ImportCatalogToGlue, aws_http::retry::AwsResponseRetryClassifier,>,

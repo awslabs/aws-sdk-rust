@@ -8,16 +8,17 @@ pub use crate::operation::delete_voice_profile_domain::_delete_voice_profile_dom
 /// <p>Deletes all voice profiles in the domain. WARNING: This action is not reversible.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVoiceProfileDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainInputBuilder,
+}
 impl DeleteVoiceProfileDomainFluentBuilder  {
     /// Creates a new `DeleteVoiceProfileDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomain, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_contact_lists::_list_contact_lists_input::ListCon
 /// <p>Lists all of the contact lists available.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListContactListsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_contact_lists::builders::ListContactListsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_contact_lists::builders::ListContactListsInputBuilder,
+}
 impl ListContactListsFluentBuilder  {
     /// Creates a new `ListContactLists`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_contact_lists::ListContactLists, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListContactListsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_contact_lists::paginator::ListContactListsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_contact_lists::paginator::ListContactListsPaginator {
-                            crate::operation::list_contact_lists::paginator::ListContactListsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_contact_lists::paginator::ListContactListsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_contact_lists::paginator::ListContactListsPaginator {
+                                crate::operation::list_contact_lists::paginator::ListContactListsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the <code>NextToken</code> element is sent in the response. Use the <code>NextToken</code> value in subsequent requests to retrieve additional lists.</p>
     pub fn page_size(mut self, input: i32) -> Self {
         self.inner = self.inner.page_size(input);

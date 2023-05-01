@@ -8,16 +8,17 @@ pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_input:
 /// <p>Returns tags for a resource. Tagging is currently supported only for directories with a limit of 50 tags per directory. All 50 tags are returned for a given directory with this API call.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder,
+}
 impl ListTagsForResourceFluentBuilder  {
     /// Creates a new `ListTagsForResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tags_for_resource::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTagsForResourceFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator {
-                            crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator {
+                                crate::operation::list_tags_for_resource::paginator::ListTagsForResourcePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for directories.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());

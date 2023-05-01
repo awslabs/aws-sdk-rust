@@ -8,16 +8,17 @@ pub use crate::operation::get_annotation_import_job::_get_annotation_import_job_
 /// <p>Gets information about an annotation import job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAnnotationImportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_annotation_import_job::builders::GetAnnotationImportJobInputBuilder,
+}
 impl GetAnnotationImportJobFluentBuilder  {
     /// Creates a new `GetAnnotationImportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_annotation_import_job::GetAnnotationImportJob, aws_http::retry::AwsResponseRetryClassifier,>,

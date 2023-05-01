@@ -8,16 +8,17 @@ pub use crate::operation::list_repository_associations::_list_repository_associa
 /// <p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html">RepositoryAssociationSummary</a> objects that contain summary information about a repository association. You can filter the returned list by <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType">ProviderType</a>, <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name">Name</a>, <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State">State</a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner">Owner</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRepositoryAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_repository_associations::builders::ListRepositoryAssociationsInputBuilder,
+}
 impl ListRepositoryAssociationsFluentBuilder  {
     /// Creates a new `ListRepositoryAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_repository_associations::ListRepositoryAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRepositoryAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator {
-                            crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator {
+                                crate::operation::list_repository_associations::paginator::ListRepositoryAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ProviderTypes`.
     ///
     /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).

@@ -8,16 +8,17 @@ pub use crate::operation::update_distribution_configuration::_update_distributio
 /// <p>Updates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDistributionConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_distribution_configuration::builders::UpdateDistributionConfigurationInputBuilder,
+}
 impl UpdateDistributionConfigurationFluentBuilder  {
     /// Creates a new `UpdateDistributionConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_distribution_configuration::UpdateDistributionConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

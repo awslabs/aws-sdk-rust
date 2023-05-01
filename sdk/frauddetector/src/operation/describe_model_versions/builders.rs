@@ -8,16 +8,17 @@ pub use crate::operation::describe_model_versions::_describe_model_versions_inpu
 /// <p>Gets all of the model versions for the specified model type or for the specified model type and model ID. You can also get details for a single, specified model version. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeModelVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_model_versions::builders::DescribeModelVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_model_versions::builders::DescribeModelVersionsInputBuilder,
+}
 impl DescribeModelVersionsFluentBuilder  {
     /// Creates a new `DescribeModelVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_model_versions::DescribeModelVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeModelVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator {
-                            crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator {
+                                crate::operation::describe_model_versions::paginator::DescribeModelVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The model ID.</p>
     pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.model_id(input.into());

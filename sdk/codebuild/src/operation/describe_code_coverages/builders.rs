@@ -8,16 +8,17 @@ pub use crate::operation::describe_code_coverages::_describe_code_coverages_inpu
 /// <p>Retrieves one or more code coverage reports.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCodeCoveragesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_code_coverages::builders::DescribeCodeCoveragesInputBuilder,
+}
 impl DescribeCodeCoveragesFluentBuilder  {
     /// Creates a new `DescribeCodeCoverages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_code_coverages::DescribeCodeCoverages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeCodeCoveragesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator {
-                            crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator {
+                                crate::operation::describe_code_coverages::paginator::DescribeCodeCoveragesPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The ARN of the report for which test cases are returned. </p>
     pub fn report_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.report_arn(input.into());

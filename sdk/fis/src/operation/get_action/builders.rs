@@ -8,16 +8,17 @@ pub use crate::operation::get_action::_get_action_input::GetActionInputBuilder;
 /// <p>Gets information about the specified FIS action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_action::builders::GetActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_action::builders::GetActionInputBuilder,
+}
 impl GetActionFluentBuilder  {
     /// Creates a new `GetAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_action::GetAction, aws_http::retry::AwsResponseRetryClassifier,>,

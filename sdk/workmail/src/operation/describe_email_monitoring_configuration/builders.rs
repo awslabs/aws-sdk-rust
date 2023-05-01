@@ -8,16 +8,17 @@ pub use crate::operation::describe_email_monitoring_configuration::_describe_ema
 /// <p>Describes the current email monitoring configuration for a specified organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEmailMonitoringConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_email_monitoring_configuration::builders::DescribeEmailMonitoringConfigurationInputBuilder,
+}
 impl DescribeEmailMonitoringConfigurationFluentBuilder  {
     /// Creates a new `DescribeEmailMonitoringConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_email_monitoring_configuration::DescribeEmailMonitoringConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

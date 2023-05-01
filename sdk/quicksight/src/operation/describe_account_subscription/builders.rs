@@ -8,16 +8,17 @@ pub use crate::operation::describe_account_subscription::_describe_account_subsc
 /// <p>Use the DescribeAccountSubscription operation to receive a description of an Amazon QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name, subscription status, authentication type, edition, and notification email address.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccountSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_account_subscription::builders::DescribeAccountSubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_account_subscription::builders::DescribeAccountSubscriptionInputBuilder,
+}
 impl DescribeAccountSubscriptionFluentBuilder  {
     /// Creates a new `DescribeAccountSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_account_subscription::DescribeAccountSubscription, aws_http::retry::AwsResponseRetryClassifier,>,

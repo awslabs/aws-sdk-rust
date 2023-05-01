@@ -9,16 +9,17 @@ pub use crate::operation::list_groups_for_user::_list_groups_for_user_input::Lis
 /// <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGroupsForUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_groups_for_user::builders::ListGroupsForUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_groups_for_user::builders::ListGroupsForUserInputBuilder,
+}
 impl ListGroupsForUserFluentBuilder  {
     /// Creates a new `ListGroupsForUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_groups_for_user::ListGroupsForUser, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListGroupsForUserFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_groups_for_user::paginator::ListGroupsForUserPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_groups_for_user::paginator::ListGroupsForUserPaginator {
-                            crate::operation::list_groups_for_user::paginator::ListGroupsForUserPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_groups_for_user::paginator::ListGroupsForUserPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_groups_for_user::paginator::ListGroupsForUserPaginator {
+                                crate::operation::list_groups_for_user::paginator::ListGroupsForUserPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the user to list groups for.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {

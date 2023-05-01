@@ -8,16 +8,17 @@ pub use crate::operation::update_cell::_update_cell_input::UpdateCellInputBuilde
 /// <p>Updates a cell to replace the list of nested cells with a new list of nested cells.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCellFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_cell::builders::UpdateCellInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_cell::builders::UpdateCellInputBuilder,
+}
 impl UpdateCellFluentBuilder  {
     /// Creates a new `UpdateCell`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_cell::UpdateCell, aws_http::retry::AwsResponseRetryClassifier,>,

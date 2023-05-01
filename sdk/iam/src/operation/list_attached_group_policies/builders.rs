@@ -10,16 +10,17 @@ pub use crate::operation::list_attached_group_policies::_list_attached_group_pol
 /// <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. You can use the <code>PathPrefix</code> parameter to limit the list of policies to only those matching the specified path prefix. If there are no policies attached to the specified group (or none that match the specified path prefix), the operation returns an empty list.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAttachedGroupPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_attached_group_policies::builders::ListAttachedGroupPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_attached_group_policies::builders::ListAttachedGroupPoliciesInputBuilder,
+}
 impl ListAttachedGroupPoliciesFluentBuilder  {
     /// Creates a new `ListAttachedGroupPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_attached_group_policies::ListAttachedGroupPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListAttachedGroupPoliciesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_attached_group_policies::paginator::ListAttachedGroupPoliciesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_attached_group_policies::paginator::ListAttachedGroupPoliciesPaginator {
-                            crate::operation::list_attached_group_policies::paginator::ListAttachedGroupPoliciesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_attached_group_policies::paginator::ListAttachedGroupPoliciesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_attached_group_policies::paginator::ListAttachedGroupPoliciesPaginator {
+                                crate::operation::list_attached_group_policies::paginator::ListAttachedGroupPoliciesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name (friendly name, not ARN) of the group to list attached policies for.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {

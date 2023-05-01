@@ -8,16 +8,17 @@ pub use crate::operation::describe_transit_gateway_route_table_announcements::_d
 /// <p>Describes one or more transit gateway route table advertisements.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_transit_gateway_route_table_announcements::builders::DescribeTransitGatewayRouteTableAnnouncementsInputBuilder,
+}
 impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder  {
     /// Creates a new `DescribeTransitGatewayRouteTableAnnouncements`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncements, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeTransitGatewayRouteTableAnnouncementsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator {
-                            crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator {
+                                crate::operation::describe_transit_gateway_route_table_announcements::paginator::DescribeTransitGatewayRouteTableAnnouncementsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TransitGatewayRouteTableAnnouncementIds`.
     ///
     /// To override the contents of this collection use [`set_transit_gateway_route_table_announcement_ids`](Self::set_transit_gateway_route_table_announcement_ids).

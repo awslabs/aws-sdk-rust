@@ -11,16 +11,17 @@ pub use crate::operation::cancel_deployment_job::_cancel_deployment_job_input::C
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelDeploymentJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_deployment_job::builders::CancelDeploymentJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_deployment_job::builders::CancelDeploymentJobInputBuilder,
+}
 impl CancelDeploymentJobFluentBuilder  {
     /// Creates a new `CancelDeploymentJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_deployment_job::CancelDeploymentJob, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_deployments::_batch_get_deployments_input::B
 /// <p>Gets information about one or more deployments. The maximum number of deployments that can be returned is 25.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetDeploymentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_deployments::builders::BatchGetDeploymentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_deployments::builders::BatchGetDeploymentsInputBuilder,
+}
 impl BatchGetDeploymentsFluentBuilder  {
     /// Creates a new `BatchGetDeployments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_deployments::BatchGetDeployments, aws_http::retry::AwsResponseRetryClassifier,>,

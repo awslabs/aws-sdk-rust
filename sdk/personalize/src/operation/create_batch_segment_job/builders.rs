@@ -8,16 +8,17 @@ pub use crate::operation::create_batch_segment_job::_create_batch_segment_job_in
 /// <p>Creates a batch segment job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recommendations-batch.html">Getting batch recommendations and user segments</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBatchSegmentJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobInputBuilder,
+}
 impl CreateBatchSegmentJobFluentBuilder  {
     /// Creates a new `CreateBatchSegmentJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_batch_segment_job::CreateBatchSegmentJob, aws_http::retry::AwsResponseRetryClassifier,>,

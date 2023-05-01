@@ -8,16 +8,17 @@ pub use crate::operation::create_user_settings::_create_user_settings_input::Cre
 /// <p>Creates a user settings resource that can be associated with a web portal. Once associated with a web portal, user settings control how users can transfer data between a streaming session and the their local devices. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateUserSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_user_settings::builders::CreateUserSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_user_settings::builders::CreateUserSettingsInputBuilder,
+}
 impl CreateUserSettingsFluentBuilder  {
     /// Creates a new `CreateUserSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_user_settings::CreateUserSettings, aws_http::retry::AwsResponseRetryClassifier,>,

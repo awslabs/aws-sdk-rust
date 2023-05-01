@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_partition::_batch_get_partition_input::Batch
 /// <p>Retrieves partitions in a batch request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetPartitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_partition::builders::BatchGetPartitionInputBuilder,
+}
 impl BatchGetPartitionFluentBuilder  {
     /// Creates a new `BatchGetPartition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_partition::BatchGetPartition, aws_http::retry::AwsResponseRetryClassifier,>,

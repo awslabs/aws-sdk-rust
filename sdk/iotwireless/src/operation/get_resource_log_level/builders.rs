@@ -8,16 +8,17 @@ pub use crate::operation::get_resource_log_level::_get_resource_log_level_input:
 /// <p>Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourceLogLevelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_resource_log_level::builders::GetResourceLogLevelInputBuilder,
+}
 impl GetResourceLogLevelFluentBuilder  {
     /// Creates a new `GetResourceLogLevel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_resource_log_level::GetResourceLogLevel, aws_http::retry::AwsResponseRetryClassifier,>,

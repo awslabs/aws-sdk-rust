@@ -11,16 +11,17 @@ pub use crate::operation::restore_workspace::_restore_workspace_input::RestoreWo
 /// <p>This operation is asynchronous and returns before the WorkSpace is completely restored.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreWorkspaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_workspace::builders::RestoreWorkspaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_workspace::builders::RestoreWorkspaceInputBuilder,
+}
 impl RestoreWorkspaceFluentBuilder  {
     /// Creates a new `RestoreWorkspace`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_workspace::RestoreWorkspace, aws_http::retry::AwsResponseRetryClassifier,>,

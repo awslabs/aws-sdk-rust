@@ -8,16 +8,17 @@ pub use crate::operation::stop_channel::_stop_channel_input::StopChannelInputBui
 /// <p>Stops a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in the <i>MediaTailor User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_channel::builders::StopChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_channel::builders::StopChannelInputBuilder,
+}
 impl StopChannelFluentBuilder  {
     /// Creates a new `StopChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_channel::StopChannel, aws_http::retry::AwsResponseRetryClassifier,>,

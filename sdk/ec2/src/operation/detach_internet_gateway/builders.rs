@@ -8,16 +8,17 @@ pub use crate::operation::detach_internet_gateway::_detach_internet_gateway_inpu
 /// <p>Detaches an internet gateway from a VPC, disabling connectivity between the internet and the VPC. The VPC must not contain any running instances with Elastic IP addresses or public IPv4 addresses.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachInternetGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detach_internet_gateway::builders::DetachInternetGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detach_internet_gateway::builders::DetachInternetGatewayInputBuilder,
+}
 impl DetachInternetGatewayFluentBuilder  {
     /// Creates a new `DetachInternetGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detach_internet_gateway::DetachInternetGateway, aws_http::retry::AwsResponseRetryClassifier,>,

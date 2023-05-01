@@ -8,16 +8,17 @@ pub use crate::operation::list_pages_by_engagement::_list_pages_by_engagement_in
 /// <p>Lists the engagements to contact channels that occurred by engaging a contact.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPagesByEngagementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementInputBuilder,
+}
 impl ListPagesByEngagementFluentBuilder  {
     /// Creates a new `ListPagesByEngagement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_pages_by_engagement::ListPagesByEngagement, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPagesByEngagementFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator {
-                            crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator {
+                                crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     pub fn engagement_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.engagement_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::enable_volume_io::_enable_volume_io_input::EnableVolum
 /// <p>Enables I/O operations for a volume that had I/O operations disabled because the data on the volume was potentially inconsistent.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableVolumeIOFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_volume_io::builders::EnableVolumeIoInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_volume_io::builders::EnableVolumeIoInputBuilder,
+}
 impl EnableVolumeIOFluentBuilder  {
     /// Creates a new `EnableVolumeIO`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_volume_io::EnableVolumeIO, aws_http::retry::AwsResponseRetryClassifier,>,

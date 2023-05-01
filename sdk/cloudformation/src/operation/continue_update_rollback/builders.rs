@@ -9,16 +9,17 @@ pub use crate::operation::continue_update_rollback::_continue_update_rollback_in
 /// <p>A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when CloudFormation can't roll back all changes after a failed stack update. For example, you might have a stack that's rolling back to an old database instance that was deleted outside of CloudFormation. Because CloudFormation doesn't know the database was deleted, it assumes that the database instance still exists and attempts to roll back to it, causing the update rollback to fail.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ContinueUpdateRollbackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::continue_update_rollback::builders::ContinueUpdateRollbackInputBuilder,
+}
 impl ContinueUpdateRollbackFluentBuilder  {
     /// Creates a new `ContinueUpdateRollback`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::continue_update_rollback::ContinueUpdateRollback, aws_http::retry::AwsResponseRetryClassifier,>,

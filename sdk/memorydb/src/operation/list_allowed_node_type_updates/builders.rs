@@ -8,16 +8,17 @@ pub use crate::operation::list_allowed_node_type_updates::_list_allowed_node_typ
 /// <p>Lists all available node types that you can scale to from your cluster's current node type. When you use the UpdateCluster operation to scale your cluster, the value of the NodeType parameter must be one of the node types returned by this operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAllowedNodeTypeUpdatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_allowed_node_type_updates::builders::ListAllowedNodeTypeUpdatesInputBuilder,
+}
 impl ListAllowedNodeTypeUpdatesFluentBuilder  {
     /// Creates a new `ListAllowedNodeTypeUpdates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdates, aws_http::retry::AwsResponseRetryClassifier,>,

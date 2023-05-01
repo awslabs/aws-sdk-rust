@@ -8,16 +8,17 @@ pub use crate::operation::logout_user::_logout_user_input::LogoutUserInputBuilde
 /// <p>Logs out the specified user from all of the devices they are currently logged into.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct LogoutUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::logout_user::builders::LogoutUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::logout_user::builders::LogoutUserInputBuilder,
+}
 impl LogoutUserFluentBuilder  {
     /// Creates a new `LogoutUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::logout_user::LogoutUser, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -15,16 +15,17 @@ pub use crate::operation::update_realtime_log_config::_update_realtime_log_confi
 /// <p>You cannot update a real-time log configuration's <code>Name</code> or <code>ARN</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRealtimeLogConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_realtime_log_config::builders::UpdateRealtimeLogConfigInputBuilder,
+}
 impl UpdateRealtimeLogConfigFluentBuilder  {
     /// Creates a new `UpdateRealtimeLogConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_realtime_log_config::UpdateRealtimeLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -22,16 +22,17 @@ pub use crate::operation::batch_update_findings::_batch_update_findings_input::B
 /// <p>You can configure IAM policies to restrict access to fields and field values. For example, you might not want member accounts to be able to suppress findings or change the finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchUpdateFindingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_update_findings::builders::BatchUpdateFindingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_update_findings::builders::BatchUpdateFindingsInputBuilder,
+}
 impl BatchUpdateFindingsFluentBuilder  {
     /// Creates a new `BatchUpdateFindings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_update_findings::BatchUpdateFindings, aws_http::retry::AwsResponseRetryClassifier,>,

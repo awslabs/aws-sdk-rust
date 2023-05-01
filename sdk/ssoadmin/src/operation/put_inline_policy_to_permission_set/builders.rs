@@ -10,16 +10,17 @@ pub use crate::operation::put_inline_policy_to_permission_set::_put_inline_polic
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutInlinePolicyToPermissionSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_inline_policy_to_permission_set::builders::PutInlinePolicyToPermissionSetInputBuilder,
+}
 impl PutInlinePolicyToPermissionSetFluentBuilder  {
     /// Creates a new `PutInlinePolicyToPermissionSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSet, aws_http::retry::AwsResponseRetryClassifier,>,

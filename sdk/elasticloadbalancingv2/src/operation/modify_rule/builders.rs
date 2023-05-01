@@ -9,16 +9,17 @@ pub use crate::operation::modify_rule::_modify_rule_input::ModifyRuleInputBuilde
 /// <p>To add an item to a list, remove an item from a list, or update an item in a list, you must provide the entire list. For example, to add an action, specify a list with the current actions plus the new action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_rule::builders::ModifyRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_rule::builders::ModifyRuleInputBuilder,
+}
 impl ModifyRuleFluentBuilder  {
     /// Creates a new `ModifyRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_rule::ModifyRule, aws_http::retry::AwsResponseRetryClassifier,>,

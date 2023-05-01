@@ -8,16 +8,17 @@ pub use crate::operation::create_connector_profile::_create_connector_profile_in
 /// <p> Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100 connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows, you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector profile that you create, you can provide the credentials and properties for only one connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConnectorProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_connector_profile::builders::CreateConnectorProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_connector_profile::builders::CreateConnectorProfileInputBuilder,
+}
 impl CreateConnectorProfileFluentBuilder  {
     /// Creates a new `CreateConnectorProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_connector_profile::CreateConnectorProfile, aws_http::retry::AwsResponseRetryClassifier,>,

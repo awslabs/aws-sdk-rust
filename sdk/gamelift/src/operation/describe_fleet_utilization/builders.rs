@@ -20,16 +20,17 @@ pub use crate::operation::describe_fleet_utilization::_describe_fleet_utilizatio
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift Metrics for Fleets</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFleetUtilizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_fleet_utilization::builders::DescribeFleetUtilizationInputBuilder,
+}
 impl DescribeFleetUtilizationFluentBuilder  {
     /// Creates a new `DescribeFleetUtilization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fleet_utilization::DescribeFleetUtilization, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -60,11 +61,11 @@ impl DescribeFleetUtilizationFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator {
-                            crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator {
+                                crate::operation::describe_fleet_utilization::paginator::DescribeFleetUtilizationPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `FleetIds`.
     ///
     /// To override the contents of this collection use [`set_fleet_ids`](Self::set_fleet_ids).

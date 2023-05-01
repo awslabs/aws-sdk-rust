@@ -8,16 +8,17 @@ pub use crate::operation::describe_pipeline_definition_for_execution::_describe_
 /// <p>Describes the details of an execution's pipeline definition.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePipelineDefinitionForExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_pipeline_definition_for_execution::builders::DescribePipelineDefinitionForExecutionInputBuilder,
+}
 impl DescribePipelineDefinitionForExecutionFluentBuilder  {
     /// Creates a new `DescribePipelineDefinitionForExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecution, aws_http::retry::AwsResponseRetryClassifier,>,

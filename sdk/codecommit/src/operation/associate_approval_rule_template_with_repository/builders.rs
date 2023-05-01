@@ -8,16 +8,17 @@ pub use crate::operation::associate_approval_rule_template_with_repository::_ass
 /// <p>Creates an association between an approval rule template and a specified repository. Then, the next time a pull request is created in the repository where the destination reference (if specified) matches the destination reference (branch) for the pull request, an approval rule that matches the template conditions is automatically created for that pull request. If no destination references are specified in the template, an approval rule that matches the template contents is created for all pull requests in that repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateApprovalRuleTemplateWithRepositoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_approval_rule_template_with_repository::builders::AssociateApprovalRuleTemplateWithRepositoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_approval_rule_template_with_repository::builders::AssociateApprovalRuleTemplateWithRepositoryInputBuilder,
+}
 impl AssociateApprovalRuleTemplateWithRepositoryFluentBuilder  {
     /// Creates a new `AssociateApprovalRuleTemplateWithRepository`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepository, aws_http::retry::AwsResponseRetryClassifier,>,

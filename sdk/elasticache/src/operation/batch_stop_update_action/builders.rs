@@ -8,16 +8,17 @@ pub use crate::operation::batch_stop_update_action::_batch_stop_update_action_in
 /// <p>Stop the service update. For more information on service updates and stopping them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping Service Updates</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchStopUpdateActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_stop_update_action::builders::BatchStopUpdateActionInputBuilder,
+}
 impl BatchStopUpdateActionFluentBuilder  {
     /// Creates a new `BatchStopUpdateAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_stop_update_action::BatchStopUpdateAction, aws_http::retry::AwsResponseRetryClassifier,>,

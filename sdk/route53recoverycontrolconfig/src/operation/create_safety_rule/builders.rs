@@ -12,16 +12,17 @@ pub use crate::operation::create_safety_rule::_create_safety_rule_input::CreateS
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.safety-rules.html">Safety rules</a> in the Amazon Route 53 Application Recovery Controller Developer Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSafetyRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_safety_rule::builders::CreateSafetyRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_safety_rule::builders::CreateSafetyRuleInputBuilder,
+}
 impl CreateSafetyRuleFluentBuilder  {
     /// Creates a new `CreateSafetyRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_safety_rule::CreateSafetyRule, aws_http::retry::AwsResponseRetryClassifier,>,

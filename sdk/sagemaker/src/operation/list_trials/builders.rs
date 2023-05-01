@@ -8,16 +8,17 @@ pub use crate::operation::list_trials::_list_trials_input::ListTrialsInputBuilde
 /// <p>Lists the trials in your account. Specify an experiment name to limit the list to the trials that are part of that experiment. Specify a trial component name to limit the list to the trials that associated with that trial component. The list can be filtered to show only trials that were created in a specific time range. The list can be sorted by trial name or creation time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrialsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_trials::builders::ListTrialsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_trials::builders::ListTrialsInputBuilder,
+}
 impl ListTrialsFluentBuilder  {
     /// Creates a new `ListTrials`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_trials::ListTrials, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTrialsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_trials::paginator::ListTrialsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_trials::paginator::ListTrialsPaginator {
-                            crate::operation::list_trials::paginator::ListTrialsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_trials::paginator::ListTrialsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_trials::paginator::ListTrialsPaginator {
+                                crate::operation::list_trials::paginator::ListTrialsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter that returns only trials that are part of the specified experiment.</p>
     pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.experiment_name(input.into());

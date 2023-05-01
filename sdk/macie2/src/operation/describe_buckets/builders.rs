@@ -8,16 +8,17 @@ pub use crate::operation::describe_buckets::_describe_buckets_input::DescribeBuc
 /// <p>Retrieves (queries) statistical data and other information about one or more S3 buckets that Amazon Macie monitors and analyzes for an account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBucketsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_buckets::builders::DescribeBucketsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_buckets::builders::DescribeBucketsInputBuilder,
+}
 impl DescribeBucketsFluentBuilder  {
     /// Creates a new `DescribeBuckets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_buckets::DescribeBuckets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeBucketsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_buckets::paginator::DescribeBucketsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_buckets::paginator::DescribeBucketsPaginator {
-                            crate::operation::describe_buckets::paginator::DescribeBucketsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_buckets::paginator::DescribeBucketsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_buckets::paginator::DescribeBucketsPaginator {
+                                crate::operation::describe_buckets::paginator::DescribeBucketsPaginator::new(self.handle, self.inner)
+                            }
     /// Adds a key-value pair to `criteria`.
     ///
     /// To override the contents of this collection use [`set_criteria`](Self::set_criteria).

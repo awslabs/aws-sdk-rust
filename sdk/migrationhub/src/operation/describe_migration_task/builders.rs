@@ -8,16 +8,17 @@ pub use crate::operation::describe_migration_task::_describe_migration_task_inpu
 /// <p>Retrieves a list of all attributes associated with a specific migration task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMigrationTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_migration_task::builders::DescribeMigrationTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_migration_task::builders::DescribeMigrationTaskInputBuilder,
+}
 impl DescribeMigrationTaskFluentBuilder  {
     /// Creates a new `DescribeMigrationTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_migration_task::DescribeMigrationTask, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::describe_tape_recovery_points::_describe_tape_recovery
 /// <p>A recovery point is a point-in-time view of a virtual tape at which all the data on the virtual tape is consistent. If your gateway crashes, virtual tapes that have recovery points can be recovered to a new gateway. This operation is only supported in the tape gateway type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTapeRecoveryPointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_tape_recovery_points::builders::DescribeTapeRecoveryPointsInputBuilder,
+}
 impl DescribeTapeRecoveryPointsFluentBuilder  {
     /// Creates a new `DescribeTapeRecoveryPoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPoints, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeTapeRecoveryPointsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator {
-                            crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator {
+                                crate::operation::describe_tape_recovery_points::paginator::DescribeTapeRecoveryPointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());

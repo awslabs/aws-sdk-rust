@@ -8,16 +8,17 @@ pub use crate::operation::describe_gateway_information::_describe_gateway_inform
 /// <p>Returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not). To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGatewayInformationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_gateway_information::builders::DescribeGatewayInformationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_gateway_information::builders::DescribeGatewayInformationInputBuilder,
+}
 impl DescribeGatewayInformationFluentBuilder  {
     /// Creates a new `DescribeGatewayInformation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_gateway_information::DescribeGatewayInformation, aws_http::retry::AwsResponseRetryClassifier,>,

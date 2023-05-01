@@ -8,16 +8,17 @@ pub use crate::operation::send_alexa_offer_to_master::_send_alexa_offer_to_maste
 /// <p>This API allows you to connect WebRTC-enabled devices with Alexa display devices. When invoked, it sends the Alexa Session Description Protocol (SDP) offer to the master peer. The offer is delivered as soon as the master is connected to the specified signaling channel. This API returns the SDP answer from the connected master. If the master is not connected to the signaling channel, redelivery requests are made until the message expires.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendAlexaOfferToMasterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_alexa_offer_to_master::builders::SendAlexaOfferToMasterInputBuilder,
+}
 impl SendAlexaOfferToMasterFluentBuilder  {
     /// Creates a new `SendAlexaOfferToMaster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMaster, aws_http::retry::AwsResponseRetryClassifier,>,

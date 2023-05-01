@@ -8,16 +8,17 @@ pub use crate::operation::list_revision_assets::_list_revision_assets_input::Lis
 /// <p>This operation lists a revision's assets sorted alphabetically in descending order.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRevisionAssetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_revision_assets::builders::ListRevisionAssetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_revision_assets::builders::ListRevisionAssetsInputBuilder,
+}
 impl ListRevisionAssetsFluentBuilder  {
     /// Creates a new `ListRevisionAssets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_revision_assets::ListRevisionAssets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRevisionAssetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator {
-                            crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator {
+                                crate::operation::list_revision_assets::paginator::ListRevisionAssetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier for a data set.</p>
     pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.data_set_id(input.into());

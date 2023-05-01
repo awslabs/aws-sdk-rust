@@ -8,16 +8,17 @@ pub use crate::operation::describe_storage::_describe_storage_input::DescribeSto
 /// <p>Returns account level backups storage size and provisional storage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStorageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_storage::builders::DescribeStorageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_storage::builders::DescribeStorageInputBuilder,
+}
 impl DescribeStorageFluentBuilder  {
     /// Creates a new `DescribeStorage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_storage::DescribeStorage, aws_http::retry::AwsResponseRetryClassifier,>,

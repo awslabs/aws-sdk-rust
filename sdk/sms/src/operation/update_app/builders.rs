@@ -8,16 +8,17 @@ pub use crate::operation::update_app::_update_app_input::UpdateAppInputBuilder;
 /// <p>Updates the specified application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAppFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_app::builders::UpdateAppInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_app::builders::UpdateAppInputBuilder,
+}
 impl UpdateAppFluentBuilder  {
     /// Creates a new `UpdateApp`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_app::UpdateApp, aws_http::retry::AwsResponseRetryClassifier,>,

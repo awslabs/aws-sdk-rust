@@ -8,16 +8,17 @@ pub use crate::operation::update_network_analyzer_configuration::_update_network
 /// <p>Update network analyzer configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateNetworkAnalyzerConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_network_analyzer_configuration::builders::UpdateNetworkAnalyzerConfigurationInputBuilder,
+}
 impl UpdateNetworkAnalyzerConfigurationFluentBuilder  {
     /// Creates a new `UpdateNetworkAnalyzerConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_network_analyzer_configuration::UpdateNetworkAnalyzerConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

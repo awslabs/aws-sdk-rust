@@ -8,16 +8,17 @@ pub use crate::operation::list_event_source_mappings::_list_event_source_mapping
 /// <p>Lists event source mappings. Specify an <code>EventSourceArn</code> to show only event source mappings for a single event source.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEventSourceMappingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_event_source_mappings::builders::ListEventSourceMappingsInputBuilder,
+}
 impl ListEventSourceMappingsFluentBuilder  {
     /// Creates a new `ListEventSourceMappings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_event_source_mappings::ListEventSourceMappings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEventSourceMappingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginator {
-                            crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginator {
+                                crate::operation::list_event_source_mappings::paginator::ListEventSourceMappingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the event source.</p> 
     /// <ul> 
     /// <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li> 

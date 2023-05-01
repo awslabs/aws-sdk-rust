@@ -9,16 +9,17 @@ pub use crate::operation::update_license_manager_report_generator::_update_licen
 /// <p>After you make changes to a report generator, it starts generating new reports within 60 minutes of being updated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLicenseManagerReportGeneratorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_license_manager_report_generator::builders::UpdateLicenseManagerReportGeneratorInputBuilder,
+}
 impl UpdateLicenseManagerReportGeneratorFluentBuilder  {
     /// Creates a new `UpdateLicenseManagerReportGenerator`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGenerator, aws_http::retry::AwsResponseRetryClassifier,>,

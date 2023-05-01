@@ -8,16 +8,17 @@ pub use crate::operation::convert_recovery_point_to_snapshot::_convert_recovery_
 /// <p>Converts a recovery point to a snapshot. For more information about recovery points and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">Working with snapshots and recovery points</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConvertRecoveryPointToSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::convert_recovery_point_to_snapshot::builders::ConvertRecoveryPointToSnapshotInputBuilder,
+}
 impl ConvertRecoveryPointToSnapshotFluentBuilder  {
     /// Creates a new `ConvertRecoveryPointToSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

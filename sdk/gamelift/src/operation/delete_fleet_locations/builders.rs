@@ -12,16 +12,17 @@ pub use crate::operation::delete_fleet_locations::_delete_fleet_locations_input:
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFleetLocationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_fleet_locations::builders::DeleteFleetLocationsInputBuilder,
+}
 impl DeleteFleetLocationsFluentBuilder  {
     /// Creates a new `DeleteFleetLocations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_fleet_locations::DeleteFleetLocations, aws_http::retry::AwsResponseRetryClassifier,>,

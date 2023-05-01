@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_data_share_consumer::_disassociate_data_s
 /// <p>From a datashare consumer account, remove association for the specified datashare. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateDataShareConsumerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_data_share_consumer::builders::DisassociateDataShareConsumerInputBuilder,
+}
 impl DisassociateDataShareConsumerFluentBuilder  {
     /// Creates a new `DisassociateDataShareConsumer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumer, aws_http::retry::AwsResponseRetryClassifier,>,

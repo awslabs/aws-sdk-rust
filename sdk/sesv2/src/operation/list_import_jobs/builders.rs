@@ -8,16 +8,17 @@ pub use crate::operation::list_import_jobs::_list_import_jobs_input::ListImportJ
 /// <p>Lists all of the import jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImportJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_import_jobs::builders::ListImportJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_import_jobs::builders::ListImportJobsInputBuilder,
+}
 impl ListImportJobsFluentBuilder  {
     /// Creates a new `ListImportJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_import_jobs::ListImportJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListImportJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_import_jobs::paginator::ListImportJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_import_jobs::paginator::ListImportJobsPaginator {
-                            crate::operation::list_import_jobs::paginator::ListImportJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_import_jobs::paginator::ListImportJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_import_jobs::paginator::ListImportJobsPaginator {
+                                crate::operation::list_import_jobs::paginator::ListImportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.</p>
     pub fn import_destination_type(mut self, input: crate::types::ImportDestinationType) -> Self {
         self.inner = self.inner.import_destination_type(input);

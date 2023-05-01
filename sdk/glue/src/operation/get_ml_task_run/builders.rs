@@ -8,16 +8,17 @@ pub use crate::operation::get_ml_task_run::_get_ml_task_run_input::GetMlTaskRunI
 /// <p>Gets details for a specific task run on a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can check the stats of any task run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its parent transform's <code>TransformID</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMLTaskRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_ml_task_run::builders::GetMlTaskRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_ml_task_run::builders::GetMlTaskRunInputBuilder,
+}
 impl GetMLTaskRunFluentBuilder  {
     /// Creates a new `GetMLTaskRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_ml_task_run::GetMLTaskRun, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::start_workflow::_start_workflow_input::StartWorkflowIn
 /// <p>Start a migration workflow.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartWorkflowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_workflow::builders::StartWorkflowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_workflow::builders::StartWorkflowInputBuilder,
+}
 impl StartWorkflowFluentBuilder  {
     /// Creates a new `StartWorkflow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_workflow::StartWorkflow, aws_http::retry::AwsResponseRetryClassifier,>,

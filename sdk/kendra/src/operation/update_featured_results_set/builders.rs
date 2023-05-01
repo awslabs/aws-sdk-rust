@@ -8,16 +8,17 @@ pub use crate::operation::update_featured_results_set::_update_featured_results_
 /// <p>Updates a set of featured results. Features results are placed above all other results for certain queries. You map specific queries to specific documents for featuring in the results. If a query contains an exact match of a query, then one or more specific documents are featured in the search results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFeaturedResultsSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder,
+}
 impl UpdateFeaturedResultsSetFluentBuilder  {
     /// Creates a new `UpdateFeaturedResultsSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_featured_results_set::UpdateFeaturedResultsSet, aws_http::retry::AwsResponseRetryClassifier,>,

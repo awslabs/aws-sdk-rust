@@ -8,16 +8,17 @@ pub use crate::operation::remove_region::_remove_region_input::RemoveRegionInput
 /// <p>Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary Region with this operation. Instead, use the <code>DeleteDirectory</code> API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveRegionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_region::builders::RemoveRegionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_region::builders::RemoveRegionInputBuilder,
+}
 impl RemoveRegionFluentBuilder  {
     /// Creates a new `RemoveRegion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_region::RemoveRegion, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::deregister_from_work_mail::_deregister_from_work_mail_
 /// <p>Mark a user, group, or resource as no longer used in WorkMail. This action disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterFromWorkMailFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_from_work_mail::builders::DeregisterFromWorkMailInputBuilder,
+}
 impl DeregisterFromWorkMailFluentBuilder  {
     /// Creates a new `DeregisterFromWorkMail`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_from_work_mail::DeregisterFromWorkMail, aws_http::retry::AwsResponseRetryClassifier,>,

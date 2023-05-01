@@ -8,16 +8,17 @@ pub use crate::operation::modify_transit_gateway::_modify_transit_gateway_input:
 /// <p>Modifies the specified transit gateway. When you modify a transit gateway, the modified options are applied to new transit gateway attachments only. Your existing transit gateway attachments are not modified.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyTransitGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_transit_gateway::builders::ModifyTransitGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_transit_gateway::builders::ModifyTransitGatewayInputBuilder,
+}
 impl ModifyTransitGatewayFluentBuilder  {
     /// Creates a new `ModifyTransitGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_transit_gateway::ModifyTransitGateway, aws_http::retry::AwsResponseRetryClassifier,>,

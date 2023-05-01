@@ -8,16 +8,17 @@ pub use crate::operation::delete_backend_auth::_delete_backend_auth_input::Delet
 /// <p>Deletes an existing backend authentication resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBackendAuthFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_backend_auth::builders::DeleteBackendAuthInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_backend_auth::builders::DeleteBackendAuthInputBuilder,
+}
 impl DeleteBackendAuthFluentBuilder  {
     /// Creates a new `DeleteBackendAuth`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_backend_auth::DeleteBackendAuth, aws_http::retry::AwsResponseRetryClassifier,>,

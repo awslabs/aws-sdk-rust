@@ -8,16 +8,17 @@ pub use crate::operation::update_table_objects::_update_table_objects_input::Upd
 /// <p>Updates the manifest of Amazon S3 objects that make up the specified governed table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTableObjectsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_table_objects::builders::UpdateTableObjectsInputBuilder,
+}
 impl UpdateTableObjectsFluentBuilder  {
     /// Creates a new `UpdateTableObjects`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_table_objects::UpdateTableObjects, aws_http::retry::AwsResponseRetryClassifier,>,

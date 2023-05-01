@@ -8,16 +8,17 @@ pub use crate::operation::list_resources_in_protection_group::_list_resources_in
 /// <p>Retrieves the resources that are included in the protection group. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourcesInProtectionGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resources_in_protection_group::builders::ListResourcesInProtectionGroupInputBuilder,
+}
 impl ListResourcesInProtectionGroupFluentBuilder  {
     /// Creates a new `ListResourcesInProtectionGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroup, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListResourcesInProtectionGroupFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resources_in_protection_group::paginator::ListResourcesInProtectionGroupPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resources_in_protection_group::paginator::ListResourcesInProtectionGroupPaginator {
-                            crate::operation::list_resources_in_protection_group::paginator::ListResourcesInProtectionGroupPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resources_in_protection_group::paginator::ListResourcesInProtectionGroupPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_resources_in_protection_group::paginator::ListResourcesInProtectionGroupPaginator {
+                                crate::operation::list_resources_in_protection_group::paginator::ListResourcesInProtectionGroupPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub fn protection_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.protection_group_id(input.into());

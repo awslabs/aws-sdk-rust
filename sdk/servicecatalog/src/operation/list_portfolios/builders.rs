@@ -8,16 +8,17 @@ pub use crate::operation::list_portfolios::_list_portfolios_input::ListPortfolio
 /// <p>Lists all portfolios in the catalog.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPortfoliosFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_portfolios::builders::ListPortfoliosInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_portfolios::builders::ListPortfoliosInputBuilder,
+}
 impl ListPortfoliosFluentBuilder  {
     /// Creates a new `ListPortfolios`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_portfolios::ListPortfolios, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPortfoliosFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_portfolios::paginator::ListPortfoliosPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_portfolios::paginator::ListPortfoliosPaginator {
-                            crate::operation::list_portfolios::paginator::ListPortfoliosPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_portfolios::paginator::ListPortfoliosPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_portfolios::paginator::ListPortfoliosPaginator {
+                                crate::operation::list_portfolios::paginator::ListPortfoliosPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The language code.</p> 
     /// <ul> 
     /// <li> <p> <code>jp</code> - Japanese</p> </li> 

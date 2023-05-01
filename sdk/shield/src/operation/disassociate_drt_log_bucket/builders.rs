@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_drt_log_bucket::_disassociate_drt_log_buc
 /// <p>Removes the Shield Response Team's (SRT) access to the specified Amazon S3 bucket containing the logs that you shared previously.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateDRTLogBucketFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketInputBuilder,
+}
 impl DisassociateDRTLogBucketFluentBuilder  {
     /// Creates a new `DisassociateDRTLogBucket`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucket, aws_http::retry::AwsResponseRetryClassifier,>,

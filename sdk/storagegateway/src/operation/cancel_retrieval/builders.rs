@@ -8,16 +8,17 @@ pub use crate::operation::cancel_retrieval::_cancel_retrieval_input::CancelRetri
 /// <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is initiated. The virtual tape is returned to the VTS. This operation is only supported in the tape gateway type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelRetrievalFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_retrieval::builders::CancelRetrievalInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_retrieval::builders::CancelRetrievalInputBuilder,
+}
 impl CancelRetrievalFluentBuilder  {
     /// Creates a new `CancelRetrieval`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_retrieval::CancelRetrieval, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::update_instance_storage_config::_update_instance_stora
 /// <p>Updates an existing configuration for a resource type. This API is idempotent.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateInstanceStorageConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigInputBuilder,
+}
 impl UpdateInstanceStorageConfigFluentBuilder  {
     /// Creates a new `UpdateInstanceStorageConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_instance_storage_config::UpdateInstanceStorageConfig, aws_http::retry::AwsResponseRetryClassifier,>,

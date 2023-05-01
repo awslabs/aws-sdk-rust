@@ -11,16 +11,17 @@ pub use crate::operation::get_maintenance_window_task::_get_maintenance_window_t
 /// <p>To retrieve a list of tasks in a maintenance window, instead use the <code>DescribeMaintenanceWindowTasks</code> command.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMaintenanceWindowTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_maintenance_window_task::builders::GetMaintenanceWindowTaskInputBuilder,
+}
 impl GetMaintenanceWindowTaskFluentBuilder  {
     /// Creates a new `GetMaintenanceWindowTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_maintenance_window_task::GetMaintenanceWindowTask, aws_http::retry::AwsResponseRetryClassifier,>,

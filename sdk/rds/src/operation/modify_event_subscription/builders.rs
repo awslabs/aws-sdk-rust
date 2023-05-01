@@ -9,16 +9,17 @@ pub use crate::operation::modify_event_subscription::_modify_event_subscription_
 /// <p>You can see a list of the event categories for a given source type (<code>SourceType</code>) in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> in the <i>Amazon RDS User Guide</i> or by using the <code>DescribeEventCategories</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyEventSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_event_subscription::builders::ModifyEventSubscriptionInputBuilder,
+}
 impl ModifyEventSubscriptionFluentBuilder  {
     /// Creates a new `ModifyEventSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_event_subscription::ModifyEventSubscription, aws_http::retry::AwsResponseRetryClassifier,>,

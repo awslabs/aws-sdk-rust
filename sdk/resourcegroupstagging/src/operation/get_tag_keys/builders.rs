@@ -9,16 +9,17 @@ pub use crate::operation::get_tag_keys::_get_tag_keys_input::GetTagKeysInputBuil
 /// <p>This operation supports pagination, where the response can be sent in multiple pages. You should check the <code>PaginationToken</code> response parameter to determine if there are additional results available to return. Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that there are no more results waiting to be returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTagKeysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_tag_keys::builders::GetTagKeysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_tag_keys::builders::GetTagKeysInputBuilder,
+}
 impl GetTagKeysFluentBuilder  {
     /// Creates a new `GetTagKeys`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_tag_keys::GetTagKeys, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetTagKeysFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_tag_keys::paginator::GetTagKeysPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_tag_keys::paginator::GetTagKeysPaginator {
-                            crate::operation::get_tag_keys::paginator::GetTagKeysPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_tag_keys::paginator::GetTagKeysPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_tag_keys::paginator::GetTagKeysPaginator {
+                                crate::operation::get_tag_keys::paginator::GetTagKeysPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
     pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.pagination_token(input.into());

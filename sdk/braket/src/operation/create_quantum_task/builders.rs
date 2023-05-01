@@ -8,16 +8,17 @@ pub use crate::operation::create_quantum_task::_create_quantum_task_input::Creat
 /// <p>Creates a quantum task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateQuantumTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder,
+}
 impl CreateQuantumTaskFluentBuilder  {
     /// Creates a new `CreateQuantumTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_quantum_task::CreateQuantumTask, aws_http::retry::AwsResponseRetryClassifier,>,

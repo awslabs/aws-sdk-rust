@@ -10,16 +10,17 @@ pub use crate::operation::update_app_version_app_component::_update_app_version_
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAppVersionAppComponentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_app_version_app_component::builders::UpdateAppVersionAppComponentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_app_version_app_component::builders::UpdateAppVersionAppComponentInputBuilder,
+}
 impl UpdateAppVersionAppComponentFluentBuilder  {
     /// Creates a new `UpdateAppVersionAppComponent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_app_version_app_component::UpdateAppVersionAppComponent, aws_http::retry::AwsResponseRetryClassifier,>,

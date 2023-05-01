@@ -9,16 +9,17 @@ pub use crate::operation::update_configuration_set_tracking_options::_update_con
 /// <p>By default, images and links used for tracking open and click events are hosted on domains operated by Amazon SES. You can configure a subdomain of your own to handle these events. For information about using custom domains, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon SES Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateConfigurationSetTrackingOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_configuration_set_tracking_options::builders::UpdateConfigurationSetTrackingOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_configuration_set_tracking_options::builders::UpdateConfigurationSetTrackingOptionsInputBuilder,
+}
 impl UpdateConfigurationSetTrackingOptionsFluentBuilder  {
     /// Creates a new `UpdateConfigurationSetTrackingOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_configuration_set_tracking_options::UpdateConfigurationSetTrackingOptions, aws_http::retry::AwsResponseRetryClassifier,>,

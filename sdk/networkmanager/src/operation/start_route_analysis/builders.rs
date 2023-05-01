@@ -8,16 +8,17 @@ pub use crate::operation::start_route_analysis::_start_route_analysis_input::Sta
 /// <p>Starts analyzing the routing path between the specified source and destination. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartRouteAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_route_analysis::builders::StartRouteAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_route_analysis::builders::StartRouteAnalysisInputBuilder,
+}
 impl StartRouteAnalysisFluentBuilder  {
     /// Creates a new `StartRouteAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_route_analysis::StartRouteAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

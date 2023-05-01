@@ -8,16 +8,17 @@ pub use crate::operation::associate_discovered_resource::_associate_discovered_r
 /// <p>Associates a discovered resource ID from Application Discovery Service with a migration task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateDiscoveredResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_discovered_resource::builders::AssociateDiscoveredResourceInputBuilder,
+}
 impl AssociateDiscoveredResourceFluentBuilder  {
     /// Creates a new `AssociateDiscoveredResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_discovered_resource::AssociateDiscoveredResource, aws_http::retry::AwsResponseRetryClassifier,>,

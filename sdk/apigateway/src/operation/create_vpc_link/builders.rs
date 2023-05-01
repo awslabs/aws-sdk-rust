@@ -8,16 +8,17 @@ pub use crate::operation::create_vpc_link::_create_vpc_link_input::CreateVpcLink
 /// <p>Creates a VPC link, under the caller's account in a selected region, in an asynchronous operation that typically takes 2-4 minutes to complete and become operational. The caller must have permissions to create and update VPC Endpoint services.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVpcLinkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_vpc_link::builders::CreateVpcLinkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_vpc_link::builders::CreateVpcLinkInputBuilder,
+}
 impl CreateVpcLinkFluentBuilder  {
     /// Creates a new `CreateVpcLink`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_vpc_link::CreateVpcLink, aws_http::retry::AwsResponseRetryClassifier,>,

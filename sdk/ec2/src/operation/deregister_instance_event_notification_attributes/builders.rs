@@ -8,16 +8,17 @@ pub use crate::operation::deregister_instance_event_notification_attributes::_de
 /// <p>Deregisters tag keys to prevent tags that have the specified tag keys from being included in scheduled event notifications for resources in the Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterInstanceEventNotificationAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_instance_event_notification_attributes::builders::DeregisterInstanceEventNotificationAttributesInputBuilder,
+}
 impl DeregisterInstanceEventNotificationAttributesFluentBuilder  {
     /// Creates a new `DeregisterInstanceEventNotificationAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

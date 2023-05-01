@@ -9,16 +9,17 @@ pub use crate::operation::get_registration_code::_get_registration_code_input::G
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetRegistrationCode</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRegistrationCodeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_registration_code::builders::GetRegistrationCodeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_registration_code::builders::GetRegistrationCodeInputBuilder,
+}
 impl GetRegistrationCodeFluentBuilder  {
     /// Creates a new `GetRegistrationCode`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_registration_code::GetRegistrationCode, aws_http::retry::AwsResponseRetryClassifier,>,

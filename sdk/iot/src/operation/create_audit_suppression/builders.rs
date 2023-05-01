@@ -9,16 +9,17 @@ pub use crate::operation::create_audit_suppression::_create_audit_suppression_in
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuditSuppression</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAuditSuppressionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_audit_suppression::builders::CreateAuditSuppressionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_audit_suppression::builders::CreateAuditSuppressionInputBuilder,
+}
 impl CreateAuditSuppressionFluentBuilder  {
     /// Creates a new `CreateAuditSuppression`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_audit_suppression::CreateAuditSuppression, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_billing_group_cost_reports::_list_billing_group_c
 /// <p>A paginated call to retrieve a summary report of actual Amazon Web Services charges and the calculated Amazon Web Services charges based on the associated pricing plan of a billing group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBillingGroupCostReportsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_billing_group_cost_reports::builders::ListBillingGroupCostReportsInputBuilder,
+}
 impl ListBillingGroupCostReportsFluentBuilder  {
     /// Creates a new `ListBillingGroupCostReports`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReports, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBillingGroupCostReportsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_billing_group_cost_reports::paginator::ListBillingGroupCostReportsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_billing_group_cost_reports::paginator::ListBillingGroupCostReportsPaginator {
-                            crate::operation::list_billing_group_cost_reports::paginator::ListBillingGroupCostReportsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_billing_group_cost_reports::paginator::ListBillingGroupCostReportsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_billing_group_cost_reports::paginator::ListBillingGroupCostReportsPaginator {
+                                crate::operation::list_billing_group_cost_reports::paginator::ListBillingGroupCostReportsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The preferred billing period for your report. </p>
     pub fn billing_period(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::create_document_classifier::_create_document_classifie
 /// <p>Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a set of training documents that are labeled with the categories that you want to use. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/training-classifier-model.html">Training classifier models</a> in the Comprehend Developer Guide. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDocumentClassifierFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_document_classifier::builders::CreateDocumentClassifierInputBuilder,
+}
 impl CreateDocumentClassifierFluentBuilder  {
     /// Creates a new `CreateDocumentClassifier`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_document_classifier::CreateDocumentClassifier, aws_http::retry::AwsResponseRetryClassifier,>,

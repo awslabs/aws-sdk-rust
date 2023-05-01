@@ -8,16 +8,17 @@ pub use crate::operation::delete_activation::_delete_activation_input::DeleteAct
 /// <p>Deletes an activation. You aren't required to delete an activation. If you delete an activation, you can no longer use it to register additional managed nodes. Deleting an activation doesn't de-register managed nodes. You must manually de-register managed nodes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteActivationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_activation::builders::DeleteActivationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_activation::builders::DeleteActivationInputBuilder,
+}
 impl DeleteActivationFluentBuilder  {
     /// Creates a new `DeleteActivation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_activation::DeleteActivation, aws_http::retry::AwsResponseRetryClassifier,>,

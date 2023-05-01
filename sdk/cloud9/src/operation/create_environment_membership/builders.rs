@@ -8,16 +8,17 @@ pub use crate::operation::create_environment_membership::_create_environment_mem
 /// <p>Adds an environment member to an Cloud9 development environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEnvironmentMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_environment_membership::builders::CreateEnvironmentMembershipInputBuilder,
+}
 impl CreateEnvironmentMembershipFluentBuilder  {
     /// Creates a new `CreateEnvironmentMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_environment_membership::CreateEnvironmentMembership, aws_http::retry::AwsResponseRetryClassifier,>,

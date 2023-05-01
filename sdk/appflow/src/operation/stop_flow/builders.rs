@@ -8,16 +8,17 @@ pub use crate::operation::stop_flow::_stop_flow_input::StopFlowInputBuilder;
 /// <p> Deactivates the existing flow. For on-demand flows, this operation returns an <code>unsupportedOperationException</code> error message. For schedule and event-triggered flows, this operation deactivates the flow. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopFlowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_flow::builders::StopFlowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_flow::builders::StopFlowInputBuilder,
+}
 impl StopFlowFluentBuilder  {
     /// Creates a new `StopFlow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_flow::StopFlow, aws_http::retry::AwsResponseRetryClassifier,>,

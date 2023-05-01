@@ -9,16 +9,17 @@ pub use crate::operation::describe_compute_environments::_describe_compute_envir
 /// <p>If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code> operation to determine the <code>ecsClusterArn</code> that you launch your Amazon ECS container instances into.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeComputeEnvironmentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_compute_environments::builders::DescribeComputeEnvironmentsInputBuilder,
+}
 impl DescribeComputeEnvironmentsFluentBuilder  {
     /// Creates a new `DescribeComputeEnvironments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_compute_environments::DescribeComputeEnvironments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeComputeEnvironmentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator {
-                            crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator {
+                                crate::operation::describe_compute_environments::paginator::DescribeComputeEnvironmentsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `computeEnvironments`.
     ///
     /// To override the contents of this collection use [`set_compute_environments`](Self::set_compute_environments).

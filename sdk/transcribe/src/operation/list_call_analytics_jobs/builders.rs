@@ -9,16 +9,17 @@ pub use crate::operation::list_call_analytics_jobs::_list_call_analytics_jobs_in
 /// <p>To get detailed information about a specific Call Analytics job, use the operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCallAnalyticsJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_call_analytics_jobs::builders::ListCallAnalyticsJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_call_analytics_jobs::builders::ListCallAnalyticsJobsInputBuilder,
+}
 impl ListCallAnalyticsJobsFluentBuilder  {
     /// Creates a new `ListCallAnalyticsJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_call_analytics_jobs::ListCallAnalyticsJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListCallAnalyticsJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator {
-                            crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator {
+                                crate::operation::list_call_analytics_jobs::paginator::ListCallAnalyticsJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Returns only Call Analytics jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all Call Analytics jobs are returned.</p>
     pub fn status(mut self, input: crate::types::CallAnalyticsJobStatus) -> Self {
         self.inner = self.inner.status(input);

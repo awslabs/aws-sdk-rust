@@ -8,16 +8,17 @@ pub use crate::operation::disable_directory::_disable_directory_input::DisableDi
 /// <p>Disables the specified directory. Disabled directories cannot be read or written to. Only enabled directories can be disabled. Disabled directories may be reenabled.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableDirectoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_directory::builders::DisableDirectoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_directory::builders::DisableDirectoryInputBuilder,
+}
 impl DisableDirectoryFluentBuilder  {
     /// Creates a new `DisableDirectory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_directory::DisableDirectory, aws_http::retry::AwsResponseRetryClassifier,>,

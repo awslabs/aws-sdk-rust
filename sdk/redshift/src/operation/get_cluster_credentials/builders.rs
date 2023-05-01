@@ -12,16 +12,17 @@ pub use crate::operation::get_cluster_credentials::_get_cluster_credentials_inpu
 /// <p>If the <code>DbName</code> parameter is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetClusterCredentialsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_cluster_credentials::builders::GetClusterCredentialsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_cluster_credentials::builders::GetClusterCredentialsInputBuilder,
+}
 impl GetClusterCredentialsFluentBuilder  {
     /// Creates a new `GetClusterCredentials`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_cluster_credentials::GetClusterCredentials, aws_http::retry::AwsResponseRetryClassifier,>,

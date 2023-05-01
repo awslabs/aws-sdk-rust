@@ -8,16 +8,17 @@ pub use crate::operation::is_member_in_groups::_is_member_in_groups_input::IsMem
 /// <p>Checks the user's membership in all requested groups and returns if the member exists in all queried groups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct IsMemberInGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder,
+}
 impl IsMemberInGroupsFluentBuilder  {
     /// Creates a new `IsMemberInGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::is_member_in_groups::IsMemberInGroups, aws_http::retry::AwsResponseRetryClassifier,>,

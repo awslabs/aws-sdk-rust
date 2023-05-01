@@ -8,16 +8,17 @@ pub use crate::operation::update_broker_type::_update_broker_type_input::UpdateB
 /// <p>Updates EC2 instance type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBrokerTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_broker_type::builders::UpdateBrokerTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_broker_type::builders::UpdateBrokerTypeInputBuilder,
+}
 impl UpdateBrokerTypeFluentBuilder  {
     /// Creates a new `UpdateBrokerType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_broker_type::UpdateBrokerType, aws_http::retry::AwsResponseRetryClassifier,>,

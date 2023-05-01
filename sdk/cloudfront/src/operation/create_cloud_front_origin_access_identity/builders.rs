@@ -8,16 +8,17 @@ pub use crate::operation::create_cloud_front_origin_access_identity::_create_clo
 /// <p>Creates a new origin access identity. If you're using Amazon S3 for your origin, you can use an origin access identity to require users to access your content using a CloudFront URL instead of the Amazon S3 URL. For more information about how to use origin access identities, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCloudFrontOriginAccessIdentityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_cloud_front_origin_access_identity::builders::CreateCloudFrontOriginAccessIdentityInputBuilder,
+}
 impl CreateCloudFrontOriginAccessIdentityFluentBuilder  {
     /// Creates a new `CreateCloudFrontOriginAccessIdentity`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_cloud_front_origin_access_identity::CreateCloudFrontOriginAccessIdentity, aws_http::retry::AwsResponseRetryClassifier,>,

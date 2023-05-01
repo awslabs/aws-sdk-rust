@@ -8,16 +8,17 @@ pub use crate::operation::list_outposts_with_s3::_list_outposts_with_s3_input::L
 /// <p>Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account. Includes S3 on Outposts that you have access to as the Outposts owner, or as a shared user from Resource Access Manager (RAM). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListOutpostsWithS3FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3InputBuilder,
+}
 impl ListOutpostsWithS3FluentBuilder  {
     /// Creates a new `ListOutpostsWithS3`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_outposts_with_s3::ListOutpostsWithS3, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListOutpostsWithS3FluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_outposts_with_s3::paginator::ListOutpostsWithS3Paginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_outposts_with_s3::paginator::ListOutpostsWithS3Paginator {
-                            crate::operation::list_outposts_with_s3::paginator::ListOutpostsWithS3Paginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_outposts_with_s3::paginator::ListOutpostsWithS3Paginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_outposts_with_s3::paginator::ListOutpostsWithS3Paginator {
+                                crate::operation::list_outposts_with_s3::paginator::ListOutpostsWithS3Paginator::new(self.handle, self.inner)
+                            }
     /// <p>When you can get additional results from the <code>ListOutpostsWithS3</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional Outposts.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

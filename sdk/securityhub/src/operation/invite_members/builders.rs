@@ -11,16 +11,17 @@ pub use crate::operation::invite_members::_invite_members_input::InviteMembersIn
 /// <p>When the account owner enables Security Hub and accepts the invitation to become a member account, the administrator account can view the findings generated from the member account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InviteMembersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::invite_members::builders::InviteMembersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::invite_members::builders::InviteMembersInputBuilder,
+}
 impl InviteMembersFluentBuilder  {
     /// Creates a new `InviteMembers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::invite_members::InviteMembers, aws_http::retry::AwsResponseRetryClassifier,>,

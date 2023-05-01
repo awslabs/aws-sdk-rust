@@ -9,16 +9,17 @@ pub use crate::operation::create_permission_version::_create_permission_version_
 /// <p>If the specified customer managed permission already has the maximum of 5 versions, then you must delete one of the existing versions before you can create a new one.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePermissionVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_permission_version::builders::CreatePermissionVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_permission_version::builders::CreatePermissionVersionInputBuilder,
+}
 impl CreatePermissionVersionFluentBuilder  {
     /// Creates a new `CreatePermissionVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_permission_version::CreatePermissionVersion, aws_http::retry::AwsResponseRetryClassifier,>,

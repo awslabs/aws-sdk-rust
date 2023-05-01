@@ -10,16 +10,17 @@ pub use crate::operation::describe_db_security_groups::_describe_db_security_gro
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBSecurityGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_security_groups::builders::DescribeDbSecurityGroupsInputBuilder,
+}
 impl DescribeDBSecurityGroupsFluentBuilder  {
     /// Creates a new `DescribeDBSecurityGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_security_groups::DescribeDBSecurityGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeDBSecurityGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_security_groups::paginator::DescribeDbSecurityGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_security_groups::paginator::DescribeDbSecurityGroupsPaginator {
-                            crate::operation::describe_db_security_groups::paginator::DescribeDbSecurityGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_security_groups::paginator::DescribeDbSecurityGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_security_groups::paginator::DescribeDbSecurityGroupsPaginator {
+                                crate::operation::describe_db_security_groups::paginator::DescribeDbSecurityGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the DB security group to return details for.</p>
     pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.db_security_group_name(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::get_network_insights_access_scope_analysis_findings::_
 /// <p>Gets the findings for the specified Network Access Scope analysis.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetNetworkInsightsAccessScopeAnalysisFindingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_network_insights_access_scope_analysis_findings::builders::GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder,
+}
 impl GetNetworkInsightsAccessScopeAnalysisFindingsFluentBuilder  {
     /// Creates a new `GetNetworkInsightsAccessScopeAnalysisFindings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindings, aws_http::retry::AwsResponseRetryClassifier,>,

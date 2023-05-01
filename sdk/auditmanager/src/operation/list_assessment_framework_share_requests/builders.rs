@@ -8,16 +8,17 @@ pub use crate::operation::list_assessment_framework_share_requests::_list_assess
 /// <p> Returns a list of sent or received share requests for custom frameworks in Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssessmentFrameworkShareRequestsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_assessment_framework_share_requests::builders::ListAssessmentFrameworkShareRequestsInputBuilder,
+}
 impl ListAssessmentFrameworkShareRequestsFluentBuilder  {
     /// Creates a new `ListAssessmentFrameworkShareRequests`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_assessment_framework_share_requests::ListAssessmentFrameworkShareRequests, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAssessmentFrameworkShareRequestsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator {
-                            crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator {
+                                crate::operation::list_assessment_framework_share_requests::paginator::ListAssessmentFrameworkShareRequestsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> Specifies whether the share request is a sent request or a received request.</p>
     pub fn request_type(mut self, input: crate::types::ShareRequestType) -> Self {
         self.inner = self.inner.request_type(input);

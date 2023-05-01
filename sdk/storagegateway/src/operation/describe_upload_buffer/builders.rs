@@ -9,16 +9,17 @@ pub use crate::operation::describe_upload_buffer::_describe_upload_buffer_input:
 /// <p>The response includes disk IDs that are configured as upload buffer space, and it includes the amount of upload buffer space allocated and used.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUploadBufferFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_upload_buffer::builders::DescribeUploadBufferInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_upload_buffer::builders::DescribeUploadBufferInputBuilder,
+}
 impl DescribeUploadBufferFluentBuilder  {
     /// Creates a new `DescribeUploadBuffer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_upload_buffer::DescribeUploadBuffer, aws_http::retry::AwsResponseRetryClassifier,>,

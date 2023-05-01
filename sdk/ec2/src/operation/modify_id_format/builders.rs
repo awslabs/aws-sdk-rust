@@ -11,16 +11,17 @@ pub use crate::operation::modify_id_format::_modify_id_format_input::ModifyIdFor
 /// <p>Resources created with longer IDs are visible to all IAM roles and users, regardless of these settings and provided that they have permission to use the relevant <code>Describe</code> command for the resource type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyIdFormatFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_id_format::builders::ModifyIdFormatInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_id_format::builders::ModifyIdFormatInputBuilder,
+}
 impl ModifyIdFormatFluentBuilder  {
     /// Creates a new `ModifyIdFormat`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_id_format::ModifyIdFormat, aws_http::retry::AwsResponseRetryClassifier,>,

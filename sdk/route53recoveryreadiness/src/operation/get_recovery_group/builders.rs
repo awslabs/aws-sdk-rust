@@ -8,16 +8,17 @@ pub use crate::operation::get_recovery_group::_get_recovery_group_input::GetReco
 /// <p>Gets details about a recovery group, including a list of the cells that are included in it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRecoveryGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_recovery_group::builders::GetRecoveryGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_recovery_group::builders::GetRecoveryGroupInputBuilder,
+}
 impl GetRecoveryGroupFluentBuilder  {
     /// Creates a new `GetRecoveryGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_recovery_group::GetRecoveryGroup, aws_http::retry::AwsResponseRetryClassifier,>,

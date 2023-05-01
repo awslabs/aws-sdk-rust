@@ -8,16 +8,17 @@ pub use crate::operation::enable_vgw_route_propagation::_enable_vgw_route_propag
 /// <p>Enables a virtual private gateway (VGW) to propagate routes to the specified route table of a VPC.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableVgwRoutePropagationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_vgw_route_propagation::builders::EnableVgwRoutePropagationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_vgw_route_propagation::builders::EnableVgwRoutePropagationInputBuilder,
+}
 impl EnableVgwRoutePropagationFluentBuilder  {
     /// Creates a new `EnableVgwRoutePropagation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagation, aws_http::retry::AwsResponseRetryClassifier,>,

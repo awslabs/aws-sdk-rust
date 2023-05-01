@@ -8,16 +8,17 @@ pub use crate::operation::get_report_group_trend::_get_report_group_trend_input:
 /// <p>Analyzes and accumulates test report values for the specified test reports.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetReportGroupTrendFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_report_group_trend::builders::GetReportGroupTrendInputBuilder,
+}
 impl GetReportGroupTrendFluentBuilder  {
     /// Creates a new `GetReportGroupTrend`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_report_group_trend::GetReportGroupTrend, aws_http::retry::AwsResponseRetryClassifier,>,

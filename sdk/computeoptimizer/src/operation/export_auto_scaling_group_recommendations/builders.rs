@@ -10,16 +10,17 @@ pub use crate::operation::export_auto_scaling_group_recommendations::_export_aut
 /// <p>You can have only one Auto Scaling group export job in progress per Amazon Web Services Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportAutoScalingGroupRecommendationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_auto_scaling_group_recommendations::builders::ExportAutoScalingGroupRecommendationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_auto_scaling_group_recommendations::builders::ExportAutoScalingGroupRecommendationsInputBuilder,
+}
 impl ExportAutoScalingGroupRecommendationsFluentBuilder  {
     /// Creates a new `ExportAutoScalingGroupRecommendations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_auto_scaling_group_recommendations::ExportAutoScalingGroupRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,

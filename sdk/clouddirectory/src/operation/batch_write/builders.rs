@@ -8,16 +8,17 @@ pub use crate::operation::batch_write::_batch_write_input::BatchWriteInputBuilde
 /// <p>Performs all the write operations in a batch. Either all the operations succeed or none.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchWriteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_write::builders::BatchWriteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_write::builders::BatchWriteInputBuilder,
+}
 impl BatchWriteFluentBuilder  {
     /// Creates a new `BatchWrite`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_write::BatchWrite, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::deregister_instances_from_load_balancer::_deregister_i
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterInstancesFromLoadBalancerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_instances_from_load_balancer::builders::DeregisterInstancesFromLoadBalancerInputBuilder,
+}
 impl DeregisterInstancesFromLoadBalancerFluentBuilder  {
     /// Creates a new `DeregisterInstancesFromLoadBalancer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancer, aws_http::retry::AwsResponseRetryClassifier,>,

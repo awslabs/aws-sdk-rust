@@ -8,16 +8,17 @@ pub use crate::operation::describe_elasticsearch_instance_type_limits::_describe
 /// <p> Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the <code> <code>DomainName</code> </code> to know what Limits are supported for modifying. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeElasticsearchInstanceTypeLimitsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_elasticsearch_instance_type_limits::builders::DescribeElasticsearchInstanceTypeLimitsInputBuilder,
+}
 impl DescribeElasticsearchInstanceTypeLimitsFluentBuilder  {
     /// Creates a new `DescribeElasticsearchInstanceTypeLimits`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimits, aws_http::retry::AwsResponseRetryClassifier,>,

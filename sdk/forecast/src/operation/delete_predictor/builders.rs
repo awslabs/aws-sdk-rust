@@ -8,16 +8,17 @@ pub use crate::operation::delete_predictor::_delete_predictor_input::DeletePredi
 /// <p>Deletes a predictor created using the <code>DescribePredictor</code> or <code>CreatePredictor</code> operations. You can delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribePredictor</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePredictorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_predictor::builders::DeletePredictorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_predictor::builders::DeletePredictorInputBuilder,
+}
 impl DeletePredictorFluentBuilder  {
     /// Creates a new `DeletePredictor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_predictor::DeletePredictor, aws_http::retry::AwsResponseRetryClassifier,>,

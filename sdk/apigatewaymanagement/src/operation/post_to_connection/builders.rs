@@ -8,16 +8,17 @@ pub use crate::operation::post_to_connection::_post_to_connection_input::PostToC
 /// <p>Sends the provided data to the specified connection.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PostToConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::post_to_connection::builders::PostToConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::post_to_connection::builders::PostToConnectionInputBuilder,
+}
 impl PostToConnectionFluentBuilder  {
     /// Creates a new `PostToConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::post_to_connection::PostToConnection, aws_http::retry::AwsResponseRetryClassifier,>,

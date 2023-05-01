@@ -8,16 +8,17 @@ pub use crate::operation::list_rescore_execution_plans::_list_rescore_execution_
 /// <p>Lists your rescore execution plans. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRescoreExecutionPlansFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_rescore_execution_plans::builders::ListRescoreExecutionPlansInputBuilder,
+}
 impl ListRescoreExecutionPlansFluentBuilder  {
     /// Creates a new `ListRescoreExecutionPlans`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlans, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRescoreExecutionPlansFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_rescore_execution_plans::paginator::ListRescoreExecutionPlansPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_rescore_execution_plans::paginator::ListRescoreExecutionPlansPaginator {
-                            crate::operation::list_rescore_execution_plans::paginator::ListRescoreExecutionPlansPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_rescore_execution_plans::paginator::ListRescoreExecutionPlansPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_rescore_execution_plans::paginator::ListRescoreExecutionPlansPaginator {
+                                crate::operation::list_rescore_execution_plans::paginator::ListRescoreExecutionPlansPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the response is truncated, Amazon Kendra Intelligent Ranking returns a pagination token in the response. You can use this pagination token to retrieve the next set of rescore execution plans.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

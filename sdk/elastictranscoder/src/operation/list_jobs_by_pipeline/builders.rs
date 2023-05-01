@@ -9,16 +9,17 @@ pub use crate::operation::list_jobs_by_pipeline::_list_jobs_by_pipeline_input::L
 /// <p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body contains one element for each job that satisfies the search criteria.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListJobsByPipelineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_jobs_by_pipeline::builders::ListJobsByPipelineInputBuilder,
+}
 impl ListJobsByPipelineFluentBuilder  {
     /// Creates a new `ListJobsByPipeline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_jobs_by_pipeline::ListJobsByPipeline, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListJobsByPipelineFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator {
-                            crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator {
+                                crate::operation::list_jobs_by_pipeline::paginator::ListJobsByPipelinePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the pipeline for which you want to get job information.</p>
     pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.pipeline_id(input.into());

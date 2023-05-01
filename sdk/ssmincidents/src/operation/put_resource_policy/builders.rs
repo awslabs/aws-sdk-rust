@@ -8,16 +8,17 @@ pub use crate::operation::put_resource_policy::_put_resource_policy_input::PutRe
 /// <p>Adds a resource policy to the specified response plan. The resource policy is used to share the response plan using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-manager-cross-account-cross-region.html">Cross-Region and cross-account incident management</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutResourcePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder,
+}
 impl PutResourcePolicyFluentBuilder  {
     /// Creates a new `PutResourcePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_resource_policy::PutResourcePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

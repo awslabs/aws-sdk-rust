@@ -11,16 +11,17 @@ pub use crate::operation::attach_elastic_load_balancer::_attach_elastic_load_bal
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AttachElasticLoadBalancerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::attach_elastic_load_balancer::builders::AttachElasticLoadBalancerInputBuilder,
+}
 impl AttachElasticLoadBalancerFluentBuilder  {
     /// Creates a new `AttachElasticLoadBalancer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancer, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::delete_what_if_forecast::_delete_what_if_forecast_inpu
 /// <p>You can't delete a what-if forecast while it is being exported. After a what-if forecast is deleted, you can no longer query the what-if analysis.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteWhatIfForecastFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_what_if_forecast::builders::DeleteWhatIfForecastInputBuilder,
+}
 impl DeleteWhatIfForecastFluentBuilder  {
     /// Creates a new `DeleteWhatIfForecast`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_what_if_forecast::DeleteWhatIfForecast, aws_http::retry::AwsResponseRetryClassifier,>,

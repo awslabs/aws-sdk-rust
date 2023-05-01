@@ -8,16 +8,17 @@ pub use crate::operation::describe_partner_event_source::_describe_partner_event
 /// <p>An SaaS partner can use this operation to list details about a partner event source that they have created. Amazon Web Services customers do not use this operation. Instead, Amazon Web Services customers can use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventSource.html">DescribeEventSource</a> to see details about a partner event source that is shared with them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePartnerEventSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceInputBuilder,
+}
 impl DescribePartnerEventSourceFluentBuilder  {
     /// Creates a new `DescribePartnerEventSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_partner_event_source::DescribePartnerEventSource, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::delete_event::_delete_event_input::DeleteEventInputBui
 /// <p>When you delete an event, Amazon Fraud Detector permanently deletes that event and the event data is no longer stored in Amazon Fraud Detector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEventFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_event::builders::DeleteEventInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_event::builders::DeleteEventInputBuilder,
+}
 impl DeleteEventFluentBuilder  {
     /// Creates a new `DeleteEvent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_event::DeleteEvent, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_firewall_policy_change_protection::_update_fire
 /// <p>Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible to change the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected from changes. This setting helps protect against accidentally changing a firewall that's in use.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFirewallPolicyChangeProtectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_firewall_policy_change_protection::builders::UpdateFirewallPolicyChangeProtectionInputBuilder,
+}
 impl UpdateFirewallPolicyChangeProtectionFluentBuilder  {
     /// Creates a new `UpdateFirewallPolicyChangeProtection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtection, aws_http::retry::AwsResponseRetryClassifier,>,

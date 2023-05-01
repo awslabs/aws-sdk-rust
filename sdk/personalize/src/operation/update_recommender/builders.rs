@@ -8,16 +8,17 @@ pub use crate::operation::update_recommender::_update_recommender_input::UpdateR
 /// <p>Updates the recommender to modify the recommender configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRecommenderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_recommender::builders::UpdateRecommenderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_recommender::builders::UpdateRecommenderInputBuilder,
+}
 impl UpdateRecommenderFluentBuilder  {
     /// Creates a new `UpdateRecommender`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_recommender::UpdateRecommender, aws_http::retry::AwsResponseRetryClassifier,>,

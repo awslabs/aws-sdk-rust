@@ -8,16 +8,17 @@ pub use crate::operation::reset_db_parameter_group::_reset_db_parameter_group_in
 /// <p>Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code> request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetDBParameterGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_db_parameter_group::builders::ResetDbParameterGroupInputBuilder,
+}
 impl ResetDBParameterGroupFluentBuilder  {
     /// Creates a new `ResetDBParameterGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_db_parameter_group::ResetDBParameterGroup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::stop_text_translation_job::_stop_text_translation_job_
 /// <p>Asynchronous batch translation jobs are started with the <code>StartTextTranslationJob</code> operation. You can use the <code>DescribeTextTranslationJob</code> or <code>ListTextTranslationJobs</code> operations to get a batch translation job's <code>JobId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopTextTranslationJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_text_translation_job::builders::StopTextTranslationJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_text_translation_job::builders::StopTextTranslationJobInputBuilder,
+}
 impl StopTextTranslationJobFluentBuilder  {
     /// Creates a new `StopTextTranslationJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_text_translation_job::StopTextTranslationJob, aws_http::retry::AwsResponseRetryClassifier,>,

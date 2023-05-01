@@ -8,16 +8,17 @@ pub use crate::operation::delete_api_mapping::_delete_api_mapping_input::DeleteA
 /// <p>Deletes an API mapping.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteApiMappingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_api_mapping::builders::DeleteApiMappingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_api_mapping::builders::DeleteApiMappingInputBuilder,
+}
 impl DeleteApiMappingFluentBuilder  {
     /// Creates a new `DeleteApiMapping`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_api_mapping::DeleteApiMapping, aws_http::retry::AwsResponseRetryClassifier,>,

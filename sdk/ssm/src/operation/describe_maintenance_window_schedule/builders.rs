@@ -8,16 +8,17 @@ pub use crate::operation::describe_maintenance_window_schedule::_describe_mainte
 /// <p>Retrieves information about upcoming executions of a maintenance window.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleInputBuilder,
+}
 impl DescribeMaintenanceWindowScheduleFluentBuilder  {
     /// Creates a new `DescribeMaintenanceWindowSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowSchedule, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeMaintenanceWindowScheduleFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator {
-                            crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator {
+                                crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the maintenance window to retrieve information about.</p>
     pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.window_id(input.into());

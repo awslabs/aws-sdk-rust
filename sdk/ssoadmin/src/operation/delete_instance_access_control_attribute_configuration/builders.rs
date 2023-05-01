@@ -8,16 +8,17 @@ pub use crate::operation::delete_instance_access_control_attribute_configuration
 /// <p>Disables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance and deletes all of the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity source and any custom attributes you have previously configured will not be passed. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInstanceAccessControlAttributeConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_instance_access_control_attribute_configuration::builders::DeleteInstanceAccessControlAttributeConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_instance_access_control_attribute_configuration::builders::DeleteInstanceAccessControlAttributeConfigurationInputBuilder,
+}
 impl DeleteInstanceAccessControlAttributeConfigurationFluentBuilder  {
     /// Creates a new `DeleteInstanceAccessControlAttributeConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

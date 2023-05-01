@@ -20,16 +20,17 @@ pub use crate::operation::disable_key_rotation::_disable_key_rotation_input::Dis
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableKeyRotationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_key_rotation::builders::DisableKeyRotationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_key_rotation::builders::DisableKeyRotationInputBuilder,
+}
 impl DisableKeyRotationFluentBuilder  {
     /// Creates a new `DisableKeyRotation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_key_rotation::DisableKeyRotation, aws_http::retry::AwsResponseRetryClassifier,>,

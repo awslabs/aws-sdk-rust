@@ -8,16 +8,17 @@ pub use crate::operation::list_agreements::_list_agreements_input::ListAgreement
 /// <p>Returns a list of the agreements for the server that's identified by the <code>ServerId</code> that you supply. If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code> parameter. If you ran the command previously and received a value for <code>NextToken</code>, you can supply that value to continue listing agreements from where you left off.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAgreementsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_agreements::builders::ListAgreementsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_agreements::builders::ListAgreementsInputBuilder,
+}
 impl ListAgreementsFluentBuilder  {
     /// Creates a new `ListAgreements`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_agreements::ListAgreements, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAgreementsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_agreements::paginator::ListAgreementsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_agreements::paginator::ListAgreementsPaginator {
-                            crate::operation::list_agreements::paginator::ListAgreementsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_agreements::paginator::ListAgreementsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_agreements::paginator::ListAgreementsPaginator {
+                                crate::operation::list_agreements::paginator::ListAgreementsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of agreements to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

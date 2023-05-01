@@ -10,16 +10,17 @@ pub use crate::operation::get_queue_attributes::_get_queue_attributes_input::Get
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetQueueAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_queue_attributes::builders::GetQueueAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_queue_attributes::builders::GetQueueAttributesInputBuilder,
+}
 impl GetQueueAttributesFluentBuilder  {
     /// Creates a new `GetQueueAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_queue_attributes::GetQueueAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

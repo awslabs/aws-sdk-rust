@@ -12,16 +12,17 @@ pub use crate::operation::create_presigned_notebook_instance_url::_create_presig
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePresignedNotebookInstanceUrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_presigned_notebook_instance_url::builders::CreatePresignedNotebookInstanceUrlInputBuilder,
+}
 impl CreatePresignedNotebookInstanceUrlFluentBuilder  {
     /// Creates a new `CreatePresignedNotebookInstanceUrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrl, aws_http::retry::AwsResponseRetryClassifier,>,

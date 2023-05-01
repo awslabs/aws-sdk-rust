@@ -9,16 +9,17 @@ pub use crate::operation::associate_custom_domain::_associate_custom_domain_inpu
 /// <p>After you call <code>AssociateCustomDomain</code> and receive a successful response, use the information in the <code>CustomDomain</code> record that's returned to add CNAME records to your Domain Name System (DNS). For each mapped domain name, add a mapping to the target App Runner subdomain and one or more certificate validation records. App Runner then performs DNS validation to verify that you own or control the domain name that you associated. App Runner tracks domain validity in a certificate stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS Certificate Manager (ACM)</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateCustomDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_custom_domain::builders::AssociateCustomDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_custom_domain::builders::AssociateCustomDomainInputBuilder,
+}
 impl AssociateCustomDomainFluentBuilder  {
     /// Creates a new `AssociateCustomDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_custom_domain::AssociateCustomDomain, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -13,16 +13,17 @@ pub use crate::operation::get_segment_detection::_get_segment_detection_input::G
 /// <p>For more information, see Detecting video segments in stored video in the Amazon Rekognition Developer Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSegmentDetectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_segment_detection::builders::GetSegmentDetectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_segment_detection::builders::GetSegmentDetectionInputBuilder,
+}
 impl GetSegmentDetectionFluentBuilder  {
     /// Creates a new `GetSegmentDetection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_segment_detection::GetSegmentDetection, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -53,11 +54,11 @@ impl GetSegmentDetectionFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator {
-                            crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator {
+                                crate::operation::get_segment_detection::paginator::GetSegmentDetectionPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartSegmentDetection</code>.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::update_placement::_update_placement_input::UpdatePlace
 /// <p>Updates a placement with the given attributes. To clear an attribute, pass an empty value (i.e., "").</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePlacementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_placement::builders::UpdatePlacementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_placement::builders::UpdatePlacementInputBuilder,
+}
 impl UpdatePlacementFluentBuilder  {
     /// Creates a new `UpdatePlacement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_placement::UpdatePlacement, aws_http::retry::AwsResponseRetryClassifier,>,

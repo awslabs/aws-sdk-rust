@@ -9,16 +9,17 @@ pub use crate::operation::start_stream_processor::_start_stream_processor_input:
 /// <p>If you are using a label detection stream processor to detect labels, you need to provide a <code>Start selector</code> and a <code>Stop selector</code> to determine the length of the stream processing time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartStreamProcessorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_stream_processor::builders::StartStreamProcessorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_stream_processor::builders::StartStreamProcessorInputBuilder,
+}
 impl StartStreamProcessorFluentBuilder  {
     /// Creates a new `StartStreamProcessor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_stream_processor::StartStreamProcessor, aws_http::retry::AwsResponseRetryClassifier,>,

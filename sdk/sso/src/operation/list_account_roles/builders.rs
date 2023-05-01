@@ -8,16 +8,17 @@ pub use crate::operation::list_account_roles::_list_account_roles_input::ListAcc
 /// <p>Lists all roles that are assigned to the user for a given AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccountRolesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_account_roles::builders::ListAccountRolesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_account_roles::builders::ListAccountRolesInputBuilder,
+}
 impl ListAccountRolesFluentBuilder  {
     /// Creates a new `ListAccountRoles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_account_roles::ListAccountRoles, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAccountRolesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_account_roles::paginator::ListAccountRolesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_account_roles::paginator::ListAccountRolesPaginator {
-                            crate::operation::list_account_roles::paginator::ListAccountRolesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_account_roles::paginator::ListAccountRolesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_account_roles::paginator::ListAccountRolesPaginator {
+                                crate::operation::list_account_roles::paginator::ListAccountRolesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The page token from the previous response output when you request subsequent pages.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

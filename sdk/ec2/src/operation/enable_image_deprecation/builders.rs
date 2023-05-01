@@ -9,16 +9,17 @@ pub use crate::operation::enable_image_deprecation::_enable_image_deprecation_in
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableImageDeprecationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_image_deprecation::builders::EnableImageDeprecationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_image_deprecation::builders::EnableImageDeprecationInputBuilder,
+}
 impl EnableImageDeprecationFluentBuilder  {
     /// Creates a new `EnableImageDeprecation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_image_deprecation::EnableImageDeprecation, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_from_administrator_account::_disassociate
 /// <p>This operation is only used by accounts that are not part of an organization. For organization accounts, only the administrator account can disassociate a member account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateFromAdministratorAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountInputBuilder,
+}
 impl DisassociateFromAdministratorAccountFluentBuilder  {
     /// Creates a new `DisassociateFromAdministratorAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccount, aws_http::retry::AwsResponseRetryClassifier,>,

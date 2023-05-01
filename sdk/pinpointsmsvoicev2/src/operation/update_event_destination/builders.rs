@@ -9,16 +9,17 @@ pub use crate::operation::update_event_destination::_update_event_destination_in
 /// <p>You may want to update an event destination to change its matching event types or updating the destination resource ARN. You can't change an event destination's type between CloudWatch Logs, Kinesis Data Firehose, and Amazon SNS.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEventDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder,
+}
 impl UpdateEventDestinationFluentBuilder  {
     /// Creates a new `UpdateEventDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_event_destination::UpdateEventDestination, aws_http::retry::AwsResponseRetryClassifier,>,

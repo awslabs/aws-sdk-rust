@@ -8,16 +8,17 @@ pub use crate::operation::phone_number_validate::_phone_number_validate_input::P
 /// <p>Retrieves information about a phone number.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PhoneNumberValidateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::phone_number_validate::builders::PhoneNumberValidateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::phone_number_validate::builders::PhoneNumberValidateInputBuilder,
+}
 impl PhoneNumberValidateFluentBuilder  {
     /// Creates a new `PhoneNumberValidate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::phone_number_validate::PhoneNumberValidate, aws_http::retry::AwsResponseRetryClassifier,>,

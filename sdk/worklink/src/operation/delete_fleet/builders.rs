@@ -9,16 +9,17 @@ pub use crate::operation::delete_fleet::_delete_fleet_input::DeleteFleetInputBui
 #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFleetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_fleet::builders::DeleteFleetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_fleet::builders::DeleteFleetInputBuilder,
+}
 impl DeleteFleetFluentBuilder  {
     /// Creates a new `DeleteFleet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_fleet::DeleteFleet, aws_http::retry::AwsResponseRetryClassifier,>,

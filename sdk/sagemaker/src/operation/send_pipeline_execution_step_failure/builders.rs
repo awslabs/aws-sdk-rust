@@ -8,16 +8,17 @@ pub use crate::operation::send_pipeline_execution_step_failure::_send_pipeline_e
 /// <p>Notifies the pipeline that the execution of a callback step failed, along with a message describing why. When a callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendPipelineExecutionStepFailureFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_pipeline_execution_step_failure::builders::SendPipelineExecutionStepFailureInputBuilder,
+}
 impl SendPipelineExecutionStepFailureFluentBuilder  {
     /// Creates a new `SendPipelineExecutionStepFailure`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailure, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -14,16 +14,17 @@ pub use crate::operation::create_layout::_create_layout_input::CreateLayoutInput
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLayoutFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_layout::builders::CreateLayoutInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_layout::builders::CreateLayoutInputBuilder,
+}
 impl CreateLayoutFluentBuilder  {
     /// Creates a new `CreateLayout`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_layout::CreateLayout, aws_http::retry::AwsResponseRetryClassifier,>,

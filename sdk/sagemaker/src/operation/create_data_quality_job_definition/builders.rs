@@ -8,16 +8,17 @@ pub use crate::operation::create_data_quality_job_definition::_create_data_quali
 /// <p>Creates a definition for a job that monitors data quality and drift. For information about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDataQualityJobDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_data_quality_job_definition::builders::CreateDataQualityJobDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_data_quality_job_definition::builders::CreateDataQualityJobDefinitionInputBuilder,
+}
 impl CreateDataQualityJobDefinitionFluentBuilder  {
     /// Creates a new `CreateDataQualityJobDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

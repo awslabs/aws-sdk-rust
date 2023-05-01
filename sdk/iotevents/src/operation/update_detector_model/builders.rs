@@ -8,16 +8,17 @@ pub use crate::operation::update_detector_model::_update_detector_model_input::U
 /// <p>Updates a detector model. Detectors (instances) spawned by the previous version are deleted and then re-created as new inputs arrive.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDetectorModelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_detector_model::builders::UpdateDetectorModelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_detector_model::builders::UpdateDetectorModelInputBuilder,
+}
 impl UpdateDetectorModelFluentBuilder  {
     /// Creates a new `UpdateDetectorModel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_detector_model::UpdateDetectorModel, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -11,16 +11,17 @@ pub use crate::operation::get_compliance_summary::_get_compliance_summary_input:
 /// <p>This operation supports pagination, where the response can be sent in multiple pages. You should check the <code>PaginationToken</code> response parameter to determine if there are additional results available to return. Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that there are no more results waiting to be returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetComplianceSummaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_compliance_summary::builders::GetComplianceSummaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_compliance_summary::builders::GetComplianceSummaryInputBuilder,
+}
 impl GetComplianceSummaryFluentBuilder  {
     /// Creates a new `GetComplianceSummary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_compliance_summary::GetComplianceSummary, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl GetComplianceSummaryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator {
-                            crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator {
+                                crate::operation::get_compliance_summary::paginator::GetComplianceSummaryPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TargetIdFilters`.
     ///
     /// To override the contents of this collection use [`set_target_id_filters`](Self::set_target_id_filters).

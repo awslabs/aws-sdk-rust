@@ -8,16 +8,17 @@ pub use crate::operation::accept_direct_connect_gateway_association_proposal::_a
 /// <p>Accepts a proposal request to attach a virtual private gateway or transit gateway to a Direct Connect gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptDirectConnectGatewayAssociationProposalFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_direct_connect_gateway_association_proposal::builders::AcceptDirectConnectGatewayAssociationProposalInputBuilder,
+}
 impl AcceptDirectConnectGatewayAssociationProposalFluentBuilder  {
     /// Creates a new `AcceptDirectConnectGatewayAssociationProposal`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposal, aws_http::retry::AwsResponseRetryClassifier,>,

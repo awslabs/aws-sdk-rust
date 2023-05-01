@@ -8,16 +8,17 @@ pub use crate::operation::describe_global_clusters::_describe_global_clusters_in
 /// <p>Returns information about Neptune global database clusters. This API supports pagination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGlobalClustersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_global_clusters::builders::DescribeGlobalClustersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_global_clusters::builders::DescribeGlobalClustersInputBuilder,
+}
 impl DescribeGlobalClustersFluentBuilder  {
     /// Creates a new `DescribeGlobalClusters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_global_clusters::DescribeGlobalClusters, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeGlobalClustersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator {
-                            crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator {
+                                crate::operation::describe_global_clusters::paginator::DescribeGlobalClustersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p> 
     /// <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
     pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {

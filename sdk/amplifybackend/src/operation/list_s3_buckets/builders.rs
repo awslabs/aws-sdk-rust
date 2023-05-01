@@ -8,16 +8,17 @@ pub use crate::operation::list_s3_buckets::_list_s3_buckets_input::ListS3Buckets
 /// <p>The list of S3 buckets in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListS3BucketsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_s3_buckets::builders::ListS3BucketsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_s3_buckets::builders::ListS3BucketsInputBuilder,
+}
 impl ListS3BucketsFluentBuilder  {
     /// Creates a new `ListS3Buckets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_s3_buckets::ListS3Buckets, aws_http::retry::AwsResponseRetryClassifier,>,

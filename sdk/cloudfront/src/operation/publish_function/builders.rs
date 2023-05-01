@@ -10,16 +10,17 @@ pub use crate::operation::publish_function::_publish_function_input::PublishFunc
 /// <p>To publish a function, you must provide the function's name and version (<code>ETag</code> value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PublishFunctionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::publish_function::builders::PublishFunctionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::publish_function::builders::PublishFunctionInputBuilder,
+}
 impl PublishFunctionFluentBuilder  {
     /// Creates a new `PublishFunction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::publish_function::PublishFunction, aws_http::retry::AwsResponseRetryClassifier,>,

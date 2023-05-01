@@ -15,16 +15,17 @@ pub use crate::operation::update_cluster_config::_update_cluster_config_input::U
 /// <p>Cluster updates are asynchronous, and they should finish within a few minutes. During an update, the cluster status moves to <code>UPDATING</code> (this status transition is eventually consistent). When the update is complete (either <code>Failed</code> or <code>Successful</code>), the cluster status moves to <code>Active</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateClusterConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_cluster_config::builders::UpdateClusterConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_cluster_config::builders::UpdateClusterConfigInputBuilder,
+}
 impl UpdateClusterConfigFluentBuilder  {
     /// Creates a new `UpdateClusterConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_cluster_config::UpdateClusterConfig, aws_http::retry::AwsResponseRetryClassifier,>,

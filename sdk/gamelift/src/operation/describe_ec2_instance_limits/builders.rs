@@ -22,16 +22,17 @@ pub use crate::operation::describe_ec2_instance_limits::_describe_ec2_instance_l
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEC2InstanceLimitsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_ec2_instance_limits::builders::DescribeEc2InstanceLimitsInputBuilder,
+}
 impl DescribeEC2InstanceLimitsFluentBuilder  {
     /// Creates a new `DescribeEC2InstanceLimits`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimits, aws_http::retry::AwsResponseRetryClassifier,>,

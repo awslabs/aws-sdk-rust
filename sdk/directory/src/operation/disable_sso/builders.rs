@@ -8,16 +8,17 @@ pub use crate::operation::disable_sso::_disable_sso_input::DisableSsoInputBuilde
 /// <p>Disables single-sign on for a directory.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableSsoFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_sso::builders::DisableSsoInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_sso::builders::DisableSsoInputBuilder,
+}
 impl DisableSsoFluentBuilder  {
     /// Creates a new `DisableSso`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_sso::DisableSso, aws_http::retry::AwsResponseRetryClassifier,>,

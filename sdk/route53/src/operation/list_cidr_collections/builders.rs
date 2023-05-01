@@ -8,16 +8,17 @@ pub use crate::operation::list_cidr_collections::_list_cidr_collections_input::L
 /// <p>Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata only).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCidrCollectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_cidr_collections::builders::ListCidrCollectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_cidr_collections::builders::ListCidrCollectionsInputBuilder,
+}
 impl ListCidrCollectionsFluentBuilder  {
     /// Creates a new `ListCidrCollections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_cidr_collections::ListCidrCollections, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCidrCollectionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator {
-                            crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator {
+                                crate::operation::list_cidr_collections::paginator::ListCidrCollectionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p> 
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {

@@ -8,16 +8,17 @@ pub use crate::operation::create_connect_peer::_create_connect_peer_input::Creat
 /// <p>Creates a core network Connect peer for a specified core network connect attachment between a core network and an appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConnectPeerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_connect_peer::builders::CreateConnectPeerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_connect_peer::builders::CreateConnectPeerInputBuilder,
+}
 impl CreateConnectPeerFluentBuilder  {
     /// Creates a new `CreateConnectPeer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_connect_peer::CreateConnectPeer, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::import_migration_task::_import_migration_task_input::I
 /// <p>This API is a prerequisite to calling the <code>NotifyMigrationTaskState</code> API as the migration tool must first register the migration task with Migration Hub.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportMigrationTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_migration_task::builders::ImportMigrationTaskInputBuilder,
+}
 impl ImportMigrationTaskFluentBuilder  {
     /// Creates a new `ImportMigrationTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_migration_task::ImportMigrationTask, aws_http::retry::AwsResponseRetryClassifier,>,

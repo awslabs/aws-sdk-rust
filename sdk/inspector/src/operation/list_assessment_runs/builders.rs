@@ -8,16 +8,17 @@ pub use crate::operation::list_assessment_runs::_list_assessment_runs_input::Lis
 /// <p>Lists the assessment runs that correspond to the assessment templates that are specified by the ARNs of the assessment templates.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssessmentRunsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_assessment_runs::builders::ListAssessmentRunsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_assessment_runs::builders::ListAssessmentRunsInputBuilder,
+}
 impl ListAssessmentRunsFluentBuilder  {
     /// Creates a new `ListAssessmentRuns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_assessment_runs::ListAssessmentRuns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAssessmentRunsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_runs::paginator::ListAssessmentRunsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_assessment_runs::paginator::ListAssessmentRunsPaginator {
-                            crate::operation::list_assessment_runs::paginator::ListAssessmentRunsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_runs::paginator::ListAssessmentRunsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_assessment_runs::paginator::ListAssessmentRunsPaginator {
+                                crate::operation::list_assessment_runs::paginator::ListAssessmentRunsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `assessmentTemplateArns`.
     ///
     /// To override the contents of this collection use [`set_assessment_template_arns`](Self::set_assessment_template_arns).

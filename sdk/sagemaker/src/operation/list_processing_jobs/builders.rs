@@ -8,16 +8,17 @@ pub use crate::operation::list_processing_jobs::_list_processing_jobs_input::Lis
 /// <p>Lists processing jobs that satisfy various filters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProcessingJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_processing_jobs::builders::ListProcessingJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_processing_jobs::builders::ListProcessingJobsInputBuilder,
+}
 impl ListProcessingJobsFluentBuilder  {
     /// Creates a new `ListProcessingJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_processing_jobs::ListProcessingJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListProcessingJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator {
-                            crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator {
+                                crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter that returns only processing jobs created after the specified time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);

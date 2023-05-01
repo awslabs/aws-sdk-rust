@@ -10,16 +10,17 @@ pub use crate::operation::describe_configuration_recorders::_describe_configurat
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConfigurationRecordersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_configuration_recorders::builders::DescribeConfigurationRecordersInputBuilder,
+}
 impl DescribeConfigurationRecordersFluentBuilder  {
     /// Creates a new `DescribeConfigurationRecorders`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_configuration_recorders::DescribeConfigurationRecorders, aws_http::retry::AwsResponseRetryClassifier,>,

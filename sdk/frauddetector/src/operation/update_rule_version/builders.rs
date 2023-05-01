@@ -8,16 +8,17 @@ pub use crate::operation::update_rule_version::_update_rule_version_input::Updat
 /// <p>Updates a rule version resulting in a new rule version. Updates a rule version resulting in a new rule version (version 1, 2, 3 ...). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRuleVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_rule_version::builders::UpdateRuleVersionInputBuilder,
+}
 impl UpdateRuleVersionFluentBuilder  {
     /// Creates a new `UpdateRuleVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_rule_version::UpdateRuleVersion, aws_http::retry::AwsResponseRetryClassifier,>,

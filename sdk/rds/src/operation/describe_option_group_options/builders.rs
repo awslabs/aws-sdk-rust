@@ -8,16 +8,17 @@ pub use crate::operation::describe_option_group_options::_describe_option_group_
 /// <p>Describes all available options.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOptionGroupOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_option_group_options::builders::DescribeOptionGroupOptionsInputBuilder,
+}
 impl DescribeOptionGroupOptionsFluentBuilder  {
     /// Creates a new `DescribeOptionGroupOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_option_group_options::DescribeOptionGroupOptions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeOptionGroupOptionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator {
-                            crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator {
+                                crate::operation::describe_option_group_options::paginator::DescribeOptionGroupOptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A required parameter. Options available for the given engine name are described.</p> 
     /// <p>Valid Values:</p> 
     /// <ul> 

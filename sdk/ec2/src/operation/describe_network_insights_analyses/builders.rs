@@ -8,16 +8,17 @@ pub use crate::operation::describe_network_insights_analyses::_describe_network_
 /// <p>Describes one or more of your network insights analyses.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAnalysesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_network_insights_analyses::builders::DescribeNetworkInsightsAnalysesInputBuilder,
+}
 impl DescribeNetworkInsightsAnalysesFluentBuilder  {
     /// Creates a new `DescribeNetworkInsightsAnalyses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_network_insights_analyses::DescribeNetworkInsightsAnalyses, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeNetworkInsightsAnalysesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_network_insights_analyses::paginator::DescribeNetworkInsightsAnalysesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_network_insights_analyses::paginator::DescribeNetworkInsightsAnalysesPaginator {
-                            crate::operation::describe_network_insights_analyses::paginator::DescribeNetworkInsightsAnalysesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_network_insights_analyses::paginator::DescribeNetworkInsightsAnalysesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_network_insights_analyses::paginator::DescribeNetworkInsightsAnalysesPaginator {
+                                crate::operation::describe_network_insights_analyses::paginator::DescribeNetworkInsightsAnalysesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `NetworkInsightsAnalysisIds`.
     ///
     /// To override the contents of this collection use [`set_network_insights_analysis_ids`](Self::set_network_insights_analysis_ids).

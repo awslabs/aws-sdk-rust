@@ -8,16 +8,17 @@ pub use crate::operation::revoke_flow_entitlement::_revoke_flow_entitlement_inpu
 /// Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the subscriber and the associated output is removed.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RevokeFlowEntitlementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::revoke_flow_entitlement::builders::RevokeFlowEntitlementInputBuilder,
+}
 impl RevokeFlowEntitlementFluentBuilder  {
     /// Creates a new `RevokeFlowEntitlement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::revoke_flow_entitlement::RevokeFlowEntitlement, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::request_service_quota_increase::_request_service_quota
 /// <p>Submits a quota increase request for the specified quota.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RequestServiceQuotaIncreaseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseInputBuilder,
+}
 impl RequestServiceQuotaIncreaseFluentBuilder  {
     /// Creates a new `RequestServiceQuotaIncrease`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::request_service_quota_increase::RequestServiceQuotaIncrease, aws_http::retry::AwsResponseRetryClassifier,>,

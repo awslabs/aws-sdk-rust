@@ -10,16 +10,17 @@ pub use crate::operation::list_channels_moderated_by_app_instance_user::_list_ch
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelsModeratedByAppInstanceUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserInputBuilder,
+}
 impl ListChannelsModeratedByAppInstanceUserFluentBuilder  {
     /// Creates a new `ListChannelsModeratedByAppInstanceUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUser, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListChannelsModeratedByAppInstanceUserFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_channels_moderated_by_app_instance_user::paginator::ListChannelsModeratedByAppInstanceUserPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_channels_moderated_by_app_instance_user::paginator::ListChannelsModeratedByAppInstanceUserPaginator {
-                            crate::operation::list_channels_moderated_by_app_instance_user::paginator::ListChannelsModeratedByAppInstanceUserPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_channels_moderated_by_app_instance_user::paginator::ListChannelsModeratedByAppInstanceUserPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_channels_moderated_by_app_instance_user::paginator::ListChannelsModeratedByAppInstanceUserPaginator {
+                                crate::operation::list_channels_moderated_by_app_instance_user::paginator::ListChannelsModeratedByAppInstanceUserPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the user or bot in the moderated channel.</p>
     pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_instance_user_arn(input.into());

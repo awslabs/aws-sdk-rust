@@ -18,16 +18,17 @@ pub use crate::operation::list_schemas::_list_schemas_input::ListSchemasInputBui
 /// <p>For more information about the Amazon Redshift Data API and CLI usage examples, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSchemasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_schemas::builders::ListSchemasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_schemas::builders::ListSchemasInputBuilder,
+}
 impl ListSchemasFluentBuilder  {
     /// Creates a new `ListSchemas`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_schemas::ListSchemas, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -58,11 +59,11 @@ impl ListSchemasFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_schemas::paginator::ListSchemasPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_schemas::paginator::ListSchemasPaginator {
-                            crate::operation::list_schemas::paginator::ListSchemasPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_schemas::paginator::ListSchemasPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_schemas::paginator::ListSchemasPaginator {
+                                crate::operation::list_schemas::paginator::ListSchemasPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());

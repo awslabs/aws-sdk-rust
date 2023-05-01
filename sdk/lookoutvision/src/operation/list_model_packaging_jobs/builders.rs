@@ -10,16 +10,17 @@ pub use crate::operation::list_model_packaging_jobs::_list_model_packaging_jobs_
 /// <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListModelPackagingJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_model_packaging_jobs::builders::ListModelPackagingJobsInputBuilder,
+}
 impl ListModelPackagingJobsFluentBuilder  {
     /// Creates a new `ListModelPackagingJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_model_packaging_jobs::ListModelPackagingJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListModelPackagingJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator {
-                            crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator {
+                                crate::operation::list_model_packaging_jobs::paginator::ListModelPackagingJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The name of the project for which you want to list the model packaging jobs. </p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());

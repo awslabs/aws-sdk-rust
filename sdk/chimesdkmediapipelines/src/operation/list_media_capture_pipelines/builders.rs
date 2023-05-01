@@ -8,16 +8,17 @@ pub use crate::operation::list_media_capture_pipelines::_list_media_capture_pipe
 /// <p>Returns a list of media pipelines.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMediaCapturePipelinesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_media_capture_pipelines::builders::ListMediaCapturePipelinesInputBuilder,
+}
 impl ListMediaCapturePipelinesFluentBuilder  {
     /// Creates a new `ListMediaCapturePipelines`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_media_capture_pipelines::ListMediaCapturePipelines, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListMediaCapturePipelinesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_media_capture_pipelines::paginator::ListMediaCapturePipelinesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_media_capture_pipelines::paginator::ListMediaCapturePipelinesPaginator {
-                            crate::operation::list_media_capture_pipelines::paginator::ListMediaCapturePipelinesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_media_capture_pipelines::paginator::ListMediaCapturePipelinesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_media_capture_pipelines::paginator::ListMediaCapturePipelinesPaginator {
+                                crate::operation::list_media_capture_pipelines::paginator::ListMediaCapturePipelinesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The token used to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

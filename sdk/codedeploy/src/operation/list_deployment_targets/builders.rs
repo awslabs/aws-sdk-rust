@@ -8,16 +8,17 @@ pub use crate::operation::list_deployment_targets::_list_deployment_targets_inpu
 /// <p> Returns an array of target IDs that are associated a deployment. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeploymentTargetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_deployment_targets::builders::ListDeploymentTargetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_deployment_targets::builders::ListDeploymentTargetsInputBuilder,
+}
 impl ListDeploymentTargetsFluentBuilder  {
     /// Creates a new `ListDeploymentTargets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_deployment_targets::ListDeploymentTargets, aws_http::retry::AwsResponseRetryClassifier,>,

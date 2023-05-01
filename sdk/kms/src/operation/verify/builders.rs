@@ -18,16 +18,17 @@ pub use crate::operation::verify::_verify_input::VerifyInputBuilder;
 /// <p> <b>Related operations</b>: <code>Sign</code> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct VerifyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::verify::builders::VerifyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::verify::builders::VerifyInputBuilder,
+}
 impl VerifyFluentBuilder  {
     /// Creates a new `Verify`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::verify::Verify, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_user_pool_domain::_describe_user_pool_domain_
 /// <p>Gets information about a domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUserPoolDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_user_pool_domain::builders::DescribeUserPoolDomainInputBuilder,
+}
 impl DescribeUserPoolDomainFluentBuilder  {
     /// Creates a new `DescribeUserPoolDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_user_pool_domain::DescribeUserPoolDomain, aws_http::retry::AwsResponseRetryClassifier,>,

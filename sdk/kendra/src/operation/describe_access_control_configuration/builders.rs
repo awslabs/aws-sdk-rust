@@ -8,16 +8,17 @@ pub use crate::operation::describe_access_control_configuration::_describe_acces
 /// <p>Gets information about an access control configuration that you created for your documents in an index. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccessControlConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_access_control_configuration::builders::DescribeAccessControlConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_access_control_configuration::builders::DescribeAccessControlConfigurationInputBuilder,
+}
 impl DescribeAccessControlConfigurationFluentBuilder  {
     /// Creates a new `DescribeAccessControlConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_access_control_configuration::DescribeAccessControlConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

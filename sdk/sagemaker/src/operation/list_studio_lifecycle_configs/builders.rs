@@ -8,16 +8,17 @@ pub use crate::operation::list_studio_lifecycle_configs::_list_studio_lifecycle_
 /// <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStudioLifecycleConfigsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_studio_lifecycle_configs::builders::ListStudioLifecycleConfigsInputBuilder,
+}
 impl ListStudioLifecycleConfigsFluentBuilder  {
     /// Creates a new `ListStudioLifecycleConfigs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListStudioLifecycleConfigsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator {
-                            crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator {
+                                crate::operation::list_studio_lifecycle_configs::paginator::ListStudioLifecycleConfigsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

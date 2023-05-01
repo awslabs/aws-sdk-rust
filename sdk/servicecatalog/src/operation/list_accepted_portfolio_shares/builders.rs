@@ -8,16 +8,17 @@ pub use crate::operation::list_accepted_portfolio_shares::_list_accepted_portfol
 /// <p>Lists all imported portfolios for which account-to-account shares were accepted by this account. By specifying the <code>PortfolioShareType</code>, you can list portfolios for which organizational shares were accepted by this account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAcceptedPortfolioSharesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_accepted_portfolio_shares::builders::ListAcceptedPortfolioSharesInputBuilder,
+}
 impl ListAcceptedPortfolioSharesFluentBuilder  {
     /// Creates a new `ListAcceptedPortfolioShares`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioShares, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAcceptedPortfolioSharesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_accepted_portfolio_shares::paginator::ListAcceptedPortfolioSharesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_accepted_portfolio_shares::paginator::ListAcceptedPortfolioSharesPaginator {
-                            crate::operation::list_accepted_portfolio_shares::paginator::ListAcceptedPortfolioSharesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_accepted_portfolio_shares::paginator::ListAcceptedPortfolioSharesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_accepted_portfolio_shares::paginator::ListAcceptedPortfolioSharesPaginator {
+                                crate::operation::list_accepted_portfolio_shares::paginator::ListAcceptedPortfolioSharesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The language code.</p> 
     /// <ul> 
     /// <li> <p> <code>jp</code> - Japanese</p> </li> 

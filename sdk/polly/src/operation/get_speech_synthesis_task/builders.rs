@@ -8,16 +8,17 @@ pub use crate::operation::get_speech_synthesis_task::_get_speech_synthesis_task_
 /// <p>Retrieves a specific SpeechSynthesisTask object based on its TaskID. This object contains information about the given speech synthesis task, including the status of the task, and a link to the S3 bucket containing the output of the task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSpeechSynthesisTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_speech_synthesis_task::builders::GetSpeechSynthesisTaskInputBuilder,
+}
 impl GetSpeechSynthesisTaskFluentBuilder  {
     /// Creates a new `GetSpeechSynthesisTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTask, aws_http::retry::AwsResponseRetryClassifier,>,

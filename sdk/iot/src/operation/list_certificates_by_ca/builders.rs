@@ -9,16 +9,17 @@ pub use crate::operation::list_certificates_by_ca::_list_certificates_by_ca_inpu
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificatesByCA</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCertificatesByCAFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_certificates_by_ca::builders::ListCertificatesByCaInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_certificates_by_ca::builders::ListCertificatesByCaInputBuilder,
+}
 impl ListCertificatesByCAFluentBuilder  {
     /// Creates a new `ListCertificatesByCA`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_certificates_by_ca::ListCertificatesByCA, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListCertificatesByCAFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_certificates_by_ca::paginator::ListCertificatesByCaPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_certificates_by_ca::paginator::ListCertificatesByCaPaginator {
-                            crate::operation::list_certificates_by_ca::paginator::ListCertificatesByCaPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_certificates_by_ca::paginator::ListCertificatesByCaPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_certificates_by_ca::paginator::ListCertificatesByCaPaginator {
+                                crate::operation::list_certificates_by_ca::paginator::ListCertificatesByCaPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.</p>
     pub fn ca_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ca_certificate_id(input.into());

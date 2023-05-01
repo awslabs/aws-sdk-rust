@@ -8,16 +8,17 @@ pub use crate::operation::start_resource_scan::_start_resource_scan_input::Start
 /// <p>Immediately starts a scan of the policies applied to the specified resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartResourceScanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_resource_scan::builders::StartResourceScanInputBuilder,
+}
 impl StartResourceScanFluentBuilder  {
     /// Creates a new `StartResourceScan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_resource_scan::StartResourceScan, aws_http::retry::AwsResponseRetryClassifier,>,

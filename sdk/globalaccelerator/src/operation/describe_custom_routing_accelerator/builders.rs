@@ -8,16 +8,17 @@ pub use crate::operation::describe_custom_routing_accelerator::_describe_custom_
 /// <p>Describe a custom routing accelerator. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCustomRoutingAcceleratorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_custom_routing_accelerator::builders::DescribeCustomRoutingAcceleratorInputBuilder,
+}
 impl DescribeCustomRoutingAcceleratorFluentBuilder  {
     /// Creates a new `DescribeCustomRoutingAccelerator`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_custom_routing_accelerator::DescribeCustomRoutingAccelerator, aws_http::retry::AwsResponseRetryClassifier,>,

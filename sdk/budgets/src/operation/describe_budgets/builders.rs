@@ -10,16 +10,17 @@ pub use crate::operation::describe_budgets::_describe_budgets_input::DescribeBud
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBudgetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_budgets::builders::DescribeBudgetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_budgets::builders::DescribeBudgetsInputBuilder,
+}
 impl DescribeBudgetsFluentBuilder  {
     /// Creates a new `DescribeBudgets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_budgets::DescribeBudgets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeBudgetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_budgets::paginator::DescribeBudgetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_budgets::paginator::DescribeBudgetsPaginator {
-                            crate::operation::describe_budgets::paginator::DescribeBudgetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_budgets::paginator::DescribeBudgetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_budgets::paginator::DescribeBudgetsPaginator {
+                                crate::operation::describe_budgets::paginator::DescribeBudgetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());

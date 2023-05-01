@@ -9,16 +9,17 @@ pub use crate::operation::list_query_logging_configs::_list_query_logging_config
 /// <p>For more information about DNS query logs, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>. Additional information, including the format of DNS query logs, appears in <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging DNS Queries</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListQueryLoggingConfigsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsInputBuilder,
+}
 impl ListQueryLoggingConfigsFluentBuilder  {
     /// Creates a new `ListQueryLoggingConfigs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_query_logging_configs::ListQueryLoggingConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListQueryLoggingConfigsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_query_logging_configs::paginator::ListQueryLoggingConfigsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_query_logging_configs::paginator::ListQueryLoggingConfigsPaginator {
-                            crate::operation::list_query_logging_configs::paginator::ListQueryLoggingConfigsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_query_logging_configs::paginator::ListQueryLoggingConfigsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_query_logging_configs::paginator::ListQueryLoggingConfigsPaginator {
+                                crate::operation::list_query_logging_configs::paginator::ListQueryLoggingConfigsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p> 
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations that are associated with the current Amazon Web Services account.</p>
     pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {

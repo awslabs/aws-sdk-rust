@@ -8,16 +8,17 @@ pub use crate::operation::stop_query::_stop_query_input::StopQueryInputBuilder;
 /// <p>Stops a CloudWatch Logs Insights query that is in progress. If the query has already ended, the operation returns an error indicating that the specified query is not running.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopQueryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_query::builders::StopQueryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_query::builders::StopQueryInputBuilder,
+}
 impl StopQueryFluentBuilder  {
     /// Creates a new `StopQuery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_query::StopQuery, aws_http::retry::AwsResponseRetryClassifier,>,

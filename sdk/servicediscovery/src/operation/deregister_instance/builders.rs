@@ -8,16 +8,17 @@ pub use crate::operation::deregister_instance::_deregister_instance_input::Dereg
 /// <p>Deletes the Amazon Route&nbsp;53 DNS records and health check, if any, that Cloud Map created for the specified instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_instance::builders::DeregisterInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_instance::builders::DeregisterInstanceInputBuilder,
+}
 impl DeregisterInstanceFluentBuilder  {
     /// Creates a new `DeregisterInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_instance::DeregisterInstance, aws_http::retry::AwsResponseRetryClassifier,>,

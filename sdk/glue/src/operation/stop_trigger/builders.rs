@@ -8,16 +8,17 @@ pub use crate::operation::stop_trigger::_stop_trigger_input::StopTriggerInputBui
 /// <p>Stops a specified trigger.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopTriggerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_trigger::builders::StopTriggerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_trigger::builders::StopTriggerInputBuilder,
+}
 impl StopTriggerFluentBuilder  {
     /// Creates a new `StopTrigger`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_trigger::StopTrigger, aws_http::retry::AwsResponseRetryClassifier,>,

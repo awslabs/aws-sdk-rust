@@ -8,16 +8,17 @@ pub use crate::operation::release_file_system_nfs_v3_locks::_release_file_system
 /// <p>Releases the file system lock from an Amazon FSx for OpenZFS file system.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReleaseFileSystemNfsV3LocksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::release_file_system_nfs_v3_locks::builders::ReleaseFileSystemNfsV3LocksInputBuilder,
+}
 impl ReleaseFileSystemNfsV3LocksFluentBuilder  {
     /// Creates a new `ReleaseFileSystemNfsV3Locks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3Locks, aws_http::retry::AwsResponseRetryClassifier,>,

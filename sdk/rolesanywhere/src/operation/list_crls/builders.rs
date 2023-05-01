@@ -9,16 +9,17 @@ pub use crate::operation::list_crls::_list_crls_input::ListCrlsInputBuilder;
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:ListCrls</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCrlsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_crls::builders::ListCrlsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_crls::builders::ListCrlsInputBuilder,
+}
 impl ListCrlsFluentBuilder  {
     /// Creates a new `ListCrls`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_crls::ListCrls, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListCrlsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_crls::paginator::ListCrlsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_crls::paginator::ListCrlsPaginator {
-                            crate::operation::list_crls::paginator::ListCrlsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_crls::paginator::ListCrlsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_crls::paginator::ListCrlsPaginator {
+                                crate::operation::list_crls::paginator::ListCrlsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token that indicates where the output should continue from, if a previous operation did not show all results. To get the next results, call the operation again with this value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

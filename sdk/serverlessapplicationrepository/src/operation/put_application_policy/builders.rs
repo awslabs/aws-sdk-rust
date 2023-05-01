@@ -8,16 +8,17 @@ pub use crate::operation::put_application_policy::_put_application_policy_input:
 /// <p>Sets the permission policy for an application. For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a> .</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutApplicationPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_application_policy::builders::PutApplicationPolicyInputBuilder,
+}
 impl PutApplicationPolicyFluentBuilder  {
     /// Creates a new `PutApplicationPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_application_policy::PutApplicationPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

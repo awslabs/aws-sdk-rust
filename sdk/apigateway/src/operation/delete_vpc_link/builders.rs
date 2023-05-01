@@ -8,16 +8,17 @@ pub use crate::operation::delete_vpc_link::_delete_vpc_link_input::DeleteVpcLink
 /// <p>Deletes an existing VpcLink of a specified identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpcLinkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vpc_link::builders::DeleteVpcLinkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vpc_link::builders::DeleteVpcLinkInputBuilder,
+}
 impl DeleteVpcLinkFluentBuilder  {
     /// Creates a new `DeleteVpcLink`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vpc_link::DeleteVpcLink, aws_http::retry::AwsResponseRetryClassifier,>,

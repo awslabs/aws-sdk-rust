@@ -9,16 +9,17 @@ pub use crate::operation::get_function_configuration::_get_function_configuratio
 /// <p>To get all of a function's details, including function-level settings, use <code>GetFunction</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFunctionConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_function_configuration::builders::GetFunctionConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_function_configuration::builders::GetFunctionConfigurationInputBuilder,
+}
 impl GetFunctionConfigurationFluentBuilder  {
     /// Creates a new `GetFunctionConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_function_configuration::GetFunctionConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

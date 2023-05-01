@@ -18,16 +18,17 @@ pub use crate::operation::detect_stack_set_drift::_detect_stack_set_drift_input:
 /// <p>To stop a drift detection stack set operation, use <code> <code>StopStackSetOperation</code> </code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectStackSetDriftFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder,
+}
 impl DetectStackSetDriftFluentBuilder  {
     /// Creates a new `DetectStackSetDrift`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_stack_set_drift::DetectStackSetDrift, aws_http::retry::AwsResponseRetryClassifier,>,

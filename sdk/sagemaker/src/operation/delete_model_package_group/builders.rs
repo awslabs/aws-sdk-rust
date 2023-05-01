@@ -8,16 +8,17 @@ pub use crate::operation::delete_model_package_group::_delete_model_package_grou
 /// <p>Deletes the specified model group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteModelPackageGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_model_package_group::builders::DeleteModelPackageGroupInputBuilder,
+}
 impl DeleteModelPackageGroupFluentBuilder  {
     /// Creates a new `DeleteModelPackageGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_model_package_group::DeleteModelPackageGroup, aws_http::retry::AwsResponseRetryClassifier,>,

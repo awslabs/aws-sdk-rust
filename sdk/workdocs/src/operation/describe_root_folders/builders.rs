@@ -9,16 +9,17 @@ pub use crate::operation::describe_root_folders::_describe_root_folders_input::D
 /// <p>This action requires an authentication token. To get an authentication token, register an application with Amazon WorkDocs. For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRootFoldersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_root_folders::builders::DescribeRootFoldersInputBuilder,
+}
 impl DescribeRootFoldersFluentBuilder  {
     /// Creates a new `DescribeRootFolders`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_root_folders::DescribeRootFolders, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeRootFoldersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator {
-                            crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator {
+                                crate::operation::describe_root_folders::paginator::DescribeRootFoldersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Amazon WorkDocs authentication token.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());

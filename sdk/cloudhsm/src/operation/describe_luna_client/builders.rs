@@ -10,16 +10,17 @@ pub use crate::operation::describe_luna_client::_describe_luna_client_input::Des
 /// <p>Retrieves information about an HSM client.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLunaClientFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_luna_client::builders::DescribeLunaClientInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_luna_client::builders::DescribeLunaClientInputBuilder,
+}
 impl DescribeLunaClientFluentBuilder  {
     /// Creates a new `DescribeLunaClient`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_luna_client::DescribeLunaClient, aws_http::retry::AwsResponseRetryClassifier,>,

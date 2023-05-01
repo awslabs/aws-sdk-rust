@@ -8,16 +8,17 @@ pub use crate::operation::create_verified_access_trust_provider::_create_verifie
 /// <p>A trust provider is a third-party entity that creates, maintains, and manages identity information for users and devices. When an application request is made, the identity information sent by the trust provider is evaluated by Verified Access before allowing or denying the application request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVerifiedAccessTrustProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_verified_access_trust_provider::builders::CreateVerifiedAccessTrustProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_verified_access_trust_provider::builders::CreateVerifiedAccessTrustProviderInputBuilder,
+}
 impl CreateVerifiedAccessTrustProviderFluentBuilder  {
     /// Creates a new `CreateVerifiedAccessTrustProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProvider, aws_http::retry::AwsResponseRetryClassifier,>,

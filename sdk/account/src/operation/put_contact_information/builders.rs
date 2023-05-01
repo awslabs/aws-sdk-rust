@@ -9,16 +9,17 @@ pub use crate::operation::put_contact_information::_put_contact_information_inpu
 /// <p>For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact.html">Update the primary and alternate contact information</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutContactInformationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_contact_information::builders::PutContactInformationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_contact_information::builders::PutContactInformationInputBuilder,
+}
 impl PutContactInformationFluentBuilder  {
     /// Creates a new `PutContactInformation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_contact_information::PutContactInformation, aws_http::retry::AwsResponseRetryClassifier,>,

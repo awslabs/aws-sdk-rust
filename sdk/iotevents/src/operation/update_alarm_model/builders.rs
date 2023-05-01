@@ -8,16 +8,17 @@ pub use crate::operation::update_alarm_model::_update_alarm_model_input::UpdateA
 /// <p>Updates an alarm model. Any alarms that were created based on the previous version are deleted and then created again as new data arrives.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAlarmModelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder,
+}
 impl UpdateAlarmModelFluentBuilder  {
     /// Creates a new `UpdateAlarmModel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_alarm_model::UpdateAlarmModel, aws_http::retry::AwsResponseRetryClassifier,>,

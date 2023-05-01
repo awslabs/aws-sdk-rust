@@ -8,16 +8,17 @@ pub use crate::operation::get_resource_position::_get_resource_position_input::G
 /// <p>Get the position information for a given wireless device or a wireless gateway resource. The position information uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourcePositionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_resource_position::builders::GetResourcePositionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_resource_position::builders::GetResourcePositionInputBuilder,
+}
 impl GetResourcePositionFluentBuilder  {
     /// Creates a new `GetResourcePosition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_resource_position::GetResourcePosition, aws_http::retry::AwsResponseRetryClassifier,>,

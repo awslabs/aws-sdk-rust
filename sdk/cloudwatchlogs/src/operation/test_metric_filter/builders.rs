@@ -8,16 +8,17 @@ pub use crate::operation::test_metric_filter::_test_metric_filter_input::TestMet
 /// <p>Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to validate the correctness of a metric filter pattern.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TestMetricFilterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::test_metric_filter::builders::TestMetricFilterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::test_metric_filter::builders::TestMetricFilterInputBuilder,
+}
 impl TestMetricFilterFluentBuilder  {
     /// Creates a new `TestMetricFilter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::test_metric_filter::TestMetricFilter, aws_http::retry::AwsResponseRetryClassifier,>,

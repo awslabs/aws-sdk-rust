@@ -8,16 +8,17 @@ pub use crate::operation::list_vpc_endpoints::_list_vpc_endpoints_input::ListVpc
 /// <p>Returns the OpenSearch Serverless-managed interface VPC endpoints associated with the current account. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon OpenSearch Serverless using an interface endpoint</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVpcEndpointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_vpc_endpoints::builders::ListVpcEndpointsInputBuilder,
+}
 impl ListVpcEndpointsFluentBuilder  {
     /// Creates a new `ListVpcEndpoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_vpc_endpoints::ListVpcEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListVpcEndpointsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator {
-                            crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator {
+                                crate::operation::list_vpc_endpoints::paginator::ListVpcEndpointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Filter the results according to the current status of the VPC endpoint. Possible statuses are <code>CREATING</code>, <code>DELETING</code>, <code>UPDATING</code>, <code>ACTIVE</code>, and <code>FAILED</code>.</p>
     pub fn vpc_endpoint_filters(mut self, input: crate::types::VpcEndpointFilters) -> Self {
         self.inner = self.inner.vpc_endpoint_filters(input);

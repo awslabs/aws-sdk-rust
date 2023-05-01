@@ -8,16 +8,17 @@ pub use crate::operation::create_vpc_attachment::_create_vpc_attachment_input::C
 /// <p>Creates a VPC attachment on an edge location of a core network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVpcAttachmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_vpc_attachment::builders::CreateVpcAttachmentInputBuilder,
+}
 impl CreateVpcAttachmentFluentBuilder  {
     /// Creates a new `CreateVpcAttachment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_vpc_attachment::CreateVpcAttachment, aws_http::retry::AwsResponseRetryClassifier,>,

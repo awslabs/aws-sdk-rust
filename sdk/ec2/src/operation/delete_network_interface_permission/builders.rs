@@ -8,16 +8,17 @@ pub use crate::operation::delete_network_interface_permission::_delete_network_i
 /// <p>Deletes a permission for a network interface. By default, you cannot delete the permission if the account for which you're removing the permission has attached the network interface to an instance. However, you can force delete the permission, regardless of any attachment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNetworkInterfacePermissionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_network_interface_permission::builders::DeleteNetworkInterfacePermissionInputBuilder,
+}
 impl DeleteNetworkInterfacePermissionFluentBuilder  {
     /// Creates a new `DeleteNetworkInterfacePermission`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermission, aws_http::retry::AwsResponseRetryClassifier,>,

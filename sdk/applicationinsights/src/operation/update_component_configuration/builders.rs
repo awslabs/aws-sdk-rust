@@ -8,16 +8,17 @@ pub use crate::operation::update_component_configuration::_update_component_conf
 /// <p>Updates the monitoring configurations for the component. The configuration input parameter is an escaped JSON of the configuration and should match the schema of what is returned by <code>DescribeComponentConfigurationRecommendation</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateComponentConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_component_configuration::builders::UpdateComponentConfigurationInputBuilder,
+}
 impl UpdateComponentConfigurationFluentBuilder  {
     /// Creates a new `UpdateComponentConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_component_configuration::UpdateComponentConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

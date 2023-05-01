@@ -8,16 +8,17 @@ pub use crate::operation::list_log_subscriptions::_list_log_subscriptions_input:
 /// <p>Lists the active log subscriptions for the Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLogSubscriptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_log_subscriptions::builders::ListLogSubscriptionsInputBuilder,
+}
 impl ListLogSubscriptionsFluentBuilder  {
     /// Creates a new `ListLogSubscriptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_log_subscriptions::ListLogSubscriptions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListLogSubscriptionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator {
-                            crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator {
+                                crate::operation::list_log_subscriptions::paginator::ListLogSubscriptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription associated with that directory. If no <i>DirectoryId</i> is provided, lists all log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the Amazon Web Services account or the directory, an empty list will be returned.</p>
     pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());

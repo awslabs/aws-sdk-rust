@@ -8,16 +8,17 @@ pub use crate::operation::batch_apply_update_action::_batch_apply_update_action_
 /// <p>Apply the service update. For more information on service updates and applying them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying Service Updates</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchApplyUpdateActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_apply_update_action::builders::BatchApplyUpdateActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_apply_update_action::builders::BatchApplyUpdateActionInputBuilder,
+}
 impl BatchApplyUpdateActionFluentBuilder  {
     /// Creates a new `BatchApplyUpdateAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_apply_update_action::BatchApplyUpdateAction, aws_http::retry::AwsResponseRetryClassifier,>,

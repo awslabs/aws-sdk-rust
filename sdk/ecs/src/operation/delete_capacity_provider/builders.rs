@@ -11,16 +11,17 @@ pub use crate::operation::delete_capacity_provider::_delete_capacity_provider_in
 /// <p>Prior to a capacity provider being deleted, the capacity provider must be removed from the capacity provider strategy from all services. The <code>UpdateService</code> API can be used to remove a capacity provider from a service's capacity provider strategy. When updating a service, the <code>forceNewDeployment</code> option can be used to ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity provider are transitioned to use the capacity from the remaining capacity providers. Only capacity providers that aren't associated with a cluster can be deleted. To remove a capacity provider from a cluster, you can either use <code>PutClusterCapacityProviders</code> or delete the cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCapacityProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderInputBuilder,
+}
 impl DeleteCapacityProviderFluentBuilder  {
     /// Creates a new `DeleteCapacityProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_capacity_provider::DeleteCapacityProvider, aws_http::retry::AwsResponseRetryClassifier,>,

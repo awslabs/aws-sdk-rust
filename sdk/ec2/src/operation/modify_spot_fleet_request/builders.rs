@@ -13,16 +13,17 @@ pub use crate::operation::modify_spot_fleet_request::_modify_spot_fleet_request_
 /// <p>If you are finished with your Spot Fleet for now, but will use it again later, you can set the target capacity to 0.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifySpotFleetRequestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_spot_fleet_request::builders::ModifySpotFleetRequestInputBuilder,
+}
 impl ModifySpotFleetRequestFluentBuilder  {
     /// Creates a new `ModifySpotFleetRequest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_spot_fleet_request::ModifySpotFleetRequest, aws_http::retry::AwsResponseRetryClassifier,>,

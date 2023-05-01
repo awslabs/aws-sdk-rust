@@ -8,16 +8,17 @@ pub use crate::operation::create_client_vpn_endpoint::_create_client_vpn_endpoin
 /// <p>Creates a Client VPN endpoint. A Client VPN endpoint is the resource you create and configure to enable and manage client VPN sessions. It is the destination endpoint at which all client VPN sessions are terminated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateClientVpnEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_client_vpn_endpoint::builders::CreateClientVpnEndpointInputBuilder,
+}
 impl CreateClientVpnEndpointFluentBuilder  {
     /// Creates a new `CreateClientVpnEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

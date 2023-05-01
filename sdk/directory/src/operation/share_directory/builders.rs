@@ -11,16 +11,17 @@ pub use crate::operation::share_directory::_share_directory_input::ShareDirector
 /// <p>The <code>ShareNotes</code> parameter is only used when <code>HANDSHAKE</code> is called, which sends a directory sharing request to the directory consumer. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ShareDirectoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::share_directory::builders::ShareDirectoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::share_directory::builders::ShareDirectoryInputBuilder,
+}
 impl ShareDirectoryFluentBuilder  {
     /// Creates a new `ShareDirectory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::share_directory::ShareDirectory, aws_http::retry::AwsResponseRetryClassifier,>,

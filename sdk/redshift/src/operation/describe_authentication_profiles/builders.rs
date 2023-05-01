@@ -8,16 +8,17 @@ pub use crate::operation::describe_authentication_profiles::_describe_authentica
 /// <p>Describes an authentication profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAuthenticationProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_authentication_profiles::builders::DescribeAuthenticationProfilesInputBuilder,
+}
 impl DescribeAuthenticationProfilesFluentBuilder  {
     /// Creates a new `DescribeAuthenticationProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_authentication_profiles::DescribeAuthenticationProfiles, aws_http::retry::AwsResponseRetryClassifier,>,

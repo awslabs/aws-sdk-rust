@@ -8,16 +8,17 @@ pub use crate::operation::list_event_buses::_list_event_buses_input::ListEventBu
 /// <p>Lists all the event buses in your account, including the default event bus, custom event buses, and partner event buses.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEventBusesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_event_buses::builders::ListEventBusesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_event_buses::builders::ListEventBusesInputBuilder,
+}
 impl ListEventBusesFluentBuilder  {
     /// Creates a new `ListEventBuses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_event_buses::ListEventBuses, aws_http::retry::AwsResponseRetryClassifier,>,

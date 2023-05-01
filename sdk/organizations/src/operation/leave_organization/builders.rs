@@ -23,16 +23,17 @@ pub use crate::operation::leave_organization::_leave_organization_input::LeaveOr
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct LeaveOrganizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::leave_organization::builders::LeaveOrganizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::leave_organization::builders::LeaveOrganizationInputBuilder,
+}
 impl LeaveOrganizationFluentBuilder  {
     /// Creates a new `LeaveOrganization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::leave_organization::LeaveOrganization, aws_http::retry::AwsResponseRetryClassifier,>,

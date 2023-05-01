@@ -8,16 +8,17 @@ pub use crate::operation::put_external_evaluation::_put_external_evaluation_inpu
 /// <p>Add or updates the evaluations for process checks. This API checks if the rule is a process check when the name of the Config rule is provided.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutExternalEvaluationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_external_evaluation::builders::PutExternalEvaluationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_external_evaluation::builders::PutExternalEvaluationInputBuilder,
+}
 impl PutExternalEvaluationFluentBuilder  {
     /// Creates a new `PutExternalEvaluation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_external_evaluation::PutExternalEvaluation, aws_http::retry::AwsResponseRetryClassifier,>,

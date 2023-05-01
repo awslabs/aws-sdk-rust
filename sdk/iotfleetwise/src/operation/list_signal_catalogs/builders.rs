@@ -11,16 +11,17 @@ pub use crate::operation::list_signal_catalogs::_list_signal_catalogs_input::Lis
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSignalCatalogsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_signal_catalogs::builders::ListSignalCatalogsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_signal_catalogs::builders::ListSignalCatalogsInputBuilder,
+}
 impl ListSignalCatalogsFluentBuilder  {
     /// Creates a new `ListSignalCatalogs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_signal_catalogs::ListSignalCatalogs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListSignalCatalogsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator {
-                            crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator {
+                                crate::operation::list_signal_catalogs::paginator::ListSignalCatalogsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A pagination token for the next set of results.</p> 
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {

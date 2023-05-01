@@ -8,16 +8,17 @@ pub use crate::operation::get_package_version_asset::_get_package_version_asset_
 /// <p> Returns an asset (or file) that is in a package. For example, for a Maven package version, use <code>GetPackageVersionAsset</code> to download a <code>JAR</code> file, a <code>POM</code> file, or any other assets in the package version. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPackageVersionAssetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_package_version_asset::builders::GetPackageVersionAssetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_package_version_asset::builders::GetPackageVersionAssetInputBuilder,
+}
 impl GetPackageVersionAssetFluentBuilder  {
     /// Creates a new `GetPackageVersionAsset`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_package_version_asset::GetPackageVersionAsset, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::put_auto_scaling_policy::_put_auto_scaling_policy_inpu
 /// <p>Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAutoScalingPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_auto_scaling_policy::builders::PutAutoScalingPolicyInputBuilder,
+}
 impl PutAutoScalingPolicyFluentBuilder  {
     /// Creates a new `PutAutoScalingPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_auto_scaling_policy::PutAutoScalingPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

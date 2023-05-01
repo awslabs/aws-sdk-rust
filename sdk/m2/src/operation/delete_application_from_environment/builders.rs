@@ -8,16 +8,17 @@ pub use crate::operation::delete_application_from_environment::_delete_applicati
 /// <p>Deletes a specific application from the specific runtime environment where it was previously deployed. You cannot delete a runtime environment using DeleteEnvironment if any application has ever been deployed to it. This API removes the association of the application with the runtime environment so you can delete the environment smoothly.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteApplicationFromEnvironmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_application_from_environment::builders::DeleteApplicationFromEnvironmentInputBuilder,
+}
 impl DeleteApplicationFromEnvironmentFluentBuilder  {
     /// Creates a new `DeleteApplicationFromEnvironment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,

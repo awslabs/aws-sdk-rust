@@ -8,16 +8,17 @@ pub use crate::operation::list_distributions::_list_distributions_input::ListDis
 /// <p>List CloudFront distributions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDistributionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_distributions::builders::ListDistributionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_distributions::builders::ListDistributionsInputBuilder,
+}
 impl ListDistributionsFluentBuilder  {
     /// Creates a new `ListDistributions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_distributions::ListDistributions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDistributionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_distributions::paginator::ListDistributionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_distributions::paginator::ListDistributionsPaginator {
-                            crate::operation::list_distributions::paginator::ListDistributionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_distributions::paginator::ListDistributionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_distributions::paginator::ListDistributionsPaginator {
+                                crate::operation::list_distributions::paginator::ListDistributionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Use this when paginating results to indicate where to begin in your list of distributions. The results include distributions in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last distribution on that page).</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());

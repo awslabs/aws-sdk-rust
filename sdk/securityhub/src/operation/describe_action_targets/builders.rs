@@ -8,16 +8,17 @@ pub use crate::operation::describe_action_targets::_describe_action_targets_inpu
 /// <p>Returns a list of the custom action targets in Security Hub in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeActionTargetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_action_targets::builders::DescribeActionTargetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_action_targets::builders::DescribeActionTargetsInputBuilder,
+}
 impl DescribeActionTargetsFluentBuilder  {
     /// Creates a new `DescribeActionTargets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_action_targets::DescribeActionTargets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeActionTargetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator {
-                            crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator {
+                                crate::operation::describe_action_targets::paginator::DescribeActionTargetsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ActionTargetArns`.
     ///
     /// To override the contents of this collection use [`set_action_target_arns`](Self::set_action_target_arns).

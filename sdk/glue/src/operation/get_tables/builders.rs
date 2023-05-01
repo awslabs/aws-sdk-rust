@@ -8,16 +8,17 @@ pub use crate::operation::get_tables::_get_tables_input::GetTablesInputBuilder;
 /// <p>Retrieves the definitions of some or all of the tables in a given <code>Database</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTablesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_tables::builders::GetTablesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_tables::builders::GetTablesInputBuilder,
+}
 impl GetTablesFluentBuilder  {
     /// Creates a new `GetTables`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_tables::GetTables, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetTablesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_tables::paginator::GetTablesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_tables::paginator::GetTablesPaginator {
-                            crate::operation::get_tables::paginator::GetTablesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_tables::paginator::GetTablesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_tables::paginator::GetTablesPaginator {
+                                crate::operation::get_tables::paginator::GetTablesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());

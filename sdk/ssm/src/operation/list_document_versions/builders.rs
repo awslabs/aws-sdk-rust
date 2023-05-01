@@ -8,16 +8,17 @@ pub use crate::operation::list_document_versions::_list_document_versions_input:
 /// <p>List all versions for a document.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDocumentVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_document_versions::builders::ListDocumentVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_document_versions::builders::ListDocumentVersionsInputBuilder,
+}
 impl ListDocumentVersionsFluentBuilder  {
     /// Creates a new `ListDocumentVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_document_versions::ListDocumentVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDocumentVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator {
-                            crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator {
+                                crate::operation::list_document_versions::paginator::ListDocumentVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

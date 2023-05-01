@@ -9,16 +9,17 @@ pub use crate::operation::list_traffic_policies::_list_traffic_policies_input::L
 /// <p>For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrafficPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_traffic_policies::builders::ListTrafficPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_traffic_policies::builders::ListTrafficPoliciesInputBuilder,
+}
 impl ListTrafficPoliciesFluentBuilder  {
     /// Creates a new `ListTrafficPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_traffic_policies::ListTrafficPolicies, aws_http::retry::AwsResponseRetryClassifier,>,

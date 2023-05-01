@@ -8,16 +8,17 @@ pub use crate::operation::list_function_url_configs::_list_function_url_configs_
 /// <p>Returns a list of Lambda function URLs for the specified function.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFunctionUrlConfigsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_function_url_configs::builders::ListFunctionUrlConfigsInputBuilder,
+}
 impl ListFunctionUrlConfigsFluentBuilder  {
     /// Creates a new `ListFunctionUrlConfigs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_function_url_configs::ListFunctionUrlConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFunctionUrlConfigsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator {
-                            crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator {
+                                crate::operation::list_function_url_configs::paginator::ListFunctionUrlConfigsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the Lambda function.</p> 
     /// <p class="title"> <b>Name formats</b> </p> 
     /// <ul> 

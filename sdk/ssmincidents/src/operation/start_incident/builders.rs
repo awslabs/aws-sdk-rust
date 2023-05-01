@@ -8,16 +8,17 @@ pub use crate::operation::start_incident::_start_incident_input::StartIncidentIn
 /// <p>Used to start an incident from CloudWatch alarms, EventBridge events, or manually. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartIncidentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_incident::builders::StartIncidentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_incident::builders::StartIncidentInputBuilder,
+}
 impl StartIncidentFluentBuilder  {
     /// Creates a new `StartIncident`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_incident::StartIncident, aws_http::retry::AwsResponseRetryClassifier,>,

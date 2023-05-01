@@ -8,16 +8,17 @@ pub use crate::operation::update_worker::_update_worker_input::UpdateWorkerInput
 /// Grants permission to update a worker
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWorkerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_worker::builders::UpdateWorkerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_worker::builders::UpdateWorkerInputBuilder,
+}
 impl UpdateWorkerFluentBuilder  {
     /// Creates a new `UpdateWorker`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_worker::UpdateWorker, aws_http::retry::AwsResponseRetryClassifier,>,

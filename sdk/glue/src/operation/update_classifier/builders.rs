@@ -8,16 +8,17 @@ pub use crate::operation::update_classifier::_update_classifier_input::UpdateCla
 /// <p>Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field is present).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateClassifierFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_classifier::builders::UpdateClassifierInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_classifier::builders::UpdateClassifierInputBuilder,
+}
 impl UpdateClassifierFluentBuilder  {
     /// Creates a new `UpdateClassifier`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_classifier::UpdateClassifier, aws_http::retry::AwsResponseRetryClassifier,>,

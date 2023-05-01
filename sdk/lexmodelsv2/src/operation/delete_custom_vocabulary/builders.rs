@@ -8,16 +8,17 @@ pub use crate::operation::delete_custom_vocabulary::_delete_custom_vocabulary_in
 /// <p>Removes a custom vocabulary from the specified locale in the specified bot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCustomVocabularyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_custom_vocabulary::builders::DeleteCustomVocabularyInputBuilder,
+}
 impl DeleteCustomVocabularyFluentBuilder  {
     /// Creates a new `DeleteCustomVocabulary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_custom_vocabulary::DeleteCustomVocabulary, aws_http::retry::AwsResponseRetryClassifier,>,

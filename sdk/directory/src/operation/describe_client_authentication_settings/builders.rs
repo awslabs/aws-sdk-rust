@@ -8,16 +8,17 @@ pub use crate::operation::describe_client_authentication_settings::_describe_cli
 /// <p>Retrieves information about the type of client authentication for the specified directory, if the type is specified. If no type is specified, information about all client authentication types that are supported for the specified directory is retrieved. Currently, only <code>SmartCard</code> is supported. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClientAuthenticationSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsInputBuilder,
+}
 impl DescribeClientAuthenticationSettingsFluentBuilder  {
     /// Creates a new `DescribeClientAuthenticationSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeClientAuthenticationSettingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_client_authentication_settings::paginator::DescribeClientAuthenticationSettingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_client_authentication_settings::paginator::DescribeClientAuthenticationSettingsPaginator {
-                            crate::operation::describe_client_authentication_settings::paginator::DescribeClientAuthenticationSettingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_client_authentication_settings::paginator::DescribeClientAuthenticationSettingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_client_authentication_settings::paginator::DescribeClientAuthenticationSettingsPaginator {
+                                crate::operation::describe_client_authentication_settings::paginator::DescribeClientAuthenticationSettingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the directory for which to retrieve information.</p>
     pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());

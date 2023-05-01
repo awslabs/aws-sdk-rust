@@ -8,16 +8,17 @@ pub use crate::operation::list_reusable_delegation_sets::_list_reusable_delegati
 /// <p>Retrieves a list of the reusable delegation sets that are associated with the current Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReusableDelegationSetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsInputBuilder,
+}
 impl ListReusableDelegationSetsFluentBuilder  {
     /// Creates a new `ListReusableDelegationSets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_reusable_delegation_sets::ListReusableDelegationSets, aws_http::retry::AwsResponseRetryClassifier,>,

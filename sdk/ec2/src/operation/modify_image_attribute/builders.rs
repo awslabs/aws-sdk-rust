@@ -11,16 +11,17 @@ pub use crate::operation::modify_image_attribute::_modify_image_attribute_input:
 /// <p>To enable the SriovNetSupport enhanced networking attribute of an image, enable SriovNetSupport on an instance and create an AMI from the instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyImageAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_image_attribute::builders::ModifyImageAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_image_attribute::builders::ModifyImageAttributeInputBuilder,
+}
 impl ModifyImageAttributeFluentBuilder  {
     /// Creates a new `ModifyImageAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_image_attribute::ModifyImageAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

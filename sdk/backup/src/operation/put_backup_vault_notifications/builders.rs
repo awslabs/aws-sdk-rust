@@ -8,16 +8,17 @@ pub use crate::operation::put_backup_vault_notifications::_put_backup_vault_noti
 /// <p>Turns on notifications on a backup vault for the specified topic and events.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutBackupVaultNotificationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_backup_vault_notifications::builders::PutBackupVaultNotificationsInputBuilder,
+}
 impl PutBackupVaultNotificationsFluentBuilder  {
     /// Creates a new `PutBackupVaultNotifications`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_backup_vault_notifications::PutBackupVaultNotifications, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::send_project_session_action::_send_project_session_act
 /// <p>Performs a recipe step within an interactive DataBrew session that's currently open.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendProjectSessionActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_project_session_action::builders::SendProjectSessionActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_project_session_action::builders::SendProjectSessionActionInputBuilder,
+}
 impl SendProjectSessionActionFluentBuilder  {
     /// Creates a new `SendProjectSessionAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_project_session_action::SendProjectSessionAction, aws_http::retry::AwsResponseRetryClassifier,>,

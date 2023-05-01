@@ -9,16 +9,17 @@ pub use crate::operation::update_evaluation_form::_update_evaluation_form_input:
 /// <p>This operation does not support partial updates. Instead it does a full update of evaluation form content.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEvaluationFormFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_evaluation_form::builders::UpdateEvaluationFormInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_evaluation_form::builders::UpdateEvaluationFormInputBuilder,
+}
 impl UpdateEvaluationFormFluentBuilder  {
     /// Creates a new `UpdateEvaluationForm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_evaluation_form::UpdateEvaluationForm, aws_http::retry::AwsResponseRetryClassifier,>,

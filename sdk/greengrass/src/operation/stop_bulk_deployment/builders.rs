@@ -8,16 +8,17 @@ pub use crate::operation::stop_bulk_deployment::_stop_bulk_deployment_input::Sto
 /// Stops the execution of a bulk deployment. This action returns a status of ''Stopping'' until the deployment is stopped. You cannot start a new bulk deployment while a previous deployment is in the ''Stopping'' state. This action doesn't rollback completed deployments or cancel pending deployments.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopBulkDeploymentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_bulk_deployment::builders::StopBulkDeploymentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_bulk_deployment::builders::StopBulkDeploymentInputBuilder,
+}
 impl StopBulkDeploymentFluentBuilder  {
     /// Creates a new `StopBulkDeployment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_bulk_deployment::StopBulkDeployment, aws_http::retry::AwsResponseRetryClassifier,>,

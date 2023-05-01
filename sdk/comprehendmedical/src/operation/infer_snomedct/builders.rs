@@ -8,16 +8,17 @@ pub use crate::operation::infer_snomedct::_infer_snomedct_input::InferSnomedctIn
 /// <p> InferSNOMEDCT detects possible medical concepts as entities and links them to codes from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InferSNOMEDCTFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::infer_snomedct::builders::InferSnomedctInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::infer_snomedct::builders::InferSnomedctInputBuilder,
+}
 impl InferSNOMEDCTFluentBuilder  {
     /// Creates a new `InferSNOMEDCT`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::infer_snomedct::InferSNOMEDCT, aws_http::retry::AwsResponseRetryClassifier,>,

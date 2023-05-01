@@ -8,16 +8,17 @@ pub use crate::operation::update_pull_request_approval_state::_update_pull_reque
 /// <p>Updates the state of a user's approval on a pull request. The user is derived from the signed-in account when the request is made.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePullRequestApprovalStateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_pull_request_approval_state::builders::UpdatePullRequestApprovalStateInputBuilder,
+}
 impl UpdatePullRequestApprovalStateFluentBuilder  {
     /// Creates a new `UpdatePullRequestApprovalState`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalState, aws_http::retry::AwsResponseRetryClassifier,>,

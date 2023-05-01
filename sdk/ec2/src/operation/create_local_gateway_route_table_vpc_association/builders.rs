@@ -8,16 +8,17 @@ pub use crate::operation::create_local_gateway_route_table_vpc_association::_cre
 /// <p>Associates the specified VPC with the specified local gateway route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableVpcAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_local_gateway_route_table_vpc_association::builders::CreateLocalGatewayRouteTableVpcAssociationInputBuilder,
+}
 impl CreateLocalGatewayRouteTableVpcAssociationFluentBuilder  {
     /// Creates a new `CreateLocalGatewayRouteTableVpcAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_local_gateway_route_table_vpc_association::CreateLocalGatewayRouteTableVpcAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

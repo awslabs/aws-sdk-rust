@@ -16,16 +16,17 @@ pub use crate::operation::modify_instance_placement::_modify_instance_placement_
 /// <p>To modify the host ID, tenancy, placement group, or partition for an instance, the instance must be in the <code>stopped</code> state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyInstancePlacementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_instance_placement::builders::ModifyInstancePlacementInputBuilder,
+}
 impl ModifyInstancePlacementFluentBuilder  {
     /// Creates a new `ModifyInstancePlacement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_instance_placement::ModifyInstancePlacement, aws_http::retry::AwsResponseRetryClassifier,>,

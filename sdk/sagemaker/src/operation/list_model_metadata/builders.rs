@@ -8,16 +8,17 @@ pub use crate::operation::list_model_metadata::_list_model_metadata_input::ListM
 /// <p>Lists the domain, framework, task, and model name of standard machine learning models found in common model zoos.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListModelMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_model_metadata::builders::ListModelMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_model_metadata::builders::ListModelMetadataInputBuilder,
+}
 impl ListModelMetadataFluentBuilder  {
     /// Creates a new `ListModelMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_model_metadata::ListModelMetadata, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListModelMetadataFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator {
-                            crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator {
+                                crate::operation::list_model_metadata::paginator::ListModelMetadataPaginator::new(self.handle, self.inner)
+                            }
     /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results. Specify the Framework, FrameworkVersion, Domain or Task to filter supported. Filter names and values are case-sensitive.</p>
     pub fn search_expression(mut self, input: crate::types::ModelMetadataSearchExpression) -> Self {
         self.inner = self.inner.search_expression(input);

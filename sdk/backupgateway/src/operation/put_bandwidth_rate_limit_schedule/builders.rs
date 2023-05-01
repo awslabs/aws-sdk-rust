@@ -8,16 +8,17 @@ pub use crate::operation::put_bandwidth_rate_limit_schedule::_put_bandwidth_rate
 /// <p>This action sets the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have a bandwidth rate limit schedule, which means no bandwidth rate limiting is in effect. Use this to initiate a gateway's bandwidth rate limit schedule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutBandwidthRateLimitScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_bandwidth_rate_limit_schedule::builders::PutBandwidthRateLimitScheduleInputBuilder,
+}
 impl PutBandwidthRateLimitScheduleFluentBuilder  {
     /// Creates a new `PutBandwidthRateLimitSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

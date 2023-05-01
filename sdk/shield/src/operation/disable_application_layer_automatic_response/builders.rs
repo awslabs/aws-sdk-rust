@@ -8,16 +8,17 @@ pub use crate::operation::disable_application_layer_automatic_response::_disable
 /// <p>Disable the Shield Advanced automatic application layer DDoS mitigation feature for the protected resource. This stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableApplicationLayerAutomaticResponseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_application_layer_automatic_response::builders::DisableApplicationLayerAutomaticResponseInputBuilder,
+}
 impl DisableApplicationLayerAutomaticResponseFluentBuilder  {
     /// Creates a new `DisableApplicationLayerAutomaticResponse`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponse, aws_http::retry::AwsResponseRetryClassifier,>,

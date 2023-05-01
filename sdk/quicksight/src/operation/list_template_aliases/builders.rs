@@ -8,16 +8,17 @@ pub use crate::operation::list_template_aliases::_list_template_aliases_input::L
 /// <p>Lists all the aliases of a template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTemplateAliasesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_template_aliases::builders::ListTemplateAliasesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_template_aliases::builders::ListTemplateAliasesInputBuilder,
+}
 impl ListTemplateAliasesFluentBuilder  {
     /// Creates a new `ListTemplateAliases`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_template_aliases::ListTemplateAliases, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTemplateAliasesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_template_aliases::paginator::ListTemplateAliasesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_template_aliases::paginator::ListTemplateAliasesPaginator {
-                            crate::operation::list_template_aliases::paginator::ListTemplateAliasesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_template_aliases::paginator::ListTemplateAliasesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_template_aliases::paginator::ListTemplateAliasesPaginator {
+                                crate::operation::list_template_aliases::paginator::ListTemplateAliasesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());

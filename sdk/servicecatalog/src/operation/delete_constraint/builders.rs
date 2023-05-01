@@ -9,16 +9,17 @@ pub use crate::operation::delete_constraint::_delete_constraint_input::DeleteCon
 /// <p>A delegated admin is authorized to invoke this command.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConstraintFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_constraint::builders::DeleteConstraintInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_constraint::builders::DeleteConstraintInputBuilder,
+}
 impl DeleteConstraintFluentBuilder  {
     /// Creates a new `DeleteConstraint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_constraint::DeleteConstraint, aws_http::retry::AwsResponseRetryClassifier,>,

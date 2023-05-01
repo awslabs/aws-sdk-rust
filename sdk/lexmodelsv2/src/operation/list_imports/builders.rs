@@ -8,16 +8,17 @@ pub use crate::operation::list_imports::_list_imports_input::ListImportsInputBui
 /// <p>Lists the imports for a bot, bot locale, or custom vocabulary. Imports are kept in the list for 7 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImportsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_imports::builders::ListImportsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_imports::builders::ListImportsInputBuilder,
+}
 impl ListImportsFluentBuilder  {
     /// Creates a new `ListImports`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_imports::ListImports, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListImportsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_imports::paginator::ListImportsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_imports::paginator::ListImportsPaginator {
-                            crate::operation::list_imports::paginator::ListImportsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_imports::paginator::ListImportsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_imports::paginator::ListImportsPaginator {
+                                crate::operation::list_imports::paginator::ListImportsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::list_managed_policies_in_permission_set::_list_managed
 /// <p>Lists the AWS managed policy that is attached to a specified permission set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListManagedPoliciesInPermissionSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_managed_policies_in_permission_set::builders::ListManagedPoliciesInPermissionSetInputBuilder,
+}
 impl ListManagedPoliciesInPermissionSetFluentBuilder  {
     /// Creates a new `ListManagedPoliciesInPermissionSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSet, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListManagedPoliciesInPermissionSetFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_managed_policies_in_permission_set::paginator::ListManagedPoliciesInPermissionSetPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_managed_policies_in_permission_set::paginator::ListManagedPoliciesInPermissionSetPaginator {
-                            crate::operation::list_managed_policies_in_permission_set::paginator::ListManagedPoliciesInPermissionSetPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_managed_policies_in_permission_set::paginator::ListManagedPoliciesInPermissionSetPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_managed_policies_in_permission_set::paginator::ListManagedPoliciesInPermissionSetPaginator {
+                                crate::operation::list_managed_policies_in_permission_set::paginator::ListManagedPoliciesInPermissionSetPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());

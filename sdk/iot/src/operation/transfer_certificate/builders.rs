@@ -13,16 +13,17 @@ pub use crate::operation::transfer_certificate::_transfer_certificate_input::Tra
 /// <p>The certificate must not have any policies attached to it. You can use the <code>DetachPolicy</code> action to detach them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TransferCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::transfer_certificate::builders::TransferCertificateInputBuilder,
+}
 impl TransferCertificateFluentBuilder  {
     /// Creates a new `TransferCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::transfer_certificate::TransferCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

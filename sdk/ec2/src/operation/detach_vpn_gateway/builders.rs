@@ -9,16 +9,17 @@ pub use crate::operation::detach_vpn_gateway::_detach_vpn_gateway_input::DetachV
 /// <p>You must wait for the attachment's state to switch to <code>detached</code> before you can delete the VPC or attach a different VPC to the virtual private gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachVpnGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detach_vpn_gateway::builders::DetachVpnGatewayInputBuilder,
+}
 impl DetachVpnGatewayFluentBuilder  {
     /// Creates a new `DetachVpnGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detach_vpn_gateway::DetachVpnGateway, aws_http::retry::AwsResponseRetryClassifier,>,

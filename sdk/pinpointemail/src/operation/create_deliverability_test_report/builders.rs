@@ -8,16 +8,17 @@ pub use crate::operation::create_deliverability_test_report::_create_deliverabil
 /// <p>Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. Amazon Pinpoint then sends that message to special email addresses spread across several major email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDeliverabilityTestReportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_deliverability_test_report::builders::CreateDeliverabilityTestReportInputBuilder,
+}
 impl CreateDeliverabilityTestReportFluentBuilder  {
     /// Creates a new `CreateDeliverabilityTestReport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReport, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_stage::_get_stage_input::GetStageInputBuilder;
 /// <p>Gets information for the specified stage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetStageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_stage::builders::GetStageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_stage::builders::GetStageInputBuilder,
+}
 impl GetStageFluentBuilder  {
     /// Creates a new `GetStage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_stage::GetStage, aws_http::retry::AwsResponseRetryClassifier,>,

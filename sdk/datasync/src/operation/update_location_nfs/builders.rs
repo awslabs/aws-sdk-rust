@@ -8,16 +8,17 @@ pub use crate::operation::update_location_nfs::_update_location_nfs_input::Updat
 /// <p>Updates some of the parameters of a previously created location for Network File System (NFS) access. For information about creating an NFS location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating a location for NFS</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLocationNfsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_location_nfs::builders::UpdateLocationNfsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_location_nfs::builders::UpdateLocationNfsInputBuilder,
+}
 impl UpdateLocationNfsFluentBuilder  {
     /// Creates a new `UpdateLocationNfs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_location_nfs::UpdateLocationNfs, aws_http::retry::AwsResponseRetryClassifier,>,

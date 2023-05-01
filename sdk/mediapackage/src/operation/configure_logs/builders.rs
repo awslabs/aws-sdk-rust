@@ -8,16 +8,17 @@ pub use crate::operation::configure_logs::_configure_logs_input::ConfigureLogsIn
 /// Changes the Channel's properities to configure log subscription
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfigureLogsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::configure_logs::builders::ConfigureLogsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::configure_logs::builders::ConfigureLogsInputBuilder,
+}
 impl ConfigureLogsFluentBuilder  {
     /// Creates a new `ConfigureLogs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::configure_logs::ConfigureLogs, aws_http::retry::AwsResponseRetryClassifier,>,

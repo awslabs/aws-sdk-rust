@@ -8,16 +8,17 @@ pub use crate::operation::search_skill_groups::_search_skill_groups_input::Searc
 /// <p>Searches skill groups and lists the ones that meet a set of filter and sort criteria.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchSkillGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_skill_groups::builders::SearchSkillGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_skill_groups::builders::SearchSkillGroupsInputBuilder,
+}
 impl SearchSkillGroupsFluentBuilder  {
     /// Creates a new `SearchSkillGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_skill_groups::SearchSkillGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchSkillGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_skill_groups::paginator::SearchSkillGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_skill_groups::paginator::SearchSkillGroupsPaginator {
-                            crate::operation::search_skill_groups::paginator::SearchSkillGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_skill_groups::paginator::SearchSkillGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_skill_groups::paginator::SearchSkillGroupsPaginator {
+                                crate::operation::search_skill_groups::paginator::SearchSkillGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>. Required.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

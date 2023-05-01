@@ -16,16 +16,17 @@ pub use crate::operation::update_key_description::_update_key_description_input:
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateKeyDescriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_key_description::builders::UpdateKeyDescriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_key_description::builders::UpdateKeyDescriptionInputBuilder,
+}
 impl UpdateKeyDescriptionFluentBuilder  {
     /// Creates a new `UpdateKeyDescription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_key_description::UpdateKeyDescription, aws_http::retry::AwsResponseRetryClassifier,>,

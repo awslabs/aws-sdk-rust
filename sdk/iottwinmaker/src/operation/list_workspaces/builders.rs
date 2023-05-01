@@ -8,16 +8,17 @@ pub use crate::operation::list_workspaces::_list_workspaces_input::ListWorkspace
 /// <p>Retrieves information about workspaces in the current account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWorkspacesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_workspaces::builders::ListWorkspacesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_workspaces::builders::ListWorkspacesInputBuilder,
+}
 impl ListWorkspacesFluentBuilder  {
     /// Creates a new `ListWorkspaces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_workspaces::ListWorkspaces, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWorkspacesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_workspaces::paginator::ListWorkspacesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_workspaces::paginator::ListWorkspacesPaginator {
-                            crate::operation::list_workspaces::paginator::ListWorkspacesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_workspaces::paginator::ListWorkspacesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_workspaces::paginator::ListWorkspacesPaginator {
+                                crate::operation::list_workspaces::paginator::ListWorkspacesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to return at one time. The default is 25.</p> 
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {

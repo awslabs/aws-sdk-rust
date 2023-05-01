@@ -11,16 +11,17 @@ pub use crate::operation::list_secret_version_ids::_list_secret_version_ids_inpu
 /// <p> <b>Required permissions: </b> <code>secretsmanager:ListSecretVersionIds</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSecretVersionIdsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_secret_version_ids::builders::ListSecretVersionIdsInputBuilder,
+}
 impl ListSecretVersionIdsFluentBuilder  {
     /// Creates a new `ListSecretVersionIds`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_secret_version_ids::ListSecretVersionIds, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListSecretVersionIdsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator {
-                            crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator {
+                                crate::operation::list_secret_version_ids::paginator::ListSecretVersionIdsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN or name of the secret whose versions you want to list.</p> 
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {

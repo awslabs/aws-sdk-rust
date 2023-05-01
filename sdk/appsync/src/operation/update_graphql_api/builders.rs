@@ -8,16 +8,17 @@ pub use crate::operation::update_graphql_api::_update_graphql_api_input::UpdateG
 /// <p>Updates a <code>GraphqlApi</code> object.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGraphqlApiFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_graphql_api::builders::UpdateGraphqlApiInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_graphql_api::builders::UpdateGraphqlApiInputBuilder,
+}
 impl UpdateGraphqlApiFluentBuilder  {
     /// Creates a new `UpdateGraphqlApi`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_graphql_api::UpdateGraphqlApi, aws_http::retry::AwsResponseRetryClassifier,>,

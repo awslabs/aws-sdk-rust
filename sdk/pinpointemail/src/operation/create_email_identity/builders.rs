@@ -10,16 +10,17 @@ pub use crate::operation::create_email_identity::_create_email_identity_input::C
 /// <p>When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens. You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon Pinpoint detects these records in the DNS configuration for your domain. It usually takes around 72 hours to complete the domain verification process.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEmailIdentityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_email_identity::builders::CreateEmailIdentityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_email_identity::builders::CreateEmailIdentityInputBuilder,
+}
 impl CreateEmailIdentityFluentBuilder  {
     /// Creates a new `CreateEmailIdentity`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_email_identity::CreateEmailIdentity, aws_http::retry::AwsResponseRetryClassifier,>,

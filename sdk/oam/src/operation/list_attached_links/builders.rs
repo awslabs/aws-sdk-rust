@@ -10,16 +10,17 @@ pub use crate::operation::list_attached_links::_list_attached_links_input::ListA
 /// <p>To find a list of links for one source account, use <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListLinks.html">ListLinks</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAttachedLinksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_attached_links::builders::ListAttachedLinksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_attached_links::builders::ListAttachedLinksInputBuilder,
+}
 impl ListAttachedLinksFluentBuilder  {
     /// Creates a new `ListAttachedLinks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_attached_links::ListAttachedLinks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListAttachedLinksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator {
-                            crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator {
+                                crate::operation::list_attached_links::paginator::ListAttachedLinksPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Limits the number of returned links to the specified number.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

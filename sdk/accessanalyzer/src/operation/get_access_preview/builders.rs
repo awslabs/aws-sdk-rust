@@ -8,16 +8,17 @@ pub use crate::operation::get_access_preview::_get_access_preview_input::GetAcce
 /// <p>Retrieves information about an access preview for the specified analyzer.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccessPreviewFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_access_preview::builders::GetAccessPreviewInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_access_preview::builders::GetAccessPreviewInputBuilder,
+}
 impl GetAccessPreviewFluentBuilder  {
     /// Creates a new `GetAccessPreview`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_access_preview::GetAccessPreview, aws_http::retry::AwsResponseRetryClassifier,>,

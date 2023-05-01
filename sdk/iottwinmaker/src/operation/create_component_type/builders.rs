@@ -8,16 +8,17 @@ pub use crate::operation::create_component_type::_create_component_type_input::C
 /// <p>Creates a component type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateComponentTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_component_type::builders::CreateComponentTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_component_type::builders::CreateComponentTypeInputBuilder,
+}
 impl CreateComponentTypeFluentBuilder  {
     /// Creates a new `CreateComponentType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_component_type::CreateComponentType, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_insight::_get_insight_input::GetInsightInputBuilde
 /// <p>Retrieves the summary information of an insight. This includes impact to clients and root cause services, the top anomalous services, the category, the state of the insight, and the start and end time of the insight.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInsightFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_insight::builders::GetInsightInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_insight::builders::GetInsightInputBuilder,
+}
 impl GetInsightFluentBuilder  {
     /// Creates a new `GetInsight`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_insight::GetInsight, aws_http::retry::AwsResponseRetryClassifier,>,

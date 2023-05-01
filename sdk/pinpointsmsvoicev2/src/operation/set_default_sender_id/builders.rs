@@ -9,16 +9,17 @@ pub use crate::operation::set_default_sender_id::_set_default_sender_id_input::S
 /// <p>When sending a text message to a destination country that supports sender IDs, the default sender ID on the configuration set specified will be used if no dedicated origination phone numbers or registered sender IDs are available in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetDefaultSenderIdFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_default_sender_id::builders::SetDefaultSenderIdInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_default_sender_id::builders::SetDefaultSenderIdInputBuilder,
+}
 impl SetDefaultSenderIdFluentBuilder  {
     /// Creates a new `SetDefaultSenderId`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_default_sender_id::SetDefaultSenderId, aws_http::retry::AwsResponseRetryClassifier,>,

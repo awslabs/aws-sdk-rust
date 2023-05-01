@@ -8,16 +8,17 @@ pub use crate::operation::delete_usage_limit::_delete_usage_limit_input::DeleteU
 /// <p>Deletes a usage limit from Amazon Redshift Serverless.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteUsageLimitFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_usage_limit::builders::DeleteUsageLimitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_usage_limit::builders::DeleteUsageLimitInputBuilder,
+}
 impl DeleteUsageLimitFluentBuilder  {
     /// Creates a new `DeleteUsageLimit`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_usage_limit::DeleteUsageLimit, aws_http::retry::AwsResponseRetryClassifier,>,

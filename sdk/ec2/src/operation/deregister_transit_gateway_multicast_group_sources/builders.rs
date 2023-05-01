@@ -8,16 +8,17 @@ pub use crate::operation::deregister_transit_gateway_multicast_group_sources::_d
 /// <p>Deregisters the specified sources (network interfaces) from the transit gateway multicast group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterTransitGatewayMulticastGroupSourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesInputBuilder,
+}
 impl DeregisterTransitGatewayMulticastGroupSourcesFluentBuilder  {
     /// Creates a new `DeregisterTransitGatewayMulticastGroupSources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSources, aws_http::retry::AwsResponseRetryClassifier,>,

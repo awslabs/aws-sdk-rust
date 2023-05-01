@@ -10,16 +10,17 @@ pub use crate::operation::describe_active_receipt_rule_set::_describe_active_rec
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeActiveReceiptRuleSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_active_receipt_rule_set::builders::DescribeActiveReceiptRuleSetInputBuilder,
+}
 impl DescribeActiveReceiptRuleSetFluentBuilder  {
     /// Creates a new `DescribeActiveReceiptRuleSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_active_receipt_rule_set::DescribeActiveReceiptRuleSet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_cache_parameter_groups::_describe_cache_param
 /// <p>Returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list contains only the descriptions for that group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCacheParameterGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cache_parameter_groups::builders::DescribeCacheParameterGroupsInputBuilder,
+}
 impl DescribeCacheParameterGroupsFluentBuilder  {
     /// Creates a new `DescribeCacheParameterGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeCacheParameterGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_parameter_groups::paginator::DescribeCacheParameterGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_cache_parameter_groups::paginator::DescribeCacheParameterGroupsPaginator {
-                            crate::operation::describe_cache_parameter_groups::paginator::DescribeCacheParameterGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_parameter_groups::paginator::DescribeCacheParameterGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_cache_parameter_groups::paginator::DescribeCacheParameterGroupsPaginator {
+                                crate::operation::describe_cache_parameter_groups::paginator::DescribeCacheParameterGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of a specific cache parameter group to return details for.</p>
     pub fn cache_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cache_parameter_group_name(input.into());

@@ -10,16 +10,17 @@ pub use crate::operation::list_collections::_list_collections_input::ListCollect
 /// <p>This operation requires permissions to perform the <code>rekognition:ListCollections</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCollectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_collections::builders::ListCollectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_collections::builders::ListCollectionsInputBuilder,
+}
 impl ListCollectionsFluentBuilder  {
     /// Creates a new `ListCollections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_collections::ListCollections, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListCollectionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_collections::paginator::ListCollectionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_collections::paginator::ListCollectionsPaginator {
-                            crate::operation::list_collections::paginator::ListCollectionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_collections::paginator::ListCollectionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_collections::paginator::ListCollectionsPaginator {
+                                crate::operation::list_collections::paginator::ListCollectionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Pagination token from the previous response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

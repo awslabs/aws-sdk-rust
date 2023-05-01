@@ -8,16 +8,17 @@ pub use crate::operation::create_realtime_endpoint::_create_realtime_endpoint_in
 /// <p>Creates a real-time endpoint for the <code>MLModel</code>. The endpoint contains the URI of the <code>MLModel</code>; that is, the location to send real-time prediction requests for the specified <code>MLModel</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRealtimeEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_realtime_endpoint::builders::CreateRealtimeEndpointInputBuilder,
+}
 impl CreateRealtimeEndpointFluentBuilder  {
     /// Creates a new `CreateRealtimeEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_realtime_endpoint::CreateRealtimeEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

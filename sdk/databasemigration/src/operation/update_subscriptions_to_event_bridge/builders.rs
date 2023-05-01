@@ -9,16 +9,17 @@ pub use crate::operation::update_subscriptions_to_event_bridge::_update_subscrip
 /// <p>To call this operation, make sure that you have certain permissions added to your user account. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html#CHAP_Events-migrate-to-eventbridge">Migrating event subscriptions to Amazon EventBridge</a> in the <i>Amazon Web Services Database Migration Service User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSubscriptionsToEventBridgeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_subscriptions_to_event_bridge::builders::UpdateSubscriptionsToEventBridgeInputBuilder,
+}
 impl UpdateSubscriptionsToEventBridgeFluentBuilder  {
     /// Creates a new `UpdateSubscriptionsToEventBridge`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridge, aws_http::retry::AwsResponseRetryClassifier,>,

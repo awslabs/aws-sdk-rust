@@ -9,16 +9,17 @@ pub use crate::operation::create_config::_create_config_input::CreateConfigInput
 /// <p>Only one type of <code>configData</code> can be specified.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_config::builders::CreateConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_config::builders::CreateConfigInputBuilder,
+}
 impl CreateConfigFluentBuilder  {
     /// Creates a new `CreateConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_config::CreateConfig, aws_http::retry::AwsResponseRetryClassifier,>,

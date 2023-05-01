@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_user_access_logging_settings::_disassocia
 /// <p>Disassociates user access logging settings from a web portal.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateUserAccessLoggingSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_user_access_logging_settings::builders::DisassociateUserAccessLoggingSettingsInputBuilder,
+}
 impl DisassociateUserAccessLoggingSettingsFluentBuilder  {
     /// Creates a new `DisassociateUserAccessLoggingSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettings, aws_http::retry::AwsResponseRetryClassifier,>,

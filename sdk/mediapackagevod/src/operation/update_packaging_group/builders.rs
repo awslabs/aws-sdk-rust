@@ -8,16 +8,17 @@ pub use crate::operation::update_packaging_group::_update_packaging_group_input:
 /// Updates a specific packaging group. You can't change the id attribute or any other system-generated attributes.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePackagingGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_packaging_group::builders::UpdatePackagingGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_packaging_group::builders::UpdatePackagingGroupInputBuilder,
+}
 impl UpdatePackagingGroupFluentBuilder  {
     /// Creates a new `UpdatePackagingGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_packaging_group::UpdatePackagingGroup, aws_http::retry::AwsResponseRetryClassifier,>,

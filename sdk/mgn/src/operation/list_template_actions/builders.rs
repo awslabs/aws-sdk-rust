@@ -8,16 +8,17 @@ pub use crate::operation::list_template_actions::_list_template_actions_input::L
 /// <p>List template post migration custom actions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTemplateActionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder,
+}
 impl ListTemplateActionsFluentBuilder  {
     /// Creates a new `ListTemplateActions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_template_actions::ListTemplateActions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTemplateActionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator {
-                            crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator {
+                                crate::operation::list_template_actions::paginator::ListTemplateActionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Launch configuration template ID.</p>
     pub fn launch_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.launch_configuration_template_id(input.into());

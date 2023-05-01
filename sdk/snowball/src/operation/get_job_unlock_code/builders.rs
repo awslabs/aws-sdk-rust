@@ -10,16 +10,17 @@ pub use crate::operation::get_job_unlock_code::_get_job_unlock_code_input::GetJo
 /// <p>As a best practice, we recommend that you don't save a copy of the <code>UnlockCode</code> in the same location as the manifest file for that job. Saving these separately helps prevent unauthorized parties from gaining access to the Snow device associated with that job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetJobUnlockCodeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeInputBuilder,
+}
 impl GetJobUnlockCodeFluentBuilder  {
     /// Creates a new `GetJobUnlockCode`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_job_unlock_code::GetJobUnlockCode, aws_http::retry::AwsResponseRetryClassifier,>,

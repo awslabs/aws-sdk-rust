@@ -8,16 +8,17 @@ pub use crate::operation::start_recovery::_start_recovery_input::StartRecoveryIn
 /// <p>Launches Recovery Instances for the specified Source Servers. For each Source Server you may choose a point in time snapshot to launch from, or use an on demand snapshot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartRecoveryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_recovery::builders::StartRecoveryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_recovery::builders::StartRecoveryInputBuilder,
+}
 impl StartRecoveryFluentBuilder  {
     /// Creates a new `StartRecovery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_recovery::StartRecovery, aws_http::retry::AwsResponseRetryClassifier,>,

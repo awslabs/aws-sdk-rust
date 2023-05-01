@@ -8,16 +8,17 @@ pub use crate::operation::start_launch::_start_launch_input::StartLaunchInputBui
 /// <p>Starts an existing launch. To create a launch, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html">CreateLaunch</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartLaunchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_launch::builders::StartLaunchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_launch::builders::StartLaunchInputBuilder,
+}
 impl StartLaunchFluentBuilder  {
     /// Creates a new `StartLaunch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_launch::StartLaunch, aws_http::retry::AwsResponseRetryClassifier,>,

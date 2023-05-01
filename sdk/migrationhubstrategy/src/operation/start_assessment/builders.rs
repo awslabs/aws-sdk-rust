@@ -8,16 +8,17 @@ pub use crate::operation::start_assessment::_start_assessment_input::StartAssess
 /// <p> Starts the assessment of an on-premises environment. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartAssessmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_assessment::builders::StartAssessmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_assessment::builders::StartAssessmentInputBuilder,
+}
 impl StartAssessmentFluentBuilder  {
     /// Creates a new `StartAssessment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_assessment::StartAssessment, aws_http::retry::AwsResponseRetryClassifier,>,

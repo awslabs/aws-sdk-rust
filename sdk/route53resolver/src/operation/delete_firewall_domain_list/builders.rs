@@ -8,16 +8,17 @@ pub use crate::operation::delete_firewall_domain_list::_delete_firewall_domain_l
 /// <p>Deletes the specified domain list. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFirewallDomainListFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_firewall_domain_list::builders::DeleteFirewallDomainListInputBuilder,
+}
 impl DeleteFirewallDomainListFluentBuilder  {
     /// Creates a new `DeleteFirewallDomainList`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_firewall_domain_list::DeleteFirewallDomainList, aws_http::retry::AwsResponseRetryClassifier,>,

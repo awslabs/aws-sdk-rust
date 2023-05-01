@@ -8,16 +8,17 @@ pub use crate::operation::update_deletion_protection::_update_deletion_protectio
 /// <p>Update deletion protection to either allow or deny deletion of the final Region in a replication set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDeletionProtectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder,
+}
 impl UpdateDeletionProtectionFluentBuilder  {
     /// Creates a new `UpdateDeletionProtection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_deletion_protection::UpdateDeletionProtection, aws_http::retry::AwsResponseRetryClassifier,>,

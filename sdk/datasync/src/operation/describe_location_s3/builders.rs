@@ -8,16 +8,17 @@ pub use crate::operation::describe_location_s3::_describe_location_s3_input::Des
 /// <p>Returns metadata, such as bucket name, about an Amazon S3 bucket location.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLocationS3FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_location_s3::builders::DescribeLocationS3InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_location_s3::builders::DescribeLocationS3InputBuilder,
+}
 impl DescribeLocationS3FluentBuilder  {
     /// Creates a new `DescribeLocationS3`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_location_s3::DescribeLocationS3, aws_http::retry::AwsResponseRetryClassifier,>,

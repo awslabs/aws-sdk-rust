@@ -9,16 +9,17 @@ pub use crate::operation::get_map_style_descriptor::_get_map_style_descriptor_in
 /// <p>The style descriptor contains speciﬁcations on how features render on a map. For example, what data to display, what order to display the data in, and the style for the data. Style descriptors follow the Mapbox Style Specification.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMapStyleDescriptorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorInputBuilder,
+}
 impl GetMapStyleDescriptorFluentBuilder  {
     /// Creates a new `GetMapStyleDescriptor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_map_style_descriptor::GetMapStyleDescriptor, aws_http::retry::AwsResponseRetryClassifier,>,

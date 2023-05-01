@@ -8,16 +8,17 @@ pub use crate::operation::stop_replication::_stop_replication_input::StopReplica
 /// <p>Stops replication for a Source Server. This action would make the Source Server unprotected, delete its existing snapshots and stop billing for it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopReplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_replication::builders::StopReplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_replication::builders::StopReplicationInputBuilder,
+}
 impl StopReplicationFluentBuilder  {
     /// Creates a new `StopReplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_replication::StopReplication, aws_http::retry::AwsResponseRetryClassifier,>,

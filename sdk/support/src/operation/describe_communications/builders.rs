@@ -15,16 +15,17 @@ pub use crate::operation::describe_communications::_describe_communications_inpu
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCommunicationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_communications::builders::DescribeCommunicationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_communications::builders::DescribeCommunicationsInputBuilder,
+}
 impl DescribeCommunicationsFluentBuilder  {
     /// Creates a new `DescribeCommunications`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_communications::DescribeCommunications, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -55,11 +56,11 @@ impl DescribeCommunicationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator {
-                            crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator {
+                                crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.case_id(input.into());

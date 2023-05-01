@@ -9,16 +9,17 @@ pub use crate::operation::import_application_usage::_import_application_usage_in
 /// <p>The data must already exist in the S3 location. As part of the action, AWS Application Cost Profiler copies the object from your S3 bucket to an S3 bucket owned by Amazon for processing asynchronously.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportApplicationUsageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_application_usage::builders::ImportApplicationUsageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_application_usage::builders::ImportApplicationUsageInputBuilder,
+}
 impl ImportApplicationUsageFluentBuilder  {
     /// Creates a new `ImportApplicationUsage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_application_usage::ImportApplicationUsage, aws_http::retry::AwsResponseRetryClassifier,>,

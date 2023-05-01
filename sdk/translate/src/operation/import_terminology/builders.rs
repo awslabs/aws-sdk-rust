@@ -9,16 +9,17 @@ pub use crate::operation::import_terminology::_import_terminology_input::ImportT
 /// <p>If you import a terminology that overwrites an existing one, the new terminology takes up to 10 minutes to fully propagate. After that, translations have access to the new terminology.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportTerminologyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_terminology::builders::ImportTerminologyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_terminology::builders::ImportTerminologyInputBuilder,
+}
 impl ImportTerminologyFluentBuilder  {
     /// Creates a new `ImportTerminology`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_terminology::ImportTerminology, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::start_bulk_deployment::_start_bulk_deployment_input::S
 /// Deploys multiple groups in one operation. This action starts the bulk deployment of a specified set of group versions. Each group version deployment will be triggered with an adaptive rate that has a fixed upper limit. We recommend that you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment'' request. These requests are idempotent with respect to the token and the request parameters.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartBulkDeploymentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_bulk_deployment::builders::StartBulkDeploymentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_bulk_deployment::builders::StartBulkDeploymentInputBuilder,
+}
 impl StartBulkDeploymentFluentBuilder  {
     /// Creates a new `StartBulkDeployment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_bulk_deployment::StartBulkDeployment, aws_http::retry::AwsResponseRetryClassifier,>,

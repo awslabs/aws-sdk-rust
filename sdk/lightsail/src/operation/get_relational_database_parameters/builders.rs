@@ -9,16 +9,17 @@ pub use crate::operation::get_relational_database_parameters::_get_relational_da
 /// <p>In addition to the parameter names and values, this operation returns other information about each parameter. This information includes whether changes require a reboot, whether the parameter is modifiable, the allowed values, and the data types.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRelationalDatabaseParametersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersInputBuilder,
+}
 impl GetRelationalDatabaseParametersFluentBuilder  {
     /// Creates a new `GetRelationalDatabaseParameters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_relational_database_parameters::GetRelationalDatabaseParameters, aws_http::retry::AwsResponseRetryClassifier,>,

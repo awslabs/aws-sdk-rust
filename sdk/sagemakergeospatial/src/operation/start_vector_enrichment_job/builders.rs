@@ -8,16 +8,17 @@ pub use crate::operation::start_vector_enrichment_job::_start_vector_enrichment_
 /// <p>Creates a Vector Enrichment job for the supplied job type. Currently, there are two supported job types: reverse geocoding and map matching.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartVectorEnrichmentJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobInputBuilder,
+}
 impl StartVectorEnrichmentJobFluentBuilder  {
     /// Creates a new `StartVectorEnrichmentJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJob, aws_http::retry::AwsResponseRetryClassifier,>,

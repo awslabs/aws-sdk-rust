@@ -8,16 +8,17 @@ pub use crate::operation::list_projects::_list_projects_input::ListProjectsInput
 /// <p>Lists all projects in AWS CodeStar associated with your AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProjectsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_projects::builders::ListProjectsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_projects::builders::ListProjectsInputBuilder,
+}
 impl ListProjectsFluentBuilder  {
     /// Creates a new `ListProjects`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_projects::ListProjects, aws_http::retry::AwsResponseRetryClassifier,>,

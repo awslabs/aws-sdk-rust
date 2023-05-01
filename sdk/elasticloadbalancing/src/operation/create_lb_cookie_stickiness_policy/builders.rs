@@ -11,16 +11,17 @@ pub use crate::operation::create_lb_cookie_stickiness_policy::_create_lb_cookie_
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLBCookieStickinessPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_lb_cookie_stickiness_policy::builders::CreateLbCookieStickinessPolicyInputBuilder,
+}
 impl CreateLBCookieStickinessPolicyFluentBuilder  {
     /// Creates a new `CreateLBCookieStickinessPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

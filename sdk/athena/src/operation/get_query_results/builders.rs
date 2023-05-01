@@ -11,16 +11,17 @@ pub use crate::operation::get_query_results::_get_query_results_input::GetQueryR
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetQueryResultsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_query_results::builders::GetQueryResultsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_query_results::builders::GetQueryResultsInputBuilder,
+}
 impl GetQueryResultsFluentBuilder  {
     /// Creates a new `GetQueryResults`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_query_results::GetQueryResults, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl GetQueryResultsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_query_results::paginator::GetQueryResultsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_query_results::paginator::GetQueryResultsPaginator {
-                            crate::operation::get_query_results::paginator::GetQueryResultsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_query_results::paginator::GetQueryResultsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_query_results::paginator::GetQueryResultsPaginator {
+                                crate::operation::get_query_results::paginator::GetQueryResultsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique ID of the query execution.</p>
     pub fn query_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.query_execution_id(input.into());

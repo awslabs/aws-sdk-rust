@@ -8,16 +8,17 @@ pub use crate::operation::update_service_sync_config::_update_service_sync_confi
 /// <p>Update the Proton Ops config file.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServiceSyncConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_service_sync_config::builders::UpdateServiceSyncConfigInputBuilder,
+}
 impl UpdateServiceSyncConfigFluentBuilder  {
     /// Creates a new `UpdateServiceSyncConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_service_sync_config::UpdateServiceSyncConfig, aws_http::retry::AwsResponseRetryClassifier,>,

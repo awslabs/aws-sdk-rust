@@ -8,16 +8,17 @@ pub use crate::operation::pause_cluster::_pause_cluster_input::PauseClusterInput
 /// <p>Pauses a cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PauseClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::pause_cluster::builders::PauseClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::pause_cluster::builders::PauseClusterInputBuilder,
+}
 impl PauseClusterFluentBuilder  {
     /// Creates a new `PauseCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::pause_cluster::PauseCluster, aws_http::retry::AwsResponseRetryClassifier,>,

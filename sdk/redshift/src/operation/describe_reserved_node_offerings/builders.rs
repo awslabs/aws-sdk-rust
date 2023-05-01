@@ -9,16 +9,17 @@ pub use crate::operation::describe_reserved_node_offerings::_describe_reserved_n
 /// <p> For more information about reserved node offerings, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReservedNodeOfferingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_reserved_node_offerings::builders::DescribeReservedNodeOfferingsInputBuilder,
+}
 impl DescribeReservedNodeOfferingsFluentBuilder  {
     /// Creates a new `DescribeReservedNodeOfferings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeReservedNodeOfferingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator {
-                            crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator {
+                                crate::operation::describe_reserved_node_offerings::paginator::DescribeReservedNodeOfferingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier for the offering.</p>
     pub fn reserved_node_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.reserved_node_offering_id(input.into());

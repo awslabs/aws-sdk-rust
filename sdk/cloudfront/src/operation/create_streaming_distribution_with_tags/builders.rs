@@ -8,16 +8,17 @@ pub use crate::operation::create_streaming_distribution_with_tags::_create_strea
 /// <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStreamingDistributionWithTagsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_streaming_distribution_with_tags::builders::CreateStreamingDistributionWithTagsInputBuilder,
+}
 impl CreateStreamingDistributionWithTagsFluentBuilder  {
     /// Creates a new `CreateStreamingDistributionWithTags`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_streaming_distribution_with_tags::CreateStreamingDistributionWithTags, aws_http::retry::AwsResponseRetryClassifier,>,

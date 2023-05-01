@@ -25,16 +25,17 @@ pub use crate::operation::restore_table::_restore_table_input::RestoreTableInput
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreTableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_table::builders::RestoreTableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_table::builders::RestoreTableInputBuilder,
+}
 impl RestoreTableFluentBuilder  {
     /// Creates a new `RestoreTable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_table::RestoreTable, aws_http::retry::AwsResponseRetryClassifier,>,

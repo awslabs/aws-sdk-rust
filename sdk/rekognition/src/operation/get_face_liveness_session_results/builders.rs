@@ -8,16 +8,17 @@ pub use crate::operation::get_face_liveness_session_results::_get_face_liveness_
 /// <p>Retrieves the results of a specific Face Liveness session. It requires the <code>sessionId</code> as input, which was created using <code>CreateFaceLivenessSession</code>. Returns the corresponding Face Liveness confidence score, a reference image that includes a face bounding box, and audit images that also contain face bounding boxes. The Face Liveness confidence score ranges from 0 to 100. The reference image can optionally be returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFaceLivenessSessionResultsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_face_liveness_session_results::builders::GetFaceLivenessSessionResultsInputBuilder,
+}
 impl GetFaceLivenessSessionResultsFluentBuilder  {
     /// Creates a new `GetFaceLivenessSessionResults`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResults, aws_http::retry::AwsResponseRetryClassifier,>,

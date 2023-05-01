@@ -9,16 +9,17 @@ pub use crate::operation::describe_db_cluster_snapshot_attributes::_describe_db_
 /// <p>When you share snapshots with other Amazon Web Services accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the <code>restore</code> attribute and a list of IDs for the Amazon Web Services accounts that are authorized to copy or restore the manual cluster snapshot. If <code>all</code> is included in the list of values for the <code>restore</code> attribute, then the manual cluster snapshot is public and can be copied or restored by all Amazon Web Services accounts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBClusterSnapshotAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_cluster_snapshot_attributes::builders::DescribeDbClusterSnapshotAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_cluster_snapshot_attributes::builders::DescribeDbClusterSnapshotAttributesInputBuilder,
+}
 impl DescribeDBClusterSnapshotAttributesFluentBuilder  {
     /// Creates a new `DescribeDBClusterSnapshotAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_cluster_snapshot_attributes::DescribeDBClusterSnapshotAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_deployments::_list_deployments_input::ListDeploym
 /// <p>Returns a list of all deployments of a specific application. A deployment is a combination of a specific application and a specific version of that application. Each deployment is mapped to a particular application version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeploymentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_deployments::builders::ListDeploymentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_deployments::builders::ListDeploymentsInputBuilder,
+}
 impl ListDeploymentsFluentBuilder  {
     /// Creates a new `ListDeployments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_deployments::ListDeployments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDeploymentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_deployments::paginator::ListDeploymentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
-                            crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_deployments::paginator::ListDeploymentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
+                                crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

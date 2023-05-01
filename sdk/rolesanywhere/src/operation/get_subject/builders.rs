@@ -9,16 +9,17 @@ pub use crate::operation::get_subject::_get_subject_input::GetSubjectInputBuilde
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:GetSubject</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSubjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_subject::builders::GetSubjectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_subject::builders::GetSubjectInputBuilder,
+}
 impl GetSubjectFluentBuilder  {
     /// Creates a new `GetSubject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_subject::GetSubject, aws_http::retry::AwsResponseRetryClassifier,>,

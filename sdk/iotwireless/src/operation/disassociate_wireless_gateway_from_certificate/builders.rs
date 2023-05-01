@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_wireless_gateway_from_certificate::_disas
 /// <p>Disassociates a wireless gateway from its currently associated certificate.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateWirelessGatewayFromCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_wireless_gateway_from_certificate::builders::DisassociateWirelessGatewayFromCertificateInputBuilder,
+}
 impl DisassociateWirelessGatewayFromCertificateFluentBuilder  {
     /// Creates a new `DisassociateWirelessGatewayFromCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

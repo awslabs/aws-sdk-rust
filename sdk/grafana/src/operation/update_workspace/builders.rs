@@ -10,16 +10,17 @@ pub use crate::operation::update_workspace::_update_workspace_input::UpdateWorks
 /// <p>To modify which users in the workspace have the <code>Admin</code> and <code>Editor</code> Grafana roles, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWorkspaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_workspace::builders::UpdateWorkspaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_workspace::builders::UpdateWorkspaceInputBuilder,
+}
 impl UpdateWorkspaceFluentBuilder  {
     /// Creates a new `UpdateWorkspace`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_workspace::UpdateWorkspace, aws_http::retry::AwsResponseRetryClassifier,>,

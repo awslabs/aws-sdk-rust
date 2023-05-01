@@ -8,16 +8,17 @@ pub use crate::operation::initialize_cluster::_initialize_cluster_input::Initial
 /// <p>Claims an AWS CloudHSM cluster by submitting the cluster certificate issued by your issuing certificate authority (CA) and the CA's root certificate. Before you can claim a cluster, you must sign the cluster's certificate signing request (CSR) with your issuing CA. To get the cluster's CSR, use <code>DescribeClusters</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InitializeClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::initialize_cluster::builders::InitializeClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::initialize_cluster::builders::InitializeClusterInputBuilder,
+}
 impl InitializeClusterFluentBuilder  {
     /// Creates a new `InitializeCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::initialize_cluster::InitializeCluster, aws_http::retry::AwsResponseRetryClassifier,>,

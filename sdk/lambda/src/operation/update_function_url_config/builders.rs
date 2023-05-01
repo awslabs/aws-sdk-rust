@@ -8,16 +8,17 @@ pub use crate::operation::update_function_url_config::_update_function_url_confi
 /// <p>Updates the configuration for a Lambda function URL.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFunctionUrlConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_function_url_config::builders::UpdateFunctionUrlConfigInputBuilder,
+}
 impl UpdateFunctionUrlConfigFluentBuilder  {
     /// Creates a new `UpdateFunctionUrlConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_function_url_config::UpdateFunctionUrlConfig, aws_http::retry::AwsResponseRetryClassifier,>,

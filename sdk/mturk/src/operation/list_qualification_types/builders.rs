@@ -8,16 +8,17 @@ pub use crate::operation::list_qualification_types::_list_qualification_types_in
 /// <p> The <code>ListQualificationTypes</code> operation returns a list of Qualification types, filtered by an optional search term. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListQualificationTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_qualification_types::builders::ListQualificationTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_qualification_types::builders::ListQualificationTypesInputBuilder,
+}
 impl ListQualificationTypesFluentBuilder  {
     /// Creates a new `ListQualificationTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_qualification_types::ListQualificationTypes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListQualificationTypesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator {
-                            crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator {
+                                crate::operation::list_qualification_types::paginator::ListQualificationTypesPaginator::new(self.handle, self.inner)
+                            }
     /// <p> A text query against all of the searchable attributes of Qualification types. </p>
     pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.query(input.into());

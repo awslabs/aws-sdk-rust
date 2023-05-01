@@ -8,16 +8,17 @@ pub use crate::operation::update_place_index::_update_place_index_input::UpdateP
 /// <p>Updates the specified properties of a given place index resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePlaceIndexFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_place_index::builders::UpdatePlaceIndexInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_place_index::builders::UpdatePlaceIndexInputBuilder,
+}
 impl UpdatePlaceIndexFluentBuilder  {
     /// Creates a new `UpdatePlaceIndex`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_place_index::UpdatePlaceIndex, aws_http::retry::AwsResponseRetryClassifier,>,

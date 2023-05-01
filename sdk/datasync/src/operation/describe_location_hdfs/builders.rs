@@ -8,16 +8,17 @@ pub use crate::operation::describe_location_hdfs::_describe_location_hdfs_input:
 /// <p>Returns metadata, such as the authentication information about the Hadoop Distributed File System (HDFS) location. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLocationHdfsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_location_hdfs::builders::DescribeLocationHdfsInputBuilder,
+}
 impl DescribeLocationHdfsFluentBuilder  {
     /// Creates a new `DescribeLocationHdfs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_location_hdfs::DescribeLocationHdfs, aws_http::retry::AwsResponseRetryClassifier,>,

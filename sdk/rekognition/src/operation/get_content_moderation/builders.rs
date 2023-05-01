@@ -14,16 +14,17 @@ pub use crate::operation::get_content_moderation::_get_content_moderation_input:
 /// <p>For more information, see moderating content in the Amazon Rekognition Developer Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetContentModerationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_content_moderation::builders::GetContentModerationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_content_moderation::builders::GetContentModerationInputBuilder,
+}
 impl GetContentModerationFluentBuilder  {
     /// Creates a new `GetContentModeration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_content_moderation::GetContentModeration, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -54,11 +55,11 @@ impl GetContentModerationFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_content_moderation::paginator::GetContentModerationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_content_moderation::paginator::GetContentModerationPaginator {
-                            crate::operation::get_content_moderation::paginator::GetContentModerationPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_content_moderation::paginator::GetContentModerationPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_content_moderation::paginator::GetContentModerationPaginator {
+                                crate::operation::get_content_moderation::paginator::GetContentModerationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());

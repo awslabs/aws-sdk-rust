@@ -9,16 +9,17 @@ pub use crate::operation::create_network_insights_path::_create_network_insights
 /// <p>Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual private cloud (VPC). For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/reachability/">Reachability Analyzer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNetworkInsightsPathFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder,
+}
 impl CreateNetworkInsightsPathFluentBuilder  {
     /// Creates a new `CreateNetworkInsightsPath`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_network_insights_path::CreateNetworkInsightsPath, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::associate_transit_gateway_policy_table::_associate_tra
 /// <p>Associates the specified transit gateway attachment with a transit gateway policy table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateTransitGatewayPolicyTableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_transit_gateway_policy_table::builders::AssociateTransitGatewayPolicyTableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_transit_gateway_policy_table::builders::AssociateTransitGatewayPolicyTableInputBuilder,
+}
 impl AssociateTransitGatewayPolicyTableFluentBuilder  {
     /// Creates a new `AssociateTransitGatewayPolicyTable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_transit_gateway_policy_table::AssociateTransitGatewayPolicyTable, aws_http::retry::AwsResponseRetryClassifier,>,

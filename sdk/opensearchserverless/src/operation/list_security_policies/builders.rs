@@ -8,16 +8,17 @@ pub use crate::operation::list_security_policies::_list_security_policies_input:
 /// <p>Returns information about configured OpenSearch Serverless security policies.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSecurityPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder,
+}
 impl ListSecurityPoliciesFluentBuilder  {
     /// Creates a new `ListSecurityPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_security_policies::ListSecurityPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSecurityPoliciesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator {
-                            crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator {
+                                crate::operation::list_security_policies::paginator::ListSecurityPoliciesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of policy.</p>
     pub fn r#type(mut self, input: crate::types::SecurityPolicyType) -> Self {
         self.inner = self.inner.r#type(input);

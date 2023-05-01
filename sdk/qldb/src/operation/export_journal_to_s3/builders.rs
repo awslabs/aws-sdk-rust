@@ -12,16 +12,17 @@ pub use crate::operation::export_journal_to_s3::_export_journal_to_s3_input::Exp
 /// <p>You can initiate up to two concurrent journal export requests for each ledger. Beyond this limit, journal export requests throw <code>LimitExceededException</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportJournalToS3FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_journal_to_s3::builders::ExportJournalToS3InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_journal_to_s3::builders::ExportJournalToS3InputBuilder,
+}
 impl ExportJournalToS3FluentBuilder  {
     /// Creates a new `ExportJournalToS3`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_journal_to_s3::ExportJournalToS3, aws_http::retry::AwsResponseRetryClassifier,>,

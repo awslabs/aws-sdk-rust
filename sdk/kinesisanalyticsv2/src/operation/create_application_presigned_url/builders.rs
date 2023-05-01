@@ -12,16 +12,17 @@ pub use crate::operation::create_application_presigned_url::_create_application_
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateApplicationPresignedUrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_application_presigned_url::builders::CreateApplicationPresignedUrlInputBuilder,
+}
 impl CreateApplicationPresignedUrlFluentBuilder  {
     /// Creates a new `CreateApplicationPresignedUrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_application_presigned_url::CreateApplicationPresignedUrl, aws_http::retry::AwsResponseRetryClassifier,>,

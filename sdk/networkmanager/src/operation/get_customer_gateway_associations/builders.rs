@@ -8,16 +8,17 @@ pub use crate::operation::get_customer_gateway_associations::_get_customer_gatew
 /// <p>Gets the association information for customer gateways that are associated with devices and links in your global network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCustomerGatewayAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_customer_gateway_associations::builders::GetCustomerGatewayAssociationsInputBuilder,
+}
 impl GetCustomerGatewayAssociationsFluentBuilder  {
     /// Creates a new `GetCustomerGatewayAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_customer_gateway_associations::GetCustomerGatewayAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetCustomerGatewayAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_customer_gateway_associations::paginator::GetCustomerGatewayAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_customer_gateway_associations::paginator::GetCustomerGatewayAssociationsPaginator {
-                            crate::operation::get_customer_gateway_associations::paginator::GetCustomerGatewayAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_customer_gateway_associations::paginator::GetCustomerGatewayAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_customer_gateway_associations::paginator::GetCustomerGatewayAssociationsPaginator {
+                                crate::operation::get_customer_gateway_associations::paginator::GetCustomerGatewayAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());

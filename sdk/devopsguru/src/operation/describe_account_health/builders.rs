@@ -8,16 +8,17 @@ pub use crate::operation::describe_account_health::_describe_account_health_inpu
 /// <p> Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the health of operations in your Amazon Web Services account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccountHealthFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_account_health::builders::DescribeAccountHealthInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_account_health::builders::DescribeAccountHealthInputBuilder,
+}
 impl DescribeAccountHealthFluentBuilder  {
     /// Creates a new `DescribeAccountHealth`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_account_health::DescribeAccountHealth, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -11,16 +11,17 @@ pub use crate::operation::start_expense_analysis::_start_expense_analysis_input:
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/invoice-receipts.html">Analyzing Invoices and Receipts</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartExpenseAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_expense_analysis::builders::StartExpenseAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_expense_analysis::builders::StartExpenseAnalysisInputBuilder,
+}
 impl StartExpenseAnalysisFluentBuilder  {
     /// Creates a new `StartExpenseAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_expense_analysis::StartExpenseAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

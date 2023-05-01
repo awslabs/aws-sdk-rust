@@ -8,16 +8,17 @@ pub use crate::operation::delete_data_set_refresh_properties::_delete_data_set_r
 /// <p>Deletes the dataset refresh properties of the dataset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDataSetRefreshPropertiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_data_set_refresh_properties::builders::DeleteDataSetRefreshPropertiesInputBuilder,
+}
 impl DeleteDataSetRefreshPropertiesFluentBuilder  {
     /// Creates a new `DeleteDataSetRefreshProperties`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_data_set_refresh_properties::DeleteDataSetRefreshProperties, aws_http::retry::AwsResponseRetryClassifier,>,

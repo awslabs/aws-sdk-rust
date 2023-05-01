@@ -8,16 +8,17 @@ pub use crate::operation::update_elasticsearch_domain_config::_update_elasticsea
 /// <p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateElasticsearchDomainConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_elasticsearch_domain_config::builders::UpdateElasticsearchDomainConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_elasticsearch_domain_config::builders::UpdateElasticsearchDomainConfigInputBuilder,
+}
 impl UpdateElasticsearchDomainConfigFluentBuilder  {
     /// Creates a new `UpdateElasticsearchDomainConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfig, aws_http::retry::AwsResponseRetryClassifier,>,

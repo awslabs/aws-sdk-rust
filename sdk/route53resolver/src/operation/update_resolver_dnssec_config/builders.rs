@@ -8,16 +8,17 @@ pub use crate::operation::update_resolver_dnssec_config::_update_resolver_dnssec
 /// <p>Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC validation configuration, one is created.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResolverDnssecConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_resolver_dnssec_config::builders::UpdateResolverDnssecConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_resolver_dnssec_config::builders::UpdateResolverDnssecConfigInputBuilder,
+}
 impl UpdateResolverDnssecConfigFluentBuilder  {
     /// Creates a new `UpdateResolverDnssecConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfig, aws_http::retry::AwsResponseRetryClassifier,>,

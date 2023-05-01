@@ -8,16 +8,17 @@ pub use crate::operation::create_streaming_image::_create_streaming_image_input:
 /// <p>Creates a streaming image resource in a studio.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStreamingImageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_streaming_image::builders::CreateStreamingImageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_streaming_image::builders::CreateStreamingImageInputBuilder,
+}
 impl CreateStreamingImageFluentBuilder  {
     /// Creates a new `CreateStreamingImage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_streaming_image::CreateStreamingImage, aws_http::retry::AwsResponseRetryClassifier,>,

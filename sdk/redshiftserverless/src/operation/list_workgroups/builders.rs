@@ -8,16 +8,17 @@ pub use crate::operation::list_workgroups::_list_workgroups_input::ListWorkgroup
 /// <p>Returns information about a list of specified workgroups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWorkgroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_workgroups::builders::ListWorkgroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_workgroups::builders::ListWorkgroupsInputBuilder,
+}
 impl ListWorkgroupsFluentBuilder  {
     /// Creates a new `ListWorkgroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_workgroups::ListWorkgroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWorkgroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_workgroups::paginator::ListWorkgroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_workgroups::paginator::ListWorkgroupsPaginator {
-                            crate::operation::list_workgroups::paginator::ListWorkgroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_workgroups::paginator::ListWorkgroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_workgroups::paginator::ListWorkgroupsPaginator {
+                                crate::operation::list_workgroups::paginator::ListWorkgroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following ListNamespaces operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

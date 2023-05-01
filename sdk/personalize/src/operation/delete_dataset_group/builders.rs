@@ -13,16 +13,17 @@ pub use crate::operation::delete_dataset_group::_delete_dataset_group_input::Del
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDatasetGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_dataset_group::builders::DeleteDatasetGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_dataset_group::builders::DeleteDatasetGroupInputBuilder,
+}
 impl DeleteDatasetGroupFluentBuilder  {
     /// Creates a new `DeleteDatasetGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_dataset_group::DeleteDatasetGroup, aws_http::retry::AwsResponseRetryClassifier,>,

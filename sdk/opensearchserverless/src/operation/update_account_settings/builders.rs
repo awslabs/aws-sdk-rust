@@ -8,16 +8,17 @@ pub use crate::operation::update_account_settings::_update_account_settings_inpu
 /// <p>Update the OpenSearch Serverless settings for the current Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing capacity limits for Amazon OpenSearch Serverless</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAccountSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder,
+}
 impl UpdateAccountSettingsFluentBuilder  {
     /// Creates a new `UpdateAccountSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_account_settings::UpdateAccountSettings, aws_http::retry::AwsResponseRetryClassifier,>,

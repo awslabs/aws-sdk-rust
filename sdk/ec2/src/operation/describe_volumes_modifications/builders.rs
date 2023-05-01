@@ -10,16 +10,17 @@ pub use crate::operation::describe_volumes_modifications::_describe_volumes_modi
 /// <p>You can also use CloudWatch Events to check the status of a modification to an EBS volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch Events User Guide</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVolumesModificationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_volumes_modifications::builders::DescribeVolumesModificationsInputBuilder,
+}
 impl DescribeVolumesModificationsFluentBuilder  {
     /// Creates a new `DescribeVolumesModifications`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_volumes_modifications::DescribeVolumesModifications, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeVolumesModificationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator {
-                            crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator {
+                                crate::operation::describe_volumes_modifications::paginator::DescribeVolumesModificationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

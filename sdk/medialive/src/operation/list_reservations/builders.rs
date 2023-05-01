@@ -8,16 +8,17 @@ pub use crate::operation::list_reservations::_list_reservations_input::ListReser
 /// List purchased reservations.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReservationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_reservations::builders::ListReservationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_reservations::builders::ListReservationsInputBuilder,
+}
 impl ListReservationsFluentBuilder  {
     /// Creates a new `ListReservations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_reservations::ListReservations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListReservationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_reservations::paginator::ListReservationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_reservations::paginator::ListReservationsPaginator {
-                            crate::operation::list_reservations::paginator::ListReservationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_reservations::paginator::ListReservationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_reservations::paginator::ListReservationsPaginator {
+                                crate::operation::list_reservations::paginator::ListReservationsPaginator::new(self.handle, self.inner)
+                            }
     /// Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
     pub fn channel_class(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.channel_class(input.into());

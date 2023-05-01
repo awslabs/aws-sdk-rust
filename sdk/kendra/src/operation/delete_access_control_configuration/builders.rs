@@ -8,16 +8,17 @@ pub use crate::operation::delete_access_control_configuration::_delete_access_co
 /// <p>Deletes an access control configuration that you created for your documents in an index. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccessControlConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_access_control_configuration::builders::DeleteAccessControlConfigurationInputBuilder,
+}
 impl DeleteAccessControlConfigurationFluentBuilder  {
     /// Creates a new `DeleteAccessControlConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_access_control_configuration::DeleteAccessControlConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

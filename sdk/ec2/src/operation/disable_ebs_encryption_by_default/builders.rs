@@ -11,16 +11,17 @@ pub use crate::operation::disable_ebs_encryption_by_default::_disable_ebs_encryp
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableEbsEncryptionByDefaultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_ebs_encryption_by_default::builders::DisableEbsEncryptionByDefaultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_ebs_encryption_by_default::builders::DisableEbsEncryptionByDefaultInputBuilder,
+}
 impl DisableEbsEncryptionByDefaultFluentBuilder  {
     /// Creates a new `DisableEbsEncryptionByDefault`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefault, aws_http::retry::AwsResponseRetryClassifier,>,

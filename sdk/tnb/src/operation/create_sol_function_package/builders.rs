@@ -10,16 +10,17 @@ pub use crate::operation::create_sol_function_package::_create_sol_function_pack
 /// <p>Creating a function package is the first step for creating a network in AWS TNB. This request creates an empty container with an ID. The next step is to upload the actual CSAR zip file into that empty container. To upload function package content, see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSolFunctionPackageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_sol_function_package::builders::CreateSolFunctionPackageInputBuilder,
+}
 impl CreateSolFunctionPackageFluentBuilder  {
     /// Creates a new `CreateSolFunctionPackage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_sol_function_package::CreateSolFunctionPackage, aws_http::retry::AwsResponseRetryClassifier,>,

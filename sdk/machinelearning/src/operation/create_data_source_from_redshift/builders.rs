@@ -13,16 +13,17 @@ pub use crate::operation::create_data_source_from_redshift::_create_data_source_
 /// <p>You can't change an existing datasource, but you can copy and modify the settings from an existing Amazon Redshift datasource to create a new datasource. To do so, call <code>GetDataSource</code> for an existing datasource and copy the values to a <code>CreateDataSource</code> call. Change the settings that you want to change and make sure that all required fields have the appropriate values.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDataSourceFromRedshiftFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftInputBuilder,
+}
 impl CreateDataSourceFromRedshiftFluentBuilder  {
     /// Creates a new `CreateDataSourceFromRedshift`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshift, aws_http::retry::AwsResponseRetryClassifier,>,

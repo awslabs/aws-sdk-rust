@@ -9,16 +9,17 @@ pub use crate::operation::search_organization_insights::_search_organization_ins
 /// <p> Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchOrganizationInsightsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_organization_insights::builders::SearchOrganizationInsightsInputBuilder,
+}
 impl SearchOrganizationInsightsFluentBuilder  {
     /// Creates a new `SearchOrganizationInsights`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_organization_insights::SearchOrganizationInsights, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl SearchOrganizationInsightsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator {
-                            crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator {
+                                crate::operation::search_organization_insights::paginator::SearchOrganizationInsightsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `AccountIds`.
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).

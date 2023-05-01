@@ -10,16 +10,17 @@ pub use crate::operation::put_keyword::_put_keyword_input::PutKeywordInputBuilde
 /// <p>If you specify a keyword that isn't valid, an Error is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutKeywordFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_keyword::builders::PutKeywordInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_keyword::builders::PutKeywordInputBuilder,
+}
 impl PutKeywordFluentBuilder  {
     /// Creates a new `PutKeyword`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_keyword::PutKeyword, aws_http::retry::AwsResponseRetryClassifier,>,

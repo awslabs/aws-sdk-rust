@@ -8,16 +8,17 @@ pub use crate::operation::update_network_profile::_update_network_profile_input:
 /// <p>Updates the network profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateNetworkProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_network_profile::builders::UpdateNetworkProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_network_profile::builders::UpdateNetworkProfileInputBuilder,
+}
 impl UpdateNetworkProfileFluentBuilder  {
     /// Creates a new `UpdateNetworkProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_network_profile::UpdateNetworkProfile, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_variables::_get_variables_input::GetVariablesInput
 /// <p>Gets all of the variables or the specific variable. This is a paginated API. Providing null <code>maxSizePerPage</code> results in retrieving maximum of 100 records per page. If you provide <code>maxSizePerPage</code> the value must be between 50 and 100. To get the next page result, a provide a pagination token from <code>GetVariablesResult</code> as part of your request. Null pagination token fetches the records from the beginning. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVariablesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_variables::builders::GetVariablesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_variables::builders::GetVariablesInputBuilder,
+}
 impl GetVariablesFluentBuilder  {
     /// Creates a new `GetVariables`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_variables::GetVariables, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetVariablesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_variables::paginator::GetVariablesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_variables::paginator::GetVariablesPaginator {
-                            crate::operation::get_variables::paginator::GetVariablesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_variables::paginator::GetVariablesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_variables::paginator::GetVariablesPaginator {
+                                crate::operation::get_variables::paginator::GetVariablesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the variable. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

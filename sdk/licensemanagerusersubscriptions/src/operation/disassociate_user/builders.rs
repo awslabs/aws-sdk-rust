@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_user::_disassociate_user_input::Disassoci
 /// <p>Disassociates the user from an EC2 instance providing user-based subscriptions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_user::builders::DisassociateUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_user::builders::DisassociateUserInputBuilder,
+}
 impl DisassociateUserFluentBuilder  {
     /// Creates a new `DisassociateUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_user::DisassociateUser, aws_http::retry::AwsResponseRetryClassifier,>,

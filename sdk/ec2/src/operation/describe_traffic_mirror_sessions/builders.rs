@@ -8,16 +8,17 @@ pub use crate::operation::describe_traffic_mirror_sessions::_describe_traffic_mi
 /// <p>Describes one or more Traffic Mirror sessions. By default, all Traffic Mirror sessions are described. Alternatively, you can filter the results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTrafficMirrorSessionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_traffic_mirror_sessions::builders::DescribeTrafficMirrorSessionsInputBuilder,
+}
 impl DescribeTrafficMirrorSessionsFluentBuilder  {
     /// Creates a new `DescribeTrafficMirrorSessions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_traffic_mirror_sessions::DescribeTrafficMirrorSessions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeTrafficMirrorSessionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator {
-                            crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator {
+                                crate::operation::describe_traffic_mirror_sessions::paginator::DescribeTrafficMirrorSessionsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TrafficMirrorSessionIds`.
     ///
     /// To override the contents of this collection use [`set_traffic_mirror_session_ids`](Self::set_traffic_mirror_session_ids).

@@ -9,16 +9,17 @@ pub use crate::operation::update_project_data_delivery::_update_project_data_del
 /// <p>You can't specify both <code>cloudWatchLogs</code> and <code>s3Destination</code> in the same operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProjectDataDeliveryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryInputBuilder,
+}
 impl UpdateProjectDataDeliveryFluentBuilder  {
     /// Creates a new `UpdateProjectDataDelivery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_project_data_delivery::UpdateProjectDataDelivery, aws_http::retry::AwsResponseRetryClassifier,>,

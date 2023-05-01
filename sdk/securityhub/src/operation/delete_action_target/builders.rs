@@ -9,16 +9,17 @@ pub use crate::operation::delete_action_target::_delete_action_target_input::Del
 /// <p>Deleting a custom action target does not affect any findings or insights that were already sent to Amazon CloudWatch Events using the custom action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteActionTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_action_target::builders::DeleteActionTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_action_target::builders::DeleteActionTargetInputBuilder,
+}
 impl DeleteActionTargetFluentBuilder  {
     /// Creates a new `DeleteActionTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_action_target::DeleteActionTarget, aws_http::retry::AwsResponseRetryClassifier,>,

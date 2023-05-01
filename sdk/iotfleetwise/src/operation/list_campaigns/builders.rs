@@ -10,16 +10,17 @@ pub use crate::operation::list_campaigns::_list_campaigns_input::ListCampaignsIn
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCampaignsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_campaigns::builders::ListCampaignsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_campaigns::builders::ListCampaignsInputBuilder,
+}
 impl ListCampaignsFluentBuilder  {
     /// Creates a new `ListCampaigns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_campaigns::ListCampaigns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListCampaignsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_campaigns::paginator::ListCampaignsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_campaigns::paginator::ListCampaignsPaginator {
-                            crate::operation::list_campaigns::paginator::ListCampaignsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_campaigns::paginator::ListCampaignsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_campaigns::paginator::ListCampaignsPaginator {
+                                crate::operation::list_campaigns::paginator::ListCampaignsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A pagination token for the next set of results.</p> 
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {

@@ -11,16 +11,17 @@ pub use crate::operation::detect_moderation_labels::_detect_moderation_labels_in
 /// <p>You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must be either a PNG or JPEG formatted file. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectModerationLabelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_moderation_labels::builders::DetectModerationLabelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_moderation_labels::builders::DetectModerationLabelsInputBuilder,
+}
 impl DetectModerationLabelsFluentBuilder  {
     /// Creates a new `DetectModerationLabels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_moderation_labels::DetectModerationLabels, aws_http::retry::AwsResponseRetryClassifier,>,

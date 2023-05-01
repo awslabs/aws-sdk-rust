@@ -8,16 +8,17 @@ pub use crate::operation::describe_transform_job::_describe_transform_job_input:
 /// <p>Returns information about a transform job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTransformJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_transform_job::builders::DescribeTransformJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_transform_job::builders::DescribeTransformJobInputBuilder,
+}
 impl DescribeTransformJobFluentBuilder  {
     /// Creates a new `DescribeTransformJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_transform_job::DescribeTransformJob, aws_http::retry::AwsResponseRetryClassifier,>,

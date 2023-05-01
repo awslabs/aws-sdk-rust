@@ -8,16 +8,17 @@ pub use crate::operation::delete_network_acl::_delete_network_acl_input::DeleteN
 /// <p>Deletes the specified network ACL. You can't delete the ACL if it's associated with any subnets. You can't delete the default network ACL.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNetworkAclFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_network_acl::builders::DeleteNetworkAclInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_network_acl::builders::DeleteNetworkAclInputBuilder,
+}
 impl DeleteNetworkAclFluentBuilder  {
     /// Creates a new `DeleteNetworkAcl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_network_acl::DeleteNetworkAcl, aws_http::retry::AwsResponseRetryClassifier,>,

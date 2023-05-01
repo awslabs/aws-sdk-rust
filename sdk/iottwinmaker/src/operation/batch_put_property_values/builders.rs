@@ -8,16 +8,17 @@ pub use crate::operation::batch_put_property_values::_batch_put_property_values_
 /// <p>Sets values for multiple time series properties.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchPutPropertyValuesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesInputBuilder,
+}
 impl BatchPutPropertyValuesFluentBuilder  {
     /// Creates a new `BatchPutPropertyValues`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_put_property_values::BatchPutPropertyValues, aws_http::retry::AwsResponseRetryClassifier,>,

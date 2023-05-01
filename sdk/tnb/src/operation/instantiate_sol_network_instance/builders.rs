@@ -10,16 +10,17 @@ pub use crate::operation::instantiate_sol_network_instance::_instantiate_sol_net
 /// <p>Before you can instantiate a network instance, you have to create a network instance. For more information, see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_CreateSolNetworkInstance.html">CreateSolNetworkInstance</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InstantiateSolNetworkInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::instantiate_sol_network_instance::builders::InstantiateSolNetworkInstanceInputBuilder,
+}
 impl InstantiateSolNetworkInstanceFluentBuilder  {
     /// Creates a new `InstantiateSolNetworkInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstance, aws_http::retry::AwsResponseRetryClassifier,>,

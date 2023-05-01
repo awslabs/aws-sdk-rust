@@ -9,16 +9,17 @@ pub use crate::operation::describe_ops_items::_describe_ops_items_input::Describ
 /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOpsItemsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_ops_items::builders::DescribeOpsItemsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_ops_items::builders::DescribeOpsItemsInputBuilder,
+}
 impl DescribeOpsItemsFluentBuilder  {
     /// Creates a new `DescribeOpsItems`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_ops_items::DescribeOpsItems, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeOpsItemsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator {
-                            crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator {
+                                crate::operation::describe_ops_items::paginator::DescribeOpsItemsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `OpsItemFilters`.
     ///
     /// To override the contents of this collection use [`set_ops_item_filters`](Self::set_ops_item_filters).

@@ -8,16 +8,17 @@ pub use crate::operation::create_model_package_group::_create_model_package_grou
 /// <p>Creates a model group. A model group contains a group of model versions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateModelPackageGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_model_package_group::builders::CreateModelPackageGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_model_package_group::builders::CreateModelPackageGroupInputBuilder,
+}
 impl CreateModelPackageGroupFluentBuilder  {
     /// Creates a new `CreateModelPackageGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_model_package_group::CreateModelPackageGroup, aws_http::retry::AwsResponseRetryClassifier,>,

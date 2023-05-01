@@ -8,16 +8,17 @@ pub use crate::operation::create_device::_create_device_input::CreateDeviceInput
 /// <p>Creates a new device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_device::builders::CreateDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_device::builders::CreateDeviceInputBuilder,
+}
 impl CreateDeviceFluentBuilder  {
     /// Creates a new `CreateDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_device::CreateDevice, aws_http::retry::AwsResponseRetryClassifier,>,

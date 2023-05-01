@@ -8,16 +8,17 @@ pub use crate::operation::put_hypervisor_property_mappings::_put_hypervisor_prop
 /// <p>This action sets the property mappings for the specified hypervisor. A hypervisor property mapping displays the relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon Web Services.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutHypervisorPropertyMappingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder,
+}
 impl PutHypervisorPropertyMappingsFluentBuilder  {
     /// Creates a new `PutHypervisorPropertyMappings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappings, aws_http::retry::AwsResponseRetryClassifier,>,

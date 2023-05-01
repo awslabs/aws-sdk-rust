@@ -8,16 +8,17 @@ pub use crate::operation::batch_grant_permissions::_batch_grant_permissions_inpu
 /// <p>Batch operation to grant permissions to the principal.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGrantPermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsInputBuilder,
+}
 impl BatchGrantPermissionsFluentBuilder  {
     /// Creates a new `BatchGrantPermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_grant_permissions::BatchGrantPermissions, aws_http::retry::AwsResponseRetryClassifier,>,

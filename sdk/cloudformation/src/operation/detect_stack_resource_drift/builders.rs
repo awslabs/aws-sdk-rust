@@ -10,16 +10,17 @@ pub use crate::operation::detect_stack_resource_drift::_detect_stack_resource_dr
 /// <p>Resources that don't currently support drift detection can't be checked. For a list of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectStackResourceDriftFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_stack_resource_drift::builders::DetectStackResourceDriftInputBuilder,
+}
 impl DetectStackResourceDriftFluentBuilder  {
     /// Creates a new `DetectStackResourceDrift`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_stack_resource_drift::DetectStackResourceDrift, aws_http::retry::AwsResponseRetryClassifier,>,

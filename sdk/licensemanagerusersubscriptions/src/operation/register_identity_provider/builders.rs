@@ -8,16 +8,17 @@ pub use crate::operation::register_identity_provider::_register_identity_provide
 /// <p>Registers an identity provider for user-based subscriptions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterIdentityProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_identity_provider::builders::RegisterIdentityProviderInputBuilder,
+}
 impl RegisterIdentityProviderFluentBuilder  {
     /// Creates a new `RegisterIdentityProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_identity_provider::RegisterIdentityProvider, aws_http::retry::AwsResponseRetryClassifier,>,

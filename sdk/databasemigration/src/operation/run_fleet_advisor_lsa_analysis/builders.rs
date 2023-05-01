@@ -8,16 +8,17 @@ pub use crate::operation::run_fleet_advisor_lsa_analysis::_run_fleet_advisor_lsa
 /// <p>Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RunFleetAdvisorLsaAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::run_fleet_advisor_lsa_analysis::builders::RunFleetAdvisorLsaAnalysisInputBuilder,
+}
 impl RunFleetAdvisorLsaAnalysisFluentBuilder  {
     /// Creates a new `RunFleetAdvisorLsaAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

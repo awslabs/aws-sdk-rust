@@ -8,16 +8,17 @@ pub use crate::operation::list_partner_event_source_accounts::_list_partner_even
 /// <p>An SaaS partner can use this operation to display the Amazon Web Services account ID that a particular partner event source name is associated with. This operation is not used by Amazon Web Services customers.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPartnerEventSourceAccountsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_partner_event_source_accounts::builders::ListPartnerEventSourceAccountsInputBuilder,
+}
 impl ListPartnerEventSourceAccountsFluentBuilder  {
     /// Creates a new `ListPartnerEventSourceAccounts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccounts, aws_http::retry::AwsResponseRetryClassifier,>,

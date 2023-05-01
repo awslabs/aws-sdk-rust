@@ -9,16 +9,17 @@ pub use crate::operation::list_configuration_sets::_list_configuration_sets_inpu
 /// <p>You can execute this operation no more than once per second. This operation will return up to 1,000 configuration sets each time it is run. If your Amazon SES account has more than 1,000 configuration sets, this operation will also return a NextToken element. You can then execute the <code>ListConfigurationSets</code> operation again, passing the <code>NextToken</code> parameter and the value of the NextToken element to retrieve additional results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListConfigurationSetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_configuration_sets::builders::ListConfigurationSetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_configuration_sets::builders::ListConfigurationSetsInputBuilder,
+}
 impl ListConfigurationSetsFluentBuilder  {
     /// Creates a new `ListConfigurationSets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_configuration_sets::ListConfigurationSets, aws_http::retry::AwsResponseRetryClassifier,>,

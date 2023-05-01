@@ -8,16 +8,17 @@ pub use crate::operation::cancel_transaction::_cancel_transaction_input::CancelT
 /// <p>Attempts to cancel the specified transaction. Returns an exception if the transaction was previously committed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelTransactionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_transaction::builders::CancelTransactionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_transaction::builders::CancelTransactionInputBuilder,
+}
 impl CancelTransactionFluentBuilder  {
     /// Creates a new `CancelTransaction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_transaction::CancelTransaction, aws_http::retry::AwsResponseRetryClassifier,>,

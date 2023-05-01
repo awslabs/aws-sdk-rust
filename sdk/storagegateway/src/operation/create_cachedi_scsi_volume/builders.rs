@@ -12,16 +12,17 @@ pub use crate::operation::create_cachedi_scsi_volume::_create_cachedi_scsi_volum
 /// <p>Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code> for this cached volume, which creates an exact copy of the existing volume’s latest recovery point. The <code>VolumeSizeInBytes</code> value must be equal to or larger than the size of the copied volume, in bytes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCachediSCSIVolumeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_cachedi_scsi_volume::builders::CreateCachediScsiVolumeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_cachedi_scsi_volume::builders::CreateCachediScsiVolumeInputBuilder,
+}
 impl CreateCachediSCSIVolumeFluentBuilder  {
     /// Creates a new `CreateCachediSCSIVolume`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_cachedi_scsi_volume::CreateCachediSCSIVolume, aws_http::retry::AwsResponseRetryClassifier,>,

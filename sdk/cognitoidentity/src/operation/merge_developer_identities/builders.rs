@@ -10,16 +10,17 @@ pub use crate::operation::merge_developer_identities::_merge_developer_identitie
 /// <p>You must use AWS Developer credentials to call this API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct MergeDeveloperIdentitiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::merge_developer_identities::builders::MergeDeveloperIdentitiesInputBuilder,
+}
 impl MergeDeveloperIdentitiesFluentBuilder  {
     /// Creates a new `MergeDeveloperIdentities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::merge_developer_identities::MergeDeveloperIdentities, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::describe_servers::_describe_servers_input::DescribeSer
 /// <p> A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeServersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_servers::builders::DescribeServersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_servers::builders::DescribeServersInputBuilder,
+}
 impl DescribeServersFluentBuilder  {
     /// Creates a new `DescribeServers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_servers::DescribeServers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeServersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_servers::paginator::DescribeServersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_servers::paginator::DescribeServersPaginator {
-                            crate::operation::describe_servers::paginator::DescribeServersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_servers::paginator::DescribeServersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_servers::paginator::DescribeServersPaginator {
+                                crate::operation::describe_servers::paginator::DescribeServersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Describes the server with the specified ServerName.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());

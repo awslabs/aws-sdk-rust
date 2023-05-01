@@ -8,16 +8,17 @@ pub use crate::operation::get_reveal_configuration::_get_reveal_configuration_in
 /// <p>Retrieves the status and configuration settings for retrieving occurrences of sensitive data reported by findings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRevealConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_reveal_configuration::builders::GetRevealConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_reveal_configuration::builders::GetRevealConfigurationInputBuilder,
+}
 impl GetRevealConfigurationFluentBuilder  {
     /// Creates a new `GetRevealConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_reveal_configuration::GetRevealConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

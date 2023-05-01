@@ -8,16 +8,17 @@ pub use crate::operation::describe_scaling_plan_resources::_describe_scaling_pla
 /// <p>Describes the scalable resources in the specified scaling plan.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeScalingPlanResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_scaling_plan_resources::builders::DescribeScalingPlanResourcesInputBuilder,
+}
 impl DescribeScalingPlanResourcesFluentBuilder  {
     /// Creates a new `DescribeScalingPlanResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResources, aws_http::retry::AwsResponseRetryClassifier,>,

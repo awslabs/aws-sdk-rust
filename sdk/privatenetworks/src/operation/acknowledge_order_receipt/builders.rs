@@ -8,16 +8,17 @@ pub use crate::operation::acknowledge_order_receipt::_acknowledge_order_receipt_
 /// <p>Acknowledges that the specified network order was received.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcknowledgeOrderReceiptFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptInputBuilder,
+}
 impl AcknowledgeOrderReceiptFluentBuilder  {
     /// Creates a new `AcknowledgeOrderReceipt`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceipt, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_access::_delete_access_input::DeleteAccessInput
 /// <p>Allows you to delete the access specified in the <code>ServerID</code> and <code>ExternalID</code> parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_access::builders::DeleteAccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_access::builders::DeleteAccessInputBuilder,
+}
 impl DeleteAccessFluentBuilder  {
     /// Creates a new `DeleteAccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_access::DeleteAccess, aws_http::retry::AwsResponseRetryClassifier,>,

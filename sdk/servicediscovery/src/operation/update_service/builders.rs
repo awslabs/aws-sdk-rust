@@ -20,16 +20,17 @@ pub use crate::operation::update_service::_update_service_input::UpdateServiceIn
 /// <p>When you update settings for a service, Cloud Map also updates the corresponding settings in all the records and health checks that were created by using the specified service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServiceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_service::builders::UpdateServiceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_service::builders::UpdateServiceInputBuilder,
+}
 impl UpdateServiceFluentBuilder  {
     /// Creates a new `UpdateService`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_service::UpdateService, aws_http::retry::AwsResponseRetryClassifier,>,

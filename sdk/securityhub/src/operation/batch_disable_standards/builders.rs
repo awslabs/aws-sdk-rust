@@ -9,16 +9,17 @@ pub use crate::operation::batch_disable_standards::_batch_disable_standards_inpu
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a> section of the <i>Security Hub User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDisableStandardsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_disable_standards::builders::BatchDisableStandardsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_disable_standards::builders::BatchDisableStandardsInputBuilder,
+}
 impl BatchDisableStandardsFluentBuilder  {
     /// Creates a new `BatchDisableStandards`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_disable_standards::BatchDisableStandards, aws_http::retry::AwsResponseRetryClassifier,>,

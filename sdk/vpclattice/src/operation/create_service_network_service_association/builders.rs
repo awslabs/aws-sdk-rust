@@ -11,16 +11,17 @@ pub use crate::operation::create_service_network_service_association::_create_se
 /// <p>As a result of this operation, the association is created in the service network account and the association owner account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateServiceNetworkServiceAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_service_network_service_association::builders::CreateServiceNetworkServiceAssociationInputBuilder,
+}
 impl CreateServiceNetworkServiceAssociationFluentBuilder  {
     /// Creates a new `CreateServiceNetworkServiceAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

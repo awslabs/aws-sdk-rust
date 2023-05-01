@@ -8,16 +8,17 @@ pub use crate::operation::create_sip_rule::_create_sip_rule_input::CreateSipRule
 /// <p>Creates a SIP rule which can be used to run a SIP media application as a target for a specific trigger type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSipRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_sip_rule::builders::CreateSipRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_sip_rule::builders::CreateSipRuleInputBuilder,
+}
 impl CreateSipRuleFluentBuilder  {
     /// Creates a new `CreateSipRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_sip_rule::CreateSipRule, aws_http::retry::AwsResponseRetryClassifier,>,

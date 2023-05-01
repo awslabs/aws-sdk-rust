@@ -8,16 +8,17 @@ pub use crate::operation::update_auth_event_feedback::_update_auth_event_feedbac
 /// <p>Provides the feedback for an authentication event, whether it was from a valid user or not. This feedback is used for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAuthEventFeedbackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_auth_event_feedback::builders::UpdateAuthEventFeedbackInputBuilder,
+}
 impl UpdateAuthEventFeedbackFluentBuilder  {
     /// Creates a new `UpdateAuthEventFeedback`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_auth_event_feedback::UpdateAuthEventFeedback, aws_http::retry::AwsResponseRetryClassifier,>,

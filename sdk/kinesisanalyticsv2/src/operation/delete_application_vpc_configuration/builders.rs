@@ -8,16 +8,17 @@ pub use crate::operation::delete_application_vpc_configuration::_delete_applicat
 /// <p>Removes a VPC configuration from a Kinesis Data Analytics application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteApplicationVpcConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_application_vpc_configuration::builders::DeleteApplicationVpcConfigurationInputBuilder,
+}
 impl DeleteApplicationVpcConfigurationFluentBuilder  {
     /// Creates a new `DeleteApplicationVpcConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

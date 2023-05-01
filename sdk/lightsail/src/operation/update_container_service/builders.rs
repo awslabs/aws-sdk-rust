@@ -8,16 +8,17 @@ pub use crate::operation::update_container_service::_update_container_service_in
 /// <p>Updates the configuration of your Amazon Lightsail container service, such as its power, scale, and public domain names.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContainerServiceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_container_service::builders::UpdateContainerServiceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_container_service::builders::UpdateContainerServiceInputBuilder,
+}
 impl UpdateContainerServiceFluentBuilder  {
     /// Creates a new `UpdateContainerService`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_container_service::UpdateContainerService, aws_http::retry::AwsResponseRetryClassifier,>,

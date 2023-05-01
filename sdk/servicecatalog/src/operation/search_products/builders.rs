@@ -8,16 +8,17 @@ pub use crate::operation::search_products::_search_products_input::SearchProduct
 /// <p>Gets information about the products to which the caller has access.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchProductsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_products::builders::SearchProductsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_products::builders::SearchProductsInputBuilder,
+}
 impl SearchProductsFluentBuilder  {
     /// Creates a new `SearchProducts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_products::SearchProducts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchProductsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_products::paginator::SearchProductsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_products::paginator::SearchProductsPaginator {
-                            crate::operation::search_products::paginator::SearchProductsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_products::paginator::SearchProductsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_products::paginator::SearchProductsPaginator {
+                                crate::operation::search_products::paginator::SearchProductsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The language code.</p> 
     /// <ul> 
     /// <li> <p> <code>jp</code> - Japanese</p> </li> 

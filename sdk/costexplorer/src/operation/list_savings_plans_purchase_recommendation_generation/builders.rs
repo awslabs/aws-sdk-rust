@@ -8,16 +8,17 @@ pub use crate::operation::list_savings_plans_purchase_recommendation_generation:
 /// <p>Retrieves a list of your historical recommendation generations within the past 30 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder,
+}
 impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder  {
     /// Creates a new `ListSavingsPlansPurchaseRecommendationGeneration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGeneration, aws_http::retry::AwsResponseRetryClassifier,>,

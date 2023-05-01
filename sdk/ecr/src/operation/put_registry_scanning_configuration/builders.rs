@@ -8,16 +8,17 @@ pub use crate::operation::put_registry_scanning_configuration::_put_registry_sca
 /// <p>Creates or updates the scanning configuration for your private registry.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutRegistryScanningConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_registry_scanning_configuration::builders::PutRegistryScanningConfigurationInputBuilder,
+}
 impl PutRegistryScanningConfigurationFluentBuilder  {
     /// Creates a new `PutRegistryScanningConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

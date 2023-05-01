@@ -8,16 +8,17 @@ pub use crate::operation::get_reservation_utilization::_get_reservation_utilizat
 /// <p>Retrieves the reservation utilization for your account. Management account in an organization have access to member accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetReservationUtilizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_reservation_utilization::builders::GetReservationUtilizationInputBuilder,
+}
 impl GetReservationUtilizationFluentBuilder  {
     /// Creates a new `GetReservationUtilization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_reservation_utilization::GetReservationUtilization, aws_http::retry::AwsResponseRetryClassifier,>,

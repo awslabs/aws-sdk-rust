@@ -11,16 +11,17 @@ pub use crate::operation::add_application_input_processing_configuration::_add_a
 /// <p>Adds an <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to an application. An input processor preprocesses records on the input stream before the application's SQL code executes. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddApplicationInputProcessingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_application_input_processing_configuration::builders::AddApplicationInputProcessingConfigurationInputBuilder,
+}
 impl AddApplicationInputProcessingConfigurationFluentBuilder  {
     /// Creates a new `AddApplicationInputProcessingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

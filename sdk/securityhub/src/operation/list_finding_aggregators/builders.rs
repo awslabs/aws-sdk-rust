@@ -8,16 +8,17 @@ pub use crate::operation::list_finding_aggregators::_list_finding_aggregators_in
 /// <p>If finding aggregation is enabled, then <code>ListFindingAggregators</code> returns the ARN of the finding aggregator. You can run this operation from any Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFindingAggregatorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsInputBuilder,
+}
 impl ListFindingAggregatorsFluentBuilder  {
     /// Creates a new `ListFindingAggregators`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_finding_aggregators::ListFindingAggregators, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFindingAggregatorsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_finding_aggregators::paginator::ListFindingAggregatorsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_finding_aggregators::paginator::ListFindingAggregatorsPaginator {
-                            crate::operation::list_finding_aggregators::paginator::ListFindingAggregatorsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_finding_aggregators::paginator::ListFindingAggregatorsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_finding_aggregators::paginator::ListFindingAggregatorsPaginator {
+                                crate::operation::list_finding_aggregators::paginator::ListFindingAggregatorsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The token returned with the previous set of results. Identifies the next set of results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

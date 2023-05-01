@@ -9,16 +9,17 @@ pub use crate::operation::describe_connector_profiles::_describe_connector_profi
 /// <p>If no names or <code>connector-types</code> are provided, returns all connector profiles in a paginated form. If there is no match, this operation returns an empty list.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConnectorProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_connector_profiles::builders::DescribeConnectorProfilesInputBuilder,
+}
 impl DescribeConnectorProfilesFluentBuilder  {
     /// Creates a new `DescribeConnectorProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_connector_profiles::DescribeConnectorProfiles, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeConnectorProfilesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_connector_profiles::paginator::DescribeConnectorProfilesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_connector_profiles::paginator::DescribeConnectorProfilesPaginator {
-                            crate::operation::describe_connector_profiles::paginator::DescribeConnectorProfilesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_connector_profiles::paginator::DescribeConnectorProfilesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_connector_profiles::paginator::DescribeConnectorProfilesPaginator {
+                                crate::operation::describe_connector_profiles::paginator::DescribeConnectorProfilesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `connectorProfileNames`.
     ///
     /// To override the contents of this collection use [`set_connector_profile_names`](Self::set_connector_profile_names).

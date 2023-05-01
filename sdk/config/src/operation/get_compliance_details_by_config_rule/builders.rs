@@ -8,16 +8,17 @@ pub use crate::operation::get_compliance_details_by_config_rule::_get_compliance
 /// <p>Returns the evaluation results for the specified Config rule. The results indicate which Amazon Web Services resources were evaluated by the rule, when each resource was last evaluated, and whether each resource complies with the rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetComplianceDetailsByConfigRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder,
+}
 impl GetComplianceDetailsByConfigRuleFluentBuilder  {
     /// Creates a new `GetComplianceDetailsByConfigRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRule, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetComplianceDetailsByConfigRuleFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_details_by_config_rule::paginator::GetComplianceDetailsByConfigRulePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_compliance_details_by_config_rule::paginator::GetComplianceDetailsByConfigRulePaginator {
-                            crate::operation::get_compliance_details_by_config_rule::paginator::GetComplianceDetailsByConfigRulePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_details_by_config_rule::paginator::GetComplianceDetailsByConfigRulePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_compliance_details_by_config_rule::paginator::GetComplianceDetailsByConfigRulePaginator {
+                                crate::operation::get_compliance_details_by_config_rule::paginator::GetComplianceDetailsByConfigRulePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the Config rule for which you want compliance information.</p>
     pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());

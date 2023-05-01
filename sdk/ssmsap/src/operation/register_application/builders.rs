@@ -11,16 +11,17 @@ pub use crate::operation::register_application::_register_application_input::Reg
 /// <p>Amazon EC2 instance(s) must have access to the secrets created in AWS Secrets Manager to manage SAP applications and components.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterApplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_application::builders::RegisterApplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_application::builders::RegisterApplicationInputBuilder,
+}
 impl RegisterApplicationFluentBuilder  {
     /// Creates a new `RegisterApplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_application::RegisterApplication, aws_http::retry::AwsResponseRetryClassifier,>,

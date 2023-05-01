@@ -8,16 +8,17 @@ pub use crate::operation::get_control_operation::_get_control_operation_input::G
 /// <p>Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code> operation. Displays a message in case of error. Details for an operation are available for 90 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetControlOperationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_control_operation::builders::GetControlOperationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_control_operation::builders::GetControlOperationInputBuilder,
+}
 impl GetControlOperationFluentBuilder  {
     /// Creates a new `GetControlOperation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_control_operation::GetControlOperation, aws_http::retry::AwsResponseRetryClassifier,>,

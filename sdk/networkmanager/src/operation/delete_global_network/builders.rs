@@ -8,16 +8,17 @@ pub use crate::operation::delete_global_network::_delete_global_network_input::D
 /// <p>Deletes an existing global network. You must first delete all global network objects (devices, links, and sites), deregister all transit gateways, and delete any core networks.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteGlobalNetworkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder,
+}
 impl DeleteGlobalNetworkFluentBuilder  {
     /// Creates a new `DeleteGlobalNetwork`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_global_network::DeleteGlobalNetwork, aws_http::retry::AwsResponseRetryClassifier,>,

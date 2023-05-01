@@ -8,16 +8,17 @@ pub use crate::operation::list_image_versions::_list_image_versions_input::ListI
 /// <p>Lists the versions of a specified image and their properties. The list can be filtered by creation time or modified time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImageVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_image_versions::builders::ListImageVersionsInputBuilder,
+}
 impl ListImageVersionsFluentBuilder  {
     /// Creates a new `ListImageVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_image_versions::ListImageVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListImageVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_image_versions::paginator::ListImageVersionsPaginator {
-                            crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_image_versions::paginator::ListImageVersionsPaginator {
+                                crate::operation::list_image_versions::paginator::ListImageVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter that returns only versions created on or after the specified time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);

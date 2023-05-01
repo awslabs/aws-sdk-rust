@@ -10,16 +10,17 @@ pub use crate::operation::create_batch_prediction::_create_batch_prediction_inpu
 /// <p>You can poll for status updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. After the <code>COMPLETED</code> status appears, the results are available in the location specified by the <code>OutputUri</code> parameter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBatchPredictionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_batch_prediction::builders::CreateBatchPredictionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_batch_prediction::builders::CreateBatchPredictionInputBuilder,
+}
 impl CreateBatchPredictionFluentBuilder  {
     /// Creates a new `CreateBatchPrediction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_batch_prediction::CreateBatchPrediction, aws_http::retry::AwsResponseRetryClassifier,>,

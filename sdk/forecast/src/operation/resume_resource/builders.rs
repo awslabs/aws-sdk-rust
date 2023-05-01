@@ -8,16 +8,17 @@ pub use crate::operation::resume_resource::_resume_resource_input::ResumeResourc
 /// <p>Resumes a stopped monitor resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResumeResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::resume_resource::builders::ResumeResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::resume_resource::builders::ResumeResourceInputBuilder,
+}
 impl ResumeResourceFluentBuilder  {
     /// Creates a new `ResumeResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::resume_resource::ResumeResource, aws_http::retry::AwsResponseRetryClassifier,>,

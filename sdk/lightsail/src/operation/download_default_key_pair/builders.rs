@@ -9,16 +9,17 @@ pub use crate::operation::download_default_key_pair::_download_default_key_pair_
 /// <p>This action also creates a Lightsail default key pair if a default key pair does not currently exist in the Amazon Web Services Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DownloadDefaultKeyPairFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::download_default_key_pair::builders::DownloadDefaultKeyPairInputBuilder,
+}
 impl DownloadDefaultKeyPairFluentBuilder  {
     /// Creates a new `DownloadDefaultKeyPair`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::download_default_key_pair::DownloadDefaultKeyPair, aws_http::retry::AwsResponseRetryClassifier,>,

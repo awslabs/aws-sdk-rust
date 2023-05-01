@@ -9,16 +9,17 @@ pub use crate::operation::list_admin_accounts_for_organization::_list_admin_acco
 /// <p>This operation can be called only from the organization's management account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAdminAccountsForOrganizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_admin_accounts_for_organization::builders::ListAdminAccountsForOrganizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_admin_accounts_for_organization::builders::ListAdminAccountsForOrganizationInputBuilder,
+}
 impl ListAdminAccountsForOrganizationFluentBuilder  {
     /// Creates a new `ListAdminAccountsForOrganization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganization, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListAdminAccountsForOrganizationFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_admin_accounts_for_organization::paginator::ListAdminAccountsForOrganizationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_admin_accounts_for_organization::paginator::ListAdminAccountsForOrganizationPaginator {
-                            crate::operation::list_admin_accounts_for_organization::paginator::ListAdminAccountsForOrganizationPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_admin_accounts_for_organization::paginator::ListAdminAccountsForOrganizationPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_admin_accounts_for_organization::paginator::ListAdminAccountsForOrganizationPaginator {
+                                crate::operation::list_admin_accounts_for_organization::paginator::ListAdminAccountsForOrganizationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

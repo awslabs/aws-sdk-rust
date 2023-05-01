@@ -8,16 +8,17 @@ pub use crate::operation::upgrade_lens_review::_upgrade_lens_review_input::Upgra
 /// <p>Upgrade lens review for a particular workload.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpgradeLensReviewFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::upgrade_lens_review::builders::UpgradeLensReviewInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::upgrade_lens_review::builders::UpgradeLensReviewInputBuilder,
+}
 impl UpgradeLensReviewFluentBuilder  {
     /// Creates a new `UpgradeLensReview`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::upgrade_lens_review::UpgradeLensReview, aws_http::retry::AwsResponseRetryClassifier,>,

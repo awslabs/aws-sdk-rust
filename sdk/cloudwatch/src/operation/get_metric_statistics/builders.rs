@@ -26,16 +26,17 @@ pub use crate::operation::get_metric_statistics::_get_metric_statistics_input::G
 /// <p>For information about metrics and dimensions supported by Amazon Web Services services, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMetricStatisticsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_metric_statistics::builders::GetMetricStatisticsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_metric_statistics::builders::GetMetricStatisticsInputBuilder,
+}
 impl GetMetricStatisticsFluentBuilder  {
     /// Creates a new `GetMetricStatistics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_metric_statistics::GetMetricStatistics, aws_http::retry::AwsResponseRetryClassifier,>,

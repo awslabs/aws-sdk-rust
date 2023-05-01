@@ -8,16 +8,17 @@ pub use crate::operation::get_read_set_activation_job::_get_read_set_activation_
 /// <p>Gets information about a read set activation job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetReadSetActivationJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobInputBuilder,
+}
 impl GetReadSetActivationJobFluentBuilder  {
     /// Creates a new `GetReadSetActivationJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_read_set_activation_job::GetReadSetActivationJob, aws_http::retry::AwsResponseRetryClassifier,>,

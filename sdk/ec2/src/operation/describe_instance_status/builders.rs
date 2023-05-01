@@ -14,16 +14,17 @@ pub use crate::operation::describe_instance_status::_describe_instance_status_in
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstanceStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_instance_status::builders::DescribeInstanceStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_instance_status::builders::DescribeInstanceStatusInputBuilder,
+}
 impl DescribeInstanceStatusFluentBuilder  {
     /// Creates a new `DescribeInstanceStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_instance_status::DescribeInstanceStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -54,11 +55,11 @@ impl DescribeInstanceStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator {
-                            crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator {
+                                crate::operation::describe_instance_status::paginator::DescribeInstanceStatusPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

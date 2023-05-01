@@ -8,16 +8,17 @@ pub use crate::operation::get_events_configuration::_get_events_configuration_in
 /// <p>Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint or Lambda function ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventsConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_events_configuration::builders::GetEventsConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_events_configuration::builders::GetEventsConfigurationInputBuilder,
+}
 impl GetEventsConfigurationFluentBuilder  {
     /// Creates a new `GetEventsConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_events_configuration::GetEventsConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

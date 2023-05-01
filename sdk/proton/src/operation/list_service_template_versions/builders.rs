@@ -8,16 +8,17 @@ pub use crate::operation::list_service_template_versions::_list_service_template
 /// <p>List major or minor versions of a service template with detail data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListServiceTemplateVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_service_template_versions::builders::ListServiceTemplateVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_service_template_versions::builders::ListServiceTemplateVersionsInputBuilder,
+}
 impl ListServiceTemplateVersionsFluentBuilder  {
     /// Creates a new `ListServiceTemplateVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_service_template_versions::ListServiceTemplateVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListServiceTemplateVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_service_template_versions::paginator::ListServiceTemplateVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_service_template_versions::paginator::ListServiceTemplateVersionsPaginator {
-                            crate::operation::list_service_template_versions::paginator::ListServiceTemplateVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_service_template_versions::paginator::ListServiceTemplateVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_service_template_versions::paginator::ListServiceTemplateVersionsPaginator {
+                                crate::operation::list_service_template_versions::paginator::ListServiceTemplateVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token that indicates the location of the next major or minor version in the array of major or minor versions of a service template, after the list of major or minor versions that was previously requested.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

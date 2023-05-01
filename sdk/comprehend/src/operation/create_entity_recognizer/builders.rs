@@ -8,16 +8,17 @@ pub use crate::operation::create_entity_recognizer::_create_entity_recognizer_in
 /// <p>Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code> request is submitted, you can check job status using the <code>DescribeEntityRecognizer</code> API. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEntityRecognizerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_entity_recognizer::builders::CreateEntityRecognizerInputBuilder,
+}
 impl CreateEntityRecognizerFluentBuilder  {
     /// Creates a new `CreateEntityRecognizer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_entity_recognizer::CreateEntityRecognizer, aws_http::retry::AwsResponseRetryClassifier,>,

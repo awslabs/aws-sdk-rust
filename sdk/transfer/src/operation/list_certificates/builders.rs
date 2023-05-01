@@ -8,16 +8,17 @@ pub use crate::operation::list_certificates::_list_certificates_input::ListCerti
 /// <p>Returns a list of the current certificates that have been imported into Transfer Family. If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code> parameter. If you ran the command previously and received a value for the <code>NextToken</code> parameter, you can supply that value to continue listing certificates from where you left off.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCertificatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_certificates::builders::ListCertificatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_certificates::builders::ListCertificatesInputBuilder,
+}
 impl ListCertificatesFluentBuilder  {
     /// Creates a new `ListCertificates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_certificates::ListCertificates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCertificatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_certificates::paginator::ListCertificatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_certificates::paginator::ListCertificatesPaginator {
-                            crate::operation::list_certificates::paginator::ListCertificatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_certificates::paginator::ListCertificatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_certificates::paginator::ListCertificatesPaginator {
+                                crate::operation::list_certificates::paginator::ListCertificatesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of certificates to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

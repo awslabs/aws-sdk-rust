@@ -9,16 +9,17 @@ pub use crate::operation::list_on_premises_instances::_list_on_premises_instance
 /// <p>Unless otherwise specified, both registered and deregistered on-premises instance names are listed. To list only registered or deregistered on-premises instance names, use the registration status parameter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListOnPremisesInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder,
+}
 impl ListOnPremisesInstancesFluentBuilder  {
     /// Creates a new `ListOnPremisesInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_on_premises_instances::ListOnPremisesInstances, aws_http::retry::AwsResponseRetryClassifier,>,

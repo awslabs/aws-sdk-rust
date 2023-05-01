@@ -8,16 +8,17 @@ pub use crate::operation::start_clock::_start_clock_input::StartClockInputBuilde
 /// <p>Starts the simulation clock.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartClockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_clock::builders::StartClockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_clock::builders::StartClockInputBuilder,
+}
 impl StartClockFluentBuilder  {
     /// Creates a new `StartClock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_clock::StartClock, aws_http::retry::AwsResponseRetryClassifier,>,

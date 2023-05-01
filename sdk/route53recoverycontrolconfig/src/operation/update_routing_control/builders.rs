@@ -8,16 +8,17 @@ pub use crate::operation::update_routing_control::_update_routing_control_input:
 /// <p>Updates a routing control. You can only update the name of the routing control. To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRoutingControlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_routing_control::builders::UpdateRoutingControlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_routing_control::builders::UpdateRoutingControlInputBuilder,
+}
 impl UpdateRoutingControlFluentBuilder  {
     /// Creates a new `UpdateRoutingControl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_routing_control::UpdateRoutingControl, aws_http::retry::AwsResponseRetryClassifier,>,

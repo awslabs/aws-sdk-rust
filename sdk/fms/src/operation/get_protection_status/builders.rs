@@ -8,16 +8,17 @@ pub use crate::operation::get_protection_status::_get_protection_status_input::G
 /// <p>If you created a Shield Advanced policy, returns policy-level attack summary information in the event of a potential DDoS attack. Other policy types are currently unsupported.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetProtectionStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_protection_status::builders::GetProtectionStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_protection_status::builders::GetProtectionStatusInputBuilder,
+}
 impl GetProtectionStatusFluentBuilder  {
     /// Creates a new `GetProtectionStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_protection_status::GetProtectionStatus, aws_http::retry::AwsResponseRetryClassifier,>,

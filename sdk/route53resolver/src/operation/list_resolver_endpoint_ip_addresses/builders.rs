@@ -8,16 +8,17 @@ pub use crate::operation::list_resolver_endpoint_ip_addresses::_list_resolver_en
 /// <p>Gets the IP addresses for a specified Resolver endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResolverEndpointIpAddressesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resolver_endpoint_ip_addresses::builders::ListResolverEndpointIpAddressesInputBuilder,
+}
 impl ListResolverEndpointIpAddressesFluentBuilder  {
     /// Creates a new `ListResolverEndpointIpAddresses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddresses, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListResolverEndpointIpAddressesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_endpoint_ip_addresses::paginator::ListResolverEndpointIpAddressesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resolver_endpoint_ip_addresses::paginator::ListResolverEndpointIpAddressesPaginator {
-                            crate::operation::list_resolver_endpoint_ip_addresses::paginator::ListResolverEndpointIpAddressesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_endpoint_ip_addresses::paginator::ListResolverEndpointIpAddressesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_resolver_endpoint_ip_addresses::paginator::ListResolverEndpointIpAddressesPaginator {
+                                crate::operation::list_resolver_endpoint_ip_addresses::paginator::ListResolverEndpointIpAddressesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
     pub fn resolver_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resolver_endpoint_id(input.into());

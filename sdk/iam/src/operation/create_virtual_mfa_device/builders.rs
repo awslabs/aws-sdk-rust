@@ -11,16 +11,17 @@ pub use crate::operation::create_virtual_mfa_device::_create_virtual_mfa_device_
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVirtualMFADeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_virtual_mfa_device::builders::CreateVirtualMfaDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_virtual_mfa_device::builders::CreateVirtualMfaDeviceInputBuilder,
+}
 impl CreateVirtualMFADeviceFluentBuilder  {
     /// Creates a new `CreateVirtualMFADevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_virtual_mfa_device::CreateVirtualMFADevice, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::batch_upsert_table_rows::_batch_upsert_table_rows_inpu
 /// <p> You can specify the values to set in some or all of the columns in the table for the matching or newly appended rows. If a column is not explicitly specified for a particular row, then that column will not be updated for that row. To clear out the data in a specific cell, you need to set the value as an empty string (""). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchUpsertTableRowsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_upsert_table_rows::builders::BatchUpsertTableRowsInputBuilder,
+}
 impl BatchUpsertTableRowsFluentBuilder  {
     /// Creates a new `BatchUpsertTableRows`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_upsert_table_rows::BatchUpsertTableRows, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_hit_review_status::_update_hit_review_status_in
 /// <p> The <code>UpdateHITReviewStatus</code> operation updates the status of a HIT. If the status is Reviewable, this operation can update the status to Reviewing, or it can revert a Reviewing HIT back to the Reviewable status. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateHITReviewStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_hit_review_status::builders::UpdateHitReviewStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_hit_review_status::builders::UpdateHitReviewStatusInputBuilder,
+}
 impl UpdateHITReviewStatusFluentBuilder  {
     /// Creates a new `UpdateHITReviewStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_hit_review_status::UpdateHITReviewStatus, aws_http::retry::AwsResponseRetryClassifier,>,

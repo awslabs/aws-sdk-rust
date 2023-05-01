@@ -9,16 +9,17 @@ pub use crate::operation::import_server_catalog::_import_server_catalog_input::I
 /// <p>This call returns immediately, but might take additional time to retrieve all the servers.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportServerCatalogFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_server_catalog::builders::ImportServerCatalogInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_server_catalog::builders::ImportServerCatalogInputBuilder,
+}
 impl ImportServerCatalogFluentBuilder  {
     /// Creates a new `ImportServerCatalog`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_server_catalog::ImportServerCatalog, aws_http::retry::AwsResponseRetryClassifier,>,

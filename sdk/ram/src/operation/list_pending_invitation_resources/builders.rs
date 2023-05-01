@@ -8,16 +8,17 @@ pub use crate::operation::list_pending_invitation_resources::_list_pending_invit
 /// <p>Lists the resources in a resource share that is shared with you but for which the invitation is still <code>PENDING</code>. That means that you haven't accepted or rejected the invitation and the invitation hasn't expired.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPendingInvitationResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesInputBuilder,
+}
 impl ListPendingInvitationResourcesFluentBuilder  {
     /// Creates a new `ListPendingInvitationResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_pending_invitation_resources::ListPendingInvitationResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPendingInvitationResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator {
-                            crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator {
+                                crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
     pub fn resource_share_invitation_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_share_invitation_arn(input.into());

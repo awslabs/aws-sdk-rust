@@ -8,16 +8,17 @@ pub use crate::operation::create_subscription_notification_configuration::_creat
 /// <p>Notifies the subscriber when new data is written to the data lake for the sources that the subscriber consumes in Security Lake. You can create only one subscriber notification per subscriber.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSubscriptionNotificationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_subscription_notification_configuration::builders::CreateSubscriptionNotificationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_subscription_notification_configuration::builders::CreateSubscriptionNotificationConfigurationInputBuilder,
+}
 impl CreateSubscriptionNotificationConfigurationFluentBuilder  {
     /// Creates a new `CreateSubscriptionNotificationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_subscription_notification_configuration::CreateSubscriptionNotificationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

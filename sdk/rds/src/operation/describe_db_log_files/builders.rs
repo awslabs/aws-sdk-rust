@@ -9,16 +9,17 @@ pub use crate::operation::describe_db_log_files::_describe_db_log_files_input::D
 /// <p>This command doesn't apply to RDS Custom.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBLogFilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder,
+}
 impl DescribeDBLogFilesFluentBuilder  {
     /// Creates a new `DescribeDBLogFiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_log_files::DescribeDBLogFiles, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeDBLogFilesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator {
-                            crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator {
+                                crate::operation::describe_db_log_files::paginator::DescribeDbLogFilesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p> 
     /// <p>Constraints:</p> 
     /// <ul> 

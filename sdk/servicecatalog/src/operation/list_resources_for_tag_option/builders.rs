@@ -8,16 +8,17 @@ pub use crate::operation::list_resources_for_tag_option::_list_resources_for_tag
 /// <p>Lists the resources associated with the specified TagOption.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourcesForTagOptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resources_for_tag_option::builders::ListResourcesForTagOptionInputBuilder,
+}
 impl ListResourcesForTagOptionFluentBuilder  {
     /// Creates a new `ListResourcesForTagOption`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resources_for_tag_option::ListResourcesForTagOption, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListResourcesForTagOptionFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator {
-                            crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator {
+                                crate::operation::list_resources_for_tag_option::paginator::ListResourcesForTagOptionPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The TagOption identifier.</p>
     pub fn tag_option_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tag_option_id(input.into());

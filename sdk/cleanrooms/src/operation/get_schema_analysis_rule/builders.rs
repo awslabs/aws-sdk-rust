@@ -8,16 +8,17 @@ pub use crate::operation::get_schema_analysis_rule::_get_schema_analysis_rule_in
 /// <p>Retrieves a schema analysis rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSchemaAnalysisRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_schema_analysis_rule::builders::GetSchemaAnalysisRuleInputBuilder,
+}
 impl GetSchemaAnalysisRuleFluentBuilder  {
     /// Creates a new `GetSchemaAnalysisRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRule, aws_http::retry::AwsResponseRetryClassifier,>,

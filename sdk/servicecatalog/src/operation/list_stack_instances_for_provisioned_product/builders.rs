@@ -8,16 +8,17 @@ pub use crate::operation::list_stack_instances_for_provisioned_product::_list_st
 /// <p>Returns summary information about stack instances that are associated with the specified <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a specific Amazon Web Services account name or Region. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStackInstancesForProvisionedProductFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductInputBuilder,
+}
 impl ListStackInstancesForProvisionedProductFluentBuilder  {
     /// Creates a new `ListStackInstancesForProvisionedProduct`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProduct, aws_http::retry::AwsResponseRetryClassifier,>,

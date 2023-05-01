@@ -18,16 +18,17 @@ pub use crate::operation::update_rule_group::_update_rule_group_input::UpdateRul
 /// <p> A rule group defines a collection of rules to inspect and control web requests that you can use in a <code>WebACL</code>. When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRuleGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_rule_group::builders::UpdateRuleGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_rule_group::builders::UpdateRuleGroupInputBuilder,
+}
 impl UpdateRuleGroupFluentBuilder  {
     /// Creates a new `UpdateRuleGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_rule_group::UpdateRuleGroup, aws_http::retry::AwsResponseRetryClassifier,>,

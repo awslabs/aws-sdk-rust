@@ -10,16 +10,17 @@ pub use crate::operation::delete_user_permissions_boundary::_delete_user_permiss
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteUserPermissionsBoundaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryInputBuilder,
+}
 impl DeleteUserPermissionsBoundaryFluentBuilder  {
     /// Creates a new `DeleteUserPermissionsBoundary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundary, aws_http::retry::AwsResponseRetryClassifier,>,

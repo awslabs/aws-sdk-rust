@@ -8,16 +8,17 @@ pub use crate::operation::add_storage_system::_add_storage_system_input::AddStor
 /// <p>Creates an Amazon Web Services resource for an on-premises storage system that you want DataSync Discovery to collect information about.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddStorageSystemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_storage_system::builders::AddStorageSystemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_storage_system::builders::AddStorageSystemInputBuilder,
+}
 impl AddStorageSystemFluentBuilder  {
     /// Creates a new `AddStorageSystem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_storage_system::AddStorageSystem, aws_http::retry::AwsResponseRetryClassifier,>,

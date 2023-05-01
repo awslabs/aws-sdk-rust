@@ -8,16 +8,17 @@ pub use crate::operation::get_permission_group::_get_permission_group_input::Get
 /// <p>Retrieves the details of a specific permission group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPermissionGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_permission_group::builders::GetPermissionGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_permission_group::builders::GetPermissionGroupInputBuilder,
+}
 impl GetPermissionGroupFluentBuilder  {
     /// Creates a new `GetPermissionGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_permission_group::GetPermissionGroup, aws_http::retry::AwsResponseRetryClassifier,>,

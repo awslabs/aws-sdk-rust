@@ -10,16 +10,17 @@ pub use crate::operation::update_snapshot_schedule::_update_snapshot_schedule_in
 /// <p>In the request you must identify the gateway volume whose snapshot schedule you want to update, and the schedule information, including when you want the snapshot to begin on a day and the frequency (in hours) of snapshots.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSnapshotScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_snapshot_schedule::builders::UpdateSnapshotScheduleInputBuilder,
+}
 impl UpdateSnapshotScheduleFluentBuilder  {
     /// Creates a new `UpdateSnapshotSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_snapshot_schedule::UpdateSnapshotSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

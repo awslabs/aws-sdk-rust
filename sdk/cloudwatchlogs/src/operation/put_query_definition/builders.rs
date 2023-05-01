@@ -10,16 +10,17 @@ pub use crate::operation::put_query_definition::_put_query_definition_input::Put
 /// <p>You must have the <code>logs:PutQueryDefinition</code> permission to be able to perform this operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutQueryDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_query_definition::builders::PutQueryDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_query_definition::builders::PutQueryDefinitionInputBuilder,
+}
 impl PutQueryDefinitionFluentBuilder  {
     /// Creates a new `PutQueryDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_query_definition::PutQueryDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

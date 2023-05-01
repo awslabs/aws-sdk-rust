@@ -8,16 +8,17 @@ pub use crate::operation::test_custom_data_identifier::_test_custom_data_identif
 /// <p>Tests a custom data identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TestCustomDataIdentifierFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierInputBuilder,
+}
 impl TestCustomDataIdentifierFluentBuilder  {
     /// Creates a new `TestCustomDataIdentifier`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::test_custom_data_identifier::TestCustomDataIdentifier, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_user_defined_function::_update_user_defined_fun
 /// <p>Updates an existing function definition in the Data Catalog.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateUserDefinedFunctionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_user_defined_function::builders::UpdateUserDefinedFunctionInputBuilder,
+}
 impl UpdateUserDefinedFunctionFluentBuilder  {
     /// Creates a new `UpdateUserDefinedFunction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_user_defined_function::UpdateUserDefinedFunction, aws_http::retry::AwsResponseRetryClassifier,>,

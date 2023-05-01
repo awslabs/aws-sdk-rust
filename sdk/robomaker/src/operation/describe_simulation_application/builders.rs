@@ -8,16 +8,17 @@ pub use crate::operation::describe_simulation_application::_describe_simulation_
 /// <p>Describes a simulation application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSimulationApplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_simulation_application::builders::DescribeSimulationApplicationInputBuilder,
+}
 impl DescribeSimulationApplicationFluentBuilder  {
     /// Creates a new `DescribeSimulationApplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_simulation_application::DescribeSimulationApplication, aws_http::retry::AwsResponseRetryClassifier,>,

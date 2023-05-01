@@ -17,16 +17,17 @@ pub use crate::operation::list_aggregated_utterances::_list_aggregated_utterance
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAggregatedUtterancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_aggregated_utterances::builders::ListAggregatedUtterancesInputBuilder,
+}
 impl ListAggregatedUtterancesFluentBuilder  {
     /// Creates a new `ListAggregatedUtterances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_aggregated_utterances::ListAggregatedUtterances, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -57,11 +58,11 @@ impl ListAggregatedUtterancesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator {
-                            crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator {
+                                crate::operation::list_aggregated_utterances::paginator::ListAggregatedUtterancesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier of the bot associated with this request.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());

@@ -13,16 +13,17 @@ pub use crate::operation::update_smb_file_share::_update_smb_file_share_input::U
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSMBFileShareFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_smb_file_share::builders::UpdateSmbFileShareInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_smb_file_share::builders::UpdateSmbFileShareInputBuilder,
+}
 impl UpdateSMBFileShareFluentBuilder  {
     /// Creates a new `UpdateSMBFileShare`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_smb_file_share::UpdateSMBFileShare, aws_http::retry::AwsResponseRetryClassifier,>,

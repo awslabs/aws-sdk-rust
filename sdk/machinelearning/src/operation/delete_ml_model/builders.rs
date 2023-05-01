@@ -10,16 +10,17 @@ pub use crate::operation::delete_ml_model::_delete_ml_model_input::DeleteMlModel
 /// <p> <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMLModelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_ml_model::builders::DeleteMlModelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_ml_model::builders::DeleteMlModelInputBuilder,
+}
 impl DeleteMLModelFluentBuilder  {
     /// Creates a new `DeleteMLModel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_ml_model::DeleteMLModel, aws_http::retry::AwsResponseRetryClassifier,>,

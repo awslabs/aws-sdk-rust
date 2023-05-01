@@ -8,16 +8,17 @@ pub use crate::operation::describe_account_settings::_describe_account_settings_
 /// <p>Describes the settings that were used when your Amazon QuickSight subscription was first created in this Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccountSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_account_settings::builders::DescribeAccountSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_account_settings::builders::DescribeAccountSettingsInputBuilder,
+}
 impl DescribeAccountSettingsFluentBuilder  {
     /// Creates a new `DescribeAccountSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_account_settings::DescribeAccountSettings, aws_http::retry::AwsResponseRetryClassifier,>,

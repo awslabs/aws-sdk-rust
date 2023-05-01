@@ -8,16 +8,17 @@ pub use crate::operation::list_schedule_groups::_list_schedule_groups_input::Lis
 /// <p>Returns a paginated list of your schedule groups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListScheduleGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_schedule_groups::builders::ListScheduleGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_schedule_groups::builders::ListScheduleGroupsInputBuilder,
+}
 impl ListScheduleGroupsFluentBuilder  {
     /// Creates a new `ListScheduleGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_schedule_groups::ListScheduleGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListScheduleGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_schedule_groups::paginator::ListScheduleGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_schedule_groups::paginator::ListScheduleGroupsPaginator {
-                            crate::operation::list_schedule_groups::paginator::ListScheduleGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_schedule_groups::paginator::ListScheduleGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_schedule_groups::paginator::ListScheduleGroupsPaginator {
+                                crate::operation::list_schedule_groups::paginator::ListScheduleGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name prefix that you can use to return a filtered list of your schedule groups.</p>
     pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name_prefix(input.into());

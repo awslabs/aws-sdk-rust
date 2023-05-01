@@ -8,16 +8,17 @@ pub use crate::operation::get_gateway_responses::_get_gateway_responses_input::G
 /// <p>Gets the GatewayResponses collection on the given RestApi. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default GatewayResponses collection for the supported response types.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetGatewayResponsesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_gateway_responses::builders::GetGatewayResponsesInputBuilder,
+}
 impl GetGatewayResponsesFluentBuilder  {
     /// Creates a new `GetGatewayResponses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_gateway_responses::GetGatewayResponses, aws_http::retry::AwsResponseRetryClassifier,>,

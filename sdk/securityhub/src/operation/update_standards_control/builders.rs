@@ -8,16 +8,17 @@ pub use crate::operation::update_standards_control::_update_standards_control_in
 /// <p>Used to control whether an individual security standard control is enabled or disabled.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateStandardsControlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_standards_control::builders::UpdateStandardsControlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_standards_control::builders::UpdateStandardsControlInputBuilder,
+}
 impl UpdateStandardsControlFluentBuilder  {
     /// Creates a new `UpdateStandardsControl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_standards_control::UpdateStandardsControl, aws_http::retry::AwsResponseRetryClassifier,>,

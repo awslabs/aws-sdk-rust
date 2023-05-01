@@ -17,16 +17,17 @@ pub use crate::operation::delete_bucket_metrics_configuration::_delete_bucket_me
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBucketMetricsConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_bucket_metrics_configuration::builders::DeleteBucketMetricsConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_bucket_metrics_configuration::builders::DeleteBucketMetricsConfigurationInputBuilder,
+}
 impl DeleteBucketMetricsConfigurationFluentBuilder  {
     /// Creates a new `DeleteBucketMetricsConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

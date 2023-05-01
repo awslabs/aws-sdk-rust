@@ -8,16 +8,17 @@ pub use crate::operation::list_release_labels::_list_release_labels_input::ListR
 /// <p>Retrieves release labels of EMR services in the region where the API is called.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReleaseLabelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_release_labels::builders::ListReleaseLabelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_release_labels::builders::ListReleaseLabelsInputBuilder,
+}
 impl ListReleaseLabelsFluentBuilder  {
     /// Creates a new `ListReleaseLabels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_release_labels::ListReleaseLabels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListReleaseLabelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator {
-                            crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator {
+                                crate::operation::list_release_labels::paginator::ListReleaseLabelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
     pub fn filters(mut self, input: crate::types::ReleaseLabelFilter) -> Self {
         self.inner = self.inner.filters(input);

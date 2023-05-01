@@ -19,16 +19,17 @@ pub use crate::operation::put_composite_alarm::_put_composite_alarm_input::PutCo
 /// <p>If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to create a composite alarm that has Systems Manager OpsItem actions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutCompositeAlarmFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_composite_alarm::builders::PutCompositeAlarmInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_composite_alarm::builders::PutCompositeAlarmInputBuilder,
+}
 impl PutCompositeAlarmFluentBuilder  {
     /// Creates a new `PutCompositeAlarm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_composite_alarm::PutCompositeAlarm, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::delete_configuration_set::_delete_configuration_set_in
 /// <p> <i>Configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConfigurationSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder,
+}
 impl DeleteConfigurationSetFluentBuilder  {
     /// Creates a new `DeleteConfigurationSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_configuration_set::DeleteConfigurationSet, aws_http::retry::AwsResponseRetryClassifier,>,

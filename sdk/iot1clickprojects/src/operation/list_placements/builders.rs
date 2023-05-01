@@ -8,16 +8,17 @@ pub use crate::operation::list_placements::_list_placements_input::ListPlacement
 /// <p>Lists the placement(s) of a project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPlacementsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_placements::builders::ListPlacementsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_placements::builders::ListPlacementsInputBuilder,
+}
 impl ListPlacementsFluentBuilder  {
     /// Creates a new `ListPlacements`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_placements::ListPlacements, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPlacementsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_placements::paginator::ListPlacementsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_placements::paginator::ListPlacementsPaginator {
-                            crate::operation::list_placements::paginator::ListPlacementsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_placements::paginator::ListPlacementsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_placements::paginator::ListPlacementsPaginator {
+                                crate::operation::list_placements::paginator::ListPlacementsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The project containing the placements to be listed.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());

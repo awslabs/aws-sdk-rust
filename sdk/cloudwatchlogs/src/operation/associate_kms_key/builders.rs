@@ -13,16 +13,17 @@ pub use crate::operation::associate_kms_key::_associate_kms_key_input::Associate
 /// <p>If you attempt to associate a KMS key with a log group but the KMS key does not exist or the KMS key is disabled, you receive an <code>InvalidParameterException</code> error. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateKmsKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_kms_key::builders::AssociateKmsKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_kms_key::builders::AssociateKmsKeyInputBuilder,
+}
 impl AssociateKmsKeyFluentBuilder  {
     /// Creates a new `AssociateKmsKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_kms_key::AssociateKmsKey, aws_http::retry::AwsResponseRetryClassifier,>,

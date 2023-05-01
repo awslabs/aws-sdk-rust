@@ -8,16 +8,17 @@ pub use crate::operation::list_file_system_associations::_list_file_system_assoc
 /// <p>Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains a summary of a file system association. This operation is only supported for FSx File Gateways.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFileSystemAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder,
+}
 impl ListFileSystemAssociationsFluentBuilder  {
     /// Creates a new `ListFileSystemAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_file_system_associations::ListFileSystemAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFileSystemAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_file_system_associations::paginator::ListFileSystemAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_file_system_associations::paginator::ListFileSystemAssociationsPaginator {
-                            crate::operation::list_file_system_associations::paginator::ListFileSystemAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_file_system_associations::paginator::ListFileSystemAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_file_system_associations::paginator::ListFileSystemAssociationsPaginator {
+                                crate::operation::list_file_system_associations::paginator::ListFileSystemAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());

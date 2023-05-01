@@ -16,16 +16,17 @@ pub use crate::operation::rollback_instance_refresh::_rollback_instance_refresh_
 /// <p>When you receive a successful response from this operation, Amazon EC2 Auto Scaling immediately begins replacing instances. You can check the status of this operation through the <code>DescribeInstanceRefreshes</code> API operation. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RollbackInstanceRefreshFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::rollback_instance_refresh::builders::RollbackInstanceRefreshInputBuilder,
+}
 impl RollbackInstanceRefreshFluentBuilder  {
     /// Creates a new `RollbackInstanceRefresh`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::rollback_instance_refresh::RollbackInstanceRefresh, aws_http::retry::AwsResponseRetryClassifier,>,

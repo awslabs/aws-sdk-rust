@@ -19,16 +19,17 @@ pub use crate::operation::describe_cases::_describe_cases_input::DescribeCasesIn
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCasesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cases::builders::DescribeCasesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cases::builders::DescribeCasesInputBuilder,
+}
 impl DescribeCasesFluentBuilder  {
     /// Creates a new `DescribeCases`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cases::DescribeCases, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -59,11 +60,11 @@ impl DescribeCasesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_cases::paginator::DescribeCasesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_cases::paginator::DescribeCasesPaginator {
-                            crate::operation::describe_cases::paginator::DescribeCasesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cases::paginator::DescribeCasesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_cases::paginator::DescribeCasesPaginator {
+                                crate::operation::describe_cases::paginator::DescribeCasesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `caseIdList`.
     ///
     /// To override the contents of this collection use [`set_case_id_list`](Self::set_case_id_list).

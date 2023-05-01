@@ -14,16 +14,17 @@ pub use crate::operation::delete_global_replication_group::_delete_global_replic
 /// <p>When you receive a successful response from this operation, Amazon ElastiCache immediately begins deleting the selected resources; you cannot cancel or revert this operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteGlobalReplicationGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_global_replication_group::builders::DeleteGlobalReplicationGroupInputBuilder,
+}
 impl DeleteGlobalReplicationGroupFluentBuilder  {
     /// Creates a new `DeleteGlobalReplicationGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_distributed_grants::_list_distributed_grants_inpu
 /// <p>Lists the grants distributed for the specified license.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDistributedGrantsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_distributed_grants::builders::ListDistributedGrantsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_distributed_grants::builders::ListDistributedGrantsInputBuilder,
+}
 impl ListDistributedGrantsFluentBuilder  {
     /// Creates a new `ListDistributedGrants`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_distributed_grants::ListDistributedGrants, aws_http::retry::AwsResponseRetryClassifier,>,

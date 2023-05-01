@@ -8,16 +8,17 @@ pub use crate::operation::move_replication_task::_move_replication_task_input::M
 /// <p>Moves a replication task from its current replication instance to a different target replication instance using the specified parameters. The target replication instance must be created with the same or later DMS version as the current replication instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct MoveReplicationTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::move_replication_task::builders::MoveReplicationTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::move_replication_task::builders::MoveReplicationTaskInputBuilder,
+}
 impl MoveReplicationTaskFluentBuilder  {
     /// Creates a new `MoveReplicationTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::move_replication_task::MoveReplicationTask, aws_http::retry::AwsResponseRetryClassifier,>,

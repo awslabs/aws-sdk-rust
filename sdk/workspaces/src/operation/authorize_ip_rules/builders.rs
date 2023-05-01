@@ -9,16 +9,17 @@ pub use crate::operation::authorize_ip_rules::_authorize_ip_rules_input::Authori
 /// <p>This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeIpRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::authorize_ip_rules::builders::AuthorizeIpRulesInputBuilder,
+}
 impl AuthorizeIpRulesFluentBuilder  {
     /// Creates a new `AuthorizeIpRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::authorize_ip_rules::AuthorizeIpRules, aws_http::retry::AwsResponseRetryClassifier,>,

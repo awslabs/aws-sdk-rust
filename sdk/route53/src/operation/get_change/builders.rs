@@ -12,16 +12,17 @@ pub use crate::operation::get_change::_get_change_input::GetChangeInputBuilder;
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetChangeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_change::builders::GetChangeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_change::builders::GetChangeInputBuilder,
+}
 impl GetChangeFluentBuilder  {
     /// Creates a new `GetChange`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_change::GetChange, aws_http::retry::AwsResponseRetryClassifier,>,

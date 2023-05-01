@@ -10,16 +10,17 @@ pub use crate::operation::delete_resolver_query_log_config::_delete_resolver_que
 /// <p>If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, you must stop sharing the configuration before you can delete a configuration. The accounts that you shared the configuration with can first disassociate VPCs that they associated with the configuration, but that's not necessary. If you stop sharing the configuration, those VPCs are automatically disassociated from the configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteResolverQueryLogConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_resolver_query_log_config::builders::DeleteResolverQueryLogConfigInputBuilder,
+}
 impl DeleteResolverQueryLogConfigFluentBuilder  {
     /// Creates a new `DeleteResolverQueryLogConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,

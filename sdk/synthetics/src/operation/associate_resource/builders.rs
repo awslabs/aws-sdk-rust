@@ -9,16 +9,17 @@ pub use crate::operation::associate_resource::_associate_resource_input::Associa
 /// <p>You must run this operation in the Region where the canary exists.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_resource::builders::AssociateResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_resource::builders::AssociateResourceInputBuilder,
+}
 impl AssociateResourceFluentBuilder  {
     /// Creates a new `AssociateResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_resource::AssociateResource, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_mobile_device_access_override::_get_mobile_device_
 /// <p>Gets the mobile device access override for the given WorkMail organization, user, and device.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMobileDeviceAccessOverrideFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideInputBuilder,
+}
 impl GetMobileDeviceAccessOverrideFluentBuilder  {
     /// Creates a new `GetMobileDeviceAccessOverride`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverride, aws_http::retry::AwsResponseRetryClassifier,>,

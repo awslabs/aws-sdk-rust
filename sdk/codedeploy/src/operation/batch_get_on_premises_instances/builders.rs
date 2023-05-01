@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_on_premises_instances::_batch_get_on_premise
 /// <p>Gets information about one or more on-premises instances. The maximum number of on-premises instances that can be returned is 25.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetOnPremisesInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_on_premises_instances::builders::BatchGetOnPremisesInstancesInputBuilder,
+}
 impl BatchGetOnPremisesInstancesFluentBuilder  {
     /// Creates a new `BatchGetOnPremisesInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstances, aws_http::retry::AwsResponseRetryClassifier,>,

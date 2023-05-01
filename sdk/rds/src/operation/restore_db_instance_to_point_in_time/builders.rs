@@ -11,16 +11,17 @@ pub use crate::operation::restore_db_instance_to_point_in_time::_restore_db_inst
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreDBInstanceToPointInTimeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDbInstanceToPointInTimeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_db_instance_to_point_in_time::builders::RestoreDbInstanceToPointInTimeInputBuilder,
+}
 impl RestoreDBInstanceToPointInTimeFluentBuilder  {
     /// Creates a new `RestoreDBInstanceToPointInTime`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_db_instance_to_point_in_time::RestoreDBInstanceToPointInTime, aws_http::retry::AwsResponseRetryClassifier,>,

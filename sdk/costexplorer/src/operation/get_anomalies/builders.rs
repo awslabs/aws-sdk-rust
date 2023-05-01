@@ -8,16 +8,17 @@ pub use crate::operation::get_anomalies::_get_anomalies_input::GetAnomaliesInput
 /// <p>Retrieves all of the cost anomalies detected on your account during the time period that's specified by the <code>DateInterval</code> object. Anomalies are available for up to 90 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAnomaliesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_anomalies::builders::GetAnomaliesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_anomalies::builders::GetAnomaliesInputBuilder,
+}
 impl GetAnomaliesFluentBuilder  {
     /// Creates a new `GetAnomalies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_anomalies::GetAnomalies, aws_http::retry::AwsResponseRetryClassifier,>,

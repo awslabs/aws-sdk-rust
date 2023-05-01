@@ -8,16 +8,17 @@ pub use crate::operation::get_operation_detail::_get_operation_detail_input::Get
 /// <p>This operation returns the current status of an operation that is not completed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOperationDetailFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_operation_detail::builders::GetOperationDetailInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_operation_detail::builders::GetOperationDetailInputBuilder,
+}
 impl GetOperationDetailFluentBuilder  {
     /// Creates a new `GetOperationDetail`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_operation_detail::GetOperationDetail, aws_http::retry::AwsResponseRetryClassifier,>,

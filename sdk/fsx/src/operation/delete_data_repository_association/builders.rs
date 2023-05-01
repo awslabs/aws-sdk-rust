@@ -8,16 +8,17 @@ pub use crate::operation::delete_data_repository_association::_delete_data_repos
 /// <p>Deletes a data repository association on an Amazon FSx for Lustre file system. Deleting the data repository association unlinks the file system from the Amazon S3 bucket. When deleting a data repository association, you have the option of deleting the data in the file system that corresponds to the data repository association. Data repository associations are supported for all file systems except for <code>Scratch_1</code> deployment type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDataRepositoryAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_data_repository_association::builders::DeleteDataRepositoryAssociationInputBuilder,
+}
 impl DeleteDataRepositoryAssociationFluentBuilder  {
     /// Creates a new `DeleteDataRepositoryAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

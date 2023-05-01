@@ -9,16 +9,17 @@ pub use crate::operation::get_unfiltered_partition_metadata::_get_unfiltered_par
 /// <p>For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartition</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUnfilteredPartitionMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_unfiltered_partition_metadata::builders::GetUnfilteredPartitionMetadataInputBuilder,
+}
 impl GetUnfilteredPartitionMetadataFluentBuilder  {
     /// Creates a new `GetUnfilteredPartitionMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

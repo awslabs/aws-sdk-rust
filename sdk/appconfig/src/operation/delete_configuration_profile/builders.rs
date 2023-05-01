@@ -8,16 +8,17 @@ pub use crate::operation::delete_configuration_profile::_delete_configuration_pr
 /// <p>Deletes a configuration profile. Deleting a configuration profile does not delete a configuration from a host.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConfigurationProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_configuration_profile::builders::DeleteConfigurationProfileInputBuilder,
+}
 impl DeleteConfigurationProfileFluentBuilder  {
     /// Creates a new `DeleteConfigurationProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_configuration_profile::DeleteConfigurationProfile, aws_http::retry::AwsResponseRetryClassifier,>,

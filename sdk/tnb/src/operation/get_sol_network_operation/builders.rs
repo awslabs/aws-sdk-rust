@@ -9,16 +9,17 @@ pub use crate::operation::get_sol_network_operation::_get_sol_network_operation_
 /// <p>A network operation is any operation that is done to your network, such as network instance instantiation or termination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSolNetworkOperationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_sol_network_operation::builders::GetSolNetworkOperationInputBuilder,
+}
 impl GetSolNetworkOperationFluentBuilder  {
     /// Creates a new `GetSolNetworkOperation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_sol_network_operation::GetSolNetworkOperation, aws_http::retry::AwsResponseRetryClassifier,>,

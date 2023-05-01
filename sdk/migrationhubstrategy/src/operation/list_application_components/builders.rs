@@ -8,16 +8,17 @@ pub use crate::operation::list_application_components::_list_application_compone
 /// <p> Retrieves a list of all the application components (processes). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListApplicationComponentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_application_components::builders::ListApplicationComponentsInputBuilder,
+}
 impl ListApplicationComponentsFluentBuilder  {
     /// Creates a new `ListApplicationComponents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_application_components::ListApplicationComponents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListApplicationComponentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator {
-                            crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator {
+                                crate::operation::list_application_components::paginator::ListApplicationComponentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> Criteria for filtering the list of application components. </p>
     pub fn application_component_criteria(mut self, input: crate::types::ApplicationComponentCriteria) -> Self {
         self.inner = self.inner.application_component_criteria(input);

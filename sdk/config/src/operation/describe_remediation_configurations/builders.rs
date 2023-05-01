@@ -8,16 +8,17 @@ pub use crate::operation::describe_remediation_configurations::_describe_remedia
 /// <p>Returns the details of one or more remediation configurations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRemediationConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_remediation_configurations::builders::DescribeRemediationConfigurationsInputBuilder,
+}
 impl DescribeRemediationConfigurationsFluentBuilder  {
     /// Creates a new `DescribeRemediationConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,

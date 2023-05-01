@@ -14,16 +14,17 @@ pub use crate::operation::describe_matchmaking::_describe_matchmaking_input::Des
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Set Up FlexMatch event notification</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMatchmakingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_matchmaking::builders::DescribeMatchmakingInputBuilder,
+}
 impl DescribeMatchmakingFluentBuilder  {
     /// Creates a new `DescribeMatchmaking`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_matchmaking::DescribeMatchmaking, aws_http::retry::AwsResponseRetryClassifier,>,

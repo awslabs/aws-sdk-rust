@@ -8,16 +8,17 @@ pub use crate::operation::batch_describe_model_package::_batch_describe_model_pa
 /// <p>This action batch describes a list of versioned model packages</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDescribeModelPackageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_describe_model_package::builders::BatchDescribeModelPackageInputBuilder,
+}
 impl BatchDescribeModelPackageFluentBuilder  {
     /// Creates a new `BatchDescribeModelPackage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_describe_model_package::BatchDescribeModelPackage, aws_http::retry::AwsResponseRetryClassifier,>,

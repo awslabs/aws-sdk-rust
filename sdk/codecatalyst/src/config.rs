@@ -82,7 +82,7 @@ impl Config {
                     }
 }
 /// Builder for creating a `Config`.
-#[derive(Default)]pub struct Builder {
+#[derive(Clone, Debug, Default)]pub struct Builder {
     endpoint_resolver: Option<std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>>,
     retry_config: Option<aws_smithy_types::retry::RetryConfig>,
                             sleep_impl: Option<std::sync::Arc<dyn aws_smithy_async::rt::sleep::AsyncSleep>>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_gateway::_delete_gateway_input::DeleteGatewayIn
 /// Deletes a gateway. Before you can delete a gateway, you must deregister its instances and delete its bridges.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_gateway::builders::DeleteGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_gateway::builders::DeleteGatewayInputBuilder,
+}
 impl DeleteGatewayFluentBuilder  {
     /// Creates a new `DeleteGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_gateway::DeleteGateway, aws_http::retry::AwsResponseRetryClassifier,>,

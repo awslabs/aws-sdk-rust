@@ -8,16 +8,17 @@ pub use crate::operation::batch_describe_simulation_job::_batch_describe_simulat
 /// <p>Describes one or more simulation jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDescribeSimulationJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_describe_simulation_job::builders::BatchDescribeSimulationJobInputBuilder,
+}
 impl BatchDescribeSimulationJobFluentBuilder  {
     /// Creates a new `BatchDescribeSimulationJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJob, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_job_log_items::_describe_job_log_items_input:
 /// <p>Retrieves detailed job log items with paging.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeJobLogItemsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder,
+}
 impl DescribeJobLogItemsFluentBuilder  {
     /// Creates a new `DescribeJobLogItems`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_job_log_items::DescribeJobLogItems, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeJobLogItemsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator {
-                            crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator {
+                                crate::operation::describe_job_log_items::paginator::DescribeJobLogItemsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Request to describe Job log job ID.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());

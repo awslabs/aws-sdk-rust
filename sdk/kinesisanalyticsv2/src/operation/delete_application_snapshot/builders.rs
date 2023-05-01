@@ -8,16 +8,17 @@ pub use crate::operation::delete_application_snapshot::_delete_application_snaps
 /// <p>Deletes a snapshot of application state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteApplicationSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_application_snapshot::builders::DeleteApplicationSnapshotInputBuilder,
+}
 impl DeleteApplicationSnapshotFluentBuilder  {
     /// Creates a new `DeleteApplicationSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_application_snapshot::DeleteApplicationSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

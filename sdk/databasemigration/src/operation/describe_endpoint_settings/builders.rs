@@ -8,16 +8,17 @@ pub use crate::operation::describe_endpoint_settings::_describe_endpoint_setting
 /// <p>Returns information about the possible endpoint settings available when you create an endpoint for a specific database engine.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEndpointSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_endpoint_settings::builders::DescribeEndpointSettingsInputBuilder,
+}
 impl DescribeEndpointSettingsFluentBuilder  {
     /// Creates a new `DescribeEndpointSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_endpoint_settings::DescribeEndpointSettings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeEndpointSettingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator {
-                            crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator {
+                                crate::operation::describe_endpoint_settings::paginator::DescribeEndpointSettingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The databse engine used for your source or target endpoint.</p>
     pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.engine_name(input.into());

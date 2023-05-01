@@ -9,16 +9,17 @@ pub use crate::operation::create_public_virtual_interface::_create_public_virtua
 /// <p>When creating an IPv6 public virtual interface (<code>addressFamily</code> is <code>ipv6</code>), leave the <code>customer</code> and <code>amazon</code> address fields blank to use auto-assigned IPv6 space. Custom IPv6 addresses are not supported.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePublicVirtualInterfaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_public_virtual_interface::builders::CreatePublicVirtualInterfaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_public_virtual_interface::builders::CreatePublicVirtualInterfaceInputBuilder,
+}
 impl CreatePublicVirtualInterfaceFluentBuilder  {
     /// Creates a new `CreatePublicVirtualInterface`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_public_virtual_interface::CreatePublicVirtualInterface, aws_http::retry::AwsResponseRetryClassifier,>,

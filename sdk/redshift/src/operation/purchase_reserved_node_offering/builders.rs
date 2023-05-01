@@ -9,16 +9,17 @@ pub use crate::operation::purchase_reserved_node_offering::_purchase_reserved_no
 /// <p> For more information about reserved node offerings, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PurchaseReservedNodeOfferingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::purchase_reserved_node_offering::builders::PurchaseReservedNodeOfferingInputBuilder,
+}
 impl PurchaseReservedNodeOfferingFluentBuilder  {
     /// Creates a new `PurchaseReservedNodeOffering`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOffering, aws_http::retry::AwsResponseRetryClassifier,>,

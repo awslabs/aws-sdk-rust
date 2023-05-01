@@ -9,16 +9,17 @@ pub use crate::operation::delete_bot_alias::_delete_bot_alias_input::DeleteBotAl
 /// <p>You can't delete an alias that is used in the association between a bot and a messaging channel. If an alias is used in a channel association, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception that includes a reference to the channel association that refers to the bot. You can remove the reference to the alias by deleting the channel association. If you get the same exception again, delete the referring association until the <code>DeleteBotAlias</code> operation is successful.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBotAliasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_bot_alias::builders::DeleteBotAliasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_bot_alias::builders::DeleteBotAliasInputBuilder,
+}
 impl DeleteBotAliasFluentBuilder  {
     /// Creates a new `DeleteBotAlias`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_bot_alias::DeleteBotAlias, aws_http::retry::AwsResponseRetryClassifier,>,

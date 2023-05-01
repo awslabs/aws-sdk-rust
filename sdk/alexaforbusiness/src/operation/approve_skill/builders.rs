@@ -8,16 +8,17 @@ pub use crate::operation::approve_skill::_approve_skill_input::ApproveSkillInput
 /// <p>Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ApproveSkillFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::approve_skill::builders::ApproveSkillInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::approve_skill::builders::ApproveSkillInputBuilder,
+}
 impl ApproveSkillFluentBuilder  {
     /// Creates a new `ApproveSkill`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::approve_skill::ApproveSkill, aws_http::retry::AwsResponseRetryClassifier,>,

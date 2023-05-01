@@ -9,16 +9,17 @@ pub use crate::operation::get_rightsizing_recommendation::_get_rightsizing_recom
 /// <p>Recommendations are generated to either downsize or terminate instances, along with providing savings detail and metrics. For more information about calculation and function, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost Management User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRightsizingRecommendationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_rightsizing_recommendation::builders::GetRightsizingRecommendationInputBuilder,
+}
 impl GetRightsizingRecommendationFluentBuilder  {
     /// Creates a new `GetRightsizingRecommendation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendation, aws_http::retry::AwsResponseRetryClassifier,>,

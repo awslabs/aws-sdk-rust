@@ -8,16 +8,17 @@ pub use crate::operation::update_notebook_instance::_update_notebook_instance_in
 /// <p>Updates a notebook instance. NotebookInstance updates include upgrading or downgrading the ML compute instance used for your notebook instance to accommodate changes in your workload requirements.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateNotebookInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_notebook_instance::builders::UpdateNotebookInstanceInputBuilder,
+}
 impl UpdateNotebookInstanceFluentBuilder  {
     /// Creates a new `UpdateNotebookInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_notebook_instance::UpdateNotebookInstance, aws_http::retry::AwsResponseRetryClassifier,>,

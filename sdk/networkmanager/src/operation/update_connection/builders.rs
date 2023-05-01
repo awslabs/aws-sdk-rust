@@ -8,16 +8,17 @@ pub use crate::operation::update_connection::_update_connection_input::UpdateCon
 /// <p>Updates the information for an existing connection. To remove information for any of the parameters, specify an empty string.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_connection::builders::UpdateConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_connection::builders::UpdateConnectionInputBuilder,
+}
 impl UpdateConnectionFluentBuilder  {
     /// Creates a new `UpdateConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_connection::UpdateConnection, aws_http::retry::AwsResponseRetryClassifier,>,

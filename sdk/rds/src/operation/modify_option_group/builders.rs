@@ -8,16 +8,17 @@ pub use crate::operation::modify_option_group::_modify_option_group_input::Modif
 /// <p>Modifies an existing option group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyOptionGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_option_group::builders::ModifyOptionGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_option_group::builders::ModifyOptionGroupInputBuilder,
+}
 impl ModifyOptionGroupFluentBuilder  {
     /// Creates a new `ModifyOptionGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_option_group::ModifyOptionGroup, aws_http::retry::AwsResponseRetryClassifier,>,

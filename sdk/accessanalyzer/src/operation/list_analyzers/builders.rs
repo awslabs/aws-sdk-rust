@@ -8,16 +8,17 @@ pub use crate::operation::list_analyzers::_list_analyzers_input::ListAnalyzersIn
 /// <p>Retrieves a list of analyzers.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAnalyzersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_analyzers::builders::ListAnalyzersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_analyzers::builders::ListAnalyzersInputBuilder,
+}
 impl ListAnalyzersFluentBuilder  {
     /// Creates a new `ListAnalyzers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_analyzers::ListAnalyzers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAnalyzersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_analyzers::paginator::ListAnalyzersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_analyzers::paginator::ListAnalyzersPaginator {
-                            crate::operation::list_analyzers::paginator::ListAnalyzersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_analyzers::paginator::ListAnalyzersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_analyzers::paginator::ListAnalyzersPaginator {
+                                crate::operation::list_analyzers::paginator::ListAnalyzersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

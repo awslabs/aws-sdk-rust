@@ -11,16 +11,17 @@ pub use crate::operation::associate_resolver_query_log_config::_associate_resolv
 /// <p>To remove a VPC from a query logging configuration, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateResolverQueryLogConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_resolver_query_log_config::builders::AssociateResolverQueryLogConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_resolver_query_log_config::builders::AssociateResolverQueryLogConfigInputBuilder,
+}
 impl AssociateResolverQueryLogConfigFluentBuilder  {
     /// Creates a new `AssociateResolverQueryLogConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,

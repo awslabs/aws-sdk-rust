@@ -8,16 +8,17 @@ pub use crate::operation::execute_policy::_execute_policy_input::ExecutePolicyIn
 /// <p>Executes the specified policy. This can be useful for testing the design of your scaling policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExecutePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::execute_policy::builders::ExecutePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::execute_policy::builders::ExecutePolicyInputBuilder,
+}
 impl ExecutePolicyFluentBuilder  {
     /// Creates a new `ExecutePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::execute_policy::ExecutePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

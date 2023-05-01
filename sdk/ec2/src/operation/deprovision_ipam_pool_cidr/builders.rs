@@ -8,16 +8,17 @@ pub use crate::operation::deprovision_ipam_pool_cidr::_deprovision_ipam_pool_cid
 /// <p>Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR from a pool that has a source pool, the CIDR is recycled back into the source pool. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision pool CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeprovisionIpamPoolCidrFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deprovision_ipam_pool_cidr::builders::DeprovisionIpamPoolCidrInputBuilder,
+}
 impl DeprovisionIpamPoolCidrFluentBuilder  {
     /// Creates a new `DeprovisionIpamPoolCidr`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidr, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_signal_catalog::_update_signal_catalog_input::U
 /// <p> Updates a signal catalog. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSignalCatalogFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_signal_catalog::builders::UpdateSignalCatalogInputBuilder,
+}
 impl UpdateSignalCatalogFluentBuilder  {
     /// Creates a new `UpdateSignalCatalog`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_signal_catalog::UpdateSignalCatalog, aws_http::retry::AwsResponseRetryClassifier,>,

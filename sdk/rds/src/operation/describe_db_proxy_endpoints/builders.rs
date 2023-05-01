@@ -8,16 +8,17 @@ pub use crate::operation::describe_db_proxy_endpoints::_describe_db_proxy_endpoi
 /// <p>Returns information about DB proxy endpoints.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBProxyEndpointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsInputBuilder,
+}
 impl DescribeDBProxyEndpointsFluentBuilder  {
     /// Creates a new `DescribeDBProxyEndpoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_proxy_endpoints::DescribeDBProxyEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDBProxyEndpointsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_proxy_endpoints::paginator::DescribeDbProxyEndpointsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_proxy_endpoints::paginator::DescribeDbProxyEndpointsPaginator {
-                            crate::operation::describe_db_proxy_endpoints::paginator::DescribeDbProxyEndpointsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_proxy_endpoints::paginator::DescribeDbProxyEndpointsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_proxy_endpoints::paginator::DescribeDbProxyEndpointsPaginator {
+                                crate::operation::describe_db_proxy_endpoints::paginator::DescribeDbProxyEndpointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.</p>
     pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());

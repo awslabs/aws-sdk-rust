@@ -12,16 +12,17 @@ pub use crate::operation::delete_regex_pattern_set::_delete_regex_pattern_set_in
 /// <p>Permanently deletes a <code>RegexPatternSet</code>. You can't delete a <code>RegexPatternSet</code> if it's still used in any <code>RegexMatchSet</code> or if the <code>RegexPatternSet</code> is not empty. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRegexPatternSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_regex_pattern_set::builders::DeleteRegexPatternSetInputBuilder,
+}
 impl DeleteRegexPatternSetFluentBuilder  {
     /// Creates a new `DeleteRegexPatternSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_regex_pattern_set::DeleteRegexPatternSet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_dataset_export_job::_describe_dataset_export_
 /// <p>Describes the dataset export job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>, including the export job status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDatasetExportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_dataset_export_job::builders::DescribeDatasetExportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_dataset_export_job::builders::DescribeDatasetExportJobInputBuilder,
+}
 impl DescribeDatasetExportJobFluentBuilder  {
     /// Creates a new `DescribeDatasetExportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_dataset_export_job::DescribeDatasetExportJob, aws_http::retry::AwsResponseRetryClassifier,>,

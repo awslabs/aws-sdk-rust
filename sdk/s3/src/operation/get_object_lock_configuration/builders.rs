@@ -12,16 +12,17 @@ pub use crate::operation::get_object_lock_configuration::_get_object_lock_config
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetObjectLockConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_object_lock_configuration::builders::GetObjectLockConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_object_lock_configuration::builders::GetObjectLockConfigurationInputBuilder,
+}
 impl GetObjectLockConfigurationFluentBuilder  {
     /// Creates a new `GetObjectLockConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_object_lock_configuration::GetObjectLockConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

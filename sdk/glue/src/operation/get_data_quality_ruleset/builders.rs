@@ -8,16 +8,17 @@ pub use crate::operation::get_data_quality_ruleset::_get_data_quality_ruleset_in
 /// <p>Returns an existing ruleset by identifier or name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDataQualityRulesetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetInputBuilder,
+}
 impl GetDataQualityRulesetFluentBuilder  {
     /// Creates a new `GetDataQualityRuleset`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_data_quality_ruleset::GetDataQualityRuleset, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -28,16 +28,17 @@ pub use crate::operation::generate_data_key_without_plaintext::_generate_data_ke
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateDataKeyWithoutPlaintextFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::generate_data_key_without_plaintext::builders::GenerateDataKeyWithoutPlaintextInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::generate_data_key_without_plaintext::builders::GenerateDataKeyWithoutPlaintextInputBuilder,
+}
 impl GenerateDataKeyWithoutPlaintextFluentBuilder  {
     /// Creates a new `GenerateDataKeyWithoutPlaintext`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintext, aws_http::retry::AwsResponseRetryClassifier,>,

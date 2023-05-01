@@ -8,16 +8,17 @@ pub use crate::operation::get_external_models::_get_external_models_input::GetEx
 /// <p>Gets the details for one or more Amazon SageMaker models that have been imported into the service. This is a paginated API. If you provide a null <code>maxResults</code>, this actions retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetExternalModelsResult</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetExternalModelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_external_models::builders::GetExternalModelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_external_models::builders::GetExternalModelsInputBuilder,
+}
 impl GetExternalModelsFluentBuilder  {
     /// Creates a new `GetExternalModels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_external_models::GetExternalModels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetExternalModelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_external_models::paginator::GetExternalModelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_external_models::paginator::GetExternalModelsPaginator {
-                            crate::operation::get_external_models::paginator::GetExternalModelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_external_models::paginator::GetExternalModelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_external_models::paginator::GetExternalModelsPaginator {
+                                crate::operation::get_external_models::paginator::GetExternalModelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon SageMaker model endpoint.</p>
     pub fn model_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.model_endpoint(input.into());

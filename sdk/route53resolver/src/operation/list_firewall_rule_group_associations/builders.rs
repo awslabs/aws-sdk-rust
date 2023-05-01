@@ -9,16 +9,17 @@ pub use crate::operation::list_firewall_rule_group_associations::_list_firewall_
 /// <p>A single call might return only a partial list of the associations. For information, see <code>MaxResults</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFirewallRuleGroupAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_firewall_rule_group_associations::builders::ListFirewallRuleGroupAssociationsInputBuilder,
+}
 impl ListFirewallRuleGroupAssociationsFluentBuilder  {
     /// Creates a new `ListFirewallRuleGroupAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListFirewallRuleGroupAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_rule_group_associations::paginator::ListFirewallRuleGroupAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_firewall_rule_group_associations::paginator::ListFirewallRuleGroupAssociationsPaginator {
-                            crate::operation::list_firewall_rule_group_associations::paginator::ListFirewallRuleGroupAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_rule_group_associations::paginator::ListFirewallRuleGroupAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_firewall_rule_group_associations::paginator::ListFirewallRuleGroupAssociationsPaginator {
+                                crate::operation::list_firewall_rule_group_associations::paginator::ListFirewallRuleGroupAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations for. Leave this blank to retrieve associations for any rule group. </p>
     pub fn firewall_rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.firewall_rule_group_id(input.into());

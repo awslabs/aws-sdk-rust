@@ -8,16 +8,17 @@ pub use crate::operation::start_experiment::_start_experiment_input::StartExperi
 /// <p>Starts an existing experiment. To create an experiment, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateExperiment.html">CreateExperiment</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartExperimentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_experiment::builders::StartExperimentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_experiment::builders::StartExperimentInputBuilder,
+}
 impl StartExperimentFluentBuilder  {
     /// Creates a new `StartExperiment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_experiment::StartExperiment, aws_http::retry::AwsResponseRetryClassifier,>,

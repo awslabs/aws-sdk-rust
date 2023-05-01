@@ -11,16 +11,17 @@ pub use crate::operation::list_accounts_for_parent::_list_accounts_for_parent_in
 /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccountsForParentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_accounts_for_parent::builders::ListAccountsForParentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_accounts_for_parent::builders::ListAccountsForParentInputBuilder,
+}
 impl ListAccountsForParentFluentBuilder  {
     /// Creates a new `ListAccountsForParent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_accounts_for_parent::ListAccountsForParent, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListAccountsForParentFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator {
-                            crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator {
+                                crate::operation::list_accounts_for_parent::paginator::ListAccountsForParentPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose accounts you want to list.</p>
     pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.parent_id(input.into());

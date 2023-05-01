@@ -8,16 +8,17 @@ pub use crate::operation::start_workflow_run::_start_workflow_run_input::StartWo
 /// <p>Starts a new run of the specified workflow.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartWorkflowRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_workflow_run::builders::StartWorkflowRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_workflow_run::builders::StartWorkflowRunInputBuilder,
+}
 impl StartWorkflowRunFluentBuilder  {
     /// Creates a new `StartWorkflowRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_workflow_run::StartWorkflowRun, aws_http::retry::AwsResponseRetryClassifier,>,

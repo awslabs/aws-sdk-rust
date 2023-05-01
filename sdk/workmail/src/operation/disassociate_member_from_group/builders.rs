@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_member_from_group::_disassociate_member_f
 /// <p>Removes a member from a group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateMemberFromGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupInputBuilder,
+}
 impl DisassociateMemberFromGroupFluentBuilder  {
     /// Creates a new `DisassociateMemberFromGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_member_from_group::DisassociateMemberFromGroup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::modify_vpc_endpoint_service_permissions::_modify_vpc_e
 /// <p>If you grant permissions to all principals, the service is public. Any users who know the name of a public service can send a request to attach an endpoint. If the service does not require manual approval, attachments are automatically approved.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpcEndpointServicePermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsInputBuilder,
+}
 impl ModifyVpcEndpointServicePermissionsFluentBuilder  {
     /// Creates a new `ModifyVpcEndpointServicePermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissions, aws_http::retry::AwsResponseRetryClassifier,>,

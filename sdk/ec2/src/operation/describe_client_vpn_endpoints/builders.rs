@@ -8,16 +8,17 @@ pub use crate::operation::describe_client_vpn_endpoints::_describe_client_vpn_en
 /// <p>Describes one or more Client VPN endpoints in the account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClientVpnEndpointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_client_vpn_endpoints::builders::DescribeClientVpnEndpointsInputBuilder,
+}
 impl DescribeClientVpnEndpointsFluentBuilder  {
     /// Creates a new `DescribeClientVpnEndpoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_client_vpn_endpoints::DescribeClientVpnEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeClientVpnEndpointsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator {
-                            crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator {
+                                crate::operation::describe_client_vpn_endpoints::paginator::DescribeClientVpnEndpointsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ClientVpnEndpointIds`.
     ///
     /// To override the contents of this collection use [`set_client_vpn_endpoint_ids`](Self::set_client_vpn_endpoint_ids).

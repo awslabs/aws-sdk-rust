@@ -8,16 +8,17 @@ pub use crate::operation::list_analyzed_resources::_list_analyzed_resources_inpu
 /// <p>Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer..</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAnalyzedResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder,
+}
 impl ListAnalyzedResourcesFluentBuilder  {
     /// Creates a new `ListAnalyzedResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_analyzed_resources::ListAnalyzedResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAnalyzedResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator {
-                            crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator {
+                                crate::operation::list_analyzed_resources::paginator::ListAnalyzedResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
     pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.analyzer_arn(input.into());

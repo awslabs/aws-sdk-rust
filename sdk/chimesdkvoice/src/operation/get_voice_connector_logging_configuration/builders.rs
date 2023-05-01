@@ -8,16 +8,17 @@ pub use crate::operation::get_voice_connector_logging_configuration::_get_voice_
 /// <p>Retrieves the logging configuration settings for the specified Voice Connector. Shows whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVoiceConnectorLoggingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_voice_connector_logging_configuration::builders::GetVoiceConnectorLoggingConfigurationInputBuilder,
+}
 impl GetVoiceConnectorLoggingConfigurationFluentBuilder  {
     /// Creates a new `GetVoiceConnectorLoggingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_voice_connector_logging_configuration::GetVoiceConnectorLoggingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

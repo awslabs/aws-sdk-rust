@@ -9,16 +9,17 @@ pub use crate::operation::create_connect_attachment::_create_connect_attachment_
 /// <p>A core network Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection between a core network and an appliance. A core network Connect attachment uses an existing VPC attachment as the underlying transport mechanism.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConnectAttachmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_connect_attachment::builders::CreateConnectAttachmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_connect_attachment::builders::CreateConnectAttachmentInputBuilder,
+}
 impl CreateConnectAttachmentFluentBuilder  {
     /// Creates a new `CreateConnectAttachment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_connect_attachment::CreateConnectAttachment, aws_http::retry::AwsResponseRetryClassifier,>,

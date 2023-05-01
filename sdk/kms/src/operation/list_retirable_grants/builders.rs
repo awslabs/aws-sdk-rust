@@ -19,16 +19,17 @@ pub use crate::operation::list_retirable_grants::_list_retirable_grants_input::L
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRetirableGrantsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_retirable_grants::builders::ListRetirableGrantsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_retirable_grants::builders::ListRetirableGrantsInputBuilder,
+}
 impl ListRetirableGrantsFluentBuilder  {
     /// Creates a new `ListRetirableGrants`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_retirable_grants::ListRetirableGrants, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -59,11 +60,11 @@ impl ListRetirableGrantsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator {
-                            crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator {
+                                crate::operation::list_retirable_grants::paginator::ListRetirableGrantsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p> 
     /// <p>This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.</p>
     pub fn limit(mut self, input: i32) -> Self {

@@ -18,16 +18,17 @@ pub use crate::operation::list_resource_tags::_list_resource_tags_input::ListRes
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourceTagsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resource_tags::builders::ListResourceTagsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resource_tags::builders::ListResourceTagsInputBuilder,
+}
 impl ListResourceTagsFluentBuilder  {
     /// Creates a new `ListResourceTags`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resource_tags::ListResourceTags, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -58,11 +59,11 @@ impl ListResourceTagsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resource_tags::paginator::ListResourceTagsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resource_tags::paginator::ListResourceTagsPaginator {
-                            crate::operation::list_resource_tags::paginator::ListResourceTagsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resource_tags::paginator::ListResourceTagsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_resource_tags::paginator::ListResourceTagsPaginator {
+                                crate::operation::list_resource_tags::paginator::ListResourceTagsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Gets tags on the specified KMS key.</p> 
     /// <p>Specify the key ID or key ARN of the KMS key.</p> 
     /// <p>For example:</p> 

@@ -13,16 +13,17 @@ pub use crate::operation::purge_queue::_purge_queue_input::PurgeQueueInputBuilde
 /// <p>Messages sent to the queue <i>after</i> you call <code>PurgeQueue</code> might be deleted while the queue is being purged.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PurgeQueueFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::purge_queue::builders::PurgeQueueInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::purge_queue::builders::PurgeQueueInputBuilder,
+}
 impl PurgeQueueFluentBuilder  {
     /// Creates a new `PurgeQueue`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::purge_queue::PurgeQueue, aws_http::retry::AwsResponseRetryClassifier,>,

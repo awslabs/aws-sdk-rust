@@ -8,16 +8,17 @@ pub use crate::operation::put_entity_type::_put_entity_type_input::PutEntityType
 /// <p>Creates or updates an entity type. An entity represents who is performing the event. As part of a fraud prediction, you pass the entity ID to indicate the specific entity who performed the event. An entity type classifies the entity. Example classifications include customer, merchant, or account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutEntityTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_entity_type::builders::PutEntityTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_entity_type::builders::PutEntityTypeInputBuilder,
+}
 impl PutEntityTypeFluentBuilder  {
     /// Creates a new `PutEntityType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_entity_type::PutEntityType, aws_http::retry::AwsResponseRetryClassifier,>,

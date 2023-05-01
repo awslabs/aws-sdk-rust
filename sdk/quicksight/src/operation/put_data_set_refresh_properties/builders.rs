@@ -8,16 +8,17 @@ pub use crate::operation::put_data_set_refresh_properties::_put_data_set_refresh
 /// <p>Creates or updates the dataset refresh properties for the dataset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutDataSetRefreshPropertiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_data_set_refresh_properties::builders::PutDataSetRefreshPropertiesInputBuilder,
+}
 impl PutDataSetRefreshPropertiesFluentBuilder  {
     /// Creates a new `PutDataSetRefreshProperties`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_data_set_refresh_properties::PutDataSetRefreshProperties, aws_http::retry::AwsResponseRetryClassifier,>,

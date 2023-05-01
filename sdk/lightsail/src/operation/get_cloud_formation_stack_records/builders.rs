@@ -9,16 +9,17 @@ pub use crate::operation::get_cloud_formation_stack_records::_get_cloud_formatio
 /// <p>An AWS CloudFormation stack is used to create a new Amazon EC2 instance from an exported Lightsail snapshot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCloudFormationStackRecordsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_cloud_formation_stack_records::builders::GetCloudFormationStackRecordsInputBuilder,
+}
 impl GetCloudFormationStackRecordsFluentBuilder  {
     /// Creates a new `GetCloudFormationStackRecords`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_cloud_formation_stack_records::GetCloudFormationStackRecords, aws_http::retry::AwsResponseRetryClassifier,>,

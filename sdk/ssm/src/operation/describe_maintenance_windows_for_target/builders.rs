@@ -8,16 +8,17 @@ pub use crate::operation::describe_maintenance_windows_for_target::_describe_mai
 /// <p>Retrieves information about the maintenance window targets or tasks that a managed node is associated with.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowsForTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_maintenance_windows_for_target::builders::DescribeMaintenanceWindowsForTargetInputBuilder,
+}
 impl DescribeMaintenanceWindowsForTargetFluentBuilder  {
     /// Creates a new `DescribeMaintenanceWindowsForTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_windows_for_target::DescribeMaintenanceWindowsForTarget, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeMaintenanceWindowsForTargetFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator {
-                            crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator {
+                                crate::operation::describe_maintenance_windows_for_target::paginator::DescribeMaintenanceWindowsForTargetPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Targets`.
     ///
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).

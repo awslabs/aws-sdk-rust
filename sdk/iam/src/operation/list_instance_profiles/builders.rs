@@ -11,16 +11,17 @@ pub use crate::operation::list_instance_profiles::_list_instance_profiles_input:
 /// <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInstanceProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_instance_profiles::builders::ListInstanceProfilesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_instance_profiles::builders::ListInstanceProfilesInputBuilder,
+}
 impl ListInstanceProfilesFluentBuilder  {
     /// Creates a new `ListInstanceProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_instance_profiles::ListInstanceProfiles, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListInstanceProfilesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator {
-                            crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator {
+                                crate::operation::list_instance_profiles::paginator::ListInstanceProfilesPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The path prefix for filtering the results. For example, the prefix <code>/application_abc/component_xyz/</code> gets all instance profiles whose path starts with <code>/application_abc/component_xyz/</code>.</p> 
     /// <p>This parameter is optional. If it is not included, it defaults to a slash (/), listing all instance profiles. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including most punctuation characters, digits, and upper and lowercased letters.</p>
     pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {

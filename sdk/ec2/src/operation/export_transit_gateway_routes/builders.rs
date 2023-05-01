@@ -9,16 +9,17 @@ pub use crate::operation::export_transit_gateway_routes::_export_transit_gateway
 /// <p>The routes are saved to the specified bucket in a JSON file. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-route-tables.html#tgw-export-route-tables">Export Route Tables to Amazon S3</a> in <i>Transit Gateways</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportTransitGatewayRoutesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_transit_gateway_routes::builders::ExportTransitGatewayRoutesInputBuilder,
+}
 impl ExportTransitGatewayRoutesFluentBuilder  {
     /// Creates a new `ExportTransitGatewayRoutes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutes, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -16,16 +16,17 @@ pub use crate::operation::describe_tags::_describe_tags_input::DescribeTagsInput
 /// <p>If both tag keys and values are omitted from the request, resources are returned regardless of whether they have tag keys or values associated with them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTagsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_tags::builders::DescribeTagsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_tags::builders::DescribeTagsInputBuilder,
+}
 impl DescribeTagsFluentBuilder  {
     /// Creates a new `DescribeTags`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_tags::DescribeTags, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -56,11 +57,11 @@ impl DescribeTagsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_tags::paginator::DescribeTagsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_tags::paginator::DescribeTagsPaginator {
-                            crate::operation::describe_tags::paginator::DescribeTagsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_tags::paginator::DescribeTagsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_tags::paginator::DescribeTagsPaginator {
+                                crate::operation::describe_tags::paginator::DescribeTagsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
     pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_name(input.into());

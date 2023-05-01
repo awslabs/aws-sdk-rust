@@ -8,16 +8,17 @@ pub use crate::operation::describe_transaction::_describe_transaction_input::Des
 /// <p>Returns the details of a single transaction.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTransactionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_transaction::builders::DescribeTransactionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_transaction::builders::DescribeTransactionInputBuilder,
+}
 impl DescribeTransactionFluentBuilder  {
     /// Creates a new `DescribeTransaction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_transaction::DescribeTransaction, aws_http::retry::AwsResponseRetryClassifier,>,

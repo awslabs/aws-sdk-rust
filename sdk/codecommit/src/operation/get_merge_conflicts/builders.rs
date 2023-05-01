@@ -8,16 +8,17 @@ pub use crate::operation::get_merge_conflicts::_get_merge_conflicts_input::GetMe
 /// <p>Returns information about merge conflicts between the before and after commit IDs for a pull request in a repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMergeConflictsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_merge_conflicts::builders::GetMergeConflictsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_merge_conflicts::builders::GetMergeConflictsInputBuilder,
+}
 impl GetMergeConflictsFluentBuilder  {
     /// Creates a new `GetMergeConflicts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_merge_conflicts::GetMergeConflicts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetMergeConflictsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_merge_conflicts::paginator::GetMergeConflictsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_merge_conflicts::paginator::GetMergeConflictsPaginator {
-                            crate::operation::get_merge_conflicts::paginator::GetMergeConflictsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_merge_conflicts::paginator::GetMergeConflictsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_merge_conflicts::paginator::GetMergeConflictsPaginator {
+                                crate::operation::get_merge_conflicts::paginator::GetMergeConflictsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the repository where the pull request was created.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());

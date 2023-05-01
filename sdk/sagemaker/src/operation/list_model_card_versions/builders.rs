@@ -8,16 +8,17 @@ pub use crate::operation::list_model_card_versions::_list_model_card_versions_in
 /// <p>List existing versions of an Amazon SageMaker Model Card.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListModelCardVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_model_card_versions::builders::ListModelCardVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_model_card_versions::builders::ListModelCardVersionsInputBuilder,
+}
 impl ListModelCardVersionsFluentBuilder  {
     /// Creates a new `ListModelCardVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_model_card_versions::ListModelCardVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListModelCardVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator {
-                            crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator {
+                                crate::operation::list_model_card_versions::paginator::ListModelCardVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Only list model card versions that were created after the time specified.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);

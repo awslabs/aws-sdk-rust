@@ -22,16 +22,17 @@ pub use crate::operation::get_metric_data::_get_metric_data_input::GetMetricData
 /// <p>You can't mix a Metric Insights query and metric math syntax in the same expression, but you can reference results from a Metrics Insights query within other Metric math expressions. A Metrics Insights query without a <b>GROUP BY</b> clause returns a single time-series (TS), and can be used as input for a metric math expression that expects a single time series. A Metrics Insights query with a <b>GROUP BY</b> clause returns an array of time-series (TS[]), and can be used as input for a metric math expression that expects an array of time series. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMetricDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_metric_data::builders::GetMetricDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_metric_data::builders::GetMetricDataInputBuilder,
+}
 impl GetMetricDataFluentBuilder  {
     /// Creates a new `GetMetricData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_metric_data::GetMetricData, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -62,11 +63,11 @@ impl GetMetricDataFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_metric_data::paginator::GetMetricDataPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_metric_data::paginator::GetMetricDataPaginator {
-                            crate::operation::get_metric_data::paginator::GetMetricDataPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_metric_data::paginator::GetMetricDataPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_metric_data::paginator::GetMetricDataPaginator {
+                                crate::operation::get_metric_data::paginator::GetMetricDataPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `MetricDataQueries`.
     ///
     /// To override the contents of this collection use [`set_metric_data_queries`](Self::set_metric_data_queries).

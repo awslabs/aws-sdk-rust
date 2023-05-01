@@ -9,16 +9,17 @@ pub use crate::operation::deprovision_byoip_cidr::_deprovision_byoip_cidr_input:
 /// <p>Before you can release an address range, you must stop advertising it using <code>WithdrawByoipCidr</code> and you must not have any IP addresses allocated from its address range.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeprovisionByoipCidrFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deprovision_byoip_cidr::builders::DeprovisionByoipCidrInputBuilder,
+}
 impl DeprovisionByoipCidrFluentBuilder  {
     /// Creates a new `DeprovisionByoipCidr`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidr, aws_http::retry::AwsResponseRetryClassifier,>,

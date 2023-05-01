@@ -10,16 +10,17 @@ pub use crate::operation::create_source_repository_branch::_create_source_reposi
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSourceRepositoryBranchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder,
+}
 impl CreateSourceRepositoryBranchFluentBuilder  {
     /// Creates a new `CreateSourceRepositoryBranch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_source_repository_branch::CreateSourceRepositoryBranch, aws_http::retry::AwsResponseRetryClassifier,>,

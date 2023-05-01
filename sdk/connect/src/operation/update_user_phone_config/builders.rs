@@ -8,16 +8,17 @@ pub use crate::operation::update_user_phone_config::_update_user_phone_config_in
 /// <p>Updates the phone configuration settings for the specified user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateUserPhoneConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_user_phone_config::builders::UpdateUserPhoneConfigInputBuilder,
+}
 impl UpdateUserPhoneConfigFluentBuilder  {
     /// Creates a new `UpdateUserPhoneConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_user_phone_config::UpdateUserPhoneConfig, aws_http::retry::AwsResponseRetryClassifier,>,

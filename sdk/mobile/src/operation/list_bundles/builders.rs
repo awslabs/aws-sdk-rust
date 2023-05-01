@@ -8,16 +8,17 @@ pub use crate::operation::list_bundles::_list_bundles_input::ListBundlesInputBui
 /// <p> List all available bundles. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBundlesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_bundles::builders::ListBundlesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_bundles::builders::ListBundlesInputBuilder,
+}
 impl ListBundlesFluentBuilder  {
     /// Creates a new `ListBundles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_bundles::ListBundles, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBundlesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_bundles::paginator::ListBundlesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_bundles::paginator::ListBundlesPaginator {
-                            crate::operation::list_bundles::paginator::ListBundlesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_bundles::paginator::ListBundlesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_bundles::paginator::ListBundlesPaginator {
+                                crate::operation::list_bundles::paginator::ListBundlesPaginator::new(self.handle, self.inner)
+                            }
     /// <p> Maximum number of records to list in a single response. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

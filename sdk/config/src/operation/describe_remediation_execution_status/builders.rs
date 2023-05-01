@@ -8,16 +8,17 @@ pub use crate::operation::describe_remediation_execution_status::_describe_remed
 /// <p>Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when steps for the remediation execution occur, and any error messages for steps that have failed. When you specify the limit and the next token, you receive a paginated response.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRemediationExecutionStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_remediation_execution_status::builders::DescribeRemediationExecutionStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_remediation_execution_status::builders::DescribeRemediationExecutionStatusInputBuilder,
+}
 impl DescribeRemediationExecutionStatusFluentBuilder  {
     /// Creates a new `DescribeRemediationExecutionStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeRemediationExecutionStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator {
-                            crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator {
+                                crate::operation::describe_remediation_execution_status::paginator::DescribeRemediationExecutionStatusPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A list of Config rule names.</p>
     pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.config_rule_name(input.into());

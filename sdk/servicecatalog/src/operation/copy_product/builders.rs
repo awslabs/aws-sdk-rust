@@ -10,16 +10,17 @@ pub use crate::operation::copy_product::_copy_product_input::CopyProductInputBui
 /// <p>This operation is performed asynchronously. To track the progress of the operation, use <code>DescribeCopyProductStatus</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CopyProductFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::copy_product::builders::CopyProductInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::copy_product::builders::CopyProductInputBuilder,
+}
 impl CopyProductFluentBuilder  {
     /// Creates a new `CopyProduct`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::copy_product::CopyProduct, aws_http::retry::AwsResponseRetryClassifier,>,

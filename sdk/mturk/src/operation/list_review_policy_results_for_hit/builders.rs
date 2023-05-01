@@ -8,16 +8,17 @@ pub use crate::operation::list_review_policy_results_for_hit::_list_review_polic
 /// <p> The <code>ListReviewPolicyResultsForHIT</code> operation retrieves the computed results and the actions taken in the course of executing your Review Policies for a given HIT. For information about how to specify Review Policies when you call CreateHIT, see Review Policies. The ListReviewPolicyResultsForHIT operation can return results for both Assignment-level and HIT-level review results. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReviewPolicyResultsForHITFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_review_policy_results_for_hit::builders::ListReviewPolicyResultsForHitInputBuilder,
+}
 impl ListReviewPolicyResultsForHITFluentBuilder  {
     /// Creates a new `ListReviewPolicyResultsForHIT`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHIT, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListReviewPolicyResultsForHITFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_review_policy_results_for_hit::paginator::ListReviewPolicyResultsForHitPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_review_policy_results_for_hit::paginator::ListReviewPolicyResultsForHitPaginator {
-                            crate::operation::list_review_policy_results_for_hit::paginator::ListReviewPolicyResultsForHitPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_review_policy_results_for_hit::paginator::ListReviewPolicyResultsForHitPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_review_policy_results_for_hit::paginator::ListReviewPolicyResultsForHitPaginator {
+                                crate::operation::list_review_policy_results_for_hit::paginator::ListReviewPolicyResultsForHitPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier of the HIT to retrieve review results for.</p>
     pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hit_id(input.into());

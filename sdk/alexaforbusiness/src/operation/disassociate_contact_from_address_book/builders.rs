@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_contact_from_address_book::_disassociate_
 /// <p>Disassociates a contact from a given address book.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateContactFromAddressBookFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_contact_from_address_book::builders::DisassociateContactFromAddressBookInputBuilder,
+}
 impl DisassociateContactFromAddressBookFluentBuilder  {
     /// Creates a new `DisassociateContactFromAddressBook`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBook, aws_http::retry::AwsResponseRetryClassifier,>,

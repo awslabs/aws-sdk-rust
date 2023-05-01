@@ -9,16 +9,17 @@ pub use crate::operation::update_evaluation::_update_evaluation_input::UpdateEva
 /// <p>You can use the <code>GetEvaluation</code> operation to view the contents of the updated data element.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEvaluationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_evaluation::builders::UpdateEvaluationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_evaluation::builders::UpdateEvaluationInputBuilder,
+}
 impl UpdateEvaluationFluentBuilder  {
     /// Creates a new `UpdateEvaluation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_evaluation::UpdateEvaluation, aws_http::retry::AwsResponseRetryClassifier,>,

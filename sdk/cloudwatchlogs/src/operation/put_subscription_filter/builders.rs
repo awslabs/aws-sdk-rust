@@ -17,16 +17,17 @@ pub use crate::operation::put_subscription_filter::_put_subscription_filter_inpu
 /// <p>To perform a <code>PutSubscriptionFilter</code> operation, you must also have the <code>iam:PassRole</code> permission.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutSubscriptionFilterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_subscription_filter::builders::PutSubscriptionFilterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_subscription_filter::builders::PutSubscriptionFilterInputBuilder,
+}
 impl PutSubscriptionFilterFluentBuilder  {
     /// Creates a new `PutSubscriptionFilter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_subscription_filter::PutSubscriptionFilter, aws_http::retry::AwsResponseRetryClassifier,>,

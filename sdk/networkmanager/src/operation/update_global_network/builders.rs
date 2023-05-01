@@ -8,16 +8,17 @@ pub use crate::operation::update_global_network::_update_global_network_input::U
 /// <p>Updates an existing global network. To remove information for any of the parameters, specify an empty string.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGlobalNetworkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_global_network::builders::UpdateGlobalNetworkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_global_network::builders::UpdateGlobalNetworkInputBuilder,
+}
 impl UpdateGlobalNetworkFluentBuilder  {
     /// Creates a new `UpdateGlobalNetwork`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_global_network::UpdateGlobalNetwork, aws_http::retry::AwsResponseRetryClassifier,>,

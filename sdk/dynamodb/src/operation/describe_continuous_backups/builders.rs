@@ -11,16 +11,17 @@ pub use crate::operation::describe_continuous_backups::_describe_continuous_back
 /// <p>You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeContinuousBackupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_continuous_backups::builders::DescribeContinuousBackupsInputBuilder,
+}
 impl DescribeContinuousBackupsFluentBuilder  {
     /// Creates a new `DescribeContinuousBackups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_continuous_backups::DescribeContinuousBackups, aws_http::retry::AwsResponseRetryClassifier,>,

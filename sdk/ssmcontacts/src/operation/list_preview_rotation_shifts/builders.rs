@@ -10,16 +10,17 @@ pub use crate::operation::list_preview_rotation_shifts::_list_preview_rotation_s
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPreviewRotationShiftsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_preview_rotation_shifts::builders::ListPreviewRotationShiftsInputBuilder,
+}
 impl ListPreviewRotationShiftsFluentBuilder  {
     /// Creates a new `ListPreviewRotationShifts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_preview_rotation_shifts::ListPreviewRotationShifts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListPreviewRotationShiftsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator {
-                            crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator {
+                                crate::operation::list_preview_rotation_shifts::paginator::ListPreviewRotationShiftsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The date and time a rotation would begin. The first shift is calculated from this date and time.</p>
     pub fn rotation_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.rotation_start_time(input);

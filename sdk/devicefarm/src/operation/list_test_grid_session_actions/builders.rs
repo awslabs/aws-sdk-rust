@@ -8,16 +8,17 @@ pub use crate::operation::list_test_grid_session_actions::_list_test_grid_sessio
 /// <p>Returns a list of the actions taken in a <code>TestGridSession</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTestGridSessionActionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_test_grid_session_actions::builders::ListTestGridSessionActionsInputBuilder,
+}
 impl ListTestGridSessionActionsFluentBuilder  {
     /// Creates a new `ListTestGridSessionActions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_test_grid_session_actions::ListTestGridSessionActions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTestGridSessionActionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_test_grid_session_actions::paginator::ListTestGridSessionActionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_test_grid_session_actions::paginator::ListTestGridSessionActionsPaginator {
-                            crate::operation::list_test_grid_session_actions::paginator::ListTestGridSessionActionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_test_grid_session_actions::paginator::ListTestGridSessionActionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_test_grid_session_actions::paginator::ListTestGridSessionActionsPaginator {
+                                crate::operation::list_test_grid_session_actions::paginator::ListTestGridSessionActionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the session to retrieve.</p>
     pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.session_arn(input.into());

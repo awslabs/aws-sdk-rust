@@ -8,16 +8,17 @@ pub use crate::operation::list_service_quota_increase_requests_in_template::_lis
 /// <p>Lists the quota increase requests in the specified quota request template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_service_quota_increase_requests_in_template::builders::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder,
+}
 impl ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder  {
     /// Creates a new `ListServiceQuotaIncreaseRequestsInTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListServiceQuotaIncreaseRequestsInTemplateFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_service_quota_increase_requests_in_template::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_service_quota_increase_requests_in_template::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator {
-                            crate::operation::list_service_quota_increase_requests_in_template::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_service_quota_increase_requests_in_template::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_service_quota_increase_requests_in_template::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator {
+                                crate::operation::list_service_quota_increase_requests_in_template::paginator::ListServiceQuotaIncreaseRequestsInTemplatePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The service identifier.</p>
     pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());

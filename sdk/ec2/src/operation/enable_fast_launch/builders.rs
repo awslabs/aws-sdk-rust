@@ -10,16 +10,17 @@ pub use crate::operation::enable_fast_launch::_enable_fast_launch_input::EnableF
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableFastLaunchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_fast_launch::builders::EnableFastLaunchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_fast_launch::builders::EnableFastLaunchInputBuilder,
+}
 impl EnableFastLaunchFluentBuilder  {
     /// Creates a new `EnableFastLaunch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_fast_launch::EnableFastLaunch, aws_http::retry::AwsResponseRetryClassifier,>,

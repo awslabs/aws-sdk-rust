@@ -8,16 +8,17 @@ pub use crate::operation::update_resource_event_configuration::_update_resource_
 /// <p>Update the event configuration for a particular resource identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResourceEventConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_resource_event_configuration::builders::UpdateResourceEventConfigurationInputBuilder,
+}
 impl UpdateResourceEventConfigurationFluentBuilder  {
     /// Creates a new `UpdateResourceEventConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_resource_event_configuration::UpdateResourceEventConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

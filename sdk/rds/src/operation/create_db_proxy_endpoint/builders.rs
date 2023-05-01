@@ -8,16 +8,17 @@ pub use crate::operation::create_db_proxy_endpoint::_create_db_proxy_endpoint_in
 /// <p>Creates a <code>DBProxyEndpoint</code>. Only applies to proxies that are associated with Aurora DB clusters. You can use DB proxy endpoints to specify read/write or read-only access to the DB cluster. You can also use DB proxy endpoints to access a DB proxy through a different VPC than the proxy's default VPC.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDBProxyEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_db_proxy_endpoint::builders::CreateDbProxyEndpointInputBuilder,
+}
 impl CreateDBProxyEndpointFluentBuilder  {
     /// Creates a new `CreateDBProxyEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -14,16 +14,17 @@ pub use crate::operation::get_bucket_website::_get_bucket_website_input::GetBuck
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketWebsiteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_bucket_website::builders::GetBucketWebsiteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_bucket_website::builders::GetBucketWebsiteInputBuilder,
+}
 impl GetBucketWebsiteFluentBuilder  {
     /// Creates a new `GetBucketWebsite`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_bucket_website::GetBucketWebsite, aws_http::retry::AwsResponseRetryClassifier,>,

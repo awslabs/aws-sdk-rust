@@ -8,16 +8,17 @@ pub use crate::operation::get_vehicle::_get_vehicle_input::GetVehicleInputBuilde
 /// <p> Retrieves information about a vehicle. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVehicleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_vehicle::builders::GetVehicleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_vehicle::builders::GetVehicleInputBuilder,
+}
 impl GetVehicleFluentBuilder  {
     /// Creates a new `GetVehicle`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_vehicle::GetVehicle, aws_http::retry::AwsResponseRetryClassifier,>,

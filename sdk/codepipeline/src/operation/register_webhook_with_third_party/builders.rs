@@ -8,16 +8,17 @@ pub use crate::operation::register_webhook_with_third_party::_register_webhook_w
 /// <p>Configures a connection between the webhook that was created and the external tool with events to be detected.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterWebhookWithThirdPartyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_webhook_with_third_party::builders::RegisterWebhookWithThirdPartyInputBuilder,
+}
 impl RegisterWebhookWithThirdPartyFluentBuilder  {
     /// Creates a new `RegisterWebhookWithThirdParty`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdParty, aws_http::retry::AwsResponseRetryClassifier,>,

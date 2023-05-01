@@ -8,16 +8,17 @@ pub use crate::operation::list_findings_reports::_list_findings_reports_input::L
 /// <p>List the available reports for a given profiling group and time range.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFindingsReportsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder,
+}
 impl ListFindingsReportsFluentBuilder  {
     /// Creates a new `ListFindingsReports`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_findings_reports::ListFindingsReports, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFindingsReportsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator {
-                            crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator {
+                                crate::operation::list_findings_reports::paginator::ListFindingsReportsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the profiling group from which to search for analysis data.</p>
     pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());

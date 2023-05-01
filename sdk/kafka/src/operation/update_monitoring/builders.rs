@@ -8,16 +8,17 @@ pub use crate::operation::update_monitoring::_update_monitoring_input::UpdateMon
 /// <p>Updates the monitoring settings for the cluster. You can use this operation to specify which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can also specify settings for open monitoring with Prometheus.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMonitoringFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_monitoring::builders::UpdateMonitoringInputBuilder,
+}
 impl UpdateMonitoringFluentBuilder  {
     /// Creates a new `UpdateMonitoring`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_monitoring::UpdateMonitoring, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_vpc_endpoint_access::_list_vpc_endpoint_access_in
 /// <p>Retrieves information about each principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVpcEndpointAccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessInputBuilder,
+}
 impl ListVpcEndpointAccessFluentBuilder  {
     /// Creates a new `ListVpcEndpointAccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccess, aws_http::retry::AwsResponseRetryClassifier,>,

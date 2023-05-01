@@ -8,16 +8,17 @@ pub use crate::operation::list_job_templates::_list_job_templates_input::ListJob
 /// Retrieve a JSON array of up to twenty of your job templates. This will return the templates themselves, not just a list of them. To retrieve the next twenty templates, use the nextToken string returned with the array
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListJobTemplatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_job_templates::builders::ListJobTemplatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_job_templates::builders::ListJobTemplatesInputBuilder,
+}
 impl ListJobTemplatesFluentBuilder  {
     /// Creates a new `ListJobTemplates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_job_templates::ListJobTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListJobTemplatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator {
-                            crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator {
+                                crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator::new(self.handle, self.inner)
+                            }
     /// Optionally, specify a job template category to limit responses to only job templates from that category.
     pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.category(input.into());

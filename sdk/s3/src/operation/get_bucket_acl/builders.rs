@@ -14,16 +14,17 @@ pub use crate::operation::get_bucket_acl::_get_bucket_acl_input::GetBucketAclInp
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketAclFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_bucket_acl::builders::GetBucketAclInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_bucket_acl::builders::GetBucketAclInputBuilder,
+}
 impl GetBucketAclFluentBuilder  {
     /// Creates a new `GetBucketAcl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_bucket_acl::GetBucketAcl, aws_http::retry::AwsResponseRetryClassifier,>,

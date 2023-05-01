@@ -9,16 +9,17 @@ pub use crate::operation::search_channels::_search_channels_input::SearchChannel
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchChannelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_channels::builders::SearchChannelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_channels::builders::SearchChannelsInputBuilder,
+}
 impl SearchChannelsFluentBuilder  {
     /// Creates a new `SearchChannels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_channels::SearchChannels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl SearchChannelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_channels::paginator::SearchChannelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_channels::paginator::SearchChannelsPaginator {
-                            crate::operation::search_channels::paginator::SearchChannelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_channels::paginator::SearchChannelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_channels::paginator::SearchChannelsPaginator {
+                                crate::operation::search_channels::paginator::SearchChannelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());

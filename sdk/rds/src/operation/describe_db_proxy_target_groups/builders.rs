@@ -8,16 +8,17 @@ pub use crate::operation::describe_db_proxy_target_groups::_describe_db_proxy_ta
 /// <p>Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBProxyTargetGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_proxy_target_groups::builders::DescribeDbProxyTargetGroupsInputBuilder,
+}
 impl DescribeDBProxyTargetGroupsFluentBuilder  {
     /// Creates a new `DescribeDBProxyTargetGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDBProxyTargetGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_proxy_target_groups::paginator::DescribeDbProxyTargetGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_proxy_target_groups::paginator::DescribeDbProxyTargetGroupsPaginator {
-                            crate::operation::describe_db_proxy_target_groups::paginator::DescribeDbProxyTargetGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_proxy_target_groups::paginator::DescribeDbProxyTargetGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_proxy_target_groups::paginator::DescribeDbProxyTargetGroupsPaginator {
+                                crate::operation::describe_db_proxy_target_groups::paginator::DescribeDbProxyTargetGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
     pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.db_proxy_name(input.into());

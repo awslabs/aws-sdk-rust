@@ -11,16 +11,17 @@ pub use crate::operation::describe_interconnect_loa::_describe_interconnect_loa_
 #[deprecated]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInterconnectLoaFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaInputBuilder,
+}
 impl DescribeInterconnectLoaFluentBuilder  {
     /// Creates a new `DescribeInterconnectLoa`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_interconnect_loa::DescribeInterconnectLoa, aws_http::retry::AwsResponseRetryClassifier,>,

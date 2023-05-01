@@ -10,16 +10,17 @@ pub use crate::operation::get_signaling_channel_endpoint::_get_signaling_channel
 /// <p> <code>Role</code> determines the messaging permissions. A <code>MASTER</code> role results in this API generating an endpoint that a client can use to communicate with any of the viewers on the channel. A <code>VIEWER</code> role results in this API generating an endpoint that a client can use to communicate only with a <code>MASTER</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSignalingChannelEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_signaling_channel_endpoint::builders::GetSignalingChannelEndpointInputBuilder,
+}
 impl GetSignalingChannelEndpointFluentBuilder  {
     /// Creates a new `GetSignalingChannelEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

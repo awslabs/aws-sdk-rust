@@ -8,16 +8,17 @@ pub use crate::operation::restore_analysis::_restore_analysis_input::RestoreAnal
 /// <p>Restores an analysis.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_analysis::builders::RestoreAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_analysis::builders::RestoreAnalysisInputBuilder,
+}
 impl RestoreAnalysisFluentBuilder  {
     /// Creates a new `RestoreAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_analysis::RestoreAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

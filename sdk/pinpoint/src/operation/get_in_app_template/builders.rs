@@ -8,16 +8,17 @@ pub use crate::operation::get_in_app_template::_get_in_app_template_input::GetIn
 /// <p>Retrieves the content and settings of a message template for messages sent through the in-app channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInAppTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_in_app_template::builders::GetInAppTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_in_app_template::builders::GetInAppTemplateInputBuilder,
+}
 impl GetInAppTemplateFluentBuilder  {
     /// Creates a new `GetInAppTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_in_app_template::GetInAppTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_assessment_report::_get_assessment_report_input::G
 /// <p>Produces an assessment report that includes detailed and comprehensive results of a specified assessment run. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssessmentReportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_assessment_report::builders::GetAssessmentReportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_assessment_report::builders::GetAssessmentReportInputBuilder,
+}
 impl GetAssessmentReportFluentBuilder  {
     /// Creates a new `GetAssessmentReport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_assessment_report::GetAssessmentReport, aws_http::retry::AwsResponseRetryClassifier,>,

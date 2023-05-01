@@ -8,16 +8,17 @@ pub use crate::operation::start_image_builder::_start_image_builder_input::Start
 /// <p>Starts the specified image builder.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartImageBuilderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_image_builder::builders::StartImageBuilderInputBuilder,
+}
 impl StartImageBuilderFluentBuilder  {
     /// Creates a new `StartImageBuilder`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_image_builder::StartImageBuilder, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -13,16 +13,17 @@ pub use crate::operation::get_intents::_get_intents_input::GetIntentsInputBuilde
 /// <p> The operation requires permission for the <code>lex:GetIntents</code> action. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIntentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_intents::builders::GetIntentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_intents::builders::GetIntentsInputBuilder,
+}
 impl GetIntentsFluentBuilder  {
     /// Creates a new `GetIntents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_intents::GetIntents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -53,11 +54,11 @@ impl GetIntentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_intents::paginator::GetIntentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_intents::paginator::GetIntentsPaginator {
-                            crate::operation::get_intents::paginator::GetIntentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_intents::paginator::GetIntentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_intents::paginator::GetIntentsPaginator {
+                                crate::operation::get_intents::paginator::GetIntentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

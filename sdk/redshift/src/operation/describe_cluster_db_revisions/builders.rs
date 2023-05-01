@@ -8,16 +8,17 @@ pub use crate::operation::describe_cluster_db_revisions::_describe_cluster_db_re
 /// <p>Returns an array of <code>ClusterDbRevision</code> objects.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClusterDbRevisionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cluster_db_revisions::builders::DescribeClusterDbRevisionsInputBuilder,
+}
 impl DescribeClusterDbRevisionsFluentBuilder  {
     /// Creates a new `DescribeClusterDbRevisions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeClusterDbRevisionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_db_revisions::paginator::DescribeClusterDbRevisionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_cluster_db_revisions::paginator::DescribeClusterDbRevisionsPaginator {
-                            crate::operation::describe_cluster_db_revisions::paginator::DescribeClusterDbRevisionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_db_revisions::paginator::DescribeClusterDbRevisionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_cluster_db_revisions::paginator::DescribeClusterDbRevisionsPaginator {
+                                crate::operation::describe_cluster_db_revisions::paginator::DescribeClusterDbRevisionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());

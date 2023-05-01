@@ -8,16 +8,17 @@ pub use crate::operation::list_campaigns::_list_campaigns_input::ListCampaignsIn
 /// <p>Returns a list of campaigns that use the given solution. When a solution is not specified, all the campaigns associated with the account are listed. The response provides the properties for each campaign, including the Amazon Resource Name (ARN). For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCampaignsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_campaigns::builders::ListCampaignsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_campaigns::builders::ListCampaignsInputBuilder,
+}
 impl ListCampaignsFluentBuilder  {
     /// Creates a new `ListCampaigns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_campaigns::ListCampaigns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCampaignsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_campaigns::paginator::ListCampaignsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_campaigns::paginator::ListCampaignsPaginator {
-                            crate::operation::list_campaigns::paginator::ListCampaignsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_campaigns::paginator::ListCampaignsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_campaigns::paginator::ListCampaignsPaginator {
+                                crate::operation::list_campaigns::paginator::ListCampaignsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution is not specified, all the campaigns associated with the account are listed.</p>
     pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.solution_arn(input.into());

@@ -9,16 +9,17 @@ pub use crate::operation::get_ec2_instance_recommendations::_get_ec2_instance_re
 /// <p>Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2) instances that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEC2InstanceRecommendationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder,
+}
 impl GetEC2InstanceRecommendationsFluentBuilder  {
     /// Creates a new `GetEC2InstanceRecommendations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,

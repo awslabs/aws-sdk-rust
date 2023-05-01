@@ -11,16 +11,17 @@ pub use crate::operation::get_account_authorization_details::_get_account_author
 /// <p>You can optionally filter the results using the <code>Filter</code> parameter. You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccountAuthorizationDetailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_account_authorization_details::builders::GetAccountAuthorizationDetailsInputBuilder,
+}
 impl GetAccountAuthorizationDetailsFluentBuilder  {
     /// Creates a new `GetAccountAuthorizationDetails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_account_authorization_details::GetAccountAuthorizationDetails, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl GetAccountAuthorizationDetailsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_account_authorization_details::paginator::GetAccountAuthorizationDetailsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_account_authorization_details::paginator::GetAccountAuthorizationDetailsPaginator {
-                            crate::operation::get_account_authorization_details::paginator::GetAccountAuthorizationDetailsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_account_authorization_details::paginator::GetAccountAuthorizationDetailsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_account_authorization_details::paginator::GetAccountAuthorizationDetailsPaginator {
+                                crate::operation::get_account_authorization_details::paginator::GetAccountAuthorizationDetailsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).

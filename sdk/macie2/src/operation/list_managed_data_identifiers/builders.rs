@@ -8,16 +8,17 @@ pub use crate::operation::list_managed_data_identifiers::_list_managed_data_iden
 /// <p>Retrieves information about all the managed data identifiers that Amazon Macie currently provides.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListManagedDataIdentifiersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_managed_data_identifiers::builders::ListManagedDataIdentifiersInputBuilder,
+}
 impl ListManagedDataIdentifiersFluentBuilder  {
     /// Creates a new `ListManagedDataIdentifiers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListManagedDataIdentifiersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_managed_data_identifiers::paginator::ListManagedDataIdentifiersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_managed_data_identifiers::paginator::ListManagedDataIdentifiersPaginator {
-                            crate::operation::list_managed_data_identifiers::paginator::ListManagedDataIdentifiersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_managed_data_identifiers::paginator::ListManagedDataIdentifiersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_managed_data_identifiers::paginator::ListManagedDataIdentifiersPaginator {
+                                crate::operation::list_managed_data_identifiers::paginator::ListManagedDataIdentifiersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

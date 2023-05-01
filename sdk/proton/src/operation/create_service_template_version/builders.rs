@@ -8,16 +8,17 @@ pub use crate::operation::create_service_template_version::_create_service_templ
 /// <p>Create a new major or minor version of a service template. A major version of a service template is a version that <i>isn't</i> backward compatible. A minor version of a service template is a version that's backward compatible within its major version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateServiceTemplateVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionInputBuilder,
+}
 impl CreateServiceTemplateVersionFluentBuilder  {
     /// Creates a new `CreateServiceTemplateVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_service_template_version::CreateServiceTemplateVersion, aws_http::retry::AwsResponseRetryClassifier,>,

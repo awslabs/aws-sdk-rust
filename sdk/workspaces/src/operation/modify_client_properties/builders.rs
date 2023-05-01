@@ -8,16 +8,17 @@ pub use crate::operation::modify_client_properties::_modify_client_properties_in
 /// <p>Modifies the properties of the specified Amazon WorkSpaces clients.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyClientPropertiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_client_properties::builders::ModifyClientPropertiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_client_properties::builders::ModifyClientPropertiesInputBuilder,
+}
 impl ModifyClientPropertiesFluentBuilder  {
     /// Creates a new `ModifyClientProperties`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_client_properties::ModifyClientProperties, aws_http::retry::AwsResponseRetryClassifier,>,

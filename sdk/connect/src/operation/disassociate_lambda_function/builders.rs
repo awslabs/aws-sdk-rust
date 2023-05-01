@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_lambda_function::_disassociate_lambda_fun
 /// <p>Remove the Lambda function from the dropdown options available in the relevant flow blocks.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateLambdaFunctionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_lambda_function::builders::DisassociateLambdaFunctionInputBuilder,
+}
 impl DisassociateLambdaFunctionFluentBuilder  {
     /// Creates a new `DisassociateLambdaFunction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_lambda_function::DisassociateLambdaFunction, aws_http::retry::AwsResponseRetryClassifier,>,

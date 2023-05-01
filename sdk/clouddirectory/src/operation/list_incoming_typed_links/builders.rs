@@ -8,16 +8,17 @@ pub use crate::operation::list_incoming_typed_links::_list_incoming_typed_links_
 /// <p>Returns a paginated list of all the incoming <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIncomingTypedLinksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksInputBuilder,
+}
 impl ListIncomingTypedLinksFluentBuilder  {
     /// Creates a new `ListIncomingTypedLinks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_incoming_typed_links::ListIncomingTypedLinks, aws_http::retry::AwsResponseRetryClassifier,>,

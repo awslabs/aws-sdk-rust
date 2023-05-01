@@ -8,16 +8,17 @@ pub use crate::operation::synthesize_speech::_synthesize_speech_input::Synthesiz
 /// <p>Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must be valid, well-formed SSML. Some alphabets might not be available with all the voices (for example, Cyrillic might not be read at all by English voices) unless phoneme mapping is used. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SynthesizeSpeechFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::synthesize_speech::builders::SynthesizeSpeechInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::synthesize_speech::builders::SynthesizeSpeechInputBuilder,
+}
 impl SynthesizeSpeechFluentBuilder  {
     /// Creates a new `SynthesizeSpeech`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::synthesize_speech::SynthesizeSpeech, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_core_network_change_events::_get_core_network_chan
 /// <p>Returns information about a core network change event.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCoreNetworkChangeEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_core_network_change_events::builders::GetCoreNetworkChangeEventsInputBuilder,
+}
 impl GetCoreNetworkChangeEventsFluentBuilder  {
     /// Creates a new `GetCoreNetworkChangeEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_core_network_change_events::GetCoreNetworkChangeEvents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetCoreNetworkChangeEventsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_core_network_change_events::paginator::GetCoreNetworkChangeEventsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_core_network_change_events::paginator::GetCoreNetworkChangeEventsPaginator {
-                            crate::operation::get_core_network_change_events::paginator::GetCoreNetworkChangeEventsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_core_network_change_events::paginator::GetCoreNetworkChangeEventsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_core_network_change_events::paginator::GetCoreNetworkChangeEventsPaginator {
+                                crate::operation::get_core_network_change_events::paginator::GetCoreNetworkChangeEventsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of a core network.</p>
     pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());

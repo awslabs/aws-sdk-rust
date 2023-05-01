@@ -11,16 +11,17 @@ pub use crate::operation::add_tags_to_resource::_add_tags_to_resource_input::Add
 /// <p>Each tag consists of a key and a value. Tag keys must be unique to each resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddTagsToResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder,
+}
 impl AddTagsToResourceFluentBuilder  {
     /// Creates a new `AddTagsToResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_tags_to_resource::AddTagsToResource, aws_http::retry::AwsResponseRetryClassifier,>,

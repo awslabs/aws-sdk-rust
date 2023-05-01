@@ -8,16 +8,17 @@ pub use crate::operation::list_package_version_dependencies::_list_package_versi
 /// <p> Returns the direct dependencies for a package version. The dependencies are returned as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package format (for example, the <code>package.json</code> file for npm packages and the <code>pom.xml</code> file for Maven). Any package version dependencies that are not listed in the configuration file are not returned. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPackageVersionDependenciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_package_version_dependencies::builders::ListPackageVersionDependenciesInputBuilder,
+}
 impl ListPackageVersionDependenciesFluentBuilder  {
     /// Creates a new `ListPackageVersionDependencies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_package_version_dependencies::ListPackageVersionDependencies, aws_http::retry::AwsResponseRetryClassifier,>,

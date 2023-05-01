@@ -8,16 +8,17 @@ pub use crate::operation::list_prompts::_list_prompts_input::ListPromptsInputBui
 /// <p>Provides information about the prompts for the specified Amazon Connect instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPromptsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_prompts::builders::ListPromptsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_prompts::builders::ListPromptsInputBuilder,
+}
 impl ListPromptsFluentBuilder  {
     /// Creates a new `ListPrompts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_prompts::ListPrompts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPromptsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_prompts::paginator::ListPromptsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_prompts::paginator::ListPromptsPaginator {
-                            crate::operation::list_prompts::paginator::ListPromptsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_prompts::paginator::ListPromptsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_prompts::paginator::ListPromptsPaginator {
+                                crate::operation::list_prompts::paginator::ListPromptsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Amazon Connect instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());

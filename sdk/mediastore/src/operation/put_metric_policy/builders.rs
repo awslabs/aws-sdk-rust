@@ -8,16 +8,17 @@ pub use crate::operation::put_metric_policy::_put_metric_policy_input::PutMetric
 /// <p>The metric policy that you want to add to the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. It takes up to 20 minutes for the new policy to take effect.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutMetricPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_metric_policy::builders::PutMetricPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_metric_policy::builders::PutMetricPolicyInputBuilder,
+}
 impl PutMetricPolicyFluentBuilder  {
     /// Creates a new `PutMetricPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_metric_policy::PutMetricPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

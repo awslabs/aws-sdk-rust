@@ -8,16 +8,17 @@ pub use crate::operation::stop_vector_enrichment_job::_stop_vector_enrichment_jo
 /// <p>Stops the Vector Enrichment job for a given job ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopVectorEnrichmentJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobInputBuilder,
+}
 impl StopVectorEnrichmentJobFluentBuilder  {
     /// Creates a new `StopVectorEnrichmentJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJob, aws_http::retry::AwsResponseRetryClassifier,>,

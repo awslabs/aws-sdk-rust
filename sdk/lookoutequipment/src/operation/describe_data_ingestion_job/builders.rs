@@ -8,16 +8,17 @@ pub use crate::operation::describe_data_ingestion_job::_describe_data_ingestion_
 /// <p>Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDataIngestionJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_data_ingestion_job::builders::DescribeDataIngestionJobInputBuilder,
+}
 impl DescribeDataIngestionJobFluentBuilder  {
     /// Creates a new `DescribeDataIngestionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_data_ingestion_job::DescribeDataIngestionJob, aws_http::retry::AwsResponseRetryClassifier,>,

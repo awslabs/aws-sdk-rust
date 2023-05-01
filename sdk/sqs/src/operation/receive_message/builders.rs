@@ -23,16 +23,17 @@ pub use crate::operation::receive_message::_receive_message_input::ReceiveMessag
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReceiveMessageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::receive_message::builders::ReceiveMessageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::receive_message::builders::ReceiveMessageInputBuilder,
+}
 impl ReceiveMessageFluentBuilder  {
     /// Creates a new `ReceiveMessage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::receive_message::ReceiveMessage, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_nfs_file_shares::_describe_nfs_file_shares_in
 /// <p>Gets a description for one or more Network File System (NFS) file shares from an S3 File Gateway. This operation is only supported for S3 File Gateways.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNFSFileSharesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_nfs_file_shares::builders::DescribeNfsFileSharesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_nfs_file_shares::builders::DescribeNfsFileSharesInputBuilder,
+}
 impl DescribeNFSFileSharesFluentBuilder  {
     /// Creates a new `DescribeNFSFileShares`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_nfs_file_shares::DescribeNFSFileShares, aws_http::retry::AwsResponseRetryClassifier,>,

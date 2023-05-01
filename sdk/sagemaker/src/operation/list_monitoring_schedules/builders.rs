@@ -8,16 +8,17 @@ pub use crate::operation::list_monitoring_schedules::_list_monitoring_schedules_
 /// <p>Returns list of all monitoring schedules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMonitoringSchedulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_monitoring_schedules::builders::ListMonitoringSchedulesInputBuilder,
+}
 impl ListMonitoringSchedulesFluentBuilder  {
     /// Creates a new `ListMonitoringSchedules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_monitoring_schedules::ListMonitoringSchedules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListMonitoringSchedulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_monitoring_schedules::paginator::ListMonitoringSchedulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_monitoring_schedules::paginator::ListMonitoringSchedulesPaginator {
-                            crate::operation::list_monitoring_schedules::paginator::ListMonitoringSchedulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_monitoring_schedules::paginator::ListMonitoringSchedulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_monitoring_schedules::paginator::ListMonitoringSchedulesPaginator {
+                                crate::operation::list_monitoring_schedules::paginator::ListMonitoringSchedulesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Name of a specific endpoint to fetch schedules for.</p>
     pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());

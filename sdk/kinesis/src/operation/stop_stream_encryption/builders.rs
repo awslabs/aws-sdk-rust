@@ -13,16 +13,17 @@ pub use crate::operation::stop_stream_encryption::_stop_stream_encryption_input:
 /// <p>Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status before all records written to the stream are no longer subject to encryption. After you disabled encryption, you can verify that encryption is not applied by inspecting the API response from <code>PutRecord</code> or <code>PutRecords</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopStreamEncryptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_stream_encryption::builders::StopStreamEncryptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_stream_encryption::builders::StopStreamEncryptionInputBuilder,
+}
 impl StopStreamEncryptionFluentBuilder  {
     /// Creates a new `StopStreamEncryption`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_stream_encryption::StopStreamEncryption, aws_http::retry::AwsResponseRetryClassifier,>,

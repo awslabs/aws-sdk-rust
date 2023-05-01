@@ -8,16 +8,17 @@ pub use crate::operation::put_partner_events::_put_partner_events_input::PutPart
 /// <p>This is used by SaaS partners to write events to a customer's partner event bus. Amazon Web Services customers do not use this operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutPartnerEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_partner_events::builders::PutPartnerEventsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_partner_events::builders::PutPartnerEventsInputBuilder,
+}
 impl PutPartnerEventsFluentBuilder  {
     /// Creates a new `PutPartnerEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_partner_events::PutPartnerEvents, aws_http::retry::AwsResponseRetryClassifier,>,

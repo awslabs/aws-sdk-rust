@@ -9,16 +9,17 @@ pub use crate::operation::list_endpoints_by_platform_application::_list_endpoint
 /// <p>This action is throttled at 30 transactions per second (TPS).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEndpointsByPlatformApplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationInputBuilder,
+}
 impl ListEndpointsByPlatformApplicationFluentBuilder  {
     /// Creates a new `ListEndpointsByPlatformApplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplication, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListEndpointsByPlatformApplicationFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_endpoints_by_platform_application::paginator::ListEndpointsByPlatformApplicationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_endpoints_by_platform_application::paginator::ListEndpointsByPlatformApplicationPaginator {
-                            crate::operation::list_endpoints_by_platform_application::paginator::ListEndpointsByPlatformApplicationPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_endpoints_by_platform_application::paginator::ListEndpointsByPlatformApplicationPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_endpoints_by_platform_application::paginator::ListEndpointsByPlatformApplicationPaginator {
+                                crate::operation::list_endpoints_by_platform_application::paginator::ListEndpointsByPlatformApplicationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
     pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.platform_application_arn(input.into());

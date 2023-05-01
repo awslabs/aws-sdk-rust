@@ -8,16 +8,17 @@ pub use crate::operation::delete_queued_savings_plan::_delete_queued_savings_pla
 /// <p>Deletes the queued purchase for the specified Savings Plan.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteQueuedSavingsPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_queued_savings_plan::builders::DeleteQueuedSavingsPlanInputBuilder,
+}
 impl DeleteQueuedSavingsPlanFluentBuilder  {
     /// Creates a new `DeleteQueuedSavingsPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlan, aws_http::retry::AwsResponseRetryClassifier,>,

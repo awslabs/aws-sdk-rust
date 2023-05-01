@@ -8,16 +8,17 @@ pub use crate::operation::describe_fpga_image_attribute::_describe_fpga_image_at
 /// <p>Describes the specified attribute of the specified Amazon FPGA Image (AFI).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFpgaImageAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_fpga_image_attribute::builders::DescribeFpgaImageAttributeInputBuilder,
+}
 impl DescribeFpgaImageAttributeFluentBuilder  {
     /// Creates a new `DescribeFpgaImageAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::confirm_public_virtual_interface::_confirm_public_virt
 /// <p>After the virtual interface owner makes this call, the specified virtual interface is created and made available to handle traffic.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfirmPublicVirtualInterfaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::confirm_public_virtual_interface::builders::ConfirmPublicVirtualInterfaceInputBuilder,
+}
 impl ConfirmPublicVirtualInterfaceFluentBuilder  {
     /// Creates a new `ConfirmPublicVirtualInterface`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::confirm_public_virtual_interface::ConfirmPublicVirtualInterface, aws_http::retry::AwsResponseRetryClassifier,>,

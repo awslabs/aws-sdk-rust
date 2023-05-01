@@ -8,16 +8,17 @@ pub use crate::operation::create_connector_definition::_create_connector_definit
 /// Creates a connector definition. You may provide the initial version of the connector definition now or use ''CreateConnectorDefinitionVersion'' at a later time.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConnectorDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_connector_definition::builders::CreateConnectorDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_connector_definition::builders::CreateConnectorDefinitionInputBuilder,
+}
 impl CreateConnectorDefinitionFluentBuilder  {
     /// Creates a new `CreateConnectorDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_connector_definition::CreateConnectorDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

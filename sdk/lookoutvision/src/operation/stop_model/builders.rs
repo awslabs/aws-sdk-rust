@@ -10,16 +10,17 @@ pub use crate::operation::stop_model::_stop_model_input::StopModelInputBuilder;
 /// <p>This operation requires permissions to perform the <code>lookoutvision:StopModel</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopModelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_model::builders::StopModelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_model::builders::StopModelInputBuilder,
+}
 impl StopModelFluentBuilder  {
     /// Creates a new `StopModel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_model::StopModel, aws_http::retry::AwsResponseRetryClassifier,>,

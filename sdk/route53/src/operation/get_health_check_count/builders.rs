@@ -8,16 +8,17 @@ pub use crate::operation::get_health_check_count::_get_health_check_count_input:
 /// <p>Retrieves the number of health checks that are associated with the current Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetHealthCheckCountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_health_check_count::builders::GetHealthCheckCountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_health_check_count::builders::GetHealthCheckCountInputBuilder,
+}
 impl GetHealthCheckCountFluentBuilder  {
     /// Creates a new `GetHealthCheckCount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_health_check_count::GetHealthCheckCount, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::update_ml_transform::_update_ml_transform_input::Updat
 /// <p>After calling this operation, you can call the <code>StartMLEvaluationTaskRun</code> operation to assess how well your new parameters achieved your goals (such as improving the quality of your machine learning transform, or making it more cost-effective).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMLTransformFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_ml_transform::builders::UpdateMlTransformInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_ml_transform::builders::UpdateMlTransformInputBuilder,
+}
 impl UpdateMLTransformFluentBuilder  {
     /// Creates a new `UpdateMLTransform`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_ml_transform::UpdateMLTransform, aws_http::retry::AwsResponseRetryClassifier,>,

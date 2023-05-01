@@ -11,16 +11,17 @@ pub use crate::operation::disable_vpc_classic_link_dns_support::_disable_vpc_cla
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableVpcClassicLinkDnsSupportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_vpc_classic_link_dns_support::builders::DisableVpcClassicLinkDnsSupportInputBuilder,
+}
 impl DisableVpcClassicLinkDnsSupportFluentBuilder  {
     /// Creates a new `DisableVpcClassicLinkDnsSupport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupport, aws_http::retry::AwsResponseRetryClassifier,>,

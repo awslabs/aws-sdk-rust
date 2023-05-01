@@ -9,16 +9,17 @@ pub use crate::operation::set_ip_address_type::_set_ip_address_type_input::SetIp
 /// <p>Use this action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the specified resource. Alternately, you can use this action to disable dual-stack, and enable IPv4 only.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetIpAddressTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder,
+}
 impl SetIpAddressTypeFluentBuilder  {
     /// Creates a new `SetIpAddressType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_ip_address_type::SetIpAddressType, aws_http::retry::AwsResponseRetryClassifier,>,

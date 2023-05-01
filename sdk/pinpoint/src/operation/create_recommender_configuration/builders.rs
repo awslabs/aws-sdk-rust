@@ -8,16 +8,17 @@ pub use crate::operation::create_recommender_configuration::_create_recommender_
 /// <p>Creates an Amazon Pinpoint configuration for a recommender model.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRecommenderConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_recommender_configuration::builders::CreateRecommenderConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_recommender_configuration::builders::CreateRecommenderConfigurationInputBuilder,
+}
 impl CreateRecommenderConfigurationFluentBuilder  {
     /// Creates a new `CreateRecommenderConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_recommender_configuration::CreateRecommenderConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

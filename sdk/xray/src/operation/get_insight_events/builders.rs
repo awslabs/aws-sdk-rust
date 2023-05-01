@@ -8,16 +8,17 @@ pub use crate::operation::get_insight_events::_get_insight_events_input::GetInsi
 /// <p>X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an event. You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray console.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInsightEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_insight_events::builders::GetInsightEventsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_insight_events::builders::GetInsightEventsInputBuilder,
+}
 impl GetInsightEventsFluentBuilder  {
     /// Creates a new `GetInsightEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_insight_events::GetInsightEvents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetInsightEventsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_insight_events::paginator::GetInsightEventsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_insight_events::paginator::GetInsightEventsPaginator {
-                            crate::operation::get_insight_events::paginator::GetInsightEventsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_insight_events::paginator::GetInsightEventsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_insight_events::paginator::GetInsightEventsPaginator {
+                                crate::operation::get_insight_events::paginator::GetInsightEventsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.</p>
     pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.insight_id(input.into());

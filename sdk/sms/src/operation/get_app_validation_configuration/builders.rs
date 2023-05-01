@@ -8,16 +8,17 @@ pub use crate::operation::get_app_validation_configuration::_get_app_validation_
 /// <p>Retrieves information about a configuration for validating an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAppValidationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationInputBuilder,
+}
 impl GetAppValidationConfigurationFluentBuilder  {
     /// Creates a new `GetAppValidationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_app_validation_configuration::GetAppValidationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

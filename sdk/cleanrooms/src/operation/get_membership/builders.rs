@@ -8,16 +8,17 @@ pub use crate::operation::get_membership::_get_membership_input::GetMembershipIn
 /// <p>Retrieves a specified membership for an identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_membership::builders::GetMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_membership::builders::GetMembershipInputBuilder,
+}
 impl GetMembershipFluentBuilder  {
     /// Creates a new `GetMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_membership::GetMembership, aws_http::retry::AwsResponseRetryClassifier,>,

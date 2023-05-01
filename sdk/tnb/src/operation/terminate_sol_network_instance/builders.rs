@@ -10,16 +10,17 @@ pub use crate::operation::terminate_sol_network_instance::_terminate_sol_network
 /// <p>You must terminate a network instance before you can delete it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TerminateSolNetworkInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::terminate_sol_network_instance::builders::TerminateSolNetworkInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::terminate_sol_network_instance::builders::TerminateSolNetworkInstanceInputBuilder,
+}
 impl TerminateSolNetworkInstanceFluentBuilder  {
     /// Creates a new `TerminateSolNetworkInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstance, aws_http::retry::AwsResponseRetryClassifier,>,

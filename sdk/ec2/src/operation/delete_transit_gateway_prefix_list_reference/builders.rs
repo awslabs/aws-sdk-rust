@@ -8,16 +8,17 @@ pub use crate::operation::delete_transit_gateway_prefix_list_reference::_delete_
 /// <p>Deletes a reference (route) to a prefix list in a specified transit gateway route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTransitGatewayPrefixListReferenceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_transit_gateway_prefix_list_reference::builders::DeleteTransitGatewayPrefixListReferenceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_transit_gateway_prefix_list_reference::builders::DeleteTransitGatewayPrefixListReferenceInputBuilder,
+}
 impl DeleteTransitGatewayPrefixListReferenceFluentBuilder  {
     /// Creates a new `DeleteTransitGatewayPrefixListReference`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_transit_gateway_prefix_list_reference::DeleteTransitGatewayPrefixListReference, aws_http::retry::AwsResponseRetryClassifier,>,

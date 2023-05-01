@@ -10,16 +10,17 @@ pub use crate::operation::create_aws_log_source::_create_aws_log_source_input::C
 /// <p>You can use this API only to enable natively supported Amazon Web Services as a source. Use <code>CreateCustomLogSource</code> to enable data collection from a custom source. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAwsLogSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_aws_log_source::builders::CreateAwsLogSourceInputBuilder,
+}
 impl CreateAwsLogSourceFluentBuilder  {
     /// Creates a new `CreateAwsLogSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_aws_log_source::CreateAwsLogSource, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::send_task_failure::_send_task_failure_input::SendTaskF
 /// <p>Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report that the task identified by the <code>taskToken</code> failed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendTaskFailureFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_task_failure::builders::SendTaskFailureInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_task_failure::builders::SendTaskFailureInputBuilder,
+}
 impl SendTaskFailureFluentBuilder  {
     /// Creates a new `SendTaskFailure`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_task_failure::SendTaskFailure, aws_http::retry::AwsResponseRetryClassifier,>,

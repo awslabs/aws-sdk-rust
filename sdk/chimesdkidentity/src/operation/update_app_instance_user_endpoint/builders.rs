@@ -8,16 +8,17 @@ pub use crate::operation::update_app_instance_user_endpoint::_update_app_instanc
 /// <p>Updates the details of an <code>AppInstanceUserEndpoint</code>. You can update the name and <code>AllowMessage</code> values.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAppInstanceUserEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder,
+}
 impl UpdateAppInstanceUserEndpointFluentBuilder  {
     /// Creates a new `UpdateAppInstanceUserEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::delete_analysis::_delete_analysis_input::DeleteAnalysi
 /// <p>An analysis that's scheduled for deletion isn't accessible in the Amazon QuickSight console. To access it in the console, restore it. Deleting an analysis doesn't delete the dashboards that you publish from it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_analysis::builders::DeleteAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_analysis::builders::DeleteAnalysisInputBuilder,
+}
 impl DeleteAnalysisFluentBuilder  {
     /// Creates a new `DeleteAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_analysis::DeleteAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

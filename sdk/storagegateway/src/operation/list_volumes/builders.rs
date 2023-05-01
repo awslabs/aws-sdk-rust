@@ -9,16 +9,17 @@ pub use crate::operation::list_volumes::_list_volumes_input::ListVolumesInputBui
 /// <p>The operation supports pagination. By default, the operation returns a maximum of up to 100 volumes. You can optionally specify the <code>Limit</code> field in the body to limit the number of volumes in the response. If the number of volumes returned in the response is truncated, the response includes a Marker field. You can use this Marker value in your subsequent request to retrieve the next set of volumes. This operation is only supported in the cached volume and stored volume gateway types.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVolumesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_volumes::builders::ListVolumesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_volumes::builders::ListVolumesInputBuilder,
+}
 impl ListVolumesFluentBuilder  {
     /// Creates a new `ListVolumes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_volumes::ListVolumes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListVolumesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_volumes::paginator::ListVolumesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_volumes::paginator::ListVolumesPaginator {
-                            crate::operation::list_volumes::paginator::ListVolumesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_volumes::paginator::ListVolumesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_volumes::paginator::ListVolumesPaginator {
+                                crate::operation::list_volumes::paginator::ListVolumesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());

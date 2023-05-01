@@ -8,16 +8,17 @@ pub use crate::operation::delete_device_pool::_delete_device_pool_input::DeleteD
 /// <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDevicePoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_device_pool::builders::DeleteDevicePoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_device_pool::builders::DeleteDevicePoolInputBuilder,
+}
 impl DeleteDevicePoolFluentBuilder  {
     /// Creates a new `DeleteDevicePool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_device_pool::DeleteDevicePool, aws_http::retry::AwsResponseRetryClassifier,>,

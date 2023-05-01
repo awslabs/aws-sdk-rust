@@ -8,16 +8,17 @@ pub use crate::operation::update_gateway_route::_update_gateway_route_input::Upd
 /// <p>Updates an existing gateway route that is associated to a specified virtual gateway in a service mesh.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGatewayRouteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_gateway_route::builders::UpdateGatewayRouteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_gateway_route::builders::UpdateGatewayRouteInputBuilder,
+}
 impl UpdateGatewayRouteFluentBuilder  {
     /// Creates a new `UpdateGatewayRoute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_gateway_route::UpdateGatewayRoute, aws_http::retry::AwsResponseRetryClassifier,>,

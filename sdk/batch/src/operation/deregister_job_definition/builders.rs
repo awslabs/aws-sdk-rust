@@ -8,16 +8,17 @@ pub use crate::operation::deregister_job_definition::_deregister_job_definition_
 /// <p>Deregisters an Batch job definition. Job definitions are permanently deleted after 180 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterJobDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_job_definition::builders::DeregisterJobDefinitionInputBuilder,
+}
 impl DeregisterJobDefinitionFluentBuilder  {
     /// Creates a new `DeregisterJobDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_job_definition::DeregisterJobDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

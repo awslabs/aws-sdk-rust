@@ -8,16 +8,17 @@ pub use crate::operation::get_user_id::_get_user_id_input::GetUserIdInputBuilder
 /// <p>Retrieves the <code>UserId</code> in an identity store.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUserIdFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_user_id::builders::GetUserIdInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_user_id::builders::GetUserIdInputBuilder,
+}
 impl GetUserIdFluentBuilder  {
     /// Creates a new `GetUserId`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_user_id::GetUserId, aws_http::retry::AwsResponseRetryClassifier,>,

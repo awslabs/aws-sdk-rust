@@ -8,16 +8,17 @@ pub use crate::operation::subscribe::_subscribe_input::SubscribeInputBuilder;
 /// <p>Creates an association between a notification rule and an Chatbot topic or Chatbot client so that the associated target can receive notifications when the events described in the rule are triggered.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SubscribeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::subscribe::builders::SubscribeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::subscribe::builders::SubscribeInputBuilder,
+}
 impl SubscribeFluentBuilder  {
     /// Creates a new `Subscribe`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::subscribe::Subscribe, aws_http::retry::AwsResponseRetryClassifier,>,

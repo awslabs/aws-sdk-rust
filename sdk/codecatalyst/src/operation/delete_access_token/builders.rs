@@ -8,16 +8,17 @@ pub use crate::operation::delete_access_token::_delete_access_token_input::Delet
 /// <p>Deletes a specified personal access token (PAT). A personal access token can only be deleted by the user who created it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccessTokenFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_access_token::builders::DeleteAccessTokenInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_access_token::builders::DeleteAccessTokenInputBuilder,
+}
 impl DeleteAccessTokenFluentBuilder  {
     /// Creates a new `DeleteAccessToken`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_access_token::DeleteAccessToken, aws_http::retry::AwsResponseRetryClassifier,>,

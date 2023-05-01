@@ -8,16 +8,17 @@ pub use crate::operation::list_repositories_in_domain::_list_repositories_in_dom
 /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified domain and that matches the input parameters. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRepositoriesInDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_repositories_in_domain::builders::ListRepositoriesInDomainInputBuilder,
+}
 impl ListRepositoriesInDomainFluentBuilder  {
     /// Creates a new `ListRepositoriesInDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_repositories_in_domain::ListRepositoriesInDomain, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRepositoriesInDomainFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_repositories_in_domain::paginator::ListRepositoriesInDomainPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_repositories_in_domain::paginator::ListRepositoriesInDomainPaginator {
-                            crate::operation::list_repositories_in_domain::paginator::ListRepositoriesInDomainPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_repositories_in_domain::paginator::ListRepositoriesInDomainPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_repositories_in_domain::paginator::ListRepositoriesInDomainPaginator {
+                                crate::operation::list_repositories_in_domain::paginator::ListRepositoriesInDomainPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The name of the domain that contains the returned list of repositories. </p>
     pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());

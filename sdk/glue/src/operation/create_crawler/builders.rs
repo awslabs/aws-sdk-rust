@@ -8,16 +8,17 @@ pub use crate::operation::create_crawler::_create_crawler_input::CreateCrawlerIn
 /// <p>Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in the <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCrawlerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_crawler::builders::CreateCrawlerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_crawler::builders::CreateCrawlerInputBuilder,
+}
 impl CreateCrawlerFluentBuilder  {
     /// Creates a new `CreateCrawler`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_crawler::CreateCrawler, aws_http::retry::AwsResponseRetryClassifier,>,

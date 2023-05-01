@@ -9,16 +9,17 @@ pub use crate::operation::register_ca_certificate::_register_ca_certificate_inpu
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCACertificate</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterCACertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_ca_certificate::builders::RegisterCaCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_ca_certificate::builders::RegisterCaCertificateInputBuilder,
+}
 impl RegisterCACertificateFluentBuilder  {
     /// Creates a new `RegisterCACertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_ca_certificate::RegisterCACertificate, aws_http::retry::AwsResponseRetryClassifier,>,

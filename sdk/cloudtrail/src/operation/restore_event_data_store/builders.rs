@@ -8,16 +8,17 @@ pub use crate::operation::restore_event_data_store::_restore_event_data_store_in
 /// <p>Restores a deleted event data store specified by <code>EventDataStore</code>, which accepts an event data store ARN. You can only restore a deleted event data store within the seven-day wait period after deletion. Restoring an event data store can take several minutes, depending on the size of the event data store.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreEventDataStoreFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_event_data_store::builders::RestoreEventDataStoreInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_event_data_store::builders::RestoreEventDataStoreInputBuilder,
+}
 impl RestoreEventDataStoreFluentBuilder  {
     /// Creates a new `RestoreEventDataStore`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_event_data_store::RestoreEventDataStore, aws_http::retry::AwsResponseRetryClassifier,>,

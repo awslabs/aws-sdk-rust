@@ -10,16 +10,17 @@ pub use crate::operation::batch_associate_client_device_with_core_device::_batch
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchAssociateClientDeviceWithCoreDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_associate_client_device_with_core_device::builders::BatchAssociateClientDeviceWithCoreDeviceInputBuilder,
+}
 impl BatchAssociateClientDeviceWithCoreDeviceFluentBuilder  {
     /// Creates a new `BatchAssociateClientDeviceWithCoreDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDevice, aws_http::retry::AwsResponseRetryClassifier,>,

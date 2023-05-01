@@ -8,16 +8,17 @@ pub use crate::operation::get_replication_jobs::_get_replication_jobs_input::Get
 /// <p>Describes the specified replication job or all of your replication jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetReplicationJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_replication_jobs::builders::GetReplicationJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_replication_jobs::builders::GetReplicationJobsInputBuilder,
+}
 impl GetReplicationJobsFluentBuilder  {
     /// Creates a new `GetReplicationJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_replication_jobs::GetReplicationJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetReplicationJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_replication_jobs::paginator::GetReplicationJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_replication_jobs::paginator::GetReplicationJobsPaginator {
-                            crate::operation::get_replication_jobs::paginator::GetReplicationJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_replication_jobs::paginator::GetReplicationJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_replication_jobs::paginator::GetReplicationJobsPaginator {
+                                crate::operation::get_replication_jobs::paginator::GetReplicationJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the replication job.</p>
     pub fn replication_job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.replication_job_id(input.into());

@@ -9,16 +9,17 @@ pub use crate::operation::create_resource_policy_statement::_create_resource_pol
 /// <p>You can't create a resource policy statement that allows cross-account access.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateResourcePolicyStatementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder,
+}
 impl CreateResourcePolicyStatementFluentBuilder  {
     /// Creates a new `CreateResourcePolicyStatement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_resource_policy_statement::CreateResourcePolicyStatement, aws_http::retry::AwsResponseRetryClassifier,>,

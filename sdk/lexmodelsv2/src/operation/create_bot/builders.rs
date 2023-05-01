@@ -8,16 +8,17 @@ pub use crate::operation::create_bot::_create_bot_input::CreateBotInputBuilder;
 /// <p>Creates an Amazon Lex conversational bot. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_bot::builders::CreateBotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_bot::builders::CreateBotInputBuilder,
+}
 impl CreateBotFluentBuilder  {
     /// Creates a new `CreateBot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_bot::CreateBot, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::describe_load_balancer_policies::_describe_load_balanc
 /// <p>If you specify a load balancer name, the action returns the descriptions of all policies created for the load balancer. If you specify a policy name associated with your load balancer, the action returns the description of that policy. If you don't specify a load balancer name, the action returns descriptions of the specified sample policies, or descriptions of all sample policies. The names of the sample policies have the <code>ELBSample-</code> prefix.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLoadBalancerPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesInputBuilder,
+}
 impl DescribeLoadBalancerPoliciesFluentBuilder  {
     /// Creates a new `DescribeLoadBalancerPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPolicies, aws_http::retry::AwsResponseRetryClassifier,>,

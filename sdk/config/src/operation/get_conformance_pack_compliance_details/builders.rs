@@ -8,16 +8,17 @@ pub use crate::operation::get_conformance_pack_compliance_details::_get_conforma
 /// <p>Returns compliance details of a conformance pack for all Amazon Web Services resources that are monitered by conformance pack.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetConformancePackComplianceDetailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsInputBuilder,
+}
 impl GetConformancePackComplianceDetailsFluentBuilder  {
     /// Creates a new `GetConformancePackComplianceDetails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetails, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetConformancePackComplianceDetailsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator {
-                            crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator {
+                                crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Name of the conformance pack.</p>
     pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.conformance_pack_name(input.into());

@@ -10,16 +10,17 @@ pub use crate::operation::batch_get_document_status::_batch_get_document_status_
 /// <p>You can also use the <code>BatchGetDocumentStatus</code> API to check the status of the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html"> BatchDeleteDocument</a> API. When a document is deleted from the index, Amazon Kendra returns <code>NOT_FOUND</code> as the status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetDocumentStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_document_status::builders::BatchGetDocumentStatusInputBuilder,
+}
 impl BatchGetDocumentStatusFluentBuilder  {
     /// Creates a new `BatchGetDocumentStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_document_status::BatchGetDocumentStatus, aws_http::retry::AwsResponseRetryClassifier,>,

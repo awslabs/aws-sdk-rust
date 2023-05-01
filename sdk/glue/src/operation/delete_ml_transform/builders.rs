@@ -8,16 +8,17 @@ pub use crate::operation::delete_ml_transform::_delete_ml_transform_input::Delet
 /// <p>Deletes an Glue machine learning transform. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. If you no longer need a transform, you can delete it by calling <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted transform will no longer succeed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMLTransformFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_ml_transform::builders::DeleteMlTransformInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_ml_transform::builders::DeleteMlTransformInputBuilder,
+}
 impl DeleteMLTransformFluentBuilder  {
     /// Creates a new `DeleteMLTransform`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_ml_transform::DeleteMLTransform, aws_http::retry::AwsResponseRetryClassifier,>,

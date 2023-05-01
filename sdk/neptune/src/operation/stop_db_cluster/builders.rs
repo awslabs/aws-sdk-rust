@@ -9,16 +9,17 @@ pub use crate::operation::stop_db_cluster::_stop_db_cluster_input::StopDbCluster
 /// <p>Neptune also retains the transaction logs so you can do a point-in-time restore if necessary.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopDBClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_db_cluster::builders::StopDbClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_db_cluster::builders::StopDbClusterInputBuilder,
+}
 impl StopDBClusterFluentBuilder  {
     /// Creates a new `StopDBCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_db_cluster::StopDBCluster, aws_http::retry::AwsResponseRetryClassifier,>,

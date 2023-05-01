@@ -8,16 +8,17 @@ pub use crate::operation::delete_stream_processor::_delete_stream_processor_inpu
 /// <p>Deletes the stream processor identified by <code>Name</code>. You assign the value for <code>Name</code> when you create the stream processor with <code>CreateStreamProcessor</code>. You might not be able to use the same name for a stream processor for a few seconds after calling <code>DeleteStreamProcessor</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteStreamProcessorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_stream_processor::builders::DeleteStreamProcessorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_stream_processor::builders::DeleteStreamProcessorInputBuilder,
+}
 impl DeleteStreamProcessorFluentBuilder  {
     /// Creates a new `DeleteStreamProcessor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_stream_processor::DeleteStreamProcessor, aws_http::retry::AwsResponseRetryClassifier,>,

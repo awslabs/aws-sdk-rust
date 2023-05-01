@@ -8,16 +8,17 @@ pub use crate::operation::describe_budget_notifications_for_account::_describe_b
 /// <p> Lists the budget names and notifications that are associated with an account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBudgetNotificationsForAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_budget_notifications_for_account::builders::DescribeBudgetNotificationsForAccountInputBuilder,
+}
 impl DescribeBudgetNotificationsForAccountFluentBuilder  {
     /// Creates a new `DescribeBudgetNotificationsForAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_budget_notifications_for_account::DescribeBudgetNotificationsForAccount, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeBudgetNotificationsForAccountFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_budget_notifications_for_account::paginator::DescribeBudgetNotificationsForAccountPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_budget_notifications_for_account::paginator::DescribeBudgetNotificationsForAccountPaginator {
-                            crate::operation::describe_budget_notifications_for_account::paginator::DescribeBudgetNotificationsForAccountPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_budget_notifications_for_account::paginator::DescribeBudgetNotificationsForAccountPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_budget_notifications_for_account::paginator::DescribeBudgetNotificationsForAccountPaginator {
+                                crate::operation::describe_budget_notifications_for_account::paginator::DescribeBudgetNotificationsForAccountPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::opt_out_speaker::_opt_out_speaker_input::OptOutSpeaker
 /// <p>Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether or not they already exist in Voice ID. If they don't yet exist, a new speaker is created in an opted out state. If they already exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in Voice ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct OptOutSpeakerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::opt_out_speaker::builders::OptOutSpeakerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::opt_out_speaker::builders::OptOutSpeakerInputBuilder,
+}
 impl OptOutSpeakerFluentBuilder  {
     /// Creates a new `OptOutSpeaker`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::opt_out_speaker::OptOutSpeaker, aws_http::retry::AwsResponseRetryClassifier,>,

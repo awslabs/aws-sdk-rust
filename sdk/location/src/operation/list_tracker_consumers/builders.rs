@@ -8,16 +8,17 @@ pub use crate::operation::list_tracker_consumers::_list_tracker_consumers_input:
 /// <p>Lists geofence collections currently associated to the given tracker resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrackerConsumersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tracker_consumers::builders::ListTrackerConsumersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tracker_consumers::builders::ListTrackerConsumersInputBuilder,
+}
 impl ListTrackerConsumersFluentBuilder  {
     /// Creates a new `ListTrackerConsumers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tracker_consumers::ListTrackerConsumers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTrackerConsumersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_tracker_consumers::paginator::ListTrackerConsumersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_tracker_consumers::paginator::ListTrackerConsumersPaginator {
-                            crate::operation::list_tracker_consumers::paginator::ListTrackerConsumersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_tracker_consumers::paginator::ListTrackerConsumersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_tracker_consumers::paginator::ListTrackerConsumersPaginator {
+                                crate::operation::list_tracker_consumers::paginator::ListTrackerConsumersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The tracker resource whose associated geofence collections you want to list.</p>
     pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tracker_name(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::put_voice_connector_termination::_put_voice_connector_
 /// <p>Updates a Voice Connector's termination settings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutVoiceConnectorTerminationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_voice_connector_termination::builders::PutVoiceConnectorTerminationInputBuilder,
+}
 impl PutVoiceConnectorTerminationFluentBuilder  {
     /// Creates a new `PutVoiceConnectorTermination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_voice_connector_termination::PutVoiceConnectorTermination, aws_http::retry::AwsResponseRetryClassifier,>,

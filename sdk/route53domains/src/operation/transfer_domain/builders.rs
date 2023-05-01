@@ -18,16 +18,17 @@ pub use crate::operation::transfer_domain::_transfer_domain_input::TransferDomai
 /// <p>If the transfer is successful, this method returns an operation ID that you can use to track the progress and completion of the action. If the transfer doesn't complete successfully, the domain registrant will be notified by email.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TransferDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::transfer_domain::builders::TransferDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::transfer_domain::builders::TransferDomainInputBuilder,
+}
 impl TransferDomainFluentBuilder  {
     /// Creates a new `TransferDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::transfer_domain::TransferDomain, aws_http::retry::AwsResponseRetryClassifier,>,

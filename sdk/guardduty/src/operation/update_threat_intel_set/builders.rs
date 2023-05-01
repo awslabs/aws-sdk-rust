@@ -8,16 +8,17 @@ pub use crate::operation::update_threat_intel_set::_update_threat_intel_set_inpu
 /// <p>Updates the ThreatIntelSet specified by the ThreatIntelSet ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateThreatIntelSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_threat_intel_set::builders::UpdateThreatIntelSetInputBuilder,
+}
 impl UpdateThreatIntelSetFluentBuilder  {
     /// Creates a new `UpdateThreatIntelSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_threat_intel_set::UpdateThreatIntelSet, aws_http::retry::AwsResponseRetryClassifier,>,

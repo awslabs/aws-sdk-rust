@@ -8,16 +8,17 @@ pub use crate::operation::list_permission_associations::_list_permission_associa
 /// <p>Lists information about the managed permission and its associations to any resource shares that use this managed permission. This lets you see which resource shares use which versions of the specified managed permission.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPermissionAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder,
+}
 impl ListPermissionAssociationsFluentBuilder  {
     /// Creates a new `ListPermissionAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_permission_associations::ListPermissionAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPermissionAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator {
-                            crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator {
+                                crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission.</p>
     pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());

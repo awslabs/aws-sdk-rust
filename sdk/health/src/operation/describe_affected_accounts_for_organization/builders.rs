@@ -11,16 +11,17 @@ pub use crate::operation::describe_affected_accounts_for_organization::_describe
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAffectedAccountsForOrganizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationInputBuilder,
+}
 impl DescribeAffectedAccountsForOrganizationFluentBuilder  {
     /// Creates a new `DescribeAffectedAccountsForOrganization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganization, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl DescribeAffectedAccountsForOrganizationFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator {
-                            crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator {
+                                crate::operation::describe_affected_accounts_for_organization::paginator::DescribeAffectedAccountsForOrganizationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p> 
     /// <p>For example, an event ARN might look like the following:</p> 
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>

@@ -8,16 +8,17 @@ pub use crate::operation::get_work_group::_get_work_group_input::GetWorkGroupInp
 /// <p>Returns information about the workgroup with the specified name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetWorkGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_work_group::builders::GetWorkGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_work_group::builders::GetWorkGroupInputBuilder,
+}
 impl GetWorkGroupFluentBuilder  {
     /// Creates a new `GetWorkGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_work_group::GetWorkGroup, aws_http::retry::AwsResponseRetryClassifier,>,

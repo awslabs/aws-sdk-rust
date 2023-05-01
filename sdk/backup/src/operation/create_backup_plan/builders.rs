@@ -9,16 +9,17 @@ pub use crate::operation::create_backup_plan::_create_backup_plan_input::CreateB
 /// <p>If you call <code>CreateBackupPlan</code> with a plan that already exists, you receive an <code>AlreadyExistsException</code> exception.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBackupPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_backup_plan::builders::CreateBackupPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_backup_plan::builders::CreateBackupPlanInputBuilder,
+}
 impl CreateBackupPlanFluentBuilder  {
     /// Creates a new `CreateBackupPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_backup_plan::CreateBackupPlan, aws_http::retry::AwsResponseRetryClassifier,>,

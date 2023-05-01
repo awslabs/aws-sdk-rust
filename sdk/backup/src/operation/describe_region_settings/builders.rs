@@ -8,16 +8,17 @@ pub use crate::operation::describe_region_settings::_describe_region_settings_in
 /// <p>Returns the current service opt-in settings for the Region. If service opt-in is enabled for a service, Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand backup or scheduled backup plan. Otherwise, Backup does not try to protect that service's resources in this Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRegionSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_region_settings::builders::DescribeRegionSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_region_settings::builders::DescribeRegionSettingsInputBuilder,
+}
 impl DescribeRegionSettingsFluentBuilder  {
     /// Creates a new `DescribeRegionSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_region_settings::DescribeRegionSettings, aws_http::retry::AwsResponseRetryClassifier,>,

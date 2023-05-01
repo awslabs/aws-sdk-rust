@@ -9,16 +9,17 @@ pub use crate::operation::describe_standards_controls::_describe_standards_contr
 /// <p>For each control, the results include information about whether it is currently enabled, the severity, and a link to remediation information.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStandardsControlsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_standards_controls::builders::DescribeStandardsControlsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_standards_controls::builders::DescribeStandardsControlsInputBuilder,
+}
 impl DescribeStandardsControlsFluentBuilder  {
     /// Creates a new `DescribeStandardsControls`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_standards_controls::DescribeStandardsControls, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeStandardsControlsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_standards_controls::paginator::DescribeStandardsControlsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_standards_controls::paginator::DescribeStandardsControlsPaginator {
-                            crate::operation::describe_standards_controls::paginator::DescribeStandardsControlsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_standards_controls::paginator::DescribeStandardsControlsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_standards_controls::paginator::DescribeStandardsControlsPaginator {
+                                crate::operation::describe_standards_controls::paginator::DescribeStandardsControlsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
     pub fn standards_subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.standards_subscription_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::register_db_proxy_targets::_register_db_proxy_targets_
 /// <p>Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterDBProxyTargetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsInputBuilder,
+}
 impl RegisterDBProxyTargetsFluentBuilder  {
     /// Creates a new `RegisterDBProxyTargets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_db_proxy_targets::RegisterDBProxyTargets, aws_http::retry::AwsResponseRetryClassifier,>,

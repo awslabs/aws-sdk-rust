@@ -8,16 +8,17 @@ pub use crate::operation::delete_approval_rule_template::_delete_approval_rule_t
 /// <p>Deletes a specified approval rule template. Deleting a template does not remove approval rules on pull requests already created with the template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteApprovalRuleTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_approval_rule_template::builders::DeleteApprovalRuleTemplateInputBuilder,
+}
 impl DeleteApprovalRuleTemplateFluentBuilder  {
     /// Creates a new `DeleteApprovalRuleTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

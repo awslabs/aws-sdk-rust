@@ -10,16 +10,17 @@ pub use crate::operation::modify_default_credit_specification::_modify_default_c
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDefaultCreditSpecificationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_default_credit_specification::builders::ModifyDefaultCreditSpecificationInputBuilder,
+}
 impl ModifyDefaultCreditSpecificationFluentBuilder  {
     /// Creates a new `ModifyDefaultCreditSpecification`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecification, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_hypervisor::_update_hypervisor_input::UpdateHyp
 /// <p>Updates a hypervisor metadata, including its host, username, and password. Specify which hypervisor to update using the Amazon Resource Name (ARN) of the hypervisor in your request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateHypervisorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_hypervisor::builders::UpdateHypervisorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_hypervisor::builders::UpdateHypervisorInputBuilder,
+}
 impl UpdateHypervisorFluentBuilder  {
     /// Creates a new `UpdateHypervisor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_hypervisor::UpdateHypervisor, aws_http::retry::AwsResponseRetryClassifier,>,

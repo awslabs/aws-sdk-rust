@@ -8,16 +8,17 @@ pub use crate::operation::delete_schema::_delete_schema_input::DeleteSchemaInput
 /// <p>Delete a schema definition.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSchemaFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_schema::builders::DeleteSchemaInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_schema::builders::DeleteSchemaInputBuilder,
+}
 impl DeleteSchemaFluentBuilder  {
     /// Creates a new `DeleteSchema`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_schema::DeleteSchema, aws_http::retry::AwsResponseRetryClassifier,>,

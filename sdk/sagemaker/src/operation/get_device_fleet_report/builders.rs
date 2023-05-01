@@ -8,16 +8,17 @@ pub use crate::operation::get_device_fleet_report::_get_device_fleet_report_inpu
 /// <p>Describes a fleet.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDeviceFleetReportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_device_fleet_report::builders::GetDeviceFleetReportInputBuilder,
+}
 impl GetDeviceFleetReportFluentBuilder  {
     /// Creates a new `GetDeviceFleetReport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_device_fleet_report::GetDeviceFleetReport, aws_http::retry::AwsResponseRetryClassifier,>,

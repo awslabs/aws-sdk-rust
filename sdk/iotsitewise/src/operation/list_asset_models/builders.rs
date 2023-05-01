@@ -8,16 +8,17 @@ pub use crate::operation::list_asset_models::_list_asset_models_input::ListAsset
 /// <p>Retrieves a paginated list of summaries of all asset models.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssetModelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_asset_models::builders::ListAssetModelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_asset_models::builders::ListAssetModelsInputBuilder,
+}
 impl ListAssetModelsFluentBuilder  {
     /// Creates a new `ListAssetModels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_asset_models::ListAssetModels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAssetModelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_asset_models::paginator::ListAssetModelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_asset_models::paginator::ListAssetModelsPaginator {
-                            crate::operation::list_asset_models::paginator::ListAssetModelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_asset_models::paginator::ListAssetModelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_asset_models::paginator::ListAssetModelsPaginator {
+                                crate::operation::list_asset_models::paginator::ListAssetModelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

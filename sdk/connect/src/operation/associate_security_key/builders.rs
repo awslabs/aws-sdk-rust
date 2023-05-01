@@ -9,16 +9,17 @@ pub use crate::operation::associate_security_key::_associate_security_key_input:
 /// <p>Associates a security key to the instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateSecurityKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_security_key::builders::AssociateSecurityKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_security_key::builders::AssociateSecurityKeyInputBuilder,
+}
 impl AssociateSecurityKeyFluentBuilder  {
     /// Creates a new `AssociateSecurityKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_security_key::AssociateSecurityKey, aws_http::retry::AwsResponseRetryClassifier,>,

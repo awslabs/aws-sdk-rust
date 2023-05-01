@@ -8,16 +8,17 @@ pub use crate::operation::create_tape_pool::_create_tape_pool_input::CreateTapeP
 /// <p>Creates a new custom tape pool. You can use custom tape pool to enable tape retention lock on tapes that are archived in the custom pool.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTapePoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_tape_pool::builders::CreateTapePoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_tape_pool::builders::CreateTapePoolInputBuilder,
+}
 impl CreateTapePoolFluentBuilder  {
     /// Creates a new `CreateTapePool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_tape_pool::CreateTapePool, aws_http::retry::AwsResponseRetryClassifier,>,

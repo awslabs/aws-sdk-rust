@@ -9,16 +9,17 @@ pub use crate::operation::describe_organization_configuration::_describe_organiz
 /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationInputBuilder,
+}
 impl DescribeOrganizationConfigurationFluentBuilder  {
     /// Creates a new `DescribeOrganizationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_organization_configuration::DescribeOrganizationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeOrganizationConfigurationFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator {
-                            crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator {
+                                crate::operation::describe_organization_configuration::paginator::DescribeOrganizationConfigurationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the detector to retrieve information about the delegated administrator from.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());

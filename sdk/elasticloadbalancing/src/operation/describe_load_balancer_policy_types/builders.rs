@@ -10,16 +10,17 @@ pub use crate::operation::describe_load_balancer_policy_types::_describe_load_ba
 /// <p>You can use <code>CreateLoadBalancerPolicy</code> to create a policy configuration for any of these policy types. Then, depending on the policy type, use either <code>SetLoadBalancerPoliciesOfListener</code> or <code>SetLoadBalancerPoliciesForBackendServer</code> to set the policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLoadBalancerPolicyTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_load_balancer_policy_types::builders::DescribeLoadBalancerPolicyTypesInputBuilder,
+}
 impl DescribeLoadBalancerPolicyTypesFluentBuilder  {
     /// Creates a new `DescribeLoadBalancerPolicyTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypes, aws_http::retry::AwsResponseRetryClassifier,>,

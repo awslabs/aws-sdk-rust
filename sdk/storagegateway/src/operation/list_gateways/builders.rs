@@ -10,16 +10,17 @@ pub use crate::operation::list_gateways::_list_gateways_input::ListGatewaysInput
 /// <p>If you have more gateways than are returned in a response (that is, the response returns only a truncated list of your gateways), the response contains a marker that you can specify in your next request to fetch the next page of gateways.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGatewaysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_gateways::builders::ListGatewaysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_gateways::builders::ListGatewaysInputBuilder,
+}
 impl ListGatewaysFluentBuilder  {
     /// Creates a new `ListGateways`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_gateways::ListGateways, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListGatewaysFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_gateways::paginator::ListGatewaysPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_gateways::paginator::ListGatewaysPaginator {
-                            crate::operation::list_gateways::paginator::ListGatewaysPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_gateways::paginator::ListGatewaysPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_gateways::paginator::ListGatewaysPaginator {
+                                crate::operation::list_gateways::paginator::ListGatewaysPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());

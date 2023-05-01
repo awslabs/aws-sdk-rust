@@ -8,16 +8,17 @@ pub use crate::operation::update_package_versions_status::_update_package_versio
 /// <p> Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>, you can update the status of package versions to <code>Archived</code>, <code>Published</code>, or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePackageVersionsStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_package_versions_status::builders::UpdatePackageVersionsStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_package_versions_status::builders::UpdatePackageVersionsStatusInputBuilder,
+}
 impl UpdatePackageVersionsStatusFluentBuilder  {
     /// Creates a new `UpdatePackageVersionsStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_package_versions_status::UpdatePackageVersionsStatus, aws_http::retry::AwsResponseRetryClassifier,>,

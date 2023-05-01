@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_deployment_groups::_batch_get_deployment_gro
 /// <p>Gets information about one or more deployment groups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetDeploymentGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_deployment_groups::builders::BatchGetDeploymentGroupsInputBuilder,
+}
 impl BatchGetDeploymentGroupsFluentBuilder  {
     /// Creates a new `BatchGetDeploymentGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroups, aws_http::retry::AwsResponseRetryClassifier,>,

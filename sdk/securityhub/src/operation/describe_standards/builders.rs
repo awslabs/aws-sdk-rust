@@ -9,16 +9,17 @@ pub use crate::operation::describe_standards::_describe_standards_input::Describ
 /// <p>For each standard, the results include the standard ARN, the name, and a description. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStandardsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_standards::builders::DescribeStandardsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_standards::builders::DescribeStandardsInputBuilder,
+}
 impl DescribeStandardsFluentBuilder  {
     /// Creates a new `DescribeStandards`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_standards::DescribeStandards, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeStandardsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_standards::paginator::DescribeStandardsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_standards::paginator::DescribeStandardsPaginator {
-                            crate::operation::describe_standards::paginator::DescribeStandardsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_standards::paginator::DescribeStandardsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_standards::paginator::DescribeStandardsPaginator {
+                                crate::operation::describe_standards::paginator::DescribeStandardsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The token that is required for pagination. On your first call to the <code>DescribeStandards</code> operation, set the value of this parameter to <code>NULL</code>.</p> 
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {

@@ -10,16 +10,17 @@ pub use crate::operation::associate_instance_storage_config::_associate_instance
 /// <p>This API does not create a resource that doesn't exist. It only associates it to the instance. Ensure that the resource being specified in the storage configuration, like an S3 bucket, exists when being used for association.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateInstanceStorageConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_instance_storage_config::builders::AssociateInstanceStorageConfigInputBuilder,
+}
 impl AssociateInstanceStorageConfigFluentBuilder  {
     /// Creates a new `AssociateInstanceStorageConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_instance_storage_config::AssociateInstanceStorageConfig, aws_http::retry::AwsResponseRetryClassifier,>,

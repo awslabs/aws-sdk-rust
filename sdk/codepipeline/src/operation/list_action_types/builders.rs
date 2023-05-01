@@ -8,16 +8,17 @@ pub use crate::operation::list_action_types::_list_action_types_input::ListActio
 /// <p>Gets a summary of all AWS CodePipeline action types associated with your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListActionTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_action_types::builders::ListActionTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_action_types::builders::ListActionTypesInputBuilder,
+}
 impl ListActionTypesFluentBuilder  {
     /// Creates a new `ListActionTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_action_types::ListActionTypes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListActionTypesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_action_types::paginator::ListActionTypesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_action_types::paginator::ListActionTypesPaginator {
-                            crate::operation::list_action_types::paginator::ListActionTypesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_action_types::paginator::ListActionTypesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_action_types::paginator::ListActionTypesPaginator {
+                                crate::operation::list_action_types::paginator::ListActionTypesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Filters the list of action types to those created by a specified entity.</p>
     pub fn action_owner_filter(mut self, input: crate::types::ActionOwner) -> Self {
         self.inner = self.inner.action_owner_filter(input);

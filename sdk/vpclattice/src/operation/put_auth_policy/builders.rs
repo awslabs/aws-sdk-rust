@@ -8,16 +8,17 @@ pub use crate::operation::put_auth_policy::_put_auth_policy_input::PutAuthPolicy
 /// <p>Creates or updates the auth policy. The policy string in JSON must not contain newlines or blank lines.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAuthPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_auth_policy::builders::PutAuthPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_auth_policy::builders::PutAuthPolicyInputBuilder,
+}
 impl PutAuthPolicyFluentBuilder  {
     /// Creates a new `PutAuthPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_auth_policy::PutAuthPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

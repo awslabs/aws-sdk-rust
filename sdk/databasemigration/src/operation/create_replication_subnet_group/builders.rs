@@ -9,16 +9,17 @@ pub use crate::operation::create_replication_subnet_group::_create_replication_s
 /// <p>The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region, otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateReplicationSubnetGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupInputBuilder,
+}
 impl CreateReplicationSubnetGroupFluentBuilder  {
     /// Creates a new `CreateReplicationSubnetGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroup, aws_http::retry::AwsResponseRetryClassifier,>,

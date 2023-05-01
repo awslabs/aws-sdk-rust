@@ -8,16 +8,17 @@ pub use crate::operation::get_service_network_vpc_association::_get_service_netw
 /// <p>Retrieves information about the association between a service network and a VPC.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetServiceNetworkVpcAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_service_network_vpc_association::builders::GetServiceNetworkVpcAssociationInputBuilder,
+}
 impl GetServiceNetworkVpcAssociationFluentBuilder  {
     /// Creates a new `GetServiceNetworkVpcAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_service_network_vpc_association::GetServiceNetworkVpcAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

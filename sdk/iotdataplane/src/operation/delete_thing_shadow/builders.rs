@@ -10,16 +10,17 @@ pub use crate::operation::delete_thing_shadow::_delete_thing_shadow_input::Delet
 /// <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html">DeleteThingShadow</a> in the IoT Developer Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteThingShadowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_thing_shadow::builders::DeleteThingShadowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_thing_shadow::builders::DeleteThingShadowInputBuilder,
+}
 impl DeleteThingShadowFluentBuilder  {
     /// Creates a new `DeleteThingShadow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_thing_shadow::DeleteThingShadow, aws_http::retry::AwsResponseRetryClassifier,>,

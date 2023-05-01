@@ -8,16 +8,17 @@ pub use crate::operation::update_safety_rule::_update_safety_rule_input::UpdateS
 /// <p>Update a safety rule (an assertion rule or gating rule). You can only update the name and the waiting period for a safety rule. To make other updates, delete the safety rule and create a new one.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSafetyRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_safety_rule::builders::UpdateSafetyRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_safety_rule::builders::UpdateSafetyRuleInputBuilder,
+}
 impl UpdateSafetyRuleFluentBuilder  {
     /// Creates a new `UpdateSafetyRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_safety_rule::UpdateSafetyRule, aws_http::retry::AwsResponseRetryClassifier,>,

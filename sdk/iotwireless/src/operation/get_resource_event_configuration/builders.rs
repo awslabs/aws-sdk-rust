@@ -8,16 +8,17 @@ pub use crate::operation::get_resource_event_configuration::_get_resource_event_
 /// <p>Get the event configuration for a particular resource identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourceEventConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder,
+}
 impl GetResourceEventConfigurationFluentBuilder  {
     /// Creates a new `GetResourceEventConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_resource_event_configuration::GetResourceEventConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::put_geofence::_put_geofence_input::PutGeofenceInputBui
 /// <p>Stores a geofence geometry in a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutGeofenceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_geofence::builders::PutGeofenceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_geofence::builders::PutGeofenceInputBuilder,
+}
 impl PutGeofenceFluentBuilder  {
     /// Creates a new `PutGeofence`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_geofence::PutGeofence, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::delete_access_key::_delete_access_key_input::DeleteAcc
 /// <p>If you do not specify a user name, IAM determines the user name implicitly based on the Amazon Web Services access key ID signing the request. This operation works for access keys under the Amazon Web Services account. Consequently, you can use this operation to manage Amazon Web Services account root user credentials even if the Amazon Web Services account has no associated users.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccessKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_access_key::builders::DeleteAccessKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_access_key::builders::DeleteAccessKeyInputBuilder,
+}
 impl DeleteAccessKeyFluentBuilder  {
     /// Creates a new `DeleteAccessKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_access_key::DeleteAccessKey, aws_http::retry::AwsResponseRetryClassifier,>,

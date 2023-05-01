@@ -8,16 +8,17 @@ pub use crate::operation::create_app_image_config::_create_app_image_config_inpu
 /// <p>Creates a configuration for running a SageMaker image as a KernelGateway app. The configuration specifies the Amazon Elastic File System (EFS) storage volume on the image, and a list of the kernels in the image.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAppImageConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_app_image_config::builders::CreateAppImageConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_app_image_config::builders::CreateAppImageConfigInputBuilder,
+}
 impl CreateAppImageConfigFluentBuilder  {
     /// Creates a new `CreateAppImageConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_app_image_config::CreateAppImageConfig, aws_http::retry::AwsResponseRetryClassifier,>,

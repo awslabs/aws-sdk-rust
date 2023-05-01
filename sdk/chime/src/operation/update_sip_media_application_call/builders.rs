@@ -8,16 +8,17 @@ pub use crate::operation::update_sip_media_application_call::_update_sip_media_a
 /// <p>Invokes the AWS Lambda function associated with the SIP media application and transaction ID in an update request. The Lambda function can then return a new set of actions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationCallFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_sip_media_application_call::builders::UpdateSipMediaApplicationCallInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_sip_media_application_call::builders::UpdateSipMediaApplicationCallInputBuilder,
+}
 impl UpdateSipMediaApplicationCallFluentBuilder  {
     /// Creates a new `UpdateSipMediaApplicationCall`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCall, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_cidr_collection::_delete_cidr_collection_input:
 /// <p>Deletes a CIDR collection in the current Amazon Web Services account. The collection must be empty before it can be deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCidrCollectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_cidr_collection::builders::DeleteCidrCollectionInputBuilder,
+}
 impl DeleteCidrCollectionFluentBuilder  {
     /// Creates a new `DeleteCidrCollection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_cidr_collection::DeleteCidrCollection, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_schema_as_json::_get_schema_as_json_input::GetSche
 /// <p>Retrieves a JSON representation of the schema. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON Schema Format</a> for more information.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSchemaAsJsonFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_schema_as_json::builders::GetSchemaAsJsonInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_schema_as_json::builders::GetSchemaAsJsonInputBuilder,
+}
 impl GetSchemaAsJsonFluentBuilder  {
     /// Creates a new `GetSchemaAsJson`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_schema_as_json::GetSchemaAsJson, aws_http::retry::AwsResponseRetryClassifier,>,

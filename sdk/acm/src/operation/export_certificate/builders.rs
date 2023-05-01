@@ -9,16 +9,17 @@ pub use crate::operation::export_certificate::_export_certificate_input::ExportC
 /// <p>For information about exporting and formatting a certificate using the ACM console or CLI, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-export-private.html">Export a Private Certificate</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_certificate::builders::ExportCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_certificate::builders::ExportCertificateInputBuilder,
+}
 impl ExportCertificateFluentBuilder  {
     /// Creates a new `ExportCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_certificate::ExportCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

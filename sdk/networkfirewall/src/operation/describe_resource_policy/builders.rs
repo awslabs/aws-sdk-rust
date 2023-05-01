@@ -8,16 +8,17 @@ pub use crate::operation::describe_resource_policy::_describe_resource_policy_in
 /// <p>Retrieves a resource policy that you created in a <code>PutResourcePolicy</code> request. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeResourcePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_resource_policy::builders::DescribeResourcePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_resource_policy::builders::DescribeResourcePolicyInputBuilder,
+}
 impl DescribeResourcePolicyFluentBuilder  {
     /// Creates a new `DescribeResourcePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_resource_policy::DescribeResourcePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

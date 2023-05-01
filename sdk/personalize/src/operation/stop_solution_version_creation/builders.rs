@@ -14,16 +14,17 @@ pub use crate::operation::stop_solution_version_creation::_stop_solution_version
 /// <p>You are billed for all of the training completed up until you stop the solution version creation. You cannot resume creating a solution version once it has been stopped.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopSolutionVersionCreationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationInputBuilder,
+}
 impl StopSolutionVersionCreationFluentBuilder  {
     /// Creates a new `StopSolutionVersionCreation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_solution_version_creation::StopSolutionVersionCreation, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_hit_type::_create_hit_type_input::CreateHitType
 /// <p> The <code>CreateHITType</code> operation creates a new HIT type. This operation allows you to define a standard set of HIT properties to use when creating HITs. If you register a HIT type with values that match an existing HIT type, the HIT type ID of the existing type will be returned. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateHITTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_hit_type::builders::CreateHitTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_hit_type::builders::CreateHitTypeInputBuilder,
+}
 impl CreateHITTypeFluentBuilder  {
     /// Creates a new `CreateHITType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_hit_type::CreateHITType, aws_http::retry::AwsResponseRetryClassifier,>,

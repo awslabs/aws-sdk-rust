@@ -9,16 +9,17 @@ pub use crate::operation::put_rum_metrics_destination::_put_rum_metrics_destinat
 /// <p>For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricDefinitions.html">BatchCreateRumMetricDefinitions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutRumMetricsDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_rum_metrics_destination::builders::PutRumMetricsDestinationInputBuilder,
+}
 impl PutRumMetricsDestinationFluentBuilder  {
     /// Creates a new `PutRumMetricsDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_rum_metrics_destination::PutRumMetricsDestination, aws_http::retry::AwsResponseRetryClassifier,>,

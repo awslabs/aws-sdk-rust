@@ -16,16 +16,17 @@ pub use crate::operation::start_fleet_actions::_start_fleet_actions_input::Start
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartFleetActionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_fleet_actions::builders::StartFleetActionsInputBuilder,
+}
 impl StartFleetActionsFluentBuilder  {
     /// Creates a new `StartFleetActions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_fleet_actions::StartFleetActions, aws_http::retry::AwsResponseRetryClassifier,>,

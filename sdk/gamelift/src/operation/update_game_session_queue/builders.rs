@@ -10,16 +10,17 @@ pub use crate::operation::update_game_session_queue::_update_game_session_queue_
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html"> Using Multi-Region Queues</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGameSessionQueueFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_game_session_queue::builders::UpdateGameSessionQueueInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_game_session_queue::builders::UpdateGameSessionQueueInputBuilder,
+}
 impl UpdateGameSessionQueueFluentBuilder  {
     /// Creates a new `UpdateGameSessionQueue`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_game_session_queue::UpdateGameSessionQueue, aws_http::retry::AwsResponseRetryClassifier,>,

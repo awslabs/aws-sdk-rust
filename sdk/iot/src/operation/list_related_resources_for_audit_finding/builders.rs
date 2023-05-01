@@ -21,16 +21,17 @@ pub use crate::operation::list_related_resources_for_audit_finding::_list_relate
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRelatedResourcesForAuditFindingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_related_resources_for_audit_finding::builders::ListRelatedResourcesForAuditFindingInputBuilder,
+}
 impl ListRelatedResourcesForAuditFindingFluentBuilder  {
     /// Creates a new `ListRelatedResourcesForAuditFinding`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFinding, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -61,11 +62,11 @@ impl ListRelatedResourcesForAuditFindingFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_related_resources_for_audit_finding::paginator::ListRelatedResourcesForAuditFindingPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_related_resources_for_audit_finding::paginator::ListRelatedResourcesForAuditFindingPaginator {
-                            crate::operation::list_related_resources_for_audit_finding::paginator::ListRelatedResourcesForAuditFindingPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_related_resources_for_audit_finding::paginator::ListRelatedResourcesForAuditFindingPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_related_resources_for_audit_finding::paginator::ListRelatedResourcesForAuditFindingPaginator {
+                                crate::operation::list_related_resources_for_audit_finding::paginator::ListRelatedResourcesForAuditFindingPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The finding Id.</p>
     pub fn finding_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.finding_id(input.into());

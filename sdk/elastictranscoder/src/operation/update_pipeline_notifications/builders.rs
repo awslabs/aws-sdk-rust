@@ -9,16 +9,17 @@ pub use crate::operation::update_pipeline_notifications::_update_pipeline_notifi
 /// <p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you specified in the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePipelineNotificationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_pipeline_notifications::builders::UpdatePipelineNotificationsInputBuilder,
+}
 impl UpdatePipelineNotificationsFluentBuilder  {
     /// Creates a new `UpdatePipelineNotifications`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_pipeline_notifications::UpdatePipelineNotifications, aws_http::retry::AwsResponseRetryClassifier,>,

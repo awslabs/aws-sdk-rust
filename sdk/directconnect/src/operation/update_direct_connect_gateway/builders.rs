@@ -8,16 +8,17 @@ pub use crate::operation::update_direct_connect_gateway::_update_direct_connect_
 /// <p>Updates the name of a current Direct Connect gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDirectConnectGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_direct_connect_gateway::builders::UpdateDirectConnectGatewayInputBuilder,
+}
 impl UpdateDirectConnectGatewayFluentBuilder  {
     /// Creates a new `UpdateDirectConnectGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_direct_connect_gateway::UpdateDirectConnectGateway, aws_http::retry::AwsResponseRetryClassifier,>,

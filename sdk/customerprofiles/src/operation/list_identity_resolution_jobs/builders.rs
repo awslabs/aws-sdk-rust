@@ -8,16 +8,17 @@ pub use crate::operation::list_identity_resolution_jobs::_list_identity_resoluti
 /// <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by <code>JobStartTime</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIdentityResolutionJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_identity_resolution_jobs::builders::ListIdentityResolutionJobsInputBuilder,
+}
 impl ListIdentityResolutionJobsFluentBuilder  {
     /// Creates a new `ListIdentityResolutionJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobs, aws_http::retry::AwsResponseRetryClassifier,>,

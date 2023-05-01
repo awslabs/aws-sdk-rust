@@ -8,16 +8,17 @@ pub use crate::operation::delete_core_network_policy_version::_delete_core_netwo
 /// <p>Deletes a policy version from a core network. You can't delete the current LIVE policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCoreNetworkPolicyVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_core_network_policy_version::builders::DeleteCoreNetworkPolicyVersionInputBuilder,
+}
 impl DeleteCoreNetworkPolicyVersionFluentBuilder  {
     /// Creates a new `DeleteCoreNetworkPolicyVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersion, aws_http::retry::AwsResponseRetryClassifier,>,

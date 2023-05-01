@@ -8,16 +8,17 @@ pub use crate::operation::modify_capacity_reservation::_modify_capacity_reservat
 /// <p>Modifies a Capacity Reservation's capacity and the conditions under which it is to be released. You cannot change a Capacity Reservation's instance type, EBS optimization, instance store settings, platform, Availability Zone, or instance eligibility. If you need to modify any of these attributes, we recommend that you cancel the Capacity Reservation, and then create a new one with the required attributes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyCapacityReservationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_capacity_reservation::builders::ModifyCapacityReservationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_capacity_reservation::builders::ModifyCapacityReservationInputBuilder,
+}
 impl ModifyCapacityReservationFluentBuilder  {
     /// Creates a new `ModifyCapacityReservation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_capacity_reservation::ModifyCapacityReservation, aws_http::retry::AwsResponseRetryClassifier,>,

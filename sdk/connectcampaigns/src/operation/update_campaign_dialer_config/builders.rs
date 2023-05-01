@@ -8,16 +8,17 @@ pub use crate::operation::update_campaign_dialer_config::_update_campaign_dialer
 /// Updates the dialer config of a campaign. This API is idempotent.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCampaignDialerConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigInputBuilder,
+}
 impl UpdateCampaignDialerConfigFluentBuilder  {
     /// Creates a new `UpdateCampaignDialerConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfig, aws_http::retry::AwsResponseRetryClassifier,>,

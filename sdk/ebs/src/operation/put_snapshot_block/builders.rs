@@ -9,16 +9,17 @@ pub use crate::operation::put_snapshot_block::_put_snapshot_block_input::PutSnap
 /// <p>Data written to a snapshot must be aligned with 512-KiB sectors.</p>
 #[derive(std::fmt::Debug)]
 pub struct PutSnapshotBlockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_snapshot_block::builders::PutSnapshotBlockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_snapshot_block::builders::PutSnapshotBlockInputBuilder,
+}
 impl PutSnapshotBlockFluentBuilder  {
     /// Creates a new `PutSnapshotBlock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_snapshot_block::PutSnapshotBlock, aws_http::retry::AwsResponseRetryClassifier,>,

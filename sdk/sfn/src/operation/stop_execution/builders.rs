@@ -9,16 +9,17 @@ pub use crate::operation::stop_execution::_stop_execution_input::StopExecutionIn
 /// <p>This API action is not supported by <code>EXPRESS</code> state machines.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_execution::builders::StopExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_execution::builders::StopExecutionInputBuilder,
+}
 impl StopExecutionFluentBuilder  {
     /// Creates a new `StopExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_execution::StopExecution, aws_http::retry::AwsResponseRetryClassifier,>,

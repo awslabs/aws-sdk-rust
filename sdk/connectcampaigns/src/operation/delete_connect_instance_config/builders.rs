@@ -8,16 +8,17 @@ pub use crate::operation::delete_connect_instance_config::_delete_connect_instan
 /// Deletes a connect instance config from the specified AWS account.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConnectInstanceConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_connect_instance_config::builders::DeleteConnectInstanceConfigInputBuilder,
+}
 impl DeleteConnectInstanceConfigFluentBuilder  {
     /// Creates a new `DeleteConnectInstanceConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfig, aws_http::retry::AwsResponseRetryClassifier,>,

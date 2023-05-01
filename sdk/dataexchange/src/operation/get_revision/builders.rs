@@ -8,16 +8,17 @@ pub use crate::operation::get_revision::_get_revision_input::GetRevisionInputBui
 /// <p>This operation returns information about a revision.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRevisionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_revision::builders::GetRevisionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_revision::builders::GetRevisionInputBuilder,
+}
 impl GetRevisionFluentBuilder  {
     /// Creates a new `GetRevision`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_revision::GetRevision, aws_http::retry::AwsResponseRetryClassifier,>,

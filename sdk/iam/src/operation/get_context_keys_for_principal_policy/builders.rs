@@ -11,16 +11,17 @@ pub use crate::operation::get_context_keys_for_principal_policy::_get_context_ke
 /// <p>Context keys are variables maintained by Amazon Web Services and its services that provide details about the context of an API query request. Context keys can be evaluated by testing against a value in an IAM policy. Use <code>GetContextKeysForPrincipalPolicy</code> to understand what key names and values you must supply when you call <code>SimulatePrincipalPolicy</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetContextKeysForPrincipalPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_context_keys_for_principal_policy::builders::GetContextKeysForPrincipalPolicyInputBuilder,
+}
 impl GetContextKeysForPrincipalPolicyFluentBuilder  {
     /// Creates a new `GetContextKeysForPrincipalPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_context_keys_for_principal_policy::GetContextKeysForPrincipalPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

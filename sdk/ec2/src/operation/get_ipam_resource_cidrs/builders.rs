@@ -8,16 +8,17 @@ pub use crate::operation::get_ipam_resource_cidrs::_get_ipam_resource_cidrs_inpu
 /// <p>Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated with more than one resource discovery, the resource CIDRs across all of the resource discoveries is returned. A resource discovery is an IPAM component that enables IPAM to manage and monitor resources that belong to the owning account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIpamResourceCidrsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_ipam_resource_cidrs::builders::GetIpamResourceCidrsInputBuilder,
+}
 impl GetIpamResourceCidrsFluentBuilder  {
     /// Creates a new `GetIpamResourceCidrs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetIpamResourceCidrsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator {
-                            crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator {
+                                crate::operation::get_ipam_resource_cidrs::paginator::GetIpamResourceCidrsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

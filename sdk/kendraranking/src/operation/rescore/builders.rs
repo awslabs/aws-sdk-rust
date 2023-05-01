@@ -8,16 +8,17 @@ pub use crate::operation::rescore::_rescore_input::RescoreInputBuilder;
 /// <p>Rescores or re-ranks search results from a search service such as OpenSearch (self managed). You use the semantic search capabilities of Amazon Kendra Intelligent Ranking to improve the search service's results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RescoreFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::rescore::builders::RescoreInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::rescore::builders::RescoreInputBuilder,
+}
 impl RescoreFluentBuilder  {
     /// Creates a new `Rescore`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::rescore::Rescore, aws_http::retry::AwsResponseRetryClassifier,>,

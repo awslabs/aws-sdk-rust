@@ -10,16 +10,17 @@ pub use crate::operation::attach_instances_to_load_balancer::_attach_instances_t
 /// <p>The <code>attach instances to load balancer</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AttachInstancesToLoadBalancerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::attach_instances_to_load_balancer::builders::AttachInstancesToLoadBalancerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::attach_instances_to_load_balancer::builders::AttachInstancesToLoadBalancerInputBuilder,
+}
 impl AttachInstancesToLoadBalancerFluentBuilder  {
     /// Creates a new `AttachInstancesToLoadBalancer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancer, aws_http::retry::AwsResponseRetryClassifier,>,

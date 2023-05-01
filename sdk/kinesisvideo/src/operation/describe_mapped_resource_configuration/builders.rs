@@ -9,16 +9,17 @@ pub use crate::operation::describe_mapped_resource_configuration::_describe_mapp
 /// <p>Returns the most current information about the stream. The <code>streamName</code> or <code>streamARN</code> should be provided in the input.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMappedResourceConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_mapped_resource_configuration::builders::DescribeMappedResourceConfigurationInputBuilder,
+}
 impl DescribeMappedResourceConfigurationFluentBuilder  {
     /// Creates a new `DescribeMappedResourceConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeMappedResourceConfigurationFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_mapped_resource_configuration::paginator::DescribeMappedResourceConfigurationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_mapped_resource_configuration::paginator::DescribeMappedResourceConfigurationPaginator {
-                            crate::operation::describe_mapped_resource_configuration::paginator::DescribeMappedResourceConfigurationPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_mapped_resource_configuration::paginator::DescribeMappedResourceConfigurationPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_mapped_resource_configuration::paginator::DescribeMappedResourceConfigurationPaginator {
+                                crate::operation::describe_mapped_resource_configuration::paginator::DescribeMappedResourceConfigurationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the stream.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());

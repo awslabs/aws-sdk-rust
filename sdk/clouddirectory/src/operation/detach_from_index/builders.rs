@@ -8,16 +8,17 @@ pub use crate::operation::detach_from_index::_detach_from_index_input::DetachFro
 /// <p>Detaches the specified object from the specified index.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachFromIndexFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detach_from_index::builders::DetachFromIndexInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detach_from_index::builders::DetachFromIndexInputBuilder,
+}
 impl DetachFromIndexFluentBuilder  {
     /// Creates a new `DetachFromIndex`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detach_from_index::DetachFromIndex, aws_http::retry::AwsResponseRetryClassifier,>,

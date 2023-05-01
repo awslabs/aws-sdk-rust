@@ -8,16 +8,17 @@ pub use crate::operation::delete_spot_datafeed_subscription::_delete_spot_datafe
 /// <p>Deletes the data feed for Spot Instances.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSpotDatafeedSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_spot_datafeed_subscription::builders::DeleteSpotDatafeedSubscriptionInputBuilder,
+}
 impl DeleteSpotDatafeedSubscriptionFluentBuilder  {
     /// Creates a new `DeleteSpotDatafeedSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_spot_datafeed_subscription::DeleteSpotDatafeedSubscription, aws_http::retry::AwsResponseRetryClassifier,>,

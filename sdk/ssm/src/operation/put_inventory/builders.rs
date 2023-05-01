@@ -8,16 +8,17 @@ pub use crate::operation::put_inventory::_put_inventory_input::PutInventoryInput
 /// <p>Bulk update custom inventory items on one or more managed nodes. The request adds an inventory item, if it doesn't already exist, or updates an inventory item, if it does exist.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutInventoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_inventory::builders::PutInventoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_inventory::builders::PutInventoryInputBuilder,
+}
 impl PutInventoryFluentBuilder  {
     /// Creates a new `PutInventory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_inventory::PutInventory, aws_http::retry::AwsResponseRetryClassifier,>,

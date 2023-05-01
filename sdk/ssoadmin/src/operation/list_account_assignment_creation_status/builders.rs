@@ -8,16 +8,17 @@ pub use crate::operation::list_account_assignment_creation_status::_list_account
 /// <p>Lists the status of the AWS account assignment creation requests for a specified IAM Identity Center instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccountAssignmentCreationStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_account_assignment_creation_status::builders::ListAccountAssignmentCreationStatusInputBuilder,
+}
 impl ListAccountAssignmentCreationStatusFluentBuilder  {
     /// Creates a new `ListAccountAssignmentCreationStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAccountAssignmentCreationStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator {
-                            crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator {
+                                crate::operation::list_account_assignment_creation_status::paginator::ListAccountAssignmentCreationStatusPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());

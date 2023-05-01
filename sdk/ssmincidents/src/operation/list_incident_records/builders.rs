@@ -8,16 +8,17 @@ pub use crate::operation::list_incident_records::_list_incident_records_input::L
 /// <p>Lists all incident records in your account. Use this command to retrieve the Amazon Resource Name (ARN) of the incident record you want to update. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIncidentRecordsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_incident_records::builders::ListIncidentRecordsInputBuilder,
+}
 impl ListIncidentRecordsFluentBuilder  {
     /// Creates a new `ListIncidentRecords`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_incident_records::ListIncidentRecords, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListIncidentRecordsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator {
-                            crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator {
+                                crate::operation::list_incident_records::paginator::ListIncidentRecordsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

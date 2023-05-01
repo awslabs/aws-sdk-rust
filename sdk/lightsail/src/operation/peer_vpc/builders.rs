@@ -8,16 +8,17 @@ pub use crate::operation::peer_vpc::_peer_vpc_input::PeerVpcInputBuilder;
 /// <p>Peers the Lightsail VPC with the user's default VPC.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PeerVpcFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::peer_vpc::builders::PeerVpcInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::peer_vpc::builders::PeerVpcInputBuilder,
+}
 impl PeerVpcFluentBuilder  {
     /// Creates a new `PeerVpc`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::peer_vpc::PeerVpc, aws_http::retry::AwsResponseRetryClassifier,>,

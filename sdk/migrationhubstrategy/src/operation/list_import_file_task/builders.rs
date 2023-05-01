@@ -8,16 +8,17 @@ pub use crate::operation::list_import_file_task::_list_import_file_task_input::L
 /// <p> Retrieves a list of all the imports performed. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImportFileTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_import_file_task::builders::ListImportFileTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_import_file_task::builders::ListImportFileTaskInputBuilder,
+}
 impl ListImportFileTaskFluentBuilder  {
     /// Creates a new `ListImportFileTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_import_file_task::ListImportFileTask, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListImportFileTaskFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator {
-                            crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator {
+                                crate::operation::list_import_file_task::paginator::ListImportFileTaskPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

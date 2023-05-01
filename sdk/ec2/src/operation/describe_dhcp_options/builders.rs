@@ -9,16 +9,17 @@ pub use crate::operation::describe_dhcp_options::_describe_dhcp_options_input::D
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDhcpOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_dhcp_options::builders::DescribeDhcpOptionsInputBuilder,
+}
 impl DescribeDhcpOptionsFluentBuilder  {
     /// Creates a new `DescribeDhcpOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_dhcp_options::DescribeDhcpOptions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeDhcpOptionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator {
-                            crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator {
+                                crate::operation::describe_dhcp_options::paginator::DescribeDhcpOptionsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `DhcpOptionsIds`.
     ///
     /// To override the contents of this collection use [`set_dhcp_options_ids`](Self::set_dhcp_options_ids).

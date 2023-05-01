@@ -9,16 +9,17 @@ pub use crate::operation::describe_account_attributes::_describe_account_attribu
 /// <p>New Amazon Pinpoint accounts are placed into an SMS or voice sandbox. The sandbox protects both Amazon Web Services end recipients and SMS or voice recipients from fraud and abuse. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccountAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_account_attributes::builders::DescribeAccountAttributesInputBuilder,
+}
 impl DescribeAccountAttributesFluentBuilder  {
     /// Creates a new `DescribeAccountAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_account_attributes::DescribeAccountAttributes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeAccountAttributesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_account_attributes::paginator::DescribeAccountAttributesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_account_attributes::paginator::DescribeAccountAttributesPaginator {
-                            crate::operation::describe_account_attributes::paginator::DescribeAccountAttributesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_account_attributes::paginator::DescribeAccountAttributesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_account_attributes::paginator::DescribeAccountAttributesPaginator {
+                                crate::operation::describe_account_attributes::paginator::DescribeAccountAttributesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

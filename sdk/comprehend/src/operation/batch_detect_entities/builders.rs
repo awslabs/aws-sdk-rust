@@ -8,16 +8,17 @@ pub use crate::operation::batch_detect_entities::_batch_detect_entities_input::B
 /// <p>Inspects the text of a batch of documents for named entities and returns information about them. For more information about named entities, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a> in the Comprehend Developer Guide. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDetectEntitiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_detect_entities::builders::BatchDetectEntitiesInputBuilder,
+}
 impl BatchDetectEntitiesFluentBuilder  {
     /// Creates a new `BatchDetectEntities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_detect_entities::BatchDetectEntities, aws_http::retry::AwsResponseRetryClassifier,>,

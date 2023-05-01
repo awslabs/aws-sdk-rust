@@ -8,16 +8,17 @@ pub use crate::operation::list_clusters::_list_clusters_input::ListClustersInput
 /// <p>Returns a list of existing clusters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListClustersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_clusters::builders::ListClustersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_clusters::builders::ListClustersInputBuilder,
+}
 impl ListClustersFluentBuilder  {
     /// Creates a new `ListClusters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_clusters::ListClusters, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListClustersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_clusters::paginator::ListClustersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_clusters::paginator::ListClustersPaginator {
-                            crate::operation::list_clusters::paginator::ListClustersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_clusters::paginator::ListClustersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_clusters::paginator::ListClustersPaginator {
+                                crate::operation::list_clusters::paginator::ListClustersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The <code>nextToken</code> value returned from a <code>ListClusters</code> request indicating that more results are available to fulfill the request and further calls are needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note> 
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>

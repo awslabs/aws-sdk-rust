@@ -10,16 +10,17 @@ pub use crate::operation::create_relational_database_from_snapshot::_create_rela
 /// <p>The <code>create relational database from snapshot</code> operation supports tag-based access control via request tags and resource tags applied to the resource identified by relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRelationalDatabaseFromSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_relational_database_from_snapshot::builders::CreateRelationalDatabaseFromSnapshotInputBuilder,
+}
 impl CreateRelationalDatabaseFromSnapshotFluentBuilder  {
     /// Creates a new `CreateRelationalDatabaseFromSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_relational_database_from_snapshot::CreateRelationalDatabaseFromSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_multiplex::_delete_multiplex_input::DeleteMulti
 /// Delete a multiplex. The multiplex must be idle.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMultiplexFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_multiplex::builders::DeleteMultiplexInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_multiplex::builders::DeleteMultiplexInputBuilder,
+}
 impl DeleteMultiplexFluentBuilder  {
     /// Creates a new `DeleteMultiplex`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_multiplex::DeleteMultiplex, aws_http::retry::AwsResponseRetryClassifier,>,

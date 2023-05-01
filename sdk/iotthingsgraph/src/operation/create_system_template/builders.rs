@@ -9,16 +9,17 @@ pub use crate::operation::create_system_template::_create_system_template_input:
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSystemTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_system_template::builders::CreateSystemTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_system_template::builders::CreateSystemTemplateInputBuilder,
+}
 impl CreateSystemTemplateFluentBuilder  {
     /// Creates a new `CreateSystemTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_system_template::CreateSystemTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

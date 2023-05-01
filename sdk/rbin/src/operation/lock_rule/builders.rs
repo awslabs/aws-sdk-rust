@@ -8,16 +8,17 @@ pub use crate::operation::lock_rule::_lock_rule_input::LockRuleInputBuilder;
 /// <p>Locks a retention rule. A locked retention rule can't be modified or deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct LockRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::lock_rule::builders::LockRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::lock_rule::builders::LockRuleInputBuilder,
+}
 impl LockRuleFluentBuilder  {
     /// Creates a new `LockRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::lock_rule::LockRule, aws_http::retry::AwsResponseRetryClassifier,>,

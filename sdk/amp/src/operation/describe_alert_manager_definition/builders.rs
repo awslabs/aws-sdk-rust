@@ -8,16 +8,17 @@ pub use crate::operation::describe_alert_manager_definition::_describe_alert_man
 /// Describes an alert manager definition.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAlertManagerDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_alert_manager_definition::builders::DescribeAlertManagerDefinitionInputBuilder,
+}
 impl DescribeAlertManagerDefinitionFluentBuilder  {
     /// Creates a new `DescribeAlertManagerDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

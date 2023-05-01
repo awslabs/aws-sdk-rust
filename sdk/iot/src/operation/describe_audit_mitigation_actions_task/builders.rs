@@ -8,16 +8,17 @@ pub use crate::operation::describe_audit_mitigation_actions_task::_describe_audi
 /// <p>Gets information about an audit mitigation task that is used to apply mitigation actions to a set of audit findings. Properties include the actions being applied, the audit checks to which they're being applied, the task status, and aggregated task statistics.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAuditMitigationActionsTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_audit_mitigation_actions_task::builders::DescribeAuditMitigationActionsTaskInputBuilder,
+}
 impl DescribeAuditMitigationActionsTaskFluentBuilder  {
     /// Creates a new `DescribeAuditMitigationActionsTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTask, aws_http::retry::AwsResponseRetryClassifier,>,

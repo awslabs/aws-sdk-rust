@@ -9,16 +9,17 @@ pub use crate::operation::create_cache_security_group::_create_cache_security_gr
 /// <p>Cache security groups are only used when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC). If you are creating a cluster inside of a VPC, use a cache subnet group instead. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html">CreateCacheSubnetGroup</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCacheSecurityGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_cache_security_group::builders::CreateCacheSecurityGroupInputBuilder,
+}
 impl CreateCacheSecurityGroupFluentBuilder  {
     /// Creates a new `CreateCacheSecurityGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_cache_security_group::CreateCacheSecurityGroup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_media_insights_pipeline_configuration::_update_
 /// <p>Updates the media insights pipeline's configuration settings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMediaInsightsPipelineConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_media_insights_pipeline_configuration::builders::UpdateMediaInsightsPipelineConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_media_insights_pipeline_configuration::builders::UpdateMediaInsightsPipelineConfigurationInputBuilder,
+}
 impl UpdateMediaInsightsPipelineConfigurationFluentBuilder  {
     /// Creates a new `UpdateMediaInsightsPipelineConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_media_insights_pipeline_configuration::UpdateMediaInsightsPipelineConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

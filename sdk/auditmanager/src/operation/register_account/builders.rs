@@ -8,16 +8,17 @@ pub use crate::operation::register_account::_register_account_input::RegisterAcc
 /// <p> Enables Audit Manager for the specified Amazon Web Services account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_account::builders::RegisterAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_account::builders::RegisterAccountInputBuilder,
+}
 impl RegisterAccountFluentBuilder  {
     /// Creates a new `RegisterAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_account::RegisterAccount, aws_http::retry::AwsResponseRetryClassifier,>,

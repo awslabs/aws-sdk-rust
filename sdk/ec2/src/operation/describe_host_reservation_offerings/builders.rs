@@ -9,16 +9,17 @@ pub use crate::operation::describe_host_reservation_offerings::_describe_host_re
 /// <p>The results describe all of the Dedicated Host reservation offerings, including offerings that might not match the instance family and Region of your Dedicated Hosts. When purchasing an offering, ensure that the instance family and Region of the offering matches that of the Dedicated Hosts with which it is to be associated. For more information about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Hosts</a> in the <i>Amazon EC2 User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeHostReservationOfferingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsInputBuilder,
+}
 impl DescribeHostReservationOfferingsFluentBuilder  {
     /// Creates a new `DescribeHostReservationOfferings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeHostReservationOfferingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator {
-                            crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator {
+                                crate::operation::describe_host_reservation_offerings::paginator::DescribeHostReservationOfferingsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).

@@ -8,16 +8,17 @@ pub use crate::operation::get_firewall_config::_get_firewall_config_input::GetFi
 /// <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFirewallConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_firewall_config::builders::GetFirewallConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_firewall_config::builders::GetFirewallConfigInputBuilder,
+}
 impl GetFirewallConfigFluentBuilder  {
     /// Creates a new `GetFirewallConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_firewall_config::GetFirewallConfig, aws_http::retry::AwsResponseRetryClassifier,>,

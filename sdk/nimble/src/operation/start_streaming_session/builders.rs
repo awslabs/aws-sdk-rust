@@ -8,16 +8,17 @@ pub use crate::operation::start_streaming_session::_start_streaming_session_inpu
 /// <p>Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code> state. The <code>START_IN_PROGRESS</code> state is the intermediate state between the <code>STOPPED</code> and <code>READY</code> states.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartStreamingSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_streaming_session::builders::StartStreamingSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_streaming_session::builders::StartStreamingSessionInputBuilder,
+}
 impl StartStreamingSessionFluentBuilder  {
     /// Creates a new `StartStreamingSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_streaming_session::StartStreamingSession, aws_http::retry::AwsResponseRetryClassifier,>,

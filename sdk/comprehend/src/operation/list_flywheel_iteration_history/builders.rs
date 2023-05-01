@@ -8,16 +8,17 @@ pub use crate::operation::list_flywheel_iteration_history::_list_flywheel_iterat
 /// <p>Information about the history of a flywheel iteration. For more information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFlywheelIterationHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_flywheel_iteration_history::builders::ListFlywheelIterationHistoryInputBuilder,
+}
 impl ListFlywheelIterationHistoryFluentBuilder  {
     /// Creates a new `ListFlywheelIterationHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistory, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFlywheelIterationHistoryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_flywheel_iteration_history::paginator::ListFlywheelIterationHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_flywheel_iteration_history::paginator::ListFlywheelIterationHistoryPaginator {
-                            crate::operation::list_flywheel_iteration_history::paginator::ListFlywheelIterationHistoryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_flywheel_iteration_history::paginator::ListFlywheelIterationHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_flywheel_iteration_history::paginator::ListFlywheelIterationHistoryPaginator {
+                                crate::operation::list_flywheel_iteration_history::paginator::ListFlywheelIterationHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the flywheel.</p>
     pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.flywheel_arn(input.into());

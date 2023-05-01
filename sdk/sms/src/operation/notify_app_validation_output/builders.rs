@@ -8,16 +8,17 @@ pub use crate::operation::notify_app_validation_output::_notify_app_validation_o
 /// <p>Provides information to Server Migration Service about whether application validation is successful.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct NotifyAppValidationOutputFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::notify_app_validation_output::builders::NotifyAppValidationOutputInputBuilder,
+}
 impl NotifyAppValidationOutputFluentBuilder  {
     /// Creates a new `NotifyAppValidationOutput`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::notify_app_validation_output::NotifyAppValidationOutput, aws_http::retry::AwsResponseRetryClassifier,>,

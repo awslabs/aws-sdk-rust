@@ -8,16 +8,17 @@ pub use crate::operation::update_automated_discovery_configuration::_update_auto
 /// <p>Enables or disables automated sensitive data discovery for an account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAutomatedDiscoveryConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_automated_discovery_configuration::builders::UpdateAutomatedDiscoveryConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_automated_discovery_configuration::builders::UpdateAutomatedDiscoveryConfigurationInputBuilder,
+}
 impl UpdateAutomatedDiscoveryConfigurationFluentBuilder  {
     /// Creates a new `UpdateAutomatedDiscoveryConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_automated_discovery_configuration::UpdateAutomatedDiscoveryConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

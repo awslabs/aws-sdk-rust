@@ -8,16 +8,17 @@ pub use crate::operation::associate_accounts::_associate_accounts_input::Associa
 /// <p>Connects an array of account IDs in a consolidated billing family to a predefined billing group. The account IDs must be a part of the consolidated billing family during the current month, and not already associated with another billing group. The maximum number of accounts that can be associated in one call is 30. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateAccountsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_accounts::builders::AssociateAccountsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_accounts::builders::AssociateAccountsInputBuilder,
+}
 impl AssociateAccountsFluentBuilder  {
     /// Creates a new `AssociateAccounts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_accounts::AssociateAccounts, aws_http::retry::AwsResponseRetryClassifier,>,

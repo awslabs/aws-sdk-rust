@@ -8,16 +8,17 @@ pub use crate::operation::update_action_target::_update_action_target_input::Upd
 /// <p>Updates the name and description of a custom action target in Security Hub.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateActionTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_action_target::builders::UpdateActionTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_action_target::builders::UpdateActionTargetInputBuilder,
+}
 impl UpdateActionTargetFluentBuilder  {
     /// Creates a new `UpdateActionTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_action_target::UpdateActionTarget, aws_http::retry::AwsResponseRetryClassifier,>,

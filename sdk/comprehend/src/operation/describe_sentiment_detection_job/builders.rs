@@ -8,16 +8,17 @@ pub use crate::operation::describe_sentiment_detection_job::_describe_sentiment_
 /// <p>Gets the properties associated with a sentiment detection job. Use this operation to get the status of a detection job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSentimentDetectionJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_sentiment_detection_job::builders::DescribeSentimentDetectionJobInputBuilder,
+}
 impl DescribeSentimentDetectionJobFluentBuilder  {
     /// Creates a new `DescribeSentimentDetectionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_sentiment_detection_job::DescribeSentimentDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,

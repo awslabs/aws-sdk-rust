@@ -8,16 +8,17 @@ pub use crate::operation::create_long_term_pricing::_create_long_term_pricing_in
 /// <p>Creates a job with the long-term usage option for a device. The long-term usage is a 1-year or 3-year long-term pricing type for the device. You are billed upfront, and Amazon Web Services provides discounts for long-term pricing. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLongTermPricingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_long_term_pricing::builders::CreateLongTermPricingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_long_term_pricing::builders::CreateLongTermPricingInputBuilder,
+}
 impl CreateLongTermPricingFluentBuilder  {
     /// Creates a new `CreateLongTermPricing`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_long_term_pricing::CreateLongTermPricing, aws_http::retry::AwsResponseRetryClassifier,>,

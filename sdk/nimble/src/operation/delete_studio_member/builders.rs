@@ -8,16 +8,17 @@ pub use crate::operation::delete_studio_member::_delete_studio_member_input::Del
 /// <p>Delete a user from studio membership.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteStudioMemberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_studio_member::builders::DeleteStudioMemberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_studio_member::builders::DeleteStudioMemberInputBuilder,
+}
 impl DeleteStudioMemberFluentBuilder  {
     /// Creates a new `DeleteStudioMember`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_studio_member::DeleteStudioMember, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_signing_job::_describe_signing_job_input::Des
 /// <p>Returns information about a specific code signing job. You specify the job by using the <code>jobId</code> value that is returned by the <code>StartSigningJob</code> operation. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSigningJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_signing_job::builders::DescribeSigningJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_signing_job::builders::DescribeSigningJobInputBuilder,
+}
 impl DescribeSigningJobFluentBuilder  {
     /// Creates a new `DescribeSigningJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_signing_job::DescribeSigningJob, aws_http::retry::AwsResponseRetryClassifier,>,

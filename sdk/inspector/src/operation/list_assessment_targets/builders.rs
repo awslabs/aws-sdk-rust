@@ -8,16 +8,17 @@ pub use crate::operation::list_assessment_targets::_list_assessment_targets_inpu
 /// <p>Lists the ARNs of the assessment targets within this AWS account. For more information about assessment targets, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon Inspector Assessment Targets</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssessmentTargetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_assessment_targets::builders::ListAssessmentTargetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_assessment_targets::builders::ListAssessmentTargetsInputBuilder,
+}
 impl ListAssessmentTargetsFluentBuilder  {
     /// Creates a new `ListAssessmentTargets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_assessment_targets::ListAssessmentTargets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAssessmentTargetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator {
-                            crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator {
+                                crate::operation::list_assessment_targets::paginator::ListAssessmentTargetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>You can use this parameter to specify a subset of data to be included in the action's response.</p> 
     /// <p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
     pub fn filter(mut self, input: crate::types::AssessmentTargetFilter) -> Self {

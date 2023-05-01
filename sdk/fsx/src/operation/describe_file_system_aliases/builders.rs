@@ -8,16 +8,17 @@ pub use crate::operation::describe_file_system_aliases::_describe_file_system_al
 /// <p>Returns the DNS aliases that are associated with the specified Amazon FSx for Windows File Server file system. A history of all DNS aliases that have been associated with and disassociated from the file system is available in the list of <code>AdministrativeAction</code> provided in the <code>DescribeFileSystems</code> operation response.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFileSystemAliasesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_file_system_aliases::builders::DescribeFileSystemAliasesInputBuilder,
+}
 impl DescribeFileSystemAliasesFluentBuilder  {
     /// Creates a new `DescribeFileSystemAliases`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_file_system_aliases::DescribeFileSystemAliases, aws_http::retry::AwsResponseRetryClassifier,>,

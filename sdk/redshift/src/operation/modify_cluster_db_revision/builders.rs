@@ -8,16 +8,17 @@ pub use crate::operation::modify_cluster_db_revision::_modify_cluster_db_revisio
 /// <p>Modifies the database revision of a cluster. The database revision is a unique revision of the database running in a cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyClusterDbRevisionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_cluster_db_revision::builders::ModifyClusterDbRevisionInputBuilder,
+}
 impl ModifyClusterDbRevisionFluentBuilder  {
     /// Creates a new `ModifyClusterDbRevision`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_cluster_db_revision::ModifyClusterDbRevision, aws_http::retry::AwsResponseRetryClassifier,>,

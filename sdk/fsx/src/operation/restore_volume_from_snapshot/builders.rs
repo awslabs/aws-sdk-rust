@@ -8,16 +8,17 @@ pub use crate::operation::restore_volume_from_snapshot::_restore_volume_from_sna
 /// <p>Returns an Amazon FSx for OpenZFS volume to the state saved by the specified snapshot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreVolumeFromSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder,
+}
 impl RestoreVolumeFromSnapshotFluentBuilder  {
     /// Creates a new `RestoreVolumeFromSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

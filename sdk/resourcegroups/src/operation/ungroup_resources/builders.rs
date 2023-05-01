@@ -13,16 +13,17 @@ pub use crate::operation::ungroup_resources::_ungroup_resources_input::UngroupRe
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UngroupResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::ungroup_resources::builders::UngroupResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::ungroup_resources::builders::UngroupResourcesInputBuilder,
+}
 impl UngroupResourcesFluentBuilder  {
     /// Creates a new `UngroupResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::ungroup_resources::UngroupResources, aws_http::retry::AwsResponseRetryClassifier,>,

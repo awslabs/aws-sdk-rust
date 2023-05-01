@@ -8,16 +8,17 @@ pub use crate::operation::list_requested_service_quota_change_history::_list_req
 /// <p>Retrieves the quota increase requests for the specified service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRequestedServiceQuotaChangeHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_requested_service_quota_change_history::builders::ListRequestedServiceQuotaChangeHistoryInputBuilder,
+}
 impl ListRequestedServiceQuotaChangeHistoryFluentBuilder  {
     /// Creates a new `ListRequestedServiceQuotaChangeHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_requested_service_quota_change_history::ListRequestedServiceQuotaChangeHistory, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRequestedServiceQuotaChangeHistoryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator {
-                            crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator {
+                                crate::operation::list_requested_service_quota_change_history::paginator::ListRequestedServiceQuotaChangeHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The service identifier.</p>
     pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());

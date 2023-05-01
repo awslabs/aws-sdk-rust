@@ -9,16 +9,17 @@ pub use crate::operation::validate_sol_function_package_content::_validate_sol_f
 /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ValidateSolFunctionPackageContentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentInputBuilder,
+}
 impl ValidateSolFunctionPackageContentFluentBuilder  {
     /// Creates a new `ValidateSolFunctionPackageContent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContent, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_received_licenses::_list_received_licenses_input:
 /// <p>Lists received licenses.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReceivedLicensesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_received_licenses::builders::ListReceivedLicensesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_received_licenses::builders::ListReceivedLicensesInputBuilder,
+}
 impl ListReceivedLicensesFluentBuilder  {
     /// Creates a new `ListReceivedLicenses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_received_licenses::ListReceivedLicenses, aws_http::retry::AwsResponseRetryClassifier,>,

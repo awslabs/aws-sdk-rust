@@ -8,16 +8,17 @@ pub use crate::operation::describe_rule_groups_namespace::_describe_rule_groups_
 /// Describe a rule groups namespace.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRuleGroupsNamespaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceInputBuilder,
+}
 impl DescribeRuleGroupsNamespaceFluentBuilder  {
     /// Creates a new `DescribeRuleGroupsNamespace`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespace, aws_http::retry::AwsResponseRetryClassifier,>,

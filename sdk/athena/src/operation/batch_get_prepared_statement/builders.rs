@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_prepared_statement::_batch_get_prepared_stat
 /// <p>Returns the details of a single prepared statement or a list of up to 256 prepared statements for the array of prepared statement names that you provide. Requires you to have access to the workgroup to which the prepared statements belong. If a prepared statement cannot be retrieved for the name specified, the statement is listed in <code>UnprocessedPreparedStatementNames</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetPreparedStatementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder,
+}
 impl BatchGetPreparedStatementFluentBuilder  {
     /// Creates a new `BatchGetPreparedStatement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_prepared_statement::BatchGetPreparedStatement, aws_http::retry::AwsResponseRetryClassifier,>,

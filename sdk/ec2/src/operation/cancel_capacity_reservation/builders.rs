@@ -9,16 +9,17 @@ pub use crate::operation::cancel_capacity_reservation::_cancel_capacity_reservat
 /// <p>Instances running in the reserved capacity continue running until you stop them. Stopped instances that target the Capacity Reservation can no longer launch. Modify these instances to either target a different Capacity Reservation, launch On-Demand Instance capacity, or run in any open Capacity Reservation that has matching attributes and sufficient capacity.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelCapacityReservationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationInputBuilder,
+}
 impl CancelCapacityReservationFluentBuilder  {
     /// Creates a new `CancelCapacityReservation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_capacity_reservation::CancelCapacityReservation, aws_http::retry::AwsResponseRetryClassifier,>,

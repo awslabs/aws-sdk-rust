@@ -9,16 +9,17 @@ pub use crate::operation::put_data_lake_settings::_put_data_lake_settings_input:
 /// <p>This API replaces the current list of data lake admins with the new list being passed. To add an admin, fetch the current list and add the new admin to that list and pass that list in this API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutDataLakeSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_data_lake_settings::builders::PutDataLakeSettingsInputBuilder,
+}
 impl PutDataLakeSettingsFluentBuilder  {
     /// Creates a new `PutDataLakeSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_data_lake_settings::PutDataLakeSettings, aws_http::retry::AwsResponseRetryClassifier,>,

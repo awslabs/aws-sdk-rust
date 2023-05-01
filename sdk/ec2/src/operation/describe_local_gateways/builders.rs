@@ -8,16 +8,17 @@ pub use crate::operation::describe_local_gateways::_describe_local_gateways_inpu
 /// <p>Describes one or more local gateways. By default, all local gateways are described. Alternatively, you can filter the results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLocalGatewaysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_local_gateways::builders::DescribeLocalGatewaysInputBuilder,
+}
 impl DescribeLocalGatewaysFluentBuilder  {
     /// Creates a new `DescribeLocalGateways`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_local_gateways::DescribeLocalGateways, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeLocalGatewaysFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator {
-                            crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator {
+                                crate::operation::describe_local_gateways::paginator::DescribeLocalGatewaysPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `LocalGatewayIds`.
     ///
     /// To override the contents of this collection use [`set_local_gateway_ids`](Self::set_local_gateway_ids).

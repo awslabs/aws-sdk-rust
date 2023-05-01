@@ -9,16 +9,17 @@ pub use crate::operation::put_lexicon::_put_lexicon_input::PutLexiconInputBuilde
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutLexiconFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_lexicon::builders::PutLexiconInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_lexicon::builders::PutLexiconInputBuilder,
+}
 impl PutLexiconFluentBuilder  {
     /// Creates a new `PutLexicon`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_lexicon::PutLexicon, aws_http::retry::AwsResponseRetryClassifier,>,

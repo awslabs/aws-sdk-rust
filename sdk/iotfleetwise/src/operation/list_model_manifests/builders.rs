@@ -10,16 +10,17 @@ pub use crate::operation::list_model_manifests::_list_model_manifests_input::Lis
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListModelManifestsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_model_manifests::builders::ListModelManifestsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_model_manifests::builders::ListModelManifestsInputBuilder,
+}
 impl ListModelManifestsFluentBuilder  {
     /// Creates a new `ListModelManifests`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_model_manifests::ListModelManifests, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListModelManifestsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_model_manifests::paginator::ListModelManifestsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_model_manifests::paginator::ListModelManifestsPaginator {
-                            crate::operation::list_model_manifests::paginator::ListModelManifestsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_model_manifests::paginator::ListModelManifestsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_model_manifests::paginator::ListModelManifestsPaginator {
+                                crate::operation::list_model_manifests::paginator::ListModelManifestsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The ARN of a signal catalog. If you specify a signal catalog, only the vehicle models associated with it are returned.</p>
     pub fn signal_catalog_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.signal_catalog_arn(input.into());

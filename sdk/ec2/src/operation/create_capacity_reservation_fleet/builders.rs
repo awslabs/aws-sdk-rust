@@ -8,16 +8,17 @@ pub use crate::operation::create_capacity_reservation_fleet::_create_capacity_re
 /// <p>Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCapacityReservationFleetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetInputBuilder,
+}
 impl CreateCapacityReservationFleetFluentBuilder  {
     /// Creates a new `CreateCapacityReservationFleet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleet, aws_http::retry::AwsResponseRetryClassifier,>,

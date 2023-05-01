@@ -8,16 +8,17 @@ pub use crate::operation::delete_access_log_settings::_delete_access_log_setting
 /// <p>Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccessLogSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsInputBuilder,
+}
 impl DeleteAccessLogSettingsFluentBuilder  {
     /// Creates a new `DeleteAccessLogSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_access_log_settings::DeleteAccessLogSettings, aws_http::retry::AwsResponseRetryClassifier,>,

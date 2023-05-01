@@ -8,16 +8,17 @@ pub use crate::operation::detach_managed_policy_from_permission_set::_detach_man
 /// <p>Detaches the attached AWS managed policy ARN from the specified permission set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachManagedPolicyFromPermissionSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detach_managed_policy_from_permission_set::builders::DetachManagedPolicyFromPermissionSetInputBuilder,
+}
 impl DetachManagedPolicyFromPermissionSetFluentBuilder  {
     /// Creates a new `DetachManagedPolicyFromPermissionSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detach_managed_policy_from_permission_set::DetachManagedPolicyFromPermissionSet, aws_http::retry::AwsResponseRetryClassifier,>,

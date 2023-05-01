@@ -8,16 +8,17 @@ pub use crate::operation::list_core_definition_versions::_list_core_definition_v
 /// Lists the versions of a core definition.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCoreDefinitionVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_core_definition_versions::builders::ListCoreDefinitionVersionsInputBuilder,
+}
 impl ListCoreDefinitionVersionsFluentBuilder  {
     /// Creates a new `ListCoreDefinitionVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_core_definition_versions::ListCoreDefinitionVersions, aws_http::retry::AwsResponseRetryClassifier,>,

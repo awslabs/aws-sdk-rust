@@ -8,16 +8,17 @@ pub use crate::operation::create_face_liveness_session::_create_face_liveness_se
 /// <p>This API operation initiates a Face Liveness session. It returns a <code>SessionId</code>, which you can use to start streaming Face Liveness video and get the results for a Face Liveness session. You can use the <code>OutputConfig</code> option in the Settings parameter to provide an Amazon S3 bucket location. The Amazon S3 bucket stores reference images and audit images. You can use <code>AuditImagesLimit</code> to limit the number of audit images returned. This number is between 0 and 4. By default, it is set to 0. The limit is best effort and based on the duration of the selfie-video. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFaceLivenessSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_face_liveness_session::builders::CreateFaceLivenessSessionInputBuilder,
+}
 impl CreateFaceLivenessSessionFluentBuilder  {
     /// Creates a new `CreateFaceLivenessSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_face_liveness_session::CreateFaceLivenessSession, aws_http::retry::AwsResponseRetryClassifier,>,

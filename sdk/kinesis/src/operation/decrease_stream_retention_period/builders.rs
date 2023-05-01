@@ -11,16 +11,17 @@ pub use crate::operation::decrease_stream_retention_period::_decrease_stream_ret
 /// <p>This operation may result in lost data. For example, if the stream's retention period is 48 hours and is decreased to 24 hours, any data already in the stream that is older than 24 hours is inaccessible.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DecreaseStreamRetentionPeriodFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::decrease_stream_retention_period::builders::DecreaseStreamRetentionPeriodInputBuilder,
+}
 impl DecreaseStreamRetentionPeriodFluentBuilder  {
     /// Creates a new `DecreaseStreamRetentionPeriod`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriod, aws_http::retry::AwsResponseRetryClassifier,>,

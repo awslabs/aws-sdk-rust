@@ -8,16 +8,17 @@ pub use crate::operation::update_service_specific_credential::_update_service_sp
 /// <p>Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>. Service-specific credentials that are inactive cannot be used for authentication to the service. This operation can be used to disable a user's service-specific credential as part of a credential rotation work flow.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServiceSpecificCredentialFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_service_specific_credential::builders::UpdateServiceSpecificCredentialInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_service_specific_credential::builders::UpdateServiceSpecificCredentialInputBuilder,
+}
 impl UpdateServiceSpecificCredentialFluentBuilder  {
     /// Creates a new `UpdateServiceSpecificCredential`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_service_specific_credential::UpdateServiceSpecificCredential, aws_http::retry::AwsResponseRetryClassifier,>,

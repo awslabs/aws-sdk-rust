@@ -9,16 +9,17 @@ pub use crate::operation::stop_training_entity_recognizer::_stop_training_entity
 /// <p>If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and putted into the <code>STOPPED</code> state and the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopTrainingEntityRecognizerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_training_entity_recognizer::builders::StopTrainingEntityRecognizerInputBuilder,
+}
 impl StopTrainingEntityRecognizerFluentBuilder  {
     /// Creates a new `StopTrainingEntityRecognizer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_training_entity_recognizer::StopTrainingEntityRecognizer, aws_http::retry::AwsResponseRetryClassifier,>,

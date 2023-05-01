@@ -8,16 +8,17 @@ pub use crate::operation::list_device_resources::_list_device_resources_input::L
 /// <p>Returns a list of the Amazon Web Services resources available for a device. Currently, Amazon EC2 instances are the only supported resource type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeviceResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder,
+}
 impl ListDeviceResourcesFluentBuilder  {
     /// Creates a new `ListDeviceResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_device_resources::ListDeviceResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDeviceResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator {
-                            crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator {
+                                crate::operation::list_device_resources::paginator::ListDeviceResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the managed device that you are listing the resources of.</p>
     pub fn managed_device_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.managed_device_id(input.into());

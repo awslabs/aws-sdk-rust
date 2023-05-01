@@ -8,16 +8,17 @@ pub use crate::operation::apply_schema::_apply_schema_input::ApplySchemaInputBui
 /// <p>Copies the input published schema, at the specified version, into the <code>Directory</code> with the same name and version as that of the published schema.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ApplySchemaFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::apply_schema::builders::ApplySchemaInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::apply_schema::builders::ApplySchemaInputBuilder,
+}
 impl ApplySchemaFluentBuilder  {
     /// Creates a new `ApplySchema`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::apply_schema::ApplySchema, aws_http::retry::AwsResponseRetryClassifier,>,

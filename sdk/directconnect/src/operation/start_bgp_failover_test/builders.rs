@@ -11,16 +11,17 @@ pub use crate::operation::start_bgp_failover_test::_start_bgp_failover_test_inpu
 /// <p>If you need to stop the test before the test interval completes, use <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartBgpFailoverTestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestInputBuilder,
+}
 impl StartBgpFailoverTestFluentBuilder  {
     /// Creates a new `StartBgpFailoverTest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_bgp_failover_test::StartBgpFailoverTest, aws_http::retry::AwsResponseRetryClassifier,>,

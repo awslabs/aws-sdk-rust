@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_approval_rule_template_from_repository::_
 /// <p>Removes the association between a template and a repository so that approval rules based on the template are not automatically created when pull requests are created in the specified repository. This does not delete any approval rules previously created for pull requests through the template association.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_approval_rule_template_from_repository::builders::DisassociateApprovalRuleTemplateFromRepositoryInputBuilder,
+}
 impl DisassociateApprovalRuleTemplateFromRepositoryFluentBuilder  {
     /// Creates a new `DisassociateApprovalRuleTemplateFromRepository`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepository, aws_http::retry::AwsResponseRetryClassifier,>,

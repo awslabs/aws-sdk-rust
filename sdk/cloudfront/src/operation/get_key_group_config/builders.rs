@@ -9,16 +9,17 @@ pub use crate::operation::get_key_group_config::_get_key_group_config_input::Get
 /// <p>To get a key group configuration, you must provide the key group's identifier. If the key group is referenced in a distribution's cache behavior, you can get the key group's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetKeyGroupConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_key_group_config::builders::GetKeyGroupConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_key_group_config::builders::GetKeyGroupConfigInputBuilder,
+}
 impl GetKeyGroupConfigFluentBuilder  {
     /// Creates a new `GetKeyGroupConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_key_group_config::GetKeyGroupConfig, aws_http::retry::AwsResponseRetryClassifier,>,

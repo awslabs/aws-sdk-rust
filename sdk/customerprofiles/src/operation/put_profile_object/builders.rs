@@ -11,16 +11,17 @@ pub use crate::operation::put_profile_object::_put_profile_object_input::PutProf
 /// <p>PutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutProfileObjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_profile_object::builders::PutProfileObjectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_profile_object::builders::PutProfileObjectInputBuilder,
+}
 impl PutProfileObjectFluentBuilder  {
     /// Creates a new `PutProfileObject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_profile_object::PutProfileObject, aws_http::retry::AwsResponseRetryClassifier,>,

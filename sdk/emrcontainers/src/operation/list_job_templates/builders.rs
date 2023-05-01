@@ -8,16 +8,17 @@ pub use crate::operation::list_job_templates::_list_job_templates_input::ListJob
 /// <p>Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListJobTemplatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_job_templates::builders::ListJobTemplatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_job_templates::builders::ListJobTemplatesInputBuilder,
+}
 impl ListJobTemplatesFluentBuilder  {
     /// Creates a new `ListJobTemplates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_job_templates::ListJobTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListJobTemplatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator {
-                            crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator {
+                                crate::operation::list_job_templates::paginator::ListJobTemplatesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The date and time after which the job templates were created.</p>
     pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);

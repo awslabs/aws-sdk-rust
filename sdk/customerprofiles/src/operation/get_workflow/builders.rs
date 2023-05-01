@@ -8,16 +8,17 @@ pub use crate::operation::get_workflow::_get_workflow_input::GetWorkflowInputBui
 /// <p>Get details of specified workflow.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetWorkflowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_workflow::builders::GetWorkflowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_workflow::builders::GetWorkflowInputBuilder,
+}
 impl GetWorkflowFluentBuilder  {
     /// Creates a new `GetWorkflow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_workflow::GetWorkflow, aws_http::retry::AwsResponseRetryClassifier,>,

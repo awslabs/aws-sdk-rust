@@ -8,16 +8,17 @@ pub use crate::operation::list_network_sites::_list_network_sites_input::ListNet
 /// <p>Lists network sites. Add filters to your request to return a more specific list of results. Use filters to match the status of the network site.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNetworkSitesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder,
+}
 impl ListNetworkSitesFluentBuilder  {
     /// Creates a new `ListNetworkSites`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_network_sites::ListNetworkSites, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListNetworkSitesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator {
-                            crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator {
+                                crate::operation::list_network_sites::paginator::ListNetworkSitesPaginator::new(self.handle, self.inner)
+                            }
     /// Adds a key-value pair to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

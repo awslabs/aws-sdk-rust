@@ -8,16 +8,17 @@ pub use crate::operation::delete_facet::_delete_facet_input::DeleteFacetInputBui
 /// <p>Deletes a given <code>Facet</code>. All attributes and <code>Rule</code>s that are associated with the facet will be deleted. Only development schema facets are allowed deletion.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFacetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_facet::builders::DeleteFacetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_facet::builders::DeleteFacetInputBuilder,
+}
 impl DeleteFacetFluentBuilder  {
     /// Creates a new `DeleteFacet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_facet::DeleteFacet, aws_http::retry::AwsResponseRetryClassifier,>,

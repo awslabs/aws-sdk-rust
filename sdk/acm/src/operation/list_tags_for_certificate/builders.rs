@@ -8,16 +8,17 @@ pub use crate::operation::list_tags_for_certificate::_list_tags_for_certificate_
 /// <p>Lists the tags that have been applied to the ACM certificate. Use the certificate's Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM certificate, use the <code>AddTagsToCertificate</code> action. To delete a tag, use the <code>RemoveTagsFromCertificate</code> action. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tags_for_certificate::builders::ListTagsForCertificateInputBuilder,
+}
 impl ListTagsForCertificateFluentBuilder  {
     /// Creates a new `ListTagsForCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tags_for_certificate::ListTagsForCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -24,16 +24,17 @@ pub use crate::operation::detect_protective_equipment::_detect_protective_equipm
 /// <p>This operation requires permissions to perform the <code>rekognition:DetectProtectiveEquipment</code> action. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectProtectiveEquipmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_protective_equipment::builders::DetectProtectiveEquipmentInputBuilder,
+}
 impl DetectProtectiveEquipmentFluentBuilder  {
     /// Creates a new `DetectProtectiveEquipment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_protective_equipment::DetectProtectiveEquipment, aws_http::retry::AwsResponseRetryClassifier,>,

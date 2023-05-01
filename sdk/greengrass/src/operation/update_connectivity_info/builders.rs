@@ -8,16 +8,17 @@ pub use crate::operation::update_connectivity_info::_update_connectivity_info_in
 /// Updates the connectivity information for the core. Any devices that belong to the group which has this core will receive this information in order to find the location of the core and connect to it.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateConnectivityInfoFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoInputBuilder,
+}
 impl UpdateConnectivityInfoFluentBuilder  {
     /// Creates a new `UpdateConnectivityInfo`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_connectivity_info::UpdateConnectivityInfo, aws_http::retry::AwsResponseRetryClassifier,>,

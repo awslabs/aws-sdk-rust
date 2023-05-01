@@ -8,16 +8,17 @@ pub use crate::operation::get_registry_catalog_data::_get_registry_catalog_data_
 /// <p>Retrieves catalog metadata for a public registry.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRegistryCatalogDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataInputBuilder,
+}
 impl GetRegistryCatalogDataFluentBuilder  {
     /// Creates a new `GetRegistryCatalogData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_registry_catalog_data::GetRegistryCatalogData, aws_http::retry::AwsResponseRetryClassifier,>,

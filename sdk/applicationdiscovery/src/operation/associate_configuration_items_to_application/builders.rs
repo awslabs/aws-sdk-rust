@@ -8,16 +8,17 @@ pub use crate::operation::associate_configuration_items_to_application::_associa
 /// <p>Associates one or more configuration items with an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateConfigurationItemsToApplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_configuration_items_to_application::builders::AssociateConfigurationItemsToApplicationInputBuilder,
+}
 impl AssociateConfigurationItemsToApplicationFluentBuilder  {
     /// Creates a new `AssociateConfigurationItemsToApplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplication, aws_http::retry::AwsResponseRetryClassifier,>,

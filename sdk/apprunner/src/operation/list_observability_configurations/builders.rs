@@ -9,16 +9,17 @@ pub use crate::operation::list_observability_configurations::_list_observability
 /// <p>To retrieve a full description of a particular configuration revision, call and provide one of the ARNs returned by <code>ListObservabilityConfigurations</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListObservabilityConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_observability_configurations::builders::ListObservabilityConfigurationsInputBuilder,
+}
 impl ListObservabilityConfigurationsFluentBuilder  {
     /// Creates a new `ListObservabilityConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_observability_configurations::ListObservabilityConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListObservabilityConfigurationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_observability_configurations::paginator::ListObservabilityConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_observability_configurations::paginator::ListObservabilityConfigurationsPaginator {
-                            crate::operation::list_observability_configurations::paginator::ListObservabilityConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_observability_configurations::paginator::ListObservabilityConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_observability_configurations::paginator::ListObservabilityConfigurationsPaginator {
+                                crate::operation::list_observability_configurations::paginator::ListObservabilityConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the App Runner observability configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
     pub fn observability_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.observability_configuration_name(input.into());

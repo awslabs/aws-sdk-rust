@@ -11,16 +11,17 @@ pub use crate::operation::list_queues::_list_queues_input::ListQueuesInputBuilde
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListQueuesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_queues::builders::ListQueuesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_queues::builders::ListQueuesInputBuilder,
+}
 impl ListQueuesFluentBuilder  {
     /// Creates a new `ListQueues`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_queues::ListQueues, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListQueuesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_queues::paginator::ListQueuesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_queues::paginator::ListQueuesPaginator {
-                            crate::operation::list_queues::paginator::ListQueuesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_queues::paginator::ListQueuesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_queues::paginator::ListQueuesPaginator {
+                                crate::operation::list_queues::paginator::ListQueuesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p> 
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {

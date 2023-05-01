@@ -8,16 +8,17 @@ pub use crate::operation::get_core_network::_get_core_network_input::GetCoreNetw
 /// <p>Returns information about the LIVE policy for a core network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCoreNetworkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_core_network::builders::GetCoreNetworkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_core_network::builders::GetCoreNetworkInputBuilder,
+}
 impl GetCoreNetworkFluentBuilder  {
     /// Creates a new `GetCoreNetwork`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_core_network::GetCoreNetwork, aws_http::retry::AwsResponseRetryClassifier,>,

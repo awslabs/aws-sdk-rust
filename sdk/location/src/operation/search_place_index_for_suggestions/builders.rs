@@ -11,16 +11,17 @@ pub use crate::operation::search_place_index_for_suggestions::_search_place_inde
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchPlaceIndexForSuggestionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder,
+}
 impl SearchPlaceIndexForSuggestionsFluentBuilder  {
     /// Creates a new `SearchPlaceIndexForSuggestions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestions, aws_http::retry::AwsResponseRetryClassifier,>,

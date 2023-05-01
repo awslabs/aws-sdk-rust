@@ -8,16 +8,17 @@ pub use crate::operation::monitor_contact::_monitor_contact_input::MonitorContac
 /// <p>Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user specified by <i>userId</i> will be set to silent monitoring mode on the contact.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct MonitorContactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::monitor_contact::builders::MonitorContactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::monitor_contact::builders::MonitorContactInputBuilder,
+}
 impl MonitorContactFluentBuilder  {
     /// Creates a new `MonitorContact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::monitor_contact::MonitorContact, aws_http::retry::AwsResponseRetryClassifier,>,

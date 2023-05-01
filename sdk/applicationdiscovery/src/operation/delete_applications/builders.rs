@@ -8,16 +8,17 @@ pub use crate::operation::delete_applications::_delete_applications_input::Delet
 /// <p>Deletes a list of applications and their associations with configuration items.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteApplicationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_applications::builders::DeleteApplicationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_applications::builders::DeleteApplicationsInputBuilder,
+}
 impl DeleteApplicationsFluentBuilder  {
     /// Creates a new `DeleteApplications`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_applications::DeleteApplications, aws_http::retry::AwsResponseRetryClassifier,>,

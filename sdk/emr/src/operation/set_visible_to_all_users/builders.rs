@@ -13,16 +13,17 @@ pub use crate::operation::set_visible_to_all_users::_set_visible_to_all_users_in
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetVisibleToAllUsersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_visible_to_all_users::builders::SetVisibleToAllUsersInputBuilder,
+}
 impl SetVisibleToAllUsersFluentBuilder  {
     /// Creates a new `SetVisibleToAllUsers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_visible_to_all_users::SetVisibleToAllUsers, aws_http::retry::AwsResponseRetryClassifier,>,

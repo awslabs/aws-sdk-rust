@@ -13,16 +13,17 @@ pub use crate::operation::analyze_expense::_analyze_expense_input::AnalyzeExpens
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AnalyzeExpenseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::analyze_expense::builders::AnalyzeExpenseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::analyze_expense::builders::AnalyzeExpenseInputBuilder,
+}
 impl AnalyzeExpenseFluentBuilder  {
     /// Creates a new `AnalyzeExpense`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::analyze_expense::AnalyzeExpense, aws_http::retry::AwsResponseRetryClassifier,>,

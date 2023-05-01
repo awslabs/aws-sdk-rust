@@ -9,16 +9,17 @@ pub use crate::operation::list_recommendations::_list_recommendations_input::Lis
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRecommendationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder,
+}
 impl ListRecommendationsFluentBuilder  {
     /// Creates a new `ListRecommendations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_recommendations::ListRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListRecommendationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_recommendations::paginator::ListRecommendationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_recommendations::paginator::ListRecommendationsPaginator {
-                            crate::operation::list_recommendations::paginator::ListRecommendationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_recommendations::paginator::ListRecommendationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_recommendations::paginator::ListRecommendationsPaginator {
+                                crate::operation::list_recommendations::paginator::ListRecommendationsPaginator::new(self.handle, self.inner)
+                            }
     /// Adds a key-value pair to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).

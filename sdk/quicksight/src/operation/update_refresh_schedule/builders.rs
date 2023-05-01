@@ -8,16 +8,17 @@ pub use crate::operation::update_refresh_schedule::_update_refresh_schedule_inpu
 /// <p>Updates a refresh schedule for a dataset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRefreshScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_refresh_schedule::builders::UpdateRefreshScheduleInputBuilder,
+}
 impl UpdateRefreshScheduleFluentBuilder  {
     /// Creates a new `UpdateRefreshSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_refresh_schedule::UpdateRefreshSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

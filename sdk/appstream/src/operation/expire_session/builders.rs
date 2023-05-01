@@ -8,16 +8,17 @@ pub use crate::operation::expire_session::_expire_session_input::ExpireSessionIn
 /// <p>Immediately stops the specified streaming session.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExpireSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::expire_session::builders::ExpireSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::expire_session::builders::ExpireSessionInputBuilder,
+}
 impl ExpireSessionFluentBuilder  {
     /// Creates a new `ExpireSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::expire_session::ExpireSession, aws_http::retry::AwsResponseRetryClassifier,>,

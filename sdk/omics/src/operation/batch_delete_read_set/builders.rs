@@ -8,16 +8,17 @@ pub use crate::operation::batch_delete_read_set::_batch_delete_read_set_input::B
 /// <p>Deletes one or more read sets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteReadSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetInputBuilder,
+}
 impl BatchDeleteReadSetFluentBuilder  {
     /// Creates a new `BatchDeleteReadSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_read_set::BatchDeleteReadSet, aws_http::retry::AwsResponseRetryClassifier,>,

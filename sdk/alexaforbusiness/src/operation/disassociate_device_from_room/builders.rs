@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_device_from_room::_disassociate_device_fr
 /// <p>Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is still registered to the account. The device settings and skills are removed from the room.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateDeviceFromRoomFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_device_from_room::builders::DisassociateDeviceFromRoomInputBuilder,
+}
 impl DisassociateDeviceFromRoomFluentBuilder  {
     /// Creates a new `DisassociateDeviceFromRoom`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoom, aws_http::retry::AwsResponseRetryClassifier,>,

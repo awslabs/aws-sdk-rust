@@ -8,16 +8,17 @@ pub use crate::operation::list_account_integrations::_list_account_integrations_
 /// <p>Lists all of the integrations associated to a specific URI in the AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccountIntegrationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_account_integrations::builders::ListAccountIntegrationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_account_integrations::builders::ListAccountIntegrationsInputBuilder,
+}
 impl ListAccountIntegrationsFluentBuilder  {
     /// Creates a new `ListAccountIntegrations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_account_integrations::ListAccountIntegrations, aws_http::retry::AwsResponseRetryClassifier,>,

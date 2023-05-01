@@ -9,16 +9,17 @@ pub use crate::operation::list_configuration_sets::_list_configuration_sets_inpu
 /// <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListConfigurationSetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_configuration_sets::builders::ListConfigurationSetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_configuration_sets::builders::ListConfigurationSetsInputBuilder,
+}
 impl ListConfigurationSetsFluentBuilder  {
     /// Creates a new `ListConfigurationSets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_configuration_sets::ListConfigurationSets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListConfigurationSetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_configuration_sets::paginator::ListConfigurationSetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_configuration_sets::paginator::ListConfigurationSetsPaginator {
-                            crate::operation::list_configuration_sets::paginator::ListConfigurationSetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_configuration_sets::paginator::ListConfigurationSetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_configuration_sets::paginator::ListConfigurationSetsPaginator {
+                                crate::operation::list_configuration_sets::paginator::ListConfigurationSetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token returned from a previous call to <code>ListConfigurationSets</code> to indicate the position in the list of configuration sets.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

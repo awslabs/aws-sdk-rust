@@ -8,16 +8,17 @@ pub use crate::operation::describe_domain_controllers::_describe_domain_controll
 /// <p>Provides information about any domain controllers in your directory.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDomainControllersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_domain_controllers::builders::DescribeDomainControllersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_domain_controllers::builders::DescribeDomainControllersInputBuilder,
+}
 impl DescribeDomainControllersFluentBuilder  {
     /// Creates a new `DescribeDomainControllers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_domain_controllers::DescribeDomainControllers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDomainControllersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_domain_controllers::paginator::DescribeDomainControllersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_domain_controllers::paginator::DescribeDomainControllersPaginator {
-                            crate::operation::describe_domain_controllers::paginator::DescribeDomainControllersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_domain_controllers::paginator::DescribeDomainControllersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_domain_controllers::paginator::DescribeDomainControllersPaginator {
+                                crate::operation::describe_domain_controllers::paginator::DescribeDomainControllersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
     pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());

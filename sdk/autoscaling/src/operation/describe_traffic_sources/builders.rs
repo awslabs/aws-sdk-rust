@@ -10,16 +10,17 @@ pub use crate::operation::describe_traffic_sources::_describe_traffic_sources_in
 /// <p>If you do not provide a traffic source type, then the results include all the traffic sources for the specified Auto Scaling group. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTrafficSourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_traffic_sources::builders::DescribeTrafficSourcesInputBuilder,
+}
 impl DescribeTrafficSourcesFluentBuilder  {
     /// Creates a new `DescribeTrafficSources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_traffic_sources::DescribeTrafficSources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeTrafficSourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator {
-                            crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator {
+                                crate::operation::describe_traffic_sources::paginator::DescribeTrafficSourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());

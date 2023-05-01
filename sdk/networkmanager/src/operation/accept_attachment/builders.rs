@@ -9,16 +9,17 @@ pub use crate::operation::accept_attachment::_accept_attachment_input::AcceptAtt
 /// <p>Once the attachment request is accepted by a core network owner, the attachment is created and connected to a core network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptAttachmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_attachment::builders::AcceptAttachmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_attachment::builders::AcceptAttachmentInputBuilder,
+}
 impl AcceptAttachmentFluentBuilder  {
     /// Creates a new `AcceptAttachment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_attachment::AcceptAttachment, aws_http::retry::AwsResponseRetryClassifier,>,

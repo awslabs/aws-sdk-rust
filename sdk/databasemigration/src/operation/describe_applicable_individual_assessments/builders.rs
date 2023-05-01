@@ -11,16 +11,17 @@ pub use crate::operation::describe_applicable_individual_assessments::_describe_
 /// <p>If you specify no parameters, this operation provides a list of all possible individual assessments that you can specify for an assessment run. If you specify any one of the task modeling parameters, you must specify all of them or the operation cannot provide a list of individual assessments. The only parameter that you can specify alone is for an existing migration task. The specified task definition then determines the default list of individual assessments that you can specify in an assessment run for the task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeApplicableIndividualAssessmentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_applicable_individual_assessments::builders::DescribeApplicableIndividualAssessmentsInputBuilder,
+}
 impl DescribeApplicableIndividualAssessmentsFluentBuilder  {
     /// Creates a new `DescribeApplicableIndividualAssessments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_applicable_individual_assessments::DescribeApplicableIndividualAssessments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl DescribeApplicableIndividualAssessmentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator {
-                            crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator {
+                                crate::operation::describe_applicable_individual_assessments::paginator::DescribeApplicableIndividualAssessmentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Amazon Resource Name (ARN) of a migration task on which you want to base the default list of individual assessments.</p>
     pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());

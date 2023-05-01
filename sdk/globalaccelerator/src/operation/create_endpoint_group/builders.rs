@@ -8,16 +8,17 @@ pub use crate::operation::create_endpoint_group::_create_endpoint_group_input::C
 /// <p>Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one Amazon Web Services Region. A resource must be valid and active when you add it as an endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEndpointGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_endpoint_group::builders::CreateEndpointGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_endpoint_group::builders::CreateEndpointGroupInputBuilder,
+}
 impl CreateEndpointGroupFluentBuilder  {
     /// Creates a new `CreateEndpointGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_endpoint_group::CreateEndpointGroup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_extension_association::_update_extension_associ
 /// <p>Updates an association. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateExtensionAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_extension_association::builders::UpdateExtensionAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_extension_association::builders::UpdateExtensionAssociationInputBuilder,
+}
 impl UpdateExtensionAssociationFluentBuilder  {
     /// Creates a new `UpdateExtensionAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_extension_association::UpdateExtensionAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

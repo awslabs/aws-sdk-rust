@@ -8,16 +8,17 @@ pub use crate::operation::list_bulk_deployment_detailed_reports::_list_bulk_depl
 /// Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current deployment status.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBulkDeploymentDetailedReportsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsInputBuilder,
+}
 impl ListBulkDeploymentDetailedReportsFluentBuilder  {
     /// Creates a new `ListBulkDeploymentDetailedReports`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReports, aws_http::retry::AwsResponseRetryClassifier,>,

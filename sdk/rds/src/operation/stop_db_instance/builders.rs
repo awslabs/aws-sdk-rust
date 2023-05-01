@@ -11,16 +11,17 @@ pub use crate::operation::stop_db_instance::_stop_db_instance_input::StopDbInsta
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopDBInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_db_instance::builders::StopDbInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_db_instance::builders::StopDbInstanceInputBuilder,
+}
 impl StopDBInstanceFluentBuilder  {
     /// Creates a new `StopDBInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_db_instance::StopDBInstance, aws_http::retry::AwsResponseRetryClassifier,>,

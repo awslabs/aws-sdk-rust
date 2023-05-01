@@ -8,16 +8,17 @@ pub use crate::operation::create_dedicated_ip_pool::_create_dedicated_ip_pool_in
 /// <p>Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are associated with your Amazon Web Services account. You can associate a pool with a configuration set. When you send an email that uses that configuration set, the message is sent from one of the addresses in the associated pool.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDedicatedIpPoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_dedicated_ip_pool::builders::CreateDedicatedIpPoolInputBuilder,
+}
 impl CreateDedicatedIpPoolFluentBuilder  {
     /// Creates a new `CreateDedicatedIpPool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPool, aws_http::retry::AwsResponseRetryClassifier,>,

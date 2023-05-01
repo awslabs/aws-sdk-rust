@@ -8,16 +8,17 @@ pub use crate::operation::delete_report_plan::_delete_report_plan_input::DeleteR
 /// <p>Deletes the report plan specified by a report plan name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteReportPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_report_plan::builders::DeleteReportPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_report_plan::builders::DeleteReportPlanInputBuilder,
+}
 impl DeleteReportPlanFluentBuilder  {
     /// Creates a new `DeleteReportPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_report_plan::DeleteReportPlan, aws_http::retry::AwsResponseRetryClassifier,>,

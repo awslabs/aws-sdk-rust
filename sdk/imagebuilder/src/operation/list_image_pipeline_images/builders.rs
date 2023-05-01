@@ -8,16 +8,17 @@ pub use crate::operation::list_image_pipeline_images::_list_image_pipeline_image
 /// <p>Returns a list of images created by the specified pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImagePipelineImagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder,
+}
 impl ListImagePipelineImagesFluentBuilder  {
     /// Creates a new `ListImagePipelineImages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_image_pipeline_images::ListImagePipelineImages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListImagePipelineImagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator {
-                            crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator {
+                                crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
     pub fn image_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.image_pipeline_arn(input.into());

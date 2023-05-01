@@ -8,16 +8,17 @@ pub use crate::operation::describe_chap_credentials::_describe_chap_credentials_
 /// <p>Returns an array of Challenge-Handshake Authentication Protocol (CHAP) credentials information for a specified iSCSI target, one for each target-initiator pair. This operation is supported in the volume and tape gateway types.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeChapCredentialsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_chap_credentials::builders::DescribeChapCredentialsInputBuilder,
+}
 impl DescribeChapCredentialsFluentBuilder  {
     /// Creates a new `DescribeChapCredentials`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_chap_credentials::DescribeChapCredentials, aws_http::retry::AwsResponseRetryClassifier,>,

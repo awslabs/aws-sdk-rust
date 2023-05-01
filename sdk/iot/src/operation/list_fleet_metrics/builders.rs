@@ -9,16 +9,17 @@ pub use crate::operation::list_fleet_metrics::_list_fleet_metrics_input::ListFle
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListFleetMetrics</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFleetMetricsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_fleet_metrics::builders::ListFleetMetricsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_fleet_metrics::builders::ListFleetMetricsInputBuilder,
+}
 impl ListFleetMetricsFluentBuilder  {
     /// Creates a new `ListFleetMetrics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_fleet_metrics::ListFleetMetrics, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListFleetMetricsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator {
-                            crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator {
+                                crate::operation::list_fleet_metrics::paginator::ListFleetMetricsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::update_label_group::_update_label_group_input::UpdateL
 /// <p> Updates the label group. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLabelGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_label_group::builders::UpdateLabelGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_label_group::builders::UpdateLabelGroupInputBuilder,
+}
 impl UpdateLabelGroupFluentBuilder  {
     /// Creates a new `UpdateLabelGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_label_group::UpdateLabelGroup, aws_http::retry::AwsResponseRetryClassifier,>,

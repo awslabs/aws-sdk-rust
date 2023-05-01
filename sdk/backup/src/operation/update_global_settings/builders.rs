@@ -8,16 +8,17 @@ pub use crate::operation::update_global_settings::_update_global_settings_input:
 /// <p>Updates whether the Amazon Web Services account is opted in to cross-account backup. Returns an error if the account is not an Organizations management account. Use the <code>DescribeGlobalSettings</code> API to determine the current settings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGlobalSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder,
+}
 impl UpdateGlobalSettingsFluentBuilder  {
     /// Creates a new `UpdateGlobalSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_global_settings::UpdateGlobalSettings, aws_http::retry::AwsResponseRetryClassifier,>,

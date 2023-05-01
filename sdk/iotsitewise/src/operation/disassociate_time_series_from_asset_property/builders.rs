@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_time_series_from_asset_property::_disasso
 /// <p>Disassociates a time series (data stream) from an asset property.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateTimeSeriesFromAssetPropertyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_time_series_from_asset_property::builders::DisassociateTimeSeriesFromAssetPropertyInputBuilder,
+}
 impl DisassociateTimeSeriesFromAssetPropertyFluentBuilder  {
     /// Creates a new `DisassociateTimeSeriesFromAssetProperty`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetProperty, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::tag_attendee::_tag_attendee_input::TagAttendeeInputBui
 /// <p>Applies the specified tags to the specified Amazon Chime SDK attendee.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagAttendeeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::tag_attendee::builders::TagAttendeeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::tag_attendee::builders::TagAttendeeInputBuilder,
+}
 impl TagAttendeeFluentBuilder  {
     /// Creates a new `TagAttendee`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::tag_attendee::TagAttendee, aws_http::retry::AwsResponseRetryClassifier,>,

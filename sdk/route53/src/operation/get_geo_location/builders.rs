@@ -15,16 +15,17 @@ pub use crate::operation::get_geo_location::_get_geo_location_input::GetGeoLocat
 /// <p> <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision code</i> </code> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetGeoLocationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_geo_location::builders::GetGeoLocationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_geo_location::builders::GetGeoLocationInputBuilder,
+}
 impl GetGeoLocationFluentBuilder  {
     /// Creates a new `GetGeoLocation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_geo_location::GetGeoLocation, aws_http::retry::AwsResponseRetryClassifier,>,

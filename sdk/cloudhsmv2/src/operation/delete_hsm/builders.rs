@@ -8,16 +8,17 @@ pub use crate::operation::delete_hsm::_delete_hsm_input::DeleteHsmInputBuilder;
 /// <p>Deletes the specified HSM. To specify an HSM, you can use its identifier (ID), the IP address of the HSM's elastic network interface (ENI), or the ID of the HSM's ENI. You need to specify only one of these values. To find these values, use <code>DescribeClusters</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteHsmFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_hsm::builders::DeleteHsmInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_hsm::builders::DeleteHsmInputBuilder,
+}
 impl DeleteHsmFluentBuilder  {
     /// Creates a new `DeleteHsm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_hsm::DeleteHsm, aws_http::retry::AwsResponseRetryClassifier,>,

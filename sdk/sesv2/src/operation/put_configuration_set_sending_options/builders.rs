@@ -8,16 +8,17 @@ pub use crate::operation::put_configuration_set_sending_options::_put_configurat
 /// <p>Enable or disable email sending for messages that use a particular configuration set in a specific Amazon Web Services Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutConfigurationSetSendingOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_configuration_set_sending_options::builders::PutConfigurationSetSendingOptionsInputBuilder,
+}
 impl PutConfigurationSetSendingOptionsFluentBuilder  {
     /// Creates a new `PutConfigurationSetSendingOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptions, aws_http::retry::AwsResponseRetryClassifier,>,

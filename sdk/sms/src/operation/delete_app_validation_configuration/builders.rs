@@ -8,16 +8,17 @@ pub use crate::operation::delete_app_validation_configuration::_delete_app_valid
 /// <p>Deletes the validation configuration for the specified application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAppValidationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_app_validation_configuration::builders::DeleteAppValidationConfigurationInputBuilder,
+}
 impl DeleteAppValidationConfigurationFluentBuilder  {
     /// Creates a new `DeleteAppValidationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_app_validation_configuration::DeleteAppValidationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

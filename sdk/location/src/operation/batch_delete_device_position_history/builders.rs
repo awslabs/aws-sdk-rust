@@ -8,16 +8,17 @@ pub use crate::operation::batch_delete_device_position_history::_batch_delete_de
 /// <p>Deletes the position history of one or more devices from a tracker resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryInputBuilder,
+}
 impl BatchDeleteDevicePositionHistoryFluentBuilder  {
     /// Creates a new `BatchDeleteDevicePositionHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistory, aws_http::retry::AwsResponseRetryClassifier,>,

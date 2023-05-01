@@ -8,16 +8,17 @@ pub use crate::operation::describe_flow_execution_records::_describe_flow_execut
 /// <p> Fetches the execution history of the flow. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFlowExecutionRecordsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_flow_execution_records::builders::DescribeFlowExecutionRecordsInputBuilder,
+}
 impl DescribeFlowExecutionRecordsFluentBuilder  {
     /// Creates a new `DescribeFlowExecutionRecords`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecords, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeFlowExecutionRecordsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_flow_execution_records::paginator::DescribeFlowExecutionRecordsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_flow_execution_records::paginator::DescribeFlowExecutionRecordsPaginator {
-                            crate::operation::describe_flow_execution_records::paginator::DescribeFlowExecutionRecordsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_flow_execution_records::paginator::DescribeFlowExecutionRecordsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_flow_execution_records::paginator::DescribeFlowExecutionRecordsPaginator {
+                                crate::operation::describe_flow_execution_records::paginator::DescribeFlowExecutionRecordsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.flow_name(input.into());

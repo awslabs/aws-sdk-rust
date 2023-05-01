@@ -8,16 +8,17 @@ pub use crate::operation::update_app_image_config::_update_app_image_config_inpu
 /// <p>Updates the properties of an AppImageConfig.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAppImageConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_app_image_config::builders::UpdateAppImageConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_app_image_config::builders::UpdateAppImageConfigInputBuilder,
+}
 impl UpdateAppImageConfigFluentBuilder  {
     /// Creates a new `UpdateAppImageConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_app_image_config::UpdateAppImageConfig, aws_http::retry::AwsResponseRetryClassifier,>,

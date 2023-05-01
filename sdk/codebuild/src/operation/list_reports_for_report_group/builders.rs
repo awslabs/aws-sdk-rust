@@ -8,16 +8,17 @@ pub use crate::operation::list_reports_for_report_group::_list_reports_for_repor
 /// <p> Returns a list of ARNs for the reports that belong to a <code>ReportGroup</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReportsForReportGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_reports_for_report_group::builders::ListReportsForReportGroupInputBuilder,
+}
 impl ListReportsForReportGroupFluentBuilder  {
     /// Creates a new `ListReportsForReportGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_reports_for_report_group::ListReportsForReportGroup, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListReportsForReportGroupFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator {
-                            crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator {
+                                crate::operation::list_reports_for_report_group::paginator::ListReportsForReportGroupPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The ARN of the report group for which you want to return report ARNs. </p>
     pub fn report_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.report_group_arn(input.into());

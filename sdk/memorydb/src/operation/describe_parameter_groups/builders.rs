@@ -8,16 +8,17 @@ pub use crate::operation::describe_parameter_groups::_describe_parameter_groups_
 /// <p>Returns a list of parameter group descriptions. If a parameter group name is specified, the list contains only the descriptions for that group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeParameterGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_parameter_groups::builders::DescribeParameterGroupsInputBuilder,
+}
 impl DescribeParameterGroupsFluentBuilder  {
     /// Creates a new `DescribeParameterGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_parameter_groups::DescribeParameterGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeParameterGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_parameter_groups::paginator::DescribeParameterGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_parameter_groups::paginator::DescribeParameterGroupsPaginator {
-                            crate::operation::describe_parameter_groups::paginator::DescribeParameterGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_parameter_groups::paginator::DescribeParameterGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_parameter_groups::paginator::DescribeParameterGroupsPaginator {
+                                crate::operation::describe_parameter_groups::paginator::DescribeParameterGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of a specific parameter group to return details for.</p>
     pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());

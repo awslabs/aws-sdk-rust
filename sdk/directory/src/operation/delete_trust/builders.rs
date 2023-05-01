@@ -8,16 +8,17 @@ pub use crate::operation::delete_trust::_delete_trust_input::DeleteTrustInputBui
 /// <p>Deletes an existing trust relationship between your Managed Microsoft AD directory and an external domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTrustFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_trust::builders::DeleteTrustInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_trust::builders::DeleteTrustInputBuilder,
+}
 impl DeleteTrustFluentBuilder  {
     /// Creates a new `DeleteTrust`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_trust::DeleteTrust, aws_http::retry::AwsResponseRetryClassifier,>,

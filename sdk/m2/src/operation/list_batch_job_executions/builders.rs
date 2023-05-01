@@ -8,16 +8,17 @@ pub use crate::operation::list_batch_job_executions::_list_batch_job_executions_
 /// <p>Lists historical, current, and scheduled batch job executions for a specific application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBatchJobExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder,
+}
 impl ListBatchJobExecutionsFluentBuilder  {
     /// Creates a new `ListBatchJobExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_batch_job_executions::ListBatchJobExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBatchJobExecutionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator {
-                            crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator {
+                                crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

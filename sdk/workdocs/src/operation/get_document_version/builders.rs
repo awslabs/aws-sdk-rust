@@ -8,16 +8,17 @@ pub use crate::operation::get_document_version::_get_document_version_input::Get
 /// <p>Retrieves version metadata for the specified document.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDocumentVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_document_version::builders::GetDocumentVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_document_version::builders::GetDocumentVersionInputBuilder,
+}
 impl GetDocumentVersionFluentBuilder  {
     /// Creates a new `GetDocumentVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_document_version::GetDocumentVersion, aws_http::retry::AwsResponseRetryClassifier,>,

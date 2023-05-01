@@ -10,16 +10,17 @@ pub use crate::operation::list_signing_certificates::_list_signing_certificates_
 /// <p>If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the Amazon Web Services access key ID used to sign the request for this operation. This operation works for access keys under the Amazon Web Services account. Consequently, you can use this operation to manage Amazon Web Services account root user credentials even if the Amazon Web Services account has no associated users.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSigningCertificatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_signing_certificates::builders::ListSigningCertificatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_signing_certificates::builders::ListSigningCertificatesInputBuilder,
+}
 impl ListSigningCertificatesFluentBuilder  {
     /// Creates a new `ListSigningCertificates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_signing_certificates::ListSigningCertificates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListSigningCertificatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_signing_certificates::paginator::ListSigningCertificatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_signing_certificates::paginator::ListSigningCertificatesPaginator {
-                            crate::operation::list_signing_certificates::paginator::ListSigningCertificatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_signing_certificates::paginator::ListSigningCertificatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_signing_certificates::paginator::ListSigningCertificatesPaginator {
+                                crate::operation::list_signing_certificates::paginator::ListSigningCertificatesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the IAM user whose signing certificates you want to examine.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {

@@ -8,16 +8,17 @@ pub use crate::operation::remove_managed_scaling_policy::_remove_managed_scaling
 /// <p> Removes a managed scaling policy from a specified EMR cluster. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveManagedScalingPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyInputBuilder,
+}
 impl RemoveManagedScalingPolicyFluentBuilder  {
     /// Creates a new `RemoveManagedScalingPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

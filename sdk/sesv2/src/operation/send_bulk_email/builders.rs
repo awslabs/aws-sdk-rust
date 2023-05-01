@@ -8,16 +8,17 @@ pub use crate::operation::send_bulk_email::_send_bulk_email_input::SendBulkEmail
 /// <p>Composes an email message to multiple destinations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendBulkEmailFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_bulk_email::builders::SendBulkEmailInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_bulk_email::builders::SendBulkEmailInputBuilder,
+}
 impl SendBulkEmailFluentBuilder  {
     /// Creates a new `SendBulkEmail`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_bulk_email::SendBulkEmail, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::update_schedule::_update_schedule_input::UpdateSchedul
 /// <p> Before calling this operation, we recommend that you call the <code>GetSchedule</code> API operation and make a note of all optional parameters for your <code>UpdateSchedule</code> call. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_schedule::builders::UpdateScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_schedule::builders::UpdateScheduleInputBuilder,
+}
 impl UpdateScheduleFluentBuilder  {
     /// Creates a new `UpdateSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_schedule::UpdateSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

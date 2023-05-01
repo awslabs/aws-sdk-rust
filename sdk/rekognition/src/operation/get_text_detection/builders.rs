@@ -12,16 +12,17 @@ pub use crate::operation::get_text_detection::_get_text_detection_input::GetText
 /// <p>Use MaxResults parameter to limit the number of text detections returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetTextDetection</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetTextDetection</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTextDetectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_text_detection::builders::GetTextDetectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_text_detection::builders::GetTextDetectionInputBuilder,
+}
 impl GetTextDetectionFluentBuilder  {
     /// Creates a new `GetTextDetection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_text_detection::GetTextDetection, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -52,11 +53,11 @@ impl GetTextDetectionFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_text_detection::paginator::GetTextDetectionPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_text_detection::paginator::GetTextDetectionPaginator {
-                            crate::operation::get_text_detection::paginator::GetTextDetectionPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_text_detection::paginator::GetTextDetectionPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_text_detection::paginator::GetTextDetectionPaginator {
+                                crate::operation::get_text_detection::paginator::GetTextDetectionPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to <code>StartTextDetection</code>.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());

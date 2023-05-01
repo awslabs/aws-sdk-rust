@@ -8,16 +8,17 @@ pub use crate::operation::put_recommendation_feedback::_put_recommendation_feedb
 /// <p>Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is called again with different reactions the previous feedback is overwritten.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutRecommendationFeedbackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_recommendation_feedback::builders::PutRecommendationFeedbackInputBuilder,
+}
 impl PutRecommendationFeedbackFluentBuilder  {
     /// Creates a new `PutRecommendationFeedback`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_recommendation_feedback::PutRecommendationFeedback, aws_http::retry::AwsResponseRetryClassifier,>,

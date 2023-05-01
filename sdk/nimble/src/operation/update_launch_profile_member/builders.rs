@@ -8,16 +8,17 @@ pub use crate::operation::update_launch_profile_member::_update_launch_profile_m
 /// <p>Update a user persona in launch profile membership.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLaunchProfileMemberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_launch_profile_member::builders::UpdateLaunchProfileMemberInputBuilder,
+}
 impl UpdateLaunchProfileMemberFluentBuilder  {
     /// Creates a new `UpdateLaunchProfileMember`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_launch_profile_member::UpdateLaunchProfileMember, aws_http::retry::AwsResponseRetryClassifier,>,

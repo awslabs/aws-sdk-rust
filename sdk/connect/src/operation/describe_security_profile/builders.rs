@@ -9,16 +9,17 @@ pub use crate::operation::describe_security_profile::_describe_security_profile_
 /// <p>Gets basic information about the security profle.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSecurityProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder,
+}
 impl DescribeSecurityProfileFluentBuilder  {
     /// Creates a new `DescribeSecurityProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_security_profile::DescribeSecurityProfile, aws_http::retry::AwsResponseRetryClassifier,>,

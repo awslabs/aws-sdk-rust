@@ -10,16 +10,17 @@ pub use crate::operation::create_evaluation::_create_evaluation_input::CreateEva
 /// <p>You can use the <code>GetEvaluation</code> operation to check progress of the evaluation during the creation operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEvaluationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_evaluation::builders::CreateEvaluationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_evaluation::builders::CreateEvaluationInputBuilder,
+}
 impl CreateEvaluationFluentBuilder  {
     /// Creates a new `CreateEvaluation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_evaluation::CreateEvaluation, aws_http::retry::AwsResponseRetryClassifier,>,

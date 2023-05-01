@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_link::_disassociate_link_input::Disassoci
 /// <p>Disassociates an existing device from a link. You must first disassociate any customer gateways that are associated with the link.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateLinkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_link::builders::DisassociateLinkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_link::builders::DisassociateLinkInputBuilder,
+}
 impl DisassociateLinkFluentBuilder  {
     /// Creates a new `DisassociateLink`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_link::DisassociateLink, aws_http::retry::AwsResponseRetryClassifier,>,

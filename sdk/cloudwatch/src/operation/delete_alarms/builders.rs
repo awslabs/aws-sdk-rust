@@ -13,16 +13,17 @@ pub use crate::operation::delete_alarms::_delete_alarms_input::DeleteAlarmsInput
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAlarmsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_alarms::builders::DeleteAlarmsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_alarms::builders::DeleteAlarmsInputBuilder,
+}
 impl DeleteAlarmsFluentBuilder  {
     /// Creates a new `DeleteAlarms`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_alarms::DeleteAlarms, aws_http::retry::AwsResponseRetryClassifier,>,

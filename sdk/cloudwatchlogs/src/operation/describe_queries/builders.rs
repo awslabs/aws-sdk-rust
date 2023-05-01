@@ -8,16 +8,17 @@ pub use crate::operation::describe_queries::_describe_queries_input::DescribeQue
 /// <p>Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or have been run recently in this account. You can request all queries or limit it to queries of a specific log group or queries with a certain status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeQueriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_queries::builders::DescribeQueriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_queries::builders::DescribeQueriesInputBuilder,
+}
 impl DescribeQueriesFluentBuilder  {
     /// Creates a new `DescribeQueries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_queries::DescribeQueries, aws_http::retry::AwsResponseRetryClassifier,>,

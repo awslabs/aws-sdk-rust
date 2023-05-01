@@ -8,16 +8,17 @@ pub use crate::operation::cancel_change_set::_cancel_change_set_input::CancelCha
 /// <p>Used to cancel an open change request. Must be sent before the status of the request changes to <code>APPLYING</code>, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelChangeSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_change_set::builders::CancelChangeSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_change_set::builders::CancelChangeSetInputBuilder,
+}
 impl CancelChangeSetFluentBuilder  {
     /// Creates a new `CancelChangeSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_change_set::CancelChangeSet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_trial_component::_update_trial_component_input:
 /// <p>Updates one or more properties of a trial component.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTrialComponentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_trial_component::builders::UpdateTrialComponentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_trial_component::builders::UpdateTrialComponentInputBuilder,
+}
 impl UpdateTrialComponentFluentBuilder  {
     /// Creates a new `UpdateTrialComponent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_trial_component::UpdateTrialComponent, aws_http::retry::AwsResponseRetryClassifier,>,

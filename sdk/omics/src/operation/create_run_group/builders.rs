@@ -8,16 +8,17 @@ pub use crate::operation::create_run_group::_create_run_group_input::CreateRunGr
 /// <p>Creates a run group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRunGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_run_group::builders::CreateRunGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_run_group::builders::CreateRunGroupInputBuilder,
+}
 impl CreateRunGroupFluentBuilder  {
     /// Creates a new `CreateRunGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_run_group::CreateRunGroup, aws_http::retry::AwsResponseRetryClassifier,>,

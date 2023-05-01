@@ -8,16 +8,17 @@ pub use crate::operation::delete_replication_configuration::_delete_replication_
 /// <p>Deletes an existing replication configuration. To delete a replication configuration, you must make the request from the Amazon Web Services Region in which the destination file system is located. Deleting a replication configuration ends the replication process. After a replication configuration is deleted, the destination file system is no longer read-only. You can write to the destination file system after its status becomes <code>Writeable</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteReplicationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_replication_configuration::builders::DeleteReplicationConfigurationInputBuilder,
+}
 impl DeleteReplicationConfigurationFluentBuilder  {
     /// Creates a new `DeleteReplicationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_replication_configuration::DeleteReplicationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

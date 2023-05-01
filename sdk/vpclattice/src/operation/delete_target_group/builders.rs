@@ -8,16 +8,17 @@ pub use crate::operation::delete_target_group::_delete_target_group_input::Delet
 /// <p>Deletes a target group. You can't delete a target group if it is used in a listener rule or if the target group creation is in progress.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTargetGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_target_group::builders::DeleteTargetGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_target_group::builders::DeleteTargetGroupInputBuilder,
+}
 impl DeleteTargetGroupFluentBuilder  {
     /// Creates a new `DeleteTargetGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_target_group::DeleteTargetGroup, aws_http::retry::AwsResponseRetryClassifier,>,

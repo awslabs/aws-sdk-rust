@@ -8,16 +8,17 @@ pub use crate::operation::delete_form::_delete_form_input::DeleteFormInputBuilde
 /// <p>Deletes a form from an Amplify app.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFormFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_form::builders::DeleteFormInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_form::builders::DeleteFormInputBuilder,
+}
 impl DeleteFormFluentBuilder  {
     /// Creates a new `DeleteForm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_form::DeleteForm, aws_http::retry::AwsResponseRetryClassifier,>,

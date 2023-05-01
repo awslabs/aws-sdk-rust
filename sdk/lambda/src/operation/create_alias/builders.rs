@@ -9,16 +9,17 @@ pub use crate::operation::create_alias::_create_alias_input::CreateAliasInputBui
 /// <p>You can also map an alias to split invocation requests between two versions. Use the <code>RoutingConfig</code> parameter to specify a second version and the percentage of invocation requests that it receives.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAliasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_alias::builders::CreateAliasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_alias::builders::CreateAliasInputBuilder,
+}
 impl CreateAliasFluentBuilder  {
     /// Creates a new `CreateAlias`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_alias::CreateAlias, aws_http::retry::AwsResponseRetryClassifier,>,

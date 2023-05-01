@@ -8,16 +8,17 @@ pub use crate::operation::delete_backup_vault_access_policy::_delete_backup_vaul
 /// <p>Deletes the policy document that manages permissions on a backup vault.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBackupVaultAccessPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_backup_vault_access_policy::builders::DeleteBackupVaultAccessPolicyInputBuilder,
+}
 impl DeleteBackupVaultAccessPolicyFluentBuilder  {
     /// Creates a new `DeleteBackupVaultAccessPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_backup_vault_access_policy::DeleteBackupVaultAccessPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

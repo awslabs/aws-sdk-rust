@@ -8,16 +8,17 @@ pub use crate::operation::get_streaming_distribution_config::_get_streaming_dist
 /// <p>Get the configuration information about a streaming distribution.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetStreamingDistributionConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_streaming_distribution_config::builders::GetStreamingDistributionConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_streaming_distribution_config::builders::GetStreamingDistributionConfigInputBuilder,
+}
 impl GetStreamingDistributionConfigFluentBuilder  {
     /// Creates a new `GetStreamingDistributionConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfig, aws_http::retry::AwsResponseRetryClassifier,>,

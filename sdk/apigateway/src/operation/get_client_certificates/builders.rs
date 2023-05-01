@@ -8,16 +8,17 @@ pub use crate::operation::get_client_certificates::_get_client_certificates_inpu
 /// <p>Gets a collection of ClientCertificate resources.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetClientCertificatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_client_certificates::builders::GetClientCertificatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_client_certificates::builders::GetClientCertificatesInputBuilder,
+}
 impl GetClientCertificatesFluentBuilder  {
     /// Creates a new `GetClientCertificates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_client_certificates::GetClientCertificates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetClientCertificatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_client_certificates::paginator::GetClientCertificatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_client_certificates::paginator::GetClientCertificatesPaginator {
-                            crate::operation::get_client_certificates::paginator::GetClientCertificatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_client_certificates::paginator::GetClientCertificatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_client_certificates::paginator::GetClientCertificatesPaginator {
+                                crate::operation::get_client_certificates::paginator::GetClientCertificatesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.position(input.into());

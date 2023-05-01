@@ -10,16 +10,17 @@ pub use crate::operation::describe_stack_resource_drifts::_describe_stack_resour
 /// <p>Use <code>DetectStackResourceDrift</code> to detect drift on individual resources, or <code>DetectStackDrift</code> to detect drift on all supported resources for a given stack.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStackResourceDriftsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_stack_resource_drifts::builders::DescribeStackResourceDriftsInputBuilder,
+}
 impl DescribeStackResourceDriftsFluentBuilder  {
     /// Creates a new `DescribeStackResourceDrifts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_stack_resource_drifts::DescribeStackResourceDrifts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeStackResourceDriftsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator {
-                            crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator {
+                                crate::operation::describe_stack_resource_drifts::paginator::DescribeStackResourceDriftsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the stack for which you want drift information.</p>
     pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());

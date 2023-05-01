@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_routing_profile_queues::_disassociate_rou
 /// <p>Disassociates a set of queues from a routing profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateRoutingProfileQueuesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_routing_profile_queues::builders::DisassociateRoutingProfileQueuesInputBuilder,
+}
 impl DisassociateRoutingProfileQueuesFluentBuilder  {
     /// Creates a new `DisassociateRoutingProfileQueues`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_routing_profile_queues::DisassociateRoutingProfileQueues, aws_http::retry::AwsResponseRetryClassifier,>,

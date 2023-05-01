@@ -11,16 +11,17 @@ pub use crate::operation::delete_robot::_delete_robot_input::DeleteRobotInputBui
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRobotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_robot::builders::DeleteRobotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_robot::builders::DeleteRobotInputBuilder,
+}
 impl DeleteRobotFluentBuilder  {
     /// Creates a new `DeleteRobot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_robot::DeleteRobot, aws_http::retry::AwsResponseRetryClassifier,>,

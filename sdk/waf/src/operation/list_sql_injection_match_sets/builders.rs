@@ -12,16 +12,17 @@ pub use crate::operation::list_sql_injection_match_sets::_list_sql_injection_mat
 /// <p>Returns an array of <code>SqlInjectionMatchSet</code> objects.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSqlInjectionMatchSetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_sql_injection_match_sets::builders::ListSqlInjectionMatchSetsInputBuilder,
+}
 impl ListSqlInjectionMatchSetsFluentBuilder  {
     /// Creates a new `ListSqlInjectionMatchSets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_sql_injection_match_sets::ListSqlInjectionMatchSets, aws_http::retry::AwsResponseRetryClassifier,>,

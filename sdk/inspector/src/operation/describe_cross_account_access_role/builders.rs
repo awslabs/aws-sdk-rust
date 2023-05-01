@@ -8,16 +8,17 @@ pub use crate::operation::describe_cross_account_access_role::_describe_cross_ac
 /// <p>Describes the IAM role that enables Amazon Inspector to access your AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCrossAccountAccessRoleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cross_account_access_role::builders::DescribeCrossAccountAccessRoleInputBuilder,
+}
 impl DescribeCrossAccountAccessRoleFluentBuilder  {
     /// Creates a new `DescribeCrossAccountAccessRole`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cross_account_access_role::DescribeCrossAccountAccessRole, aws_http::retry::AwsResponseRetryClassifier,>,

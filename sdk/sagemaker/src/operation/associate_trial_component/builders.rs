@@ -8,16 +8,17 @@ pub use crate::operation::associate_trial_component::_associate_trial_component_
 /// <p>Associates a trial component with a trial. A trial component can be associated with multiple trials. To disassociate a trial component from a trial, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html">DisassociateTrialComponent</a> API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateTrialComponentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_trial_component::builders::AssociateTrialComponentInputBuilder,
+}
 impl AssociateTrialComponentFluentBuilder  {
     /// Creates a new `AssociateTrialComponent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_trial_component::AssociateTrialComponent, aws_http::retry::AwsResponseRetryClassifier,>,

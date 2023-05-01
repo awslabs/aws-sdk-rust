@@ -9,16 +9,17 @@ pub use crate::operation::stop_canary::_stop_canary_input::StopCanaryInputBuilde
 /// <p>You can use <code>StartCanary</code> to start it running again with the canary’s current schedule at any point in the future. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopCanaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_canary::builders::StopCanaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_canary::builders::StopCanaryInputBuilder,
+}
 impl StopCanaryFluentBuilder  {
     /// Creates a new `StopCanary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_canary::StopCanary, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_sms_template::_delete_sms_template_input::Delet
 /// <p>Deletes a message template for messages that were sent through the SMS channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSmsTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_sms_template::builders::DeleteSmsTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_sms_template::builders::DeleteSmsTemplateInputBuilder,
+}
 impl DeleteSmsTemplateFluentBuilder  {
     /// Creates a new `DeleteSmsTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_sms_template::DeleteSmsTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

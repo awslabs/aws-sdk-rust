@@ -8,16 +8,17 @@ pub use crate::operation::update_default_mail_domain::_update_default_mail_domai
 /// <p>Updates the default mail domain for an organization. The default mail domain is used by the WorkMail AWS Console to suggest an email address when enabling a mail user. You can only have one default domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDefaultMailDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_default_mail_domain::builders::UpdateDefaultMailDomainInputBuilder,
+}
 impl UpdateDefaultMailDomainFluentBuilder  {
     /// Creates a new `UpdateDefaultMailDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_default_mail_domain::UpdateDefaultMailDomain, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_vtl_device_type::_update_vtl_device_type_input:
 /// <p>Updates the type of medium changer in a tape gateway. When you activate a tape gateway, you select a medium changer type for the tape gateway. This operation enables you to select a different type of medium changer after a tape gateway is activated. This operation is only supported in the tape gateway type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateVTLDeviceTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_vtl_device_type::builders::UpdateVtlDeviceTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_vtl_device_type::builders::UpdateVtlDeviceTypeInputBuilder,
+}
 impl UpdateVTLDeviceTypeFluentBuilder  {
     /// Creates a new `UpdateVTLDeviceType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_vtl_device_type::UpdateVTLDeviceType, aws_http::retry::AwsResponseRetryClassifier,>,

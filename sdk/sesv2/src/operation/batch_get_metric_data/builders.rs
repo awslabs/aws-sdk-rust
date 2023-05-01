@@ -9,16 +9,17 @@ pub use crate::operation::batch_get_metric_data::_batch_get_metric_data_input::B
 /// <p>You can execute this operation no more than 16 times per second, and with at most 160 queries from the batches per second (cumulative).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetMetricDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_metric_data::builders::BatchGetMetricDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_metric_data::builders::BatchGetMetricDataInputBuilder,
+}
 impl BatchGetMetricDataFluentBuilder  {
     /// Creates a new `BatchGetMetricData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_metric_data::BatchGetMetricData, aws_http::retry::AwsResponseRetryClassifier,>,

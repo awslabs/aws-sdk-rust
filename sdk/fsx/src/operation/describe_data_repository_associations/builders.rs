@@ -10,16 +10,17 @@ pub use crate::operation::describe_data_repository_associations::_describe_data_
 /// <p>When retrieving all data repository associations, you can paginate the response by using the optional <code>MaxResults</code> parameter to limit the number of data repository associations returned in a response. If more data repository associations remain, a <code>NextToken</code> value is returned in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDataRepositoryAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_data_repository_associations::builders::DescribeDataRepositoryAssociationsInputBuilder,
+}
 impl DescribeDataRepositoryAssociationsFluentBuilder  {
     /// Creates a new `DescribeDataRepositoryAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeDataRepositoryAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator {
-                            crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator {
+                                crate::operation::describe_data_repository_associations::paginator::DescribeDataRepositoryAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `AssociationIds`.
     ///
     /// To override the contents of this collection use [`set_association_ids`](Self::set_association_ids).

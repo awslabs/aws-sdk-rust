@@ -8,16 +8,17 @@ pub use crate::operation::create_direct_connect_gateway::_create_direct_connect_
 /// <p>Creates a Direct Connect gateway, which is an intermediate object that enables you to connect a set of virtual interfaces and virtual private gateways. A Direct Connect gateway is global and visible in any Amazon Web Services Region after it is created. The virtual interfaces and virtual private gateways that are connected through a Direct Connect gateway can be in different Amazon Web Services Regions. This enables you to connect to a VPC in any Region, regardless of the Region in which the virtual interfaces are located, and pass traffic between them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDirectConnectGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_direct_connect_gateway::builders::CreateDirectConnectGatewayInputBuilder,
+}
 impl CreateDirectConnectGatewayFluentBuilder  {
     /// Creates a new `CreateDirectConnectGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_direct_connect_gateway::CreateDirectConnectGateway, aws_http::retry::AwsResponseRetryClassifier,>,

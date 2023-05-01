@@ -8,16 +8,17 @@ pub use crate::operation::delete_user_endpoints::_delete_user_endpoints_input::D
 /// <p>Deletes all the endpoints that are associated with a specific user ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteUserEndpointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_user_endpoints::builders::DeleteUserEndpointsInputBuilder,
+}
 impl DeleteUserEndpointsFluentBuilder  {
     /// Creates a new `DeleteUserEndpoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_user_endpoints::DeleteUserEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_vpc::_delete_vpc_input::DeleteVpcInputBuilder;
 /// <p>Deletes the specified VPC. You must detach or delete all gateways and resources that are associated with the VPC before you can delete it. For example, you must terminate all instances running in the VPC, delete all security groups associated with the VPC (except the default one), delete all route tables associated with the VPC (except the default one), and so on.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpcFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vpc::builders::DeleteVpcInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vpc::builders::DeleteVpcInputBuilder,
+}
 impl DeleteVpcFluentBuilder  {
     /// Creates a new `DeleteVpc`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vpc::DeleteVpc, aws_http::retry::AwsResponseRetryClassifier,>,

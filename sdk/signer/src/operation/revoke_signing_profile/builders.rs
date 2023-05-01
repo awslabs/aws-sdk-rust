@@ -8,16 +8,17 @@ pub use crate::operation::revoke_signing_profile::_revoke_signing_profile_input:
 /// <p>Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing profile after an effective start date are no longer valid.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RevokeSigningProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::revoke_signing_profile::builders::RevokeSigningProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::revoke_signing_profile::builders::RevokeSigningProfileInputBuilder,
+}
 impl RevokeSigningProfileFluentBuilder  {
     /// Creates a new `RevokeSigningProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::revoke_signing_profile::RevokeSigningProfile, aws_http::retry::AwsResponseRetryClassifier,>,

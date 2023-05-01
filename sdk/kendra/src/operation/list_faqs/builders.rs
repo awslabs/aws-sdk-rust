@@ -8,16 +8,17 @@ pub use crate::operation::list_faqs::_list_faqs_input::ListFaqsInputBuilder;
 /// <p>Gets a list of FAQ lists associated with an index.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFaqsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_faqs::builders::ListFaqsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_faqs::builders::ListFaqsInputBuilder,
+}
 impl ListFaqsFluentBuilder  {
     /// Creates a new `ListFaqs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_faqs::ListFaqs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFaqsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_faqs::paginator::ListFaqsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_faqs::paginator::ListFaqsPaginator {
-                            crate::operation::list_faqs::paginator::ListFaqsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_faqs::paginator::ListFaqsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_faqs::paginator::ListFaqsPaginator {
+                                crate::operation::list_faqs::paginator::ListFaqsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The index that contains the FAQ lists.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());

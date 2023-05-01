@@ -21,16 +21,17 @@ pub use crate::operation::start_model_packaging_job::_start_model_packaging_job_
 /// <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartModelPackagingJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_model_packaging_job::builders::StartModelPackagingJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_model_packaging_job::builders::StartModelPackagingJobInputBuilder,
+}
 impl StartModelPackagingJobFluentBuilder  {
     /// Creates a new `StartModelPackagingJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_model_packaging_job::StartModelPackagingJob, aws_http::retry::AwsResponseRetryClassifier,>,

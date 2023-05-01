@@ -8,16 +8,17 @@ pub use crate::operation::create_custom_metadata::_create_custom_metadata_input:
 /// <p>Adds one or more custom properties to the specified resource (a folder, document, or version).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCustomMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_custom_metadata::builders::CreateCustomMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_custom_metadata::builders::CreateCustomMetadataInputBuilder,
+}
 impl CreateCustomMetadataFluentBuilder  {
     /// Creates a new `CreateCustomMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_custom_metadata::CreateCustomMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

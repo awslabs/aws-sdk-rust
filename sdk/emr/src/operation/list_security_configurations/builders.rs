@@ -8,16 +8,17 @@ pub use crate::operation::list_security_configurations::_list_security_configura
 /// <p>Lists all the security configurations visible to this account, providing their creation dates and times, and their names. This call returns a maximum of 50 clusters per call, but returns a marker to track the paging of the cluster list across multiple ListSecurityConfigurations calls.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSecurityConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_security_configurations::builders::ListSecurityConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_security_configurations::builders::ListSecurityConfigurationsInputBuilder,
+}
 impl ListSecurityConfigurationsFluentBuilder  {
     /// Creates a new `ListSecurityConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_security_configurations::ListSecurityConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSecurityConfigurationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_security_configurations::paginator::ListSecurityConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_security_configurations::paginator::ListSecurityConfigurationsPaginator {
-                            crate::operation::list_security_configurations::paginator::ListSecurityConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_security_configurations::paginator::ListSecurityConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_security_configurations::paginator::ListSecurityConfigurationsPaginator {
+                                crate::operation::list_security_configurations::paginator::ListSecurityConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());

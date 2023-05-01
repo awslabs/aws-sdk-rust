@@ -13,16 +13,17 @@ pub use crate::operation::query_forecast::_query_forecast_input::QueryForecastIn
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct QueryForecastFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::query_forecast::builders::QueryForecastInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::query_forecast::builders::QueryForecastInputBuilder,
+}
 impl QueryForecastFluentBuilder  {
     /// Creates a new `QueryForecast`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::query_forecast::QueryForecast, aws_http::retry::AwsResponseRetryClassifier,>,

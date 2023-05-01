@@ -12,16 +12,17 @@ pub use crate::operation::list_retained_messages::_list_retained_messages_input:
 /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT Core pricing - Messaging</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRetainedMessagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_retained_messages::builders::ListRetainedMessagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_retained_messages::builders::ListRetainedMessagesInputBuilder,
+}
 impl ListRetainedMessagesFluentBuilder  {
     /// Creates a new `ListRetainedMessages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_retained_messages::ListRetainedMessages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -52,11 +53,11 @@ impl ListRetainedMessagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_retained_messages::paginator::ListRetainedMessagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_retained_messages::paginator::ListRetainedMessagesPaginator {
-                            crate::operation::list_retained_messages::paginator::ListRetainedMessagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_retained_messages::paginator::ListRetainedMessagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_retained_messages::paginator::ListRetainedMessagesPaginator {
+                                crate::operation::list_retained_messages::paginator::ListRetainedMessagesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

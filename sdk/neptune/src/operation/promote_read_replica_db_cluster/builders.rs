@@ -8,16 +8,17 @@ pub use crate::operation::promote_read_replica_db_cluster::_promote_read_replica
 /// <p>Not supported.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PromoteReadReplicaDBClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::promote_read_replica_db_cluster::builders::PromoteReadReplicaDbClusterInputBuilder,
+}
 impl PromoteReadReplicaDBClusterFluentBuilder  {
     /// Creates a new `PromoteReadReplicaDBCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBCluster, aws_http::retry::AwsResponseRetryClassifier,>,

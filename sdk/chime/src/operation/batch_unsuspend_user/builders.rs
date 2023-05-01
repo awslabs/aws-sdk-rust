@@ -9,16 +9,17 @@ pub use crate::operation::batch_unsuspend_user::_batch_unsuspend_user_input::Bat
 /// <p> Previously suspended users who are unsuspended using this action are returned to <code>Registered</code> status. Users who are not previously suspended are ignored. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchUnsuspendUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_unsuspend_user::builders::BatchUnsuspendUserInputBuilder,
+}
 impl BatchUnsuspendUserFluentBuilder  {
     /// Creates a new `BatchUnsuspendUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_unsuspend_user::BatchUnsuspendUser, aws_http::retry::AwsResponseRetryClassifier,>,

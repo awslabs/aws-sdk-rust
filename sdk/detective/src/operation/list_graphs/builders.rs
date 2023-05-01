@@ -9,16 +9,17 @@ pub use crate::operation::list_graphs::_list_graphs_input::ListGraphsInputBuilde
 /// <p>Because an account can currently only be the administrator of one behavior graph within a Region, the results always contain a single behavior graph.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGraphsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_graphs::builders::ListGraphsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_graphs::builders::ListGraphsInputBuilder,
+}
 impl ListGraphsFluentBuilder  {
     /// Creates a new `ListGraphs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_graphs::ListGraphs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListGraphsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_graphs::paginator::ListGraphsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_graphs::paginator::ListGraphsPaginator {
-                            crate::operation::list_graphs::paginator::ListGraphsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_graphs::paginator::ListGraphsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_graphs::paginator::ListGraphsPaginator {
+                                crate::operation::list_graphs::paginator::ListGraphsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

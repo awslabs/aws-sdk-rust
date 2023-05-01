@@ -14,16 +14,17 @@ pub use crate::operation::update_open_id_connect_provider_thumbprint::_update_op
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateOpenIDConnectProviderThumbprintFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIdConnectProviderThumbprintInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIdConnectProviderThumbprintInputBuilder,
+}
 impl UpdateOpenIDConnectProviderThumbprintFluentBuilder  {
     /// Creates a new `UpdateOpenIDConnectProviderThumbprint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprint, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::associate_routing_profile_queues::_associate_routing_p
 /// <p>Associates a set of queues with a routing profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateRoutingProfileQueuesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_routing_profile_queues::builders::AssociateRoutingProfileQueuesInputBuilder,
+}
 impl AssociateRoutingProfileQueuesFluentBuilder  {
     /// Creates a new `AssociateRoutingProfileQueues`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueues, aws_http::retry::AwsResponseRetryClassifier,>,

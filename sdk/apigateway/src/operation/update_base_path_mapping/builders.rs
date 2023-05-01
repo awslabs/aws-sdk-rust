@@ -8,16 +8,17 @@ pub use crate::operation::update_base_path_mapping::_update_base_path_mapping_in
 /// <p>Changes information about the BasePathMapping resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBasePathMappingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_base_path_mapping::builders::UpdateBasePathMappingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_base_path_mapping::builders::UpdateBasePathMappingInputBuilder,
+}
 impl UpdateBasePathMappingFluentBuilder  {
     /// Creates a new `UpdateBasePathMapping`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_base_path_mapping::UpdateBasePathMapping, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_business_report_schedule::_create_business_repo
 /// <p>Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBusinessReportScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleInputBuilder,
+}
 impl CreateBusinessReportScheduleFluentBuilder  {
     /// Creates a new `CreateBusinessReportSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_business_report_schedule::CreateBusinessReportSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

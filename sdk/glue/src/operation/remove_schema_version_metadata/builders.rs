@@ -8,16 +8,17 @@ pub use crate::operation::remove_schema_version_metadata::_remove_schema_version
 /// <p>Removes a key value pair from the schema version metadata for the specified schema version ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveSchemaVersionMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_schema_version_metadata::builders::RemoveSchemaVersionMetadataInputBuilder,
+}
 impl RemoveSchemaVersionMetadataFluentBuilder  {
     /// Creates a new `RemoveSchemaVersionMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_schema_version_metadata::RemoveSchemaVersionMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

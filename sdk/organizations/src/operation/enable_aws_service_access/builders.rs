@@ -12,16 +12,17 @@ pub use crate::operation::enable_aws_service_access::_enable_aws_service_access_
 /// <p>You can only call this operation from the organization's management account and only if the organization has <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all features</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableAWSServiceAccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_aws_service_access::builders::EnableAwsServiceAccessInputBuilder,
+}
 impl EnableAWSServiceAccessFluentBuilder  {
     /// Creates a new `EnableAWSServiceAccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_aws_service_access::EnableAWSServiceAccess, aws_http::retry::AwsResponseRetryClassifier,>,

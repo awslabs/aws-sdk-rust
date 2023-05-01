@@ -8,16 +8,17 @@ pub use crate::operation::build_bot_locale::_build_bot_locale_input::BuildBotLoc
 /// <p>Builds a bot, its intents, and its slot types into a specific locale. A bot can be built into multiple locales. At runtime the locale is used to choose a specific build of the bot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BuildBotLocaleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::build_bot_locale::builders::BuildBotLocaleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::build_bot_locale::builders::BuildBotLocaleInputBuilder,
+}
 impl BuildBotLocaleFluentBuilder  {
     /// Creates a new `BuildBotLocale`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::build_bot_locale::BuildBotLocale, aws_http::retry::AwsResponseRetryClassifier,>,

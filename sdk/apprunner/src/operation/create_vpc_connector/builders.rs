@@ -8,16 +8,17 @@ pub use crate::operation::create_vpc_connector::_create_vpc_connector_input::Cre
 /// <p>Create an App Runner VPC connector resource. App Runner requires this resource when you want to associate your App Runner service to a custom Amazon Virtual Private Cloud (Amazon VPC).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVpcConnectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_vpc_connector::builders::CreateVpcConnectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_vpc_connector::builders::CreateVpcConnectorInputBuilder,
+}
 impl CreateVpcConnectorFluentBuilder  {
     /// Creates a new `CreateVpcConnector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_vpc_connector::CreateVpcConnector, aws_http::retry::AwsResponseRetryClassifier,>,

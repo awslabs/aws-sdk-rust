@@ -10,16 +10,17 @@ pub use crate::operation::export_ec2_instance_recommendations::_export_ec2_insta
 /// <p>You can have only one Amazon EC2 instance export job in progress per Amazon Web Services Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportEC2InstanceRecommendationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_ec2_instance_recommendations::builders::ExportEc2InstanceRecommendationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_ec2_instance_recommendations::builders::ExportEc2InstanceRecommendationsInputBuilder,
+}
 impl ExportEC2InstanceRecommendationsFluentBuilder  {
     /// Creates a new `ExportEC2InstanceRecommendations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_ec2_instance_recommendations::ExportEC2InstanceRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_snomedct_inference_job::_describe_snomedct_in
 /// <p> Gets the properties associated with an InferSNOMEDCT job. Use this operation to get the status of an inference job. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSNOMEDCTInferenceJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder,
+}
 impl DescribeSNOMEDCTInferenceJobFluentBuilder  {
     /// Creates a new `DescribeSNOMEDCTInferenceJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_snomedct_inference_job::DescribeSNOMEDCTInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,

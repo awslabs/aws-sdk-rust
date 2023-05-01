@@ -8,16 +8,17 @@ pub use crate::operation::put_room_skill_parameter::_put_room_skill_parameter_in
 /// <p>Updates room skill parameter details by room, skill, and parameter key ID. Not all skills have a room skill parameter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutRoomSkillParameterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterInputBuilder,
+}
 impl PutRoomSkillParameterFluentBuilder  {
     /// Creates a new `PutRoomSkillParameter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_room_skill_parameter::PutRoomSkillParameter, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::verify_software_token::_verify_software_token_input::V
 /// <p>Use this API to register a user's entered time-based one-time password (TOTP) code and mark the user's software token MFA status as "verified" if successful. The request takes an access token or a session string, but not both.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct VerifySoftwareTokenFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::verify_software_token::builders::VerifySoftwareTokenInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::verify_software_token::builders::VerifySoftwareTokenInputBuilder,
+}
 impl VerifySoftwareTokenFluentBuilder  {
     /// Creates a new `VerifySoftwareToken`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::verify_software_token::VerifySoftwareToken, aws_http::retry::AwsResponseRetryClassifier,>,

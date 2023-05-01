@@ -11,16 +11,17 @@ pub use crate::operation::create_certificate_authority::_create_certificate_auth
 /// <p>Amazon Web Services Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your CRLs</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCertificateAuthorityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_certificate_authority::builders::CreateCertificateAuthorityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_certificate_authority::builders::CreateCertificateAuthorityInputBuilder,
+}
 impl CreateCertificateAuthorityFluentBuilder  {
     /// Creates a new `CreateCertificateAuthority`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_certificate_authority::CreateCertificateAuthority, aws_http::retry::AwsResponseRetryClassifier,>,

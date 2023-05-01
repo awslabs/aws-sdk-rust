@@ -9,16 +9,17 @@ pub use crate::operation::describe_access::_describe_access_input::DescribeAcces
 /// <p>The response from this call returns the properties of the access that is associated with the <code>ServerId</code> value that was specified.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_access::builders::DescribeAccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_access::builders::DescribeAccessInputBuilder,
+}
 impl DescribeAccessFluentBuilder  {
     /// Creates a new `DescribeAccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_access::DescribeAccess, aws_http::retry::AwsResponseRetryClassifier,>,

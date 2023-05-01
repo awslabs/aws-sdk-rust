@@ -8,16 +8,17 @@ pub use crate::operation::modify_db_subnet_group::_modify_db_subnet_group_input:
 /// <p>Modifies an existing subnet group. subnet groups must contain at least one subnet in at least two Availability Zones in the Amazon Web Services Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDBSubnetGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupInputBuilder,
+}
 impl ModifyDBSubnetGroupFluentBuilder  {
     /// Creates a new `ModifyDBSubnetGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_db_subnet_group::ModifyDBSubnetGroup, aws_http::retry::AwsResponseRetryClassifier,>,

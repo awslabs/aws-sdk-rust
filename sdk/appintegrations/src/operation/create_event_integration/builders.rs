@@ -8,16 +8,17 @@ pub use crate::operation::create_event_integration::_create_event_integration_in
 /// <p>Creates an EventIntegration, given a specified name, description, and a reference to an Amazon EventBridge bus in your account and a partner event source that pushes events to that bus. No objects are created in the your account, only metadata that is persisted on the EventIntegration control plane.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEventIntegrationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_event_integration::builders::CreateEventIntegrationInputBuilder,
+}
 impl CreateEventIntegrationFluentBuilder  {
     /// Creates a new `CreateEventIntegration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_event_integration::CreateEventIntegration, aws_http::retry::AwsResponseRetryClassifier,>,

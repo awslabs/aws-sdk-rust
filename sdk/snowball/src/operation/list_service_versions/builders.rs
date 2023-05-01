@@ -8,16 +8,17 @@ pub use crate::operation::list_service_versions::_list_service_versions_input::L
 /// <p>Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code> object containing the supported versions for a particular service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListServiceVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_service_versions::builders::ListServiceVersionsInputBuilder,
+}
 impl ListServiceVersionsFluentBuilder  {
     /// Creates a new `ListServiceVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_service_versions::ListServiceVersions, aws_http::retry::AwsResponseRetryClassifier,>,

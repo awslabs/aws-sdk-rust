@@ -9,16 +9,17 @@ pub use crate::operation::validate_sol_network_package_content::_validate_sol_ne
 /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ValidateSolNetworkPackageContentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder,
+}
 impl ValidateSolNetworkPackageContentFluentBuilder  {
     /// Creates a new `ValidateSolNetworkPackageContent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContent, aws_http::retry::AwsResponseRetryClassifier,>,

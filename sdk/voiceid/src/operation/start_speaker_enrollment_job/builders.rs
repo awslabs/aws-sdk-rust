@@ -8,16 +8,17 @@ pub use crate::operation::start_speaker_enrollment_job::_start_speaker_enrollmen
 /// <p>Starts a new batch speaker enrollment job using specified details.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartSpeakerEnrollmentJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder,
+}
 impl StartSpeakerEnrollmentJobFluentBuilder  {
     /// Creates a new `StartSpeakerEnrollmentJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJob, aws_http::retry::AwsResponseRetryClassifier,>,

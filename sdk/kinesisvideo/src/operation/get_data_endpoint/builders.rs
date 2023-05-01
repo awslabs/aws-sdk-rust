@@ -11,16 +11,17 @@ pub use crate::operation::get_data_endpoint::_get_data_endpoint_input::GetDataEn
 /// <p>In the request, specify the stream either by <code>StreamName</code> or <code>StreamARN</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDataEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_data_endpoint::builders::GetDataEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_data_endpoint::builders::GetDataEndpointInputBuilder,
+}
 impl GetDataEndpointFluentBuilder  {
     /// Creates a new `GetDataEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_data_endpoint::GetDataEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_vod_source::_update_vod_source_input::UpdateVod
 /// <p>Updates a VOD source's configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateVodSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_vod_source::builders::UpdateVodSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_vod_source::builders::UpdateVodSourceInputBuilder,
+}
 impl UpdateVodSourceFluentBuilder  {
     /// Creates a new `UpdateVodSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_vod_source::UpdateVodSource, aws_http::retry::AwsResponseRetryClassifier,>,

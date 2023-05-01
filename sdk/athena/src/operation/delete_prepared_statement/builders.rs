@@ -8,16 +8,17 @@ pub use crate::operation::delete_prepared_statement::_delete_prepared_statement_
 /// <p>Deletes the prepared statement with the specified name from the specified workgroup.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePreparedStatementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_prepared_statement::builders::DeletePreparedStatementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_prepared_statement::builders::DeletePreparedStatementInputBuilder,
+}
 impl DeletePreparedStatementFluentBuilder  {
     /// Creates a new `DeletePreparedStatement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_prepared_statement::DeletePreparedStatement, aws_http::retry::AwsResponseRetryClassifier,>,

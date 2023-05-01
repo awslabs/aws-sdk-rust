@@ -9,16 +9,17 @@ pub use crate::operation::describe_identity_provider_configuration::_describe_id
 #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeIdentityProviderConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_identity_provider_configuration::builders::DescribeIdentityProviderConfigurationInputBuilder,
+}
 impl DescribeIdentityProviderConfigurationFluentBuilder  {
     /// Creates a new `DescribeIdentityProviderConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_identity_provider_configuration::DescribeIdentityProviderConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

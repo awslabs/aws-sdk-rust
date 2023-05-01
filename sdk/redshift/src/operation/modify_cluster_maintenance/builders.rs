@@ -8,16 +8,17 @@ pub use crate::operation::modify_cluster_maintenance::_modify_cluster_maintenanc
 /// <p>Modifies the maintenance settings of a cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyClusterMaintenanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_cluster_maintenance::builders::ModifyClusterMaintenanceInputBuilder,
+}
 impl ModifyClusterMaintenanceFluentBuilder  {
     /// Creates a new `ModifyClusterMaintenance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_cluster_maintenance::ModifyClusterMaintenance, aws_http::retry::AwsResponseRetryClassifier,>,

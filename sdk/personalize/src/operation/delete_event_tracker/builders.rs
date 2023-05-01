@@ -8,16 +8,17 @@ pub use crate::operation::delete_event_tracker::_delete_event_tracker_input::Del
 /// <p>Deletes the event tracker. Does not delete the event-interactions dataset from the associated dataset group. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEventTrackerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_event_tracker::builders::DeleteEventTrackerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_event_tracker::builders::DeleteEventTrackerInputBuilder,
+}
 impl DeleteEventTrackerFluentBuilder  {
     /// Creates a new `DeleteEventTracker`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_event_tracker::DeleteEventTracker, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_progress_update_stream::_create_progress_update
 /// <p>Creates a progress update stream which is an AWS resource used for access control as well as a namespace for migration task names that is implicitly linked to your AWS account. It must uniquely identify the migration tool as it is used for all updates made by the tool; however, it does not need to be unique for each AWS account because it is scoped to the AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProgressUpdateStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_progress_update_stream::builders::CreateProgressUpdateStreamInputBuilder,
+}
 impl CreateProgressUpdateStreamFluentBuilder  {
     /// Creates a new `CreateProgressUpdateStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_progress_update_stream::CreateProgressUpdateStream, aws_http::retry::AwsResponseRetryClassifier,>,

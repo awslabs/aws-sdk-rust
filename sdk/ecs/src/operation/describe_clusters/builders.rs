@@ -8,16 +8,17 @@ pub use crate::operation::describe_clusters::_describe_clusters_input::DescribeC
 /// <p>Describes one or more of your clusters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClustersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_clusters::builders::DescribeClustersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_clusters::builders::DescribeClustersInputBuilder,
+}
 impl DescribeClustersFluentBuilder  {
     /// Creates a new `DescribeClusters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_clusters::DescribeClusters, aws_http::retry::AwsResponseRetryClassifier,>,

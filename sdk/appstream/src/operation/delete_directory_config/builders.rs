@@ -8,16 +8,17 @@ pub use crate::operation::delete_directory_config::_delete_directory_config_inpu
 /// <p>Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required to join streaming instances to an Active Directory domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDirectoryConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_directory_config::builders::DeleteDirectoryConfigInputBuilder,
+}
 impl DeleteDirectoryConfigFluentBuilder  {
     /// Creates a new `DeleteDirectoryConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_directory_config::DeleteDirectoryConfig, aws_http::retry::AwsResponseRetryClassifier,>,

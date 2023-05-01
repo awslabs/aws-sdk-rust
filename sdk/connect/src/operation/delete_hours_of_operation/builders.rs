@@ -9,16 +9,17 @@ pub use crate::operation::delete_hours_of_operation::_delete_hours_of_operation_
 /// <p>Deletes an hours of operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteHoursOfOperationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_hours_of_operation::builders::DeleteHoursOfOperationInputBuilder,
+}
 impl DeleteHoursOfOperationFluentBuilder  {
     /// Creates a new `DeleteHoursOfOperation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_hours_of_operation::DeleteHoursOfOperation, aws_http::retry::AwsResponseRetryClassifier,>,

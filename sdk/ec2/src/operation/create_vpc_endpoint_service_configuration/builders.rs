@@ -15,16 +15,17 @@ pub use crate::operation::create_vpc_endpoint_service_configuration::_create_vpc
 /// <p>For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon Web Services PrivateLink Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVpcEndpointServiceConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_vpc_endpoint_service_configuration::builders::CreateVpcEndpointServiceConfigurationInputBuilder,
+}
 impl CreateVpcEndpointServiceConfigurationFluentBuilder  {
     /// Creates a new `CreateVpcEndpointServiceConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

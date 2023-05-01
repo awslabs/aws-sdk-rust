@@ -8,16 +8,17 @@ pub use crate::operation::delete_contact_channel::_delete_contact_channel_input:
 /// <p>To no longer receive engagements on a contact channel, you can delete the channel from a contact. Deleting the contact channel removes it from the contact's engagement plan. If you delete the only contact channel for a contact, you won't be able to engage that contact during an incident.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteContactChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_contact_channel::builders::DeleteContactChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_contact_channel::builders::DeleteContactChannelInputBuilder,
+}
 impl DeleteContactChannelFluentBuilder  {
     /// Creates a new `DeleteContactChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_contact_channel::DeleteContactChannel, aws_http::retry::AwsResponseRetryClassifier,>,

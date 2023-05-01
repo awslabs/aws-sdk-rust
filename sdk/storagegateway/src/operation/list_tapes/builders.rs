@@ -9,16 +9,17 @@ pub use crate::operation::list_tapes::_list_tapes_input::ListTapesInputBuilder;
 /// <p>This operation supports pagination. By default, the operation returns a maximum of up to 100 tapes. You can optionally specify the <code>Limit</code> parameter in the body to limit the number of tapes in the response. If the number of tapes returned in the response is truncated, the response includes a <code>Marker</code> element that you can use in your subsequent request to retrieve the next set of tapes. This operation is only supported in the tape gateway type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTapesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tapes::builders::ListTapesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tapes::builders::ListTapesInputBuilder,
+}
 impl ListTapesFluentBuilder  {
     /// Creates a new `ListTapes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tapes::ListTapes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListTapesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_tapes::paginator::ListTapesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_tapes::paginator::ListTapesPaginator {
-                            crate::operation::list_tapes::paginator::ListTapesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_tapes::paginator::ListTapesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_tapes::paginator::ListTapesPaginator {
+                                crate::operation::list_tapes::paginator::ListTapesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TapeARNs`.
     ///
     /// To override the contents of this collection use [`set_tape_ar_ns`](Self::set_tape_ar_ns).

@@ -8,16 +8,17 @@ pub use crate::operation::delete_repository::_delete_repository_input::DeleteRep
 /// <p>Deletes a repository. If the repository contains images, you must either delete all images in the repository or use the <code>force</code> option to delete the repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRepositoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder,
+}
 impl DeleteRepositoryFluentBuilder  {
     /// Creates a new `DeleteRepository`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_repository::DeleteRepository, aws_http::retry::AwsResponseRetryClassifier,>,

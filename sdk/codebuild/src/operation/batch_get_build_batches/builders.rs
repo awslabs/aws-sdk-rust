@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_build_batches::_batch_get_build_batches_inpu
 /// <p>Retrieves information about one or more batch builds.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetBuildBatchesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_build_batches::builders::BatchGetBuildBatchesInputBuilder,
+}
 impl BatchGetBuildBatchesFluentBuilder  {
     /// Creates a new `BatchGetBuildBatches`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_build_batches::BatchGetBuildBatches, aws_http::retry::AwsResponseRetryClassifier,>,

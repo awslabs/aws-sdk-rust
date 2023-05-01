@@ -8,16 +8,17 @@ pub use crate::operation::create_edge_packaging_job::_create_edge_packaging_job_
 /// <p>Starts a SageMaker Edge Manager model packaging job. Edge Manager will use the model artifacts from the Amazon Simple Storage Service bucket that you specify. After the model has been packaged, Amazon SageMaker saves the resulting artifacts to an S3 bucket that you specify.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEdgePackagingJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder,
+}
 impl CreateEdgePackagingJobFluentBuilder  {
     /// Creates a new `CreateEdgePackagingJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_edge_packaging_job::CreateEdgePackagingJob, aws_http::retry::AwsResponseRetryClassifier,>,

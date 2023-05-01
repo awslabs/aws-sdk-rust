@@ -9,16 +9,17 @@ pub use crate::operation::list_components::_list_components_input::ListComponent
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListComponentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_components::builders::ListComponentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_components::builders::ListComponentsInputBuilder,
+}
 impl ListComponentsFluentBuilder  {
     /// Creates a new `ListComponents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_components::ListComponents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListComponentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_components::paginator::ListComponentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_components::paginator::ListComponentsPaginator {
-                            crate::operation::list_components::paginator::ListComponentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_components::paginator::ListComponentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_components::paginator::ListComponentsPaginator {
+                                crate::operation::list_components::paginator::ListComponentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token that indicates the location of the next component in the array of components, after the list of components that was previously requested.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::create_storage_virtual_machine::_create_storage_virtua
 /// <p>Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file system.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStorageVirtualMachineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_storage_virtual_machine::builders::CreateStorageVirtualMachineInputBuilder,
+}
 impl CreateStorageVirtualMachineFluentBuilder  {
     /// Creates a new `CreateStorageVirtualMachine`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachine, aws_http::retry::AwsResponseRetryClassifier,>,

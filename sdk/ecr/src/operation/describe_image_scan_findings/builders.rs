@@ -8,16 +8,17 @@ pub use crate::operation::describe_image_scan_findings::_describe_image_scan_fin
 /// <p>Returns the scan findings for the specified image.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeImageScanFindingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_image_scan_findings::builders::DescribeImageScanFindingsInputBuilder,
+}
 impl DescribeImageScanFindingsFluentBuilder  {
     /// Creates a new `DescribeImageScanFindings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_image_scan_findings::DescribeImageScanFindings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeImageScanFindingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator {
-                            crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator {
+                                crate::operation::describe_image_scan_findings::paginator::DescribeImageScanFindingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repository in which to describe the image scan findings for. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());

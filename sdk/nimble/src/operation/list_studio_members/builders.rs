@@ -10,16 +10,17 @@ pub use crate::operation::list_studio_members::_list_studio_members_input::ListS
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStudioMembersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_studio_members::builders::ListStudioMembersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_studio_members::builders::ListStudioMembersInputBuilder,
+}
 impl ListStudioMembersFluentBuilder  {
     /// Creates a new `ListStudioMembers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_studio_members::ListStudioMembers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListStudioMembersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_studio_members::paginator::ListStudioMembersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_studio_members::paginator::ListStudioMembersPaginator {
-                            crate::operation::list_studio_members::paginator::ListStudioMembersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_studio_members::paginator::ListStudioMembersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_studio_members::paginator::ListStudioMembersPaginator {
+                                crate::operation::list_studio_members::paginator::ListStudioMembersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The max number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

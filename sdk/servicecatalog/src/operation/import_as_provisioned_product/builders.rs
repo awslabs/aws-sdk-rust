@@ -14,16 +14,17 @@ pub use crate::operation::import_as_provisioned_product::_import_as_provisioned_
 /// <p> The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and <code>cloudformation:DescribeStacks</code> IAM policy permissions. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportAsProvisionedProductFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_as_provisioned_product::builders::ImportAsProvisionedProductInputBuilder,
+}
 impl ImportAsProvisionedProductFluentBuilder  {
     /// Creates a new `ImportAsProvisionedProduct`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_as_provisioned_product::ImportAsProvisionedProduct, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_usage_plan_keys::_get_usage_plan_keys_input::GetUs
 /// <p>Gets all the usage plan keys representing the API keys added to a specified usage plan.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUsagePlanKeysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_usage_plan_keys::builders::GetUsagePlanKeysInputBuilder,
+}
 impl GetUsagePlanKeysFluentBuilder  {
     /// Creates a new `GetUsagePlanKeys`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_usage_plan_keys::GetUsagePlanKeys, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetUsagePlanKeysFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator {
-                            crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator {
+                                crate::operation::get_usage_plan_keys::paginator::GetUsagePlanKeysPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.</p>
     pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.usage_plan_id(input.into());

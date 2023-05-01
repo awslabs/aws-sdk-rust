@@ -8,16 +8,17 @@ pub use crate::operation::checkout_borrow_license::_checkout_borrow_license_inpu
 /// <p>Checks out the specified license for offline use.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CheckoutBorrowLicenseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::checkout_borrow_license::builders::CheckoutBorrowLicenseInputBuilder,
+}
 impl CheckoutBorrowLicenseFluentBuilder  {
     /// Creates a new `CheckoutBorrowLicense`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::checkout_borrow_license::CheckoutBorrowLicense, aws_http::retry::AwsResponseRetryClassifier,>,

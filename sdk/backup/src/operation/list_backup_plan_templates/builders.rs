@@ -8,16 +8,17 @@ pub use crate::operation::list_backup_plan_templates::_list_backup_plan_template
 /// <p>Returns metadata of your saved backup plan templates, including the template ID, name, and the creation and deletion dates.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBackupPlanTemplatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_backup_plan_templates::builders::ListBackupPlanTemplatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_backup_plan_templates::builders::ListBackupPlanTemplatesInputBuilder,
+}
 impl ListBackupPlanTemplatesFluentBuilder  {
     /// Creates a new `ListBackupPlanTemplates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_backup_plan_templates::ListBackupPlanTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBackupPlanTemplatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_backup_plan_templates::paginator::ListBackupPlanTemplatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_backup_plan_templates::paginator::ListBackupPlanTemplatesPaginator {
-                            crate::operation::list_backup_plan_templates::paginator::ListBackupPlanTemplatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_backup_plan_templates::paginator::ListBackupPlanTemplatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_backup_plan_templates::paginator::ListBackupPlanTemplatesPaginator {
+                                crate::operation::list_backup_plan_templates::paginator::ListBackupPlanTemplatesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -10,16 +10,17 @@ pub use crate::operation::add_tags_to_certificate::_add_tags_to_certificate_inpu
 /// <p>To remove one or more tags, use the <code>RemoveTagsFromCertificate</code> action. To view all of the tags that have been applied to the certificate, use the <code>ListTagsForCertificate</code> action. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddTagsToCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_tags_to_certificate::builders::AddTagsToCertificateInputBuilder,
+}
 impl AddTagsToCertificateFluentBuilder  {
     /// Creates a new `AddTagsToCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_tags_to_certificate::AddTagsToCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

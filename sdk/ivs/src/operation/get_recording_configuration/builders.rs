@@ -8,16 +8,17 @@ pub use crate::operation::get_recording_configuration::_get_recording_configurat
 /// <p>Gets the recording configuration for the specified ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRecordingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_recording_configuration::builders::GetRecordingConfigurationInputBuilder,
+}
 impl GetRecordingConfigurationFluentBuilder  {
     /// Creates a new `GetRecordingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_recording_configuration::GetRecordingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -16,16 +16,17 @@ pub use crate::operation::delete_custom_db_engine_version::_delete_custom_db_eng
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.delete">Deleting a CEV</a> in the <i>Amazon RDS User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCustomDBEngineVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_custom_db_engine_version::builders::DeleteCustomDbEngineVersionInputBuilder,
+}
 impl DeleteCustomDBEngineVersionFluentBuilder  {
     /// Creates a new `DeleteCustomDBEngineVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersion, aws_http::retry::AwsResponseRetryClassifier,>,

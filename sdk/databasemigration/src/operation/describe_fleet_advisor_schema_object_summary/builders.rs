@@ -8,16 +8,17 @@ pub use crate::operation::describe_fleet_advisor_schema_object_summary::_describ
 /// <p>Provides descriptions of the schemas discovered by your Fleet Advisor collectors.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_fleet_advisor_schema_object_summary::builders::DescribeFleetAdvisorSchemaObjectSummaryInputBuilder,
+}
 impl DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder  {
     /// Creates a new `DescribeFleetAdvisorSchemaObjectSummary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummary, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator {
-                            crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator {
+                                crate::operation::describe_fleet_advisor_schema_object_summary::paginator::DescribeFleetAdvisorSchemaObjectSummaryPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

@@ -8,16 +8,17 @@ pub use crate::operation::get_chunk::_get_chunk_input::GetChunkInputBuilder;
 /// Gets the specified object's chunk.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetChunkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_chunk::builders::GetChunkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_chunk::builders::GetChunkInputBuilder,
+}
 impl GetChunkFluentBuilder  {
     /// Creates a new `GetChunk`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_chunk::GetChunk, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::start_input_device_maintenance_window::_start_input_de
 /// Start a maintenance window for the specified input device. Starting a maintenance window will give the device up to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming when the software is fully installed. Devices automatically install updates while they are powered on and their MediaLive channels are stopped. A maintenance window allows you to update a device without having to stop MediaLive channels that use the device. The device must remain powered on and connected to the internet for the duration of the maintenance.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartInputDeviceMaintenanceWindowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_input_device_maintenance_window::builders::StartInputDeviceMaintenanceWindowInputBuilder,
+}
 impl StartInputDeviceMaintenanceWindowFluentBuilder  {
     /// Creates a new `StartInputDeviceMaintenanceWindow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindow, aws_http::retry::AwsResponseRetryClassifier,>,

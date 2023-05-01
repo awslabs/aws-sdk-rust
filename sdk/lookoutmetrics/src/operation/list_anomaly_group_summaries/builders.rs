@@ -8,16 +8,17 @@ pub use crate::operation::list_anomaly_group_summaries::_list_anomaly_group_summ
 /// <p>Returns a list of anomaly groups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAnomalyGroupSummariesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_anomaly_group_summaries::builders::ListAnomalyGroupSummariesInputBuilder,
+}
 impl ListAnomalyGroupSummariesFluentBuilder  {
     /// Creates a new `ListAnomalyGroupSummaries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummaries, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAnomalyGroupSummariesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_anomaly_group_summaries::paginator::ListAnomalyGroupSummariesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_anomaly_group_summaries::paginator::ListAnomalyGroupSummariesPaginator {
-                            crate::operation::list_anomaly_group_summaries::paginator::ListAnomalyGroupSummariesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_anomaly_group_summaries::paginator::ListAnomalyGroupSummariesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_anomaly_group_summaries::paginator::ListAnomalyGroupSummariesPaginator {
+                                crate::operation::list_anomaly_group_summaries::paginator::ListAnomalyGroupSummariesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());

@@ -18,16 +18,17 @@ pub use crate::operation::list_installed_components::_list_installed_components_
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInstalledComponentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_installed_components::builders::ListInstalledComponentsInputBuilder,
+}
 impl ListInstalledComponentsFluentBuilder  {
     /// Creates a new `ListInstalledComponents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_installed_components::ListInstalledComponents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -58,11 +59,11 @@ impl ListInstalledComponentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_installed_components::paginator::ListInstalledComponentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_installed_components::paginator::ListInstalledComponentsPaginator {
-                            crate::operation::list_installed_components::paginator::ListInstalledComponentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_installed_components::paginator::ListInstalledComponentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_installed_components::paginator::ListInstalledComponentsPaginator {
+                                crate::operation::list_installed_components::paginator::ListInstalledComponentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.core_device_thing_name(input.into());

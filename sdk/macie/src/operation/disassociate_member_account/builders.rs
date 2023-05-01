@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_member_account::_disassociate_member_acco
 /// <p>(Discontinued) Removes the specified member account from Amazon Macie Classic.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateMemberAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_member_account::builders::DisassociateMemberAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_member_account::builders::DisassociateMemberAccountInputBuilder,
+}
 impl DisassociateMemberAccountFluentBuilder  {
     /// Creates a new `DisassociateMemberAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_member_account::DisassociateMemberAccount, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_service_access_policies::_update_service_access
 /// <p>Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServiceAccessPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_service_access_policies::builders::UpdateServiceAccessPoliciesInputBuilder,
+}
 impl UpdateServiceAccessPoliciesFluentBuilder  {
     /// Creates a new `UpdateServiceAccessPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_service_access_policies::UpdateServiceAccessPolicies, aws_http::retry::AwsResponseRetryClassifier,>,

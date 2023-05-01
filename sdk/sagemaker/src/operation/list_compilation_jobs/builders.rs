@@ -9,16 +9,17 @@ pub use crate::operation::list_compilation_jobs::_list_compilation_jobs_input::L
 /// <p>To create a model compilation job, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCompilationJob.html">CreateCompilationJob</a>. To get information about a particular model compilation job you have created, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCompilationJob.html">DescribeCompilationJob</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCompilationJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_compilation_jobs::builders::ListCompilationJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_compilation_jobs::builders::ListCompilationJobsInputBuilder,
+}
 impl ListCompilationJobsFluentBuilder  {
     /// Creates a new `ListCompilationJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_compilation_jobs::ListCompilationJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListCompilationJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator {
-                            crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator {
+                                crate::operation::list_compilation_jobs::paginator::ListCompilationJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of model compilation jobs, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

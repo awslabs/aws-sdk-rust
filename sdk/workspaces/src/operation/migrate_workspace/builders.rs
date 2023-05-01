@@ -10,16 +10,17 @@ pub use crate::operation::migrate_workspace::_migrate_workspace_input::MigrateWo
 /// <p>For available migration scenarios, details about what happens during migration, and best practices, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate a WorkSpace</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct MigrateWorkspaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::migrate_workspace::builders::MigrateWorkspaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::migrate_workspace::builders::MigrateWorkspaceInputBuilder,
+}
 impl MigrateWorkspaceFluentBuilder  {
     /// Creates a new `MigrateWorkspace`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::migrate_workspace::MigrateWorkspace, aws_http::retry::AwsResponseRetryClassifier,>,

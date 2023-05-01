@@ -8,16 +8,17 @@ pub use crate::operation::create_access_policy::_create_access_policy_input::Cre
 /// <p>Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAccessPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder,
+}
 impl CreateAccessPolicyFluentBuilder  {
     /// Creates a new `CreateAccessPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_access_policy::CreateAccessPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

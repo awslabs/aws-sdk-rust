@@ -9,16 +9,17 @@ pub use crate::operation::describe_queue::_describe_queue_input::DescribeQueueIn
 /// <p>Describes the specified queue.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeQueueFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_queue::builders::DescribeQueueInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_queue::builders::DescribeQueueInputBuilder,
+}
 impl DescribeQueueFluentBuilder  {
     /// Creates a new `DescribeQueue`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_queue::DescribeQueue, aws_http::retry::AwsResponseRetryClassifier,>,

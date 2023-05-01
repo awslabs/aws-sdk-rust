@@ -9,16 +9,17 @@ pub use crate::operation::list_firewall_domains::_list_firewall_domains_input::L
 /// <p>A single call might return only a partial list of the domains. For information, see <code>MaxResults</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFirewallDomainsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_firewall_domains::builders::ListFirewallDomainsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_firewall_domains::builders::ListFirewallDomainsInputBuilder,
+}
 impl ListFirewallDomainsFluentBuilder  {
     /// Creates a new `ListFirewallDomains`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_firewall_domains::ListFirewallDomains, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListFirewallDomainsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator {
-                            crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator {
+                                crate::operation::list_firewall_domains::paginator::ListFirewallDomainsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the domain list whose domains you want to retrieve. </p>
     pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.firewall_domain_list_id(input.into());

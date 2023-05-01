@@ -8,16 +8,17 @@ pub use crate::operation::list_account_aliases::_list_account_aliases_input::Lis
 /// <p>Lists the account alias associated with the Amazon Web Services account (Note: you can have only one). For information about using an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccountAliasesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_account_aliases::builders::ListAccountAliasesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_account_aliases::builders::ListAccountAliasesInputBuilder,
+}
 impl ListAccountAliasesFluentBuilder  {
     /// Creates a new `ListAccountAliases`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_account_aliases::ListAccountAliases, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAccountAliasesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator {
-                            crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator {
+                                crate::operation::list_account_aliases::paginator::ListAccountAliasesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Use this parameter only when paginating results and only after you receive a response indicating that the results are truncated. Set it to the value of the <code>Marker</code> element in the response that you received to indicate where the next call should start.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::post_comment_reply::_post_comment_reply_input::PostCom
 /// <p>Posts a comment in reply to an existing comment on a comparison between commits or a pull request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PostCommentReplyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::post_comment_reply::builders::PostCommentReplyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::post_comment_reply::builders::PostCommentReplyInputBuilder,
+}
 impl PostCommentReplyFluentBuilder  {
     /// Creates a new `PostCommentReply`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::post_comment_reply::PostCommentReply, aws_http::retry::AwsResponseRetryClassifier,>,

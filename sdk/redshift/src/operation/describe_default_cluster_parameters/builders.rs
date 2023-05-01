@@ -9,16 +9,17 @@ pub use crate::operation::describe_default_cluster_parameters::_describe_default
 /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDefaultClusterParametersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_default_cluster_parameters::builders::DescribeDefaultClusterParametersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_default_cluster_parameters::builders::DescribeDefaultClusterParametersInputBuilder,
+}
 impl DescribeDefaultClusterParametersFluentBuilder  {
     /// Creates a new `DescribeDefaultClusterParameters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParameters, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeDefaultClusterParametersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_default_cluster_parameters::paginator::DescribeDefaultClusterParametersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_default_cluster_parameters::paginator::DescribeDefaultClusterParametersPaginator {
-                            crate::operation::describe_default_cluster_parameters::paginator::DescribeDefaultClusterParametersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_default_cluster_parameters::paginator::DescribeDefaultClusterParametersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_default_cluster_parameters::paginator::DescribeDefaultClusterParametersPaginator {
+                                crate::operation::describe_default_cluster_parameters::paginator::DescribeDefaultClusterParametersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the cluster parameter group family.</p>
     pub fn parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_family(input.into());

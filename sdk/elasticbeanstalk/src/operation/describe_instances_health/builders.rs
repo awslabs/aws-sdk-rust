@@ -8,16 +8,17 @@ pub use crate::operation::describe_instances_health::_describe_instances_health_
 /// <p>Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk. This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health reporting</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstancesHealthFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_instances_health::builders::DescribeInstancesHealthInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_instances_health::builders::DescribeInstancesHealthInputBuilder,
+}
 impl DescribeInstancesHealthFluentBuilder  {
     /// Creates a new `DescribeInstancesHealth`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_instances_health::DescribeInstancesHealth, aws_http::retry::AwsResponseRetryClassifier,>,

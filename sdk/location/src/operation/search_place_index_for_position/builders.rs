@@ -8,16 +8,17 @@ pub use crate::operation::search_place_index_for_position::_search_place_index_f
 /// <p>Reverse geocodes a given coordinate and returns a legible address. Allows you to search for Places or points of interest near a given position.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchPlaceIndexForPositionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionInputBuilder,
+}
 impl SearchPlaceIndexForPositionFluentBuilder  {
     /// Creates a new `SearchPlaceIndexForPosition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_place_index_for_position::SearchPlaceIndexForPosition, aws_http::retry::AwsResponseRetryClassifier,>,

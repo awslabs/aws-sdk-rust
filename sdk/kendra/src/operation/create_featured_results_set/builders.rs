@@ -9,16 +9,17 @@ pub use crate::operation::create_featured_results_set::_create_featured_results_
 /// <p>You can create up to 50 sets of featured results per index. You can request to increase this limit by contacting <a href="http://aws.amazon.com/contact-us/">Support</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFeaturedResultsSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_featured_results_set::builders::CreateFeaturedResultsSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_featured_results_set::builders::CreateFeaturedResultsSetInputBuilder,
+}
 impl CreateFeaturedResultsSetFluentBuilder  {
     /// Creates a new `CreateFeaturedResultsSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_featured_results_set::CreateFeaturedResultsSet, aws_http::retry::AwsResponseRetryClassifier,>,

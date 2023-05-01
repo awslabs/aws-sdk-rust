@@ -8,16 +8,17 @@ pub use crate::operation::start_organization_service_access_update::_start_organ
 /// <p>Enables the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartOrganizationServiceAccessUpdateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_organization_service_access_update::builders::StartOrganizationServiceAccessUpdateInputBuilder,
+}
 impl StartOrganizationServiceAccessUpdateFluentBuilder  {
     /// Creates a new `StartOrganizationServiceAccessUpdate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdate, aws_http::retry::AwsResponseRetryClassifier,>,

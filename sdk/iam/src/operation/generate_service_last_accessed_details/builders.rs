@@ -20,16 +20,17 @@ pub use crate::operation::generate_service_last_accessed_details::_generate_serv
 /// <p>For more information about service and action last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing permissions using service last accessed data</a> in the <i>IAM User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateServiceLastAccessedDetailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsInputBuilder,
+}
 impl GenerateServiceLastAccessedDetailsFluentBuilder  {
     /// Creates a new `GenerateServiceLastAccessedDetails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetails, aws_http::retry::AwsResponseRetryClassifier,>,

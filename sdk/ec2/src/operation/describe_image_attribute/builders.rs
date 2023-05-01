@@ -8,16 +8,17 @@ pub use crate::operation::describe_image_attribute::_describe_image_attribute_in
 /// <p>Describes the specified attribute of the specified AMI. You can specify only one attribute at a time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeImageAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_image_attribute::builders::DescribeImageAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_image_attribute::builders::DescribeImageAttributeInputBuilder,
+}
 impl DescribeImageAttributeFluentBuilder  {
     /// Creates a new `DescribeImageAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_image_attribute::DescribeImageAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

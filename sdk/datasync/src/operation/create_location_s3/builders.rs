@@ -15,16 +15,17 @@ pub use crate::operation::create_location_s3::_create_location_s3_input::CreateL
 /// <p> For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">Creating an Amazon S3 location</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLocationS3FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_location_s3::builders::CreateLocationS3InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_location_s3::builders::CreateLocationS3InputBuilder,
+}
 impl CreateLocationS3FluentBuilder  {
     /// Creates a new `CreateLocationS3`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_location_s3::CreateLocationS3, aws_http::retry::AwsResponseRetryClassifier,>,

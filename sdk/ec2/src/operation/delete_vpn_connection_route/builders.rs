@@ -8,16 +8,17 @@ pub use crate::operation::delete_vpn_connection_route::_delete_vpn_connection_ro
 /// <p>Deletes the specified static route associated with a VPN connection between an existing virtual private gateway and a VPN customer gateway. The static route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpnConnectionRouteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vpn_connection_route::builders::DeleteVpnConnectionRouteInputBuilder,
+}
 impl DeleteVpnConnectionRouteFluentBuilder  {
     /// Creates a new `DeleteVpnConnectionRoute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRoute, aws_http::retry::AwsResponseRetryClassifier,>,

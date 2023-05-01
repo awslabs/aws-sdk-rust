@@ -8,16 +8,17 @@ pub use crate::operation::update_bandwidth_rate_limit_schedule::_update_bandwidt
 /// <p> Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule. This operation is supported only for volume, tape and S3 file gateways. FSx file gateways do not support bandwidth rate limits.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_bandwidth_rate_limit_schedule::builders::UpdateBandwidthRateLimitScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_bandwidth_rate_limit_schedule::builders::UpdateBandwidthRateLimitScheduleInputBuilder,
+}
 impl UpdateBandwidthRateLimitScheduleFluentBuilder  {
     /// Creates a new `UpdateBandwidthRateLimitSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -11,16 +11,17 @@ pub use crate::operation::modify_luna_client::_modify_luna_client_input::ModifyL
 /// <p>This action can potentially start a workflow to install the new certificate on the client's HSMs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyLunaClientFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_luna_client::builders::ModifyLunaClientInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_luna_client::builders::ModifyLunaClientInputBuilder,
+}
 impl ModifyLunaClientFluentBuilder  {
     /// Creates a new `ModifyLunaClient`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_luna_client::ModifyLunaClient, aws_http::retry::AwsResponseRetryClassifier,>,

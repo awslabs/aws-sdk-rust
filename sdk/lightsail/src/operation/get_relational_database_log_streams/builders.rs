@@ -8,16 +8,17 @@ pub use crate::operation::get_relational_database_log_streams::_get_relational_d
 /// <p>Returns a list of available log streams for a specific database in Amazon Lightsail.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRelationalDatabaseLogStreamsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_relational_database_log_streams::builders::GetRelationalDatabaseLogStreamsInputBuilder,
+}
 impl GetRelationalDatabaseLogStreamsFluentBuilder  {
     /// Creates a new `GetRelationalDatabaseLogStreams`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreams, aws_http::retry::AwsResponseRetryClassifier,>,

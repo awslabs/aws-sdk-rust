@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_connection_from_lag::_disassociate_connec
 /// <p>If disassociating the connection would cause the LAG to fall below its setting for minimum number of operational connections, the request fails, except when it's the last member of the LAG. If all connections are disassociated, the LAG continues to exist as an empty LAG with no physical connections. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateConnectionFromLagFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_connection_from_lag::builders::DisassociateConnectionFromLagInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_connection_from_lag::builders::DisassociateConnectionFromLagInputBuilder,
+}
 impl DisassociateConnectionFromLagFluentBuilder  {
     /// Creates a new `DisassociateConnectionFromLag`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLag, aws_http::retry::AwsResponseRetryClassifier,>,

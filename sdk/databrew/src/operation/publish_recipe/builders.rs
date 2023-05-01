@@ -8,16 +8,17 @@ pub use crate::operation::publish_recipe::_publish_recipe_input::PublishRecipeIn
 /// <p>Publishes a new version of a DataBrew recipe.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PublishRecipeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::publish_recipe::builders::PublishRecipeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::publish_recipe::builders::PublishRecipeInputBuilder,
+}
 impl PublishRecipeFluentBuilder  {
     /// Creates a new `PublishRecipe`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::publish_recipe::PublishRecipe, aws_http::retry::AwsResponseRetryClassifier,>,

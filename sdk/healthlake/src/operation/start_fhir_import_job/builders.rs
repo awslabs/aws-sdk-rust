@@ -8,16 +8,17 @@ pub use crate::operation::start_fhir_import_job::_start_fhir_import_job_input::S
 /// <p>Begins a FHIR Import job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartFHIRImportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_fhir_import_job::builders::StartFhirImportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_fhir_import_job::builders::StartFhirImportJobInputBuilder,
+}
 impl StartFHIRImportJobFluentBuilder  {
     /// Creates a new `StartFHIRImportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_fhir_import_job::StartFHIRImportJob, aws_http::retry::AwsResponseRetryClassifier,>,

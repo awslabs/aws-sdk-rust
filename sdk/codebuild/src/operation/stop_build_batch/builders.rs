@@ -8,16 +8,17 @@ pub use crate::operation::stop_build_batch::_stop_build_batch_input::StopBuildBa
 /// <p>Stops a running batch build.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopBuildBatchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_build_batch::builders::StopBuildBatchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_build_batch::builders::StopBuildBatchInputBuilder,
+}
 impl StopBuildBatchFluentBuilder  {
     /// Creates a new `StopBuildBatch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_build_batch::StopBuildBatch, aws_http::retry::AwsResponseRetryClassifier,>,

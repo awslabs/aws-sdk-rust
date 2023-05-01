@@ -8,16 +8,17 @@ pub use crate::operation::get_source_repository_clone_urls::_get_source_reposito
 /// <p>Returns information about the URLs that can be used with a Git client to clone a source repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSourceRepositoryCloneUrlsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_source_repository_clone_urls::builders::GetSourceRepositoryCloneUrlsInputBuilder,
+}
 impl GetSourceRepositoryCloneUrlsFluentBuilder  {
     /// Creates a new `GetSourceRepositoryCloneUrls`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_source_repository_clone_urls::GetSourceRepositoryCloneUrls, aws_http::retry::AwsResponseRetryClassifier,>,

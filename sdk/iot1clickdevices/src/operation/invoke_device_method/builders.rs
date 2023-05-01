@@ -8,16 +8,17 @@ pub use crate::operation::invoke_device_method::_invoke_device_method_input::Inv
 /// <p>Given a device ID, issues a request to invoke a named device method (with possible parameters). See the "Example POST" code snippet below.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InvokeDeviceMethodFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::invoke_device_method::builders::InvokeDeviceMethodInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::invoke_device_method::builders::InvokeDeviceMethodInputBuilder,
+}
 impl InvokeDeviceMethodFluentBuilder  {
     /// Creates a new `InvokeDeviceMethod`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::invoke_device_method::InvokeDeviceMethod, aws_http::retry::AwsResponseRetryClassifier,>,

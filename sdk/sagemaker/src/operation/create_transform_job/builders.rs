@@ -18,16 +18,17 @@ pub use crate::operation::create_transform_job::_create_transform_job_input::Cre
 /// <p>For more information about how batch transformation works, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch Transform</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTransformJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_transform_job::builders::CreateTransformJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_transform_job::builders::CreateTransformJobInputBuilder,
+}
 impl CreateTransformJobFluentBuilder  {
     /// Creates a new `CreateTransformJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_transform_job::CreateTransformJob, aws_http::retry::AwsResponseRetryClassifier,>,

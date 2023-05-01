@@ -8,16 +8,17 @@ pub use crate::operation::stop_data_collection_by_agent_ids::_stop_data_collecti
 /// <p>Instructs the specified agents or connectors to stop collecting data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopDataCollectionByAgentIdsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_data_collection_by_agent_ids::builders::StopDataCollectionByAgentIdsInputBuilder,
+}
 impl StopDataCollectionByAgentIdsFluentBuilder  {
     /// Creates a new `StopDataCollectionByAgentIds`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIds, aws_http::retry::AwsResponseRetryClassifier,>,

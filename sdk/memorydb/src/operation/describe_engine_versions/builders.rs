@@ -8,16 +8,17 @@ pub use crate::operation::describe_engine_versions::_describe_engine_versions_in
 /// <p>Returns a list of the available Redis engine versions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEngineVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_engine_versions::builders::DescribeEngineVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_engine_versions::builders::DescribeEngineVersionsInputBuilder,
+}
 impl DescribeEngineVersionsFluentBuilder  {
     /// Creates a new `DescribeEngineVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_engine_versions::DescribeEngineVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeEngineVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator {
-                            crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator {
+                                crate::operation::describe_engine_versions::paginator::DescribeEngineVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Redis engine version</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());

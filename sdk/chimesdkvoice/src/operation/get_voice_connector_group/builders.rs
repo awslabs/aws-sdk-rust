@@ -8,16 +8,17 @@ pub use crate::operation::get_voice_connector_group::_get_voice_connector_group_
 /// <p>Retrieves details for the specified Amazon Chime SDK Voice Connector group, such as timestamps,name, and associated <code>VoiceConnectorItems</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVoiceConnectorGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_voice_connector_group::builders::GetVoiceConnectorGroupInputBuilder,
+}
 impl GetVoiceConnectorGroupFluentBuilder  {
     /// Creates a new `GetVoiceConnectorGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_voice_connector_group::GetVoiceConnectorGroup, aws_http::retry::AwsResponseRetryClassifier,>,

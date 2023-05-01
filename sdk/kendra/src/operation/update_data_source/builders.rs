@@ -8,16 +8,17 @@ pub use crate::operation::update_data_source::_update_data_source_input::UpdateD
 /// <p>Updates an existing Amazon Kendra data source connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDataSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder,
+}
 impl UpdateDataSourceFluentBuilder  {
     /// Creates a new `UpdateDataSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_data_source::UpdateDataSource, aws_http::retry::AwsResponseRetryClassifier,>,

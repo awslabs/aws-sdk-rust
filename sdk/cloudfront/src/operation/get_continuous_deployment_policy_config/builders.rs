@@ -8,16 +8,17 @@ pub use crate::operation::get_continuous_deployment_policy_config::_get_continuo
 /// <p>Gets configuration information about a continuous deployment policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetContinuousDeploymentPolicyConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_continuous_deployment_policy_config::builders::GetContinuousDeploymentPolicyConfigInputBuilder,
+}
 impl GetContinuousDeploymentPolicyConfigFluentBuilder  {
     /// Creates a new `GetContinuousDeploymentPolicyConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfig, aws_http::retry::AwsResponseRetryClassifier,>,

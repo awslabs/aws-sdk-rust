@@ -8,16 +8,17 @@ pub use crate::operation::list_games::_list_games_input::ListGamesInputBuilder;
 /// <p>Gets a paginated list of games.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGamesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_games::builders::ListGamesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_games::builders::ListGamesInputBuilder,
+}
 impl ListGamesFluentBuilder  {
     /// Creates a new `ListGames`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_games::ListGames, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListGamesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_games::paginator::ListGamesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_games::paginator::ListGamesPaginator {
-                            crate::operation::list_games::paginator::ListGamesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_games::paginator::ListGamesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_games::paginator::ListGamesPaginator {
+                                crate::operation::list_games::paginator::ListGamesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to return.</p> 
     /// <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
     pub fn max_results(mut self, input: i32) -> Self {

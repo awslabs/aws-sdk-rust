@@ -8,16 +8,17 @@ pub use crate::operation::stop_dev_environment::_stop_dev_environment_input::Sto
 /// <p>Pauses a specified Dev Environment and places it in a non-running state. Stopped Dev Environments do not consume compute minutes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopDevEnvironmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_dev_environment::builders::StopDevEnvironmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_dev_environment::builders::StopDevEnvironmentInputBuilder,
+}
 impl StopDevEnvironmentFluentBuilder  {
     /// Creates a new `StopDevEnvironment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_dev_environment::StopDevEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,

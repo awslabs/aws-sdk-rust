@@ -9,16 +9,17 @@ pub use crate::operation::put_bot_alias::_put_bot_alias_input::PutBotAliasInputB
 /// <p>This operation requires permissions for the <code>lex:PutBotAlias</code> action. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutBotAliasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_bot_alias::builders::PutBotAliasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_bot_alias::builders::PutBotAliasInputBuilder,
+}
 impl PutBotAliasFluentBuilder  {
     /// Creates a new `PutBotAlias`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_bot_alias::PutBotAlias, aws_http::retry::AwsResponseRetryClassifier,>,

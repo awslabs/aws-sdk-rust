@@ -8,16 +8,17 @@ pub use crate::operation::check_domain_availability::_check_domain_availability_
 /// <p>This operation checks the availability of one domain name. Note that if the availability status of a domain is pending, you must submit another request to determine the availability of the domain name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CheckDomainAvailabilityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::check_domain_availability::builders::CheckDomainAvailabilityInputBuilder,
+}
 impl CheckDomainAvailabilityFluentBuilder  {
     /// Creates a new `CheckDomainAvailability`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::check_domain_availability::CheckDomainAvailability, aws_http::retry::AwsResponseRetryClassifier,>,

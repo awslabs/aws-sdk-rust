@@ -8,16 +8,17 @@ pub use crate::operation::get_dataset_content::_get_dataset_content_input::GetDa
 /// <p>Retrieves the contents of a dataset as presigned URIs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDatasetContentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_dataset_content::builders::GetDatasetContentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_dataset_content::builders::GetDatasetContentInputBuilder,
+}
 impl GetDatasetContentFluentBuilder  {
     /// Creates a new `GetDatasetContent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_dataset_content::GetDatasetContent, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_customer_managed_policy_references_in_permission_
 /// <p>Lists all customer managed policies attached to a specified <code>PermissionSet</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_customer_managed_policy_references_in_permission_set::builders::ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder,
+}
 impl ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder  {
     /// Creates a new `ListCustomerManagedPolicyReferencesInPermissionSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSet, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_customer_managed_policy_references_in_permission_set::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_customer_managed_policy_references_in_permission_set::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator {
-                            crate::operation::list_customer_managed_policy_references_in_permission_set::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_customer_managed_policy_references_in_permission_set::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_customer_managed_policy_references_in_permission_set::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator {
+                                crate::operation::list_customer_managed_policy_references_in_permission_set::paginator::ListCustomerManagedPolicyReferencesInPermissionSetPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. </p>
     pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());

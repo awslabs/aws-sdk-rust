@@ -8,16 +8,17 @@ pub use crate::operation::delete_elasticsearch_domain::_delete_elasticsearch_dom
 /// <p>Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteElasticsearchDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_elasticsearch_domain::builders::DeleteElasticsearchDomainInputBuilder,
+}
 impl DeleteElasticsearchDomainFluentBuilder  {
     /// Creates a new `DeleteElasticsearchDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomain, aws_http::retry::AwsResponseRetryClassifier,>,

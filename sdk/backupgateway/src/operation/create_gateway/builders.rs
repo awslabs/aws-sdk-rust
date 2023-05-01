@@ -8,16 +8,17 @@ pub use crate::operation::create_gateway::_create_gateway_input::CreateGatewayIn
 /// <p>Creates a backup gateway. After you create a gateway, you can associate it with a server using the <code>AssociateGatewayToServer</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_gateway::builders::CreateGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_gateway::builders::CreateGatewayInputBuilder,
+}
 impl CreateGatewayFluentBuilder  {
     /// Creates a new `CreateGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_gateway::CreateGateway, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_batch_inference_job::_describe_batch_inferenc
 /// <p>Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status, input and output configurations, and the ARN of the solution version used to generate the recommendations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBatchInferenceJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobInputBuilder,
+}
 impl DescribeBatchInferenceJobFluentBuilder  {
     /// Creates a new `DescribeBatchInferenceJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_batch_inference_job::DescribeBatchInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,

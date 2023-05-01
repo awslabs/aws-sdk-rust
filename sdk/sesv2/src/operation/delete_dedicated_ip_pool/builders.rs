@@ -8,16 +8,17 @@ pub use crate::operation::delete_dedicated_ip_pool::_delete_dedicated_ip_pool_in
 /// <p>Delete a dedicated IP pool.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDedicatedIpPoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolInputBuilder,
+}
 impl DeleteDedicatedIpPoolFluentBuilder  {
     /// Creates a new `DeleteDedicatedIpPool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPool, aws_http::retry::AwsResponseRetryClassifier,>,

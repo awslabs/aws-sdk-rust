@@ -14,16 +14,17 @@ pub use crate::operation::recognize_celebrities::_recognize_celebrities_input::R
 /// <p>This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RecognizeCelebritiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::recognize_celebrities::builders::RecognizeCelebritiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::recognize_celebrities::builders::RecognizeCelebritiesInputBuilder,
+}
 impl RecognizeCelebritiesFluentBuilder  {
     /// Creates a new `RecognizeCelebrities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::recognize_celebrities::RecognizeCelebrities, aws_http::retry::AwsResponseRetryClassifier,>,

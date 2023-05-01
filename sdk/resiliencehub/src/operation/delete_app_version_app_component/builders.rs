@@ -13,16 +13,17 @@ pub use crate::operation::delete_app_version_app_component::_delete_app_version_
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAppVersionAppComponentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_app_version_app_component::builders::DeleteAppVersionAppComponentInputBuilder,
+}
 impl DeleteAppVersionAppComponentFluentBuilder  {
     /// Creates a new `DeleteAppVersionAppComponent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_app_version_app_component::DeleteAppVersionAppComponent, aws_http::retry::AwsResponseRetryClassifier,>,

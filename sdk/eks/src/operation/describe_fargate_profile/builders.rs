@@ -8,16 +8,17 @@ pub use crate::operation::describe_fargate_profile::_describe_fargate_profile_in
 /// <p>Returns descriptive information about an Fargate profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFargateProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_fargate_profile::builders::DescribeFargateProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_fargate_profile::builders::DescribeFargateProfileInputBuilder,
+}
 impl DescribeFargateProfileFluentBuilder  {
     /// Creates a new `DescribeFargateProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fargate_profile::DescribeFargateProfile, aws_http::retry::AwsResponseRetryClassifier,>,

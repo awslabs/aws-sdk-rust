@@ -9,16 +9,17 @@ pub use crate::operation::get_upload_status::_get_upload_status_input::GetUpload
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUploadStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_upload_status::builders::GetUploadStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_upload_status::builders::GetUploadStatusInputBuilder,
+}
 impl GetUploadStatusFluentBuilder  {
     /// Creates a new `GetUploadStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_upload_status::GetUploadStatus, aws_http::retry::AwsResponseRetryClassifier,>,

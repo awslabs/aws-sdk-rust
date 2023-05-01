@@ -8,16 +8,17 @@ pub use crate::operation::delete_bandwidth_rate_limit::_delete_bandwidth_rate_li
 /// <p>Deletes the bandwidth rate limits of a gateway. You can delete either the upload and download bandwidth rate limit, or you can delete both. If you delete only one of the limits, the other limit remains unchanged. To specify which gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your request. This operation is supported only for the stored volume, cached volume, and tape gateway types.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBandwidthRateLimitFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_bandwidth_rate_limit::builders::DeleteBandwidthRateLimitInputBuilder,
+}
 impl DeleteBandwidthRateLimitFluentBuilder  {
     /// Creates a new `DeleteBandwidthRateLimit`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_bandwidth_rate_limit::DeleteBandwidthRateLimit, aws_http::retry::AwsResponseRetryClassifier,>,

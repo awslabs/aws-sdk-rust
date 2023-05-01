@@ -11,16 +11,17 @@ pub use crate::operation::add_custom_routing_endpoints::_add_custom_routing_endp
 /// <p>By default, all destinations in a subnet in a custom routing accelerator cannot receive traffic. To enable all destinations to receive traffic, or to specify individual port mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html"> AllowCustomRoutingTraffic</a> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddCustomRoutingEndpointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder,
+}
 impl AddCustomRoutingEndpointsFluentBuilder  {
     /// Creates a new `AddCustomRoutingEndpoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,

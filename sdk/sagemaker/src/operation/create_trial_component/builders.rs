@@ -11,16 +11,17 @@ pub use crate::operation::create_trial_component::_create_trial_component_input:
 /// <p>You can add tags to a trial component and then use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search for the tags.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTrialComponentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_trial_component::builders::CreateTrialComponentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_trial_component::builders::CreateTrialComponentInputBuilder,
+}
 impl CreateTrialComponentFluentBuilder  {
     /// Creates a new `CreateTrialComponent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_trial_component::CreateTrialComponent, aws_http::retry::AwsResponseRetryClassifier,>,

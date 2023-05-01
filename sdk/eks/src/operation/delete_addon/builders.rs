@@ -9,16 +9,17 @@ pub use crate::operation::delete_addon::_delete_addon_input::DeleteAddonInputBui
 /// <p>When you remove the add-on, it will also be deleted from the cluster. You can always manually start an add-on on the cluster using the Kubernetes API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAddonFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_addon::builders::DeleteAddonInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_addon::builders::DeleteAddonInputBuilder,
+}
 impl DeleteAddonFluentBuilder  {
     /// Creates a new `DeleteAddon`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_addon::DeleteAddon, aws_http::retry::AwsResponseRetryClassifier,>,

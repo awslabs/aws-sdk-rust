@@ -8,16 +8,17 @@ pub use crate::operation::list_builds::_list_builds_input::ListBuildsInputBuilde
 /// <p>Gets a list of build IDs, with each build ID representing a single build.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBuildsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_builds::builders::ListBuildsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_builds::builders::ListBuildsInputBuilder,
+}
 impl ListBuildsFluentBuilder  {
     /// Creates a new `ListBuilds`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_builds::ListBuilds, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBuildsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_builds::paginator::ListBuildsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_builds::paginator::ListBuildsPaginator {
-                            crate::operation::list_builds::paginator::ListBuildsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_builds::paginator::ListBuildsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_builds::paginator::ListBuildsPaginator {
+                                crate::operation::list_builds::paginator::ListBuildsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The order to list build IDs. Valid values include:</p> 
     /// <ul> 
     /// <li> <p> <code>ASCENDING</code>: List the build IDs in ascending order by build ID.</p> </li> 

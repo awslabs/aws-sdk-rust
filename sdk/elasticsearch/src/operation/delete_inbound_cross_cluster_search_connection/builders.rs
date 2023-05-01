@@ -8,16 +8,17 @@ pub use crate::operation::delete_inbound_cross_cluster_search_connection::_delet
 /// <p>Allows the destination domain owner to delete an existing inbound cross-cluster search connection.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInboundCrossClusterSearchConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_inbound_cross_cluster_search_connection::builders::DeleteInboundCrossClusterSearchConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_inbound_cross_cluster_search_connection::builders::DeleteInboundCrossClusterSearchConnectionInputBuilder,
+}
 impl DeleteInboundCrossClusterSearchConnectionFluentBuilder  {
     /// Creates a new `DeleteInboundCrossClusterSearchConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_inbound_cross_cluster_search_connection::DeleteInboundCrossClusterSearchConnection, aws_http::retry::AwsResponseRetryClassifier,>,

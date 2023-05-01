@@ -8,16 +8,17 @@ pub use crate::operation::describe_host_key::_describe_host_key_input::DescribeH
 /// <p>Returns the details of the host key that's specified by the <code>HostKeyId</code> and <code>ServerId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeHostKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_host_key::builders::DescribeHostKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_host_key::builders::DescribeHostKeyInputBuilder,
+}
 impl DescribeHostKeyFluentBuilder  {
     /// Creates a new `DescribeHostKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_host_key::DescribeHostKey, aws_http::retry::AwsResponseRetryClassifier,>,

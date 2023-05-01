@@ -9,16 +9,17 @@ pub use crate::operation::associate_queue_quick_connects::_associate_queue_quick
 /// <p>Associates a set of quick connects with a queue.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateQueueQuickConnectsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_queue_quick_connects::builders::AssociateQueueQuickConnectsInputBuilder,
+}
 impl AssociateQueueQuickConnectsFluentBuilder  {
     /// Creates a new `AssociateQueueQuickConnects`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnects, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -20,16 +20,17 @@ pub use crate::operation::refresh_cache::_refresh_cache_input::RefreshCacheInput
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting notified about file operations</a> in the <i>Storage Gateway User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RefreshCacheFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::refresh_cache::builders::RefreshCacheInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::refresh_cache::builders::RefreshCacheInputBuilder,
+}
 impl RefreshCacheFluentBuilder  {
     /// Creates a new `RefreshCache`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::refresh_cache::RefreshCache, aws_http::retry::AwsResponseRetryClassifier,>,

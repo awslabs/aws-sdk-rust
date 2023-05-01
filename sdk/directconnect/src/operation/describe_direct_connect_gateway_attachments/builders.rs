@@ -8,16 +8,17 @@ pub use crate::operation::describe_direct_connect_gateway_attachments::_describe
 /// <p>Lists the attachments between your Direct Connect gateways and virtual interfaces. You must specify a Direct Connect gateway, a virtual interface, or both. If you specify a Direct Connect gateway, the response contains all virtual interfaces attached to the Direct Connect gateway. If you specify a virtual interface, the response contains all Direct Connect gateways attached to the virtual interface. If you specify both, the response contains the attachment between the Direct Connect gateway and the virtual interface.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAttachmentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_direct_connect_gateway_attachments::builders::DescribeDirectConnectGatewayAttachmentsInputBuilder,
+}
 impl DescribeDirectConnectGatewayAttachmentsFluentBuilder  {
     /// Creates a new `DescribeDirectConnectGatewayAttachments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachments, aws_http::retry::AwsResponseRetryClassifier,>,

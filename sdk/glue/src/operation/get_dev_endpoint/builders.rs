@@ -10,16 +10,17 @@ pub use crate::operation::get_dev_endpoint::_get_dev_endpoint_input::GetDevEndpo
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDevEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_dev_endpoint::builders::GetDevEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_dev_endpoint::builders::GetDevEndpointInputBuilder,
+}
 impl GetDevEndpointFluentBuilder  {
     /// Creates a new `GetDevEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_dev_endpoint::GetDevEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

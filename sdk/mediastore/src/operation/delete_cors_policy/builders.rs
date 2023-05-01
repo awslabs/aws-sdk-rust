@@ -9,16 +9,17 @@ pub use crate::operation::delete_cors_policy::_delete_cors_policy_input::DeleteC
 /// <p>To use this operation, you must have permission to perform the <code>MediaStore:DeleteCorsPolicy</code> action. The container owner has this permission by default and can grant this permission to others.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCorsPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_cors_policy::builders::DeleteCorsPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_cors_policy::builders::DeleteCorsPolicyInputBuilder,
+}
 impl DeleteCorsPolicyFluentBuilder  {
     /// Creates a new `DeleteCorsPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_cors_policy::DeleteCorsPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::list_subscriptions_by_topic::_list_subscriptions_by_to
 /// <p>This action is throttled at 30 transactions per second (TPS).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSubscriptionsByTopicFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_subscriptions_by_topic::builders::ListSubscriptionsByTopicInputBuilder,
+}
 impl ListSubscriptionsByTopicFluentBuilder  {
     /// Creates a new `ListSubscriptionsByTopic`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopic, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListSubscriptionsByTopicFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_subscriptions_by_topic::paginator::ListSubscriptionsByTopicPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_subscriptions_by_topic::paginator::ListSubscriptionsByTopicPaginator {
-                            crate::operation::list_subscriptions_by_topic::paginator::ListSubscriptionsByTopicPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_subscriptions_by_topic::paginator::ListSubscriptionsByTopicPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_subscriptions_by_topic::paginator::ListSubscriptionsByTopicPaginator {
+                                crate::operation::list_subscriptions_by_topic::paginator::ListSubscriptionsByTopicPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
     pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.topic_arn(input.into());

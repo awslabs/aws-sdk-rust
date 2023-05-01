@@ -9,16 +9,17 @@ pub use crate::operation::batch_start_recommendations::_batch_start_recommendati
 /// <p>The result of analysis of each source database is reported individually in the response. Because the batch request can result in a combination of successful and unsuccessful actions, you should check for batch errors even when the call returns an HTTP status code of <code>200</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchStartRecommendationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_start_recommendations::builders::BatchStartRecommendationsInputBuilder,
+}
 impl BatchStartRecommendationsFluentBuilder  {
     /// Creates a new `BatchStartRecommendations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_start_recommendations::BatchStartRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,

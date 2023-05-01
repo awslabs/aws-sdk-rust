@@ -9,16 +9,17 @@ pub use crate::operation::get_profile_object_type_template::_get_profile_object_
 /// <p>A template is a predefined ProfileObjectType, such as “Salesforce-Account” or “Salesforce-Contact.” When a user sends a ProfileObject, using the PutProfileObject API, with an ObjectTypeName that matches one of the TemplateIds, it uses the mappings from the template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetProfileObjectTypeTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_profile_object_type_template::builders::GetProfileObjectTypeTemplateInputBuilder,
+}
 impl GetProfileObjectTypeTemplateFluentBuilder  {
     /// Creates a new `GetProfileObjectTypeTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_profile_object_type_template::GetProfileObjectTypeTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

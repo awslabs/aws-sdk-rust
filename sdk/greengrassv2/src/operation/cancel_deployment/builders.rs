@@ -8,16 +8,17 @@ pub use crate::operation::cancel_deployment::_cancel_deployment_input::CancelDep
 /// <p>Cancels a deployment. This operation cancels the deployment for devices that haven't yet received it. If a device already received the deployment, this operation doesn't change anything for that device.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelDeploymentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_deployment::builders::CancelDeploymentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_deployment::builders::CancelDeploymentInputBuilder,
+}
 impl CancelDeploymentFluentBuilder  {
     /// Creates a new `CancelDeployment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_deployment::CancelDeployment, aws_http::retry::AwsResponseRetryClassifier,>,

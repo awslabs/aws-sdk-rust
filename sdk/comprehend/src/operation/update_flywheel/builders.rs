@@ -8,16 +8,17 @@ pub use crate::operation::update_flywheel::_update_flywheel_input::UpdateFlywhee
 /// <p>Update the configuration information for an existing flywheel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFlywheelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_flywheel::builders::UpdateFlywheelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_flywheel::builders::UpdateFlywheelInputBuilder,
+}
 impl UpdateFlywheelFluentBuilder  {
     /// Creates a new `UpdateFlywheel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_flywheel::UpdateFlywheel, aws_http::retry::AwsResponseRetryClassifier,>,

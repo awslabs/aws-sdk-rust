@@ -8,16 +8,17 @@ pub use crate::operation::list_safety_rules::_list_safety_rules_input::ListSafet
 /// <p>List the safety rules (the assertion rules and gating rules) that you've defined for the routing controls in a control panel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSafetyRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_safety_rules::builders::ListSafetyRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_safety_rules::builders::ListSafetyRulesInputBuilder,
+}
 impl ListSafetyRulesFluentBuilder  {
     /// Creates a new `ListSafetyRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_safety_rules::ListSafetyRules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSafetyRulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator {
-                            crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator {
+                                crate::operation::list_safety_rules::paginator::ListSafetyRulesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.control_panel_arn(input.into());

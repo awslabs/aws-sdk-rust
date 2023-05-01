@@ -9,16 +9,17 @@ pub use crate::operation::list_call_analytics_categories::_list_call_analytics_c
 /// <p>To get detailed information about a specific Call Analytics category, use the operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCallAnalyticsCategoriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_call_analytics_categories::builders::ListCallAnalyticsCategoriesInputBuilder,
+}
 impl ListCallAnalyticsCategoriesFluentBuilder  {
     /// Creates a new `ListCallAnalyticsCategories`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_call_analytics_categories::ListCallAnalyticsCategories, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListCallAnalyticsCategoriesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_call_analytics_categories::paginator::ListCallAnalyticsCategoriesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_call_analytics_categories::paginator::ListCallAnalyticsCategoriesPaginator {
-                            crate::operation::list_call_analytics_categories::paginator::ListCallAnalyticsCategoriesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_call_analytics_categories::paginator::ListCallAnalyticsCategoriesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_call_analytics_categories::paginator::ListCallAnalyticsCategoriesPaginator {
+                                crate::operation::list_call_analytics_categories::paginator::ListCallAnalyticsCategoriesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If your <code>ListCallAnalyticsCategories</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

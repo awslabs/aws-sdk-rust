@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_drt_role::_disassociate_drt_role_input::D
 /// <p>Removes the Shield Response Team's (SRT) access to your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateDRTRoleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_drt_role::builders::DisassociateDrtRoleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_drt_role::builders::DisassociateDrtRoleInputBuilder,
+}
 impl DisassociateDRTRoleFluentBuilder  {
     /// Creates a new `DisassociateDRTRole`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_drt_role::DisassociateDRTRole, aws_http::retry::AwsResponseRetryClassifier,>,

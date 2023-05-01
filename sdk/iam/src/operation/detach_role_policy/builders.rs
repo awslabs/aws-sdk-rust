@@ -9,16 +9,17 @@ pub use crate::operation::detach_role_policy::_detach_role_policy_input::DetachR
 /// <p>A role can also have inline policies embedded with it. To delete an inline policy, use <code>DeleteRolePolicy</code>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachRolePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detach_role_policy::builders::DetachRolePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detach_role_policy::builders::DetachRolePolicyInputBuilder,
+}
 impl DetachRolePolicyFluentBuilder  {
     /// Creates a new `DetachRolePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detach_role_policy::DetachRolePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_query_execution::_get_query_execution_input::GetQu
 /// <p>Returns information about a single execution of a query if you have access to the workgroup in which the query ran. Each time a query executes, information about the query execution is saved with a unique ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetQueryExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_query_execution::builders::GetQueryExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_query_execution::builders::GetQueryExecutionInputBuilder,
+}
 impl GetQueryExecutionFluentBuilder  {
     /// Creates a new `GetQueryExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_query_execution::GetQueryExecution, aws_http::retry::AwsResponseRetryClassifier,>,

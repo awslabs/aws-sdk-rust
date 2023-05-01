@@ -9,16 +9,17 @@ pub use crate::operation::associate_health_check::_associate_health_check_input:
 /// <p>You define the health check in Route&nbsp;53 and then associate it with your Shield Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield Advanced Health-Based Detection</a> in the <i>WAF Developer Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateHealthCheckFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_health_check::builders::AssociateHealthCheckInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_health_check::builders::AssociateHealthCheckInputBuilder,
+}
 impl AssociateHealthCheckFluentBuilder  {
     /// Creates a new `AssociateHealthCheck`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_health_check::AssociateHealthCheck, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_content::_delete_content_input::DeleteContentIn
 /// <p>Deletes the content.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteContentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_content::builders::DeleteContentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_content::builders::DeleteContentInputBuilder,
+}
 impl DeleteContentFluentBuilder  {
     /// Creates a new `DeleteContent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_content::DeleteContent, aws_http::retry::AwsResponseRetryClassifier,>,

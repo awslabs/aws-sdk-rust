@@ -10,16 +10,17 @@ pub use crate::operation::update_ledger_permissions_mode::_update_ledger_permiss
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLedgerPermissionsModeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_ledger_permissions_mode::builders::UpdateLedgerPermissionsModeInputBuilder,
+}
 impl UpdateLedgerPermissionsModeFluentBuilder  {
     /// Creates a new `UpdateLedgerPermissionsMode`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsMode, aws_http::retry::AwsResponseRetryClassifier,>,

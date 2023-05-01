@@ -11,16 +11,17 @@ pub use crate::operation::classify_document::_classify_document_input::ClassifyD
 /// <p>If the system detects a document-level error in your input document, the API returns an <code>InvalidRequestException</code> error response. For details about this exception, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html"> Errors in semi-structured documents</a> in the Comprehend Developer Guide. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ClassifyDocumentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::classify_document::builders::ClassifyDocumentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::classify_document::builders::ClassifyDocumentInputBuilder,
+}
 impl ClassifyDocumentFluentBuilder  {
     /// Creates a new `ClassifyDocument`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::classify_document::ClassifyDocument, aws_http::retry::AwsResponseRetryClassifier,>,

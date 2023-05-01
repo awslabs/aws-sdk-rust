@@ -10,16 +10,17 @@ pub use crate::operation::publish_version::_publish_version_input::PublishVersio
 /// <p>Clients can invoke versions directly or with an alias. To create an alias, use <code>CreateAlias</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PublishVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::publish_version::builders::PublishVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::publish_version::builders::PublishVersionInputBuilder,
+}
 impl PublishVersionFluentBuilder  {
     /// Creates a new `PublishVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::publish_version::PublishVersion, aws_http::retry::AwsResponseRetryClassifier,>,

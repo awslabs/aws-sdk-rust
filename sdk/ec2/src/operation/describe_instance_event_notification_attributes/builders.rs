@@ -8,16 +8,17 @@ pub use crate::operation::describe_instance_event_notification_attributes::_desc
 /// <p>Describes the tag keys that are registered to appear in scheduled event notifications for resources in the current Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstanceEventNotificationAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_instance_event_notification_attributes::builders::DescribeInstanceEventNotificationAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_instance_event_notification_attributes::builders::DescribeInstanceEventNotificationAttributesInputBuilder,
+}
 impl DescribeInstanceEventNotificationAttributesFluentBuilder  {
     /// Creates a new `DescribeInstanceEventNotificationAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_instance_event_notification_attributes::DescribeInstanceEventNotificationAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

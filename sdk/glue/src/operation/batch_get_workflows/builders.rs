@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_workflows::_batch_get_workflows_input::Batch
 /// <p>Returns a list of resource metadata for a given list of workflow names. After calling the <code>ListWorkflows</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetWorkflowsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_workflows::builders::BatchGetWorkflowsInputBuilder,
+}
 impl BatchGetWorkflowsFluentBuilder  {
     /// Creates a new `BatchGetWorkflows`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_workflows::BatchGetWorkflows, aws_http::retry::AwsResponseRetryClassifier,>,

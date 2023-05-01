@@ -9,16 +9,17 @@ pub use crate::operation::delete_snapshot::_delete_snapshot_input::DeleteSnapsho
 /// <p>The <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears with the lifecycle status of <code>DELETING</code> until the deletion is complete.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_snapshot::builders::DeleteSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_snapshot::builders::DeleteSnapshotInputBuilder,
+}
 impl DeleteSnapshotFluentBuilder  {
     /// Creates a new `DeleteSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_snapshot::DeleteSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

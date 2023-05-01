@@ -8,16 +8,17 @@ pub use crate::operation::create_monitoring_schedule::_create_monitoring_schedul
 /// <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to monitor the data captured for an Amazon SageMaker Endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMonitoringScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_monitoring_schedule::builders::CreateMonitoringScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_monitoring_schedule::builders::CreateMonitoringScheduleInputBuilder,
+}
 impl CreateMonitoringScheduleFluentBuilder  {
     /// Creates a new `CreateMonitoringSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_monitoring_schedule::CreateMonitoringSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::initiate_document_version_upload::_initiate_document_v
 /// <p>To cancel the document upload, call <code>AbortDocumentVersionUpload</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InitiateDocumentVersionUploadFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder,
+}
 impl InitiateDocumentVersionUploadFluentBuilder  {
     /// Creates a new `InitiateDocumentVersionUpload`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUpload, aws_http::retry::AwsResponseRetryClassifier,>,

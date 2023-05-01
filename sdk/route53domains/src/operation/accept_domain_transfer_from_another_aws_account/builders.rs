@@ -10,16 +10,17 @@ pub use crate::operation::accept_domain_transfer_from_another_aws_account::_acce
 /// <p>Use either <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a> or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a> to determine whether the operation succeeded. <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a> provides additional information, for example, <code>Domain Transfer from Aws Account 111122223333 has been cancelled</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptDomainTransferFromAnotherAwsAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_domain_transfer_from_another_aws_account::builders::AcceptDomainTransferFromAnotherAwsAccountInputBuilder,
+}
 impl AcceptDomainTransferFromAnotherAwsAccountFluentBuilder  {
     /// Creates a new `AcceptDomainTransferFromAnotherAwsAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_domain_transfer_from_another_aws_account::AcceptDomainTransferFromAnotherAwsAccount, aws_http::retry::AwsResponseRetryClassifier,>,

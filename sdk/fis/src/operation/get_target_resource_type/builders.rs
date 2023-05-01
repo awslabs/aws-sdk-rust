@@ -8,16 +8,17 @@ pub use crate::operation::get_target_resource_type::_get_target_resource_type_in
 /// <p>Gets information about the specified resource type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTargetResourceTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_target_resource_type::builders::GetTargetResourceTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_target_resource_type::builders::GetTargetResourceTypeInputBuilder,
+}
 impl GetTargetResourceTypeFluentBuilder  {
     /// Creates a new `GetTargetResourceType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_target_resource_type::GetTargetResourceType, aws_http::retry::AwsResponseRetryClassifier,>,

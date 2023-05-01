@@ -8,16 +8,17 @@ pub use crate::operation::get_statement::_get_statement_input::GetStatementInput
 /// <p>Retrieves the statement.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetStatementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_statement::builders::GetStatementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_statement::builders::GetStatementInputBuilder,
+}
 impl GetStatementFluentBuilder  {
     /// Creates a new `GetStatement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_statement::GetStatement, aws_http::retry::AwsResponseRetryClassifier,>,

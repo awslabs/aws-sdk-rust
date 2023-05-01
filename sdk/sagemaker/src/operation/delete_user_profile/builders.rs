@@ -8,16 +8,17 @@ pub use crate::operation::delete_user_profile::_delete_user_profile_input::Delet
 /// <p>Deletes a user profile. When a user profile is deleted, the user loses access to their EFS volume, including data, notebooks, and other artifacts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteUserProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_user_profile::builders::DeleteUserProfileInputBuilder,
+}
 impl DeleteUserProfileFluentBuilder  {
     /// Creates a new `DeleteUserProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_user_profile::DeleteUserProfile, aws_http::retry::AwsResponseRetryClassifier,>,

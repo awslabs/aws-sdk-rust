@@ -8,16 +8,17 @@ pub use crate::operation::delete_algorithm::_delete_algorithm_input::DeleteAlgor
 /// <p>Removes the specified algorithm from your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAlgorithmFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_algorithm::builders::DeleteAlgorithmInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_algorithm::builders::DeleteAlgorithmInputBuilder,
+}
 impl DeleteAlgorithmFluentBuilder  {
     /// Creates a new `DeleteAlgorithm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_algorithm::DeleteAlgorithm, aws_http::retry::AwsResponseRetryClassifier,>,

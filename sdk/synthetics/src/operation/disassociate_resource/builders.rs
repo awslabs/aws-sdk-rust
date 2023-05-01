@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_resource::_disassociate_resource_input::D
 /// <p>Removes a canary from a group. You must run this operation in the Region where the canary exists.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_resource::builders::DisassociateResourceInputBuilder,
+}
 impl DisassociateResourceFluentBuilder  {
     /// Creates a new `DisassociateResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_resource::DisassociateResource, aws_http::retry::AwsResponseRetryClassifier,>,

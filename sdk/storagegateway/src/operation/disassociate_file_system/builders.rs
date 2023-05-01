@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_file_system::_disassociate_file_system_in
 /// <p>Disassociates an Amazon FSx file system from the specified gateway. After the disassociation process finishes, the gateway can no longer access the Amazon FSx file system. This operation is only supported in the FSx File Gateway type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateFileSystemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_file_system::builders::DisassociateFileSystemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_file_system::builders::DisassociateFileSystemInputBuilder,
+}
 impl DisassociateFileSystemFluentBuilder  {
     /// Creates a new `DisassociateFileSystem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_file_system::DisassociateFileSystem, aws_http::retry::AwsResponseRetryClassifier,>,

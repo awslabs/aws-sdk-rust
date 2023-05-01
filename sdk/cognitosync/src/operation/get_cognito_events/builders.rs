@@ -9,16 +9,17 @@ pub use crate::operation::get_cognito_events::_get_cognito_events_input::GetCogn
 /// <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCognitoEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_cognito_events::builders::GetCognitoEventsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_cognito_events::builders::GetCognitoEventsInputBuilder,
+}
 impl GetCognitoEventsFluentBuilder  {
     /// Creates a new `GetCognitoEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_cognito_events::GetCognitoEvents, aws_http::retry::AwsResponseRetryClassifier,>,

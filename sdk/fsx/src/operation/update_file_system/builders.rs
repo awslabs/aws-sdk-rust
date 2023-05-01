@@ -51,16 +51,17 @@ pub use crate::operation::update_file_system::_update_file_system_input::UpdateF
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFileSystemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_file_system::builders::UpdateFileSystemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_file_system::builders::UpdateFileSystemInputBuilder,
+}
 impl UpdateFileSystemFluentBuilder  {
     /// Creates a new `UpdateFileSystem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_file_system::UpdateFileSystem, aws_http::retry::AwsResponseRetryClassifier,>,

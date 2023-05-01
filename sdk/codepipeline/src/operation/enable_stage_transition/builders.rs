@@ -8,16 +8,17 @@ pub use crate::operation::enable_stage_transition::_enable_stage_transition_inpu
 /// <p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableStageTransitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_stage_transition::builders::EnableStageTransitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_stage_transition::builders::EnableStageTransitionInputBuilder,
+}
 impl EnableStageTransitionFluentBuilder  {
     /// Creates a new `EnableStageTransition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_stage_transition::EnableStageTransition, aws_http::retry::AwsResponseRetryClassifier,>,

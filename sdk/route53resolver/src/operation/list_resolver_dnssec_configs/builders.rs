@@ -8,16 +8,17 @@ pub use crate::operation::list_resolver_dnssec_configs::_list_resolver_dnssec_co
 /// <p>Lists the configurations for DNSSEC validation that are associated with the current Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResolverDnssecConfigsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resolver_dnssec_configs::builders::ListResolverDnssecConfigsInputBuilder,
+}
 impl ListResolverDnssecConfigsFluentBuilder  {
     /// Creates a new `ListResolverDnssecConfigs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListResolverDnssecConfigsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_dnssec_configs::paginator::ListResolverDnssecConfigsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resolver_dnssec_configs::paginator::ListResolverDnssecConfigsPaginator {
-                            crate::operation::list_resolver_dnssec_configs::paginator::ListResolverDnssecConfigsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_dnssec_configs::paginator::ListResolverDnssecConfigsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_resolver_dnssec_configs::paginator::ListResolverDnssecConfigsPaginator {
+                                crate::operation::list_resolver_dnssec_configs::paginator::ListResolverDnssecConfigsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

@@ -8,16 +8,17 @@ pub use crate::operation::create_usage_limit::_create_usage_limit_input::CreateU
 /// <p>Creates a usage limit for a specified Amazon Redshift feature on a cluster. The usage limit is identified by the returned usage limit identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateUsageLimitFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_usage_limit::builders::CreateUsageLimitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_usage_limit::builders::CreateUsageLimitInputBuilder,
+}
 impl CreateUsageLimitFluentBuilder  {
     /// Creates a new `CreateUsageLimit`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_usage_limit::CreateUsageLimit, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_alias::_create_alias_input::CreateAliasInputBui
 /// <p>Adds an alias to the set of a given member (user or group) of WorkMail.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAliasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_alias::builders::CreateAliasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_alias::builders::CreateAliasInputBuilder,
+}
 impl CreateAliasFluentBuilder  {
     /// Creates a new `CreateAlias`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_alias::CreateAlias, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::delete_sol_network_package::_delete_sol_network_packag
 /// <p>To delete a network package, the package must be in a disable state. To disable a network package, see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolNetworkPackage.html">UpdateSolNetworkPackage</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSolNetworkPackageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_sol_network_package::builders::DeleteSolNetworkPackageInputBuilder,
+}
 impl DeleteSolNetworkPackageFluentBuilder  {
     /// Creates a new `DeleteSolNetworkPackage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_sol_network_package::DeleteSolNetworkPackage, aws_http::retry::AwsResponseRetryClassifier,>,

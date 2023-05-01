@@ -8,16 +8,17 @@ pub use crate::operation::delete_room_membership::_delete_room_membership_input:
 /// <p>Removes a member from a chat room in an Amazon Chime Enterprise account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRoomMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_room_membership::builders::DeleteRoomMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_room_membership::builders::DeleteRoomMembershipInputBuilder,
+}
 impl DeleteRoomMembershipFluentBuilder  {
     /// Creates a new `DeleteRoomMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_room_membership::DeleteRoomMembership, aws_http::retry::AwsResponseRetryClassifier,>,

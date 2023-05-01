@@ -9,16 +9,17 @@ pub use crate::operation::rotate_channel_credentials::_rotate_channel_credential
 #[deprecated(note = "This API is deprecated. Please use RotateIngestEndpointCredentials instead")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RotateChannelCredentialsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::rotate_channel_credentials::builders::RotateChannelCredentialsInputBuilder,
+}
 impl RotateChannelCredentialsFluentBuilder  {
     /// Creates a new `RotateChannelCredentials`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::rotate_channel_credentials::RotateChannelCredentials, aws_http::retry::AwsResponseRetryClassifier,>,

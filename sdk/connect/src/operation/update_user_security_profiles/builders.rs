@@ -8,16 +8,17 @@ pub use crate::operation::update_user_security_profiles::_update_user_security_p
 /// <p>Assigns the specified security profiles to the specified user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateUserSecurityProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_user_security_profiles::builders::UpdateUserSecurityProfilesInputBuilder,
+}
 impl UpdateUserSecurityProfilesFluentBuilder  {
     /// Creates a new `UpdateUserSecurityProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_user_security_profiles::UpdateUserSecurityProfiles, aws_http::retry::AwsResponseRetryClassifier,>,

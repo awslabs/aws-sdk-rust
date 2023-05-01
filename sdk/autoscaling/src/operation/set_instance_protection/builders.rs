@@ -10,16 +10,17 @@ pub use crate::operation::set_instance_protection::_set_instance_protection_inpu
 /// <p>If you exceed your maximum limit of instance IDs, which is 50 per Auto Scaling group, the call fails.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetInstanceProtectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_instance_protection::builders::SetInstanceProtectionInputBuilder,
+}
 impl SetInstanceProtectionFluentBuilder  {
     /// Creates a new `SetInstanceProtection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_instance_protection::SetInstanceProtection, aws_http::retry::AwsResponseRetryClassifier,>,

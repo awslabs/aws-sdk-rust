@@ -32,16 +32,17 @@ pub use crate::operation::generate_organizations_access_report::_generate_organi
 /// <p>For more information about service last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing policy scope by viewing user activity</a> in the <i>IAM User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateOrganizationsAccessReportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::generate_organizations_access_report::builders::GenerateOrganizationsAccessReportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::generate_organizations_access_report::builders::GenerateOrganizationsAccessReportInputBuilder,
+}
 impl GenerateOrganizationsAccessReportFluentBuilder  {
     /// Creates a new `GenerateOrganizationsAccessReport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReport, aws_http::retry::AwsResponseRetryClassifier,>,

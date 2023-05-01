@@ -10,16 +10,17 @@ pub use crate::operation::create_db_cluster::_create_db_cluster_input::CreateDbC
 /// <p>Note that when you create a new cluster using <code>CreateDBCluster</code> directly, deletion protection is disabled by default (when you create a new production cluster in the console, deletion protection is enabled by default). You can only delete a DB cluster if its <code>DeletionProtection</code> field is set to <code>false</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDBClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_db_cluster::builders::CreateDbClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_db_cluster::builders::CreateDbClusterInputBuilder,
+}
 impl CreateDBClusterFluentBuilder  {
     /// Creates a new `CreateDBCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_db_cluster::CreateDBCluster, aws_http::retry::AwsResponseRetryClassifier,>,

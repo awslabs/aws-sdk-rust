@@ -9,16 +9,17 @@ pub use crate::operation::delete_bot_locale::_delete_bot_locale_input::DeleteBot
 /// <p>When you delete a locale, all intents, slots, and slot types defined for the locale are also deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBotLocaleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_bot_locale::builders::DeleteBotLocaleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_bot_locale::builders::DeleteBotLocaleInputBuilder,
+}
 impl DeleteBotLocaleFluentBuilder  {
     /// Creates a new `DeleteBotLocale`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_bot_locale::DeleteBotLocale, aws_http::retry::AwsResponseRetryClassifier,>,

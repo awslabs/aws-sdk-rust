@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_frame_metric_data::_batch_get_frame_metric_d
 /// <p> Returns the time series of values for a requested list of frame metrics from a time period.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder,
+}
 impl BatchGetFrameMetricDataFluentBuilder  {
     /// Creates a new `BatchGetFrameMetricData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricData, aws_http::retry::AwsResponseRetryClassifier,>,

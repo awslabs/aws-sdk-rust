@@ -9,16 +9,17 @@ pub use crate::operation::list_tape_pools::_list_tape_pools_input::ListTapePools
 /// <p>This operation supports pagination. You can optionally specify the <code>Limit</code> parameter in the body to limit the number of tape pools in the response. If the number of tape pools returned in the response is truncated, the response includes a <code>Marker</code> element that you can use in your subsequent request to retrieve the next set of tape pools.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTapePoolsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tape_pools::builders::ListTapePoolsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tape_pools::builders::ListTapePoolsInputBuilder,
+}
 impl ListTapePoolsFluentBuilder  {
     /// Creates a new `ListTapePools`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tape_pools::ListTapePools, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListTapePoolsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_tape_pools::paginator::ListTapePoolsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_tape_pools::paginator::ListTapePoolsPaginator {
-                            crate::operation::list_tape_pools::paginator::ListTapePoolsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_tape_pools::paginator::ListTapePoolsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_tape_pools::paginator::ListTapePoolsPaginator {
+                                crate::operation::list_tape_pools::paginator::ListTapePoolsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `PoolARNs`.
     ///
     /// To override the contents of this collection use [`set_pool_ar_ns`](Self::set_pool_ar_ns).

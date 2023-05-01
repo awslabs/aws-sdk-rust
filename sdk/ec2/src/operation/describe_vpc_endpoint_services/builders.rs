@@ -9,16 +9,17 @@ pub use crate::operation::describe_vpc_endpoint_services::_describe_vpc_endpoint
 /// <p>When the service provider and the consumer have different accounts in multiple Availability Zones, and the consumer views the VPC endpoint service information, the response only includes the common Availability Zones. For example, when the service provider account uses <code>us-east-1a</code> and <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code> and <code>us-east-1b</code>, the response includes the VPC endpoint services in the common Availability Zone, <code>us-east-1a</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVpcEndpointServicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_vpc_endpoint_services::builders::DescribeVpcEndpointServicesInputBuilder,
+}
 impl DescribeVpcEndpointServicesFluentBuilder  {
     /// Creates a new `DescribeVpcEndpointServices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_vpc_endpoint_services::DescribeVpcEndpointServices, aws_http::retry::AwsResponseRetryClassifier,>,

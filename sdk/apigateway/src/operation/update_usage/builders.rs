@@ -8,16 +8,17 @@ pub use crate::operation::update_usage::_update_usage_input::UpdateUsageInputBui
 /// <p>Grants a temporary extension to the remaining quota of a usage plan associated with a specified API key.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateUsageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_usage::builders::UpdateUsageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_usage::builders::UpdateUsageInputBuilder,
+}
 impl UpdateUsageFluentBuilder  {
     /// Creates a new `UpdateUsage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_usage::UpdateUsage, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_notebook_executions::_list_notebook_executions_in
 /// <p>Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status, time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a longer notebook execution list across multiple <code>ListNotebookExecution</code> calls.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNotebookExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder,
+}
 impl ListNotebookExecutionsFluentBuilder  {
     /// Creates a new `ListNotebookExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_notebook_executions::ListNotebookExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListNotebookExecutionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator {
-                            crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator {
+                                crate::operation::list_notebook_executions::paginator::ListNotebookExecutionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
     pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.editor_id(input.into());

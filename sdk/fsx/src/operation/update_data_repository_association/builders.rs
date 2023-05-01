@@ -8,16 +8,17 @@ pub use crate::operation::update_data_repository_association::_update_data_repos
 /// <p>Updates the configuration of an existing data repository association on an Amazon FSx for Lustre file system. Data repository associations are supported for all file systems except for <code>Scratch_1</code> deployment type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDataRepositoryAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_data_repository_association::builders::UpdateDataRepositoryAssociationInputBuilder,
+}
 impl UpdateDataRepositoryAssociationFluentBuilder  {
     /// Creates a new `UpdateDataRepositoryAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_data_repository_association::UpdateDataRepositoryAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

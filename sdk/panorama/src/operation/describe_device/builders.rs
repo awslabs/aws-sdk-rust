@@ -8,16 +8,17 @@ pub use crate::operation::describe_device::_describe_device_input::DescribeDevic
 /// <p>Returns information about a device.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_device::builders::DescribeDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_device::builders::DescribeDeviceInputBuilder,
+}
 impl DescribeDeviceFluentBuilder  {
     /// Creates a new `DescribeDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_device::DescribeDevice, aws_http::retry::AwsResponseRetryClassifier,>,

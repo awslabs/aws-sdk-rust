@@ -8,16 +8,17 @@ pub use crate::operation::update_collaboration::_update_collaboration_input::Upd
 /// <p>Updates collaboration metadata and can only be called by the collaboration owner.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCollaborationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_collaboration::builders::UpdateCollaborationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_collaboration::builders::UpdateCollaborationInputBuilder,
+}
 impl UpdateCollaborationFluentBuilder  {
     /// Creates a new `UpdateCollaboration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_collaboration::UpdateCollaboration, aws_http::retry::AwsResponseRetryClassifier,>,

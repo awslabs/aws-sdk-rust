@@ -12,16 +12,17 @@ pub use crate::operation::get_web_acl_for_resource::_get_web_acl_for_resource_in
 /// <p>Returns the web ACL for the specified resource, either an application load balancer or Amazon API Gateway stage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetWebACLForResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_web_acl_for_resource::builders::GetWebAclForResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_web_acl_for_resource::builders::GetWebAclForResourceInputBuilder,
+}
 impl GetWebACLForResourceFluentBuilder  {
     /// Creates a new `GetWebACLForResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_web_acl_for_resource::GetWebACLForResource, aws_http::retry::AwsResponseRetryClassifier,>,

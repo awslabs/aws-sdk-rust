@@ -8,16 +8,17 @@ pub use crate::operation::delete_experiment::_delete_experiment_input::DeleteExp
 /// <p>Deletes an SageMaker experiment. All trials associated with the experiment must be deleted first. Use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a> API to get a list of the trials associated with the experiment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteExperimentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder,
+}
 impl DeleteExperimentFluentBuilder  {
     /// Creates a new `DeleteExperiment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_experiment::DeleteExperiment, aws_http::retry::AwsResponseRetryClassifier,>,

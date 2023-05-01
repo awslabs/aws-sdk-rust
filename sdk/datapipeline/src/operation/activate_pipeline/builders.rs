@@ -17,16 +17,17 @@ pub use crate::operation::activate_pipeline::_activate_pipeline_input::ActivateP
 /// </examples>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ActivatePipelineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::activate_pipeline::builders::ActivatePipelineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::activate_pipeline::builders::ActivatePipelineInputBuilder,
+}
 impl ActivatePipelineFluentBuilder  {
     /// Creates a new `ActivatePipeline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::activate_pipeline::ActivatePipeline, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::cancel_signing_profile::_cancel_signing_profile_input:
 /// <p>Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>. A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs, and is deleted two years after cancelation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelSigningProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_signing_profile::builders::CancelSigningProfileInputBuilder,
+}
 impl CancelSigningProfileFluentBuilder  {
     /// Creates a new `CancelSigningProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_signing_profile::CancelSigningProfile, aws_http::retry::AwsResponseRetryClassifier,>,

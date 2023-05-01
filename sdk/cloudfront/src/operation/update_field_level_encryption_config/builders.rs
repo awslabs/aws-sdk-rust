@@ -8,16 +8,17 @@ pub use crate::operation::update_field_level_encryption_config::_update_field_le
 /// <p>Update a field-level encryption configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigInputBuilder,
+}
 impl UpdateFieldLevelEncryptionConfigFluentBuilder  {
     /// Creates a new `UpdateFieldLevelEncryptionConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfig, aws_http::retry::AwsResponseRetryClassifier,>,

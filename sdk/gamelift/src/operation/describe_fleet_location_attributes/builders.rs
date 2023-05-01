@@ -17,16 +17,17 @@ pub use crate::operation::describe_fleet_location_attributes::_describe_fleet_lo
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFleetLocationAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_fleet_location_attributes::builders::DescribeFleetLocationAttributesInputBuilder,
+}
 impl DescribeFleetLocationAttributesFluentBuilder  {
     /// Creates a new `DescribeFleetLocationAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -57,11 +58,11 @@ impl DescribeFleetLocationAttributesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_location_attributes::paginator::DescribeFleetLocationAttributesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_fleet_location_attributes::paginator::DescribeFleetLocationAttributesPaginator {
-                            crate::operation::describe_fleet_location_attributes::paginator::DescribeFleetLocationAttributesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_location_attributes::paginator::DescribeFleetLocationAttributesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_fleet_location_attributes::paginator::DescribeFleetLocationAttributesPaginator {
+                                crate::operation::describe_fleet_location_attributes::paginator::DescribeFleetLocationAttributesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A unique identifier for the fleet to retrieve remote locations for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());

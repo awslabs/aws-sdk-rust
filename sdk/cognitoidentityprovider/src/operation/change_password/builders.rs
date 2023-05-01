@@ -8,16 +8,17 @@ pub use crate::operation::change_password::_change_password_input::ChangePasswor
 /// <p>Changes the password for a specified user in a user pool.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ChangePasswordFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::change_password::builders::ChangePasswordInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::change_password::builders::ChangePasswordInputBuilder,
+}
 impl ChangePasswordFluentBuilder  {
     /// Creates a new `ChangePassword`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::change_password::ChangePassword, aws_http::retry::AwsResponseRetryClassifier,>,

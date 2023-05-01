@@ -9,16 +9,17 @@ pub use crate::operation::put_opted_out_number::_put_opted_out_number_input::Put
 /// <p>If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an Error is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutOptedOutNumberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_opted_out_number::builders::PutOptedOutNumberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_opted_out_number::builders::PutOptedOutNumberInputBuilder,
+}
 impl PutOptedOutNumberFluentBuilder  {
     /// Creates a new `PutOptedOutNumber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_opted_out_number::PutOptedOutNumber, aws_http::retry::AwsResponseRetryClassifier,>,

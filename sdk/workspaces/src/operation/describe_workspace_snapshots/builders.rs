@@ -8,16 +8,17 @@ pub use crate::operation::describe_workspace_snapshots::_describe_workspace_snap
 /// <p>Describes the snapshots for the specified WorkSpace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeWorkspaceSnapshotsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_workspace_snapshots::builders::DescribeWorkspaceSnapshotsInputBuilder,
+}
 impl DescribeWorkspaceSnapshotsFluentBuilder  {
     /// Creates a new `DescribeWorkspaceSnapshots`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshots, aws_http::retry::AwsResponseRetryClassifier,>,

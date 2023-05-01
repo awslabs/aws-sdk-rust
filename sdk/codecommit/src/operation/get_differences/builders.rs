@@ -8,16 +8,17 @@ pub use crate::operation::get_differences::_get_differences_input::GetDifference
 /// <p>Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified reference). Results can be limited to a specified path.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDifferencesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_differences::builders::GetDifferencesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_differences::builders::GetDifferencesInputBuilder,
+}
 impl GetDifferencesFluentBuilder  {
     /// Creates a new `GetDifferences`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_differences::GetDifferences, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetDifferencesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_differences::paginator::GetDifferencesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_differences::paginator::GetDifferencesPaginator {
-                            crate::operation::get_differences::paginator::GetDifferencesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_differences::paginator::GetDifferencesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_differences::paginator::GetDifferencesPaginator {
+                                crate::operation::get_differences::paginator::GetDifferencesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the repository where you want to get differences.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::deregister_compute::_deregister_compute_input::Deregis
 /// <p>Removes a compute resource from the specified fleet. Deregister your compute resources before you delete the compute.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterComputeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_compute::builders::DeregisterComputeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_compute::builders::DeregisterComputeInputBuilder,
+}
 impl DeregisterComputeFluentBuilder  {
     /// Creates a new `DeregisterCompute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_compute::DeregisterCompute, aws_http::retry::AwsResponseRetryClassifier,>,

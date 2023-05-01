@@ -8,16 +8,17 @@ pub use crate::operation::create_billing_group::_create_billing_group_input::Cre
 /// <p> Creates a billing group that resembles a consolidated billing family that Amazon Web Services charges, based off of the predefined pricing plan computation. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBillingGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_billing_group::builders::CreateBillingGroupInputBuilder,
+}
 impl CreateBillingGroupFluentBuilder  {
     /// Creates a new `CreateBillingGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_billing_group::CreateBillingGroup, aws_http::retry::AwsResponseRetryClassifier,>,

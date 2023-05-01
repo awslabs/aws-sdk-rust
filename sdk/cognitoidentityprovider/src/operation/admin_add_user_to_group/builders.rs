@@ -9,16 +9,17 @@ pub use crate::operation::admin_add_user_to_group::_admin_add_user_to_group_inpu
 /// <p>Calling this action requires developer credentials.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AdminAddUserToGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::admin_add_user_to_group::builders::AdminAddUserToGroupInputBuilder,
+}
 impl AdminAddUserToGroupFluentBuilder  {
     /// Creates a new `AdminAddUserToGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::admin_add_user_to_group::AdminAddUserToGroup, aws_http::retry::AwsResponseRetryClassifier,>,

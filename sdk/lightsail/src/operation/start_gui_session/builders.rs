@@ -8,16 +8,17 @@ pub use crate::operation::start_gui_session::_start_gui_session_input::StartGuiS
 /// <p>Initiates a graphical user interface (GUI) session that’s used to access a virtual computer’s operating system and application. The session will be active for 1 hour. Use this action to resume the session after it expires. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartGUISessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_gui_session::builders::StartGuiSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_gui_session::builders::StartGuiSessionInputBuilder,
+}
 impl StartGUISessionFluentBuilder  {
     /// Creates a new `StartGUISession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_gui_session::StartGUISession, aws_http::retry::AwsResponseRetryClassifier,>,

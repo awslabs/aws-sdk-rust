@@ -8,16 +8,17 @@ pub use crate::operation::authorize_vpc_endpoint_access::_authorize_vpc_endpoint
 /// <p>Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeVpcEndpointAccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::authorize_vpc_endpoint_access::builders::AuthorizeVpcEndpointAccessInputBuilder,
+}
 impl AuthorizeVpcEndpointAccessFluentBuilder  {
     /// Creates a new `AuthorizeVpcEndpointAccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccess, aws_http::retry::AwsResponseRetryClassifier,>,

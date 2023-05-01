@@ -9,16 +9,17 @@ pub use crate::operation::describe_bandwidth_rate_limit::_describe_bandwidth_rat
 /// <p>This operation returns a value for a bandwidth rate limit only if the limit is set. If no limits are set for the gateway, then this operation returns only the gateway ARN in the response body. To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBandwidthRateLimitFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_bandwidth_rate_limit::builders::DescribeBandwidthRateLimitInputBuilder,
+}
 impl DescribeBandwidthRateLimitFluentBuilder  {
     /// Creates a new `DescribeBandwidthRateLimit`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimit, aws_http::retry::AwsResponseRetryClassifier,>,

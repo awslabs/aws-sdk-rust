@@ -8,16 +8,17 @@ pub use crate::operation::update_managed_instance_role::_update_managed_instance
 /// <p>Changes the Identity and Access Management (IAM) role that is assigned to the on-premises server, edge device, or virtual machines (VM). IAM roles are first assigned to these hybrid nodes during the activation process. For more information, see <code>CreateActivation</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateManagedInstanceRoleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_managed_instance_role::builders::UpdateManagedInstanceRoleInputBuilder,
+}
 impl UpdateManagedInstanceRoleFluentBuilder  {
     /// Creates a new `UpdateManagedInstanceRole`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_managed_instance_role::UpdateManagedInstanceRole, aws_http::retry::AwsResponseRetryClassifier,>,

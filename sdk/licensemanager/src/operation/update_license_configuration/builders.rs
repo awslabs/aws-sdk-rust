@@ -8,16 +8,17 @@ pub use crate::operation::update_license_configuration::_update_license_configur
 /// <p>Modifies the attributes of an existing license configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLicenseConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationInputBuilder,
+}
 impl UpdateLicenseConfigurationFluentBuilder  {
     /// Creates a new `UpdateLicenseConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_license_configuration::UpdateLicenseConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::associate_drt_log_bucket::_associate_drt_log_bucket_in
 /// <p>To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateDRTLogBucketFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_drt_log_bucket::builders::AssociateDrtLogBucketInputBuilder,
+}
 impl AssociateDRTLogBucketFluentBuilder  {
     /// Creates a new `AssociateDRTLogBucket`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_drt_log_bucket::AssociateDRTLogBucket, aws_http::retry::AwsResponseRetryClassifier,>,

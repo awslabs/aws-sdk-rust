@@ -8,16 +8,17 @@ pub use crate::operation::get_list_elements::_get_list_elements_input::GetListEl
 /// <p> Gets all the elements in the specified list. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetListElementsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_list_elements::builders::GetListElementsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_list_elements::builders::GetListElementsInputBuilder,
+}
 impl GetListElementsFluentBuilder  {
     /// Creates a new `GetListElements`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_list_elements::GetListElements, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetListElementsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_list_elements::paginator::GetListElementsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_list_elements::paginator::GetListElementsPaginator {
-                            crate::operation::get_list_elements::paginator::GetListElementsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_list_elements::paginator::GetListElementsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_list_elements::paginator::GetListElementsPaginator {
+                                crate::operation::get_list_elements::paginator::GetListElementsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The name of the list. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

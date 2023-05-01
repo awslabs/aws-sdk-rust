@@ -11,16 +11,17 @@ pub use crate::operation::describe_spot_instance_requests::_describe_spot_instan
 /// <p>Spot Instance requests are deleted four hours after they are canceled and their instances are terminated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSpotInstanceRequestsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_spot_instance_requests::builders::DescribeSpotInstanceRequestsInputBuilder,
+}
 impl DescribeSpotInstanceRequestsFluentBuilder  {
     /// Creates a new `DescribeSpotInstanceRequests`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequests, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl DescribeSpotInstanceRequestsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator {
-                            crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator {
+                                crate::operation::describe_spot_instance_requests::paginator::DescribeSpotInstanceRequestsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

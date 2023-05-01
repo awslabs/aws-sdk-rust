@@ -18,16 +18,17 @@ pub use crate::operation::send_message_batch::_send_message_batch_input::SendMes
 /// <p> <code>&amp;AttributeName.2=second</code> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendMessageBatchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_message_batch::builders::SendMessageBatchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_message_batch::builders::SendMessageBatchInputBuilder,
+}
 impl SendMessageBatchFluentBuilder  {
     /// Creates a new `SendMessageBatch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_message_batch::SendMessageBatch, aws_http::retry::AwsResponseRetryClassifier,>,

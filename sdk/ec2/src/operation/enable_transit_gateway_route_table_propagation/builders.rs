@@ -8,16 +8,17 @@ pub use crate::operation::enable_transit_gateway_route_table_propagation::_enabl
 /// <p>Enables the specified attachment to propagate routes to the specified propagation route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableTransitGatewayRouteTablePropagationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_transit_gateway_route_table_propagation::builders::EnableTransitGatewayRouteTablePropagationInputBuilder,
+}
 impl EnableTransitGatewayRouteTablePropagationFluentBuilder  {
     /// Creates a new `EnableTransitGatewayRouteTablePropagation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagation, aws_http::retry::AwsResponseRetryClassifier,>,

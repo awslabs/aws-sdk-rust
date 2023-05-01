@@ -8,16 +8,17 @@ pub use crate::operation::get_core_network_policy::_get_core_network_policy_inpu
 /// <p>Returns details about a core network policy. You can get details about your current live policy or any previous policy version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCoreNetworkPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_core_network_policy::builders::GetCoreNetworkPolicyInputBuilder,
+}
 impl GetCoreNetworkPolicyFluentBuilder  {
     /// Creates a new `GetCoreNetworkPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_core_network_policy::GetCoreNetworkPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

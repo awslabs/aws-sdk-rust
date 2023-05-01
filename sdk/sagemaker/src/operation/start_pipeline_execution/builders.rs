@@ -8,16 +8,17 @@ pub use crate::operation::start_pipeline_execution::_start_pipeline_execution_in
 /// <p>Starts a pipeline execution.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartPipelineExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_pipeline_execution::builders::StartPipelineExecutionInputBuilder,
+}
 impl StartPipelineExecutionFluentBuilder  {
     /// Creates a new `StartPipelineExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_pipeline_execution::StartPipelineExecution, aws_http::retry::AwsResponseRetryClassifier,>,

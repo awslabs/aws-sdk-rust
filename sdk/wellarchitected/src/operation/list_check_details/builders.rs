@@ -8,16 +8,17 @@ pub use crate::operation::list_check_details::_list_check_details_input::ListChe
 /// <p>List of Trusted Advisor check details by account related to the workload.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCheckDetailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_check_details::builders::ListCheckDetailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_check_details::builders::ListCheckDetailsInputBuilder,
+}
 impl ListCheckDetailsFluentBuilder  {
     /// Creates a new `ListCheckDetails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_check_details::ListCheckDetails, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCheckDetailsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_check_details::paginator::ListCheckDetailsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_check_details::paginator::ListCheckDetailsPaginator {
-                            crate::operation::list_check_details::paginator::ListCheckDetailsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_check_details::paginator::ListCheckDetailsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_check_details::paginator::ListCheckDetailsPaginator {
+                                crate::operation::list_check_details::paginator::ListCheckDetailsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workload_id(input.into());

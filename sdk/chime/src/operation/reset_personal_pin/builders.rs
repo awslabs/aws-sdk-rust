@@ -8,16 +8,17 @@ pub use crate::operation::reset_personal_pin::_reset_personal_pin_input::ResetPe
 /// <p>Resets the personal meeting PIN for the specified user on an Amazon Chime account. Returns the <code>User</code> object with the updated personal meeting PIN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetPersonalPINFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_personal_pin::builders::ResetPersonalPinInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_personal_pin::builders::ResetPersonalPinInputBuilder,
+}
 impl ResetPersonalPINFluentBuilder  {
     /// Creates a new `ResetPersonalPIN`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_personal_pin::ResetPersonalPIN, aws_http::retry::AwsResponseRetryClassifier,>,

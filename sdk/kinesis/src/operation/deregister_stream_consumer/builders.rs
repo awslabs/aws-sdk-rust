@@ -9,16 +9,17 @@ pub use crate::operation::deregister_stream_consumer::_deregister_stream_consume
 /// <p>This operation has a limit of five transactions per second per stream.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterStreamConsumerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerInputBuilder,
+}
 impl DeregisterStreamConsumerFluentBuilder  {
     /// Creates a new `DeregisterStreamConsumer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_stream_consumer::DeregisterStreamConsumer, aws_http::retry::AwsResponseRetryClassifier,>,

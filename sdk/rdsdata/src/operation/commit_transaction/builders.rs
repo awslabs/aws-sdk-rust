@@ -8,16 +8,17 @@ pub use crate::operation::commit_transaction::_commit_transaction_input::CommitT
 /// <p>Ends a SQL transaction started with the <code>BeginTransaction</code> operation and commits the changes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CommitTransactionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::commit_transaction::builders::CommitTransactionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::commit_transaction::builders::CommitTransactionInputBuilder,
+}
 impl CommitTransactionFluentBuilder  {
     /// Creates a new `CommitTransaction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::commit_transaction::CommitTransaction, aws_http::retry::AwsResponseRetryClassifier,>,

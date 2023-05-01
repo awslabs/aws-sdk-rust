@@ -8,16 +8,17 @@ pub use crate::operation::send_api_asset::_send_api_asset_input::SendApiAssetInp
 /// <p>This operation invokes an API Gateway API asset. The request is proxied to the provider’s API Gateway API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendApiAssetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_api_asset::builders::SendApiAssetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_api_asset::builders::SendApiAssetInputBuilder,
+}
 impl SendApiAssetFluentBuilder  {
     /// Creates a new `SendApiAsset`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_api_asset::SendApiAsset, aws_http::retry::AwsResponseRetryClassifier,>,

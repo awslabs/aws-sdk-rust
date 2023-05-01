@@ -9,16 +9,17 @@ pub use crate::operation::get_contact_reachability_status::_get_contact_reachabi
 /// <p>If you want us to resend the email, use the <code>ResendContactReachabilityEmail</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetContactReachabilityStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_contact_reachability_status::builders::GetContactReachabilityStatusInputBuilder,
+}
 impl GetContactReachabilityStatusFluentBuilder  {
     /// Creates a new `GetContactReachabilityStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_contact_reachability_status::GetContactReachabilityStatus, aws_http::retry::AwsResponseRetryClassifier,>,

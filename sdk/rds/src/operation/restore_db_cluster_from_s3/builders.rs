@@ -13,16 +13,17 @@ pub use crate::operation::restore_db_cluster_from_s3::_restore_db_cluster_from_s
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreDBClusterFromS3FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_db_cluster_from_s3::builders::RestoreDbClusterFromS3InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_db_cluster_from_s3::builders::RestoreDbClusterFromS3InputBuilder,
+}
 impl RestoreDBClusterFromS3FluentBuilder  {
     /// Creates a new `RestoreDBClusterFromS3`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3, aws_http::retry::AwsResponseRetryClassifier,>,

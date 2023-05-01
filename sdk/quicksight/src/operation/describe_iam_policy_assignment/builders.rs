@@ -8,16 +8,17 @@ pub use crate::operation::describe_iam_policy_assignment::_describe_iam_policy_a
 /// <p>Describes an existing IAM policy assignment, as specified by the assignment name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeIAMPolicyAssignmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_iam_policy_assignment::builders::DescribeIamPolicyAssignmentInputBuilder,
+}
 impl DescribeIAMPolicyAssignmentFluentBuilder  {
     /// Creates a new `DescribeIAMPolicyAssignment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_iam_policy_assignment::DescribeIAMPolicyAssignment, aws_http::retry::AwsResponseRetryClassifier,>,

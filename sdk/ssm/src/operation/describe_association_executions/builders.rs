@@ -8,16 +8,17 @@ pub use crate::operation::describe_association_executions::_describe_association
 /// <p>Views all executions for a specific association ID. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssociationExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_association_executions::builders::DescribeAssociationExecutionsInputBuilder,
+}
 impl DescribeAssociationExecutionsFluentBuilder  {
     /// Creates a new `DescribeAssociationExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_association_executions::DescribeAssociationExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeAssociationExecutionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_association_executions::paginator::DescribeAssociationExecutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_association_executions::paginator::DescribeAssociationExecutionsPaginator {
-                            crate::operation::describe_association_executions::paginator::DescribeAssociationExecutionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_association_executions::paginator::DescribeAssociationExecutionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_association_executions::paginator::DescribeAssociationExecutionsPaginator {
+                                crate::operation::describe_association_executions::paginator::DescribeAssociationExecutionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The association ID for which you want to view execution history details.</p>
     pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());

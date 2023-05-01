@@ -9,16 +9,17 @@ pub use crate::operation::confirm_connection::_confirm_connection_input::Confirm
 /// <p>Upon creation, the hosted connection is initially in the <code>Ordering</code> state, and remains in this state until the owner confirms creation of the hosted connection.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfirmConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::confirm_connection::builders::ConfirmConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::confirm_connection::builders::ConfirmConnectionInputBuilder,
+}
 impl ConfirmConnectionFluentBuilder  {
     /// Creates a new `ConfirmConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::confirm_connection::ConfirmConnection, aws_http::retry::AwsResponseRetryClassifier,>,

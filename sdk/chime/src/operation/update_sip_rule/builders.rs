@@ -8,16 +8,17 @@ pub use crate::operation::update_sip_rule::_update_sip_rule_input::UpdateSipRule
 /// <p>Updates the details of the specified SIP rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSipRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_sip_rule::builders::UpdateSipRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_sip_rule::builders::UpdateSipRuleInputBuilder,
+}
 impl UpdateSipRuleFluentBuilder  {
     /// Creates a new `UpdateSipRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_sip_rule::UpdateSipRule, aws_http::retry::AwsResponseRetryClassifier,>,

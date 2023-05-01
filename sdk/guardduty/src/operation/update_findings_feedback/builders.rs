@@ -8,16 +8,17 @@ pub use crate::operation::update_findings_feedback::_update_findings_feedback_in
 /// <p>Marks the specified GuardDuty findings as useful or not useful.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFindingsFeedbackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_findings_feedback::builders::UpdateFindingsFeedbackInputBuilder,
+}
 impl UpdateFindingsFeedbackFluentBuilder  {
     /// Creates a new `UpdateFindingsFeedback`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_findings_feedback::UpdateFindingsFeedback, aws_http::retry::AwsResponseRetryClassifier,>,

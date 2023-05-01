@@ -9,16 +9,17 @@ pub use crate::operation::accept_vpc_peering_connection::_accept_vpc_peering_con
 /// <p>For an inter-Region VPC peering connection request, you must accept the VPC peering connection in the Region of the accepter VPC.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptVpcPeeringConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeeringConnectionInputBuilder,
+}
 impl AcceptVpcPeeringConnectionFluentBuilder  {
     /// Creates a new `AcceptVpcPeeringConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnection, aws_http::retry::AwsResponseRetryClassifier,>,

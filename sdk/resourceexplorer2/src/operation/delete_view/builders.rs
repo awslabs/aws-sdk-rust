@@ -9,16 +9,17 @@ pub use crate::operation::delete_view::_delete_view_input::DeleteViewInputBuilde
 /// <p>If the specified view is the default view for its Amazon Web Services Region, then all <code>Search</code> operations in that Region must explicitly specify the view to use until you configure a new default by calling the <code>AssociateDefaultView</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteViewFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_view::builders::DeleteViewInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_view::builders::DeleteViewInputBuilder,
+}
 impl DeleteViewFluentBuilder  {
     /// Creates a new `DeleteView`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_view::DeleteView, aws_http::retry::AwsResponseRetryClassifier,>,

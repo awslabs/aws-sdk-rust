@@ -8,16 +8,17 @@ pub use crate::operation::describe_global_settings::_describe_global_settings_in
 /// <p>Describes whether the Amazon Web Services account is opted in to cross-account backup. Returns an error if the account is not a member of an Organizations organization. Example: <code>describe-global-settings --region us-west-2</code> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGlobalSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_global_settings::builders::DescribeGlobalSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_global_settings::builders::DescribeGlobalSettingsInputBuilder,
+}
 impl DescribeGlobalSettingsFluentBuilder  {
     /// Creates a new `DescribeGlobalSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_global_settings::DescribeGlobalSettings, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::acknowledge_job::_acknowledge_job_input::AcknowledgeJo
 /// <p>Returns information about a specified job and whether that job has been received by the job worker. Used for custom actions only.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcknowledgeJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::acknowledge_job::builders::AcknowledgeJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::acknowledge_job::builders::AcknowledgeJobInputBuilder,
+}
 impl AcknowledgeJobFluentBuilder  {
     /// Creates a new `AcknowledgeJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::acknowledge_job::AcknowledgeJob, aws_http::retry::AwsResponseRetryClassifier,>,

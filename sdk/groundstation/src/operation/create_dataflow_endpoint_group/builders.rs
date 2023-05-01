@@ -10,16 +10,17 @@ pub use crate::operation::create_dataflow_endpoint_group::_create_dataflow_endpo
 /// <p>When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code> must match a <code>DataflowEndpoint</code> in the same group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDataflowEndpointGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_dataflow_endpoint_group::builders::CreateDataflowEndpointGroupInputBuilder,
+}
 impl CreateDataflowEndpointGroupFluentBuilder  {
     /// Creates a new `CreateDataflowEndpointGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_dataflow_endpoint_group::CreateDataflowEndpointGroup, aws_http::retry::AwsResponseRetryClassifier,>,

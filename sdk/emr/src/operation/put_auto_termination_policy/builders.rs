@@ -11,16 +11,17 @@ pub use crate::operation::put_auto_termination_policy::_put_auto_termination_pol
 /// <p>Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAutoTerminationPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyInputBuilder,
+}
 impl PutAutoTerminationPolicyFluentBuilder  {
     /// Creates a new `PutAutoTerminationPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_auto_termination_policy::PutAutoTerminationPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

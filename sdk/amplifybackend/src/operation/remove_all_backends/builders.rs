@@ -8,16 +8,17 @@ pub use crate::operation::remove_all_backends::_remove_all_backends_input::Remov
 /// <p>Removes all backend environments from your Amplify project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveAllBackendsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_all_backends::builders::RemoveAllBackendsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_all_backends::builders::RemoveAllBackendsInputBuilder,
+}
 impl RemoveAllBackendsFluentBuilder  {
     /// Creates a new `RemoveAllBackends`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_all_backends::RemoveAllBackends, aws_http::retry::AwsResponseRetryClassifier,>,

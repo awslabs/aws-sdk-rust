@@ -8,16 +8,17 @@ pub use crate::operation::describe_scaling_plans::_describe_scaling_plans_input:
 /// <p>Describes one or more of your scaling plans.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeScalingPlansFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder,
+}
 impl DescribeScalingPlansFluentBuilder  {
     /// Creates a new `DescribeScalingPlans`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_scaling_plans::DescribeScalingPlans, aws_http::retry::AwsResponseRetryClassifier,>,

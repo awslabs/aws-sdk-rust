@@ -8,16 +8,17 @@ pub use crate::operation::archive_wave::_archive_wave_input::ArchiveWaveInputBui
 /// <p>Archive wave.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ArchiveWaveFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::archive_wave::builders::ArchiveWaveInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::archive_wave::builders::ArchiveWaveInputBuilder,
+}
 impl ArchiveWaveFluentBuilder  {
     /// Creates a new `ArchiveWave`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::archive_wave::ArchiveWave, aws_http::retry::AwsResponseRetryClassifier,>,

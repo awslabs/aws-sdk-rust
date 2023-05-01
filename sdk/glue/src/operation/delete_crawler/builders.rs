@@ -8,16 +8,17 @@ pub use crate::operation::delete_crawler::_delete_crawler_input::DeleteCrawlerIn
 /// <p>Removes a specified crawler from the Glue Data Catalog, unless the crawler state is <code>RUNNING</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCrawlerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_crawler::builders::DeleteCrawlerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_crawler::builders::DeleteCrawlerInputBuilder,
+}
 impl DeleteCrawlerFluentBuilder  {
     /// Creates a new `DeleteCrawler`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_crawler::DeleteCrawler, aws_http::retry::AwsResponseRetryClassifier,>,

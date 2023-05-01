@@ -8,16 +8,17 @@ pub use crate::operation::enable_snapshot_copy::_enable_snapshot_copy_input::Ena
 /// <p>Enables the automatic copy of snapshots from one region to another region for a specified cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableSnapshotCopyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_snapshot_copy::builders::EnableSnapshotCopyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_snapshot_copy::builders::EnableSnapshotCopyInputBuilder,
+}
 impl EnableSnapshotCopyFluentBuilder  {
     /// Creates a new `EnableSnapshotCopy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_snapshot_copy::EnableSnapshotCopy, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -16,16 +16,17 @@ pub use crate::operation::delete_db_instance::_delete_db_instance_input::DeleteD
 /// <p>To delete a DB instance in this case, first call the <code>PromoteReadReplicaDBCluster</code> API action to promote the DB cluster so it's no longer a read replica. After the promotion completes, then call the <code>DeleteDBInstance</code> API action to delete the final instance in the DB cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDBInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_db_instance::builders::DeleteDbInstanceInputBuilder,
+}
 impl DeleteDBInstanceFluentBuilder  {
     /// Creates a new `DeleteDBInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_db_instance::DeleteDBInstance, aws_http::retry::AwsResponseRetryClassifier,>,

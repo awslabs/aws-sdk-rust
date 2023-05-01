@@ -8,16 +8,17 @@ pub use crate::operation::delete_tape_archive::_delete_tape_archive_input::Delet
 /// <p>Deletes the specified virtual tape from the virtual tape shelf (VTS). This operation is only supported in the tape gateway type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTapeArchiveFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_tape_archive::builders::DeleteTapeArchiveInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_tape_archive::builders::DeleteTapeArchiveInputBuilder,
+}
 impl DeleteTapeArchiveFluentBuilder  {
     /// Creates a new `DeleteTapeArchive`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_tape_archive::DeleteTapeArchive, aws_http::retry::AwsResponseRetryClassifier,>,

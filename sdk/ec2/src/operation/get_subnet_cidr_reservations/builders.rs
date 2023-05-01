@@ -8,16 +8,17 @@ pub use crate::operation::get_subnet_cidr_reservations::_get_subnet_cidr_reserva
 /// <p>Gets information about the subnet CIDR reservations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSubnetCidrReservationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_subnet_cidr_reservations::builders::GetSubnetCidrReservationsInputBuilder,
+}
 impl GetSubnetCidrReservationsFluentBuilder  {
     /// Creates a new `GetSubnetCidrReservations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_subnet_cidr_reservations::GetSubnetCidrReservations, aws_http::retry::AwsResponseRetryClassifier,>,

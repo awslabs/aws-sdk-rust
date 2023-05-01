@@ -8,16 +8,17 @@ pub use crate::operation::get_sdk::_get_sdk_input::GetSdkInputBuilder;
 /// <p>Generates a client SDK for a RestApi and Stage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSdkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_sdk::builders::GetSdkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_sdk::builders::GetSdkInputBuilder,
+}
 impl GetSdkFluentBuilder  {
     /// Creates a new `GetSdk`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_sdk::GetSdk, aws_http::retry::AwsResponseRetryClassifier,>,

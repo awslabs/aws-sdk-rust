@@ -8,16 +8,17 @@ pub use crate::operation::deregister_cluster::_deregister_cluster_input::Deregis
 /// <p>Deregisters a connected cluster to remove it from the Amazon EKS control plane.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_cluster::builders::DeregisterClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_cluster::builders::DeregisterClusterInputBuilder,
+}
 impl DeregisterClusterFluentBuilder  {
     /// Creates a new `DeregisterCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_cluster::DeregisterCluster, aws_http::retry::AwsResponseRetryClassifier,>,

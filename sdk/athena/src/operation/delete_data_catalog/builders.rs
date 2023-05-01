@@ -8,16 +8,17 @@ pub use crate::operation::delete_data_catalog::_delete_data_catalog_input::Delet
 /// <p>Deletes a data catalog.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDataCatalogFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_data_catalog::builders::DeleteDataCatalogInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_data_catalog::builders::DeleteDataCatalogInputBuilder,
+}
 impl DeleteDataCatalogFluentBuilder  {
     /// Creates a new `DeleteDataCatalog`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_data_catalog::DeleteDataCatalog, aws_http::retry::AwsResponseRetryClassifier,>,

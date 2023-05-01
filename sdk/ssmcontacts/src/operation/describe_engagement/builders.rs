@@ -8,16 +8,17 @@ pub use crate::operation::describe_engagement::_describe_engagement_input::Descr
 /// <p>Incident Manager uses engagements to engage contacts and escalation plans during an incident. Use this command to describe the engagement that occurred during an incident.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEngagementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_engagement::builders::DescribeEngagementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_engagement::builders::DescribeEngagementInputBuilder,
+}
 impl DescribeEngagementFluentBuilder  {
     /// Creates a new `DescribeEngagement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_engagement::DescribeEngagement, aws_http::retry::AwsResponseRetryClassifier,>,

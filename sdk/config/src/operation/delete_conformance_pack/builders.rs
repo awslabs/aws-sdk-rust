@@ -9,16 +9,17 @@ pub use crate::operation::delete_conformance_pack::_delete_conformance_pack_inpu
 /// <p>Config sets the conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You cannot update a conformance pack while it is in this state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConformancePackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder,
+}
 impl DeleteConformancePackFluentBuilder  {
     /// Creates a new `DeleteConformancePack`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_conformance_pack::DeleteConformancePack, aws_http::retry::AwsResponseRetryClassifier,>,

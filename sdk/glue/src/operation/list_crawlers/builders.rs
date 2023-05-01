@@ -9,16 +9,17 @@ pub use crate::operation::list_crawlers::_list_crawlers_input::ListCrawlersInput
 /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCrawlersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_crawlers::builders::ListCrawlersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_crawlers::builders::ListCrawlersInputBuilder,
+}
 impl ListCrawlersFluentBuilder  {
     /// Creates a new `ListCrawlers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_crawlers::ListCrawlers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListCrawlersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_crawlers::paginator::ListCrawlersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_crawlers::paginator::ListCrawlersPaginator {
-                            crate::operation::list_crawlers::paginator::ListCrawlersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_crawlers::paginator::ListCrawlersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_crawlers::paginator::ListCrawlersPaginator {
+                                crate::operation::list_crawlers::paginator::ListCrawlersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum size of a list to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

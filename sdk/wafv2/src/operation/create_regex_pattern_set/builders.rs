@@ -8,16 +8,17 @@ pub use crate::operation::create_regex_pattern_set::_create_regex_pattern_set_in
 /// <p>Creates a <code>RegexPatternSet</code>, which you reference in a <code>RegexPatternSetReferenceStatement</code>, to have WAF inspect a web request component for the specified patterns.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRegexPatternSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_regex_pattern_set::builders::CreateRegexPatternSetInputBuilder,
+}
 impl CreateRegexPatternSetFluentBuilder  {
     /// Creates a new `CreateRegexPatternSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_regex_pattern_set::CreateRegexPatternSet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::create_custom_entity_type::_create_custom_entity_type_
 /// <p>Each custom pattern you create specifies a regular expression and an optional list of context words. If no context words are passed only a regular expression is checked.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCustomEntityTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_custom_entity_type::builders::CreateCustomEntityTypeInputBuilder,
+}
 impl CreateCustomEntityTypeFluentBuilder  {
     /// Creates a new `CreateCustomEntityType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_custom_entity_type::CreateCustomEntityType, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_signaling_channels::_list_signaling_channels_inpu
 /// <p>Returns an array of <code>ChannelInfo</code> objects. Each object describes a signaling channel. To retrieve only those channels that satisfy a specific condition, you can specify a <code>ChannelNameCondition</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSignalingChannelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_signaling_channels::builders::ListSignalingChannelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_signaling_channels::builders::ListSignalingChannelsInputBuilder,
+}
 impl ListSignalingChannelsFluentBuilder  {
     /// Creates a new `ListSignalingChannels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_signaling_channels::ListSignalingChannels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSignalingChannelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_signaling_channels::paginator::ListSignalingChannelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_signaling_channels::paginator::ListSignalingChannelsPaginator {
-                            crate::operation::list_signaling_channels::paginator::ListSignalingChannelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_signaling_channels::paginator::ListSignalingChannelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_signaling_channels::paginator::ListSignalingChannelsPaginator {
+                                crate::operation::list_signaling_channels::paginator::ListSignalingChannelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of channels to return in the response. The default is 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

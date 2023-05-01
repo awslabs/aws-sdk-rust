@@ -9,16 +9,17 @@ pub use crate::operation::set_security_groups::_set_security_groups_input::SetSe
 /// <p>You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetSecurityGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_security_groups::builders::SetSecurityGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_security_groups::builders::SetSecurityGroupsInputBuilder,
+}
 impl SetSecurityGroupsFluentBuilder  {
     /// Creates a new `SetSecurityGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_security_groups::SetSecurityGroups, aws_http::retry::AwsResponseRetryClassifier,>,

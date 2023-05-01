@@ -8,16 +8,17 @@ pub use crate::operation::get_report_definition::_get_report_definition_input::G
 /// <p>Retrieves the definition of a report already configured in AWS Application Cost Profiler.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetReportDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_report_definition::builders::GetReportDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_report_definition::builders::GetReportDefinitionInputBuilder,
+}
 impl GetReportDefinitionFluentBuilder  {
     /// Creates a new `GetReportDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_report_definition::GetReportDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

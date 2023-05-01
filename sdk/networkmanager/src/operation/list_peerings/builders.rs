@@ -8,16 +8,17 @@ pub use crate::operation::list_peerings::_list_peerings_input::ListPeeringsInput
 /// <p>Lists the peerings for a core network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPeeringsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_peerings::builders::ListPeeringsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_peerings::builders::ListPeeringsInputBuilder,
+}
 impl ListPeeringsFluentBuilder  {
     /// Creates a new `ListPeerings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_peerings::ListPeerings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPeeringsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_peerings::paginator::ListPeeringsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_peerings::paginator::ListPeeringsPaginator {
-                            crate::operation::list_peerings::paginator::ListPeeringsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_peerings::paginator::ListPeeringsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_peerings::paginator::ListPeeringsPaginator {
+                                crate::operation::list_peerings::paginator::ListPeeringsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of a core network.</p>
     pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());

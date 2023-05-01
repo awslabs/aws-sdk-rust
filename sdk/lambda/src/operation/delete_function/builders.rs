@@ -9,16 +9,17 @@ pub use crate::operation::delete_function::_delete_function_input::DeleteFunctio
 /// <p>To delete Lambda event source mappings that invoke a function, use <code>DeleteEventSourceMapping</code>. For Amazon Web Services and resources that invoke your function directly, delete the trigger in the service where you originally configured it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFunctionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_function::builders::DeleteFunctionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_function::builders::DeleteFunctionInputBuilder,
+}
 impl DeleteFunctionFluentBuilder  {
     /// Creates a new `DeleteFunction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_function::DeleteFunction, aws_http::retry::AwsResponseRetryClassifier,>,

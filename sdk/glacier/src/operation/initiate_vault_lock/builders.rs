@@ -18,16 +18,17 @@ pub use crate::operation::initiate_vault_lock::_initiate_vault_lock_input::Initi
 /// <p>If this operation is called when the vault lock is in the <code>InProgress</code> state, the operation returns an <code>AccessDeniedException</code> error. When the vault lock is in the <code>InProgress</code> state you must call <code>AbortVaultLock</code> before you can initiate a new vault lock policy. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InitiateVaultLockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::initiate_vault_lock::builders::InitiateVaultLockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::initiate_vault_lock::builders::InitiateVaultLockInputBuilder,
+}
 impl InitiateVaultLockFluentBuilder  {
     /// Creates a new `InitiateVaultLock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::initiate_vault_lock::InitiateVaultLock, aws_http::retry::AwsResponseRetryClassifier,>,

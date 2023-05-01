@@ -8,16 +8,17 @@ pub use crate::operation::delete_service_template::_delete_service_template_inpu
 /// <p>If no other major or minor versions of the service template exist, delete the service template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteServiceTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_service_template::builders::DeleteServiceTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_service_template::builders::DeleteServiceTemplateInputBuilder,
+}
 impl DeleteServiceTemplateFluentBuilder  {
     /// Creates a new `DeleteServiceTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_service_template::DeleteServiceTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_cost_category_definition::_update_cost_category
 /// <p>Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current month’s expenses and future expenses. This won’t change categorization for the previous months.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCostCategoryDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_cost_category_definition::builders::UpdateCostCategoryDefinitionInputBuilder,
+}
 impl UpdateCostCategoryDefinitionFluentBuilder  {
     /// Creates a new `UpdateCostCategoryDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_cost_category_definition::UpdateCostCategoryDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

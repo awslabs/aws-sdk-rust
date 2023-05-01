@@ -8,16 +8,17 @@ pub use crate::operation::delete_event_action::_delete_event_action_input::Delet
 /// <p>This operation deletes the event action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEventActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_event_action::builders::DeleteEventActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_event_action::builders::DeleteEventActionInputBuilder,
+}
 impl DeleteEventActionFluentBuilder  {
     /// Creates a new `DeleteEventAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_event_action::DeleteEventAction, aws_http::retry::AwsResponseRetryClassifier,>,

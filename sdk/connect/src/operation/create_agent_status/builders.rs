@@ -9,16 +9,17 @@ pub use crate::operation::create_agent_status::_create_agent_status_input::Creat
 /// <p>Creates an agent status for the specified Amazon Connect instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAgentStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_agent_status::builders::CreateAgentStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_agent_status::builders::CreateAgentStatusInputBuilder,
+}
 impl CreateAgentStatusFluentBuilder  {
     /// Creates a new `CreateAgentStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_agent_status::CreateAgentStatus, aws_http::retry::AwsResponseRetryClassifier,>,

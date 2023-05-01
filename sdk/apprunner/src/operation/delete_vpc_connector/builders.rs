@@ -8,16 +8,17 @@ pub use crate::operation::delete_vpc_connector::_delete_vpc_connector_input::Del
 /// <p>Delete an App Runner VPC connector resource. You can't delete a connector that's used by one or more App Runner services.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpcConnectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vpc_connector::builders::DeleteVpcConnectorInputBuilder,
+}
 impl DeleteVpcConnectorFluentBuilder  {
     /// Creates a new `DeleteVpcConnector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vpc_connector::DeleteVpcConnector, aws_http::retry::AwsResponseRetryClassifier,>,

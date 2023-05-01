@@ -18,16 +18,17 @@ pub use crate::operation::tag_saml_provider::_tag_saml_provider_input::TagSamlPr
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagSAMLProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::tag_saml_provider::builders::TagSamlProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::tag_saml_provider::builders::TagSamlProviderInputBuilder,
+}
 impl TagSAMLProviderFluentBuilder  {
     /// Creates a new `TagSAMLProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::tag_saml_provider::TagSAMLProvider, aws_http::retry::AwsResponseRetryClassifier,>,

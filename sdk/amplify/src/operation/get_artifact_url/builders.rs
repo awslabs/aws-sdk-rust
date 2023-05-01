@@ -8,16 +8,17 @@ pub use crate::operation::get_artifact_url::_get_artifact_url_input::GetArtifact
 /// <p> Returns the artifact info that corresponds to an artifact id. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetArtifactUrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_artifact_url::builders::GetArtifactUrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_artifact_url::builders::GetArtifactUrlInputBuilder,
+}
 impl GetArtifactUrlFluentBuilder  {
     /// Creates a new `GetArtifactUrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_artifact_url::GetArtifactUrl, aws_http::retry::AwsResponseRetryClassifier,>,

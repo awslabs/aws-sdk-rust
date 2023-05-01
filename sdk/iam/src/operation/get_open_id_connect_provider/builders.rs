@@ -8,16 +8,17 @@ pub use crate::operation::get_open_id_connect_provider::_get_open_id_connect_pro
 /// <p>Returns information about the specified OpenID Connect (OIDC) provider resource object in IAM.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOpenIDConnectProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderInputBuilder,
+}
 impl GetOpenIDConnectProviderFluentBuilder  {
     /// Creates a new `GetOpenIDConnectProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_open_id_connect_provider::GetOpenIDConnectProvider, aws_http::retry::AwsResponseRetryClassifier,>,

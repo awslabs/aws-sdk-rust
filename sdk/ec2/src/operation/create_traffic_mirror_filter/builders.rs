@@ -10,16 +10,17 @@ pub use crate::operation::create_traffic_mirror_filter::_create_traffic_mirror_f
 /// <p>By default, no traffic is mirrored. To mirror traffic, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilterRule.htm">CreateTrafficMirrorFilterRule</a> to add Traffic Mirror rules to the filter. The rules you add define what traffic gets mirrored. You can also use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyTrafficMirrorFilterNetworkServices.html">ModifyTrafficMirrorFilterNetworkServices</a> to mirror supported network services.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTrafficMirrorFilterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_traffic_mirror_filter::builders::CreateTrafficMirrorFilterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_traffic_mirror_filter::builders::CreateTrafficMirrorFilterInputBuilder,
+}
 impl CreateTrafficMirrorFilterFluentBuilder  {
     /// Creates a new `CreateTrafficMirrorFilter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_traffic_mirror_filter::CreateTrafficMirrorFilter, aws_http::retry::AwsResponseRetryClassifier,>,

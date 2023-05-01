@@ -8,16 +8,17 @@ pub use crate::operation::describe_resource_collection_health::_describe_resourc
 /// <p> Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for all closed insights in resource collections in your account. You specify the type of Amazon Web Services resources collection. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeResourceCollectionHealthFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_resource_collection_health::builders::DescribeResourceCollectionHealthInputBuilder,
+}
 impl DescribeResourceCollectionHealthFluentBuilder  {
     /// Creates a new `DescribeResourceCollectionHealth`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_resource_collection_health::DescribeResourceCollectionHealth, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeResourceCollectionHealthFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator {
-                            crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator {
+                                crate::operation::describe_resource_collection_health::paginator::DescribeResourceCollectionHealthPaginator::new(self.handle, self.inner)
+                            }
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(mut self, input: crate::types::ResourceCollectionType) -> Self {
         self.inner = self.inner.resource_collection_type(input);

@@ -8,16 +8,17 @@ pub use crate::operation::list_changesets::_list_changesets_input::ListChangeset
 /// <p>Lists the FinSpace Changesets for a Dataset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListChangesetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_changesets::builders::ListChangesetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_changesets::builders::ListChangesetsInputBuilder,
+}
 impl ListChangesetsFluentBuilder  {
     /// Creates a new `ListChangesets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_changesets::ListChangesets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListChangesetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_changesets::paginator::ListChangesetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_changesets::paginator::ListChangesetsPaginator {
-                            crate::operation::list_changesets::paginator::ListChangesetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_changesets::paginator::ListChangesetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_changesets::paginator::ListChangesetsPaginator {
+                                crate::operation::list_changesets::paginator::ListChangesetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier for the FinSpace Dataset to which the Changeset belongs.</p>
     pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.dataset_id(input.into());

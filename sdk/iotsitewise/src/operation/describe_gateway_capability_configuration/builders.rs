@@ -8,16 +8,17 @@ pub use crate::operation::describe_gateway_capability_configuration::_describe_g
 /// <p>Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGatewayCapabilityConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_gateway_capability_configuration::builders::DescribeGatewayCapabilityConfigurationInputBuilder,
+}
 impl DescribeGatewayCapabilityConfigurationFluentBuilder  {
     /// Creates a new `DescribeGatewayCapabilityConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

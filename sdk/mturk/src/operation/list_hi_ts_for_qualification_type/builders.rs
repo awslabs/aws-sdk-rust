@@ -8,16 +8,17 @@ pub use crate::operation::list_hi_ts_for_qualification_type::_list_hi_ts_for_qua
 /// <p> The <code>ListHITsForQualificationType</code> operation returns the HITs that use the given Qualification type for a Qualification requirement. The operation returns HITs of any status, except for HITs that have been deleted with the <code>DeleteHIT</code> operation or that have been auto-deleted. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListHITsForQualificationTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_hi_ts_for_qualification_type::builders::ListHiTsForQualificationTypeInputBuilder,
+}
 impl ListHITsForQualificationTypeFluentBuilder  {
     /// Creates a new `ListHITsForQualificationType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationType, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListHITsForQualificationTypeFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_hi_ts_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_hi_ts_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator {
-                            crate::operation::list_hi_ts_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_hi_ts_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_hi_ts_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator {
+                                crate::operation::list_hi_ts_for_qualification_type::paginator::ListHiTsForQualificationTypePaginator::new(self.handle, self.inner)
+                            }
     /// <p> The ID of the Qualification type to use when querying HITs. </p>
     pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.qualification_type_id(input.into());

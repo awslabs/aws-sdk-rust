@@ -8,16 +8,17 @@ pub use crate::operation::list_lens_shares::_list_lens_shares_input::ListLensSha
 /// <p>List the lens shares associated with the lens.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLensSharesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_lens_shares::builders::ListLensSharesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_lens_shares::builders::ListLensSharesInputBuilder,
+}
 impl ListLensSharesFluentBuilder  {
     /// Creates a new `ListLensShares`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_lens_shares::ListLensShares, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListLensSharesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_lens_shares::paginator::ListLensSharesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_lens_shares::paginator::ListLensSharesPaginator {
-                            crate::operation::list_lens_shares::paginator::ListLensSharesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_lens_shares::paginator::ListLensSharesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_lens_shares::paginator::ListLensSharesPaginator {
+                                crate::operation::list_lens_shares::paginator::ListLensSharesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The alias of the lens.</p> 
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 

@@ -8,16 +8,17 @@ pub use crate::operation::retrieve_domain_auth_code::_retrieve_domain_auth_code_
 /// <p>This operation returns the authorization code for the domain. To transfer a domain to another registrar, you provide this value to the new registrar.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RetrieveDomainAuthCodeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::retrieve_domain_auth_code::builders::RetrieveDomainAuthCodeInputBuilder,
+}
 impl RetrieveDomainAuthCodeFluentBuilder  {
     /// Creates a new `RetrieveDomainAuthCode`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCode, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::delete_continuous_deployment_policy::_delete_continuou
 /// <p>You cannot delete a continuous deployment policy that's attached to a primary distribution. First update your distribution to remove the continuous deployment policy, then you can delete the policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteContinuousDeploymentPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyInputBuilder,
+}
 impl DeleteContinuousDeploymentPolicyFluentBuilder  {
     /// Creates a new `DeleteContinuousDeploymentPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

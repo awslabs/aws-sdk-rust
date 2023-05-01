@@ -8,16 +8,17 @@ pub use crate::operation::list_recovery_points_by_backup_vault::_list_recovery_p
 /// <p>Returns detailed information about the recovery points stored in a backup vault.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRecoveryPointsByBackupVaultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_recovery_points_by_backup_vault::builders::ListRecoveryPointsByBackupVaultInputBuilder,
+}
 impl ListRecoveryPointsByBackupVaultFluentBuilder  {
     /// Creates a new `ListRecoveryPointsByBackupVault`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_recovery_points_by_backup_vault::ListRecoveryPointsByBackupVault, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRecoveryPointsByBackupVaultFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator {
-                            crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator {
+                                crate::operation::list_recovery_points_by_backup_vault::paginator::ListRecoveryPointsByBackupVaultPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p> <note> 
     /// <p>Backup vault name might not be available when a supported service creates the backup.</p> 
     /// </note>

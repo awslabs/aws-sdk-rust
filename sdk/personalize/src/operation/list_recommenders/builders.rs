@@ -8,16 +8,17 @@ pub use crate::operation::list_recommenders::_list_recommenders_input::ListRecom
 /// <p>Returns a list of recommenders in a given Domain dataset group. When a Domain dataset group is not specified, all the recommenders associated with the account are listed. The response provides the properties for each recommender, including the Amazon Resource Name (ARN). For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRecommendersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_recommenders::builders::ListRecommendersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_recommenders::builders::ListRecommendersInputBuilder,
+}
 impl ListRecommendersFluentBuilder  {
     /// Creates a new `ListRecommenders`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_recommenders::ListRecommenders, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRecommendersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_recommenders::paginator::ListRecommendersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_recommenders::paginator::ListRecommendersPaginator {
-                            crate::operation::list_recommenders::paginator::ListRecommendersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_recommenders::paginator::ListRecommendersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_recommenders::paginator::ListRecommendersPaginator {
+                                crate::operation::list_recommenders::paginator::ListRecommendersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders for. When a Domain dataset group is not specified, all the recommenders associated with the account are listed.</p>
     pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());

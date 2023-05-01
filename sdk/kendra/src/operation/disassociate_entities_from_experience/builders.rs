@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_entities_from_experience::_disassociate_e
 /// <p>Prevents users or groups in your IAM Identity Center identity source from accessing your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateEntitiesFromExperienceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_entities_from_experience::builders::DisassociateEntitiesFromExperienceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_entities_from_experience::builders::DisassociateEntitiesFromExperienceInputBuilder,
+}
 impl DisassociateEntitiesFromExperienceFluentBuilder  {
     /// Creates a new `DisassociateEntitiesFromExperience`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_entities_from_experience::DisassociateEntitiesFromExperience, aws_http::retry::AwsResponseRetryClassifier,>,

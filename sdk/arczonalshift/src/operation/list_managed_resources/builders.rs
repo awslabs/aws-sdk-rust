@@ -8,16 +8,17 @@ pub use crate::operation::list_managed_resources::_list_managed_resources_input:
 /// <p>Lists all the resources in your AWS account in this AWS Region that are managed for zonal shifts in Amazon Route 53 Application Recovery Controller, and information about them. The information includes their Amazon Resource Names (ARNs), the Availability Zones the resources are deployed in, and the resource name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListManagedResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_managed_resources::builders::ListManagedResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_managed_resources::builders::ListManagedResourcesInputBuilder,
+}
 impl ListManagedResourcesFluentBuilder  {
     /// Creates a new `ListManagedResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_managed_resources::ListManagedResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListManagedResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator {
-                            crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator {
+                                crate::operation::list_managed_resources::paginator::ListManagedResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

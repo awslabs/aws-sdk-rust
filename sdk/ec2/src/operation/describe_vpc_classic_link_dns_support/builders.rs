@@ -11,16 +11,17 @@ pub use crate::operation::describe_vpc_classic_link_dns_support::_describe_vpc_c
 /// <p>Describes the ClassicLink DNS support status of one or more VPCs. If enabled, the DNS hostname of a linked EC2-Classic instance resolves to its private IP address when addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname of an instance in a VPC resolves to its private IP address when addressed from a linked EC2-Classic instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVpcClassicLinkDnsSupportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_vpc_classic_link_dns_support::builders::DescribeVpcClassicLinkDnsSupportInputBuilder,
+}
 impl DescribeVpcClassicLinkDnsSupportFluentBuilder  {
     /// Creates a new `DescribeVpcClassicLinkDnsSupport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_vpc_classic_link_dns_support::DescribeVpcClassicLinkDnsSupport, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl DescribeVpcClassicLinkDnsSupportFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_vpc_classic_link_dns_support::paginator::DescribeVpcClassicLinkDnsSupportPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_vpc_classic_link_dns_support::paginator::DescribeVpcClassicLinkDnsSupportPaginator {
-                            crate::operation::describe_vpc_classic_link_dns_support::paginator::DescribeVpcClassicLinkDnsSupportPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_vpc_classic_link_dns_support::paginator::DescribeVpcClassicLinkDnsSupportPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_vpc_classic_link_dns_support::paginator::DescribeVpcClassicLinkDnsSupportPaginator {
+                                crate::operation::describe_vpc_classic_link_dns_support::paginator::DescribeVpcClassicLinkDnsSupportPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

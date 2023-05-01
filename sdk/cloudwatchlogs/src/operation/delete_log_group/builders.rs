@@ -8,16 +8,17 @@ pub use crate::operation::delete_log_group::_delete_log_group_input::DeleteLogGr
 /// <p>Deletes the specified log group and permanently deletes all the archived log events associated with the log group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLogGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_log_group::builders::DeleteLogGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_log_group::builders::DeleteLogGroupInputBuilder,
+}
 impl DeleteLogGroupFluentBuilder  {
     /// Creates a new `DeleteLogGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_log_group::DeleteLogGroup, aws_http::retry::AwsResponseRetryClassifier,>,

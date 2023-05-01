@@ -9,16 +9,17 @@ pub use crate::operation::replace_topic_rule::_replace_topic_rule_input::Replace
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ReplaceTopicRule</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReplaceTopicRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::replace_topic_rule::builders::ReplaceTopicRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::replace_topic_rule::builders::ReplaceTopicRuleInputBuilder,
+}
 impl ReplaceTopicRuleFluentBuilder  {
     /// Creates a new `ReplaceTopicRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::replace_topic_rule::ReplaceTopicRule, aws_http::retry::AwsResponseRetryClassifier,>,

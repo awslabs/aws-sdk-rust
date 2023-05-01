@@ -8,16 +8,17 @@ pub use crate::operation::delete_webhook::_delete_webhook_input::DeleteWebhookIn
 /// <p>Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline from starting a pipeline every time an external event occurs. The API returns successfully when trying to delete a webhook that is already deleted. If a deleted webhook is re-created by calling PutWebhook with the same name, it will have a different URL.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteWebhookFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_webhook::builders::DeleteWebhookInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_webhook::builders::DeleteWebhookInputBuilder,
+}
 impl DeleteWebhookFluentBuilder  {
     /// Creates a new `DeleteWebhook`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_webhook::DeleteWebhook, aws_http::retry::AwsResponseRetryClassifier,>,

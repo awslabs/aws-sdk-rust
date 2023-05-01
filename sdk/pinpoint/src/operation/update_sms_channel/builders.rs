@@ -8,16 +8,17 @@ pub use crate::operation::update_sms_channel::_update_sms_channel_input::UpdateS
 /// <p>Enables the SMS channel for an application or updates the status and settings of the SMS channel for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSmsChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_sms_channel::builders::UpdateSmsChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_sms_channel::builders::UpdateSmsChannelInputBuilder,
+}
 impl UpdateSmsChannelFluentBuilder  {
     /// Creates a new `UpdateSmsChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_sms_channel::UpdateSmsChannel, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_alert::_create_alert_input::CreateAlertInputBui
 /// <p>Creates an alert for an anomaly detector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAlertFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_alert::builders::CreateAlertInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_alert::builders::CreateAlertInputBuilder,
+}
 impl CreateAlertFluentBuilder  {
     /// Creates a new `CreateAlert`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_alert::CreateAlert, aws_http::retry::AwsResponseRetryClassifier,>,

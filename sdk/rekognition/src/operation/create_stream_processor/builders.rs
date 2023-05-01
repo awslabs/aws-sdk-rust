@@ -15,16 +15,17 @@ pub use crate::operation::create_stream_processor::_create_stream_processor_inpu
 /// <p>This operation requires permissions to perform the <code>rekognition:CreateStreamProcessor</code> action. If you want to tag your stream processor, you also require permission to perform the <code>rekognition:TagResource</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStreamProcessorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_stream_processor::builders::CreateStreamProcessorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_stream_processor::builders::CreateStreamProcessorInputBuilder,
+}
 impl CreateStreamProcessorFluentBuilder  {
     /// Creates a new `CreateStreamProcessor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_stream_processor::CreateStreamProcessor, aws_http::retry::AwsResponseRetryClassifier,>,

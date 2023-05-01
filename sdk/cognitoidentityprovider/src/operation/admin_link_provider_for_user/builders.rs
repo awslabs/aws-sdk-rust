@@ -14,16 +14,17 @@ pub use crate::operation::admin_link_provider_for_user::_admin_link_provider_for
 /// <p>This action is administrative and requires developer credentials.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AdminLinkProviderForUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::admin_link_provider_for_user::builders::AdminLinkProviderForUserInputBuilder,
+}
 impl AdminLinkProviderForUserFluentBuilder  {
     /// Creates a new `AdminLinkProviderForUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::admin_link_provider_for_user::AdminLinkProviderForUser, aws_http::retry::AwsResponseRetryClassifier,>,

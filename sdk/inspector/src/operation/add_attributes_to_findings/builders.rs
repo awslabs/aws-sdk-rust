@@ -8,16 +8,17 @@ pub use crate::operation::add_attributes_to_findings::_add_attributes_to_finding
 /// <p>Assigns attributes (key and value pairs) to the findings that are specified by the ARNs of the findings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddAttributesToFindingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_attributes_to_findings::builders::AddAttributesToFindingsInputBuilder,
+}
 impl AddAttributesToFindingsFluentBuilder  {
     /// Creates a new `AddAttributesToFindings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_attributes_to_findings::AddAttributesToFindings, aws_http::retry::AwsResponseRetryClassifier,>,

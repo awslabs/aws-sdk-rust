@@ -8,16 +8,17 @@ pub use crate::operation::describe_notification_configuration::_describe_notific
 /// <p>Gets the <code>NotificationConfiguration</code> for a given Kinesis video stream.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNotificationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_notification_configuration::builders::DescribeNotificationConfigurationInputBuilder,
+}
 impl DescribeNotificationConfigurationFluentBuilder  {
     /// Creates a new `DescribeNotificationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_notification_configuration::DescribeNotificationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

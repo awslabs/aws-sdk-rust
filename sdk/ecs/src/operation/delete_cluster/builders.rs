@@ -9,16 +9,17 @@ pub use crate::operation::delete_cluster::_delete_cluster_input::DeleteClusterIn
 /// <p>You must deregister all container instances from this cluster before you may delete it. You can list the container instances in a cluster with <code>ListContainerInstances</code> and deregister them with <code>DeregisterContainerInstance</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_cluster::builders::DeleteClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_cluster::builders::DeleteClusterInputBuilder,
+}
 impl DeleteClusterFluentBuilder  {
     /// Creates a new `DeleteCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_cluster::DeleteCluster, aws_http::retry::AwsResponseRetryClassifier,>,

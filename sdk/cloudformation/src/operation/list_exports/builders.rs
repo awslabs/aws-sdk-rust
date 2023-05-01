@@ -9,16 +9,17 @@ pub use crate::operation::list_exports::_list_exports_input::ListExportsInputBui
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html"> CloudFormation export stack output values</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListExportsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_exports::builders::ListExportsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_exports::builders::ListExportsInputBuilder,
+}
 impl ListExportsFluentBuilder  {
     /// Creates a new `ListExports`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_exports::ListExports, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListExportsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_exports::paginator::ListExportsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_exports::paginator::ListExportsPaginator {
-                            crate::operation::list_exports::paginator::ListExportsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_exports::paginator::ListExportsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_exports::paginator::ListExportsPaginator {
+                                crate::operation::list_exports::paginator::ListExportsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A string (provided by the <code>ListExports</code> response output) that identifies the next page of exported output values that you asked to retrieve.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

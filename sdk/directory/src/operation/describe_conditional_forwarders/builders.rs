@@ -9,16 +9,17 @@ pub use crate::operation::describe_conditional_forwarders::_describe_conditional
 /// <p>If no input parameters are provided for RemoteDomainNames, this request describes all conditional forwarders for the specified directory ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConditionalForwardersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_conditional_forwarders::builders::DescribeConditionalForwardersInputBuilder,
+}
 impl DescribeConditionalForwardersFluentBuilder  {
     /// Creates a new `DescribeConditionalForwarders`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_conditional_forwarders::DescribeConditionalForwarders, aws_http::retry::AwsResponseRetryClassifier,>,

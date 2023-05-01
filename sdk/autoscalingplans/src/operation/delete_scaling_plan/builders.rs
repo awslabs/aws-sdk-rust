@@ -10,16 +10,17 @@ pub use crate::operation::delete_scaling_plan::_delete_scaling_plan_input::Delet
 /// <p>If the plan has launched resources or has scaling activities in progress, you must delete those resources separately.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteScalingPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_scaling_plan::builders::DeleteScalingPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_scaling_plan::builders::DeleteScalingPlanInputBuilder,
+}
 impl DeleteScalingPlanFluentBuilder  {
     /// Creates a new `DeleteScalingPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_scaling_plan::DeleteScalingPlan, aws_http::retry::AwsResponseRetryClassifier,>,

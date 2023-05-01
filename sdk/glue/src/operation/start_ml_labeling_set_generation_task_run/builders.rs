@@ -11,16 +11,17 @@ pub use crate::operation::start_ml_labeling_set_generation_task_run::_start_ml_l
 /// <p>After the labeling process is finished, you can upload your labels with a call to <code>StartImportLabelsTaskRun</code>. After <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine learning transform will use the new and improved labels and perform a higher-quality transformation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartMLLabelingSetGenerationTaskRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_ml_labeling_set_generation_task_run::builders::StartMlLabelingSetGenerationTaskRunInputBuilder,
+}
 impl StartMLLabelingSetGenerationTaskRunFluentBuilder  {
     /// Creates a new `StartMLLabelingSetGenerationTaskRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_ml_labeling_set_generation_task_run::StartMLLabelingSetGenerationTaskRun, aws_http::retry::AwsResponseRetryClassifier,>,

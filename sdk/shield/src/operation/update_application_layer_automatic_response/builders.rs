@@ -8,16 +8,17 @@ pub use crate::operation::update_application_layer_automatic_response::_update_a
 /// <p>Updates an existing Shield Advanced automatic application layer DDoS mitigation configuration for the specified resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateApplicationLayerAutomaticResponseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_application_layer_automatic_response::builders::UpdateApplicationLayerAutomaticResponseInputBuilder,
+}
 impl UpdateApplicationLayerAutomaticResponseFluentBuilder  {
     /// Creates a new `UpdateApplicationLayerAutomaticResponse`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_application_layer_automatic_response::UpdateApplicationLayerAutomaticResponse, aws_http::retry::AwsResponseRetryClassifier,>,

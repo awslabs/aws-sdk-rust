@@ -9,16 +9,17 @@ pub use crate::operation::modify_workspace_state::_modify_workspace_state_input:
 /// <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild, or restore. An AutoStop WorkSpace in this state is not stopped. Users cannot log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyWorkspaceStateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_workspace_state::builders::ModifyWorkspaceStateInputBuilder,
+}
 impl ModifyWorkspaceStateFluentBuilder  {
     /// Creates a new `ModifyWorkspaceState`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_workspace_state::ModifyWorkspaceState, aws_http::retry::AwsResponseRetryClassifier,>,

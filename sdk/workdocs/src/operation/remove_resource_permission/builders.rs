@@ -8,16 +8,17 @@ pub use crate::operation::remove_resource_permission::_remove_resource_permissio
 /// <p>Removes the permission for the specified principal from the specified resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveResourcePermissionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_resource_permission::builders::RemoveResourcePermissionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_resource_permission::builders::RemoveResourcePermissionInputBuilder,
+}
 impl RemoveResourcePermissionFluentBuilder  {
     /// Creates a new `RemoveResourcePermission`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_resource_permission::RemoveResourcePermission, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -18,16 +18,17 @@ pub use crate::operation::tag_instance_profile::_tag_instance_profile_input::Tag
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagInstanceProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::tag_instance_profile::builders::TagInstanceProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::tag_instance_profile::builders::TagInstanceProfileInputBuilder,
+}
 impl TagInstanceProfileFluentBuilder  {
     /// Creates a new `TagInstanceProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::tag_instance_profile::TagInstanceProfile, aws_http::retry::AwsResponseRetryClassifier,>,

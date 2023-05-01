@@ -8,16 +8,17 @@ pub use crate::operation::search_available_phone_numbers::_search_available_phon
 /// <p>Searches for available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group. If the provided <code>TargetArn</code> is a traffic distribution group, you can call this API in both Amazon Web Services Regions associated with the traffic distribution group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder,
+}
 impl SearchAvailablePhoneNumbersFluentBuilder  {
     /// Creates a new `SearchAvailablePhoneNumbers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchAvailablePhoneNumbersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator {
-                            crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator {
+                                crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to.</p>
     pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.target_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::describe_user::_describe_user_input::DescribeUserInput
 /// <p>Retrieves the user metadata and attributes from the <code>UserId</code> in an identity store.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_user::builders::DescribeUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_user::builders::DescribeUserInputBuilder,
+}
 impl DescribeUserFluentBuilder  {
     /// Creates a new `DescribeUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_user::DescribeUser, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -15,16 +15,17 @@ pub use crate::operation::set_status::_set_status_input::SetStatusInputBuilder;
 /// </examples>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_status::builders::SetStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_status::builders::SetStatusInputBuilder,
+}
 impl SetStatusFluentBuilder  {
     /// Creates a new `SetStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_status::SetStatus, aws_http::retry::AwsResponseRetryClassifier,>,

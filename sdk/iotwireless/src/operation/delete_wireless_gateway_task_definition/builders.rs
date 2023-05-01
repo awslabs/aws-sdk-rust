@@ -8,16 +8,17 @@ pub use crate::operation::delete_wireless_gateway_task_definition::_delete_wirel
 /// <p>Deletes a wireless gateway task definition. Deleting this task definition does not affect tasks that are currently in progress.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteWirelessGatewayTaskDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_wireless_gateway_task_definition::builders::DeleteWirelessGatewayTaskDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_wireless_gateway_task_definition::builders::DeleteWirelessGatewayTaskDefinitionInputBuilder,
+}
 impl DeleteWirelessGatewayTaskDefinitionFluentBuilder  {
     /// Creates a new `DeleteWirelessGatewayTaskDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_wireless_gateway_task_definition::DeleteWirelessGatewayTaskDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

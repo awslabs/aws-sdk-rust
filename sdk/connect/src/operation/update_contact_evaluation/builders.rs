@@ -8,16 +8,17 @@ pub use crate::operation::update_contact_evaluation::_update_contact_evaluation_
 /// <p>Updates details about a contact evaluation in the specified Amazon Connect instance. A contact evaluation must be in draft state. Answers included in the request are merged with existing answers for the given evaluation. An answer or note can be deleted by passing an empty object (<code>{}</code>) to the question identifier. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContactEvaluationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_contact_evaluation::builders::UpdateContactEvaluationInputBuilder,
+}
 impl UpdateContactEvaluationFluentBuilder  {
     /// Creates a new `UpdateContactEvaluation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_contact_evaluation::UpdateContactEvaluation, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::modify_capacity_reservation_fleet::_modify_capacity_re
 /// <p>When you modify the total target capacity of a Capacity Reservation Fleet, the Fleet automatically creates new Capacity Reservations, or modifies or cancels existing Capacity Reservations in the Fleet to meet the new total target capacity. When you modify the end date for the Fleet, the end dates for all of the individual Capacity Reservations in the Fleet are updated accordingly.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyCapacityReservationFleetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_capacity_reservation_fleet::builders::ModifyCapacityReservationFleetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_capacity_reservation_fleet::builders::ModifyCapacityReservationFleetInputBuilder,
+}
 impl ModifyCapacityReservationFleetFluentBuilder  {
     /// Creates a new `ModifyCapacityReservationFleet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleet, aws_http::retry::AwsResponseRetryClassifier,>,

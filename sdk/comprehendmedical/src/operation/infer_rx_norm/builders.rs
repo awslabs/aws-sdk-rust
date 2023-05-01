@@ -8,16 +8,17 @@ pub use crate::operation::infer_rx_norm::_infer_rx_norm_input::InferRxNormInputB
 /// <p>InferRxNorm detects medications as entities listed in a patient record and links to the normalized concept identifiers in the RxNorm database from the National Library of Medicine. Amazon Comprehend Medical only detects medical entities in English language texts. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InferRxNormFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::infer_rx_norm::builders::InferRxNormInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::infer_rx_norm::builders::InferRxNormInputBuilder,
+}
 impl InferRxNormFluentBuilder  {
     /// Creates a new `InferRxNorm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::infer_rx_norm::InferRxNorm, aws_http::retry::AwsResponseRetryClassifier,>,

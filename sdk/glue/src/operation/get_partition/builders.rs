@@ -8,16 +8,17 @@ pub use crate::operation::get_partition::_get_partition_input::GetPartitionInput
 /// <p>Retrieves information about a specified partition.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPartitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_partition::builders::GetPartitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_partition::builders::GetPartitionInputBuilder,
+}
 impl GetPartitionFluentBuilder  {
     /// Creates a new `GetPartition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_partition::GetPartition, aws_http::retry::AwsResponseRetryClassifier,>,

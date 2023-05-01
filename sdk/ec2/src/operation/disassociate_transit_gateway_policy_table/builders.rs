@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_transit_gateway_policy_table::_disassocia
 /// <p>Removes the association between an an attachment and a policy table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateTransitGatewayPolicyTableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_transit_gateway_policy_table::builders::DisassociateTransitGatewayPolicyTableInputBuilder,
+}
 impl DisassociateTransitGatewayPolicyTableFluentBuilder  {
     /// Creates a new `DisassociateTransitGatewayPolicyTable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTable, aws_http::retry::AwsResponseRetryClassifier,>,

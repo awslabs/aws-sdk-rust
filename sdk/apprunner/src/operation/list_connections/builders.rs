@@ -8,16 +8,17 @@ pub use crate::operation::list_connections::_list_connections_input::ListConnect
 /// <p>Returns a list of App Runner connections that are associated with your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListConnectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_connections::builders::ListConnectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_connections::builders::ListConnectionsInputBuilder,
+}
 impl ListConnectionsFluentBuilder  {
     /// Creates a new `ListConnections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_connections::ListConnections, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListConnectionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_connections::paginator::ListConnectionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_connections::paginator::ListConnectionsPaginator {
-                            crate::operation::list_connections::paginator::ListConnectionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_connections::paginator::ListConnectionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_connections::paginator::ListConnectionsPaginator {
+                                crate::operation::list_connections::paginator::ListConnectionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
     pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.connection_name(input.into());

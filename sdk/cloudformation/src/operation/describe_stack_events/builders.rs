@@ -10,16 +10,17 @@ pub use crate::operation::describe_stack_events::_describe_stack_events_input::D
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStackEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_stack_events::builders::DescribeStackEventsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_stack_events::builders::DescribeStackEventsInputBuilder,
+}
 impl DescribeStackEventsFluentBuilder  {
     /// Creates a new `DescribeStackEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_stack_events::DescribeStackEvents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeStackEventsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator {
-                            crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator {
+                                crate::operation::describe_stack_events::paginator::DescribeStackEventsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p> 
     /// <ul> 
     /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 

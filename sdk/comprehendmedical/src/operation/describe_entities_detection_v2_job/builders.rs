@@ -8,16 +8,17 @@ pub use crate::operation::describe_entities_detection_v2_job::_describe_entities
 /// <p>Gets the properties associated with a medical entities detection job. Use this operation to get the status of a detection job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEntitiesDetectionV2JobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_entities_detection_v2_job::builders::DescribeEntitiesDetectionV2JobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_entities_detection_v2_job::builders::DescribeEntitiesDetectionV2JobInputBuilder,
+}
 impl DescribeEntitiesDetectionV2JobFluentBuilder  {
     /// Creates a new `DescribeEntitiesDetectionV2Job`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_entities_detection_v2_job::DescribeEntitiesDetectionV2Job, aws_http::retry::AwsResponseRetryClassifier,>,

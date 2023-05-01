@@ -8,16 +8,17 @@ pub use crate::operation::modify_endpoint_access::_modify_endpoint_access_input:
 /// <p>Modifies a Redshift-managed VPC endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyEndpointAccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_endpoint_access::builders::ModifyEndpointAccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_endpoint_access::builders::ModifyEndpointAccessInputBuilder,
+}
 impl ModifyEndpointAccessFluentBuilder  {
     /// Creates a new `ModifyEndpointAccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_endpoint_access::ModifyEndpointAccess, aws_http::retry::AwsResponseRetryClassifier,>,

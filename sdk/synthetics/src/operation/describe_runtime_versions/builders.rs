@@ -8,16 +8,17 @@ pub use crate::operation::describe_runtime_versions::_describe_runtime_versions_
 /// <p>Returns a list of Synthetics canary runtime versions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRuntimeVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_runtime_versions::builders::DescribeRuntimeVersionsInputBuilder,
+}
 impl DescribeRuntimeVersionsFluentBuilder  {
     /// Creates a new `DescribeRuntimeVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_runtime_versions::DescribeRuntimeVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeRuntimeVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_runtime_versions::paginator::DescribeRuntimeVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_runtime_versions::paginator::DescribeRuntimeVersionsPaginator {
-                            crate::operation::describe_runtime_versions::paginator::DescribeRuntimeVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_runtime_versions::paginator::DescribeRuntimeVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_runtime_versions::paginator::DescribeRuntimeVersionsPaginator {
+                                crate::operation::describe_runtime_versions::paginator::DescribeRuntimeVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

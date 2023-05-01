@@ -8,16 +8,17 @@ pub use crate::operation::list_progress_update_streams::_list_progress_update_st
 /// <p>Lists progress update streams associated with the user account making this call.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProgressUpdateStreamsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_progress_update_streams::builders::ListProgressUpdateStreamsInputBuilder,
+}
 impl ListProgressUpdateStreamsFluentBuilder  {
     /// Creates a new `ListProgressUpdateStreams`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_progress_update_streams::ListProgressUpdateStreams, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListProgressUpdateStreamsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_progress_update_streams::paginator::ListProgressUpdateStreamsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_progress_update_streams::paginator::ListProgressUpdateStreamsPaginator {
-                            crate::operation::list_progress_update_streams::paginator::ListProgressUpdateStreamsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_progress_update_streams::paginator::ListProgressUpdateStreamsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_progress_update_streams::paginator::ListProgressUpdateStreamsPaginator {
+                                crate::operation::list_progress_update_streams::paginator::ListProgressUpdateStreamsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

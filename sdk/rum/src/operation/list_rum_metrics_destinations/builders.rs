@@ -9,16 +9,17 @@ pub use crate::operation::list_rum_metrics_destinations::_list_rum_metrics_desti
 /// <p>For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRumMetricsDestinationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsInputBuilder,
+}
 impl ListRumMetricsDestinationsFluentBuilder  {
     /// Creates a new `ListRumMetricsDestinations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListRumMetricsDestinationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_rum_metrics_destinations::paginator::ListRumMetricsDestinationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_rum_metrics_destinations::paginator::ListRumMetricsDestinationsPaginator {
-                            crate::operation::list_rum_metrics_destinations::paginator::ListRumMetricsDestinationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_rum_metrics_destinations::paginator::ListRumMetricsDestinationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_rum_metrics_destinations::paginator::ListRumMetricsDestinationsPaginator {
+                                crate::operation::list_rum_metrics_destinations::paginator::ListRumMetricsDestinationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the app monitor associated with the destinations that you want to retrieve.</p>
     pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_monitor_name(input.into());

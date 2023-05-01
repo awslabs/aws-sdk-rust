@@ -8,16 +8,17 @@ pub use crate::operation::describe_pull_request_events::_describe_pull_request_e
 /// <p>Returns information about one or more pull request events.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePullRequestEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_pull_request_events::builders::DescribePullRequestEventsInputBuilder,
+}
 impl DescribePullRequestEventsFluentBuilder  {
     /// Creates a new `DescribePullRequestEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_pull_request_events::DescribePullRequestEvents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribePullRequestEventsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_pull_request_events::paginator::DescribePullRequestEventsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_pull_request_events::paginator::DescribePullRequestEventsPaginator {
-                            crate::operation::describe_pull_request_events::paginator::DescribePullRequestEventsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_pull_request_events::paginator::DescribePullRequestEventsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_pull_request_events::paginator::DescribePullRequestEventsPaginator {
+                                crate::operation::describe_pull_request_events::paginator::DescribePullRequestEventsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.pull_request_id(input.into());

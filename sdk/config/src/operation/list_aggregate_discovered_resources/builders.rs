@@ -9,16 +9,17 @@ pub use crate::operation::list_aggregate_discovered_resources::_list_aggregate_d
 /// <p>For example, if the input consists of accountID 12345678910 and the region is us-east-1 for resource type <code>AWS::EC2::Instance</code> then the API returns all the EC2 instance identifiers of accountID 12345678910 and region us-east-1.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAggregateDiscoveredResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_aggregate_discovered_resources::builders::ListAggregateDiscoveredResourcesInputBuilder,
+}
 impl ListAggregateDiscoveredResourcesFluentBuilder  {
     /// Creates a new `ListAggregateDiscoveredResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListAggregateDiscoveredResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator {
-                            crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator {
+                                crate::operation::list_aggregate_discovered_resources::paginator::ListAggregateDiscoveredResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the configuration aggregator. </p>
     pub fn configuration_aggregator_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());

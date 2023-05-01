@@ -10,16 +10,17 @@ pub use crate::operation::remove_from_global_cluster::_remove_from_global_cluste
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveFromGlobalClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClusterInputBuilder,
+}
 impl RemoveFromGlobalClusterFluentBuilder  {
     /// Creates a new `RemoveFromGlobalCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_from_global_cluster::RemoveFromGlobalCluster, aws_http::retry::AwsResponseRetryClassifier,>,

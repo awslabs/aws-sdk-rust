@@ -8,16 +8,17 @@ pub use crate::operation::update_scheduled_action::_update_scheduled_action_inpu
 /// <p>Reschedules a planned domain configuration change for a later time. This change can be a scheduled <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service software update</a> or a <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green Auto-Tune enhancement</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateScheduledActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_scheduled_action::builders::UpdateScheduledActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_scheduled_action::builders::UpdateScheduledActionInputBuilder,
+}
 impl UpdateScheduledActionFluentBuilder  {
     /// Creates a new `UpdateScheduledAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_scheduled_action::UpdateScheduledAction, aws_http::retry::AwsResponseRetryClassifier,>,

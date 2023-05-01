@@ -8,16 +8,17 @@ pub use crate::operation::describe_insight::_describe_insight_input::DescribeIns
 /// <p> Returns details about an insight that you specify using its ID. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInsightFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_insight::builders::DescribeInsightInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_insight::builders::DescribeInsightInputBuilder,
+}
 impl DescribeInsightFluentBuilder  {
     /// Creates a new `DescribeInsight`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_insight::DescribeInsight, aws_http::retry::AwsResponseRetryClassifier,>,

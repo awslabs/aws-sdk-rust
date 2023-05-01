@@ -8,16 +8,17 @@ pub use crate::operation::update_primary_email_address::_update_primary_email_ad
 /// <p>Updates the primary email for a user, group, or resource. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email), and the email provided in the input is promoted as the primary.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePrimaryEmailAddressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressInputBuilder,
+}
 impl UpdatePrimaryEmailAddressFluentBuilder  {
     /// Creates a new `UpdatePrimaryEmailAddress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_primary_email_address::UpdatePrimaryEmailAddress, aws_http::retry::AwsResponseRetryClassifier,>,

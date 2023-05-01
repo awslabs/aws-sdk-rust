@@ -9,16 +9,17 @@ pub use crate::operation::modify_load_balancer_attributes::_modify_load_balancer
 /// <p>If any of the specified attributes can't be modified as requested, the call fails. Any existing attributes that you do not modify retain their current values.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder,
+}
 impl ModifyLoadBalancerAttributesFluentBuilder  {
     /// Creates a new `ModifyLoadBalancerAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

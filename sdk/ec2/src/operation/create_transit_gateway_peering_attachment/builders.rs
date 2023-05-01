@@ -9,16 +9,17 @@ pub use crate::operation::create_transit_gateway_peering_attachment::_create_tra
 /// <p>After you create the peering attachment, the owner of the accepter transit gateway must accept the attachment request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTransitGatewayPeeringAttachmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_transit_gateway_peering_attachment::builders::CreateTransitGatewayPeeringAttachmentInputBuilder,
+}
 impl CreateTransitGatewayPeeringAttachmentFluentBuilder  {
     /// Creates a new `CreateTransitGatewayPeeringAttachment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachment, aws_http::retry::AwsResponseRetryClassifier,>,

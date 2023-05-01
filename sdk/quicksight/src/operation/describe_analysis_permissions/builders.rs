@@ -8,16 +8,17 @@ pub use crate::operation::describe_analysis_permissions::_describe_analysis_perm
 /// <p>Provides the read and write permissions for an analysis.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAnalysisPermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_analysis_permissions::builders::DescribeAnalysisPermissionsInputBuilder,
+}
 impl DescribeAnalysisPermissionsFluentBuilder  {
     /// Creates a new `DescribeAnalysisPermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_analysis_permissions::DescribeAnalysisPermissions, aws_http::retry::AwsResponseRetryClassifier,>,

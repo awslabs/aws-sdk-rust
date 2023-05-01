@@ -12,16 +12,17 @@ pub use crate::operation::search_place_index_for_text::_search_place_index_for_t
 /// <p>Search results are returned in order of highest to lowest relevance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchPlaceIndexForTextFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder,
+}
 impl SearchPlaceIndexForTextFluentBuilder  {
     /// Creates a new `SearchPlaceIndexForText`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_place_index_for_text::SearchPlaceIndexForText, aws_http::retry::AwsResponseRetryClassifier,>,

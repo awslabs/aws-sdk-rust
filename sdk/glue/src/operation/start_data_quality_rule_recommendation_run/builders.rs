@@ -8,16 +8,17 @@ pub use crate::operation::start_data_quality_rule_recommendation_run::_start_dat
 /// <p>Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the ruleset and modify the generated ruleset to your liking.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDataQualityRuleRecommendationRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_data_quality_rule_recommendation_run::builders::StartDataQualityRuleRecommendationRunInputBuilder,
+}
 impl StartDataQualityRuleRecommendationRunFluentBuilder  {
     /// Creates a new `StartDataQualityRuleRecommendationRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRun, aws_http::retry::AwsResponseRetryClassifier,>,

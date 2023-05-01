@@ -8,16 +8,17 @@ pub use crate::operation::add_notification_channels::_add_notification_channels_
 /// <p>Add up to 2 anomaly notifications channels for a profiling group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddNotificationChannelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_notification_channels::builders::AddNotificationChannelsInputBuilder,
+}
 impl AddNotificationChannelsFluentBuilder  {
     /// Creates a new `AddNotificationChannels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_notification_channels::AddNotificationChannels, aws_http::retry::AwsResponseRetryClassifier,>,

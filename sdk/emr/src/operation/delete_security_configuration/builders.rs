@@ -8,16 +8,17 @@ pub use crate::operation::delete_security_configuration::_delete_security_config
 /// <p>Deletes a security configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSecurityConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationInputBuilder,
+}
 impl DeleteSecurityConfigurationFluentBuilder  {
     /// Creates a new `DeleteSecurityConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_security_configuration::DeleteSecurityConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

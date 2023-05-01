@@ -8,16 +8,17 @@ pub use crate::operation::describe_user_groups::_describe_user_groups_input::Des
 /// <p>Returns a list of user groups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUserGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_user_groups::builders::DescribeUserGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_user_groups::builders::DescribeUserGroupsInputBuilder,
+}
 impl DescribeUserGroupsFluentBuilder  {
     /// Creates a new `DescribeUserGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_user_groups::DescribeUserGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeUserGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator {
-                            crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator {
+                                crate::operation::describe_user_groups::paginator::DescribeUserGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the user group.</p>
     pub fn user_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_group_id(input.into());

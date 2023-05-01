@@ -8,16 +8,17 @@ pub use crate::operation::describe_stale_security_groups::_describe_stale_securi
 /// <p>[VPC only] Describes the stale security group rules for security groups in a specified VPC. Rules are stale when they reference a deleted security group in the same VPC or in a peer VPC, or if they reference a security group in a peer VPC for which the VPC peering connection has been deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStaleSecurityGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_stale_security_groups::builders::DescribeStaleSecurityGroupsInputBuilder,
+}
 impl DescribeStaleSecurityGroupsFluentBuilder  {
     /// Creates a new `DescribeStaleSecurityGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeStaleSecurityGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_stale_security_groups::paginator::DescribeStaleSecurityGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_stale_security_groups::paginator::DescribeStaleSecurityGroupsPaginator {
-                            crate::operation::describe_stale_security_groups::paginator::DescribeStaleSecurityGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_stale_security_groups::paginator::DescribeStaleSecurityGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_stale_security_groups::paginator::DescribeStaleSecurityGroupsPaginator {
+                                crate::operation::describe_stale_security_groups::paginator::DescribeStaleSecurityGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

@@ -8,16 +8,17 @@ pub use crate::operation::update_map_run::_update_map_run_input::UpdateMapRunInp
 /// <p>Updates an in-progress Map Run's configuration to include changes to the settings that control maximum concurrency and Map Run failure.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMapRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_map_run::builders::UpdateMapRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_map_run::builders::UpdateMapRunInputBuilder,
+}
 impl UpdateMapRunFluentBuilder  {
     /// Creates a new `UpdateMapRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_map_run::UpdateMapRun, aws_http::retry::AwsResponseRetryClassifier,>,

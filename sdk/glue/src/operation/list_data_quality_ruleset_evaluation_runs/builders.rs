@@ -8,16 +8,17 @@ pub use crate::operation::list_data_quality_ruleset_evaluation_runs::_list_data_
 /// <p>Lists all the runs meeting the filter criteria, where a ruleset is evaluated against a data source.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDataQualityRulesetEvaluationRunsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_data_quality_ruleset_evaluation_runs::builders::ListDataQualityRulesetEvaluationRunsInputBuilder,
+}
 impl ListDataQualityRulesetEvaluationRunsFluentBuilder  {
     /// Creates a new `ListDataQualityRulesetEvaluationRuns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRuns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDataQualityRulesetEvaluationRunsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_data_quality_ruleset_evaluation_runs::paginator::ListDataQualityRulesetEvaluationRunsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_data_quality_ruleset_evaluation_runs::paginator::ListDataQualityRulesetEvaluationRunsPaginator {
-                            crate::operation::list_data_quality_ruleset_evaluation_runs::paginator::ListDataQualityRulesetEvaluationRunsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_data_quality_ruleset_evaluation_runs::paginator::ListDataQualityRulesetEvaluationRunsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_data_quality_ruleset_evaluation_runs::paginator::ListDataQualityRulesetEvaluationRunsPaginator {
+                                crate::operation::list_data_quality_ruleset_evaluation_runs::paginator::ListDataQualityRulesetEvaluationRunsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The filter criteria.</p>
     pub fn filter(mut self, input: crate::types::DataQualityRulesetEvaluationRunFilter) -> Self {
         self.inner = self.inner.filter(input);

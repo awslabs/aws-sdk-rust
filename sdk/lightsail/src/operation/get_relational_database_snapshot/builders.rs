@@ -8,16 +8,17 @@ pub use crate::operation::get_relational_database_snapshot::_get_relational_data
 /// <p>Returns information about a specific database snapshot in Amazon Lightsail.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRelationalDatabaseSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotInputBuilder,
+}
 impl GetRelationalDatabaseSnapshotFluentBuilder  {
     /// Creates a new `GetRelationalDatabaseSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_keyspace::_delete_keyspace_input::DeleteKeyspac
 /// <p>The <code>DeleteKeyspace</code> operation deletes a keyspace and all of its tables. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteKeyspaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_keyspace::builders::DeleteKeyspaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_keyspace::builders::DeleteKeyspaceInputBuilder,
+}
 impl DeleteKeyspaceFluentBuilder  {
     /// Creates a new `DeleteKeyspace`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_keyspace::DeleteKeyspace, aws_http::retry::AwsResponseRetryClassifier,>,

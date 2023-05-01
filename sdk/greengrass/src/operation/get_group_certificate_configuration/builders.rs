@@ -8,16 +8,17 @@ pub use crate::operation::get_group_certificate_configuration::_get_group_certif
 /// Retrieves the current configuration for the CA used by the group.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetGroupCertificateConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_group_certificate_configuration::builders::GetGroupCertificateConfigurationInputBuilder,
+}
 impl GetGroupCertificateConfigurationFluentBuilder  {
     /// Creates a new `GetGroupCertificateConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_group_certificate_configuration::GetGroupCertificateConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

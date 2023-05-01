@@ -8,16 +8,17 @@ pub use crate::operation::describe_tag_option::_describe_tag_option_input::Descr
 /// <p>Gets information about the specified TagOption.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTagOptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_tag_option::builders::DescribeTagOptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_tag_option::builders::DescribeTagOptionInputBuilder,
+}
 impl DescribeTagOptionFluentBuilder  {
     /// Creates a new `DescribeTagOption`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_tag_option::DescribeTagOption, aws_http::retry::AwsResponseRetryClassifier,>,

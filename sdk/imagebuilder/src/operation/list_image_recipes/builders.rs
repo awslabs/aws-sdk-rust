@@ -8,16 +8,17 @@ pub use crate::operation::list_image_recipes::_list_image_recipes_input::ListIma
 /// <p>Returns a list of image recipes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImageRecipesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_image_recipes::builders::ListImageRecipesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_image_recipes::builders::ListImageRecipesInputBuilder,
+}
 impl ListImageRecipesFluentBuilder  {
     /// Creates a new `ListImageRecipes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_image_recipes::ListImageRecipes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListImageRecipesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator {
-                            crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator {
+                                crate::operation::list_image_recipes::paginator::ListImageRecipesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
     pub fn owner(mut self, input: crate::types::Ownership) -> Self {
         self.inner = self.inner.owner(input);

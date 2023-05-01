@@ -8,16 +8,17 @@ pub use crate::operation::get_map_glyphs::_get_map_glyphs_input::GetMapGlyphsInp
 /// <p>Retrieves glyphs used to display labels on a map.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMapGlyphsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_map_glyphs::builders::GetMapGlyphsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_map_glyphs::builders::GetMapGlyphsInputBuilder,
+}
 impl GetMapGlyphsFluentBuilder  {
     /// Creates a new `GetMapGlyphs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_map_glyphs::GetMapGlyphs, aws_http::retry::AwsResponseRetryClassifier,>,

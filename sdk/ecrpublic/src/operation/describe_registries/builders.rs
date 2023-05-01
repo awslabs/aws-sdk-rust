@@ -8,16 +8,17 @@ pub use crate::operation::describe_registries::_describe_registries_input::Descr
 /// <p>Returns details for a public registry.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRegistriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_registries::builders::DescribeRegistriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_registries::builders::DescribeRegistriesInputBuilder,
+}
 impl DescribeRegistriesFluentBuilder  {
     /// Creates a new `DescribeRegistries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_registries::DescribeRegistries, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeRegistriesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_registries::paginator::DescribeRegistriesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_registries::paginator::DescribeRegistriesPaginator {
-                            crate::operation::describe_registries::paginator::DescribeRegistriesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_registries::paginator::DescribeRegistriesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_registries::paginator::DescribeRegistriesPaginator {
+                                crate::operation::describe_registries::paginator::DescribeRegistriesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>DescribeRegistries</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. If there are no more results to return, this value is <code>null</code>.</p> <note> 
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
     /// </note>

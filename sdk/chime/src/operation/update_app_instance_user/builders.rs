@@ -8,16 +8,17 @@ pub use crate::operation::update_app_instance_user::_update_app_instance_user_in
 /// <p>Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAppInstanceUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_app_instance_user::builders::UpdateAppInstanceUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_app_instance_user::builders::UpdateAppInstanceUserInputBuilder,
+}
 impl UpdateAppInstanceUserFluentBuilder  {
     /// Creates a new `UpdateAppInstanceUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_app_instance_user::UpdateAppInstanceUser, aws_http::retry::AwsResponseRetryClassifier,>,

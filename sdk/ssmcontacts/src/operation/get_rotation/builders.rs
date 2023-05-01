@@ -8,16 +8,17 @@ pub use crate::operation::get_rotation::_get_rotation_input::GetRotationInputBui
 /// <p>Retrieves information about an on-call rotation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRotationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_rotation::builders::GetRotationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_rotation::builders::GetRotationInputBuilder,
+}
 impl GetRotationFluentBuilder  {
     /// Creates a new `GetRotation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_rotation::GetRotation, aws_http::retry::AwsResponseRetryClassifier,>,

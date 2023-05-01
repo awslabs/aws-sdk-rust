@@ -8,16 +8,17 @@ pub use crate::operation::get_retention_settings::_get_retention_settings_input:
 /// <p> Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRetentionSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_retention_settings::builders::GetRetentionSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_retention_settings::builders::GetRetentionSettingsInputBuilder,
+}
 impl GetRetentionSettingsFluentBuilder  {
     /// Creates a new `GetRetentionSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_retention_settings::GetRetentionSettings, aws_http::retry::AwsResponseRetryClassifier,>,

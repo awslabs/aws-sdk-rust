@@ -10,16 +10,17 @@ pub use crate::operation::delete_config_rule::_delete_config_rule_input::DeleteC
 /// <p>You can check the state of a rule by using the <code>DescribeConfigRules</code> request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConfigRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_config_rule::builders::DeleteConfigRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_config_rule::builders::DeleteConfigRuleInputBuilder,
+}
 impl DeleteConfigRuleFluentBuilder  {
     /// Creates a new `DeleteConfigRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_config_rule::DeleteConfigRule, aws_http::retry::AwsResponseRetryClassifier,>,

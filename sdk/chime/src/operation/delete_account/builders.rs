@@ -11,16 +11,17 @@ pub use crate::operation::delete_account::_delete_account_input::DeleteAccountIn
 /// <p>After 90 days, deleted accounts are permanently removed from your <code>Disabled</code> accounts list.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_account::builders::DeleteAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_account::builders::DeleteAccountInputBuilder,
+}
 impl DeleteAccountFluentBuilder  {
     /// Creates a new `DeleteAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_account::DeleteAccount, aws_http::retry::AwsResponseRetryClassifier,>,

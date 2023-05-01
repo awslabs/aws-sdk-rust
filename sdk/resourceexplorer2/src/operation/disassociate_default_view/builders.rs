@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_default_view::_disassociate_default_view_
 /// <p>If an Amazon Web Services Region doesn't have a default view configured, then users must explicitly specify a view with every <code>Search</code> operation performed in that Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateDefaultViewFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_default_view::builders::DisassociateDefaultViewInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_default_view::builders::DisassociateDefaultViewInputBuilder,
+}
 impl DisassociateDefaultViewFluentBuilder  {
     /// Creates a new `DisassociateDefaultView`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_default_view::DisassociateDefaultView, aws_http::retry::AwsResponseRetryClassifier,>,

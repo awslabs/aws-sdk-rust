@@ -8,16 +8,17 @@ pub use crate::operation::describe_db_snapshots::_describe_db_snapshots_input::D
 /// <p>Returns information about DB snapshots. This API action supports pagination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBSnapshotsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_snapshots::builders::DescribeDbSnapshotsInputBuilder,
+}
 impl DescribeDBSnapshotsFluentBuilder  {
     /// Creates a new `DescribeDBSnapshots`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_snapshots::DescribeDBSnapshots, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDBSnapshotsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator {
-                            crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator {
+                                crate::operation::describe_db_snapshots::paginator::DescribeDbSnapshotsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter isn't case-sensitive.</p> 
     /// <p>Constraints:</p> 
     /// <ul> 

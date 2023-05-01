@@ -10,16 +10,17 @@ pub use crate::operation::describe_reserved_instances_offerings::_describe_reser
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReservedInstancesOfferingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_reserved_instances_offerings::builders::DescribeReservedInstancesOfferingsInputBuilder,
+}
 impl DescribeReservedInstancesOfferingsFluentBuilder  {
     /// Creates a new `DescribeReservedInstancesOfferings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeReservedInstancesOfferingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator {
-                            crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator {
+                                crate::operation::describe_reserved_instances_offerings::paginator::DescribeReservedInstancesOfferingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Availability Zone in which the Reserved Instance can be used.</p>
     pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());

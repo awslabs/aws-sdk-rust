@@ -9,16 +9,17 @@ pub use crate::operation::get_cluster_credentials_with_iam::_get_cluster_credent
 /// <p>The Identity and Access Management (IAM) identity that runs this operation must have an IAM policy attached that allows access to all necessary actions and resources. For more information about permissions, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-identity-based.html">Using identity-based policies (IAM policies)</a> in the Amazon Redshift Cluster Management Guide. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetClusterCredentialsWithIAMFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder,
+}
 impl GetClusterCredentialsWithIAMFluentBuilder  {
     /// Creates a new `GetClusterCredentialsWithIAM`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAM, aws_http::retry::AwsResponseRetryClassifier,>,

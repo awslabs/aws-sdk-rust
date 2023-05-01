@@ -15,16 +15,17 @@ pub use crate::operation::list_crawls::_list_crawls_input::ListCrawlsInputBuilde
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCrawlsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_crawls::builders::ListCrawlsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_crawls::builders::ListCrawlsInputBuilder,
+}
 impl ListCrawlsFluentBuilder  {
     /// Creates a new `ListCrawls`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_crawls::ListCrawls, aws_http::retry::AwsResponseRetryClassifier,>,

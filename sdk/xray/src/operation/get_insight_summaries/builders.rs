@@ -8,16 +8,17 @@ pub use crate::operation::get_insight_summaries::_get_insight_summaries_input::G
 /// <p>Retrieves the summaries of all insights in the specified group matching the provided filter values.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInsightSummariesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder,
+}
 impl GetInsightSummariesFluentBuilder  {
     /// Creates a new `GetInsightSummaries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_insight_summaries::GetInsightSummaries, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetInsightSummariesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator {
-                            crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator {
+                                crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `States`.
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).

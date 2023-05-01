@@ -8,16 +8,17 @@ pub use crate::operation::list_room_memberships::_list_room_memberships_input::L
 /// <p>Lists the membership details for the specified room in an Amazon Chime Enterprise account, such as the members' IDs, email addresses, and names.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRoomMembershipsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder,
+}
 impl ListRoomMembershipsFluentBuilder  {
     /// Creates a new `ListRoomMemberships`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_room_memberships::ListRoomMemberships, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRoomMembershipsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator {
-                            crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator {
+                                crate::operation::list_room_memberships::paginator::ListRoomMembershipsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Chime account ID.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());

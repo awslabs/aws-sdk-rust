@@ -8,16 +8,17 @@ pub use crate::operation::rebuild_environment::_rebuild_environment_input::Rebui
 /// <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RebuildEnvironmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::rebuild_environment::builders::RebuildEnvironmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::rebuild_environment::builders::RebuildEnvironmentInputBuilder,
+}
 impl RebuildEnvironmentFluentBuilder  {
     /// Creates a new `RebuildEnvironment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::rebuild_environment::RebuildEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,

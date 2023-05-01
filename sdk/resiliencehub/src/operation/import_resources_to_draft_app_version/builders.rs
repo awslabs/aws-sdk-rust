@@ -8,16 +8,17 @@ pub use crate::operation::import_resources_to_draft_app_version::_import_resourc
 /// <p>Imports resources to Resilience Hub application draft version from different input sources. For more information about the input sources supported by Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover the structure and describe your Resilience Hub application</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportResourcesToDraftAppVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionInputBuilder,
+}
 impl ImportResourcesToDraftAppVersionFluentBuilder  {
     /// Creates a new `ImportResourcesToDraftAppVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersion, aws_http::retry::AwsResponseRetryClassifier,>,

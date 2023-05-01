@@ -8,16 +8,17 @@ pub use crate::operation::describe_portfolio_share_status::_describe_portfolio_s
 /// <p>Gets the status of the specified portfolio share operation. This API can only be called by the management account in the organization or by a delegated admin.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePortfolioShareStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_portfolio_share_status::builders::DescribePortfolioShareStatusInputBuilder,
+}
 impl DescribePortfolioShareStatusFluentBuilder  {
     /// Creates a new `DescribePortfolioShareStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatus, aws_http::retry::AwsResponseRetryClassifier,>,

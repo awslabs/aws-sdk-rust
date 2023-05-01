@@ -8,16 +8,17 @@ pub use crate::operation::list_data_sets::_list_data_sets_input::ListDataSetsInp
 /// <p>Lists the data sets imported for a specific application. In Amazon Web Services Mainframe Modernization, data sets are associated with applications deployed on runtime environments. This is known as importing data sets. Currently, Amazon Web Services Mainframe Modernization can import data sets into catalogs using <a href="https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetImportTask.html">CreateDataSetImportTask</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDataSetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_data_sets::builders::ListDataSetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_data_sets::builders::ListDataSetsInputBuilder,
+}
 impl ListDataSetsFluentBuilder  {
     /// Creates a new `ListDataSets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_data_sets::ListDataSets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDataSetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_data_sets::paginator::ListDataSetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_data_sets::paginator::ListDataSetsPaginator {
-                            crate::operation::list_data_sets::paginator::ListDataSetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_data_sets::paginator::ListDataSetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_data_sets::paginator::ListDataSetsPaginator {
+                                crate::operation::list_data_sets::paginator::ListDataSetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier of the application for which you want to list the associated data sets.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());

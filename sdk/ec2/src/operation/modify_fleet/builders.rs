@@ -13,16 +13,17 @@ pub use crate::operation::modify_fleet::_modify_fleet_input::ModifyFleetInputBui
 /// <p>If you are finished with your EC2 Fleet for now, but will use it again later, you can set the target capacity to 0.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyFleetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_fleet::builders::ModifyFleetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_fleet::builders::ModifyFleetInputBuilder,
+}
 impl ModifyFleetFluentBuilder  {
     /// Creates a new `ModifyFleet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_fleet::ModifyFleet, aws_http::retry::AwsResponseRetryClassifier,>,

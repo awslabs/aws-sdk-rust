@@ -10,16 +10,17 @@ pub use crate::operation::stop_stream::_stop_stream_input::StopStreamInputBuilde
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_stream::builders::StopStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_stream::builders::StopStreamInputBuilder,
+}
 impl StopStreamFluentBuilder  {
     /// Creates a new `StopStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_stream::StopStream, aws_http::retry::AwsResponseRetryClassifier,>,

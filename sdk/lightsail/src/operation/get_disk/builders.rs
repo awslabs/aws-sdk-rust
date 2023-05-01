@@ -8,16 +8,17 @@ pub use crate::operation::get_disk::_get_disk_input::GetDiskInputBuilder;
 /// <p>Returns information about a specific block storage disk.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDiskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_disk::builders::GetDiskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_disk::builders::GetDiskInputBuilder,
+}
 impl GetDiskFluentBuilder  {
     /// Creates a new `GetDisk`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_disk::GetDisk, aws_http::retry::AwsResponseRetryClassifier,>,

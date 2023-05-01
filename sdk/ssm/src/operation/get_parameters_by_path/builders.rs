@@ -9,16 +9,17 @@ pub use crate::operation::get_parameters_by_path::_get_parameters_by_path_input:
 /// <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetParametersByPathFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder,
+}
 impl GetParametersByPathFluentBuilder  {
     /// Creates a new `GetParametersByPath`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_parameters_by_path::GetParametersByPath, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetParametersByPathFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator {
-                            crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator {
+                                crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.path(input.into());

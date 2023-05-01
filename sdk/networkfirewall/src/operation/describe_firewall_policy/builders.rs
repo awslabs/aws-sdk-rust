@@ -8,16 +8,17 @@ pub use crate::operation::describe_firewall_policy::_describe_firewall_policy_in
 /// <p>Returns the data objects for the specified firewall policy. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFirewallPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_firewall_policy::builders::DescribeFirewallPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_firewall_policy::builders::DescribeFirewallPolicyInputBuilder,
+}
 impl DescribeFirewallPolicyFluentBuilder  {
     /// Creates a new `DescribeFirewallPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_firewall_policy::DescribeFirewallPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::record_handler_progress::_record_handler_progress_inpu
 /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. Don't use this API in your code.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RecordHandlerProgressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::record_handler_progress::builders::RecordHandlerProgressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::record_handler_progress::builders::RecordHandlerProgressInputBuilder,
+}
 impl RecordHandlerProgressFluentBuilder  {
     /// Creates a new `RecordHandlerProgress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::record_handler_progress::RecordHandlerProgress, aws_http::retry::AwsResponseRetryClassifier,>,

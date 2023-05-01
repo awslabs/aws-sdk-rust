@@ -11,16 +11,17 @@ pub use crate::operation::list_geo_locations::_list_geo_locations_input::ListGeo
 /// <p>For a list of supported geolocation codes, see the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a> data type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGeoLocationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_geo_locations::builders::ListGeoLocationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_geo_locations::builders::ListGeoLocationsInputBuilder,
+}
 impl ListGeoLocationsFluentBuilder  {
     /// Creates a new `ListGeoLocations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_geo_locations::ListGeoLocations, aws_http::retry::AwsResponseRetryClassifier,>,

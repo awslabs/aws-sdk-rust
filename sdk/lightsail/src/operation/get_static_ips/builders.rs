@@ -8,16 +8,17 @@ pub use crate::operation::get_static_ips::_get_static_ips_input::GetStaticIpsInp
 /// <p>Returns information about all static IPs in the user's account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetStaticIpsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_static_ips::builders::GetStaticIpsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_static_ips::builders::GetStaticIpsInputBuilder,
+}
 impl GetStaticIpsFluentBuilder  {
     /// Creates a new `GetStaticIps`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_static_ips::GetStaticIps, aws_http::retry::AwsResponseRetryClassifier,>,

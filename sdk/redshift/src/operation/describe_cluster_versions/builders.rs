@@ -8,16 +8,17 @@ pub use crate::operation::describe_cluster_versions::_describe_cluster_versions_
 /// <p>Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before creating any clusters to learn more about the Amazon Redshift versions. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClusterVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cluster_versions::builders::DescribeClusterVersionsInputBuilder,
+}
 impl DescribeClusterVersionsFluentBuilder  {
     /// Creates a new `DescribeClusterVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cluster_versions::DescribeClusterVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeClusterVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginator {
-                            crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginator {
+                                crate::operation::describe_cluster_versions::paginator::DescribeClusterVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The specific cluster version to return.</p> 
     /// <p>Example: <code>1.0</code> </p>
     pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {

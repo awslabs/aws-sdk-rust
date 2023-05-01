@@ -8,16 +8,17 @@ pub use crate::operation::add_partner::_add_partner_input::AddPartnerInputBuilde
 /// <p>Adds a partner integration to a cluster. This operation authorizes a partner to push status updates for the specified database. To complete the integration, you also set up the integration on the partner website.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddPartnerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_partner::builders::AddPartnerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_partner::builders::AddPartnerInputBuilder,
+}
 impl AddPartnerFluentBuilder  {
     /// Creates a new `AddPartner`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_partner::AddPartner, aws_http::retry::AwsResponseRetryClassifier,>,

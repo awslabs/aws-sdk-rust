@@ -8,16 +8,17 @@ pub use crate::operation::get_sites::_get_sites_input::GetSitesInputBuilder;
 /// <p>Gets information about one or more of your sites in a global network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSitesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_sites::builders::GetSitesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_sites::builders::GetSitesInputBuilder,
+}
 impl GetSitesFluentBuilder  {
     /// Creates a new `GetSites`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_sites::GetSites, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetSitesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_sites::paginator::GetSitesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_sites::paginator::GetSitesPaginator {
-                            crate::operation::get_sites::paginator::GetSitesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_sites::paginator::GetSitesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_sites::paginator::GetSitesPaginator {
+                                crate::operation::get_sites::paginator::GetSitesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::list_workers_with_qualification_type::_list_workers_wi
 /// <p> The <code>ListWorkersWithQualificationType</code> operation returns all of the Workers that have been associated with a given Qualification type. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWorkersWithQualificationTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_workers_with_qualification_type::builders::ListWorkersWithQualificationTypeInputBuilder,
+}
 impl ListWorkersWithQualificationTypeFluentBuilder  {
     /// Creates a new `ListWorkersWithQualificationType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationType, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWorkersWithQualificationTypeFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_workers_with_qualification_type::paginator::ListWorkersWithQualificationTypePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_workers_with_qualification_type::paginator::ListWorkersWithQualificationTypePaginator {
-                            crate::operation::list_workers_with_qualification_type::paginator::ListWorkersWithQualificationTypePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_workers_with_qualification_type::paginator::ListWorkersWithQualificationTypePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_workers_with_qualification_type::paginator::ListWorkersWithQualificationTypePaginator {
+                                crate::operation::list_workers_with_qualification_type::paginator::ListWorkersWithQualificationTypePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the Qualification type of the Qualifications to return.</p>
     pub fn qualification_type_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.qualification_type_id(input.into());

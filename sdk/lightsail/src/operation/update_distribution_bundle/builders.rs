@@ -11,16 +11,17 @@ pub use crate::operation::update_distribution_bundle::_update_distribution_bundl
 /// <p>You can update your distribution's bundle only one time within your monthly Amazon Web Services billing cycle. To determine if you can update your distribution's bundle, use the <code>GetDistributions</code> action. The <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your distribution's bundle.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDistributionBundleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_distribution_bundle::builders::UpdateDistributionBundleInputBuilder,
+}
 impl UpdateDistributionBundleFluentBuilder  {
     /// Creates a new `UpdateDistributionBundle`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_distribution_bundle::UpdateDistributionBundle, aws_http::retry::AwsResponseRetryClassifier,>,

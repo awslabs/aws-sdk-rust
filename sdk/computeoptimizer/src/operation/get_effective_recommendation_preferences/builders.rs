@@ -9,16 +9,17 @@ pub use crate::operation::get_effective_recommendation_preferences::_get_effecti
 /// <p>When you create a recommendation preference, you can set its status to <code>Active</code> or <code>Inactive</code>. Use this action to view the recommendation preferences that are in effect, or <code>Active</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEffectiveRecommendationPreferencesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_effective_recommendation_preferences::builders::GetEffectiveRecommendationPreferencesInputBuilder,
+}
 impl GetEffectiveRecommendationPreferencesFluentBuilder  {
     /// Creates a new `GetEffectiveRecommendationPreferences`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_effective_recommendation_preferences::GetEffectiveRecommendationPreferences, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_global_replication_groups::_describe_global_r
 /// <p>Returns information about a particular global replication group. If no identifier is specified, returns information about all Global datastores. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGlobalReplicationGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_global_replication_groups::builders::DescribeGlobalReplicationGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_global_replication_groups::builders::DescribeGlobalReplicationGroupsInputBuilder,
+}
 impl DescribeGlobalReplicationGroupsFluentBuilder  {
     /// Creates a new `DescribeGlobalReplicationGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeGlobalReplicationGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_global_replication_groups::paginator::DescribeGlobalReplicationGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_global_replication_groups::paginator::DescribeGlobalReplicationGroupsPaginator {
-                            crate::operation::describe_global_replication_groups::paginator::DescribeGlobalReplicationGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_global_replication_groups::paginator::DescribeGlobalReplicationGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_global_replication_groups::paginator::DescribeGlobalReplicationGroupsPaginator {
+                                crate::operation::describe_global_replication_groups::paginator::DescribeGlobalReplicationGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the Global datastore</p>
     pub fn global_replication_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_replication_group_id(input.into());

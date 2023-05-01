@@ -8,16 +8,17 @@ pub use crate::operation::create_lifecycle_policy::_create_lifecycle_policy_inpu
 /// <p>Creates a policy to manage the lifecycle of the specified Amazon Web Services resources. You can create up to 100 lifecycle policies.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLifecyclePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_lifecycle_policy::builders::CreateLifecyclePolicyInputBuilder,
+}
 impl CreateLifecyclePolicyFluentBuilder  {
     /// Creates a new `CreateLifecyclePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_lifecycle_policy::CreateLifecyclePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

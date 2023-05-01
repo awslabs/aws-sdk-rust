@@ -8,16 +8,17 @@ pub use crate::operation::update_crawler::_update_crawler_input::UpdateCrawlerIn
 /// <p>Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code> before updating it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCrawlerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_crawler::builders::UpdateCrawlerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_crawler::builders::UpdateCrawlerInputBuilder,
+}
 impl UpdateCrawlerFluentBuilder  {
     /// Creates a new `UpdateCrawler`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_crawler::UpdateCrawler, aws_http::retry::AwsResponseRetryClassifier,>,

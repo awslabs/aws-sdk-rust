@@ -10,16 +10,17 @@ pub use crate::operation::describe_opted_out_numbers::_describe_opted_out_number
 /// <p>If you specify an opted out number that isn't valid, an Error is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOptedOutNumbersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersInputBuilder,
+}
 impl DescribeOptedOutNumbersFluentBuilder  {
     /// Creates a new `DescribeOptedOutNumbers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeOptedOutNumbersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_opted_out_numbers::paginator::DescribeOptedOutNumbersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_opted_out_numbers::paginator::DescribeOptedOutNumbersPaginator {
-                            crate::operation::describe_opted_out_numbers::paginator::DescribeOptedOutNumbersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_opted_out_numbers::paginator::DescribeOptedOutNumbersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_opted_out_numbers::paginator::DescribeOptedOutNumbersPaginator {
+                                crate::operation::describe_opted_out_numbers::paginator::DescribeOptedOutNumbersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
     pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());

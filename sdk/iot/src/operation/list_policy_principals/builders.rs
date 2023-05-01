@@ -11,16 +11,17 @@ pub use crate::operation::list_policy_principals::_list_policy_principals_input:
 #[deprecated]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPolicyPrincipalsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_policy_principals::builders::ListPolicyPrincipalsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_policy_principals::builders::ListPolicyPrincipalsInputBuilder,
+}
 impl ListPolicyPrincipalsFluentBuilder  {
     /// Creates a new `ListPolicyPrincipals`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_policy_principals::ListPolicyPrincipals, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListPolicyPrincipalsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator {
-                            crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator {
+                                crate::operation::list_policy_principals::paginator::ListPolicyPrincipalsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The policy name.</p>
     pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());

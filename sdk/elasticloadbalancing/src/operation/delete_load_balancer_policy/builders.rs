@@ -8,16 +8,17 @@ pub use crate::operation::delete_load_balancer_policy::_delete_load_balancer_pol
 /// <p>Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLoadBalancerPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_load_balancer_policy::builders::DeleteLoadBalancerPolicyInputBuilder,
+}
 impl DeleteLoadBalancerPolicyFluentBuilder  {
     /// Creates a new `DeleteLoadBalancerPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

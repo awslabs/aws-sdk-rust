@@ -8,16 +8,17 @@ pub use crate::operation::modify_vpc_attribute::_modify_vpc_attribute_input::Mod
 /// <p>Modifies the specified attribute of the specified VPC.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpcAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeInputBuilder,
+}
 impl ModifyVpcAttributeFluentBuilder  {
     /// Creates a new `ModifyVpcAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_attribute::ModifyVpcAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

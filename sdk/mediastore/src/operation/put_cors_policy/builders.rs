@@ -10,16 +10,17 @@ pub use crate::operation::put_cors_policy::_put_cors_policy_input::PutCorsPolicy
 /// <p>To learn more about CORS, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin Resource Sharing (CORS) in AWS Elemental MediaStore</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutCorsPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_cors_policy::builders::PutCorsPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_cors_policy::builders::PutCorsPolicyInputBuilder,
+}
 impl PutCorsPolicyFluentBuilder  {
     /// Creates a new `PutCorsPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_cors_policy::PutCorsPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

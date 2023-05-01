@@ -10,16 +10,17 @@ pub use crate::operation::delete_sol_function_package::_delete_sol_function_pack
 /// <p>To delete a function package, the package must be in a disabled state. To disable a function package, see <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_UpdateSolFunctionPackage.html">UpdateSolFunctionPackage</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSolFunctionPackageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_sol_function_package::builders::DeleteSolFunctionPackageInputBuilder,
+}
 impl DeleteSolFunctionPackageFluentBuilder  {
     /// Creates a new `DeleteSolFunctionPackage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_sol_function_package::DeleteSolFunctionPackage, aws_http::retry::AwsResponseRetryClassifier,>,

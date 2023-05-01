@@ -11,16 +11,17 @@ pub use crate::operation::list_hapgs::_list_hapgs_input::ListHapgsInputBuilder;
 /// <p>This operation supports pagination with the use of the <code>NextToken</code> member. If more results are available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to <code>ListHapgs</code> to retrieve the next set of items.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListHapgsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_hapgs::builders::ListHapgsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_hapgs::builders::ListHapgsInputBuilder,
+}
 impl ListHapgsFluentBuilder  {
     /// Creates a new `ListHapgs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_hapgs::ListHapgs, aws_http::retry::AwsResponseRetryClassifier,>,

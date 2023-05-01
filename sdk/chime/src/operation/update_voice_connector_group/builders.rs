@@ -8,16 +8,17 @@ pub use crate::operation::update_voice_connector_group::_update_voice_connector_
 /// <p>Updates details of the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice Connector priority ranking.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateVoiceConnectorGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_voice_connector_group::builders::UpdateVoiceConnectorGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_voice_connector_group::builders::UpdateVoiceConnectorGroupInputBuilder,
+}
 impl UpdateVoiceConnectorGroupFluentBuilder  {
     /// Creates a new `UpdateVoiceConnectorGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroup, aws_http::retry::AwsResponseRetryClassifier,>,

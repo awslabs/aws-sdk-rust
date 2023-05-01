@@ -8,16 +8,17 @@ pub use crate::operation::register_package_version::_register_package_version_in
 /// <p>Registers a package version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterPackageVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_package_version::builders::RegisterPackageVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_package_version::builders::RegisterPackageVersionInputBuilder,
+}
 impl RegisterPackageVersionFluentBuilder  {
     /// Creates a new `RegisterPackageVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_package_version::RegisterPackageVersion, aws_http::retry::AwsResponseRetryClassifier,>,

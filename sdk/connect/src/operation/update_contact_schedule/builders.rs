@@ -8,16 +8,17 @@ pub use crate::operation::update_contact_schedule::_update_contact_schedule_inpu
 /// <p>Updates the scheduled time of a task contact that is already scheduled.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContactScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_contact_schedule::builders::UpdateContactScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_contact_schedule::builders::UpdateContactScheduleInputBuilder,
+}
 impl UpdateContactScheduleFluentBuilder  {
     /// Creates a new `UpdateContactSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_contact_schedule::UpdateContactSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

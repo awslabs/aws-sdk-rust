@@ -9,16 +9,17 @@ pub use crate::operation::create_rescore_execution_plan::_create_rescore_executi
 /// <p>For an example of using the <code>CreateRescoreExecutionPlan</code> API, including using the Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-service-rerank.html">Semantically ranking a search service's results</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRescoreExecutionPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_rescore_execution_plan::builders::CreateRescoreExecutionPlanInputBuilder,
+}
 impl CreateRescoreExecutionPlanFluentBuilder  {
     /// Creates a new `CreateRescoreExecutionPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_rescore_execution_plan::CreateRescoreExecutionPlan, aws_http::retry::AwsResponseRetryClassifier,>,

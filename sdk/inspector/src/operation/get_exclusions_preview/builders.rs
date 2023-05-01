@@ -8,16 +8,17 @@ pub use crate::operation::get_exclusions_preview::_get_exclusions_preview_input:
 /// <p>Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by the preview token. You can obtain the preview token by running the CreateExclusionsPreview API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetExclusionsPreviewFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_exclusions_preview::builders::GetExclusionsPreviewInputBuilder,
+}
 impl GetExclusionsPreviewFluentBuilder  {
     /// Creates a new `GetExclusionsPreview`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_exclusions_preview::GetExclusionsPreview, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetExclusionsPreviewFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator {
-                            crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator {
+                                crate::operation::get_exclusions_preview::paginator::GetExclusionsPreviewPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN that specifies the assessment template for which the exclusions preview was requested.</p>
     pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assessment_template_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::batch_detect_sentiment::_batch_detect_sentiment_input:
 /// <p>Inspects a batch of documents and returns an inference of the prevailing sentiment, <code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>, in each one.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDetectSentimentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_detect_sentiment::builders::BatchDetectSentimentInputBuilder,
+}
 impl BatchDetectSentimentFluentBuilder  {
     /// Creates a new `BatchDetectSentiment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_detect_sentiment::BatchDetectSentiment, aws_http::retry::AwsResponseRetryClassifier,>,

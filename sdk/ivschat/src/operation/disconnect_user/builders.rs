@@ -8,16 +8,17 @@ pub use crate::operation::disconnect_user::_disconnect_user_input::DisconnectUse
 /// <p>Disconnects all connections using a specified user ID from a room. This replicates the <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-disconnectuser-publish.html"> DisconnectUser</a> WebSocket operation in the Amazon IVS Chat Messaging API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisconnectUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disconnect_user::builders::DisconnectUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disconnect_user::builders::DisconnectUserInputBuilder,
+}
 impl DisconnectUserFluentBuilder  {
     /// Creates a new `DisconnectUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disconnect_user::DisconnectUser, aws_http::retry::AwsResponseRetryClassifier,>,

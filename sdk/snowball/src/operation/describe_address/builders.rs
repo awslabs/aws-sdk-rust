@@ -8,16 +8,17 @@ pub use crate::operation::describe_address::_describe_address_input::DescribeAdd
 /// <p>Takes an <code>AddressId</code> and returns specific details about that address in the form of an <code>Address</code> object.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAddressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_address::builders::DescribeAddressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_address::builders::DescribeAddressInputBuilder,
+}
 impl DescribeAddressFluentBuilder  {
     /// Creates a new `DescribeAddress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_address::DescribeAddress, aws_http::retry::AwsResponseRetryClassifier,>,

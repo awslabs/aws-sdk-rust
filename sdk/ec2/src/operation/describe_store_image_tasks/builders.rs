@@ -12,16 +12,17 @@ pub use crate::operation::describe_store_image_tasks::_describe_store_image_task
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStoreImageTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_store_image_tasks::builders::DescribeStoreImageTasksInputBuilder,
+}
 impl DescribeStoreImageTasksFluentBuilder  {
     /// Creates a new `DescribeStoreImageTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_store_image_tasks::DescribeStoreImageTasks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -52,11 +53,11 @@ impl DescribeStoreImageTasksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator {
-                            crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator {
+                                crate::operation::describe_store_image_tasks::paginator::DescribeStoreImageTasksPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ImageIds`.
     ///
     /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).

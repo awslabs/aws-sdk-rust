@@ -10,16 +10,17 @@ pub use crate::operation::list_entities_for_policy::_list_entities_for_policy_in
 /// <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEntitiesForPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_entities_for_policy::builders::ListEntitiesForPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_entities_for_policy::builders::ListEntitiesForPolicyInputBuilder,
+}
 impl ListEntitiesForPolicyFluentBuilder  {
     /// Creates a new `ListEntitiesForPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_entities_for_policy::ListEntitiesForPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListEntitiesForPolicyFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator {
-                            crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator {
+                                crate::operation::list_entities_for_policy::paginator::ListEntitiesForPolicyPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {

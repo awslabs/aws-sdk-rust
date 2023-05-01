@@ -8,16 +8,17 @@ pub use crate::operation::list_instance_groups::_list_instance_groups_input::Lis
 /// <p>Provides all available details about the instance groups in a cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInstanceGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_instance_groups::builders::ListInstanceGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_instance_groups::builders::ListInstanceGroupsInputBuilder,
+}
 impl ListInstanceGroupsFluentBuilder  {
     /// Creates a new `ListInstanceGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_instance_groups::ListInstanceGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListInstanceGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator {
-                            crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator {
+                                crate::operation::list_instance_groups::paginator::ListInstanceGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the cluster for which to list the instance groups.</p>
     pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());

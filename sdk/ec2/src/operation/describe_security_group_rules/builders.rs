@@ -8,16 +8,17 @@ pub use crate::operation::describe_security_group_rules::_describe_security_grou
 /// <p>Describes one or more of your security group rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSecurityGroupRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_security_group_rules::builders::DescribeSecurityGroupRulesInputBuilder,
+}
 impl DescribeSecurityGroupRulesFluentBuilder  {
     /// Creates a new `DescribeSecurityGroupRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_security_group_rules::DescribeSecurityGroupRules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeSecurityGroupRulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator {
-                            crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator {
+                                crate::operation::describe_security_group_rules::paginator::DescribeSecurityGroupRulesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

@@ -8,16 +8,17 @@ pub use crate::operation::list_bot_recommendations::_list_bot_recommendations_in
 /// <p>Get a list of bot recommendations that meet the specified criteria.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBotRecommendationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_bot_recommendations::builders::ListBotRecommendationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_bot_recommendations::builders::ListBotRecommendationsInputBuilder,
+}
 impl ListBotRecommendationsFluentBuilder  {
     /// Creates a new `ListBotRecommendations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_bot_recommendations::ListBotRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBotRecommendationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_bot_recommendations::paginator::ListBotRecommendationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_bot_recommendations::paginator::ListBotRecommendationsPaginator {
-                            crate::operation::list_bot_recommendations::paginator::ListBotRecommendationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_bot_recommendations::paginator::ListBotRecommendationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_bot_recommendations::paginator::ListBotRecommendationsPaginator {
+                                crate::operation::list_bot_recommendations::paginator::ListBotRecommendationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier of the bot that contains the bot recommendation list.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());

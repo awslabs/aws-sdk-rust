@@ -8,16 +8,17 @@ pub use crate::operation::put_skill_authorization::_put_skill_authorization_inpu
 /// <p>Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role, the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the IAM role.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutSkillAuthorizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_skill_authorization::builders::PutSkillAuthorizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_skill_authorization::builders::PutSkillAuthorizationInputBuilder,
+}
 impl PutSkillAuthorizationFluentBuilder  {
     /// Creates a new `PutSkillAuthorization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_skill_authorization::PutSkillAuthorization, aws_http::retry::AwsResponseRetryClassifier,>,

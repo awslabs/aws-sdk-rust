@@ -8,16 +8,17 @@ pub use crate::operation::describe_watchlist::_describe_watchlist_input::Describ
 /// <p>Describes the specified watchlist.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeWatchlistFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_watchlist::builders::DescribeWatchlistInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_watchlist::builders::DescribeWatchlistInputBuilder,
+}
 impl DescribeWatchlistFluentBuilder  {
     /// Creates a new `DescribeWatchlist`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_watchlist::DescribeWatchlist, aws_http::retry::AwsResponseRetryClassifier,>,

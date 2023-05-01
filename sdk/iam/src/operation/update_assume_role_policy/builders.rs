@@ -8,16 +8,17 @@ pub use crate::operation::update_assume_role_policy::_update_assume_role_policy_
 /// <p>Updates the policy that grants an IAM entity permission to assume a role. This is typically referred to as the "role trust policy". For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using roles to delegate permissions and federate identities</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAssumeRolePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_assume_role_policy::builders::UpdateAssumeRolePolicyInputBuilder,
+}
 impl UpdateAssumeRolePolicyFluentBuilder  {
     /// Creates a new `UpdateAssumeRolePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_assume_role_policy::UpdateAssumeRolePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

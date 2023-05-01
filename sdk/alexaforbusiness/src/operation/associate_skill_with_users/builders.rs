@@ -8,16 +8,17 @@ pub use crate::operation::associate_skill_with_users::_associate_skill_with_user
 /// <p>Makes a private skill available for enrolled users to enable on their devices.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateSkillWithUsersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_skill_with_users::builders::AssociateSkillWithUsersInputBuilder,
+}
 impl AssociateSkillWithUsersFluentBuilder  {
     /// Creates a new `AssociateSkillWithUsers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_skill_with_users::AssociateSkillWithUsers, aws_http::retry::AwsResponseRetryClassifier,>,

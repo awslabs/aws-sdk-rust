@@ -8,16 +8,17 @@ pub use crate::operation::get_listener::_get_listener_input::GetListenerInputBui
 /// <p>Retrieves information about the specified listener for the specified service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetListenerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_listener::builders::GetListenerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_listener::builders::GetListenerInputBuilder,
+}
 impl GetListenerFluentBuilder  {
     /// Creates a new `GetListener`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_listener::GetListener, aws_http::retry::AwsResponseRetryClassifier,>,

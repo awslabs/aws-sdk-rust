@@ -9,16 +9,17 @@ pub use crate::operation::delete_scheduling_policy::_delete_scheduling_policy_in
 /// <p>You can't delete a scheduling policy that's used in any job queues.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSchedulingPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_scheduling_policy::builders::DeleteSchedulingPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_scheduling_policy::builders::DeleteSchedulingPolicyInputBuilder,
+}
 impl DeleteSchedulingPolicyFluentBuilder  {
     /// Creates a new `DeleteSchedulingPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_scheduling_policy::DeleteSchedulingPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

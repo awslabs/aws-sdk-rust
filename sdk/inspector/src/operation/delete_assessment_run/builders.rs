@@ -8,16 +8,17 @@ pub use crate::operation::delete_assessment_run::_delete_assessment_run_input::D
 /// <p>Deletes the assessment run that is specified by the ARN of the assessment run.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAssessmentRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_assessment_run::builders::DeleteAssessmentRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_assessment_run::builders::DeleteAssessmentRunInputBuilder,
+}
 impl DeleteAssessmentRunFluentBuilder  {
     /// Creates a new `DeleteAssessmentRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_assessment_run::DeleteAssessmentRun, aws_http::retry::AwsResponseRetryClassifier,>,

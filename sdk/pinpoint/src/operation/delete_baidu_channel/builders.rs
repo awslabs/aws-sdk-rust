@@ -8,16 +8,17 @@ pub use crate::operation::delete_baidu_channel::_delete_baidu_channel_input::Del
 /// <p>Disables the Baidu channel for an application and deletes any existing settings for the channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBaiduChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_baidu_channel::builders::DeleteBaiduChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_baidu_channel::builders::DeleteBaiduChannelInputBuilder,
+}
 impl DeleteBaiduChannelFluentBuilder  {
     /// Creates a new `DeleteBaiduChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_baidu_channel::DeleteBaiduChannel, aws_http::retry::AwsResponseRetryClassifier,>,

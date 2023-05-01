@@ -8,16 +8,17 @@ pub use crate::operation::clone_backend::_clone_backend_input::CloneBackendInput
 /// <p>This operation clones an existing backend.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CloneBackendFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::clone_backend::builders::CloneBackendInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::clone_backend::builders::CloneBackendInputBuilder,
+}
 impl CloneBackendFluentBuilder  {
     /// Creates a new `CloneBackend`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::clone_backend::CloneBackend, aws_http::retry::AwsResponseRetryClassifier,>,

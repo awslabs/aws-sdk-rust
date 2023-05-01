@@ -8,16 +8,17 @@ pub use crate::operation::get_ml_transforms::_get_ml_transforms_input::GetMlTran
 /// <p>Gets a sortable, filterable list of existing Glue machine learning transforms. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue, and you can retrieve their metadata by calling <code>GetMLTransforms</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMLTransformsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_ml_transforms::builders::GetMlTransformsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_ml_transforms::builders::GetMlTransformsInputBuilder,
+}
 impl GetMLTransformsFluentBuilder  {
     /// Creates a new `GetMLTransforms`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_ml_transforms::GetMLTransforms, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetMLTransformsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator {
-                            crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator {
+                                crate::operation::get_ml_transforms::paginator::GetMlTransformsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A paginated token to offset the results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::delete_datalake_exceptions_subscription::_delete_datal
 /// <p>Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDatalakeExceptionsSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_datalake_exceptions_subscription::builders::DeleteDatalakeExceptionsSubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_datalake_exceptions_subscription::builders::DeleteDatalakeExceptionsSubscriptionInputBuilder,
+}
 impl DeleteDatalakeExceptionsSubscriptionFluentBuilder  {
     /// Creates a new `DeleteDatalakeExceptionsSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_datalake_exceptions_subscription::DeleteDatalakeExceptionsSubscription, aws_http::retry::AwsResponseRetryClassifier,>,

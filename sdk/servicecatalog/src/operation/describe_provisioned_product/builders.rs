@@ -8,16 +8,17 @@ pub use crate::operation::describe_provisioned_product::_describe_provisioned_pr
 /// <p>Gets information about the specified provisioned product.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeProvisionedProductFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_provisioned_product::builders::DescribeProvisionedProductInputBuilder,
+}
 impl DescribeProvisionedProductFluentBuilder  {
     /// Creates a new `DescribeProvisionedProduct`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_provisioned_product::DescribeProvisionedProduct, aws_http::retry::AwsResponseRetryClassifier,>,

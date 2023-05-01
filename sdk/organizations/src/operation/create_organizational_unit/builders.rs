@@ -11,16 +11,17 @@ pub use crate::operation::create_organizational_unit::_create_organizational_uni
 /// <p>This operation can be called only from the organization's management account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateOrganizationalUnitFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_organizational_unit::builders::CreateOrganizationalUnitInputBuilder,
+}
 impl CreateOrganizationalUnitFluentBuilder  {
     /// Creates a new `CreateOrganizationalUnit`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_organizational_unit::CreateOrganizationalUnit, aws_http::retry::AwsResponseRetryClassifier,>,

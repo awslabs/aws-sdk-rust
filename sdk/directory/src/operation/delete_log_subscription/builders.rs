@@ -8,16 +8,17 @@ pub use crate::operation::delete_log_subscription::_delete_log_subscription_inpu
 /// <p>Deletes the specified log subscription.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLogSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_log_subscription::builders::DeleteLogSubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_log_subscription::builders::DeleteLogSubscriptionInputBuilder,
+}
 impl DeleteLogSubscriptionFluentBuilder  {
     /// Creates a new `DeleteLogSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_log_subscription::DeleteLogSubscription, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::stop_db_instance_automated_backups_replication::_stop_
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated Backups to Another Amazon Web Services Region</a> in the <i>Amazon RDS User Guide.</i> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopDBInstanceAutomatedBackupsReplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_db_instance_automated_backups_replication::builders::StopDbInstanceAutomatedBackupsReplicationInputBuilder,
+}
 impl StopDBInstanceAutomatedBackupsReplicationFluentBuilder  {
     /// Creates a new `StopDBInstanceAutomatedBackupsReplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplication, aws_http::retry::AwsResponseRetryClassifier,>,

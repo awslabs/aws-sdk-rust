@@ -14,16 +14,17 @@ pub use crate::operation::disassociate_client_vpn_target_network::_disassociate_
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateClientVpnTargetNetworkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_client_vpn_target_network::builders::DisassociateClientVpnTargetNetworkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_client_vpn_target_network::builders::DisassociateClientVpnTargetNetworkInputBuilder,
+}
 impl DisassociateClientVpnTargetNetworkFluentBuilder  {
     /// Creates a new `DisassociateClientVpnTargetNetwork`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetwork, aws_http::retry::AwsResponseRetryClassifier,>,

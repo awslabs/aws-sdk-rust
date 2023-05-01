@@ -16,16 +16,17 @@ pub use crate::operation::list_permissions::_list_permissions_input::ListPermiss
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_permissions::builders::ListPermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_permissions::builders::ListPermissionsInputBuilder,
+}
 impl ListPermissionsFluentBuilder  {
     /// Creates a new `ListPermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_permissions::ListPermissions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -56,11 +57,11 @@ impl ListPermissionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_permissions::paginator::ListPermissionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_permissions::paginator::ListPermissionsPaginator {
-                            crate::operation::list_permissions::paginator::ListPermissionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_permissions::paginator::ListPermissionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_permissions::paginator::ListPermissionsPaginator {
+                                crate::operation::list_permissions::paginator::ListPermissionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action.</p>
     pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.certificate_authority_arn(input.into());

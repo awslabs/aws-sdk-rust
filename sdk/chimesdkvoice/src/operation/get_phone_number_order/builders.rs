@@ -8,16 +8,17 @@ pub use crate::operation::get_phone_number_order::_get_phone_number_order_input:
 /// <p>Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in E.164 format, product type, and order status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPhoneNumberOrderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_phone_number_order::builders::GetPhoneNumberOrderInputBuilder,
+}
 impl GetPhoneNumberOrderFluentBuilder  {
     /// Creates a new `GetPhoneNumberOrder`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_phone_number_order::GetPhoneNumberOrder, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_table_version::_get_table_version_input::GetTableV
 /// <p>Retrieves a specified version of a table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTableVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_table_version::builders::GetTableVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_table_version::builders::GetTableVersionInputBuilder,
+}
 impl GetTableVersionFluentBuilder  {
     /// Creates a new `GetTableVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_table_version::GetTableVersion, aws_http::retry::AwsResponseRetryClassifier,>,

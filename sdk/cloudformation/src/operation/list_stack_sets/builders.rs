@@ -13,16 +13,17 @@ pub use crate::operation::list_stack_sets::_list_stack_sets_input::ListStackSets
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStackSetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_stack_sets::builders::ListStackSetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_stack_sets::builders::ListStackSetsInputBuilder,
+}
 impl ListStackSetsFluentBuilder  {
     /// Creates a new `ListStackSets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_stack_sets::ListStackSets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -53,11 +54,11 @@ impl ListStackSetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_stack_sets::paginator::ListStackSetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_stack_sets::paginator::ListStackSetsPaginator {
-                            crate::operation::list_stack_sets::paginator::ListStackSetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_stack_sets::paginator::ListStackSetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_stack_sets::paginator::ListStackSetsPaginator {
+                                crate::operation::list_stack_sets::paginator::ListStackSetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the previous paginated request didn't return all the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListStackSets</code> again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

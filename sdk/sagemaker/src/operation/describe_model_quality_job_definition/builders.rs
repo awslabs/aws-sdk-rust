@@ -8,16 +8,17 @@ pub use crate::operation::describe_model_quality_job_definition::_describe_model
 /// <p>Returns a description of a model quality job definition.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeModelQualityJobDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_model_quality_job_definition::builders::DescribeModelQualityJobDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_model_quality_job_definition::builders::DescribeModelQualityJobDefinitionInputBuilder,
+}
 impl DescribeModelQualityJobDefinitionFluentBuilder  {
     /// Creates a new `DescribeModelQualityJobDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_model_quality_job_definition::DescribeModelQualityJobDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

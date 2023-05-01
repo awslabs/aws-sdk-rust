@@ -12,16 +12,17 @@ pub use crate::operation::list_activated_rules_in_rule_group::_list_activated_ru
 /// <p>Returns an array of <code>ActivatedRule</code> objects.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListActivatedRulesInRuleGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_activated_rules_in_rule_group::builders::ListActivatedRulesInRuleGroupInputBuilder,
+}
 impl ListActivatedRulesInRuleGroupFluentBuilder  {
     /// Creates a new `ListActivatedRulesInRuleGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_activated_rules_in_rule_group::ListActivatedRulesInRuleGroup, aws_http::retry::AwsResponseRetryClassifier,>,

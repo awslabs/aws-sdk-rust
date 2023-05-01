@@ -8,16 +8,17 @@ pub use crate::operation::list_watchlists::_list_watchlists_input::ListWatchlist
 /// <p>Lists all watchlists in a specified domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWatchlistsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_watchlists::builders::ListWatchlistsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_watchlists::builders::ListWatchlistsInputBuilder,
+}
 impl ListWatchlistsFluentBuilder  {
     /// Creates a new `ListWatchlists`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_watchlists::ListWatchlists, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWatchlistsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_watchlists::paginator::ListWatchlistsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_watchlists::paginator::ListWatchlistsPaginator {
-                            crate::operation::list_watchlists::paginator::ListWatchlistsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_watchlists::paginator::ListWatchlistsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_watchlists::paginator::ListWatchlistsPaginator {
+                                crate::operation::list_watchlists::paginator::ListWatchlistsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the domain.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());

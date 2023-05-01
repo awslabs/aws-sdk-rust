@@ -8,16 +8,17 @@ pub use crate::operation::lookup_policy::_lookup_policy_input::LookupPolicyInput
 /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct LookupPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::lookup_policy::builders::LookupPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::lookup_policy::builders::LookupPolicyInputBuilder,
+}
 impl LookupPolicyFluentBuilder  {
     /// Creates a new `LookupPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::lookup_policy::LookupPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl LookupPolicyFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::lookup_policy::paginator::LookupPolicyPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::lookup_policy::paginator::LookupPolicyPaginator {
-                            crate::operation::lookup_policy::paginator::LookupPolicyPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::lookup_policy::paginator::LookupPolicyPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::lookup_policy::paginator::LookupPolicyPaginator {
+                                crate::operation::lookup_policy::paginator::LookupPolicyPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());

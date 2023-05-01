@@ -8,16 +8,17 @@ pub use crate::operation::list_usage_limits::_list_usage_limits_input::ListUsage
 /// <p>Lists all usage limits within Amazon Redshift Serverless.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListUsageLimitsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_usage_limits::builders::ListUsageLimitsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_usage_limits::builders::ListUsageLimitsInputBuilder,
+}
 impl ListUsageLimitsFluentBuilder  {
     /// Creates a new `ListUsageLimits`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_usage_limits::ListUsageLimits, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListUsageLimitsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_usage_limits::paginator::ListUsageLimitsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_usage_limits::paginator::ListUsageLimitsPaginator {
-                            crate::operation::list_usage_limits::paginator::ListUsageLimitsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_usage_limits::paginator::ListUsageLimitsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_usage_limits::paginator::ListUsageLimitsPaginator {
+                                crate::operation::list_usage_limits::paginator::ListUsageLimitsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) associated with the resource whose usage limits you want to list.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());

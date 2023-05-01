@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_membership::_disassociate_membership_inpu
 /// <p> <code>DisassociateMembership</code> cannot be called by an organization account in the organization behavior graph. For the organization behavior graph, the Detective administrator account determines which organization accounts to enable or disable as member accounts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_membership::builders::DisassociateMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_membership::builders::DisassociateMembershipInputBuilder,
+}
 impl DisassociateMembershipFluentBuilder  {
     /// Creates a new `DisassociateMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_membership::DisassociateMembership, aws_http::retry::AwsResponseRetryClassifier,>,

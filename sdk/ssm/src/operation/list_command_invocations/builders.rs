@@ -8,16 +8,17 @@ pub use crate::operation::list_command_invocations::_list_command_invocations_in
 /// <p>An invocation is copy of a command sent to a specific managed node. A command can apply to one or more managed nodes. A command invocation applies to one managed node. For example, if a user runs <code>SendCommand</code> against three managed nodes, then a command invocation is created for each requested managed node ID. <code>ListCommandInvocations</code> provide status about command execution.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCommandInvocationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_command_invocations::builders::ListCommandInvocationsInputBuilder,
+}
 impl ListCommandInvocationsFluentBuilder  {
     /// Creates a new `ListCommandInvocations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_command_invocations::ListCommandInvocations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCommandInvocationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator {
-                            crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator {
+                                crate::operation::list_command_invocations::paginator::ListCommandInvocationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>(Optional) The invocations for a specific command ID.</p>
     pub fn command_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.command_id(input.into());

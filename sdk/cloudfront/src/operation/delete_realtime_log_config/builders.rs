@@ -10,16 +10,17 @@ pub use crate::operation::delete_realtime_log_config::_delete_realtime_log_confi
 /// <p>To delete a real-time log configuration, you can provide the configuration's name or its Amazon Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to delete.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRealtimeLogConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_realtime_log_config::builders::DeleteRealtimeLogConfigInputBuilder,
+}
 impl DeleteRealtimeLogConfigFluentBuilder  {
     /// Creates a new `DeleteRealtimeLogConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,

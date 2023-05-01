@@ -8,16 +8,17 @@ pub use crate::operation::get_access_token::_get_access_token_input::GetAccessTo
 /// <p>Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens are valid for one hour.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccessTokenFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_access_token::builders::GetAccessTokenInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_access_token::builders::GetAccessTokenInputBuilder,
+}
 impl GetAccessTokenFluentBuilder  {
     /// Creates a new `GetAccessToken`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_access_token::GetAccessToken, aws_http::retry::AwsResponseRetryClassifier,>,

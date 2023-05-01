@@ -8,16 +8,17 @@ pub use crate::operation::list_languages::_list_languages_input::ListLanguagesIn
 /// <p>Provides a list of languages (RFC-5646 codes and names) that Amazon Translate supports.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLanguagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_languages::builders::ListLanguagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_languages::builders::ListLanguagesInputBuilder,
+}
 impl ListLanguagesFluentBuilder  {
     /// Creates a new `ListLanguages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_languages::ListLanguages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListLanguagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_languages::paginator::ListLanguagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_languages::paginator::ListLanguagesPaginator {
-                            crate::operation::list_languages::paginator::ListLanguagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_languages::paginator::ListLanguagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_languages::paginator::ListLanguagesPaginator {
+                                crate::operation::list_languages::paginator::ListLanguagesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The language code for the language to use to display the language names in the response. The language code is <code>en</code> by default. </p>
     pub fn display_language_code(mut self, input: crate::types::DisplayLanguageCode) -> Self {
         self.inner = self.inner.display_language_code(input);

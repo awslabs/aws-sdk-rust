@@ -10,16 +10,17 @@ pub use crate::operation::list_aws_service_access_for_organization::_list_aws_se
 /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAWSServiceAccessForOrganizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_aws_service_access_for_organization::builders::ListAwsServiceAccessForOrganizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_aws_service_access_for_organization::builders::ListAwsServiceAccessForOrganizationInputBuilder,
+}
 impl ListAWSServiceAccessForOrganizationFluentBuilder  {
     /// Creates a new `ListAWSServiceAccessForOrganization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_aws_service_access_for_organization::ListAWSServiceAccessForOrganization, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListAWSServiceAccessForOrganizationFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_aws_service_access_for_organization::paginator::ListAwsServiceAccessForOrganizationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_aws_service_access_for_organization::paginator::ListAwsServiceAccessForOrganizationPaginator {
-                            crate::operation::list_aws_service_access_for_organization::paginator::ListAwsServiceAccessForOrganizationPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_aws_service_access_for_organization::paginator::ListAwsServiceAccessForOrganizationPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_aws_service_access_for_organization::paginator::ListAwsServiceAccessForOrganizationPaginator {
+                                crate::operation::list_aws_service_access_for_organization::paginator::ListAwsServiceAccessForOrganizationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

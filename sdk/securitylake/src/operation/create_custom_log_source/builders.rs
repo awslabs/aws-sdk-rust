@@ -8,16 +8,17 @@ pub use crate::operation::create_custom_log_source::_create_custom_log_source_in
 /// <p>Adds a third-party custom source in Amazon Security Lake, from the Amazon Web Services Region where you want to create a custom source. Security Lake can collect logs and events from third-party custom sources. After creating the appropriate IAM role to invoke Glue crawler, use this API to add a custom source name in Security Lake. This operation creates a partition in the Amazon S3 bucket for Security Lake as the target location for log files from the custom source in addition to an associated Glue table and an Glue crawler.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCustomLogSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_custom_log_source::builders::CreateCustomLogSourceInputBuilder,
+}
 impl CreateCustomLogSourceFluentBuilder  {
     /// Creates a new `CreateCustomLogSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_custom_log_source::CreateCustomLogSource, aws_http::retry::AwsResponseRetryClassifier,>,

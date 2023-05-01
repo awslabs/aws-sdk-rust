@@ -10,16 +10,17 @@ pub use crate::operation::set_identity_headers_in_notifications_enabled::_set_id
 /// <p>For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetIdentityHeadersInNotificationsEnabledFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_identity_headers_in_notifications_enabled::builders::SetIdentityHeadersInNotificationsEnabledInputBuilder,
+}
 impl SetIdentityHeadersInNotificationsEnabledFluentBuilder  {
     /// Creates a new `SetIdentityHeadersInNotificationsEnabled`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabled, aws_http::retry::AwsResponseRetryClassifier,>,

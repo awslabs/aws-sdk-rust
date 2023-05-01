@@ -8,16 +8,17 @@ pub use crate::operation::list_solutions::_list_solutions_input::ListSolutionsIn
 /// <p>Returns a list of solutions that use the given dataset group. When a dataset group is not specified, all the solutions associated with the account are listed. The response provides the properties for each solution, including the Amazon Resource Name (ARN). For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSolutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_solutions::builders::ListSolutionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_solutions::builders::ListSolutionsInputBuilder,
+}
 impl ListSolutionsFluentBuilder  {
     /// Creates a new `ListSolutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_solutions::ListSolutions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSolutionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_solutions::paginator::ListSolutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_solutions::paginator::ListSolutionsPaginator {
-                            crate::operation::list_solutions::paginator::ListSolutionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_solutions::paginator::ListSolutionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_solutions::paginator::ListSolutionsPaginator {
+                                crate::operation::list_solutions::paginator::ListSolutionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());

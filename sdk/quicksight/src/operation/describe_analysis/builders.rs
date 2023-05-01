@@ -8,16 +8,17 @@ pub use crate::operation::describe_analysis::_describe_analysis_input::DescribeA
 /// <p>Provides a summary of the metadata for an analysis.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_analysis::builders::DescribeAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_analysis::builders::DescribeAnalysisInputBuilder,
+}
 impl DescribeAnalysisFluentBuilder  {
     /// Creates a new `DescribeAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_analysis::DescribeAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

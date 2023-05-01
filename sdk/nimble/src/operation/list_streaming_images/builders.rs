@@ -9,16 +9,17 @@ pub use crate::operation::list_streaming_images::_list_streaming_images_input::L
 /// <p>This list will contain both images provided by Amazon Web Services, as well as streaming images that you have created in your studio.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStreamingImagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_streaming_images::builders::ListStreamingImagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_streaming_images::builders::ListStreamingImagesInputBuilder,
+}
 impl ListStreamingImagesFluentBuilder  {
     /// Creates a new `ListStreamingImages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_streaming_images::ListStreamingImages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListStreamingImagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_streaming_images::paginator::ListStreamingImagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_streaming_images::paginator::ListStreamingImagesPaginator {
-                            crate::operation::list_streaming_images::paginator::ListStreamingImagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_streaming_images::paginator::ListStreamingImagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_streaming_images::paginator::ListStreamingImagesPaginator {
+                                crate::operation::list_streaming_images::paginator::ListStreamingImagesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

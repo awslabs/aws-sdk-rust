@@ -8,16 +8,17 @@ pub use crate::operation::list_inputs::_list_inputs_input::ListInputsInputBuilde
 /// <p>Lists the inputs you have created.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInputsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_inputs::builders::ListInputsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_inputs::builders::ListInputsInputBuilder,
+}
 impl ListInputsFluentBuilder  {
     /// Creates a new `ListInputs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_inputs::ListInputs, aws_http::retry::AwsResponseRetryClassifier,>,

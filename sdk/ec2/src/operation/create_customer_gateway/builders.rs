@@ -10,16 +10,17 @@ pub use crate::operation::create_customer_gateway::_create_customer_gateway_inpu
 /// <p>To create more than one customer gateway with the same VPN type, IP address, and BGP ASN, specify a unique device name for each customer gateway. An identical request returns information about the existing customer gateway; it doesn't create a new customer gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCustomerGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_customer_gateway::builders::CreateCustomerGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_customer_gateway::builders::CreateCustomerGatewayInputBuilder,
+}
 impl CreateCustomerGatewayFluentBuilder  {
     /// Creates a new `CreateCustomerGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_customer_gateway::CreateCustomerGateway, aws_http::retry::AwsResponseRetryClassifier,>,

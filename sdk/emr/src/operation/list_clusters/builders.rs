@@ -8,16 +8,17 @@ pub use crate::operation::list_clusters::_list_clusters_input::ListClustersInput
 /// <p>Provides the status of all clusters visible to this Amazon Web Services account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters in unsorted order per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListClustersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_clusters::builders::ListClustersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_clusters::builders::ListClustersInputBuilder,
+}
 impl ListClustersFluentBuilder  {
     /// Creates a new `ListClusters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_clusters::ListClusters, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListClustersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_clusters::paginator::ListClustersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_clusters::paginator::ListClustersPaginator {
-                            crate::operation::list_clusters::paginator::ListClustersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_clusters::paginator::ListClustersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_clusters::paginator::ListClustersPaginator {
+                                crate::operation::list_clusters::paginator::ListClustersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
     pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);

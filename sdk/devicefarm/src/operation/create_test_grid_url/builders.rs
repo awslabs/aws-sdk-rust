@@ -8,16 +8,17 @@ pub use crate::operation::create_test_grid_url::_create_test_grid_url_input::Cre
 /// <p>Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code> constructor.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTestGridUrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_test_grid_url::builders::CreateTestGridUrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_test_grid_url::builders::CreateTestGridUrlInputBuilder,
+}
 impl CreateTestGridUrlFluentBuilder  {
     /// Creates a new `CreateTestGridUrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_test_grid_url::CreateTestGridUrl, aws_http::retry::AwsResponseRetryClassifier,>,

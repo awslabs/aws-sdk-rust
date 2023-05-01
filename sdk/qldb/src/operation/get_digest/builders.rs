@@ -8,16 +8,17 @@ pub use crate::operation::get_digest::_get_digest_input::GetDigestInputBuilder;
 /// <p>Returns the digest of a ledger at the latest committed block in the journal. The response includes a 256-bit hash value and a block address.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDigestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_digest::builders::GetDigestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_digest::builders::GetDigestInputBuilder,
+}
 impl GetDigestFluentBuilder  {
     /// Creates a new `GetDigest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_digest::GetDigest, aws_http::retry::AwsResponseRetryClassifier,>,

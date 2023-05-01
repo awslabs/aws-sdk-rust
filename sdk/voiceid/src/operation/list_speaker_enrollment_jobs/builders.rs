@@ -8,16 +8,17 @@ pub use crate::operation::list_speaker_enrollment_jobs::_list_speaker_enrollment
 /// <p>Lists all the speaker enrollment jobs in the domain with the specified <code>JobStatus</code>. If <code>JobStatus</code> is not provided, this lists all jobs with all possible speaker enrollment job statuses.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSpeakerEnrollmentJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_speaker_enrollment_jobs::builders::ListSpeakerEnrollmentJobsInputBuilder,
+}
 impl ListSpeakerEnrollmentJobsFluentBuilder  {
     /// Creates a new `ListSpeakerEnrollmentJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSpeakerEnrollmentJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_speaker_enrollment_jobs::paginator::ListSpeakerEnrollmentJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_speaker_enrollment_jobs::paginator::ListSpeakerEnrollmentJobsPaginator {
-                            crate::operation::list_speaker_enrollment_jobs::paginator::ListSpeakerEnrollmentJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_speaker_enrollment_jobs::paginator::ListSpeakerEnrollmentJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_speaker_enrollment_jobs::paginator::ListSpeakerEnrollmentJobsPaginator {
+                                crate::operation::list_speaker_enrollment_jobs::paginator::ListSpeakerEnrollmentJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the domain that contains the speaker enrollment jobs.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());

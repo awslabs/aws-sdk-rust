@@ -8,16 +8,17 @@ pub use crate::operation::list_channel_flows::_list_channel_flows_input::ListCha
 /// <p>Returns a paginated lists of all the channel flows created under a single Chime. This is a developer API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelFlowsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_channel_flows::builders::ListChannelFlowsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_channel_flows::builders::ListChannelFlowsInputBuilder,
+}
 impl ListChannelFlowsFluentBuilder  {
     /// Creates a new `ListChannelFlows`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_channel_flows::ListChannelFlows, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListChannelFlowsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator {
-                            crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator {
+                                crate::operation::list_channel_flows::paginator::ListChannelFlowsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the app instance.</p>
     pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());

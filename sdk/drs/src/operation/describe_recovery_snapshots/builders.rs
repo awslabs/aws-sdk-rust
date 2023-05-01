@@ -8,16 +8,17 @@ pub use crate::operation::describe_recovery_snapshots::_describe_recovery_snapsh
 /// <p>Lists all Recovery Snapshots for a single Source Server.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRecoverySnapshotsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_recovery_snapshots::builders::DescribeRecoverySnapshotsInputBuilder,
+}
 impl DescribeRecoverySnapshotsFluentBuilder  {
     /// Creates a new `DescribeRecoverySnapshots`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshots, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeRecoverySnapshotsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_recovery_snapshots::paginator::DescribeRecoverySnapshotsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_recovery_snapshots::paginator::DescribeRecoverySnapshotsPaginator {
-                            crate::operation::describe_recovery_snapshots::paginator::DescribeRecoverySnapshotsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_recovery_snapshots::paginator::DescribeRecoverySnapshotsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_recovery_snapshots::paginator::DescribeRecoverySnapshotsPaginator {
+                                crate::operation::describe_recovery_snapshots::paginator::DescribeRecoverySnapshotsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Filter Recovery Snapshots by Source Server ID.</p>
     pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());

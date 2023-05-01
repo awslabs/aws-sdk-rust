@@ -10,16 +10,17 @@ pub use crate::operation::delete_db_snapshot::_delete_db_snapshot_input::DeleteD
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDBSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_db_snapshot::builders::DeleteDbSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_db_snapshot::builders::DeleteDbSnapshotInputBuilder,
+}
 impl DeleteDBSnapshotFluentBuilder  {
     /// Creates a new `DeleteDBSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_db_snapshot::DeleteDBSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

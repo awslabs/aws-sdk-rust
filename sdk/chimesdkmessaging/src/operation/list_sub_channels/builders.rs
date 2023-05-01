@@ -8,16 +8,17 @@ pub use crate::operation::list_sub_channels::_list_sub_channels_input::ListSubCh
 /// <p>Lists all the SubChannels in an elastic channel when given a channel ID. Available only to the app instance admins and channel moderators of elastic channels.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSubChannelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_sub_channels::builders::ListSubChannelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_sub_channels::builders::ListSubChannelsInputBuilder,
+}
 impl ListSubChannelsFluentBuilder  {
     /// Creates a new `ListSubChannels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_sub_channels::ListSubChannels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSubChannelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_sub_channels::paginator::ListSubChannelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_sub_channels::paginator::ListSubChannelsPaginator {
-                            crate::operation::list_sub_channels::paginator::ListSubChannelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_sub_channels::paginator::ListSubChannelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_sub_channels::paginator::ListSubChannelsPaginator {
+                                crate::operation::list_sub_channels::paginator::ListSubChannelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of elastic channel.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());

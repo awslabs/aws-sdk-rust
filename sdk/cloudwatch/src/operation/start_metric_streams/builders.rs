@@ -8,16 +8,17 @@ pub use crate::operation::start_metric_streams::_start_metric_streams_input::Sta
 /// <p>Starts the streaming of metrics for one or more of your metric streams.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartMetricStreamsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_metric_streams::builders::StartMetricStreamsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_metric_streams::builders::StartMetricStreamsInputBuilder,
+}
 impl StartMetricStreamsFluentBuilder  {
     /// Creates a new `StartMetricStreams`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_metric_streams::StartMetricStreams, aws_http::retry::AwsResponseRetryClassifier,>,

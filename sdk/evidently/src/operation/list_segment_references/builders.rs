@@ -8,16 +8,17 @@ pub use crate::operation::list_segment_references::_list_segment_references_inpu
 /// <p>Use this operation to find which experiments or launches are using a specified segment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSegmentReferencesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder,
+}
 impl ListSegmentReferencesFluentBuilder  {
     /// Creates a new `ListSegmentReferences`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_segment_references::ListSegmentReferences, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSegmentReferencesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator {
-                            crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator {
+                                crate::operation::list_segment_references::paginator::ListSegmentReferencesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the segment that you want to view information for.</p>
     pub fn segment(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.segment(input.into());

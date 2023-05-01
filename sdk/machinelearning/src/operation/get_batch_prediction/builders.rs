@@ -8,16 +8,17 @@ pub use crate::operation::get_batch_prediction::_get_batch_prediction_input::Get
 /// <p>Returns a <code>BatchPrediction</code> that includes detailed metadata, status, and data file information for a <code>Batch Prediction</code> request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBatchPredictionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_batch_prediction::builders::GetBatchPredictionInputBuilder,
+}
 impl GetBatchPredictionFluentBuilder  {
     /// Creates a new `GetBatchPrediction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_batch_prediction::GetBatchPrediction, aws_http::retry::AwsResponseRetryClassifier,>,

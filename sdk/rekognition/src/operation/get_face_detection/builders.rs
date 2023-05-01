@@ -11,16 +11,17 @@ pub use crate::operation::get_face_detection::_get_face_detection_input::GetFace
 /// <p>Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetFaceDetection</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetFaceDetection</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFaceDetectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_face_detection::builders::GetFaceDetectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_face_detection::builders::GetFaceDetectionInputBuilder,
+}
 impl GetFaceDetectionFluentBuilder  {
     /// Creates a new `GetFaceDetection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_face_detection::GetFaceDetection, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl GetFaceDetectionFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_face_detection::paginator::GetFaceDetectionPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_face_detection::paginator::GetFaceDetectionPaginator {
-                            crate::operation::get_face_detection::paginator::GetFaceDetectionPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_face_detection::paginator::GetFaceDetectionPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_face_detection::paginator::GetFaceDetectionPaginator {
+                                crate::operation::get_face_detection::paginator::GetFaceDetectionPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Unique identifier for the face detection job. The <code>JobId</code> is returned from <code>StartFaceDetection</code>.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());

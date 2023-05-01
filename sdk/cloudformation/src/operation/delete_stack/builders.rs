@@ -8,16 +8,17 @@ pub use crate::operation::delete_stack::_delete_stack_input::DeleteStackInputBui
 /// <p>Deletes a specified stack. Once the call completes successfully, stack deletion starts. Deleted stacks don't show up in the <code>DescribeStacks</code> operation if the deletion has been completed successfully.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteStackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_stack::builders::DeleteStackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_stack::builders::DeleteStackInputBuilder,
+}
 impl DeleteStackFluentBuilder  {
     /// Creates a new `DeleteStack`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_stack::DeleteStack, aws_http::retry::AwsResponseRetryClassifier,>,

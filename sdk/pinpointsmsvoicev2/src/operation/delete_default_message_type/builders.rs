@@ -9,16 +9,17 @@ pub use crate::operation::delete_default_message_type::_delete_default_message_t
 /// <p> A message type is a type of messages that you plan to send. If you send account-related messages or time-sensitive messages such as one-time passcodes, choose <b>Transactional</b>. If you plan to send messages that contain marketing material or other promotional content, choose <b>Promotional</b>. This setting applies to your entire Amazon Web Services account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDefaultMessageTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeInputBuilder,
+}
 impl DeleteDefaultMessageTypeFluentBuilder  {
     /// Creates a new `DeleteDefaultMessageType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_default_message_type::DeleteDefaultMessageType, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::stop_notebook_execution::_stop_notebook_execution_inpu
 /// <p>Stops a notebook execution.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopNotebookExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_notebook_execution::builders::StopNotebookExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_notebook_execution::builders::StopNotebookExecutionInputBuilder,
+}
 impl StopNotebookExecutionFluentBuilder  {
     /// Creates a new `StopNotebookExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_notebook_execution::StopNotebookExecution, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::decline_invitations::_decline_invitations_input::Decli
 /// <p>This operation is only called by member accounts that aren't part of an organization. Organization accounts don't receive invitations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeclineInvitationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::decline_invitations::builders::DeclineInvitationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::decline_invitations::builders::DeclineInvitationsInputBuilder,
+}
 impl DeclineInvitationsFluentBuilder  {
     /// Creates a new `DeclineInvitations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::decline_invitations::DeclineInvitations, aws_http::retry::AwsResponseRetryClassifier,>,

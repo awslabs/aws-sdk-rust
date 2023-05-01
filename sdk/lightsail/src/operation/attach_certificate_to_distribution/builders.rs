@@ -12,16 +12,17 @@ pub use crate::operation::attach_certificate_to_distribution::_attach_certificat
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AttachCertificateToDistributionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::attach_certificate_to_distribution::builders::AttachCertificateToDistributionInputBuilder,
+}
 impl AttachCertificateToDistributionFluentBuilder  {
     /// Creates a new `AttachCertificateToDistribution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_certificate_to_distribution::AttachCertificateToDistribution, aws_http::retry::AwsResponseRetryClassifier,>,

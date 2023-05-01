@@ -10,16 +10,17 @@ pub use crate::operation::initiate_device_claim::_initiate_device_claim_input::I
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InitiateDeviceClaimFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::initiate_device_claim::builders::InitiateDeviceClaimInputBuilder,
+}
 impl InitiateDeviceClaimFluentBuilder  {
     /// Creates a new `InitiateDeviceClaim`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::initiate_device_claim::InitiateDeviceClaim, aws_http::retry::AwsResponseRetryClassifier,>,

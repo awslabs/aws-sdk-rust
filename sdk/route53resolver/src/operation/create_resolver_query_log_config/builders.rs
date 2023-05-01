@@ -10,16 +10,17 @@ pub use crate::operation::create_resolver_query_log_config::_create_resolver_que
 /// <p>You can optionally use Resource Access Manager (RAM) to share a query logging configuration with other Amazon Web Services accounts. The other accounts can then associate VPCs with the configuration. The query logs that Resolver creates for a configuration include all DNS queries that originate in all VPCs that are associated with the configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateResolverQueryLogConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_resolver_query_log_config::builders::CreateResolverQueryLogConfigInputBuilder,
+}
 impl CreateResolverQueryLogConfigFluentBuilder  {
     /// Creates a new `CreateResolverQueryLogConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::put_function_concurrency::_put_function_concurrency_in
 /// <p>Use <code>GetAccountSettings</code> to see your Regional concurrency limit. You can reserve concurrency for as many functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that aren't configured with a per-function limit. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html">Lambda function scaling</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutFunctionConcurrencyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_function_concurrency::builders::PutFunctionConcurrencyInputBuilder,
+}
 impl PutFunctionConcurrencyFluentBuilder  {
     /// Creates a new `PutFunctionConcurrency`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_function_concurrency::PutFunctionConcurrency, aws_http::retry::AwsResponseRetryClassifier,>,

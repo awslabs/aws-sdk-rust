@@ -8,16 +8,17 @@ pub use crate::operation::describe_kinesis_streaming_destination::_describe_kine
 /// <p>Returns information about the status of Kinesis streaming.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeKinesisStreamingDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_kinesis_streaming_destination::builders::DescribeKinesisStreamingDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_kinesis_streaming_destination::builders::DescribeKinesisStreamingDestinationInputBuilder,
+}
 impl DescribeKinesisStreamingDestinationFluentBuilder  {
     /// Creates a new `DescribeKinesisStreamingDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestination, aws_http::retry::AwsResponseRetryClassifier,>,

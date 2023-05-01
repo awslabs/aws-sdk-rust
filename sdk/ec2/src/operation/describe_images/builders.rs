@@ -10,16 +10,17 @@ pub use crate::operation::describe_images::_describe_images_input::DescribeImage
 /// <p>Recently deregistered images appear in the returned results for a short interval and then return empty results. After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will eventually return an error indicating that the AMI ID cannot be found.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeImagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_images::builders::DescribeImagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_images::builders::DescribeImagesInputBuilder,
+}
 impl DescribeImagesFluentBuilder  {
     /// Creates a new `DescribeImages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_images::DescribeImages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeImagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_images::paginator::DescribeImagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_images::paginator::DescribeImagesPaginator {
-                            crate::operation::describe_images::paginator::DescribeImagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_images::paginator::DescribeImagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_images::paginator::DescribeImagesPaginator {
+                                crate::operation::describe_images::paginator::DescribeImagesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ExecutableUsers`.
     ///
     /// To override the contents of this collection use [`set_executable_users`](Self::set_executable_users).

@@ -8,16 +8,17 @@ pub use crate::operation::list_alarm_model_versions::_list_alarm_model_versions_
 /// <p>Lists all the versions of an alarm model. The operation returns only the metadata associated with each alarm model version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAlarmModelVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_alarm_model_versions::builders::ListAlarmModelVersionsInputBuilder,
+}
 impl ListAlarmModelVersionsFluentBuilder  {
     /// Creates a new `ListAlarmModelVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_alarm_model_versions::ListAlarmModelVersions, aws_http::retry::AwsResponseRetryClassifier,>,

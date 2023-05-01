@@ -8,16 +8,17 @@ pub use crate::operation::describe_packaging_group::_describe_packaging_group_in
 /// Returns a description of a MediaPackage VOD PackagingGroup resource.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePackagingGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_packaging_group::builders::DescribePackagingGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_packaging_group::builders::DescribePackagingGroupInputBuilder,
+}
 impl DescribePackagingGroupFluentBuilder  {
     /// Creates a new `DescribePackagingGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_packaging_group::DescribePackagingGroup, aws_http::retry::AwsResponseRetryClassifier,>,

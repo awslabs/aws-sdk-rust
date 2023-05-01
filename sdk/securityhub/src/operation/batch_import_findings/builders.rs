@@ -30,16 +30,17 @@ pub use crate::operation::batch_import_findings::_batch_import_findings_input::B
 /// <p>Instead, finding providers use <code>FindingProviderFields</code> to provide values for these attributes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchImportFindingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_import_findings::builders::BatchImportFindingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_import_findings::builders::BatchImportFindingsInputBuilder,
+}
 impl BatchImportFindingsFluentBuilder  {
     /// Creates a new `BatchImportFindings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_import_findings::BatchImportFindings, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -12,16 +12,17 @@ pub use crate::operation::get_call_analytics_job::_get_call_analytics_job_input:
 /// <p>To get a list of your Call Analytics jobs, use the operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCallAnalyticsJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_call_analytics_job::builders::GetCallAnalyticsJobInputBuilder,
+}
 impl GetCallAnalyticsJobFluentBuilder  {
     /// Creates a new `GetCallAnalyticsJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_call_analytics_job::GetCallAnalyticsJob, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::validate_policy::_validate_policy_input::ValidatePolic
 /// <p>Requests the validation of a policy and returns a list of findings. The findings help you identify issues and provide actionable recommendations to resolve the issue and enable you to author functional policies that meet security best practices. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ValidatePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::validate_policy::builders::ValidatePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::validate_policy::builders::ValidatePolicyInputBuilder,
+}
 impl ValidatePolicyFluentBuilder  {
     /// Creates a new `ValidatePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::validate_policy::ValidatePolicy, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ValidatePolicyFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::validate_policy::paginator::ValidatePolicyPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::validate_policy::paginator::ValidatePolicyPaginator {
-                            crate::operation::validate_policy::paginator::ValidatePolicyPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::validate_policy::paginator::ValidatePolicyPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::validate_policy::paginator::ValidatePolicyPaginator {
+                                crate::operation::validate_policy::paginator::ValidatePolicyPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The locale to use for localizing the findings.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.inner = self.inner.locale(input);

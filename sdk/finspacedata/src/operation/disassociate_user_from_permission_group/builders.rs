@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_user_from_permission_group::_disassociate
 /// <p>Removes a user account from a permission group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateUserFromPermissionGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_user_from_permission_group::builders::DisassociateUserFromPermissionGroupInputBuilder,
+}
 impl DisassociateUserFromPermissionGroupFluentBuilder  {
     /// Creates a new `DisassociateUserFromPermissionGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_user_from_permission_group::DisassociateUserFromPermissionGroup, aws_http::retry::AwsResponseRetryClassifier,>,

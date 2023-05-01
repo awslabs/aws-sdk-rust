@@ -8,16 +8,17 @@ pub use crate::operation::import_component::_import_component_input::ImportCompo
 /// <p>Imports a component and transforms its data into a component document.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportComponentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_component::builders::ImportComponentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_component::builders::ImportComponentInputBuilder,
+}
 impl ImportComponentFluentBuilder  {
     /// Creates a new `ImportComponent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_component::ImportComponent, aws_http::retry::AwsResponseRetryClassifier,>,

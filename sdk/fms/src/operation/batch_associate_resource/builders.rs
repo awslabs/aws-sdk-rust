@@ -8,16 +8,17 @@ pub use crate::operation::batch_associate_resource::_batch_associate_resource_in
 /// <p>Associate resources to a Firewall Manager resource set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchAssociateResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_associate_resource::builders::BatchAssociateResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_associate_resource::builders::BatchAssociateResourceInputBuilder,
+}
 impl BatchAssociateResourceFluentBuilder  {
     /// Creates a new `BatchAssociateResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_associate_resource::BatchAssociateResource, aws_http::retry::AwsResponseRetryClassifier,>,

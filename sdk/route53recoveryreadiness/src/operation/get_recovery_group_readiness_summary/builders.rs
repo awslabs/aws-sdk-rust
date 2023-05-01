@@ -8,16 +8,17 @@ pub use crate::operation::get_recovery_group_readiness_summary::_get_recovery_gr
 /// <p>Displays a summary of information about a recovery group's readiness status. Includes the readiness checks for resources in the recovery group and the readiness status of each one.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRecoveryGroupReadinessSummaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_recovery_group_readiness_summary::builders::GetRecoveryGroupReadinessSummaryInputBuilder,
+}
 impl GetRecoveryGroupReadinessSummaryFluentBuilder  {
     /// Creates a new `GetRecoveryGroupReadinessSummary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_recovery_group_readiness_summary::GetRecoveryGroupReadinessSummary, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetRecoveryGroupReadinessSummaryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_recovery_group_readiness_summary::paginator::GetRecoveryGroupReadinessSummaryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_recovery_group_readiness_summary::paginator::GetRecoveryGroupReadinessSummaryPaginator {
-                            crate::operation::get_recovery_group_readiness_summary::paginator::GetRecoveryGroupReadinessSummaryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_recovery_group_readiness_summary::paginator::GetRecoveryGroupReadinessSummaryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_recovery_group_readiness_summary::paginator::GetRecoveryGroupReadinessSummaryPaginator {
+                                crate::operation::get_recovery_group_readiness_summary::paginator::GetRecoveryGroupReadinessSummaryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

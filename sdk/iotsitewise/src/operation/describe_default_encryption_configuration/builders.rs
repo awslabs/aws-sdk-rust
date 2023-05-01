@@ -8,16 +8,17 @@ pub use crate::operation::describe_default_encryption_configuration::_describe_d
 /// <p>Retrieves information about the default encryption configuration for the Amazon Web Services account in the default or specified Region. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/key-management.html">Key management</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDefaultEncryptionConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationInputBuilder,
+}
 impl DescribeDefaultEncryptionConfigurationFluentBuilder  {
     /// Creates a new `DescribeDefaultEncryptionConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

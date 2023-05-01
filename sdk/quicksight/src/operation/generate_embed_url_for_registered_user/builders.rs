@@ -16,16 +16,17 @@ pub use crate::operation::generate_embed_url_for_registered_user::_generate_embe
 /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateEmbedUrlForRegisteredUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::generate_embed_url_for_registered_user::builders::GenerateEmbedUrlForRegisteredUserInputBuilder,
+}
 impl GenerateEmbedUrlForRegisteredUserFluentBuilder  {
     /// Creates a new `GenerateEmbedUrlForRegisteredUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUser, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_storage_virtual_machine::_delete_storage_virtua
 /// <p>Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM). Prior to deleting an SVM, you must delete all non-root volumes in the SVM, otherwise the operation will fail.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteStorageVirtualMachineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineInputBuilder,
+}
 impl DeleteStorageVirtualMachineFluentBuilder  {
     /// Creates a new `DeleteStorageVirtualMachine`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachine, aws_http::retry::AwsResponseRetryClassifier,>,

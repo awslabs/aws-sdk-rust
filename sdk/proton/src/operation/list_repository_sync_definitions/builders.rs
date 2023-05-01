@@ -8,16 +8,17 @@ pub use crate::operation::list_repository_sync_definitions::_list_repository_syn
 /// <p>List repository sync definitions with detail data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRepositorySyncDefinitionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder,
+}
 impl ListRepositorySyncDefinitionsFluentBuilder  {
     /// Creates a new `ListRepositorySyncDefinitions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRepositorySyncDefinitionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_repository_sync_definitions::paginator::ListRepositorySyncDefinitionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_repository_sync_definitions::paginator::ListRepositorySyncDefinitionsPaginator {
-                            crate::operation::list_repository_sync_definitions::paginator::ListRepositorySyncDefinitionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_repository_sync_definitions::paginator::ListRepositorySyncDefinitionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_repository_sync_definitions::paginator::ListRepositorySyncDefinitionsPaginator {
+                                crate::operation::list_repository_sync_definitions::paginator::ListRepositorySyncDefinitionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The repository name.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());

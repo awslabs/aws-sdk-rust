@@ -8,16 +8,17 @@ pub use crate::operation::list_wireless_devices::_list_wireless_devices_input::L
 /// <p>Lists the wireless devices registered to your AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWirelessDevicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_wireless_devices::builders::ListWirelessDevicesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_wireless_devices::builders::ListWirelessDevicesInputBuilder,
+}
 impl ListWirelessDevicesFluentBuilder  {
     /// Creates a new `ListWirelessDevices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_wireless_devices::ListWirelessDevices, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWirelessDevicesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator {
-                            crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator {
+                                crate::operation::list_wireless_devices::paginator::ListWirelessDevicesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

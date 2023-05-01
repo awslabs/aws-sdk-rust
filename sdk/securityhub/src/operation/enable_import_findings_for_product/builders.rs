@@ -9,16 +9,17 @@ pub use crate::operation::enable_import_findings_for_product::_enable_import_fin
 /// <p>When you enable a product integration, a permissions policy that grants permission for the product to send findings to Security Hub is applied.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableImportFindingsForProductFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductInputBuilder,
+}
 impl EnableImportFindingsForProductFluentBuilder  {
     /// Creates a new `EnableImportFindingsForProduct`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_import_findings_for_product::EnableImportFindingsForProduct, aws_http::retry::AwsResponseRetryClassifier,>,

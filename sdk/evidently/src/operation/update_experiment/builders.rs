@@ -9,16 +9,17 @@ pub use crate::operation::update_experiment::_update_experiment_input::UpdateExp
 /// <p>Don't use this operation to update an experiment's tag. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateExperimentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_experiment::builders::UpdateExperimentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_experiment::builders::UpdateExperimentInputBuilder,
+}
 impl UpdateExperimentFluentBuilder  {
     /// Creates a new `UpdateExperiment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_experiment::UpdateExperiment, aws_http::retry::AwsResponseRetryClassifier,>,

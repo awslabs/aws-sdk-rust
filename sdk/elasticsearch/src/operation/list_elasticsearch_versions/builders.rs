@@ -8,16 +8,17 @@ pub use crate::operation::list_elasticsearch_versions::_list_elasticsearch_versi
 /// <p>List all supported Elasticsearch versions</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListElasticsearchVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_elasticsearch_versions::builders::ListElasticsearchVersionsInputBuilder,
+}
 impl ListElasticsearchVersionsFluentBuilder  {
     /// Creates a new `ListElasticsearchVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_elasticsearch_versions::ListElasticsearchVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListElasticsearchVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator {
-                            crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator {
+                                crate::operation::list_elasticsearch_versions::paginator::ListElasticsearchVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> Set this value to limit the number of results returned. Value provided must be greater than 10 else it wont be honored. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

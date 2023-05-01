@@ -8,16 +8,17 @@ pub use crate::operation::reject_resource_share_invitation::_reject_resource_sha
 /// <p>Rejects an invitation to a resource share from another Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RejectResourceShareInvitationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reject_resource_share_invitation::builders::RejectResourceShareInvitationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reject_resource_share_invitation::builders::RejectResourceShareInvitationInputBuilder,
+}
 impl RejectResourceShareInvitationFluentBuilder  {
     /// Creates a new `RejectResourceShareInvitation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reject_resource_share_invitation::RejectResourceShareInvitation, aws_http::retry::AwsResponseRetryClassifier,>,

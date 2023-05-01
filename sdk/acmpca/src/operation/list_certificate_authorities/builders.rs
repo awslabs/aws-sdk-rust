@@ -8,16 +8,17 @@ pub use crate::operation::list_certificate_authorities::_list_certificate_author
 /// <p>Lists the private certificate authorities that you created by using the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCertificateAuthoritiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_certificate_authorities::builders::ListCertificateAuthoritiesInputBuilder,
+}
 impl ListCertificateAuthoritiesFluentBuilder  {
     /// Creates a new `ListCertificateAuthorities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_certificate_authorities::ListCertificateAuthorities, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCertificateAuthoritiesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_certificate_authorities::paginator::ListCertificateAuthoritiesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_certificate_authorities::paginator::ListCertificateAuthoritiesPaginator {
-                            crate::operation::list_certificate_authorities::paginator::ListCertificateAuthoritiesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_certificate_authorities::paginator::ListCertificateAuthoritiesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_certificate_authorities::paginator::ListCertificateAuthoritiesPaginator {
+                                crate::operation::list_certificate_authorities::paginator::ListCertificateAuthoritiesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the <code>NextToken</code> parameter from the response you just received.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

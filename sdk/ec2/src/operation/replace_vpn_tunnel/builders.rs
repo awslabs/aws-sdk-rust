@@ -8,16 +8,17 @@ pub use crate::operation::replace_vpn_tunnel::_replace_vpn_tunnel_input::Replace
 /// <p>Trigger replacement of specified VPN tunnel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReplaceVpnTunnelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::replace_vpn_tunnel::builders::ReplaceVpnTunnelInputBuilder,
+}
 impl ReplaceVpnTunnelFluentBuilder  {
     /// Creates a new `ReplaceVpnTunnel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::replace_vpn_tunnel::ReplaceVpnTunnel, aws_http::retry::AwsResponseRetryClassifier,>,

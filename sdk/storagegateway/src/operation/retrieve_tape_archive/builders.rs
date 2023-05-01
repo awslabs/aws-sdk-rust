@@ -9,16 +9,17 @@ pub use crate::operation::retrieve_tape_archive::_retrieve_tape_archive_input::R
 /// <p>Once a tape is successfully retrieved to a gateway, it cannot be retrieved again to another gateway. You must archive the tape again before you can retrieve it to another gateway. This operation is only supported in the tape gateway type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RetrieveTapeArchiveFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::retrieve_tape_archive::builders::RetrieveTapeArchiveInputBuilder,
+}
 impl RetrieveTapeArchiveFluentBuilder  {
     /// Creates a new `RetrieveTapeArchive`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::retrieve_tape_archive::RetrieveTapeArchive, aws_http::retry::AwsResponseRetryClassifier,>,

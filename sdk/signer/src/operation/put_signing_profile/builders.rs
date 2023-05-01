@@ -8,16 +8,17 @@ pub use crate::operation::put_signing_profile::_put_signing_profile_input::PutSi
 /// <p>Creates a signing profile. A signing profile is a code signing template that can be used to carry out a pre-defined signing job. For more information, see <a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutSigningProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_signing_profile::builders::PutSigningProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_signing_profile::builders::PutSigningProfileInputBuilder,
+}
 impl PutSigningProfileFluentBuilder  {
     /// Creates a new `PutSigningProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_signing_profile::PutSigningProfile, aws_http::retry::AwsResponseRetryClassifier,>,

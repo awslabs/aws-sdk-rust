@@ -8,16 +8,17 @@ pub use crate::operation::list_compliance_status::_list_compliance_status_input:
 /// <p>Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified policy. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListComplianceStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_compliance_status::builders::ListComplianceStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_compliance_status::builders::ListComplianceStatusInputBuilder,
+}
 impl ListComplianceStatusFluentBuilder  {
     /// Creates a new `ListComplianceStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_compliance_status::ListComplianceStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListComplianceStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_compliance_status::paginator::ListComplianceStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_compliance_status::paginator::ListComplianceStatusPaginator {
-                            crate::operation::list_compliance_status::paginator::ListComplianceStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_compliance_status::paginator::ListComplianceStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_compliance_status::paginator::ListComplianceStatusPaginator {
+                                crate::operation::list_compliance_status::paginator::ListComplianceStatusPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
     pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.policy_id(input.into());

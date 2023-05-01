@@ -8,16 +8,17 @@ pub use crate::operation::associate_phone_number_with_user::_associate_phone_num
 /// <p>Associates a phone number with the specified Amazon Chime user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociatePhoneNumberWithUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_phone_number_with_user::builders::AssociatePhoneNumberWithUserInputBuilder,
+}
 impl AssociatePhoneNumberWithUserFluentBuilder  {
     /// Creates a new `AssociatePhoneNumberWithUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_phone_number_with_user::AssociatePhoneNumberWithUser, aws_http::retry::AwsResponseRetryClassifier,>,

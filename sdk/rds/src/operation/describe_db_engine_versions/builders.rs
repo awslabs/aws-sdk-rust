@@ -8,16 +8,17 @@ pub use crate::operation::describe_db_engine_versions::_describe_db_engine_versi
 /// <p>Returns a list of the available DB engines.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBEngineVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsInputBuilder,
+}
 impl DescribeDBEngineVersionsFluentBuilder  {
     /// Creates a new `DescribeDBEngineVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_engine_versions::DescribeDBEngineVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDBEngineVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator {
-                            crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator {
+                                crate::operation::describe_db_engine_versions::paginator::DescribeDbEngineVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The database engine to return.</p> 
     /// <p>Valid Values:</p> 
     /// <ul> 

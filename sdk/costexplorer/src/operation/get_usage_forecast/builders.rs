@@ -8,16 +8,17 @@ pub use crate::operation::get_usage_forecast::_get_usage_forecast_input::GetUsag
 /// <p>Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast time period that you select, based on your past usage. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUsageForecastFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_usage_forecast::builders::GetUsageForecastInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_usage_forecast::builders::GetUsageForecastInputBuilder,
+}
 impl GetUsageForecastFluentBuilder  {
     /// Creates a new `GetUsageForecast`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_usage_forecast::GetUsageForecast, aws_http::retry::AwsResponseRetryClassifier,>,

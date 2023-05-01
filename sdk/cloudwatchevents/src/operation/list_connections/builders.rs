@@ -8,16 +8,17 @@ pub use crate::operation::list_connections::_list_connections_input::ListConnect
 /// <p>Retrieves a list of connections from the account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListConnectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_connections::builders::ListConnectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_connections::builders::ListConnectionsInputBuilder,
+}
 impl ListConnectionsFluentBuilder  {
     /// Creates a new `ListConnections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_connections::ListConnections, aws_http::retry::AwsResponseRetryClassifier,>,

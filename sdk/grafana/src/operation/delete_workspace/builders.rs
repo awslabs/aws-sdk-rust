@@ -8,16 +8,17 @@ pub use crate::operation::delete_workspace::_delete_workspace_input::DeleteWorks
 /// <p>Deletes an Amazon Managed Grafana workspace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteWorkspaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_workspace::builders::DeleteWorkspaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_workspace::builders::DeleteWorkspaceInputBuilder,
+}
 impl DeleteWorkspaceFluentBuilder  {
     /// Creates a new `DeleteWorkspace`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_workspace::DeleteWorkspace, aws_http::retry::AwsResponseRetryClassifier,>,

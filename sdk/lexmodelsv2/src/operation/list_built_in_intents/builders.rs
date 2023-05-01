@@ -9,16 +9,17 @@ pub use crate::operation::list_built_in_intents::_list_built_in_intents_input::L
 /// <p>To use a built-in intent as a the base for your own intent, include the built-in intent signature in the <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code> operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html">CreateIntent</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBuiltInIntentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_built_in_intents::builders::ListBuiltInIntentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_built_in_intents::builders::ListBuiltInIntentsInputBuilder,
+}
 impl ListBuiltInIntentsFluentBuilder  {
     /// Creates a new `ListBuiltInIntents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_built_in_intents::ListBuiltInIntents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListBuiltInIntentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator {
-                            crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator {
+                                crate::operation::list_built_in_intents::paginator::ListBuiltInIntentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());

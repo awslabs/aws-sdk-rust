@@ -8,16 +8,17 @@ pub use crate::operation::update_model_manifest::_update_model_manifest_input::U
 /// <p> Updates a vehicle model (model manifest). If created vehicles are associated with a vehicle model, it can't be updated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateModelManifestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_model_manifest::builders::UpdateModelManifestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_model_manifest::builders::UpdateModelManifestInputBuilder,
+}
 impl UpdateModelManifestFluentBuilder  {
     /// Creates a new `UpdateModelManifest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_model_manifest::UpdateModelManifest, aws_http::retry::AwsResponseRetryClassifier,>,

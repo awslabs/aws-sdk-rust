@@ -8,16 +8,17 @@ pub use crate::operation::list_hyper_parameter_tuning_jobs::_list_hyper_paramete
 /// <p>Gets a list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the hyperparameter tuning jobs launched in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListHyperParameterTuningJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsInputBuilder,
+}
 impl ListHyperParameterTuningJobsFluentBuilder  {
     /// Creates a new `ListHyperParameterTuningJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListHyperParameterTuningJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_hyper_parameter_tuning_jobs::paginator::ListHyperParameterTuningJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_hyper_parameter_tuning_jobs::paginator::ListHyperParameterTuningJobsPaginator {
-                            crate::operation::list_hyper_parameter_tuning_jobs::paginator::ListHyperParameterTuningJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_hyper_parameter_tuning_jobs::paginator::ListHyperParameterTuningJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_hyper_parameter_tuning_jobs::paginator::ListHyperParameterTuningJobsPaginator {
+                                crate::operation::list_hyper_parameter_tuning_jobs::paginator::ListHyperParameterTuningJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

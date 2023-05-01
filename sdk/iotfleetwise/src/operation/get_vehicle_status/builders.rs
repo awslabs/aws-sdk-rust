@@ -8,16 +8,17 @@ pub use crate::operation::get_vehicle_status::_get_vehicle_status_input::GetVehi
 /// <p> Retrieves information about the status of a vehicle with any associated campaigns. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVehicleStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_vehicle_status::builders::GetVehicleStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_vehicle_status::builders::GetVehicleStatusInputBuilder,
+}
 impl GetVehicleStatusFluentBuilder  {
     /// Creates a new `GetVehicleStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_vehicle_status::GetVehicleStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetVehicleStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator {
-                            crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator {
+                                crate::operation::get_vehicle_status::paginator::GetVehicleStatusPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A pagination token for the next set of results.</p> 
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {

@@ -8,16 +8,17 @@ pub use crate::operation::cancel_command::_cancel_command_input::CancelCommandIn
 /// <p>Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be terminated and the underlying process stopped.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelCommandFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_command::builders::CancelCommandInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_command::builders::CancelCommandInputBuilder,
+}
 impl CancelCommandFluentBuilder  {
     /// Creates a new `CancelCommand`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_command::CancelCommand, aws_http::retry::AwsResponseRetryClassifier,>,

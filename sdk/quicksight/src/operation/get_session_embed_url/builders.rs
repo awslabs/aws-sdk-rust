@@ -12,16 +12,17 @@ pub use crate::operation::get_session_embed_url::_get_session_embed_url_input::G
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSessionEmbedUrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_session_embed_url::builders::GetSessionEmbedUrlInputBuilder,
+}
 impl GetSessionEmbedUrlFluentBuilder  {
     /// Creates a new `GetSessionEmbedUrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_session_embed_url::GetSessionEmbedUrl, aws_http::retry::AwsResponseRetryClassifier,>,

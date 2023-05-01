@@ -9,16 +9,17 @@ pub use crate::operation::associate_client_vpn_target_network::_associate_client
 /// <p>If you specified a VPC when you created the Client VPN endpoint or if you have previous subnet associations, the specified subnet must be in the same VPC. To specify a subnet that's in a different VPC, you must first modify the Client VPN endpoint (<code>ModifyClientVpnEndpoint</code>) and change the VPC that's associated with it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateClientVpnTargetNetworkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_client_vpn_target_network::builders::AssociateClientVpnTargetNetworkInputBuilder,
+}
 impl AssociateClientVpnTargetNetworkFluentBuilder  {
     /// Creates a new `AssociateClientVpnTargetNetwork`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetwork, aws_http::retry::AwsResponseRetryClassifier,>,

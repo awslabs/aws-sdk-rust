@@ -8,16 +8,17 @@ pub use crate::operation::list_stacks::_list_stacks_input::ListStacksInputBuilde
 /// <p>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStacksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_stacks::builders::ListStacksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_stacks::builders::ListStacksInputBuilder,
+}
 impl ListStacksFluentBuilder  {
     /// Creates a new `ListStacks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_stacks::ListStacks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListStacksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_stacks::paginator::ListStacksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_stacks::paginator::ListStacksPaginator {
-                            crate::operation::list_stacks::paginator::ListStacksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_stacks::paginator::ListStacksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_stacks::paginator::ListStacksPaginator {
+                                crate::operation::list_stacks::paginator::ListStacksPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

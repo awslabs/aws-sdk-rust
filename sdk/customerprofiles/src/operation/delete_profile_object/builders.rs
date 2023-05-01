@@ -8,16 +8,17 @@ pub use crate::operation::delete_profile_object::_delete_profile_object_input::D
 /// <p>Removes an object associated with a profile of a given ProfileObjectType.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteProfileObjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_profile_object::builders::DeleteProfileObjectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_profile_object::builders::DeleteProfileObjectInputBuilder,
+}
 impl DeleteProfileObjectFluentBuilder  {
     /// Creates a new `DeleteProfileObject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_profile_object::DeleteProfileObject, aws_http::retry::AwsResponseRetryClassifier,>,

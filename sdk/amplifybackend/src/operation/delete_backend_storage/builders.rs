@@ -8,16 +8,17 @@ pub use crate::operation::delete_backend_storage::_delete_backend_storage_input:
 /// <p>Removes the specified backend storage resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBackendStorageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_backend_storage::builders::DeleteBackendStorageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_backend_storage::builders::DeleteBackendStorageInputBuilder,
+}
 impl DeleteBackendStorageFluentBuilder  {
     /// Creates a new `DeleteBackendStorage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_backend_storage::DeleteBackendStorage, aws_http::retry::AwsResponseRetryClassifier,>,

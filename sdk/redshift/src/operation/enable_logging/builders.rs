@@ -8,16 +8,17 @@ pub use crate::operation::enable_logging::_enable_logging_input::EnableLoggingIn
 /// <p>Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableLoggingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_logging::builders::EnableLoggingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_logging::builders::EnableLoggingInputBuilder,
+}
 impl EnableLoggingFluentBuilder  {
     /// Creates a new `EnableLogging`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_logging::EnableLogging, aws_http::retry::AwsResponseRetryClassifier,>,

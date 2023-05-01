@@ -10,16 +10,17 @@ pub use crate::operation::delete_known_host_keys::_delete_known_host_keys_input:
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteKnownHostKeysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_known_host_keys::builders::DeleteKnownHostKeysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_known_host_keys::builders::DeleteKnownHostKeysInputBuilder,
+}
 impl DeleteKnownHostKeysFluentBuilder  {
     /// Creates a new `DeleteKnownHostKeys`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_known_host_keys::DeleteKnownHostKeys, aws_http::retry::AwsResponseRetryClassifier,>,

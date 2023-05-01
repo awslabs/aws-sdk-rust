@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_delegate_from_resource::_disassociate_del
 /// <p>Removes a member from the resource's set of delegates.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateDelegateFromResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_delegate_from_resource::builders::DisassociateDelegateFromResourceInputBuilder,
+}
 impl DisassociateDelegateFromResourceFluentBuilder  {
     /// Creates a new `DisassociateDelegateFromResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_delegate_from_resource::DisassociateDelegateFromResource, aws_http::retry::AwsResponseRetryClassifier,>,

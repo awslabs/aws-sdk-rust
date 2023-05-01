@@ -8,16 +8,17 @@ pub use crate::operation::delete_registry::_delete_registry_input::DeleteRegistr
 /// <p>Deletes a Registry.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRegistryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_registry::builders::DeleteRegistryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_registry::builders::DeleteRegistryInputBuilder,
+}
 impl DeleteRegistryFluentBuilder  {
     /// Creates a new `DeleteRegistry`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_registry::DeleteRegistry, aws_http::retry::AwsResponseRetryClassifier,>,

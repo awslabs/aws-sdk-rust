@@ -8,16 +8,17 @@ pub use crate::operation::delete_account_password_policy::_delete_account_passwo
 /// <p>Deletes the password policy for the Amazon Web Services account. There are no parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccountPasswordPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_account_password_policy::builders::DeleteAccountPasswordPolicyInputBuilder,
+}
 impl DeleteAccountPasswordPolicyFluentBuilder  {
     /// Creates a new `DeleteAccountPasswordPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

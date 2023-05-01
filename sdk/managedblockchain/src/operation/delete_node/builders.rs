@@ -9,16 +9,17 @@ pub use crate::operation::delete_node::_delete_node_input::DeleteNodeInputBuilde
 /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNodeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_node::builders::DeleteNodeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_node::builders::DeleteNodeInputBuilder,
+}
 impl DeleteNodeFluentBuilder  {
     /// Creates a new `DeleteNode`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_node::DeleteNode, aws_http::retry::AwsResponseRetryClassifier,>,

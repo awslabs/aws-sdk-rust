@@ -8,16 +8,17 @@ pub use crate::operation::delete_agreement::_delete_agreement_input::DeleteAgree
 /// <p>Delete the agreement that's specified in the provided <code>AgreementId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAgreementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_agreement::builders::DeleteAgreementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_agreement::builders::DeleteAgreementInputBuilder,
+}
 impl DeleteAgreementFluentBuilder  {
     /// Creates a new `DeleteAgreement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_agreement::DeleteAgreement, aws_http::retry::AwsResponseRetryClassifier,>,

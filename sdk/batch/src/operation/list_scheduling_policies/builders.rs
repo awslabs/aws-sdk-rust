@@ -8,16 +8,17 @@ pub use crate::operation::list_scheduling_policies::_list_scheduling_policies_in
 /// <p>Returns a list of Batch scheduling policies.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSchedulingPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_scheduling_policies::builders::ListSchedulingPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_scheduling_policies::builders::ListSchedulingPoliciesInputBuilder,
+}
 impl ListSchedulingPoliciesFluentBuilder  {
     /// Creates a new `ListSchedulingPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_scheduling_policies::ListSchedulingPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSchedulingPoliciesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator {
-                            crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator {
+                                crate::operation::list_scheduling_policies::paginator::ListSchedulingPoliciesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When this parameter is used, <code>ListSchedulingPolicies</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

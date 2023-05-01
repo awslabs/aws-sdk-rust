@@ -10,16 +10,17 @@ pub use crate::operation::create_fpga_image::_create_fpga_image_input::CreateFpg
 /// <p>An AFI contains the FPGA bitstream that is ready to download to an FPGA. You can securely deploy an AFI on multiple FPGA-accelerated instances. For more information, see the <a href="https://github.com/aws/aws-fpga/">Amazon Web Services FPGA Hardware Development Kit</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFpgaImageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_fpga_image::builders::CreateFpgaImageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_fpga_image::builders::CreateFpgaImageInputBuilder,
+}
 impl CreateFpgaImageFluentBuilder  {
     /// Creates a new `CreateFpgaImage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_fpga_image::CreateFpgaImage, aws_http::retry::AwsResponseRetryClassifier,>,

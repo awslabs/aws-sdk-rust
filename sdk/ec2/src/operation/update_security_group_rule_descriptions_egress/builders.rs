@@ -8,16 +8,17 @@ pub use crate::operation::update_security_group_rule_descriptions_egress::_updat
 /// <p>[VPC only] Updates the description of an egress (outbound) security group rule. You can replace an existing description, or add a description to a rule that did not have one previously. You can remove a description for a security group rule by omitting the description parameter in the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSecurityGroupRuleDescriptionsEgressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_security_group_rule_descriptions_egress::builders::UpdateSecurityGroupRuleDescriptionsEgressInputBuilder,
+}
 impl UpdateSecurityGroupRuleDescriptionsEgressFluentBuilder  {
     /// Creates a new `UpdateSecurityGroupRuleDescriptionsEgress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_security_group_rule_descriptions_egress::UpdateSecurityGroupRuleDescriptionsEgress, aws_http::retry::AwsResponseRetryClassifier,>,

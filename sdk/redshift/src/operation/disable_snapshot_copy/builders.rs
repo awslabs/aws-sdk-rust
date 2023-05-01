@@ -9,16 +9,17 @@ pub use crate::operation::disable_snapshot_copy::_disable_snapshot_copy_input::D
 /// <p>If your cluster and its snapshots are encrypted using an encrypted symmetric key from Key Management Service, use <code>DeleteSnapshotCopyGrant</code> to delete the grant that grants Amazon Redshift permission to the key in the destination region. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableSnapshotCopyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_snapshot_copy::builders::DisableSnapshotCopyInputBuilder,
+}
 impl DisableSnapshotCopyFluentBuilder  {
     /// Creates a new `DisableSnapshotCopy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_snapshot_copy::DisableSnapshotCopy, aws_http::retry::AwsResponseRetryClassifier,>,

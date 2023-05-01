@@ -8,16 +8,17 @@ pub use crate::operation::get_time_series_service_statistics::_get_time_series_s
 /// <p>Get an aggregation of service statistics defined by a specific time range.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTimeSeriesServiceStatisticsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_time_series_service_statistics::builders::GetTimeSeriesServiceStatisticsInputBuilder,
+}
 impl GetTimeSeriesServiceStatisticsFluentBuilder  {
     /// Creates a new `GetTimeSeriesServiceStatistics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatistics, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetTimeSeriesServiceStatisticsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_time_series_service_statistics::paginator::GetTimeSeriesServiceStatisticsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_time_series_service_statistics::paginator::GetTimeSeriesServiceStatisticsPaginator {
-                            crate::operation::get_time_series_service_statistics::paginator::GetTimeSeriesServiceStatisticsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_time_series_service_statistics::paginator::GetTimeSeriesServiceStatisticsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_time_series_service_statistics::paginator::GetTimeSeriesServiceStatisticsPaginator {
+                                crate::operation::get_time_series_service_statistics::paginator::GetTimeSeriesServiceStatisticsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The start of the time frame for which to aggregate statistics.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);

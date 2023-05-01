@@ -8,16 +8,17 @@ pub use crate::operation::activate_key_signing_key::_activate_key_signing_key_in
 /// <p>Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK status to <code>ACTIVE</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ActivateKeySigningKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyInputBuilder,
+}
 impl ActivateKeySigningKeyFluentBuilder  {
     /// Creates a new `ActivateKeySigningKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::activate_key_signing_key::ActivateKeySigningKey, aws_http::retry::AwsResponseRetryClassifier,>,

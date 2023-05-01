@@ -11,16 +11,17 @@ pub use crate::operation::get_slot_type_versions::_get_slot_type_versions_input:
 /// <p>This operation requires permissions for the <code>lex:GetSlotTypeVersions</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSlotTypeVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_slot_type_versions::builders::GetSlotTypeVersionsInputBuilder,
+}
 impl GetSlotTypeVersionsFluentBuilder  {
     /// Creates a new `GetSlotTypeVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_slot_type_versions::GetSlotTypeVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl GetSlotTypeVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator {
-                            crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator {
+                                crate::operation::get_slot_type_versions::paginator::GetSlotTypeVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the slot type for which versions should be returned.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

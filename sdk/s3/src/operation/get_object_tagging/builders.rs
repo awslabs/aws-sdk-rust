@@ -17,16 +17,17 @@ pub use crate::operation::get_object_tagging::_get_object_tagging_input::GetObje
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetObjectTaggingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_object_tagging::builders::GetObjectTaggingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_object_tagging::builders::GetObjectTaggingInputBuilder,
+}
 impl GetObjectTaggingFluentBuilder  {
     /// Creates a new `GetObjectTagging`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_object_tagging::GetObjectTagging, aws_http::retry::AwsResponseRetryClassifier,>,

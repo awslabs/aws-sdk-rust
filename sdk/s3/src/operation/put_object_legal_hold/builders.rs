@@ -9,16 +9,17 @@ pub use crate::operation::put_object_legal_hold::_put_object_legal_hold_input::P
 /// <p>This action is not supported by Amazon S3 on Outposts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutObjectLegalHoldFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_object_legal_hold::builders::PutObjectLegalHoldInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_object_legal_hold::builders::PutObjectLegalHoldInputBuilder,
+}
 impl PutObjectLegalHoldFluentBuilder  {
     /// Creates a new `PutObjectLegalHold`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_object_legal_hold::PutObjectLegalHold, aws_http::retry::AwsResponseRetryClassifier,>,

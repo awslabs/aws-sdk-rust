@@ -9,16 +9,17 @@ pub use crate::operation::register_to_work_mail::_register_to_work_mail_input::R
 /// <p>Users can either be created by calling the <code>CreateUser</code> API operation or they can be synchronized from your directory. For more information, see <code>DeregisterFromWorkMail</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterToWorkMailFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_to_work_mail::builders::RegisterToWorkMailInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_to_work_mail::builders::RegisterToWorkMailInputBuilder,
+}
 impl RegisterToWorkMailFluentBuilder  {
     /// Creates a new `RegisterToWorkMail`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_to_work_mail::RegisterToWorkMail, aws_http::retry::AwsResponseRetryClassifier,>,

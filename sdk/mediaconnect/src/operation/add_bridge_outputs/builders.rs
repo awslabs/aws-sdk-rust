@@ -8,16 +8,17 @@ pub use crate::operation::add_bridge_outputs::_add_bridge_outputs_input::AddBrid
 /// Adds outputs to an existing bridge.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddBridgeOutputsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_bridge_outputs::builders::AddBridgeOutputsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_bridge_outputs::builders::AddBridgeOutputsInputBuilder,
+}
 impl AddBridgeOutputsFluentBuilder  {
     /// Creates a new `AddBridgeOutputs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_bridge_outputs::AddBridgeOutputs, aws_http::retry::AwsResponseRetryClassifier,>,

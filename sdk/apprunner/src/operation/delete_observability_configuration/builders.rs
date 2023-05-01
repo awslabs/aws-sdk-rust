@@ -8,16 +8,17 @@ pub use crate::operation::delete_observability_configuration::_delete_observabil
 /// <p>Delete an App Runner observability configuration resource. You can delete a specific revision or the latest active revision. You can't delete a configuration that's used by one or more App Runner services.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteObservabilityConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_observability_configuration::builders::DeleteObservabilityConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_observability_configuration::builders::DeleteObservabilityConfigurationInputBuilder,
+}
 impl DeleteObservabilityConfigurationFluentBuilder  {
     /// Creates a new `DeleteObservabilityConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_observability_configuration::DeleteObservabilityConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

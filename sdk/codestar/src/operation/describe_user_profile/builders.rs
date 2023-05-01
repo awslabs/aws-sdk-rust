@@ -8,16 +8,17 @@ pub use crate::operation::describe_user_profile::_describe_user_profile_input::D
 /// <p>Describes a user in AWS CodeStar and the user attributes across all projects.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUserProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder,
+}
 impl DescribeUserProfileFluentBuilder  {
     /// Creates a new `DescribeUserProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_user_profile::DescribeUserProfile, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_human_task_ui::_create_human_task_ui_input::Cre
 /// <p>Defines the settings you will use for the human review workflow user interface. Reviewers will see a three-panel interface with an instruction area, the item to review, and an input area.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateHumanTaskUiFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_human_task_ui::builders::CreateHumanTaskUiInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_human_task_ui::builders::CreateHumanTaskUiInputBuilder,
+}
 impl CreateHumanTaskUiFluentBuilder  {
     /// Creates a new `CreateHumanTaskUi`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_human_task_ui::CreateHumanTaskUi, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_discovered_resources::_list_discovered_resources_
 /// <p>Returns an array of resources in the organization's accounts that are available to be associated with a resource set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDiscoveredResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder,
+}
 impl ListDiscoveredResourcesFluentBuilder  {
     /// Creates a new `ListDiscoveredResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_discovered_resources::ListDiscoveredResources, aws_http::retry::AwsResponseRetryClassifier,>,

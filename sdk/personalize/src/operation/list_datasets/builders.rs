@@ -8,16 +8,17 @@ pub use crate::operation::list_datasets::_list_datasets_input::ListDatasetsInput
 /// <p>Returns the list of datasets contained in the given dataset group. The response provides the properties for each dataset, including the Amazon Resource Name (ARN). For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDatasetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_datasets::builders::ListDatasetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_datasets::builders::ListDatasetsInputBuilder,
+}
 impl ListDatasetsFluentBuilder  {
     /// Creates a new `ListDatasets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_datasets::ListDatasets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDatasetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_datasets::paginator::ListDatasetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_datasets::paginator::ListDatasetsPaginator {
-                            crate::operation::list_datasets::paginator::ListDatasetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_datasets::paginator::ListDatasetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_datasets::paginator::ListDatasetsPaginator {
+                                crate::operation::list_datasets::paginator::ListDatasetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to list.</p>
     pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());

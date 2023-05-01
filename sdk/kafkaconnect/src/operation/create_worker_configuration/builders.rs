@@ -8,16 +8,17 @@ pub use crate::operation::create_worker_configuration::_create_worker_configurat
 /// <p>Creates a worker configuration using the specified properties.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWorkerConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_worker_configuration::builders::CreateWorkerConfigurationInputBuilder,
+}
 impl CreateWorkerConfigurationFluentBuilder  {
     /// Creates a new `CreateWorkerConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_worker_configuration::CreateWorkerConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_device_usage_data::_delete_device_usage_data_in
 /// <p>When this action is called for a specified shared device, it allows authorized users to delete the device's entire previous history of voice input data and associated response data. This action can be called once every 24 hours for a specific shared device.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDeviceUsageDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_device_usage_data::builders::DeleteDeviceUsageDataInputBuilder,
+}
 impl DeleteDeviceUsageDataFluentBuilder  {
     /// Creates a new `DeleteDeviceUsageData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_device_usage_data::DeleteDeviceUsageData, aws_http::retry::AwsResponseRetryClassifier,>,

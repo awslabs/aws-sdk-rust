@@ -8,16 +8,17 @@ pub use crate::operation::get_room::_get_room_input::GetRoomInputBuilder;
 /// <p>Gets the specified room.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRoomFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_room::builders::GetRoomInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_room::builders::GetRoomInputBuilder,
+}
 impl GetRoomFluentBuilder  {
     /// Creates a new `GetRoom`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_room::GetRoom, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_browser_settings::_disassociate_browser_s
 /// <p>Disassociates browser settings from a web portal.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateBrowserSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsInputBuilder,
+}
 impl DisassociateBrowserSettingsFluentBuilder  {
     /// Creates a new `DisassociateBrowserSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_browser_settings::DisassociateBrowserSettings, aws_http::retry::AwsResponseRetryClassifier,>,

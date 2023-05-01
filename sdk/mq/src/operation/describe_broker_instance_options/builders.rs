@@ -8,16 +8,17 @@ pub use crate::operation::describe_broker_instance_options::_describe_broker_ins
 /// <p>Describe available broker instance options.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBrokerInstanceOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_broker_instance_options::builders::DescribeBrokerInstanceOptionsInputBuilder,
+}
 impl DescribeBrokerInstanceOptionsFluentBuilder  {
     /// Creates a new `DescribeBrokerInstanceOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptions, aws_http::retry::AwsResponseRetryClassifier,>,

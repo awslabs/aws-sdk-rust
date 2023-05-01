@@ -8,16 +8,17 @@ pub use crate::operation::update_contributor_insights::_update_contributor_insig
 /// <p>Updates the status for contributor insights for a specific table or index. CloudWatch Contributor Insights for DynamoDB graphs display the partition key and (if applicable) sort key of frequently accessed items and frequently throttled items in plaintext. If you require the use of Amazon Web Services Key Management Service (KMS) to encrypt this table’s partition key and sort key data with an Amazon Web Services managed key or customer managed key, you should not enable CloudWatch Contributor Insights for DynamoDB for this table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContributorInsightsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_contributor_insights::builders::UpdateContributorInsightsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_contributor_insights::builders::UpdateContributorInsightsInputBuilder,
+}
 impl UpdateContributorInsightsFluentBuilder  {
     /// Creates a new `UpdateContributorInsights`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_contributor_insights::UpdateContributorInsights, aws_http::retry::AwsResponseRetryClassifier,>,

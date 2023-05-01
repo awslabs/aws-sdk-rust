@@ -19,16 +19,17 @@ pub use crate::operation::batch_create_rum_metric_definitions::_batch_create_rum
 /// <p>If some metric definitions specified in a <code>BatchCreateRumMetricDefinitions</code> operations are not valid, those metric definitions fail and return errors, but all valid metric definitions in the same operation still succeed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchCreateRumMetricDefinitionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsInputBuilder,
+}
 impl BatchCreateRumMetricDefinitionsFluentBuilder  {
     /// Creates a new `BatchCreateRumMetricDefinitions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,

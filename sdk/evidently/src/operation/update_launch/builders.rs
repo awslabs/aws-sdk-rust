@@ -9,16 +9,17 @@ pub use crate::operation::update_launch::_update_launch_input::UpdateLaunchInput
 /// <p>Don't use this operation to update the tags of an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLaunchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_launch::builders::UpdateLaunchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_launch::builders::UpdateLaunchInputBuilder,
+}
 impl UpdateLaunchFluentBuilder  {
     /// Creates a new `UpdateLaunch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_launch::UpdateLaunch, aws_http::retry::AwsResponseRetryClassifier,>,

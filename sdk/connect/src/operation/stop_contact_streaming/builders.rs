@@ -8,16 +8,17 @@ pub use crate::operation::stop_contact_streaming::_stop_contact_streaming_input:
 /// <p> Ends message streaming on a specified contact. To restart message streaming on that contact, call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a> API. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopContactStreamingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_contact_streaming::builders::StopContactStreamingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_contact_streaming::builders::StopContactStreamingInputBuilder,
+}
 impl StopContactStreamingFluentBuilder  {
     /// Creates a new `StopContactStreaming`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_contact_streaming::StopContactStreaming, aws_http::retry::AwsResponseRetryClassifier,>,

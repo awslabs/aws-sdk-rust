@@ -8,16 +8,17 @@ pub use crate::operation::get_entity_types::_get_entity_types_input::GetEntityTy
 /// <p>Gets all entity types or a specific entity type if a name is specified. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetEntityTypesResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEntityTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_entity_types::builders::GetEntityTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_entity_types::builders::GetEntityTypesInputBuilder,
+}
 impl GetEntityTypesFluentBuilder  {
     /// Creates a new `GetEntityTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_entity_types::GetEntityTypes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetEntityTypesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_entity_types::paginator::GetEntityTypesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_entity_types::paginator::GetEntityTypesPaginator {
-                            crate::operation::get_entity_types::paginator::GetEntityTypesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_entity_types::paginator::GetEntityTypesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_entity_types::paginator::GetEntityTypesPaginator {
+                                crate::operation::get_entity_types::paginator::GetEntityTypesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

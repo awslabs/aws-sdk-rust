@@ -10,16 +10,17 @@ pub use crate::operation::start_server::_start_server_input::StartServerInputBui
 /// <p>No response is returned from this call.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartServerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_server::builders::StartServerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_server::builders::StartServerInputBuilder,
+}
 impl StartServerFluentBuilder  {
     /// Creates a new `StartServer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_server::StartServer, aws_http::retry::AwsResponseRetryClassifier,>,

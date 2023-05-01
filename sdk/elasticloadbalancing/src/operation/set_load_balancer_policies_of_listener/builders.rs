@@ -10,16 +10,17 @@ pub use crate::operation::set_load_balancer_policies_of_listener::_set_load_bala
 /// <p>For more information about setting policies, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html">Update the SSL Negotiation Configuration</a>, <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based Session Stickiness</a>, and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesOfListenerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_load_balancer_policies_of_listener::builders::SetLoadBalancerPoliciesOfListenerInputBuilder,
+}
 impl SetLoadBalancerPoliciesOfListenerFluentBuilder  {
     /// Creates a new `SetLoadBalancerPoliciesOfListener`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListener, aws_http::retry::AwsResponseRetryClassifier,>,

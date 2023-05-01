@@ -8,16 +8,17 @@ pub use crate::operation::get_app_monitor::_get_app_monitor_input::GetAppMonitor
 /// <p>Retrieves the complete configuration information for one app monitor.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAppMonitorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_app_monitor::builders::GetAppMonitorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_app_monitor::builders::GetAppMonitorInputBuilder,
+}
 impl GetAppMonitorFluentBuilder  {
     /// Creates a new `GetAppMonitor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_app_monitor::GetAppMonitor, aws_http::retry::AwsResponseRetryClassifier,>,

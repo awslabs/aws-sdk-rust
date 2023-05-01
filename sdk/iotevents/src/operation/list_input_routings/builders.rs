@@ -8,16 +8,17 @@ pub use crate::operation::list_input_routings::_list_input_routings_input::ListI
 /// <p> Lists one or more input routings. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInputRoutingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_input_routings::builders::ListInputRoutingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_input_routings::builders::ListInputRoutingsInputBuilder,
+}
 impl ListInputRoutingsFluentBuilder  {
     /// Creates a new `ListInputRoutings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_input_routings::ListInputRoutings, aws_http::retry::AwsResponseRetryClassifier,>,

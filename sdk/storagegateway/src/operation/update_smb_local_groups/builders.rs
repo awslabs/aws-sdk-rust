@@ -8,16 +8,17 @@ pub use crate::operation::update_smb_local_groups::_update_smb_local_groups_inpu
 /// <p>Updates the list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSMBLocalGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_smb_local_groups::builders::UpdateSmbLocalGroupsInputBuilder,
+}
 impl UpdateSMBLocalGroupsFluentBuilder  {
     /// Creates a new `UpdateSMBLocalGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_smb_local_groups::UpdateSMBLocalGroups, aws_http::retry::AwsResponseRetryClassifier,>,

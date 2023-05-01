@@ -8,16 +8,17 @@ pub use crate::operation::describe_outbound_cross_cluster_search_connections::_d
 /// <p>Lists all the outbound cross-cluster search connections for a source domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOutboundCrossClusterSearchConnectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_outbound_cross_cluster_search_connections::builders::DescribeOutboundCrossClusterSearchConnectionsInputBuilder,
+}
 impl DescribeOutboundCrossClusterSearchConnectionsFluentBuilder  {
     /// Creates a new `DescribeOutboundCrossClusterSearchConnections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_outbound_cross_cluster_search_connections::DescribeOutboundCrossClusterSearchConnections, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeOutboundCrossClusterSearchConnectionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_outbound_cross_cluster_search_connections::paginator::DescribeOutboundCrossClusterSearchConnectionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_outbound_cross_cluster_search_connections::paginator::DescribeOutboundCrossClusterSearchConnectionsPaginator {
-                            crate::operation::describe_outbound_cross_cluster_search_connections::paginator::DescribeOutboundCrossClusterSearchConnectionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_outbound_cross_cluster_search_connections::paginator::DescribeOutboundCrossClusterSearchConnectionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_outbound_cross_cluster_search_connections::paginator::DescribeOutboundCrossClusterSearchConnectionsPaginator {
+                                crate::operation::describe_outbound_cross_cluster_search_connections::paginator::DescribeOutboundCrossClusterSearchConnectionsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

@@ -8,16 +8,17 @@ pub use crate::operation::delete_email_template::_delete_email_template_input::D
 /// <p>Deletes a message template for messages that were sent through the email channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEmailTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_email_template::builders::DeleteEmailTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_email_template::builders::DeleteEmailTemplateInputBuilder,
+}
 impl DeleteEmailTemplateFluentBuilder  {
     /// Creates a new `DeleteEmailTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_email_template::DeleteEmailTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

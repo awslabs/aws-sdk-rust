@@ -8,16 +8,17 @@ pub use crate::operation::describe_moving_addresses::_describe_moving_addresses_
 /// <p>Describes your Elastic IP addresses that are being moved to the EC2-VPC platform, or that are being restored to the EC2-Classic platform. This request does not return information about any other Elastic IP addresses in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMovingAddressesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_moving_addresses::builders::DescribeMovingAddressesInputBuilder,
+}
 impl DescribeMovingAddressesFluentBuilder  {
     /// Creates a new `DescribeMovingAddresses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_moving_addresses::DescribeMovingAddresses, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeMovingAddressesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator {
-                            crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator {
+                                crate::operation::describe_moving_addresses::paginator::DescribeMovingAddressesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

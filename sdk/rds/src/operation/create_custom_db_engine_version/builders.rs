@@ -8,16 +8,17 @@ pub use crate::operation::create_custom_db_engine_version::_create_custom_db_eng
 /// <p>Creates a custom DB engine version (CEV).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCustomDBEngineVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_custom_db_engine_version::builders::CreateCustomDbEngineVersionInputBuilder,
+}
 impl CreateCustomDBEngineVersionFluentBuilder  {
     /// Creates a new `CreateCustomDBEngineVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersion, aws_http::retry::AwsResponseRetryClassifier,>,

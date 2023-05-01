@@ -8,16 +8,17 @@ pub use crate::operation::associate_subnet_cidr_block::_associate_subnet_cidr_bl
 /// <p>Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet. An IPv6 CIDR block must have a prefix length of /64.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateSubnetCidrBlockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_subnet_cidr_block::builders::AssociateSubnetCidrBlockInputBuilder,
+}
 impl AssociateSubnetCidrBlockFluentBuilder  {
     /// Creates a new `AssociateSubnetCidrBlock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlock, aws_http::retry::AwsResponseRetryClassifier,>,

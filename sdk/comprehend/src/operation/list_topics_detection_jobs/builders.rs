@@ -8,16 +8,17 @@ pub use crate::operation::list_topics_detection_jobs::_list_topics_detection_job
 /// <p>Gets a list of the topic detection jobs that you have submitted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTopicsDetectionJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_topics_detection_jobs::builders::ListTopicsDetectionJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_topics_detection_jobs::builders::ListTopicsDetectionJobsInputBuilder,
+}
 impl ListTopicsDetectionJobsFluentBuilder  {
     /// Creates a new `ListTopicsDetectionJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_topics_detection_jobs::ListTopicsDetectionJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTopicsDetectionJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_topics_detection_jobs::paginator::ListTopicsDetectionJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_topics_detection_jobs::paginator::ListTopicsDetectionJobsPaginator {
-                            crate::operation::list_topics_detection_jobs::paginator::ListTopicsDetectionJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_topics_detection_jobs::paginator::ListTopicsDetectionJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_topics_detection_jobs::paginator::ListTopicsDetectionJobsPaginator {
+                                crate::operation::list_topics_detection_jobs::paginator::ListTopicsDetectionJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Filters the jobs that are returned. Jobs can be filtered on their name, status, or the date and time that they were submitted. You can set only one filter at a time.</p>
     pub fn filter(mut self, input: crate::types::TopicsDetectionJobFilter) -> Self {
         self.inner = self.inner.filter(input);

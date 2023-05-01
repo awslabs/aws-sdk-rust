@@ -9,16 +9,17 @@ pub use crate::operation::list_invitations::_list_invitations_input::ListInvitat
 /// <p>This operation is only used by accounts that are managed by invitation. Accounts that are managed using the integration with Organizations do not receive invitations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInvitationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_invitations::builders::ListInvitationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_invitations::builders::ListInvitationsInputBuilder,
+}
 impl ListInvitationsFluentBuilder  {
     /// Creates a new `ListInvitations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_invitations::ListInvitations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListInvitationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_invitations::paginator::ListInvitationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_invitations::paginator::ListInvitationsPaginator {
-                            crate::operation::list_invitations::paginator::ListInvitationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_invitations::paginator::ListInvitationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_invitations::paginator::ListInvitationsPaginator {
+                                crate::operation::list_invitations::paginator::ListInvitationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of items to return in the response. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

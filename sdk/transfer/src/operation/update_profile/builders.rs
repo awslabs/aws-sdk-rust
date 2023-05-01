@@ -8,16 +8,17 @@ pub use crate::operation::update_profile::_update_profile_input::UpdateProfileIn
 /// <p>Updates some of the parameters for an existing profile. Provide the <code>ProfileId</code> for the profile that you want to update, along with the new values for the parameters to update.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_profile::builders::UpdateProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_profile::builders::UpdateProfileInputBuilder,
+}
 impl UpdateProfileFluentBuilder  {
     /// Creates a new `UpdateProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_profile::UpdateProfile, aws_http::retry::AwsResponseRetryClassifier,>,

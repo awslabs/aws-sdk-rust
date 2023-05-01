@@ -8,16 +8,17 @@ pub use crate::operation::update_task::_update_task_input::UpdateTaskInputBuilde
 /// <p>Updates the metadata associated with a task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_task::builders::UpdateTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_task::builders::UpdateTaskInputBuilder,
+}
 impl UpdateTaskFluentBuilder  {
     /// Creates a new `UpdateTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_task::UpdateTask, aws_http::retry::AwsResponseRetryClassifier,>,

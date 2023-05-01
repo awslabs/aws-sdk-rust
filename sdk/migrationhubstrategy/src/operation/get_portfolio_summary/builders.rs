@@ -8,16 +8,17 @@ pub use crate::operation::get_portfolio_summary::_get_portfolio_summary_input::G
 /// <p> Retrieves overall summary including the number of servers to rehost and the overall number of anti-patterns. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPortfolioSummaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryInputBuilder,
+}
 impl GetPortfolioSummaryFluentBuilder  {
     /// Creates a new `GetPortfolioSummary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_portfolio_summary::GetPortfolioSummary, aws_http::retry::AwsResponseRetryClassifier,>,

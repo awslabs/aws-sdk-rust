@@ -10,16 +10,17 @@ pub use crate::operation::update_asset_property::_update_asset_property_input::U
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAssetPropertyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_asset_property::builders::UpdateAssetPropertyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_asset_property::builders::UpdateAssetPropertyInputBuilder,
+}
 impl UpdateAssetPropertyFluentBuilder  {
     /// Creates a new `UpdateAssetProperty`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_asset_property::UpdateAssetProperty, aws_http::retry::AwsResponseRetryClassifier,>,

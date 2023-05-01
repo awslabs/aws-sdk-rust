@@ -13,16 +13,17 @@ pub use crate::operation::get_activity_task::_get_activity_task_input::GetActivi
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetActivityTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_activity_task::builders::GetActivityTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_activity_task::builders::GetActivityTaskInputBuilder,
+}
 impl GetActivityTaskFluentBuilder  {
     /// Creates a new `GetActivityTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_activity_task::GetActivityTask, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::get_relational_database_master_user_password::_get_rel
 /// <p>The <code>GetRelationalDatabaseMasterUserPassword</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRelationalDatabaseMasterUserPasswordFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_relational_database_master_user_password::builders::GetRelationalDatabaseMasterUserPasswordInputBuilder,
+}
 impl GetRelationalDatabaseMasterUserPasswordFluentBuilder  {
     /// Creates a new `GetRelationalDatabaseMasterUserPassword`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPassword, aws_http::retry::AwsResponseRetryClassifier,>,

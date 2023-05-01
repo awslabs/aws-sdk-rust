@@ -8,16 +8,17 @@ pub use crate::operation::get_launch_profile_details::_get_launch_profile_detail
 /// <p>Launch profile details include the launch profile resource and summary information of resources that are used by, or available to, the launch profile. This includes the name and description of all studio components used by the launch profiles, and the name and description of streaming images that can be used with this launch profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLaunchProfileDetailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_launch_profile_details::builders::GetLaunchProfileDetailsInputBuilder,
+}
 impl GetLaunchProfileDetailsFluentBuilder  {
     /// Creates a new `GetLaunchProfileDetails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_launch_profile_details::GetLaunchProfileDetails, aws_http::retry::AwsResponseRetryClassifier,>,

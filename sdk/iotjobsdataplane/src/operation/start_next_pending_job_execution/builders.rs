@@ -8,16 +8,17 @@ pub use crate::operation::start_next_pending_job_execution::_start_next_pending_
 /// <p>Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for a thing.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartNextPendingJobExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_next_pending_job_execution::builders::StartNextPendingJobExecutionInputBuilder,
+}
 impl StartNextPendingJobExecutionFluentBuilder  {
     /// Creates a new `StartNextPendingJobExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_next_pending_job_execution::StartNextPendingJobExecution, aws_http::retry::AwsResponseRetryClassifier,>,

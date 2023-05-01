@@ -9,16 +9,17 @@ pub use crate::operation::start_on_demand_replication_run::_start_on_demand_repl
 /// <p>There is a limit on the number of on-demand replications runs that you can request in a 24-hour period.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartOnDemandReplicationRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_on_demand_replication_run::builders::StartOnDemandReplicationRunInputBuilder,
+}
 impl StartOnDemandReplicationRunFluentBuilder  {
     /// Creates a new `StartOnDemandReplicationRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRun, aws_http::retry::AwsResponseRetryClassifier,>,

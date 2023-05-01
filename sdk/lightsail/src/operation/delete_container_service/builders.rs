@@ -8,16 +8,17 @@ pub use crate::operation::delete_container_service::_delete_container_service_in
 /// <p>Deletes your Amazon Lightsail container service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteContainerServiceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_container_service::builders::DeleteContainerServiceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_container_service::builders::DeleteContainerServiceInputBuilder,
+}
 impl DeleteContainerServiceFluentBuilder  {
     /// Creates a new `DeleteContainerService`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_container_service::DeleteContainerService, aws_http::retry::AwsResponseRetryClassifier,>,

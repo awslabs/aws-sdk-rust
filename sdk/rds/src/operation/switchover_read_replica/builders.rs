@@ -8,16 +8,17 @@ pub use crate::operation::switchover_read_replica::_switchover_read_replica_inpu
 /// <p>Switches over an Oracle standby database in an Oracle Data Guard environment, making it the new primary database. Issue this command in the Region that hosts the current standby database.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SwitchoverReadReplicaFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::switchover_read_replica::builders::SwitchoverReadReplicaInputBuilder,
+}
 impl SwitchoverReadReplicaFluentBuilder  {
     /// Creates a new `SwitchoverReadReplica`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::switchover_read_replica::SwitchoverReadReplica, aws_http::retry::AwsResponseRetryClassifier,>,

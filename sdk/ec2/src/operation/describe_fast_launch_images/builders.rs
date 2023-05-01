@@ -8,16 +8,17 @@ pub use crate::operation::describe_fast_launch_images::_describe_fast_launch_ima
 /// <p>Describe details for Windows AMIs that are configured for faster launching.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFastLaunchImagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_fast_launch_images::builders::DescribeFastLaunchImagesInputBuilder,
+}
 impl DescribeFastLaunchImagesFluentBuilder  {
     /// Creates a new `DescribeFastLaunchImages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fast_launch_images::DescribeFastLaunchImages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeFastLaunchImagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator {
-                            crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator {
+                                crate::operation::describe_fast_launch_images::paginator::DescribeFastLaunchImagesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ImageIds`.
     ///
     /// To override the contents of this collection use [`set_image_ids`](Self::set_image_ids).

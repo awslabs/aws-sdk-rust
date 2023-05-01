@@ -10,16 +10,17 @@ pub use crate::operation::get_template_summary::_get_template_summary_input::Get
 /// <p>For deleted stacks, <code>GetTemplateSummary</code> returns the template information for up to 90 days after the stack has been deleted. If the template doesn't exist, a <code>ValidationError</code> is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTemplateSummaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_template_summary::builders::GetTemplateSummaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_template_summary::builders::GetTemplateSummaryInputBuilder,
+}
 impl GetTemplateSummaryFluentBuilder  {
     /// Creates a new `GetTemplateSummary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_template_summary::GetTemplateSummary, aws_http::retry::AwsResponseRetryClassifier,>,

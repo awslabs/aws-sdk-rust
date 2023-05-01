@@ -10,16 +10,17 @@ pub use crate::operation::describe_hsm_client_certificates::_describe_hsm_client
 /// <p>If both tag keys and values are omitted from the request, HSM client certificates are returned regardless of whether they have tag keys or values associated with them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeHsmClientCertificatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_hsm_client_certificates::builders::DescribeHsmClientCertificatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_hsm_client_certificates::builders::DescribeHsmClientCertificatesInputBuilder,
+}
 impl DescribeHsmClientCertificatesFluentBuilder  {
     /// Creates a new `DescribeHsmClientCertificates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeHsmClientCertificatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_hsm_client_certificates::paginator::DescribeHsmClientCertificatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_hsm_client_certificates::paginator::DescribeHsmClientCertificatesPaginator {
-                            crate::operation::describe_hsm_client_certificates::paginator::DescribeHsmClientCertificatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_hsm_client_certificates::paginator::DescribeHsmClientCertificatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_hsm_client_certificates::paginator::DescribeHsmClientCertificatesPaginator {
+                                crate::operation::describe_hsm_client_certificates::paginator::DescribeHsmClientCertificatesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of a specific HSM client certificate for which you want information. If no identifier is specified, information is returned for all HSM client certificates owned by your Amazon Web Services account.</p>
     pub fn hsm_client_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hsm_client_certificate_identifier(input.into());

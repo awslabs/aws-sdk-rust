@@ -8,16 +8,17 @@ pub use crate::operation::get_stream_session::_get_stream_session_input::GetStre
 /// <p>Gets metadata on a specified stream.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetStreamSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_stream_session::builders::GetStreamSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_stream_session::builders::GetStreamSessionInputBuilder,
+}
 impl GetStreamSessionFluentBuilder  {
     /// Creates a new `GetStreamSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_stream_session::GetStreamSession, aws_http::retry::AwsResponseRetryClassifier,>,

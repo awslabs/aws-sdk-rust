@@ -8,16 +8,17 @@ pub use crate::operation::start_session::_start_session_input::StartSessionInput
 /// <p>Creates a session for running calculations within a workgroup. The session is ready when it reaches an <code>IDLE</code> state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_session::builders::StartSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_session::builders::StartSessionInputBuilder,
+}
 impl StartSessionFluentBuilder  {
     /// Creates a new `StartSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_session::StartSession, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_external_connection::_disassociate_extern
 /// <p> Removes an existing external connection from a repository. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateExternalConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_external_connection::builders::DisassociateExternalConnectionInputBuilder,
+}
 impl DisassociateExternalConnectionFluentBuilder  {
     /// Creates a new `DisassociateExternalConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_external_connection::DisassociateExternalConnection, aws_http::retry::AwsResponseRetryClassifier,>,

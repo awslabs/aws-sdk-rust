@@ -8,16 +8,17 @@ pub use crate::operation::disable_import_findings_for_product::_disable_import_f
 /// <p>Disables the integration of the specified product with Security Hub. After the integration is disabled, findings from that product are no longer sent to Security Hub.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableImportFindingsForProductFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_import_findings_for_product::builders::DisableImportFindingsForProductInputBuilder,
+}
 impl DisableImportFindingsForProductFluentBuilder  {
     /// Creates a new `DisableImportFindingsForProduct`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_import_findings_for_product::DisableImportFindingsForProduct, aws_http::retry::AwsResponseRetryClassifier,>,

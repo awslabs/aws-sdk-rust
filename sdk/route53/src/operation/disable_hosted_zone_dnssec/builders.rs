@@ -8,16 +8,17 @@ pub use crate::operation::disable_hosted_zone_dnssec::_disable_hosted_zone_dnsse
 /// <p>Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key-signing keys (KSKs) that are active in the hosted zone.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableHostedZoneDNSSECFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_hosted_zone_dnssec::builders::DisableHostedZoneDnssecInputBuilder,
+}
 impl DisableHostedZoneDNSSECFluentBuilder  {
     /// Creates a new `DisableHostedZoneDNSSEC`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSEC, aws_http::retry::AwsResponseRetryClassifier,>,

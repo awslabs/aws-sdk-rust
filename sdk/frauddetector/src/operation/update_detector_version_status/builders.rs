@@ -8,16 +8,17 @@ pub use crate::operation::update_detector_version_status::_update_detector_versi
 /// <p>Updates the detector version’s status. You can perform the following promotions or demotions using <code>UpdateDetectorVersionStatus</code>: <code>DRAFT</code> to <code>ACTIVE</code>, <code>ACTIVE</code> to <code>INACTIVE</code>, and <code>INACTIVE</code> to <code>ACTIVE</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDetectorVersionStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusInputBuilder,
+}
 impl UpdateDetectorVersionStatusFluentBuilder  {
     /// Creates a new `UpdateDetectorVersionStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_detector_version_status::UpdateDetectorVersionStatus, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_number_of_domain_controllers::_update_number_of
 /// <p>Adds or removes domain controllers to or from the directory. Based on the difference between current value and new value (provided through this API call), domain controllers will be added or removed. It may take up to 45 minutes for any new domain controllers to become fully active once the requested number of domain controllers is updated. During this time, you cannot make another update request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateNumberOfDomainControllersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_number_of_domain_controllers::builders::UpdateNumberOfDomainControllersInputBuilder,
+}
 impl UpdateNumberOfDomainControllersFluentBuilder  {
     /// Creates a new `UpdateNumberOfDomainControllers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllers, aws_http::retry::AwsResponseRetryClassifier,>,

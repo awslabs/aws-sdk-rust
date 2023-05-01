@@ -8,16 +8,17 @@ pub use crate::operation::update_flow_entitlement::_update_flow_entitlement_inpu
 /// You can change an entitlement's description, subscribers, and encryption. If you change the subscribers, the service will remove the outputs that are are used by the subscribers that are removed.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFlowEntitlementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_flow_entitlement::builders::UpdateFlowEntitlementInputBuilder,
+}
 impl UpdateFlowEntitlementFluentBuilder  {
     /// Creates a new `UpdateFlowEntitlement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_flow_entitlement::UpdateFlowEntitlement, aws_http::retry::AwsResponseRetryClassifier,>,

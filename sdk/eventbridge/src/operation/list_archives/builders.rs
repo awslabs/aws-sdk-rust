@@ -8,16 +8,17 @@ pub use crate::operation::list_archives::_list_archives_input::ListArchivesInput
 /// <p>Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive names. Filter parameters are exclusive.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListArchivesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_archives::builders::ListArchivesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_archives::builders::ListArchivesInputBuilder,
+}
 impl ListArchivesFluentBuilder  {
     /// Creates a new `ListArchives`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_archives::ListArchives, aws_http::retry::AwsResponseRetryClassifier,>,

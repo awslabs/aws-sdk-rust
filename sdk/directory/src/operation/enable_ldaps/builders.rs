@@ -8,16 +8,17 @@ pub use crate::operation::enable_ldaps::_enable_ldaps_input::EnableLdapsInputBui
 /// <p>Activates the switch for the specific directory to always use LDAP secure calls.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableLDAPSFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_ldaps::builders::EnableLdapsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_ldaps::builders::EnableLdapsInputBuilder,
+}
 impl EnableLDAPSFluentBuilder  {
     /// Creates a new `EnableLDAPS`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_ldaps::EnableLDAPS, aws_http::retry::AwsResponseRetryClassifier,>,

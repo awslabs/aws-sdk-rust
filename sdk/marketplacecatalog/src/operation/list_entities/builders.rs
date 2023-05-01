@@ -8,16 +8,17 @@ pub use crate::operation::list_entities::_list_entities_input::ListEntitiesInput
 /// <p>Provides the list of entities of a given type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEntitiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_entities::builders::ListEntitiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_entities::builders::ListEntitiesInputBuilder,
+}
 impl ListEntitiesFluentBuilder  {
     /// Creates a new `ListEntities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_entities::ListEntities, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEntitiesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_entities::paginator::ListEntitiesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_entities::paginator::ListEntitiesPaginator {
-                            crate::operation::list_entities::paginator::ListEntitiesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_entities::paginator::ListEntitiesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_entities::paginator::ListEntitiesPaginator {
+                                crate::operation::list_entities::paginator::ListEntitiesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
     pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog(input.into());

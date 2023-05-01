@@ -8,16 +8,17 @@ pub use crate::operation::get_run_task::_get_run_task_input::GetRunTaskInputBuil
 /// <p>Gets information about a workflow run task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRunTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_run_task::builders::GetRunTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_run_task::builders::GetRunTaskInputBuilder,
+}
 impl GetRunTaskFluentBuilder  {
     /// Creates a new `GetRunTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_run_task::GetRunTask, aws_http::retry::AwsResponseRetryClassifier,>,

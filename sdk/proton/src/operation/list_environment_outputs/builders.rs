@@ -8,16 +8,17 @@ pub use crate::operation::list_environment_outputs::_list_environment_outputs_in
 /// <p>List the infrastructure as code outputs for your environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEnvironmentOutputsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_environment_outputs::builders::ListEnvironmentOutputsInputBuilder,
+}
 impl ListEnvironmentOutputsFluentBuilder  {
     /// Creates a new `ListEnvironmentOutputs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_environment_outputs::ListEnvironmentOutputs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEnvironmentOutputsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator {
-                            crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator {
+                                crate::operation::list_environment_outputs::paginator::ListEnvironmentOutputsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The environment name.</p>
     pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());

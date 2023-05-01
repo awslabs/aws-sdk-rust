@@ -15,16 +15,17 @@ pub use crate::operation::terminate_workspaces::_terminate_workspaces_input::Ter
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TerminateWorkspacesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::terminate_workspaces::builders::TerminateWorkspacesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::terminate_workspaces::builders::TerminateWorkspacesInputBuilder,
+}
 impl TerminateWorkspacesFluentBuilder  {
     /// Creates a new `TerminateWorkspaces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::terminate_workspaces::TerminateWorkspaces, aws_http::retry::AwsResponseRetryClassifier,>,

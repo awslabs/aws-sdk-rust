@@ -8,16 +8,17 @@ pub use crate::operation::get_extension::_get_extension_input::GetExtensionInput
 /// <p>Gets details about a specified extension.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetExtensionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_extension::builders::GetExtensionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_extension::builders::GetExtensionInputBuilder,
+}
 impl GetExtensionFluentBuilder  {
     /// Creates a new `GetExtension`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_extension::GetExtension, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::remove_tags_from_resource::_remove_tags_from_resource_
 /// <p>Removes tag keys from the specified resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveTagsFromResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder,
+}
 impl RemoveTagsFromResourceFluentBuilder  {
     /// Creates a new `RemoveTagsFromResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_tags_from_resource::RemoveTagsFromResource, aws_http::retry::AwsResponseRetryClassifier,>,

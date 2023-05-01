@@ -11,16 +11,17 @@ pub use crate::operation::tag_stream::_tag_stream_input::TagStreamInputBuilder;
 /// <p>A Kinesis video stream can support up to 50 tags.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::tag_stream::builders::TagStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::tag_stream::builders::TagStreamInputBuilder,
+}
 impl TagStreamFluentBuilder  {
     /// Creates a new `TagStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::tag_stream::TagStream, aws_http::retry::AwsResponseRetryClassifier,>,

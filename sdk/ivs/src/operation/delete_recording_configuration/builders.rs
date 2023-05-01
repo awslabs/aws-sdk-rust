@@ -9,16 +9,17 @@ pub use crate::operation::delete_recording_configuration::_delete_recording_conf
 /// <p>If you try to delete a recording configuration that is associated with a channel, you will get an error (409 ConflictException). To avoid this, for all channels that reference the recording configuration, first use <code>UpdateChannel</code> to set the <code>recordingConfigurationArn</code> field to an empty string, then use DeleteRecordingConfiguration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRecordingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationInputBuilder,
+}
 impl DeleteRecordingConfigurationFluentBuilder  {
     /// Creates a new `DeleteRecordingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_recording_configuration::DeleteRecordingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::associate_domain::_associate_domain_input::AssociateDo
 #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_domain::builders::AssociateDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_domain::builders::AssociateDomainInputBuilder,
+}
 impl AssociateDomainFluentBuilder  {
     /// Creates a new `AssociateDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_domain::AssociateDomain, aws_http::retry::AwsResponseRetryClassifier,>,

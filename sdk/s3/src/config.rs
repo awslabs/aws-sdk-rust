@@ -115,7 +115,7 @@ impl Config {
                     }
 }
 /// Builder for creating a `Config`.
-#[derive(Default)]pub struct Builder {
+#[derive(Clone, Debug, Default)]pub struct Builder {
     force_path_style: std::option::Option<bool>,
     
     use_arn_region: std::option::Option<bool>,

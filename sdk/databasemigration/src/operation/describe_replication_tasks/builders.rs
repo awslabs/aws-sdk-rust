@@ -8,16 +8,17 @@ pub use crate::operation::describe_replication_tasks::_describe_replication_task
 /// <p>Returns information about replication tasks for your account in the current region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReplicationTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_replication_tasks::builders::DescribeReplicationTasksInputBuilder,
+}
 impl DescribeReplicationTasksFluentBuilder  {
     /// Creates a new `DescribeReplicationTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_replication_tasks::DescribeReplicationTasks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeReplicationTasksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_tasks::paginator::DescribeReplicationTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_replication_tasks::paginator::DescribeReplicationTasksPaginator {
-                            crate::operation::describe_replication_tasks::paginator::DescribeReplicationTasksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_tasks::paginator::DescribeReplicationTasksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_replication_tasks::paginator::DescribeReplicationTasksPaginator {
+                                crate::operation::describe_replication_tasks::paginator::DescribeReplicationTasksPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

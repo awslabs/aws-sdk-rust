@@ -8,16 +8,17 @@ pub use crate::operation::delete_mailbox_permissions::_delete_mailbox_permission
 /// <p>Deletes permissions granted to a member (user or group).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMailboxPermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_mailbox_permissions::builders::DeleteMailboxPermissionsInputBuilder,
+}
 impl DeleteMailboxPermissionsFluentBuilder  {
     /// Creates a new `DeleteMailboxPermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_mailbox_permissions::DeleteMailboxPermissions, aws_http::retry::AwsResponseRetryClassifier,>,

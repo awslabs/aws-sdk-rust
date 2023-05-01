@@ -8,16 +8,17 @@ pub use crate::operation::update_subscription_notification_configuration::_updat
 /// <p>Updates an existing notification method for the subscription (SQS or HTTPs endpoint) or switches the notification subscription endpoint for a subscriber.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSubscriptionNotificationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_subscription_notification_configuration::builders::UpdateSubscriptionNotificationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_subscription_notification_configuration::builders::UpdateSubscriptionNotificationConfigurationInputBuilder,
+}
 impl UpdateSubscriptionNotificationConfigurationFluentBuilder  {
     /// Creates a new `UpdateSubscriptionNotificationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_subscription_notification_configuration::UpdateSubscriptionNotificationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

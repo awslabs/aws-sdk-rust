@@ -8,16 +8,17 @@ pub use crate::operation::delete_messaging_streaming_configurations::_delete_mes
 /// <p>Deletes the streaming configurations for an <code>AppInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMessagingStreamingConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_messaging_streaming_configurations::builders::DeleteMessagingStreamingConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_messaging_streaming_configurations::builders::DeleteMessagingStreamingConfigurationsInputBuilder,
+}
 impl DeleteMessagingStreamingConfigurationsFluentBuilder  {
     /// Creates a new `DeleteMessagingStreamingConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,

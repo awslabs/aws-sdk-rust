@@ -8,16 +8,17 @@ pub use crate::operation::modify_network_interface_attribute::_modify_network_in
 /// <p>Modifies the specified network interface attribute. You can specify only one attribute at a time. You can use this action to attach and detach security groups from an existing EC2 instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyNetworkInterfaceAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_network_interface_attribute::builders::ModifyNetworkInterfaceAttributeInputBuilder,
+}
 impl ModifyNetworkInterfaceAttributeFluentBuilder  {
     /// Creates a new `ModifyNetworkInterfaceAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

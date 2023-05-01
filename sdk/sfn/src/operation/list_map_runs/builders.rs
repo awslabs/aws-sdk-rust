@@ -8,16 +8,17 @@ pub use crate::operation::list_map_runs::_list_map_runs_input::ListMapRunsInputB
 /// <p>Lists all Map Runs that were started by a given state machine execution. Use this API action to obtain Map Run ARNs, and then call <code>DescribeMapRun</code> to obtain more information, if needed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMapRunsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_map_runs::builders::ListMapRunsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_map_runs::builders::ListMapRunsInputBuilder,
+}
 impl ListMapRunsFluentBuilder  {
     /// Creates a new `ListMapRuns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_map_runs::ListMapRuns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListMapRunsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_map_runs::paginator::ListMapRunsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_map_runs::paginator::ListMapRunsPaginator {
-                            crate::operation::list_map_runs::paginator::ListMapRunsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_map_runs::paginator::ListMapRunsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_map_runs::paginator::ListMapRunsPaginator {
+                                crate::operation::list_map_runs::paginator::ListMapRunsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the execution for which the Map Runs must be listed.</p>
     pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.execution_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::describe_device_ec2_instances::_describe_device_ec2_in
 /// <p>Checks the current state of the Amazon EC2 instances. The output is similar to <code>describeDevice</code>, but the results are sourced from the device cache in the Amazon Web Services Cloud and include a subset of the available fields. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDeviceEc2InstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder,
+}
 impl DescribeDeviceEc2InstancesFluentBuilder  {
     /// Creates a new `DescribeDeviceEc2Instances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_device_ec2_instances::DescribeDeviceEc2Instances, aws_http::retry::AwsResponseRetryClassifier,>,

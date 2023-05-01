@@ -8,16 +8,17 @@ pub use crate::operation::get_runtime_management_config::_get_runtime_management
 /// <p>Retrieves the runtime management configuration for a function's version. If the runtime update mode is <b>Manual</b>, this includes the ARN of the runtime version and the runtime update mode. If the runtime update mode is <b>Auto</b> or <b>Function update</b>, this includes the runtime update mode and <code>null</code> is returned for the ARN. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRuntimeManagementConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_runtime_management_config::builders::GetRuntimeManagementConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_runtime_management_config::builders::GetRuntimeManagementConfigInputBuilder,
+}
 impl GetRuntimeManagementConfigFluentBuilder  {
     /// Creates a new `GetRuntimeManagementConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_runtime_management_config::GetRuntimeManagementConfig, aws_http::retry::AwsResponseRetryClassifier,>,

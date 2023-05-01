@@ -13,16 +13,17 @@ pub use crate::operation::list_trial_components::_list_trial_components_input::L
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrialComponentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_trial_components::builders::ListTrialComponentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_trial_components::builders::ListTrialComponentsInputBuilder,
+}
 impl ListTrialComponentsFluentBuilder  {
     /// Creates a new `ListTrialComponents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_trial_components::ListTrialComponents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -53,11 +54,11 @@ impl ListTrialComponentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator {
-                            crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator {
+                                crate::operation::list_trial_components::paginator::ListTrialComponentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter that returns only components that are part of the specified experiment. If you specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or <code>TrialName</code>.</p>
     pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.experiment_name(input.into());

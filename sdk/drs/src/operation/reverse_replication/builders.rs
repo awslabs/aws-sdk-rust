@@ -8,16 +8,17 @@ pub use crate::operation::reverse_replication::_reverse_replication_input::Rever
 /// <p>Start replication to origin / target region - applies only to protected instances that originated in EC2. For recovery instances on target region - starts replication back to origin region. For failback instances on origin region - starts replication to target region to re-protect them. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReverseReplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reverse_replication::builders::ReverseReplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reverse_replication::builders::ReverseReplicationInputBuilder,
+}
 impl ReverseReplicationFluentBuilder  {
     /// Creates a new `ReverseReplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reverse_replication::ReverseReplication, aws_http::retry::AwsResponseRetryClassifier,>,

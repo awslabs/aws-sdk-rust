@@ -8,16 +8,17 @@ pub use crate::operation::create_permission_group::_create_permission_group_inpu
 /// <p>Creates a group of permissions for various actions that a user can perform in FinSpace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePermissionGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_permission_group::builders::CreatePermissionGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_permission_group::builders::CreatePermissionGroupInputBuilder,
+}
 impl CreatePermissionGroupFluentBuilder  {
     /// Creates a new `CreatePermissionGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_permission_group::CreatePermissionGroup, aws_http::retry::AwsResponseRetryClassifier,>,

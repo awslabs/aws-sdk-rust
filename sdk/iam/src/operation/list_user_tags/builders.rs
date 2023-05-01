@@ -8,16 +8,17 @@ pub use crate::operation::list_user_tags::_list_user_tags_input::ListUserTagsInp
 /// <p>Lists the tags that are attached to the specified IAM user. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListUserTagsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_user_tags::builders::ListUserTagsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_user_tags::builders::ListUserTagsInputBuilder,
+}
 impl ListUserTagsFluentBuilder  {
     /// Creates a new `ListUserTags`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_user_tags::ListUserTags, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListUserTagsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_user_tags::paginator::ListUserTagsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_user_tags::paginator::ListUserTagsPaginator {
-                            crate::operation::list_user_tags::paginator::ListUserTagsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_user_tags::paginator::ListUserTagsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_user_tags::paginator::ListUserTagsPaginator {
+                                crate::operation::list_user_tags::paginator::ListUserTagsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the IAM user whose tags you want to see.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {

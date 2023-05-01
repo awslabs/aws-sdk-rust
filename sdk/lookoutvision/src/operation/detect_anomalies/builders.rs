@@ -13,16 +13,17 @@ pub use crate::operation::detect_anomalies::_detect_anomalies_input::DetectAnoma
 /// <p>This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code> operation.</p>
 #[derive(std::fmt::Debug)]
 pub struct DetectAnomaliesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_anomalies::builders::DetectAnomaliesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_anomalies::builders::DetectAnomaliesInputBuilder,
+}
 impl DetectAnomaliesFluentBuilder  {
     /// Creates a new `DetectAnomalies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_anomalies::DetectAnomalies, aws_http::retry::AwsResponseRetryClassifier,>,

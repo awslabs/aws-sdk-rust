@@ -8,16 +8,17 @@ pub use crate::operation::update_inference_experiment::_update_inference_experim
 /// <p> Updates an inference experiment that you created. The status of the inference experiment has to be either <code>Created</code>, <code>Running</code>. For more information on the status of an inference experiment, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateInferenceExperimentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentInputBuilder,
+}
 impl UpdateInferenceExperimentFluentBuilder  {
     /// Creates a new `UpdateInferenceExperiment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_inference_experiment::UpdateInferenceExperiment, aws_http::retry::AwsResponseRetryClassifier,>,

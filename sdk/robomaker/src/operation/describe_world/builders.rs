@@ -8,16 +8,17 @@ pub use crate::operation::describe_world::_describe_world_input::DescribeWorldIn
 /// <p>Describes a world.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeWorldFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_world::builders::DescribeWorldInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_world::builders::DescribeWorldInputBuilder,
+}
 impl DescribeWorldFluentBuilder  {
     /// Creates a new `DescribeWorld`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_world::DescribeWorld, aws_http::retry::AwsResponseRetryClassifier,>,

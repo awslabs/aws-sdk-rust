@@ -9,16 +9,17 @@ pub use crate::operation::start_replication_task::_start_replication_task_input:
 /// <p>For more information about DMS tasks, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working with Migration Tasks </a> in the <i>Database Migration Service User Guide.</i> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartReplicationTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_replication_task::builders::StartReplicationTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_replication_task::builders::StartReplicationTaskInputBuilder,
+}
 impl StartReplicationTaskFluentBuilder  {
     /// Creates a new `StartReplicationTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_replication_task::StartReplicationTask, aws_http::retry::AwsResponseRetryClassifier,>,

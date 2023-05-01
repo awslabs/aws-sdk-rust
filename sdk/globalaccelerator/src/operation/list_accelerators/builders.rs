@@ -8,16 +8,17 @@ pub use crate::operation::list_accelerators::_list_accelerators_input::ListAccel
 /// <p>List the accelerators for an Amazon Web Services account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAcceleratorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_accelerators::builders::ListAcceleratorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_accelerators::builders::ListAcceleratorsInputBuilder,
+}
 impl ListAcceleratorsFluentBuilder  {
     /// Creates a new `ListAccelerators`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_accelerators::ListAccelerators, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAcceleratorsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator {
-                            crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator {
+                                crate::operation::list_accelerators::paginator::ListAcceleratorsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

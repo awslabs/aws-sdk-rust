@@ -9,16 +9,17 @@ pub use crate::operation::list_origin_access_controls::_list_origin_access_contr
 /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send another request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the next request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListOriginAccessControlsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_origin_access_controls::builders::ListOriginAccessControlsInputBuilder,
+}
 impl ListOriginAccessControlsFluentBuilder  {
     /// Creates a new `ListOriginAccessControls`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_origin_access_controls::ListOriginAccessControls, aws_http::retry::AwsResponseRetryClassifier,>,

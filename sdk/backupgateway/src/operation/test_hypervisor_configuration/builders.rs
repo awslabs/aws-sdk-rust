@@ -8,16 +8,17 @@ pub use crate::operation::test_hypervisor_configuration::_test_hypervisor_config
 /// <p>Tests your hypervisor configuration to validate that backup gateway can connect with the hypervisor and its resources.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TestHypervisorConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::test_hypervisor_configuration::builders::TestHypervisorConfigurationInputBuilder,
+}
 impl TestHypervisorConfigurationFluentBuilder  {
     /// Creates a new `TestHypervisorConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::test_hypervisor_configuration::TestHypervisorConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

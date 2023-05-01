@@ -8,16 +8,17 @@ pub use crate::operation::describe_ip_restriction::_describe_ip_restriction_inpu
 /// <p>Provides a summary and status of IP rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeIpRestrictionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_ip_restriction::builders::DescribeIpRestrictionInputBuilder,
+}
 impl DescribeIpRestrictionFluentBuilder  {
     /// Creates a new `DescribeIpRestriction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_ip_restriction::DescribeIpRestriction, aws_http::retry::AwsResponseRetryClassifier,>,

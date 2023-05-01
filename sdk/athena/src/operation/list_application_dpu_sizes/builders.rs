@@ -8,16 +8,17 @@ pub use crate::operation::list_application_dpu_sizes::_list_application_dpu_size
 /// <p>Returns the supported DPU sizes for the supported application runtimes (for example, <code>Athena notebook version 1</code>). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListApplicationDPUSizesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_application_dpu_sizes::builders::ListApplicationDpuSizesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_application_dpu_sizes::builders::ListApplicationDpuSizesInputBuilder,
+}
 impl ListApplicationDPUSizesFluentBuilder  {
     /// Creates a new `ListApplicationDPUSizes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_application_dpu_sizes::ListApplicationDPUSizes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListApplicationDPUSizesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_application_dpu_sizes::paginator::ListApplicationDpuSizesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_application_dpu_sizes::paginator::ListApplicationDpuSizesPaginator {
-                            crate::operation::list_application_dpu_sizes::paginator::ListApplicationDpuSizesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_application_dpu_sizes::paginator::ListApplicationDpuSizesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_application_dpu_sizes::paginator::ListApplicationDpuSizesPaginator {
+                                crate::operation::list_application_dpu_sizes::paginator::ListApplicationDpuSizesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies the maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

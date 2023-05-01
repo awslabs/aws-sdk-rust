@@ -8,16 +8,17 @@ pub use crate::operation::create_conditional_forwarder::_create_conditional_forw
 /// <p>Creates a conditional forwarder associated with your Amazon Web Services directory. Conditional forwarders are required in order to set up a trust relationship with another domain. The conditional forwarder points to the trusted domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConditionalForwarderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_conditional_forwarder::builders::CreateConditionalForwarderInputBuilder,
+}
 impl CreateConditionalForwarderFluentBuilder  {
     /// Creates a new `CreateConditionalForwarder`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_conditional_forwarder::CreateConditionalForwarder, aws_http::retry::AwsResponseRetryClassifier,>,

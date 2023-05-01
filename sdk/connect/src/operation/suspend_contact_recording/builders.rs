@@ -10,16 +10,17 @@ pub use crate::operation::suspend_contact_recording::_suspend_contact_recording_
 /// <p>Only voice recordings are supported at this time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SuspendContactRecordingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::suspend_contact_recording::builders::SuspendContactRecordingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::suspend_contact_recording::builders::SuspendContactRecordingInputBuilder,
+}
 impl SuspendContactRecordingFluentBuilder  {
     /// Creates a new `SuspendContactRecording`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::suspend_contact_recording::SuspendContactRecording, aws_http::retry::AwsResponseRetryClassifier,>,

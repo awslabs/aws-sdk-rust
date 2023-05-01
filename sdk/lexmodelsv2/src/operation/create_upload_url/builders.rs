@@ -8,16 +8,17 @@ pub use crate::operation::create_upload_url::_create_upload_url_input::CreateUpl
 /// <p>Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateUploadUrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_upload_url::builders::CreateUploadUrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_upload_url::builders::CreateUploadUrlInputBuilder,
+}
 impl CreateUploadUrlFluentBuilder  {
     /// Creates a new `CreateUploadUrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_upload_url::CreateUploadUrl, aws_http::retry::AwsResponseRetryClassifier,>,

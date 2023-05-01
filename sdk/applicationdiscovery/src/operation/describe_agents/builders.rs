@@ -8,16 +8,17 @@ pub use crate::operation::describe_agents::_describe_agents_input::DescribeAgent
 /// <p>Lists agents or connectors as specified by ID or other filters. All agents/connectors associated with your user account can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAgentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_agents::builders::DescribeAgentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_agents::builders::DescribeAgentsInputBuilder,
+}
 impl DescribeAgentsFluentBuilder  {
     /// Creates a new `DescribeAgents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_agents::DescribeAgents, aws_http::retry::AwsResponseRetryClassifier,>,

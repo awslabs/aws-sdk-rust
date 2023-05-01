@@ -8,16 +8,17 @@ pub use crate::operation::update_provisioned_product_properties::_update_provisi
 /// <p>Requests updates to the properties of the specified provisioned product.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProvisionedProductPropertiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_provisioned_product_properties::builders::UpdateProvisionedProductPropertiesInputBuilder,
+}
 impl UpdateProvisionedProductPropertiesFluentBuilder  {
     /// Creates a new `UpdateProvisionedProductProperties`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_provisioned_product_properties::UpdateProvisionedProductProperties, aws_http::retry::AwsResponseRetryClassifier,>,

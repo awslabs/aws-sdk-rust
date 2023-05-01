@@ -8,16 +8,17 @@ pub use crate::operation::submit_feedback::_submit_feedback_input::SubmitFeedbac
 /// <p>Sends feedback to CodeGuru Profiler about whether the anomaly detected by the analysis is useful or not.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SubmitFeedbackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::submit_feedback::builders::SubmitFeedbackInputBuilder,
+}
 impl SubmitFeedbackFluentBuilder  {
     /// Creates a new `SubmitFeedback`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::submit_feedback::SubmitFeedback, aws_http::retry::AwsResponseRetryClassifier,>,

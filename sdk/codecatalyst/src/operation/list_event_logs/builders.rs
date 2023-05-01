@@ -8,16 +8,17 @@ pub use crate::operation::list_event_logs::_list_event_logs_input::ListEventLogs
 /// <p>Retrieves a list of events that occurred during a specified time period in a space. You can use these events to audit user and system activity in a space.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEventLogsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_event_logs::builders::ListEventLogsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_event_logs::builders::ListEventLogsInputBuilder,
+}
 impl ListEventLogsFluentBuilder  {
     /// Creates a new `ListEventLogs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_event_logs::ListEventLogs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEventLogsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_event_logs::paginator::ListEventLogsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_event_logs::paginator::ListEventLogsPaginator {
-                            crate::operation::list_event_logs::paginator::ListEventLogsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_event_logs::paginator::ListEventLogsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_event_logs::paginator::ListEventLogsPaginator {
+                                crate::operation::list_event_logs::paginator::ListEventLogsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.space_name(input.into());

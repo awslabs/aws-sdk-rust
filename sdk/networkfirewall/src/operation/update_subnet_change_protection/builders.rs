@@ -8,16 +8,17 @@ pub use crate::operation::update_subnet_change_protection::_update_subnet_change
 /// <p></p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSubnetChangeProtectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_subnet_change_protection::builders::UpdateSubnetChangeProtectionInputBuilder,
+}
 impl UpdateSubnetChangeProtectionFluentBuilder  {
     /// Creates a new `UpdateSubnetChangeProtection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtection, aws_http::retry::AwsResponseRetryClassifier,>,

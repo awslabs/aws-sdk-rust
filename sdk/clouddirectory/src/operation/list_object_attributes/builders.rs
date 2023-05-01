@@ -8,16 +8,17 @@ pub use crate::operation::list_object_attributes::_list_object_attributes_input:
 /// <p>Lists all attributes that are associated with an object. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListObjectAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_object_attributes::builders::ListObjectAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_object_attributes::builders::ListObjectAttributesInputBuilder,
+}
 impl ListObjectAttributesFluentBuilder  {
     /// Creates a new `ListObjectAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_object_attributes::ListObjectAttributes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListObjectAttributesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator {
-                            crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator {
+                                crate::operation::list_object_attributes::paginator::ListObjectAttributesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::describe_availability_monitor_test::_describe_availabi
 /// <p>Returns information about the most recent high availability monitoring test that was performed on the host in a cluster. If a test isn't performed, the status and start time in the response would be null.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAvailabilityMonitorTestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_availability_monitor_test::builders::DescribeAvailabilityMonitorTestInputBuilder,
+}
 impl DescribeAvailabilityMonitorTestFluentBuilder  {
     /// Creates a new `DescribeAvailabilityMonitorTest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTest, aws_http::retry::AwsResponseRetryClassifier,>,

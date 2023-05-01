@@ -8,16 +8,17 @@ pub use crate::operation::list_custom_vocabulary_items::_list_custom_vocabulary_
 /// <p>Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCustomVocabularyItemsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsInputBuilder,
+}
 impl ListCustomVocabularyItemsFluentBuilder  {
     /// Creates a new `ListCustomVocabularyItems`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItems, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCustomVocabularyItemsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator {
-                            crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator {
+                                crate::operation::list_custom_vocabulary_items::paginator::ListCustomVocabularyItemsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());

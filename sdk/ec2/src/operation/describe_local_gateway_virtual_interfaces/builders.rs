@@ -8,16 +8,17 @@ pub use crate::operation::describe_local_gateway_virtual_interfaces::_describe_l
 /// <p>Describes the specified local gateway virtual interfaces.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLocalGatewayVirtualInterfacesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_local_gateway_virtual_interfaces::builders::DescribeLocalGatewayVirtualInterfacesInputBuilder,
+}
 impl DescribeLocalGatewayVirtualInterfacesFluentBuilder  {
     /// Creates a new `DescribeLocalGatewayVirtualInterfaces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfaces, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeLocalGatewayVirtualInterfacesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_local_gateway_virtual_interfaces::paginator::DescribeLocalGatewayVirtualInterfacesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_local_gateway_virtual_interfaces::paginator::DescribeLocalGatewayVirtualInterfacesPaginator {
-                            crate::operation::describe_local_gateway_virtual_interfaces::paginator::DescribeLocalGatewayVirtualInterfacesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_local_gateway_virtual_interfaces::paginator::DescribeLocalGatewayVirtualInterfacesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_local_gateway_virtual_interfaces::paginator::DescribeLocalGatewayVirtualInterfacesPaginator {
+                                crate::operation::describe_local_gateway_virtual_interfaces::paginator::DescribeLocalGatewayVirtualInterfacesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `LocalGatewayVirtualInterfaceIds`.
     ///
     /// To override the contents of this collection use [`set_local_gateway_virtual_interface_ids`](Self::set_local_gateway_virtual_interface_ids).

@@ -8,16 +8,17 @@ pub use crate::operation::revoke_vpc_endpoint_access::_revoke_vpc_endpoint_acces
 /// <p>Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RevokeVpcEndpointAccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessInputBuilder,
+}
 impl RevokeVpcEndpointAccessFluentBuilder  {
     /// Creates a new `RevokeVpcEndpointAccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccess, aws_http::retry::AwsResponseRetryClassifier,>,

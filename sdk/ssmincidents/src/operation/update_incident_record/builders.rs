@@ -8,16 +8,17 @@ pub use crate::operation::update_incident_record::_update_incident_record_input:
 /// <p>Update the details of an incident record. You can use this operation to update an incident record from the defined chat channel. For more information about using actions in chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting through chat</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateIncidentRecordFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_incident_record::builders::UpdateIncidentRecordInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_incident_record::builders::UpdateIncidentRecordInputBuilder,
+}
 impl UpdateIncidentRecordFluentBuilder  {
     /// Creates a new `UpdateIncidentRecord`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_incident_record::UpdateIncidentRecord, aws_http::retry::AwsResponseRetryClassifier,>,

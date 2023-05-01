@@ -8,16 +8,17 @@ pub use crate::operation::update_anomaly_subscription::_update_anomaly_subscript
 /// <p>Updates an existing cost anomaly monitor subscription. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAnomalySubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_anomaly_subscription::builders::UpdateAnomalySubscriptionInputBuilder,
+}
 impl UpdateAnomalySubscriptionFluentBuilder  {
     /// Creates a new `UpdateAnomalySubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_anomaly_subscription::UpdateAnomalySubscription, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::post_agent_profile::_post_agent_profile_input::PostAge
 /// <p> Submits profiling data to an aggregated profile of a profiling group. To get an aggregated profile that is created with this profiling data, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html"> <code>GetProfile</code> </a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PostAgentProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::post_agent_profile::builders::PostAgentProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::post_agent_profile::builders::PostAgentProfileInputBuilder,
+}
 impl PostAgentProfileFluentBuilder  {
     /// Creates a new `PostAgentProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::post_agent_profile::PostAgentProfile, aws_http::retry::AwsResponseRetryClassifier,>,

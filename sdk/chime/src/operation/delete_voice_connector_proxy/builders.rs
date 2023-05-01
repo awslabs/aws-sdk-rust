@@ -8,16 +8,17 @@ pub use crate::operation::delete_voice_connector_proxy::_delete_voice_connector_
 /// <p>Deletes the proxy configuration from the specified Amazon Chime Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorProxyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_voice_connector_proxy::builders::DeleteVoiceConnectorProxyInputBuilder,
+}
 impl DeleteVoiceConnectorProxyFluentBuilder  {
     /// Creates a new `DeleteVoiceConnectorProxy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_voice_connector_proxy::DeleteVoiceConnectorProxy, aws_http::retry::AwsResponseRetryClassifier,>,

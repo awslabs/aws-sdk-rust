@@ -8,16 +8,17 @@ pub use crate::operation::delete_input_security_group::_delete_input_security_gr
 /// Deletes an Input Security Group
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInputSecurityGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder,
+}
 impl DeleteInputSecurityGroupFluentBuilder  {
     /// Creates a new `DeleteInputSecurityGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_input_security_group::DeleteInputSecurityGroup, aws_http::retry::AwsResponseRetryClassifier,>,

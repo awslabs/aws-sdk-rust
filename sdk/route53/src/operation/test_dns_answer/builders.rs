@@ -9,16 +9,17 @@ pub use crate::operation::test_dns_answer::_test_dns_answer_input::TestDnsAnswer
 /// <p>This call only supports querying public hosted zones.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TestDNSAnswerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::test_dns_answer::builders::TestDnsAnswerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::test_dns_answer::builders::TestDnsAnswerInputBuilder,
+}
 impl TestDNSAnswerFluentBuilder  {
     /// Creates a new `TestDNSAnswer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::test_dns_answer::TestDNSAnswer, aws_http::retry::AwsResponseRetryClassifier,>,

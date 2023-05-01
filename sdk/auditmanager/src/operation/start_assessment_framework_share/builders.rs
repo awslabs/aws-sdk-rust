@@ -21,16 +21,17 @@ pub use crate::operation::start_assessment_framework_share::_start_assessment_fr
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartAssessmentFrameworkShareFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_assessment_framework_share::builders::StartAssessmentFrameworkShareInputBuilder,
+}
 impl StartAssessmentFrameworkShareFluentBuilder  {
     /// Creates a new `StartAssessmentFrameworkShare`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShare, aws_http::retry::AwsResponseRetryClassifier,>,

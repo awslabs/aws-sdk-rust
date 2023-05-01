@@ -8,16 +8,17 @@ pub use crate::operation::create_variant_store::_create_variant_store_input::Cre
 /// <p>Creates a variant store.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVariantStoreFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_variant_store::builders::CreateVariantStoreInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_variant_store::builders::CreateVariantStoreInputBuilder,
+}
 impl CreateVariantStoreFluentBuilder  {
     /// Creates a new `CreateVariantStore`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_variant_store::CreateVariantStore, aws_http::retry::AwsResponseRetryClassifier,>,

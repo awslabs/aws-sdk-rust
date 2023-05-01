@@ -8,16 +8,17 @@ pub use crate::operation::check_domain_transferability::_check_domain_transferab
 /// <p>Checks whether a domain name can be transferred to Amazon Route 53. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CheckDomainTransferabilityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::check_domain_transferability::builders::CheckDomainTransferabilityInputBuilder,
+}
 impl CheckDomainTransferabilityFluentBuilder  {
     /// Creates a new `CheckDomainTransferability`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::check_domain_transferability::CheckDomainTransferability, aws_http::retry::AwsResponseRetryClassifier,>,

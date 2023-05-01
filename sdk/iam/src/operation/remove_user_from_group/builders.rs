@@ -8,16 +8,17 @@ pub use crate::operation::remove_user_from_group::_remove_user_from_group_input:
 /// <p>Removes the specified user from the specified group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveUserFromGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_user_from_group::builders::RemoveUserFromGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_user_from_group::builders::RemoveUserFromGroupInputBuilder,
+}
 impl RemoveUserFromGroupFluentBuilder  {
     /// Creates a new `RemoveUserFromGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_user_from_group::RemoveUserFromGroup, aws_http::retry::AwsResponseRetryClassifier,>,

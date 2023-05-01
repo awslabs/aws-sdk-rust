@@ -8,16 +8,17 @@ pub use crate::operation::update_group_certificate_configuration::_update_group_
 /// Updates the Certificate expiry time for a group.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGroupCertificateConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_group_certificate_configuration::builders::UpdateGroupCertificateConfigurationInputBuilder,
+}
 impl UpdateGroupCertificateConfigurationFluentBuilder  {
     /// Creates a new `UpdateGroupCertificateConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

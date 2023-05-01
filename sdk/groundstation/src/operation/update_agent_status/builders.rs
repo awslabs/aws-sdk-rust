@@ -11,16 +11,17 @@ pub use crate::operation::update_agent_status::_update_agent_status_input::Updat
 /// <p>Update the status of the agent.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAgentStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder,
+}
 impl UpdateAgentStatusFluentBuilder  {
     /// Creates a new `UpdateAgentStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_agent_status::UpdateAgentStatus, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_client_vpn_route::_create_client_vpn_route_inpu
 /// <p>Adds a route to a network to a Client VPN endpoint. Each Client VPN endpoint has a route table that describes the available destination network routes. Each route in the route table specifies the path for traﬃc to speciﬁc resources or networks.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateClientVpnRouteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_client_vpn_route::builders::CreateClientVpnRouteInputBuilder,
+}
 impl CreateClientVpnRouteFluentBuilder  {
     /// Creates a new `CreateClientVpnRoute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_client_vpn_route::CreateClientVpnRoute, aws_http::retry::AwsResponseRetryClassifier,>,

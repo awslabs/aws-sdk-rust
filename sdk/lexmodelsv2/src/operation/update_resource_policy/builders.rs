@@ -8,16 +8,17 @@ pub use crate::operation::update_resource_policy::_update_resource_policy_input:
 /// <p>Replaces the existing resource policy for a bot or bot alias with a new one. If the policy doesn't exist, Amazon Lex returns an exception.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResourcePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_resource_policy::builders::UpdateResourcePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_resource_policy::builders::UpdateResourcePolicyInputBuilder,
+}
 impl UpdateResourcePolicyFluentBuilder  {
     /// Creates a new `UpdateResourcePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_resource_policy::UpdateResourcePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

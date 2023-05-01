@@ -8,16 +8,17 @@ pub use crate::operation::create_integration_association::_create_integration_as
 /// <p>Creates an Amazon Web Services resource association with an Amazon Connect instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIntegrationAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_integration_association::builders::CreateIntegrationAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_integration_association::builders::CreateIntegrationAssociationInputBuilder,
+}
 impl CreateIntegrationAssociationFluentBuilder  {
     /// Creates a new `CreateIntegrationAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_integration_association::CreateIntegrationAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

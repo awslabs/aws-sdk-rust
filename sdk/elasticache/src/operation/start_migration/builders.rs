@@ -8,16 +8,17 @@ pub use crate::operation::start_migration::_start_migration_input::StartMigratio
 /// <p>Start the migration of data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartMigrationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_migration::builders::StartMigrationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_migration::builders::StartMigrationInputBuilder,
+}
 impl StartMigrationFluentBuilder  {
     /// Creates a new `StartMigration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_migration::StartMigration, aws_http::retry::AwsResponseRetryClassifier,>,

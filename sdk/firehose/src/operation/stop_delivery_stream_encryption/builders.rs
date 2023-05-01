@@ -12,16 +12,17 @@ pub use crate::operation::stop_delivery_stream_encryption::_stop_delivery_stream
 /// <p>The <code>StartDeliveryStreamEncryption</code> and <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25 calls per delivery stream per 24 hours. For example, you reach the limit if you call <code>StartDeliveryStreamEncryption</code> 13 times and <code>StopDeliveryStreamEncryption</code> 12 times for the same delivery stream in a 24-hour period.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopDeliveryStreamEncryptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_delivery_stream_encryption::builders::StopDeliveryStreamEncryptionInputBuilder,
+}
 impl StopDeliveryStreamEncryptionFluentBuilder  {
     /// Creates a new `StopDeliveryStreamEncryption`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryption, aws_http::retry::AwsResponseRetryClassifier,>,

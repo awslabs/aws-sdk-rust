@@ -8,16 +8,17 @@ pub use crate::operation::list_services::_list_services_input::ListServicesInput
 /// <p>Returns a list of running App Runner services in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListServicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_services::builders::ListServicesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_services::builders::ListServicesInputBuilder,
+}
 impl ListServicesFluentBuilder  {
     /// Creates a new `ListServices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_services::ListServices, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListServicesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_services::paginator::ListServicesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_services::paginator::ListServicesPaginator {
-                            crate::operation::list_services::paginator::ListServicesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_services::paginator::ListServicesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_services::paginator::ListServicesPaginator {
+                                crate::operation::list_services::paginator::ListServicesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be identical to the ones specified in the initial request.</p> 
     /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {

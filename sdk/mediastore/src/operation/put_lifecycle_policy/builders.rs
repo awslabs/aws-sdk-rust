@@ -9,16 +9,17 @@ pub use crate::operation::put_lifecycle_policy::_put_lifecycle_policy_input::Put
 /// <p>For information about how to construct an object lifecycle policy, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components of an Object Lifecycle Policy</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutLifecyclePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyInputBuilder,
+}
 impl PutLifecyclePolicyFluentBuilder  {
     /// Creates a new `PutLifecyclePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_lifecycle_policy::PutLifecyclePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

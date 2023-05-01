@@ -11,16 +11,17 @@ pub use crate::operation::describe_cluster_security_groups::_describe_cluster_se
 /// <p>If both tag keys and values are omitted from the request, security groups are returned regardless of whether they have tag keys or values associated with them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClusterSecurityGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cluster_security_groups::builders::DescribeClusterSecurityGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cluster_security_groups::builders::DescribeClusterSecurityGroupsInputBuilder,
+}
 impl DescribeClusterSecurityGroupsFluentBuilder  {
     /// Creates a new `DescribeClusterSecurityGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cluster_security_groups::DescribeClusterSecurityGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl DescribeClusterSecurityGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_security_groups::paginator::DescribeClusterSecurityGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_cluster_security_groups::paginator::DescribeClusterSecurityGroupsPaginator {
-                            crate::operation::describe_cluster_security_groups::paginator::DescribeClusterSecurityGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_security_groups::paginator::DescribeClusterSecurityGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_cluster_security_groups::paginator::DescribeClusterSecurityGroupsPaginator {
+                                crate::operation::describe_cluster_security_groups::paginator::DescribeClusterSecurityGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p> 
     /// <p> Example: <code>securitygroup1</code> </p>
     pub fn cluster_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {

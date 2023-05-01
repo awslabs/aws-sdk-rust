@@ -8,16 +8,17 @@ pub use crate::operation::terminate_target_instances::_terminate_target_instance
 /// <p>Starts a job that terminates specific launched EC2 Test and Cutover instances. This command will not work for any Source Server with a lifecycle.state of TESTING, CUTTING_OVER, or CUTOVER.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TerminateTargetInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::terminate_target_instances::builders::TerminateTargetInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::terminate_target_instances::builders::TerminateTargetInstancesInputBuilder,
+}
 impl TerminateTargetInstancesFluentBuilder  {
     /// Creates a new `TerminateTargetInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::terminate_target_instances::TerminateTargetInstances, aws_http::retry::AwsResponseRetryClassifier,>,

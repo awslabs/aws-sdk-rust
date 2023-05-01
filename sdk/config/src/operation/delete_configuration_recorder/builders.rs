@@ -10,16 +10,17 @@ pub use crate::operation::delete_configuration_recorder::_delete_configuration_r
 /// <p>This action does not delete the configuration information that was previously recorded. You will be able to access the previously recorded information by using the <code>GetResourceConfigHistory</code> action, but you will not be able to access this information in the Config console until you create a new configuration recorder.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConfigurationRecorderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_configuration_recorder::builders::DeleteConfigurationRecorderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_configuration_recorder::builders::DeleteConfigurationRecorderInputBuilder,
+}
 impl DeleteConfigurationRecorderFluentBuilder  {
     /// Creates a new `DeleteConfigurationRecorder`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_configuration_recorder::DeleteConfigurationRecorder, aws_http::retry::AwsResponseRetryClassifier,>,

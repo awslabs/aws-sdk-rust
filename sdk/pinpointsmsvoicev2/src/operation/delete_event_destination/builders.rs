@@ -9,16 +9,17 @@ pub use crate::operation::delete_event_destination::_delete_event_destination_in
 /// <p>An event destination is a location where you send response information about the messages that you send. For example, when a message is delivered successfully, you can send information about that event to an Amazon CloudWatch destination, or send notifications to endpoints that are subscribed to an Amazon SNS topic.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEventDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_event_destination::builders::DeleteEventDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_event_destination::builders::DeleteEventDestinationInputBuilder,
+}
 impl DeleteEventDestinationFluentBuilder  {
     /// Creates a new `DeleteEventDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_event_destination::DeleteEventDestination, aws_http::retry::AwsResponseRetryClassifier,>,

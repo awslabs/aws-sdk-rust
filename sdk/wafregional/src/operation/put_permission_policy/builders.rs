@@ -25,16 +25,17 @@ pub use crate::operation::put_permission_policy::_put_permission_policy_input::P
 /// <p>An example of a valid policy parameter is shown in the Examples section below.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutPermissionPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder,
+}
 impl PutPermissionPolicyFluentBuilder  {
     /// Creates a new `PutPermissionPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_permission_policy::PutPermissionPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

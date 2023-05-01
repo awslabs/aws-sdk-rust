@@ -17,16 +17,17 @@ pub use crate::operation::query::_query_input::QueryInputBuilder;
 /// <p>Each query returns the 100 most relevant results. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct QueryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::query::builders::QueryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::query::builders::QueryInputBuilder,
+}
 impl QueryFluentBuilder  {
     /// Creates a new `Query`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::query::Query, aws_http::retry::AwsResponseRetryClassifier,>,

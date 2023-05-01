@@ -8,16 +8,17 @@ pub use crate::operation::update_ip_restriction::_update_ip_restriction_input::U
 /// <p>Updates the content and status of IP rules. To use this operation, you need to provide the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateIpRestrictionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_ip_restriction::builders::UpdateIpRestrictionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_ip_restriction::builders::UpdateIpRestrictionInputBuilder,
+}
 impl UpdateIpRestrictionFluentBuilder  {
     /// Creates a new `UpdateIpRestriction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_ip_restriction::UpdateIpRestriction, aws_http::retry::AwsResponseRetryClassifier,>,

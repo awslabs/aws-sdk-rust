@@ -9,16 +9,17 @@ pub use crate::operation::delete_launch_configuration::_delete_launch_configurat
 /// <p>The launch configuration must not be attached to an Auto Scaling group. When this call completes, the launch configuration is no longer available for use.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLaunchConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_launch_configuration::builders::DeleteLaunchConfigurationInputBuilder,
+}
 impl DeleteLaunchConfigurationFluentBuilder  {
     /// Creates a new `DeleteLaunchConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_launch_configuration::DeleteLaunchConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

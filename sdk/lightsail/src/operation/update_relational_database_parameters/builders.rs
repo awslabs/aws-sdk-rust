@@ -10,16 +10,17 @@ pub use crate::operation::update_relational_database_parameters::_update_relatio
 /// <p>The <code>update relational database parameters</code> operation supports tag-based access control via resource tags applied to the resource identified by relationalDatabaseName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRelationalDatabaseParametersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_relational_database_parameters::builders::UpdateRelationalDatabaseParametersInputBuilder,
+}
 impl UpdateRelationalDatabaseParametersFluentBuilder  {
     /// Creates a new `UpdateRelationalDatabaseParameters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParameters, aws_http::retry::AwsResponseRetryClassifier,>,

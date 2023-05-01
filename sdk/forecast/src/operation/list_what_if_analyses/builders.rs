@@ -8,16 +8,17 @@ pub use crate::operation::list_what_if_analyses::_list_what_if_analyses_input::L
 /// <p>Returns a list of what-if analyses created using the <code>CreateWhatIfAnalysis</code> operation. For each what-if analysis, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the what-if analysis ARN with the <code>DescribeWhatIfAnalysis</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWhatIfAnalysesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_what_if_analyses::builders::ListWhatIfAnalysesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_what_if_analyses::builders::ListWhatIfAnalysesInputBuilder,
+}
 impl ListWhatIfAnalysesFluentBuilder  {
     /// Creates a new `ListWhatIfAnalyses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_what_if_analyses::ListWhatIfAnalyses, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWhatIfAnalysesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator {
-                            crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator {
+                                crate::operation::list_what_if_analyses::paginator::ListWhatIfAnalysesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

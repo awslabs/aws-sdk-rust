@@ -8,16 +8,17 @@ pub use crate::operation::describe_conformance_packs::_describe_conformance_pack
 /// <p>Returns a list of one or more conformance packs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConformancePacksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_conformance_packs::builders::DescribeConformancePacksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_conformance_packs::builders::DescribeConformancePacksInputBuilder,
+}
 impl DescribeConformancePacksFluentBuilder  {
     /// Creates a new `DescribeConformancePacks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_conformance_packs::DescribeConformancePacks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeConformancePacksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator {
-                            crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator {
+                                crate::operation::describe_conformance_packs::paginator::DescribeConformancePacksPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ConformancePackNames`.
     ///
     /// To override the contents of this collection use [`set_conformance_pack_names`](Self::set_conformance_pack_names).

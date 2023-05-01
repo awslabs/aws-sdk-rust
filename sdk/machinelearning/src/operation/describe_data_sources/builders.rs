@@ -8,16 +8,17 @@ pub use crate::operation::describe_data_sources::_describe_data_sources_input::D
 /// <p>Returns a list of <code>DataSource</code> that match the search criteria in the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDataSourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_data_sources::builders::DescribeDataSourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_data_sources::builders::DescribeDataSourcesInputBuilder,
+}
 impl DescribeDataSourcesFluentBuilder  {
     /// Creates a new `DescribeDataSources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_data_sources::DescribeDataSources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDataSourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator {
-                            crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator {
+                                crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p> 
     /// <ul> 
     /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li> 

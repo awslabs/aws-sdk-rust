@@ -8,16 +8,17 @@ pub use crate::operation::describe_resource_permissions::_describe_resource_perm
 /// <p>Describes the permissions of a specified resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeResourcePermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder,
+}
 impl DescribeResourcePermissionsFluentBuilder  {
     /// Creates a new `DescribeResourcePermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_resource_permissions::DescribeResourcePermissions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeResourcePermissionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_resource_permissions::paginator::DescribeResourcePermissionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_resource_permissions::paginator::DescribeResourcePermissionsPaginator {
-                            crate::operation::describe_resource_permissions::paginator::DescribeResourcePermissionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_resource_permissions::paginator::DescribeResourcePermissionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_resource_permissions::paginator::DescribeResourcePermissionsPaginator {
+                                crate::operation::describe_resource_permissions::paginator::DescribeResourcePermissionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());

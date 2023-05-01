@@ -8,16 +8,17 @@ pub use crate::operation::batch_associate_service_action_with_provisioning_artif
 /// <p>Associates multiple self-service actions with provisioning artifacts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_associate_service_action_with_provisioning_artifact::builders::BatchAssociateServiceActionWithProvisioningArtifactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_associate_service_action_with_provisioning_artifact::builders::BatchAssociateServiceActionWithProvisioningArtifactInputBuilder,
+}
 impl BatchAssociateServiceActionWithProvisioningArtifactFluentBuilder  {
     /// Creates a new `BatchAssociateServiceActionWithProvisioningArtifact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_associate_service_action_with_provisioning_artifact::BatchAssociateServiceActionWithProvisioningArtifact, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::batch_put_metrics::_batch_put_metrics_input::BatchPutM
 /// <p>Used to ingest training metrics into SageMaker. These metrics can be visualized in SageMaker Studio and retrieved with the <code>GetMetrics</code> API. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchPutMetricsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_put_metrics::builders::BatchPutMetricsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_put_metrics::builders::BatchPutMetricsInputBuilder,
+}
 impl BatchPutMetricsFluentBuilder  {
     /// Creates a new `BatchPutMetrics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_put_metrics::BatchPutMetrics, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_s3_resources::_list_s3_resources_input::ListS3Res
 /// <p>(Discontinued) Lists all the S3 resources associated with Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action lists the S3 resources associated with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action lists the S3 resources associated with Macie Classic for the specified member account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListS3ResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_s3_resources::builders::ListS3ResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_s3_resources::builders::ListS3ResourcesInputBuilder,
+}
 impl ListS3ResourcesFluentBuilder  {
     /// Creates a new `ListS3Resources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_s3_resources::ListS3Resources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListS3ResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_s3_resources::paginator::ListS3ResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_s3_resources::paginator::ListS3ResourcesPaginator {
-                            crate::operation::list_s3_resources::paginator::ListS3ResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_s3_resources::paginator::ListS3ResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_s3_resources::paginator::ListS3ResourcesPaginator {
+                                crate::operation::list_s3_resources::paginator::ListS3ResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>(Discontinued) The Amazon Macie Classic member account ID whose associated S3 resources you want to list. </p>
     pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.member_account_id(input.into());

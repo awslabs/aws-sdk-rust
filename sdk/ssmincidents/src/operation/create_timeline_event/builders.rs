@@ -8,16 +8,17 @@ pub use crate::operation::create_timeline_event::_create_timeline_event_input::C
 /// <p>Creates a custom timeline event on the incident details page of an incident record. Incident Manager automatically creates timeline events that mark key moments during an incident. You can create custom timeline events to mark important events that Incident Manager can detect automatically.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTimelineEventFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_timeline_event::builders::CreateTimelineEventInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_timeline_event::builders::CreateTimelineEventInputBuilder,
+}
 impl CreateTimelineEventFluentBuilder  {
     /// Creates a new `CreateTimelineEvent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_timeline_event::CreateTimelineEvent, aws_http::retry::AwsResponseRetryClassifier,>,

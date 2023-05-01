@@ -8,16 +8,17 @@ pub use crate::operation::list_services_by_namespace::_list_services_by_namespac
 /// <p>This operation lists all of the services that are associated with a Cloud Map namespace. This list might include services in different clusters. In contrast, <code>ListServices</code> can only list services in one cluster at a time. If you need to filter the list of services in a single cluster by various parameters, use <code>ListServices</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListServicesByNamespaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_services_by_namespace::builders::ListServicesByNamespaceInputBuilder,
+}
 impl ListServicesByNamespaceFluentBuilder  {
     /// Creates a new `ListServicesByNamespace`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_services_by_namespace::ListServicesByNamespace, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListServicesByNamespaceFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_services_by_namespace::paginator::ListServicesByNamespacePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_services_by_namespace::paginator::ListServicesByNamespacePaginator {
-                            crate::operation::list_services_by_namespace::paginator::ListServicesByNamespacePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_services_by_namespace::paginator::ListServicesByNamespacePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_services_by_namespace::paginator::ListServicesByNamespacePaginator {
+                                crate::operation::list_services_by_namespace::paginator::ListServicesByNamespacePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace to list the services in.</p> 
     /// <p>Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service Connect. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {

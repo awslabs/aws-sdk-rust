@@ -8,16 +8,17 @@ pub use crate::operation::delete_model_card::_delete_model_card_input::DeleteMod
 /// <p>Deletes an Amazon SageMaker Model Card.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteModelCardFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_model_card::builders::DeleteModelCardInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_model_card::builders::DeleteModelCardInputBuilder,
+}
 impl DeleteModelCardFluentBuilder  {
     /// Creates a new `DeleteModelCard`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_model_card::DeleteModelCard, aws_http::retry::AwsResponseRetryClassifier,>,

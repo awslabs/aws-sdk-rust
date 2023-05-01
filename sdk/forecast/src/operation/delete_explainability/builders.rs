@@ -9,16 +9,17 @@ pub use crate::operation::delete_explainability::_delete_explainability_input::D
 /// <p>You can delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeExplainability</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteExplainabilityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_explainability::builders::DeleteExplainabilityInputBuilder,
+}
 impl DeleteExplainabilityFluentBuilder  {
     /// Creates a new `DeleteExplainability`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_explainability::DeleteExplainability, aws_http::retry::AwsResponseRetryClassifier,>,

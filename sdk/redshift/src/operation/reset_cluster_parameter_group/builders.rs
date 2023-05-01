@@ -8,16 +8,17 @@ pub use crate::operation::reset_cluster_parameter_group::_reset_cluster_paramete
 /// <p>Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to "engine-default". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect you must reboot any associated clusters. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetClusterParameterGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_cluster_parameter_group::builders::ResetClusterParameterGroupInputBuilder,
+}
 impl ResetClusterParameterGroupFluentBuilder  {
     /// Creates a new `ResetClusterParameterGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroup, aws_http::retry::AwsResponseRetryClassifier,>,

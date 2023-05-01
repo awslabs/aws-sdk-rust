@@ -8,16 +8,17 @@ pub use crate::operation::notify_recommendations_received::_notify_recommendatio
 /// <p>Removes the specified recommendations from the specified assistant's queue of newly available recommendations. You can use this API in conjunction with <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a> and a <code>waitTimeSeconds</code> input for long-polling behavior and avoiding duplicate recommendations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct NotifyRecommendationsReceivedFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder,
+}
 impl NotifyRecommendationsReceivedFluentBuilder  {
     /// Creates a new `NotifyRecommendationsReceived`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::notify_recommendations_received::NotifyRecommendationsReceived, aws_http::retry::AwsResponseRetryClassifier,>,

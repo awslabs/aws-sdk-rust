@@ -8,16 +8,17 @@ pub use crate::operation::describe_signaling_channel::_describe_signaling_channe
 /// <p>Returns the most current information about the signaling channel. You must specify either the name or the Amazon Resource Name (ARN) of the channel that you want to describe.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSignalingChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelInputBuilder,
+}
 impl DescribeSignalingChannelFluentBuilder  {
     /// Creates a new `DescribeSignalingChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_signaling_channel::DescribeSignalingChannel, aws_http::retry::AwsResponseRetryClassifier,>,

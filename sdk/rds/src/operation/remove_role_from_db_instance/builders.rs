@@ -8,16 +8,17 @@ pub use crate::operation::remove_role_from_db_instance::_remove_role_from_db_ins
 /// <p>Disassociates an Amazon Web Services Identity and Access Management (IAM) role from a DB instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveRoleFromDBInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDbInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_role_from_db_instance::builders::RemoveRoleFromDbInstanceInputBuilder,
+}
 impl RemoveRoleFromDBInstanceFluentBuilder  {
     /// Creates a new `RemoveRoleFromDBInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_role_from_db_instance::RemoveRoleFromDBInstance, aws_http::retry::AwsResponseRetryClassifier,>,

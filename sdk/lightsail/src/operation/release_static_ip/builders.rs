@@ -8,16 +8,17 @@ pub use crate::operation::release_static_ip::_release_static_ip_input::ReleaseSt
 /// <p>Deletes a specific static IP from your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReleaseStaticIpFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::release_static_ip::builders::ReleaseStaticIpInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::release_static_ip::builders::ReleaseStaticIpInputBuilder,
+}
 impl ReleaseStaticIpFluentBuilder  {
     /// Creates a new `ReleaseStaticIp`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::release_static_ip::ReleaseStaticIp, aws_http::retry::AwsResponseRetryClassifier,>,

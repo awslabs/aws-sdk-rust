@@ -10,16 +10,17 @@ pub use crate::operation::delete_vpc_association_authorization::_delete_vpc_asso
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVPCAssociationAuthorizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vpc_association_authorization::builders::DeleteVpcAssociationAuthorizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vpc_association_authorization::builders::DeleteVpcAssociationAuthorizationInputBuilder,
+}
 impl DeleteVPCAssociationAuthorizationFluentBuilder  {
     /// Creates a new `DeleteVPCAssociationAuthorization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorization, aws_http::retry::AwsResponseRetryClassifier,>,

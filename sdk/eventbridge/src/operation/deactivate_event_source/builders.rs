@@ -10,16 +10,17 @@ pub use crate::operation::deactivate_event_source::_deactivate_event_source_inpu
 /// <p>To activate a deactivated partner event source, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_ActivateEventSource.html">ActivateEventSource</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeactivateEventSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deactivate_event_source::builders::DeactivateEventSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deactivate_event_source::builders::DeactivateEventSourceInputBuilder,
+}
 impl DeactivateEventSourceFluentBuilder  {
     /// Creates a new `DeactivateEventSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deactivate_event_source::DeactivateEventSource, aws_http::retry::AwsResponseRetryClassifier,>,

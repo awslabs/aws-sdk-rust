@@ -8,16 +8,17 @@ pub use crate::operation::update_documentation_version::_update_documentation_ve
 /// <p>Updates a documentation version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDocumentationVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_documentation_version::builders::UpdateDocumentationVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_documentation_version::builders::UpdateDocumentationVersionInputBuilder,
+}
 impl UpdateDocumentationVersionFluentBuilder  {
     /// Creates a new `UpdateDocumentationVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_documentation_version::UpdateDocumentationVersion, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::admin_set_user_mfa_preference::_admin_set_user_mfa_pre
 /// <p>The user's multi-factor authentication (MFA) preference, including which MFA options are activated, and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AdminSetUserMFAPreferenceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::admin_set_user_mfa_preference::builders::AdminSetUserMfaPreferenceInputBuilder,
+}
 impl AdminSetUserMFAPreferenceFluentBuilder  {
     /// Creates a new `AdminSetUserMFAPreference`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreference, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::update_queue_name::_update_queue_name_input::UpdateQue
 /// <p>Updates the name and description of a queue. At least <code>Name</code> or <code>Description</code> must be provided.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateQueueNameFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_queue_name::builders::UpdateQueueNameInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_queue_name::builders::UpdateQueueNameInputBuilder,
+}
 impl UpdateQueueNameFluentBuilder  {
     /// Creates a new `UpdateQueueName`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_queue_name::UpdateQueueName, aws_http::retry::AwsResponseRetryClassifier,>,

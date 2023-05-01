@@ -10,16 +10,17 @@ pub use crate::operation::describe_cluster_subnet_groups::_describe_cluster_subn
 /// <p>If both tag keys and values are omitted from the request, subnet groups are returned regardless of whether they have tag keys or values associated with them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClusterSubnetGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cluster_subnet_groups::builders::DescribeClusterSubnetGroupsInputBuilder,
+}
 impl DescribeClusterSubnetGroupsFluentBuilder  {
     /// Creates a new `DescribeClusterSubnetGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cluster_subnet_groups::DescribeClusterSubnetGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeClusterSubnetGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_subnet_groups::paginator::DescribeClusterSubnetGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_cluster_subnet_groups::paginator::DescribeClusterSubnetGroupsPaginator {
-                            crate::operation::describe_cluster_subnet_groups::paginator::DescribeClusterSubnetGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_subnet_groups::paginator::DescribeClusterSubnetGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_cluster_subnet_groups::paginator::DescribeClusterSubnetGroupsPaginator {
+                                crate::operation::describe_cluster_subnet_groups::paginator::DescribeClusterSubnetGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the cluster subnet group for which information is requested.</p>
     pub fn cluster_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_subnet_group_name(input.into());

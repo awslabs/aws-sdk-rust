@@ -8,16 +8,17 @@ pub use crate::operation::put_dedicated_ip_warmup_attributes::_put_dedicated_ip_
 /// <p></p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutDedicatedIpWarmupAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_dedicated_ip_warmup_attributes::builders::PutDedicatedIpWarmupAttributesInputBuilder,
+}
 impl PutDedicatedIpWarmupAttributesFluentBuilder  {
     /// Creates a new `PutDedicatedIpWarmupAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_dedicated_ip_warmup_attributes::PutDedicatedIpWarmupAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

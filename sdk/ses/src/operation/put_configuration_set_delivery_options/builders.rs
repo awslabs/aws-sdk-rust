@@ -8,16 +8,17 @@ pub use crate::operation::put_configuration_set_delivery_options::_put_configura
 /// <p>Adds or updates the delivery options for a configuration set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutConfigurationSetDeliveryOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_configuration_set_delivery_options::builders::PutConfigurationSetDeliveryOptionsInputBuilder,
+}
 impl PutConfigurationSetDeliveryOptionsFluentBuilder  {
     /// Creates a new `PutConfigurationSetDeliveryOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptions, aws_http::retry::AwsResponseRetryClassifier,>,

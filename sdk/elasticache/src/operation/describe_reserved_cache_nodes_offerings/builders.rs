@@ -8,16 +8,17 @@ pub use crate::operation::describe_reserved_cache_nodes_offerings::_describe_res
 /// <p>Lists available reserved cache node offerings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReservedCacheNodesOfferingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_reserved_cache_nodes_offerings::builders::DescribeReservedCacheNodesOfferingsInputBuilder,
+}
 impl DescribeReservedCacheNodesOfferingsFluentBuilder  {
     /// Creates a new `DescribeReservedCacheNodesOfferings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_cache_nodes_offerings::DescribeReservedCacheNodesOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeReservedCacheNodesOfferingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_cache_nodes_offerings::paginator::DescribeReservedCacheNodesOfferingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_reserved_cache_nodes_offerings::paginator::DescribeReservedCacheNodesOfferingsPaginator {
-                            crate::operation::describe_reserved_cache_nodes_offerings::paginator::DescribeReservedCacheNodesOfferingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_cache_nodes_offerings::paginator::DescribeReservedCacheNodesOfferingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_reserved_cache_nodes_offerings::paginator::DescribeReservedCacheNodesOfferingsPaginator {
+                                crate::operation::describe_reserved_cache_nodes_offerings::paginator::DescribeReservedCacheNodesOfferingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p> 
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
     pub fn reserved_cache_nodes_offering_id(mut self, input: impl Into<std::string::String>) -> Self {

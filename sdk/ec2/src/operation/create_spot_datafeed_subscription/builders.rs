@@ -8,16 +8,17 @@ pub use crate::operation::create_spot_datafeed_subscription::_create_spot_datafe
 /// <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data feed per Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSpotDatafeedSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_spot_datafeed_subscription::builders::CreateSpotDatafeedSubscriptionInputBuilder,
+}
 impl CreateSpotDatafeedSubscriptionFluentBuilder  {
     /// Creates a new `CreateSpotDatafeedSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_spot_datafeed_subscription::CreateSpotDatafeedSubscription, aws_http::retry::AwsResponseRetryClassifier,>,

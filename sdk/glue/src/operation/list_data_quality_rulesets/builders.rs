@@ -8,16 +8,17 @@ pub use crate::operation::list_data_quality_rulesets::_list_data_quality_ruleset
 /// <p>Returns a paginated list of rulesets for the specified list of Glue tables.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDataQualityRulesetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_data_quality_rulesets::builders::ListDataQualityRulesetsInputBuilder,
+}
 impl ListDataQualityRulesetsFluentBuilder  {
     /// Creates a new `ListDataQualityRulesets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_data_quality_rulesets::ListDataQualityRulesets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDataQualityRulesetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_data_quality_rulesets::paginator::ListDataQualityRulesetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_data_quality_rulesets::paginator::ListDataQualityRulesetsPaginator {
-                            crate::operation::list_data_quality_rulesets::paginator::ListDataQualityRulesetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_data_quality_rulesets::paginator::ListDataQualityRulesetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_data_quality_rulesets::paginator::ListDataQualityRulesetsPaginator {
+                                crate::operation::list_data_quality_rulesets::paginator::ListDataQualityRulesetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A paginated token to offset the results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::describe_capacity_reservation_fleets::_describe_capaci
 /// <p>Describes one or more Capacity Reservation Fleets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCapacityReservationFleetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_capacity_reservation_fleets::builders::DescribeCapacityReservationFleetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_capacity_reservation_fleets::builders::DescribeCapacityReservationFleetsInputBuilder,
+}
 impl DescribeCapacityReservationFleetsFluentBuilder  {
     /// Creates a new `DescribeCapacityReservationFleets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_capacity_reservation_fleets::DescribeCapacityReservationFleets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeCapacityReservationFleetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_capacity_reservation_fleets::paginator::DescribeCapacityReservationFleetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_capacity_reservation_fleets::paginator::DescribeCapacityReservationFleetsPaginator {
-                            crate::operation::describe_capacity_reservation_fleets::paginator::DescribeCapacityReservationFleetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_capacity_reservation_fleets::paginator::DescribeCapacityReservationFleetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_capacity_reservation_fleets::paginator::DescribeCapacityReservationFleetsPaginator {
+                                crate::operation::describe_capacity_reservation_fleets::paginator::DescribeCapacityReservationFleetsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `CapacityReservationFleetIds`.
     ///
     /// To override the contents of this collection use [`set_capacity_reservation_fleet_ids`](Self::set_capacity_reservation_fleet_ids).

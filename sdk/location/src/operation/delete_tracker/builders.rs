@@ -10,16 +10,17 @@ pub use crate::operation::delete_tracker::_delete_tracker_input::DeleteTrackerIn
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTrackerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_tracker::builders::DeleteTrackerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_tracker::builders::DeleteTrackerInputBuilder,
+}
 impl DeleteTrackerFluentBuilder  {
     /// Creates a new `DeleteTracker`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_tracker::DeleteTracker, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -11,16 +11,17 @@ pub use crate::operation::stop_dominant_language_detection_job::_stop_dominant_l
 /// <p>When a job is stopped, any documents already processed are written to the output location.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopDominantLanguageDetectionJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_dominant_language_detection_job::builders::StopDominantLanguageDetectionJobInputBuilder,
+}
 impl StopDominantLanguageDetectionJobFluentBuilder  {
     /// Creates a new `StopDominantLanguageDetectionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_dominant_language_detection_job::StopDominantLanguageDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,

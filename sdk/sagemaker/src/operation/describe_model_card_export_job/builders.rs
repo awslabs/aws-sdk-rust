@@ -8,16 +8,17 @@ pub use crate::operation::describe_model_card_export_job::_describe_model_card_e
 /// <p>Describes an Amazon SageMaker Model Card export job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeModelCardExportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_model_card_export_job::builders::DescribeModelCardExportJobInputBuilder,
+}
 impl DescribeModelCardExportJobFluentBuilder  {
     /// Creates a new `DescribeModelCardExportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_model_card_export_job::DescribeModelCardExportJob, aws_http::retry::AwsResponseRetryClassifier,>,

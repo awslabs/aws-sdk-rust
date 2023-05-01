@@ -12,16 +12,17 @@ pub use crate::operation::start_execution::_start_execution_input::StartExecutio
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_execution::builders::StartExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_execution::builders::StartExecutionInputBuilder,
+}
 impl StartExecutionFluentBuilder  {
     /// Creates a new `StartExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_execution::StartExecution, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_db_parameter_groups::_describe_db_parameter_g
 /// <p>Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code> is specified, the list will contain only the description of the specified DB parameter group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBParameterGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_parameter_groups::builders::DescribeDbParameterGroupsInputBuilder,
+}
 impl DescribeDBParameterGroupsFluentBuilder  {
     /// Creates a new `DescribeDBParameterGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_parameter_groups::DescribeDBParameterGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDBParameterGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_parameter_groups::paginator::DescribeDbParameterGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_parameter_groups::paginator::DescribeDbParameterGroupsPaginator {
-                            crate::operation::describe_db_parameter_groups::paginator::DescribeDbParameterGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_parameter_groups::paginator::DescribeDbParameterGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_parameter_groups::paginator::DescribeDbParameterGroupsPaginator {
+                                crate::operation::describe_db_parameter_groups::paginator::DescribeDbParameterGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of a specific DB parameter group to return details for.</p> 
     /// <p>Constraints:</p> 
     /// <ul> 

@@ -9,16 +9,17 @@ pub use crate::operation::send_workflow_step_state::_send_workflow_step_state_in
 /// <p> The <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are passed to the target resource during execution of a custom step of a workflow. You must include those with their callback as well as providing a status. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendWorkflowStepStateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder,
+}
 impl SendWorkflowStepStateFluentBuilder  {
     /// Creates a new `SendWorkflowStepState`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_workflow_step_state::SendWorkflowStepState, aws_http::retry::AwsResponseRetryClassifier,>,

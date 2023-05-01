@@ -23,16 +23,17 @@ pub use crate::operation::list_closed_workflow_executions::_list_closed_workflow
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListClosedWorkflowExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_closed_workflow_executions::builders::ListClosedWorkflowExecutionsInputBuilder,
+}
 impl ListClosedWorkflowExecutionsFluentBuilder  {
     /// Creates a new `ListClosedWorkflowExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -63,11 +64,11 @@ impl ListClosedWorkflowExecutionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_closed_workflow_executions::paginator::ListClosedWorkflowExecutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_closed_workflow_executions::paginator::ListClosedWorkflowExecutionsPaginator {
-                            crate::operation::list_closed_workflow_executions::paginator::ListClosedWorkflowExecutionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_closed_workflow_executions::paginator::ListClosedWorkflowExecutionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_closed_workflow_executions::paginator::ListClosedWorkflowExecutionsPaginator {
+                                crate::operation::list_closed_workflow_executions::paginator::ListClosedWorkflowExecutionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the domain that contains the workflow executions to list.</p>
     pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());

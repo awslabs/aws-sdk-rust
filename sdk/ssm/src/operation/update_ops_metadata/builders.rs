@@ -8,16 +8,17 @@ pub use crate::operation::update_ops_metadata::_update_ops_metadata_input::Updat
 /// <p>Amazon Web Services Systems Manager calls this API operation when you edit OpsMetadata in Application Manager.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateOpsMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_ops_metadata::builders::UpdateOpsMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_ops_metadata::builders::UpdateOpsMetadataInputBuilder,
+}
 impl UpdateOpsMetadataFluentBuilder  {
     /// Creates a new `UpdateOpsMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_ops_metadata::UpdateOpsMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

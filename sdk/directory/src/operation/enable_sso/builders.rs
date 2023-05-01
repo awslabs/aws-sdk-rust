@@ -8,16 +8,17 @@ pub use crate::operation::enable_sso::_enable_sso_input::EnableSsoInputBuilder;
 /// <p>Enables single sign-on for a directory. Single sign-on allows users in your directory to access certain Amazon Web Services services from a computer joined to the directory without having to enter their credentials separately.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableSsoFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_sso::builders::EnableSsoInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_sso::builders::EnableSsoInputBuilder,
+}
 impl EnableSsoFluentBuilder  {
     /// Creates a new `EnableSso`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_sso::EnableSso, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_reference::_delete_reference_input::DeleteRefer
 /// <p>Deletes a genome reference.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteReferenceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_reference::builders::DeleteReferenceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_reference::builders::DeleteReferenceInputBuilder,
+}
 impl DeleteReferenceFluentBuilder  {
     /// Creates a new `DeleteReference`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_reference::DeleteReference, aws_http::retry::AwsResponseRetryClassifier,>,

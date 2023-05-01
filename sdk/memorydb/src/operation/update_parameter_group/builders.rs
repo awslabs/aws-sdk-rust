@@ -8,16 +8,17 @@ pub use crate::operation::update_parameter_group::_update_parameter_group_input:
 /// <p>Updates the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateParameterGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_parameter_group::builders::UpdateParameterGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_parameter_group::builders::UpdateParameterGroupInputBuilder,
+}
 impl UpdateParameterGroupFluentBuilder  {
     /// Creates a new `UpdateParameterGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_parameter_group::UpdateParameterGroup, aws_http::retry::AwsResponseRetryClassifier,>,

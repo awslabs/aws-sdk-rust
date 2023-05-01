@@ -8,16 +8,17 @@ pub use crate::operation::put_configuration_set_suppression_options::_put_config
 /// <p>Specify the account suppression list preferences for a configuration set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutConfigurationSetSuppressionOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsInputBuilder,
+}
 impl PutConfigurationSetSuppressionOptionsFluentBuilder  {
     /// Creates a new `PutConfigurationSetSuppressionOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptions, aws_http::retry::AwsResponseRetryClassifier,>,

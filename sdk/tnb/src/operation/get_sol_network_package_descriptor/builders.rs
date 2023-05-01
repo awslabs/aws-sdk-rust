@@ -9,16 +9,17 @@ pub use crate::operation::get_sol_network_package_descriptor::_get_sol_network_p
 /// <p>A network service descriptor is a .yaml file in a network package that uses the TOSCA standard to describe the network functions you want to deploy and the Amazon Web Services infrastructure you want to deploy the network functions on.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSolNetworkPackageDescriptorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorInputBuilder,
+}
 impl GetSolNetworkPackageDescriptorFluentBuilder  {
     /// Creates a new `GetSolNetworkPackageDescriptor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptor, aws_http::retry::AwsResponseRetryClassifier,>,

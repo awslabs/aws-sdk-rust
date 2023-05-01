@@ -10,16 +10,17 @@ pub use crate::operation::create_pool::_create_pool_input::CreatePoolInputBuilde
 /// <p>If the origination identity is a phone number and is already associated with another pool, an Error is returned. A sender ID can be associated with multiple pools.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_pool::builders::CreatePoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_pool::builders::CreatePoolInputBuilder,
+}
 impl CreatePoolFluentBuilder  {
     /// Creates a new `CreatePool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_pool::CreatePool, aws_http::retry::AwsResponseRetryClassifier,>,

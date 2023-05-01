@@ -9,16 +9,17 @@ pub use crate::operation::update_tls_inspection_configuration::_update_tls_inspe
 /// <p>To update a TLS inspection configuration, first call <code>DescribeTLSInspectionConfiguration</code> to retrieve the current <code>TLSInspectionConfiguration</code> object, update the object as needed, and then provide the updated object to this call. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTLSInspectionConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_tls_inspection_configuration::builders::UpdateTlsInspectionConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_tls_inspection_configuration::builders::UpdateTlsInspectionConfigurationInputBuilder,
+}
 impl UpdateTLSInspectionConfigurationFluentBuilder  {
     /// Creates a new `UpdateTLSInspectionConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

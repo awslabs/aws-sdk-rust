@@ -8,16 +8,17 @@ pub use crate::operation::list_web_ac_ls::_list_web_ac_ls_input::ListWebAcLsInpu
 /// <p>Retrieves an array of <code>WebACLSummary</code> objects for the web ACLs that you manage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWebACLsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_web_ac_ls::builders::ListWebAcLsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_web_ac_ls::builders::ListWebAcLsInputBuilder,
+}
 impl ListWebACLsFluentBuilder  {
     /// Creates a new `ListWebACLs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_web_ac_ls::ListWebACLs, aws_http::retry::AwsResponseRetryClassifier,>,

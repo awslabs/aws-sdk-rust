@@ -8,16 +8,17 @@ pub use crate::operation::list_fhir_import_jobs::_list_fhir_import_jobs_input::L
 /// <p> Lists all FHIR import jobs associated with an account and their statuses. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFHIRImportJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_fhir_import_jobs::builders::ListFhirImportJobsInputBuilder,
+}
 impl ListFHIRImportJobsFluentBuilder  {
     /// Creates a new `ListFHIRImportJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_fhir_import_jobs::ListFHIRImportJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFHIRImportJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_fhir_import_jobs::paginator::ListFhirImportJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_fhir_import_jobs::paginator::ListFhirImportJobsPaginator {
-                            crate::operation::list_fhir_import_jobs::paginator::ListFhirImportJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_fhir_import_jobs::paginator::ListFhirImportJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_fhir_import_jobs::paginator::ListFhirImportJobsPaginator {
+                                crate::operation::list_fhir_import_jobs::paginator::ListFhirImportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> This parameter limits the response to the import job with the specified Data Store ID. </p>
     pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.datastore_id(input.into());

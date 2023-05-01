@@ -8,16 +8,17 @@ pub use crate::operation::decrease_node_groups_in_global_replication_group::_dec
 /// <p>Decreases the number of node groups in a Global datastore</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DecreaseNodeGroupsInGlobalReplicationGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder,
+}
 impl DecreaseNodeGroupsInGlobalReplicationGroupFluentBuilder  {
     /// Creates a new `DecreaseNodeGroupsInGlobalReplicationGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroup, aws_http::retry::AwsResponseRetryClassifier,>,

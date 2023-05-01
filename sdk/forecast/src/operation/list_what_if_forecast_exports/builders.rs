@@ -8,16 +8,17 @@ pub use crate::operation::list_what_if_forecast_exports::_list_what_if_forecast_
 /// <p>Returns a list of what-if forecast exports created using the <code>CreateWhatIfForecastExport</code> operation. For each what-if forecast export, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the what-if forecast export ARN with the <code>DescribeWhatIfForecastExport</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWhatIfForecastExportsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_what_if_forecast_exports::builders::ListWhatIfForecastExportsInputBuilder,
+}
 impl ListWhatIfForecastExportsFluentBuilder  {
     /// Creates a new `ListWhatIfForecastExports`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExports, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWhatIfForecastExportsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_what_if_forecast_exports::paginator::ListWhatIfForecastExportsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_what_if_forecast_exports::paginator::ListWhatIfForecastExportsPaginator {
-                            crate::operation::list_what_if_forecast_exports::paginator::ListWhatIfForecastExportsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_what_if_forecast_exports::paginator::ListWhatIfForecastExportsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_what_if_forecast_exports::paginator::ListWhatIfForecastExportsPaginator {
+                                crate::operation::list_what_if_forecast_exports::paginator::ListWhatIfForecastExportsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next  request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

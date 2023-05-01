@@ -9,16 +9,17 @@ pub use crate::operation::start_network_resource_update::_start_network_resource
 /// <p>After you submit a request to replace or return a network resource, the status of the network resource is <code>CREATING_SHIPPING_LABEL</code>. The shipping label is available when the status of the network resource is <code>PENDING_RETURN</code>. After the network resource is successfully returned, its status is <code>DELETED</code>. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a radio unit</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartNetworkResourceUpdateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder,
+}
 impl StartNetworkResourceUpdateFluentBuilder  {
     /// Creates a new `StartNetworkResourceUpdate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_network_resource_update::StartNetworkResourceUpdate, aws_http::retry::AwsResponseRetryClassifier,>,

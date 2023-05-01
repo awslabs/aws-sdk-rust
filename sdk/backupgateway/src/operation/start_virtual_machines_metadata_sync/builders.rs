@@ -8,16 +8,17 @@ pub use crate::operation::start_virtual_machines_metadata_sync::_start_virtual_m
 /// <p>This action sends a request to sync metadata across the specified virtual machines.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartVirtualMachinesMetadataSyncFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_virtual_machines_metadata_sync::builders::StartVirtualMachinesMetadataSyncInputBuilder,
+}
 impl StartVirtualMachinesMetadataSyncFluentBuilder  {
     /// Creates a new `StartVirtualMachinesMetadataSync`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSync, aws_http::retry::AwsResponseRetryClassifier,>,

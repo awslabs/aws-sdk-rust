@@ -8,16 +8,17 @@ pub use crate::operation::list_fargate_profiles::_list_fargate_profiles_input::L
 /// <p>Lists the Fargate profiles associated with the specified cluster in your Amazon Web Services account in the specified Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFargateProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_fargate_profiles::builders::ListFargateProfilesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_fargate_profiles::builders::ListFargateProfilesInputBuilder,
+}
 impl ListFargateProfilesFluentBuilder  {
     /// Creates a new `ListFargateProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_fargate_profiles::ListFargateProfiles, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFargateProfilesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_fargate_profiles::paginator::ListFargateProfilesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_fargate_profiles::paginator::ListFargateProfilesPaginator {
-                            crate::operation::list_fargate_profiles::paginator::ListFargateProfilesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_fargate_profiles::paginator::ListFargateProfilesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_fargate_profiles::paginator::ListFargateProfilesPaginator {
+                                crate::operation::list_fargate_profiles::paginator::ListFargateProfilesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the Amazon EKS cluster that you would like to list Fargate profiles in.</p>
     pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());

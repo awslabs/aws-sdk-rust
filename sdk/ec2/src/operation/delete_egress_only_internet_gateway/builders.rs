@@ -8,16 +8,17 @@ pub use crate::operation::delete_egress_only_internet_gateway::_delete_egress_on
 /// <p>Deletes an egress-only internet gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEgressOnlyInternetGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_egress_only_internet_gateway::builders::DeleteEgressOnlyInternetGatewayInputBuilder,
+}
 impl DeleteEgressOnlyInternetGatewayFluentBuilder  {
     /// Creates a new `DeleteEgressOnlyInternetGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_egress_only_internet_gateway::DeleteEgressOnlyInternetGateway, aws_http::retry::AwsResponseRetryClassifier,>,

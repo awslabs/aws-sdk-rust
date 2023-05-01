@@ -9,16 +9,17 @@ pub use crate::operation::get_context_keys_for_custom_policy::_get_context_keys_
 /// <p>Context keys are variables maintained by Amazon Web Services and its services that provide details about the context of an API query request. Context keys can be evaluated by testing against a value specified in an IAM policy. Use <code>GetContextKeysForCustomPolicy</code> to understand what key names and values you must supply when you call <code>SimulateCustomPolicy</code>. Note that all parameters are shown in unencoded form here for clarity but must be URL encoded to be included as a part of a real HTML request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetContextKeysForCustomPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_context_keys_for_custom_policy::builders::GetContextKeysForCustomPolicyInputBuilder,
+}
 impl GetContextKeysForCustomPolicyFluentBuilder  {
     /// Creates a new `GetContextKeysForCustomPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

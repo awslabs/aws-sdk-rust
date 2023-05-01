@@ -8,16 +8,17 @@ pub use crate::operation::describe_ml_models::_describe_ml_models_input::Describ
 /// <p>Returns a list of <code>MLModel</code> that match the search criteria in the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMLModelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_ml_models::builders::DescribeMlModelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_ml_models::builders::DescribeMlModelsInputBuilder,
+}
 impl DescribeMLModelsFluentBuilder  {
     /// Creates a new `DescribeMLModels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_ml_models::DescribeMLModels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeMLModelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator {
-                            crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator {
+                                crate::operation::describe_ml_models::paginator::DescribeMlModelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p> 
     /// <ul> 
     /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</p> </li> 

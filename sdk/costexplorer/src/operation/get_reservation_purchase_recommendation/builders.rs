@@ -10,16 +10,17 @@ pub use crate::operation::get_reservation_purchase_recommendation::_get_reservat
 /// <p>For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web Services recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also shows the equal number of normalized units. This way, you can purchase any instance size that you want. For this example, your RI recommendation is for <code>c4.large</code> because that is the smallest size instance in the c4 instance family.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetReservationPurchaseRecommendationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_reservation_purchase_recommendation::builders::GetReservationPurchaseRecommendationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_reservation_purchase_recommendation::builders::GetReservationPurchaseRecommendationInputBuilder,
+}
 impl GetReservationPurchaseRecommendationFluentBuilder  {
     /// Creates a new `GetReservationPurchaseRecommendation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendation, aws_http::retry::AwsResponseRetryClassifier,>,

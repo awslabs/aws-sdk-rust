@@ -8,16 +8,17 @@ pub use crate::operation::deregister_db_proxy_targets::_deregister_db_proxy_targ
 /// <p>Remove the association between one or more <code>DBProxyTarget</code> data structures and a <code>DBProxyTargetGroup</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterDBProxyTargetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_db_proxy_targets::builders::DeregisterDbProxyTargetsInputBuilder,
+}
 impl DeregisterDBProxyTargetsFluentBuilder  {
     /// Creates a new `DeregisterDBProxyTargets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargets, aws_http::retry::AwsResponseRetryClassifier,>,

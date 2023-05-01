@@ -8,16 +8,17 @@ pub use crate::operation::confirm_forgot_password::_confirm_forgot_password_inpu
 /// <p>Allows a user to enter a confirmation code to reset a forgotten password.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfirmForgotPasswordFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::confirm_forgot_password::builders::ConfirmForgotPasswordInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::confirm_forgot_password::builders::ConfirmForgotPasswordInputBuilder,
+}
 impl ConfirmForgotPasswordFluentBuilder  {
     /// Creates a new `ConfirmForgotPassword`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::confirm_forgot_password::ConfirmForgotPassword, aws_http::retry::AwsResponseRetryClassifier,>,

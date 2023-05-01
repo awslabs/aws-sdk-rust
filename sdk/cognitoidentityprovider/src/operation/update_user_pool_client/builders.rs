@@ -11,16 +11,17 @@ pub use crate::operation::update_user_pool_client::_update_user_pool_client_inpu
 /// <p>You can also use this operation to enable token revocation for user pool clients. For more information about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateUserPoolClientFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_user_pool_client::builders::UpdateUserPoolClientInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_user_pool_client::builders::UpdateUserPoolClientInputBuilder,
+}
 impl UpdateUserPoolClientFluentBuilder  {
     /// Creates a new `UpdateUserPoolClient`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_user_pool_client::UpdateUserPoolClient, aws_http::retry::AwsResponseRetryClassifier,>,

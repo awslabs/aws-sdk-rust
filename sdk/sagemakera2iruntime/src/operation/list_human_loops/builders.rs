@@ -8,16 +8,17 @@ pub use crate::operation::list_human_loops::_list_human_loops_input::ListHumanLo
 /// <p>Returns information about human loops, given the specified parameters. If a human loop was deleted, it will not be included.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListHumanLoopsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_human_loops::builders::ListHumanLoopsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_human_loops::builders::ListHumanLoopsInputBuilder,
+}
 impl ListHumanLoopsFluentBuilder  {
     /// Creates a new `ListHumanLoops`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_human_loops::ListHumanLoops, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListHumanLoopsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator {
-                            crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator {
+                                crate::operation::list_human_loops::paginator::ListHumanLoopsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);

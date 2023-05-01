@@ -9,16 +9,17 @@ pub use crate::operation::delete_insight_rules::_delete_insight_rules_input::Del
 /// <p>If you create a rule, delete it, and then re-create it with the same name, historical data from the first time the rule was created might not be available.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInsightRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_insight_rules::builders::DeleteInsightRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_insight_rules::builders::DeleteInsightRulesInputBuilder,
+}
 impl DeleteInsightRulesFluentBuilder  {
     /// Creates a new `DeleteInsightRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_insight_rules::DeleteInsightRules, aws_http::retry::AwsResponseRetryClassifier,>,

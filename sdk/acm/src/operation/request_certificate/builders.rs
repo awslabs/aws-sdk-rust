@@ -12,16 +12,17 @@ pub use crate::operation::request_certificate::_request_certificate_input::Reque
 /// <p>After successful completion of the <code>RequestCertificate</code> action, there is a delay of several seconds before you can retrieve information about the new certificate.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RequestCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::request_certificate::builders::RequestCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::request_certificate::builders::RequestCertificateInputBuilder,
+}
 impl RequestCertificateFluentBuilder  {
     /// Creates a new `RequestCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::request_certificate::RequestCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

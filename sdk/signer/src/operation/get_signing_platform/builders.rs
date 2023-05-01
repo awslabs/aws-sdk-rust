@@ -8,16 +8,17 @@ pub use crate::operation::get_signing_platform::_get_signing_platform_input::Get
 /// <p>Returns information on a specific signing platform.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSigningPlatformFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_signing_platform::builders::GetSigningPlatformInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_signing_platform::builders::GetSigningPlatformInputBuilder,
+}
 impl GetSigningPlatformFluentBuilder  {
     /// Creates a new `GetSigningPlatform`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_signing_platform::GetSigningPlatform, aws_http::retry::AwsResponseRetryClassifier,>,

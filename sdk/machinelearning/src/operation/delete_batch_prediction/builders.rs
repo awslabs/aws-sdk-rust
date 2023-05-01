@@ -10,16 +10,17 @@ pub use crate::operation::delete_batch_prediction::_delete_batch_prediction_inpu
 /// <p> <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is irreversible.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBatchPredictionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_batch_prediction::builders::DeleteBatchPredictionInputBuilder,
+}
 impl DeleteBatchPredictionFluentBuilder  {
     /// Creates a new `DeleteBatchPrediction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_batch_prediction::DeleteBatchPrediction, aws_http::retry::AwsResponseRetryClassifier,>,

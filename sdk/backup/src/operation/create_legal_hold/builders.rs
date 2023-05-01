@@ -8,16 +8,17 @@ pub use crate::operation::create_legal_hold::_create_legal_hold_input::CreateLeg
 /// <p>This action creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a recovery point will fail with an error if one or more active legal holds are on the recovery point.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLegalHoldFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_legal_hold::builders::CreateLegalHoldInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_legal_hold::builders::CreateLegalHoldInputBuilder,
+}
 impl CreateLegalHoldFluentBuilder  {
     /// Creates a new `CreateLegalHold`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_legal_hold::CreateLegalHold, aws_http::retry::AwsResponseRetryClassifier,>,

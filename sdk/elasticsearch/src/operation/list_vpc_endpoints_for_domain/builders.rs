@@ -8,16 +8,17 @@ pub use crate::operation::list_vpc_endpoints_for_domain::_list_vpc_endpoints_for
 /// <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVpcEndpointsForDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_vpc_endpoints_for_domain::builders::ListVpcEndpointsForDomainInputBuilder,
+}
 impl ListVpcEndpointsForDomainFluentBuilder  {
     /// Creates a new `ListVpcEndpointsForDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomain, aws_http::retry::AwsResponseRetryClassifier,>,

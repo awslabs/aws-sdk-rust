@@ -8,16 +8,17 @@ pub use crate::operation::get_evidence_by_evidence_folder::_get_evidence_by_evid
 /// <p> Returns all evidence from a specified evidence folder in Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEvidenceByEvidenceFolderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_evidence_by_evidence_folder::builders::GetEvidenceByEvidenceFolderInputBuilder,
+}
 impl GetEvidenceByEvidenceFolderFluentBuilder  {
     /// Creates a new `GetEvidenceByEvidenceFolder`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_evidence_by_evidence_folder::GetEvidenceByEvidenceFolder, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetEvidenceByEvidenceFolderFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator {
-                            crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator {
+                                crate::operation::get_evidence_by_evidence_folder::paginator::GetEvidenceByEvidenceFolderPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The identifier for the assessment. </p>
     pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());

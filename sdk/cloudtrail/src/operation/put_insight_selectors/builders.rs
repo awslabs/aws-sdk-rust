@@ -8,16 +8,17 @@ pub use crate::operation::put_insight_selectors::_put_insight_selectors_input::P
 /// <p>Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an empty list of insight types. The valid Insights event types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutInsightSelectorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_insight_selectors::builders::PutInsightSelectorsInputBuilder,
+}
 impl PutInsightSelectorsFluentBuilder  {
     /// Creates a new `PutInsightSelectors`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_insight_selectors::PutInsightSelectors, aws_http::retry::AwsResponseRetryClassifier,>,

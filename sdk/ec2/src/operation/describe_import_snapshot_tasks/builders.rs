@@ -8,16 +8,17 @@ pub use crate::operation::describe_import_snapshot_tasks::_describe_import_snaps
 /// <p>Describes your import snapshot tasks.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeImportSnapshotTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_import_snapshot_tasks::builders::DescribeImportSnapshotTasksInputBuilder,
+}
 impl DescribeImportSnapshotTasksFluentBuilder  {
     /// Creates a new `DescribeImportSnapshotTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeImportSnapshotTasksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_import_snapshot_tasks::paginator::DescribeImportSnapshotTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_import_snapshot_tasks::paginator::DescribeImportSnapshotTasksPaginator {
-                            crate::operation::describe_import_snapshot_tasks::paginator::DescribeImportSnapshotTasksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_import_snapshot_tasks::paginator::DescribeImportSnapshotTasksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_import_snapshot_tasks::paginator::DescribeImportSnapshotTasksPaginator {
+                                crate::operation::describe_import_snapshot_tasks::paginator::DescribeImportSnapshotTasksPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

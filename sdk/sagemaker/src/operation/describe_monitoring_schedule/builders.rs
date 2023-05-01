@@ -8,16 +8,17 @@ pub use crate::operation::describe_monitoring_schedule::_describe_monitoring_sch
 /// <p>Describes the schedule for a monitoring job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMonitoringScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_monitoring_schedule::builders::DescribeMonitoringScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_monitoring_schedule::builders::DescribeMonitoringScheduleInputBuilder,
+}
 impl DescribeMonitoringScheduleFluentBuilder  {
     /// Creates a new `DescribeMonitoringSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_monitoring_schedule::DescribeMonitoringSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

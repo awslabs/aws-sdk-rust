@@ -9,16 +9,17 @@ pub use crate::operation::modify_vpc_endpoint_service_configuration::_modify_vpc
 /// <p>If you set or modify the private DNS name, you must prove that you own the private DNS domain name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpcEndpointServiceConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_vpc_endpoint_service_configuration::builders::ModifyVpcEndpointServiceConfigurationInputBuilder,
+}
 impl ModifyVpcEndpointServiceConfigurationFluentBuilder  {
     /// Creates a new `ModifyVpcEndpointServiceConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_endpoint_service_configuration::ModifyVpcEndpointServiceConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

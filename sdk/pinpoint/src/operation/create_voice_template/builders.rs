@@ -8,16 +8,17 @@ pub use crate::operation::create_voice_template::_create_voice_template_input::C
 /// <p>Creates a message template for messages that are sent through the voice channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVoiceTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_voice_template::builders::CreateVoiceTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_voice_template::builders::CreateVoiceTemplateInputBuilder,
+}
 impl CreateVoiceTemplateFluentBuilder  {
     /// Creates a new `CreateVoiceTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_voice_template::CreateVoiceTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

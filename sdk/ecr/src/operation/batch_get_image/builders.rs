@@ -9,16 +9,17 @@ pub use crate::operation::batch_get_image::_batch_get_image_input::BatchGetImage
 /// <p>When an image is pulled, the BatchGetImage API is called once to retrieve the image manifest.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetImageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_image::builders::BatchGetImageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_image::builders::BatchGetImageInputBuilder,
+}
 impl BatchGetImageFluentBuilder  {
     /// Creates a new `BatchGetImage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_image::BatchGetImage, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_instance_snapshots::_get_instance_snapshots_input:
 /// <p>Returns all instance snapshots for the user's account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInstanceSnapshotsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_instance_snapshots::builders::GetInstanceSnapshotsInputBuilder,
+}
 impl GetInstanceSnapshotsFluentBuilder  {
     /// Creates a new `GetInstanceSnapshots`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_instance_snapshots::GetInstanceSnapshots, aws_http::retry::AwsResponseRetryClassifier,>,

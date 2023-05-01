@@ -8,16 +8,17 @@ pub use crate::operation::describe_table_restore_status::_describe_table_restore
 /// <p>Lists the status of one or more table restore requests made using the <code>RestoreTableFromClusterSnapshot</code> API action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and time of the request in ascending order. Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the table specified by <code>TableRestoreRequestId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTableRestoreStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_table_restore_status::builders::DescribeTableRestoreStatusInputBuilder,
+}
 impl DescribeTableRestoreStatusFluentBuilder  {
     /// Creates a new `DescribeTableRestoreStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_table_restore_status::DescribeTableRestoreStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeTableRestoreStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator {
-                            crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator {
+                                crate::operation::describe_table_restore_status::paginator::DescribeTableRestoreStatusPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());

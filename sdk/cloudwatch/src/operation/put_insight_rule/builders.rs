@@ -9,16 +9,17 @@ pub use crate::operation::put_insight_rule::_put_insight_rule_input::PutInsightR
 /// <p>If you create a rule, delete it, and then re-create it with the same name, historical data from the first time the rule was created might not be available.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutInsightRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_insight_rule::builders::PutInsightRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_insight_rule::builders::PutInsightRuleInputBuilder,
+}
 impl PutInsightRuleFluentBuilder  {
     /// Creates a new `PutInsightRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_insight_rule::PutInsightRule, aws_http::retry::AwsResponseRetryClassifier,>,

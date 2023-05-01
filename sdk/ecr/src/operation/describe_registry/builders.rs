@@ -8,16 +8,17 @@ pub use crate::operation::describe_registry::_describe_registry_input::DescribeR
 /// <p>Describes the settings for a registry. The replication configuration for a repository can be created or updated with the <code>PutReplicationConfiguration</code> API action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRegistryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_registry::builders::DescribeRegistryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_registry::builders::DescribeRegistryInputBuilder,
+}
 impl DescribeRegistryFluentBuilder  {
     /// Creates a new `DescribeRegistry`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_registry::DescribeRegistry, aws_http::retry::AwsResponseRetryClassifier,>,

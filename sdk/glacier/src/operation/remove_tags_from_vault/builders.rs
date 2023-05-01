@@ -8,16 +8,17 @@ pub use crate::operation::remove_tags_from_vault::_remove_tags_from_vault_input:
 /// <p>This operation removes one or more tags from the set of tags attached to a vault. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon S3 Glacier Resources</a>. This operation is idempotent. The operation will be successful, even if there are no tags attached to the vault. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveTagsFromVaultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_tags_from_vault::builders::RemoveTagsFromVaultInputBuilder,
+}
 impl RemoveTagsFromVaultFluentBuilder  {
     /// Creates a new `RemoveTagsFromVault`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_tags_from_vault::RemoveTagsFromVault, aws_http::retry::AwsResponseRetryClassifier,>,

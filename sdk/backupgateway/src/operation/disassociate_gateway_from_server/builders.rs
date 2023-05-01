@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_gateway_from_server::_disassociate_gatewa
 /// <p>Disassociates a backup gateway from the specified server. After the disassociation process finishes, the gateway can no longer access the virtual machines on the server.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateGatewayFromServerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerInputBuilder,
+}
 impl DisassociateGatewayFromServerFluentBuilder  {
     /// Creates a new `DisassociateGatewayFromServer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServer, aws_http::retry::AwsResponseRetryClassifier,>,

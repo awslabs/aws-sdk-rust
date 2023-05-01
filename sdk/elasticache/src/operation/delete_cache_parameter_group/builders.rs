@@ -8,16 +8,17 @@ pub use crate::operation::delete_cache_parameter_group::_delete_cache_parameter_
 /// <p>Deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters. You cannot delete the default cache parameter groups in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCacheParameterGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_cache_parameter_group::builders::DeleteCacheParameterGroupInputBuilder,
+}
 impl DeleteCacheParameterGroupFluentBuilder  {
     /// Creates a new `DeleteCacheParameterGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroup, aws_http::retry::AwsResponseRetryClassifier,>,

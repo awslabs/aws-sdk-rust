@@ -8,16 +8,17 @@ pub use crate::operation::get_reserved_instances_exchange_quote::_get_reserved_i
 /// <p>Returns a quote and exchange information for exchanging one or more specified Convertible Reserved Instances for a new Convertible Reserved Instance. If the exchange cannot be performed, the reason is returned in the response. Use <code>AcceptReservedInstancesExchangeQuote</code> to perform the exchange.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetReservedInstancesExchangeQuoteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_reserved_instances_exchange_quote::builders::GetReservedInstancesExchangeQuoteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_reserved_instances_exchange_quote::builders::GetReservedInstancesExchangeQuoteInputBuilder,
+}
 impl GetReservedInstancesExchangeQuoteFluentBuilder  {
     /// Creates a new `GetReservedInstancesExchangeQuote`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuote, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::provision_ipam_pool_cidr::_provision_ipam_pool_cidr_in
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/prov-cidr-ipam.html">Provision CIDRs to pools</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ProvisionIpamPoolCidrFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::provision_ipam_pool_cidr::builders::ProvisionIpamPoolCidrInputBuilder,
+}
 impl ProvisionIpamPoolCidrFluentBuilder  {
     /// Creates a new `ProvisionIpamPoolCidr`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidr, aws_http::retry::AwsResponseRetryClassifier,>,

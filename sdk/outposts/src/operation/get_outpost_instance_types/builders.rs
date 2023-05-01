@@ -8,16 +8,17 @@ pub use crate::operation::get_outpost_instance_types::_get_outpost_instance_type
 /// <p>Gets the instance types for the specified Outpost.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOutpostInstanceTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_outpost_instance_types::builders::GetOutpostInstanceTypesInputBuilder,
+}
 impl GetOutpostInstanceTypesFluentBuilder  {
     /// Creates a new `GetOutpostInstanceTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_outpost_instance_types::GetOutpostInstanceTypes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetOutpostInstanceTypesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator {
-                            crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator {
+                                crate::operation::get_outpost_instance_types::paginator::GetOutpostInstanceTypesPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
     pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.outpost_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::get_dev_environment::_get_dev_environment_input::GetDe
 /// <p>Returns information about a Dev Environment for a source repository in a project. Dev Environments are specific to the user who creates them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDevEnvironmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_dev_environment::builders::GetDevEnvironmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_dev_environment::builders::GetDevEnvironmentInputBuilder,
+}
 impl GetDevEnvironmentFluentBuilder  {
     /// Creates a new `GetDevEnvironment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_dev_environment::GetDevEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,

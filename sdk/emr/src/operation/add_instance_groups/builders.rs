@@ -8,16 +8,17 @@ pub use crate::operation::add_instance_groups::_add_instance_groups_input::AddIn
 /// <p>Adds one or more instance groups to a running cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddInstanceGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_instance_groups::builders::AddInstanceGroupsInputBuilder,
+}
 impl AddInstanceGroupsFluentBuilder  {
     /// Creates a new `AddInstanceGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_instance_groups::AddInstanceGroups, aws_http::retry::AwsResponseRetryClassifier,>,

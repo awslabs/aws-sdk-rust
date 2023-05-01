@@ -8,16 +8,17 @@ pub use crate::operation::get_notification_configuration::_get_notification_conf
 /// <p>Get the current configuration for anomaly notifications for a profiling group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetNotificationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_notification_configuration::builders::GetNotificationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_notification_configuration::builders::GetNotificationConfigurationInputBuilder,
+}
 impl GetNotificationConfigurationFluentBuilder  {
     /// Creates a new `GetNotificationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_notification_configuration::GetNotificationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

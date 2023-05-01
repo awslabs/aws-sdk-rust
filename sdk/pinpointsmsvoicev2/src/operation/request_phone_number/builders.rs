@@ -8,16 +8,17 @@ pub use crate::operation::request_phone_number::_request_phone_number_input::Req
 /// <p>Request an origination phone number for use in your account. For more information on phone number request see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-request-number.html"> Requesting a number </a> in the <i>Amazon Pinpoint User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RequestPhoneNumberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder,
+}
 impl RequestPhoneNumberFluentBuilder  {
     /// Creates a new `RequestPhoneNumber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::request_phone_number::RequestPhoneNumber, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -11,16 +11,17 @@ pub use crate::operation::associate_tracker_consumer::_associate_tracker_consume
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateTrackerConsumerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder,
+}
 impl AssociateTrackerConsumerFluentBuilder  {
     /// Creates a new `AssociateTrackerConsumer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_tracker_consumer::AssociateTrackerConsumer, aws_http::retry::AwsResponseRetryClassifier,>,

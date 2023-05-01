@@ -8,16 +8,17 @@ pub use crate::operation::get_variant_import_job::_get_variant_import_job_input:
 /// <p>Gets information about a variant import job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVariantImportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_variant_import_job::builders::GetVariantImportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_variant_import_job::builders::GetVariantImportJobInputBuilder,
+}
 impl GetVariantImportJobFluentBuilder  {
     /// Creates a new `GetVariantImportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_variant_import_job::GetVariantImportJob, aws_http::retry::AwsResponseRetryClassifier,>,

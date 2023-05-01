@@ -8,16 +8,17 @@ pub use crate::operation::list_indices::_list_indices_input::ListIndicesInputBui
 /// <p>Lists the Amazon Kendra indexes that you created.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIndicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_indices::builders::ListIndicesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_indices::builders::ListIndicesInputBuilder,
+}
 impl ListIndicesFluentBuilder  {
     /// Creates a new `ListIndices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_indices::ListIndices, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListIndicesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_indices::paginator::ListIndicesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_indices::paginator::ListIndicesPaginator {
-                            crate::operation::list_indices::paginator::ListIndicesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_indices::paginator::ListIndicesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_indices::paginator::ListIndicesPaginator {
+                                crate::operation::list_indices::paginator::ListIndicesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of indexes. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

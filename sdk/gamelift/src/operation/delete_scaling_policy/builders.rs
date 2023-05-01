@@ -9,16 +9,17 @@ pub use crate::operation::delete_scaling_policy::_delete_scaling_policy_input::D
 /// <p>To temporarily suspend scaling policies, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>. This operation suspends all policies for the fleet.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteScalingPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_scaling_policy::builders::DeleteScalingPolicyInputBuilder,
+}
 impl DeleteScalingPolicyFluentBuilder  {
     /// Creates a new `DeleteScalingPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_scaling_policy::DeleteScalingPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

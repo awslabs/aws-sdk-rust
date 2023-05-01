@@ -12,16 +12,17 @@ pub use crate::operation::get_log_group_fields::_get_log_group_fields_input::Get
 /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLogGroupFieldsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_log_group_fields::builders::GetLogGroupFieldsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_log_group_fields::builders::GetLogGroupFieldsInputBuilder,
+}
 impl GetLogGroupFieldsFluentBuilder  {
     /// Creates a new `GetLogGroupFields`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_log_group_fields::GetLogGroupFields, aws_http::retry::AwsResponseRetryClassifier,>,

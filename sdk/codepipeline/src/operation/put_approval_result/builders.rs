@@ -8,16 +8,17 @@ pub use crate::operation::put_approval_result::_put_approval_result_input::PutAp
 /// <p>Provides the response to a manual approval request to AWS CodePipeline. Valid responses include Approved and Rejected.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutApprovalResultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_approval_result::builders::PutApprovalResultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_approval_result::builders::PutApprovalResultInputBuilder,
+}
 impl PutApprovalResultFluentBuilder  {
     /// Creates a new `PutApprovalResult`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_approval_result::PutApprovalResult, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::cancel_ml_task_run::_cancel_ml_task_run_input::CancelM
 /// <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling <code>CancelMLTaskRun</code> with a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelMLTaskRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_ml_task_run::builders::CancelMlTaskRunInputBuilder,
+}
 impl CancelMLTaskRunFluentBuilder  {
     /// Creates a new `CancelMLTaskRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_ml_task_run::CancelMLTaskRun, aws_http::retry::AwsResponseRetryClassifier,>,

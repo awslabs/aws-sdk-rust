@@ -8,16 +8,17 @@ pub use crate::operation::delete_job_template::_delete_job_template_input::Delet
 /// <p>Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteJobTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_job_template::builders::DeleteJobTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_job_template::builders::DeleteJobTemplateInputBuilder,
+}
 impl DeleteJobTemplateFluentBuilder  {
     /// Creates a new `DeleteJobTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_job_template::DeleteJobTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

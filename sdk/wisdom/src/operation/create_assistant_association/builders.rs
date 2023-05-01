@@ -8,16 +8,17 @@ pub use crate::operation::create_assistant_association::_create_assistant_associ
 /// <p>Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the only supported association is with a knowledge base. An assistant can have only a single association.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAssistantAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_assistant_association::builders::CreateAssistantAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_assistant_association::builders::CreateAssistantAssociationInputBuilder,
+}
 impl CreateAssistantAssociationFluentBuilder  {
     /// Creates a new `CreateAssistantAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_assistant_association::CreateAssistantAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

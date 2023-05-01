@@ -10,16 +10,17 @@ pub use crate::operation::put_storage_lens_configuration_tagging::_put_storage_l
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutStorageLensConfigurationTaggingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingInputBuilder,
+}
 impl PutStorageLensConfigurationTaggingFluentBuilder  {
     /// Creates a new `PutStorageLensConfigurationTagging`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTagging, aws_http::retry::AwsResponseRetryClassifier,>,

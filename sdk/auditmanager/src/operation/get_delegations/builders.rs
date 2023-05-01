@@ -8,16 +8,17 @@ pub use crate::operation::get_delegations::_get_delegations_input::GetDelegation
 /// <p> Returns a list of delegations from an audit owner to a delegate. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDelegationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_delegations::builders::GetDelegationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_delegations::builders::GetDelegationsInputBuilder,
+}
 impl GetDelegationsFluentBuilder  {
     /// Creates a new `GetDelegations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_delegations::GetDelegations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetDelegationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_delegations::paginator::GetDelegationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_delegations::paginator::GetDelegationsPaginator {
-                            crate::operation::get_delegations::paginator::GetDelegationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_delegations::paginator::GetDelegationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_delegations::paginator::GetDelegationsPaginator {
+                                crate::operation::get_delegations::paginator::GetDelegationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::get_container_policy::_get_container_policy_input::Get
 /// <p>Retrieves the access policy for the specified container. For information about the data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetContainerPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_container_policy::builders::GetContainerPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_container_policy::builders::GetContainerPolicyInputBuilder,
+}
 impl GetContainerPolicyFluentBuilder  {
     /// Creates a new `GetContainerPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_container_policy::GetContainerPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

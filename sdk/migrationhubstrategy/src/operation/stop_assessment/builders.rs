@@ -8,16 +8,17 @@ pub use crate::operation::stop_assessment::_stop_assessment_input::StopAssessmen
 /// <p> Stops the assessment of an on-premises environment. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopAssessmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_assessment::builders::StopAssessmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_assessment::builders::StopAssessmentInputBuilder,
+}
 impl StopAssessmentFluentBuilder  {
     /// Creates a new `StopAssessment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_assessment::StopAssessment, aws_http::retry::AwsResponseRetryClassifier,>,

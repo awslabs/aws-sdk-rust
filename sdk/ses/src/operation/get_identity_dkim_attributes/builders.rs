@@ -16,16 +16,17 @@ pub use crate::operation::get_identity_dkim_attributes::_get_identity_dkim_attri
 /// <p>For more information about creating DNS records using DKIM tokens, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim-dns-records.html">Amazon SES Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_identity_dkim_attributes::builders::GetIdentityDkimAttributesInputBuilder,
+}
 impl GetIdentityDkimAttributesFluentBuilder  {
     /// Creates a new `GetIdentityDkimAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

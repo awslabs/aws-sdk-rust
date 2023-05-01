@@ -8,16 +8,17 @@ pub use crate::operation::test_segment_pattern::_test_segment_pattern_input::Tes
 /// <p>Use this operation to test a rules pattern that you plan to use to create an audience segment. For more information about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TestSegmentPatternFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::test_segment_pattern::builders::TestSegmentPatternInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::test_segment_pattern::builders::TestSegmentPatternInputBuilder,
+}
 impl TestSegmentPatternFluentBuilder  {
     /// Creates a new `TestSegmentPattern`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::test_segment_pattern::TestSegmentPattern, aws_http::retry::AwsResponseRetryClassifier,>,

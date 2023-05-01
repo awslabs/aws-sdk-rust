@@ -8,16 +8,17 @@ pub use crate::operation::list_candidates_for_auto_ml_job::_list_candidates_for_
 /// <p>List the candidates created for the job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCandidatesForAutoMLJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_candidates_for_auto_ml_job::builders::ListCandidatesForAutoMlJobInputBuilder,
+}
 impl ListCandidatesForAutoMLJobFluentBuilder  {
     /// Creates a new `ListCandidatesForAutoMLJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJob, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCandidatesForAutoMLJobFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_candidates_for_auto_ml_job::paginator::ListCandidatesForAutoMlJobPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_candidates_for_auto_ml_job::paginator::ListCandidatesForAutoMlJobPaginator {
-                            crate::operation::list_candidates_for_auto_ml_job::paginator::ListCandidatesForAutoMlJobPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_candidates_for_auto_ml_job::paginator::ListCandidatesForAutoMlJobPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_candidates_for_auto_ml_job::paginator::ListCandidatesForAutoMlJobPaginator {
+                                crate::operation::list_candidates_for_auto_ml_job::paginator::ListCandidatesForAutoMlJobPaginator::new(self.handle, self.inner)
+                            }
     /// <p>List the candidates created for the job by providing the job's name.</p>
     pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.auto_ml_job_name(input.into());

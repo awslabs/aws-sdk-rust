@@ -12,16 +12,17 @@ pub use crate::operation::create_auto_scaling_group::_create_auto_scaling_group_
 /// <p>Every Auto Scaling group has three size properties (<code>DesiredCapacity</code>, <code>MaxSize</code>, and <code>MinSize</code>). Usually, you set these sizes based on a specific number of instances. However, if you configure a mixed instances policy that defines weights for the instance types, you must specify these sizes with the same units that you use for weighting instances.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAutoScalingGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_auto_scaling_group::builders::CreateAutoScalingGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_auto_scaling_group::builders::CreateAutoScalingGroupInputBuilder,
+}
 impl CreateAutoScalingGroupFluentBuilder  {
     /// Creates a new `CreateAutoScalingGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_auto_scaling_group::CreateAutoScalingGroup, aws_http::retry::AwsResponseRetryClassifier,>,

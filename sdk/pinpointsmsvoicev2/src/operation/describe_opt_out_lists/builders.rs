@@ -10,16 +10,17 @@ pub use crate::operation::describe_opt_out_lists::_describe_opt_out_lists_input:
 /// <p>If you specify an opt-out list name that isn't valid, an Error is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOptOutListsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_opt_out_lists::builders::DescribeOptOutListsInputBuilder,
+}
 impl DescribeOptOutListsFluentBuilder  {
     /// Creates a new `DescribeOptOutLists`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_opt_out_lists::DescribeOptOutLists, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeOptOutListsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator {
-                            crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator {
+                                crate::operation::describe_opt_out_lists::paginator::DescribeOptOutListsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `OptOutListNames`.
     ///
     /// To override the contents of this collection use [`set_opt_out_list_names`](Self::set_opt_out_list_names).

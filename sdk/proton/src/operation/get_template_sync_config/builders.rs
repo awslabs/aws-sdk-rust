@@ -8,16 +8,17 @@ pub use crate::operation::get_template_sync_config::_get_template_sync_config_in
 /// <p>Get detail data for a template sync configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTemplateSyncConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_template_sync_config::builders::GetTemplateSyncConfigInputBuilder,
+}
 impl GetTemplateSyncConfigFluentBuilder  {
     /// Creates a new `GetTemplateSyncConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_template_sync_config::GetTemplateSyncConfig, aws_http::retry::AwsResponseRetryClassifier,>,

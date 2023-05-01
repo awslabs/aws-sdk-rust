@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_query_execution::_batch_get_query_execution_
 /// <p>Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To get a list of query execution IDs, use <code>ListQueryExecutionsInput$WorkGroup</code>. Query executions differ from named (saved) queries. Use <code>BatchGetNamedQueryInput</code> to get details about named queries.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetQueryExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_query_execution::builders::BatchGetQueryExecutionInputBuilder,
+}
 impl BatchGetQueryExecutionFluentBuilder  {
     /// Creates a new `BatchGetQueryExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_query_execution::BatchGetQueryExecution, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_segment_import_jobs::_get_segment_import_jobs_inpu
 /// <p>Retrieves information about the status and settings of the import jobs for a segment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSegmentImportJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_segment_import_jobs::builders::GetSegmentImportJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_segment_import_jobs::builders::GetSegmentImportJobsInputBuilder,
+}
 impl GetSegmentImportJobsFluentBuilder  {
     /// Creates a new `GetSegmentImportJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_segment_import_jobs::GetSegmentImportJobs, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::notify_application_state::_notify_application_state_in
 /// <p>Sets the migration state of an application. For a given application identified by the value passed to <code>ApplicationId</code>, its status is set or updated by passing one of three values to <code>Status</code>: <code>NOT_STARTED | IN_PROGRESS | COMPLETED</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct NotifyApplicationStateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::notify_application_state::builders::NotifyApplicationStateInputBuilder,
+}
 impl NotifyApplicationStateFluentBuilder  {
     /// Creates a new `NotifyApplicationState`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::notify_application_state::NotifyApplicationState, aws_http::retry::AwsResponseRetryClassifier,>,

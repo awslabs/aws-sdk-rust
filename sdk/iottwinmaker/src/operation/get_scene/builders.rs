@@ -8,16 +8,17 @@ pub use crate::operation::get_scene::_get_scene_input::GetSceneInputBuilder;
 /// <p>Retrieves information about a scene.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSceneFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_scene::builders::GetSceneInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_scene::builders::GetSceneInputBuilder,
+}
 impl GetSceneFluentBuilder  {
     /// Creates a new `GetScene`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_scene::GetScene, aws_http::retry::AwsResponseRetryClassifier,>,

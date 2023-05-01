@@ -8,16 +8,17 @@ pub use crate::operation::update_file_system_association::_update_file_system_as
 /// <p>Updates a file system association. This operation is only supported in the FSx File Gateways.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFileSystemAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_file_system_association::builders::UpdateFileSystemAssociationInputBuilder,
+}
 impl UpdateFileSystemAssociationFluentBuilder  {
     /// Creates a new `UpdateFileSystemAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_file_system_association::UpdateFileSystemAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

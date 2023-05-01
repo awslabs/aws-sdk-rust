@@ -9,16 +9,17 @@ pub use crate::operation::get_export_snapshot_records::_get_export_snapshot_reco
 /// <p>An export snapshot record can be used to create a new Amazon EC2 instance and its related resources with the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateCloudFormationStack.html">CreateCloudFormationStack</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetExportSnapshotRecordsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder,
+}
 impl GetExportSnapshotRecordsFluentBuilder  {
     /// Creates a new `GetExportSnapshotRecords`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_export_snapshot_records::GetExportSnapshotRecords, aws_http::retry::AwsResponseRetryClassifier,>,

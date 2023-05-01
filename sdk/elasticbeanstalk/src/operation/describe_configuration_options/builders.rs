@@ -8,16 +8,17 @@ pub use crate::operation::describe_configuration_options::_describe_configuratio
 /// <p>Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConfigurationOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsInputBuilder,
+}
 impl DescribeConfigurationOptionsFluentBuilder  {
     /// Creates a new `DescribeConfigurationOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_configuration_options::DescribeConfigurationOptions, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_field_level_encryption_config::_delete_field_le
 /// <p>Remove a field-level encryption configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFieldLevelEncryptionConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_field_level_encryption_config::builders::DeleteFieldLevelEncryptionConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_field_level_encryption_config::builders::DeleteFieldLevelEncryptionConfigInputBuilder,
+}
 impl DeleteFieldLevelEncryptionConfigFluentBuilder  {
     /// Creates a new `DeleteFieldLevelEncryptionConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfig, aws_http::retry::AwsResponseRetryClassifier,>,

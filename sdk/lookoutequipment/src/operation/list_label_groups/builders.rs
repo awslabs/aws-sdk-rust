@@ -8,16 +8,17 @@ pub use crate::operation::list_label_groups::_list_label_groups_input::ListLabel
 /// <p> Returns a list of the label groups. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLabelGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_label_groups::builders::ListLabelGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_label_groups::builders::ListLabelGroupsInputBuilder,
+}
 impl ListLabelGroupsFluentBuilder  {
     /// Creates a new `ListLabelGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_label_groups::ListLabelGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListLabelGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator {
-                            crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator {
+                                crate::operation::list_label_groups::paginator::ListLabelGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The beginning of the name of the label groups to be listed. </p>
     pub fn label_group_name_begins_with(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.label_group_name_begins_with(input.into());

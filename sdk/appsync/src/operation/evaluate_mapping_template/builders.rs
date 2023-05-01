@@ -10,16 +10,17 @@ pub use crate::operation::evaluate_mapping_template::_evaluate_mapping_template_
 /// <p>Mapping templates are written in the Apache Velocity Template Language (VTL).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EvaluateMappingTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::evaluate_mapping_template::builders::EvaluateMappingTemplateInputBuilder,
+}
 impl EvaluateMappingTemplateFluentBuilder  {
     /// Creates a new `EvaluateMappingTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::evaluate_mapping_template::EvaluateMappingTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

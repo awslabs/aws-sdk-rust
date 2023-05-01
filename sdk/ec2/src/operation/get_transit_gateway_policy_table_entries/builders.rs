@@ -8,16 +8,17 @@ pub use crate::operation::get_transit_gateway_policy_table_entries::_get_transit
 /// <p>Returns a list of transit gateway policy table entries.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTransitGatewayPolicyTableEntriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_transit_gateway_policy_table_entries::builders::GetTransitGatewayPolicyTableEntriesInputBuilder,
+}
 impl GetTransitGatewayPolicyTableEntriesFluentBuilder  {
     /// Creates a new `GetTransitGatewayPolicyTableEntries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntries, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::associate_firewall_policy::_associate_firewall_policy_
 /// <p>A firewall policy defines how to monitor and manage your VPC network traffic, using a collection of inspection rule groups and other settings. Each firewall requires one firewall policy association, and you can use the same firewall policy for multiple firewalls. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateFirewallPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_firewall_policy::builders::AssociateFirewallPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_firewall_policy::builders::AssociateFirewallPolicyInputBuilder,
+}
 impl AssociateFirewallPolicyFluentBuilder  {
     /// Creates a new `AssociateFirewallPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_firewall_policy::AssociateFirewallPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

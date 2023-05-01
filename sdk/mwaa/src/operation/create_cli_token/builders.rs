@@ -8,16 +8,17 @@ pub use crate::operation::create_cli_token::_create_cli_token_input::CreateCliTo
 /// <p>Creates a CLI token for the Airflow CLI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-cli.html">Creating an Apache Airflow CLI token</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCliTokenFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_cli_token::builders::CreateCliTokenInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_cli_token::builders::CreateCliTokenInputBuilder,
+}
 impl CreateCliTokenFluentBuilder  {
     /// Creates a new `CreateCliToken`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_cli_token::CreateCliToken, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::disable_crl::_disable_crl_input::DisableCrlInputBuilde
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:DisableCrl</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableCrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_crl::builders::DisableCrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_crl::builders::DisableCrlInputBuilder,
+}
 impl DisableCrlFluentBuilder  {
     /// Creates a new `DisableCrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_crl::DisableCrl, aws_http::retry::AwsResponseRetryClassifier,>,

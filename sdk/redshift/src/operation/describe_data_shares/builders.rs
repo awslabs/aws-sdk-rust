@@ -8,16 +8,17 @@ pub use crate::operation::describe_data_shares::_describe_data_shares_input::Des
 /// <p>Shows the status of any inbound or outbound datashares available in the specified account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDataSharesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_data_shares::builders::DescribeDataSharesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_data_shares::builders::DescribeDataSharesInputBuilder,
+}
 impl DescribeDataSharesFluentBuilder  {
     /// Creates a new `DescribeDataShares`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_data_shares::DescribeDataShares, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDataSharesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator {
-                            crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator {
+                                crate::operation::describe_data_shares::paginator::DescribeDataSharesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the datashare to describe details of.</p>
     pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.data_share_arn(input.into());

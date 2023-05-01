@@ -8,16 +8,17 @@ pub use crate::operation::list_namespaces::_list_namespaces_input::ListNamespace
 /// <p>Lists summary information about the namespaces that were created by the current Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNamespacesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_namespaces::builders::ListNamespacesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_namespaces::builders::ListNamespacesInputBuilder,
+}
 impl ListNamespacesFluentBuilder  {
     /// Creates a new `ListNamespaces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_namespaces::ListNamespaces, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListNamespacesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_namespaces::paginator::ListNamespacesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_namespaces::paginator::ListNamespacesPaginator {
-                            crate::operation::list_namespaces::paginator::ListNamespacesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_namespaces::paginator::ListNamespacesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_namespaces::paginator::ListNamespacesPaginator {
+                                crate::operation::list_namespaces::paginator::ListNamespacesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>For the first <code>ListNamespaces</code> request, omit this value.</p> 
     /// <p>If the response contains <code>NextToken</code>, submit another <code>ListNamespaces</code> request to get the next group of results. Specify the value of <code>NextToken</code> from the previous response in the next request.</p> <note> 
     /// <p>Cloud Map gets <code>MaxResults</code> namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p> 

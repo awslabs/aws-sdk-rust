@@ -8,16 +8,17 @@ pub use crate::operation::list_templates::_list_templates_input::ListTemplatesIn
 /// <p>Lists all the templates in the current Amazon QuickSight account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTemplatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_templates::builders::ListTemplatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_templates::builders::ListTemplatesInputBuilder,
+}
 impl ListTemplatesFluentBuilder  {
     /// Creates a new `ListTemplates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_templates::ListTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTemplatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_templates::paginator::ListTemplatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_templates::paginator::ListTemplatesPaginator {
-                            crate::operation::list_templates::paginator::ListTemplatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_templates::paginator::ListTemplatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_templates::paginator::ListTemplatesPaginator {
+                                crate::operation::list_templates::paginator::ListTemplatesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());

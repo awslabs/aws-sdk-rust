@@ -8,16 +8,17 @@ pub use crate::operation::describe_agent_versions::_describe_agent_versions_inpu
 /// <p>Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or configuration manager.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAgentVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_agent_versions::builders::DescribeAgentVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_agent_versions::builders::DescribeAgentVersionsInputBuilder,
+}
 impl DescribeAgentVersionsFluentBuilder  {
     /// Creates a new `DescribeAgentVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_agent_versions::DescribeAgentVersions, aws_http::retry::AwsResponseRetryClassifier,>,

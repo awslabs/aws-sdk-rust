@@ -8,16 +8,17 @@ pub use crate::operation::put_events_configuration::_put_events_configuration_in
 /// <p>Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either an HTTPS endpoint or a Lambda function ARN. For more information, see <code>Bot</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutEventsConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_events_configuration::builders::PutEventsConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_events_configuration::builders::PutEventsConfigurationInputBuilder,
+}
 impl PutEventsConfigurationFluentBuilder  {
     /// Creates a new `PutEventsConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_events_configuration::PutEventsConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

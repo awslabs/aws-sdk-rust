@@ -8,16 +8,17 @@ pub use crate::operation::describe_shared_directories::_describe_shared_director
 /// <p>Returns the shared directories in your account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSharedDirectoriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_shared_directories::builders::DescribeSharedDirectoriesInputBuilder,
+}
 impl DescribeSharedDirectoriesFluentBuilder  {
     /// Creates a new `DescribeSharedDirectories`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_shared_directories::DescribeSharedDirectories, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeSharedDirectoriesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_shared_directories::paginator::DescribeSharedDirectoriesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_shared_directories::paginator::DescribeSharedDirectoriesPaginator {
-                            crate::operation::describe_shared_directories::paginator::DescribeSharedDirectoriesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_shared_directories::paginator::DescribeSharedDirectoriesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_shared_directories::paginator::DescribeSharedDirectoriesPaginator {
+                                crate::operation::describe_shared_directories::paginator::DescribeSharedDirectoriesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Returns the identifier of the directory in the directory owner account. </p>
     pub fn owner_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.owner_directory_id(input.into());

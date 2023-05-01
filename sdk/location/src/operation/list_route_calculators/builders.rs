@@ -8,16 +8,17 @@ pub use crate::operation::list_route_calculators::_list_route_calculators_input:
 /// <p>Lists route calculator resources in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRouteCalculatorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_route_calculators::builders::ListRouteCalculatorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_route_calculators::builders::ListRouteCalculatorsInputBuilder,
+}
 impl ListRouteCalculatorsFluentBuilder  {
     /// Creates a new `ListRouteCalculators`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_route_calculators::ListRouteCalculators, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRouteCalculatorsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator {
-                            crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator {
+                                crate::operation::list_route_calculators::paginator::ListRouteCalculatorsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An optional maximum number of results returned in a single call.</p> 
     /// <p>Default Value: <code>100</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {

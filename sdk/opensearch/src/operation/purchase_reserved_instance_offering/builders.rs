@@ -8,16 +8,17 @@ pub use crate::operation::purchase_reserved_instance_offering::_purchase_reserve
 /// <p>Allows you to purchase Amazon OpenSearch Service Reserved Instances.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PurchaseReservedInstanceOfferingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingInputBuilder,
+}
 impl PurchaseReservedInstanceOfferingFluentBuilder  {
     /// Creates a new `PurchaseReservedInstanceOffering`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOffering, aws_http::retry::AwsResponseRetryClassifier,>,

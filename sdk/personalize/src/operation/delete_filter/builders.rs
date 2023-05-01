@@ -8,16 +8,17 @@ pub use crate::operation::delete_filter::_delete_filter_input::DeleteFilterInput
 /// <p>Deletes a filter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFilterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_filter::builders::DeleteFilterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_filter::builders::DeleteFilterInputBuilder,
+}
 impl DeleteFilterFluentBuilder  {
     /// Creates a new `DeleteFilter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_filter::DeleteFilter, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::deactivate_contact_channel::_deactivate_contact_channe
 /// <p>To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeactivateContactChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deactivate_contact_channel::builders::DeactivateContactChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deactivate_contact_channel::builders::DeactivateContactChannelInputBuilder,
+}
 impl DeactivateContactChannelFluentBuilder  {
     /// Creates a new `DeactivateContactChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deactivate_contact_channel::DeactivateContactChannel, aws_http::retry::AwsResponseRetryClassifier,>,

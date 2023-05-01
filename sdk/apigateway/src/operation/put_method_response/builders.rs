@@ -8,16 +8,17 @@ pub use crate::operation::put_method_response::_put_method_response_input::PutMe
 /// <p>Adds a MethodResponse to an existing Method resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutMethodResponseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_method_response::builders::PutMethodResponseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_method_response::builders::PutMethodResponseInputBuilder,
+}
 impl PutMethodResponseFluentBuilder  {
     /// Creates a new `PutMethodResponse`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_method_response::PutMethodResponse, aws_http::retry::AwsResponseRetryClassifier,>,

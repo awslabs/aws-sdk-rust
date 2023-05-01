@@ -15,16 +15,17 @@ pub use crate::operation::write_get_object_response::_write_get_object_response_
 /// <p>For information on how to view and use these functions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-examples.html">Using Amazon Web Services built Lambda functions</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[derive(std::fmt::Debug)]
 pub struct WriteGetObjectResponseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::write_get_object_response::builders::WriteGetObjectResponseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::write_get_object_response::builders::WriteGetObjectResponseInputBuilder,
+}
 impl WriteGetObjectResponseFluentBuilder  {
     /// Creates a new `WriteGetObjectResponse`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::write_get_object_response::WriteGetObjectResponse, aws_http::retry::AwsResponseRetryClassifier,>,

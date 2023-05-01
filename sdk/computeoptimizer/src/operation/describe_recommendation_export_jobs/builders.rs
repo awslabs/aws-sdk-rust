@@ -9,16 +9,17 @@ pub use crate::operation::describe_recommendation_export_jobs::_describe_recomme
 /// <p>Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions to request an export of your recommendations. Then use the <code>DescribeRecommendationExportJobs</code> action to view your export jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRecommendationExportJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_recommendation_export_jobs::builders::DescribeRecommendationExportJobsInputBuilder,
+}
 impl DescribeRecommendationExportJobsFluentBuilder  {
     /// Creates a new `DescribeRecommendationExportJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_recommendation_export_jobs::DescribeRecommendationExportJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeRecommendationExportJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_recommendation_export_jobs::paginator::DescribeRecommendationExportJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_recommendation_export_jobs::paginator::DescribeRecommendationExportJobsPaginator {
-                            crate::operation::describe_recommendation_export_jobs::paginator::DescribeRecommendationExportJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_recommendation_export_jobs::paginator::DescribeRecommendationExportJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_recommendation_export_jobs::paginator::DescribeRecommendationExportJobsPaginator {
+                                crate::operation::describe_recommendation_export_jobs::paginator::DescribeRecommendationExportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `jobIds`.
     ///
     /// To override the contents of this collection use [`set_job_ids`](Self::set_job_ids).

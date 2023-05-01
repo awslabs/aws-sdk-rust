@@ -9,16 +9,17 @@ pub use crate::operation::get_cors_policy::_get_cors_policy_input::GetCorsPolicy
 /// <p>To use this operation, you must have permission to perform the <code>MediaStore:GetCorsPolicy</code> action. By default, the container owner has this permission and can grant it to others.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCorsPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_cors_policy::builders::GetCorsPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_cors_policy::builders::GetCorsPolicyInputBuilder,
+}
 impl GetCorsPolicyFluentBuilder  {
     /// Creates a new `GetCorsPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_cors_policy::GetCorsPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

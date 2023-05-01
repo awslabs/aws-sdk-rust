@@ -8,16 +8,17 @@ pub use crate::operation::list_application_states::_list_application_states_inpu
 /// <p>Lists all the migration statuses for your applications. If you use the optional <code>ApplicationIds</code> parameter, only the migration statuses for those applications will be returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListApplicationStatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_application_states::builders::ListApplicationStatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_application_states::builders::ListApplicationStatesInputBuilder,
+}
 impl ListApplicationStatesFluentBuilder  {
     /// Creates a new `ListApplicationStates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_application_states::ListApplicationStates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListApplicationStatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_application_states::paginator::ListApplicationStatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_application_states::paginator::ListApplicationStatesPaginator {
-                            crate::operation::list_application_states::paginator::ListApplicationStatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_application_states::paginator::ListApplicationStatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_application_states::paginator::ListApplicationStatesPaginator {
+                                crate::operation::list_application_states::paginator::ListApplicationStatesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ApplicationIds`.
     ///
     /// To override the contents of this collection use [`set_application_ids`](Self::set_application_ids).

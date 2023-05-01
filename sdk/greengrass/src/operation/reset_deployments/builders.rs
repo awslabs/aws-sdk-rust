@@ -8,16 +8,17 @@ pub use crate::operation::reset_deployments::_reset_deployments_input::ResetDepl
 /// Resets a group's deployments.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetDeploymentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_deployments::builders::ResetDeploymentsInputBuilder,
+}
 impl ResetDeploymentsFluentBuilder  {
     /// Creates a new `ResetDeployments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_deployments::ResetDeployments, aws_http::retry::AwsResponseRetryClassifier,>,

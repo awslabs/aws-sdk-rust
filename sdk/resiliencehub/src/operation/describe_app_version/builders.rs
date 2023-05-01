@@ -8,16 +8,17 @@ pub use crate::operation::describe_app_version::_describe_app_version_input::Des
 /// <p>Describes the Resilience Hub application version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAppVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_app_version::builders::DescribeAppVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_app_version::builders::DescribeAppVersionInputBuilder,
+}
 impl DescribeAppVersionFluentBuilder  {
     /// Creates a new `DescribeAppVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_app_version::DescribeAppVersion, aws_http::retry::AwsResponseRetryClassifier,>,

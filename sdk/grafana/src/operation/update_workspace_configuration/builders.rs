@@ -8,16 +8,17 @@ pub use crate::operation::update_workspace_configuration::_update_workspace_conf
 /// <p>Updates the configuration string for the given workspace</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWorkspaceConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_workspace_configuration::builders::UpdateWorkspaceConfigurationInputBuilder,
+}
 impl UpdateWorkspaceConfigurationFluentBuilder  {
     /// Creates a new `UpdateWorkspaceConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_workspace_configuration::UpdateWorkspaceConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

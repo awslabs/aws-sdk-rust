@@ -8,16 +8,17 @@ pub use crate::operation::get_integration_responses::_get_integration_responses_
 /// <p>Gets the IntegrationResponses for an Integration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIntegrationResponsesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_integration_responses::builders::GetIntegrationResponsesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_integration_responses::builders::GetIntegrationResponsesInputBuilder,
+}
 impl GetIntegrationResponsesFluentBuilder  {
     /// Creates a new `GetIntegrationResponses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_integration_responses::GetIntegrationResponses, aws_http::retry::AwsResponseRetryClassifier,>,

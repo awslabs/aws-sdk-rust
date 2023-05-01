@@ -8,16 +8,17 @@ pub use crate::operation::describe_product_as_admin::_describe_product_as_admin_
 /// <p>Gets information about the specified product. This operation is run with administrator access.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeProductAsAdminFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_product_as_admin::builders::DescribeProductAsAdminInputBuilder,
+}
 impl DescribeProductAsAdminFluentBuilder  {
     /// Creates a new `DescribeProductAsAdmin`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_product_as_admin::DescribeProductAsAdmin, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_app_launch_configuration::_delete_app_launch_co
 /// <p>Deletes the launch configuration for the specified application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAppLaunchConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_app_launch_configuration::builders::DeleteAppLaunchConfigurationInputBuilder,
+}
 impl DeleteAppLaunchConfigurationFluentBuilder  {
     /// Creates a new `DeleteAppLaunchConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_app_launch_configuration::DeleteAppLaunchConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

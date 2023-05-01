@@ -8,16 +8,17 @@ pub use crate::operation::list_client_devices_associated_with_core_device::_list
 /// <p>Retrieves a paginated list of client devices that are associated with a core device.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListClientDevicesAssociatedWithCoreDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_client_devices_associated_with_core_device::builders::ListClientDevicesAssociatedWithCoreDeviceInputBuilder,
+}
 impl ListClientDevicesAssociatedWithCoreDeviceFluentBuilder  {
     /// Creates a new `ListClientDevicesAssociatedWithCoreDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDevice, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListClientDevicesAssociatedWithCoreDeviceFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_client_devices_associated_with_core_device::paginator::ListClientDevicesAssociatedWithCoreDevicePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_client_devices_associated_with_core_device::paginator::ListClientDevicesAssociatedWithCoreDevicePaginator {
-                            crate::operation::list_client_devices_associated_with_core_device::paginator::ListClientDevicesAssociatedWithCoreDevicePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_client_devices_associated_with_core_device::paginator::ListClientDevicesAssociatedWithCoreDevicePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_client_devices_associated_with_core_device::paginator::ListClientDevicesAssociatedWithCoreDevicePaginator {
+                                crate::operation::list_client_devices_associated_with_core_device::paginator::ListClientDevicesAssociatedWithCoreDevicePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.core_device_thing_name(input.into());

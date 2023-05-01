@@ -12,16 +12,17 @@ pub use crate::operation::list_assignments_for_hit::_list_assignments_for_hit_in
 /// <p> Results are sorted and divided into numbered pages and the operation returns a single page of results. You can use the parameters of the operation to control sorting and pagination. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssignmentsForHITFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_assignments_for_hit::builders::ListAssignmentsForHitInputBuilder,
+}
 impl ListAssignmentsForHITFluentBuilder  {
     /// Creates a new `ListAssignmentsForHIT`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_assignments_for_hit::ListAssignmentsForHIT, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -52,11 +53,11 @@ impl ListAssignmentsForHITFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator {
-                            crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator {
+                                crate::operation::list_assignments_for_hit::paginator::ListAssignmentsForHitPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the HIT.</p>
     pub fn hit_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hit_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::add_flow_outputs::_add_flow_outputs_input::AddFlowOutp
 /// Adds outputs to an existing flow. You can create up to 50 outputs per flow.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddFlowOutputsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_flow_outputs::builders::AddFlowOutputsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_flow_outputs::builders::AddFlowOutputsInputBuilder,
+}
 impl AddFlowOutputsFluentBuilder  {
     /// Creates a new `AddFlowOutputs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_flow_outputs::AddFlowOutputs, aws_http::retry::AwsResponseRetryClassifier,>,

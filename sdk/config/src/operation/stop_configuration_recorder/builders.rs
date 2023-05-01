@@ -8,16 +8,17 @@ pub use crate::operation::stop_configuration_recorder::_stop_configuration_recor
 /// <p>Stops recording configurations of the Amazon Web Services resources you have selected to record in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopConfigurationRecorderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_configuration_recorder::builders::StopConfigurationRecorderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_configuration_recorder::builders::StopConfigurationRecorderInputBuilder,
+}
 impl StopConfigurationRecorderFluentBuilder  {
     /// Creates a new `StopConfigurationRecorder`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_configuration_recorder::StopConfigurationRecorder, aws_http::retry::AwsResponseRetryClassifier,>,

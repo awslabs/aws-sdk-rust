@@ -8,16 +8,17 @@ pub use crate::operation::rotate_encryption_key::_rotate_encryption_key_input::R
 /// <p>Rotates the encryption keys for a cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RotateEncryptionKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::rotate_encryption_key::builders::RotateEncryptionKeyInputBuilder,
+}
 impl RotateEncryptionKeyFluentBuilder  {
     /// Creates a new `RotateEncryptionKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::rotate_encryption_key::RotateEncryptionKey, aws_http::retry::AwsResponseRetryClassifier,>,

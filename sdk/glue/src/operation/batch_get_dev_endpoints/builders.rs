@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_dev_endpoints::_batch_get_dev_endpoints_inpu
 /// <p>Returns a list of resource metadata for a given list of development endpoint names. After calling the <code>ListDevEndpoints</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetDevEndpointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_dev_endpoints::builders::BatchGetDevEndpointsInputBuilder,
+}
 impl BatchGetDevEndpointsFluentBuilder  {
     /// Creates a new `BatchGetDevEndpoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_forecasts::_list_forecasts_input::ListForecastsIn
 /// <p>Returns a list of forecasts created using the <code>CreateForecast</code> operation. For each forecast, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). To retrieve the complete set of properties, specify the ARN with the <code>DescribeForecast</code> operation. You can filter the list using an array of <code>Filter</code> objects.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListForecastsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_forecasts::builders::ListForecastsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_forecasts::builders::ListForecastsInputBuilder,
+}
 impl ListForecastsFluentBuilder  {
     /// Creates a new `ListForecasts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_forecasts::ListForecasts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListForecastsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_forecasts::paginator::ListForecastsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_forecasts::paginator::ListForecastsPaginator {
-                            crate::operation::list_forecasts::paginator::ListForecastsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_forecasts::paginator::ListForecastsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_forecasts::paginator::ListForecastsPaginator {
+                                crate::operation::list_forecasts::paginator::ListForecastsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

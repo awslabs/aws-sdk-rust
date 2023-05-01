@@ -8,16 +8,17 @@ pub use crate::operation::list_compliance_summaries::_list_compliance_summaries_
 /// <p>Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call can return State Manager associations, patches, or custom compliance types according to the filter criteria that you specify.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListComplianceSummariesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_compliance_summaries::builders::ListComplianceSummariesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_compliance_summaries::builders::ListComplianceSummariesInputBuilder,
+}
 impl ListComplianceSummariesFluentBuilder  {
     /// Creates a new `ListComplianceSummaries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_compliance_summaries::ListComplianceSummaries, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListComplianceSummariesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_compliance_summaries::paginator::ListComplianceSummariesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_compliance_summaries::paginator::ListComplianceSummariesPaginator {
-                            crate::operation::list_compliance_summaries::paginator::ListComplianceSummariesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_compliance_summaries::paginator::ListComplianceSummariesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_compliance_summaries::paginator::ListComplianceSummariesPaginator {
+                                crate::operation::list_compliance_summaries::paginator::ListComplianceSummariesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

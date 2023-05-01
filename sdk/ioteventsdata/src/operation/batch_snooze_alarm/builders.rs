@@ -8,16 +8,17 @@ pub use crate::operation::batch_snooze_alarm::_batch_snooze_alarm_input::BatchSn
 /// <p>Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code> state after you set them to the snooze mode.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchSnoozeAlarmFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_snooze_alarm::builders::BatchSnoozeAlarmInputBuilder,
+}
 impl BatchSnoozeAlarmFluentBuilder  {
     /// Creates a new `BatchSnoozeAlarm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_snooze_alarm::BatchSnoozeAlarm, aws_http::retry::AwsResponseRetryClassifier,>,

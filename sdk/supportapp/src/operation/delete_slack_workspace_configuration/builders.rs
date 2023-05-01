@@ -8,16 +8,17 @@ pub use crate::operation::delete_slack_workspace_configuration::_delete_slack_wo
 /// <p>Deletes a Slack workspace configuration from your Amazon Web Services account. This operation doesn't delete your Slack workspace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSlackWorkspaceConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationInputBuilder,
+}
 impl DeleteSlackWorkspaceConfigurationFluentBuilder  {
     /// Creates a new `DeleteSlackWorkspaceConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

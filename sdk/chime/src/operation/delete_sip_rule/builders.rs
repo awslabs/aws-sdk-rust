@@ -8,16 +8,17 @@ pub use crate::operation::delete_sip_rule::_delete_sip_rule_input::DeleteSipRule
 /// <p>Deletes a SIP rule. You must disable a SIP rule before you can delete it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSipRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_sip_rule::builders::DeleteSipRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_sip_rule::builders::DeleteSipRuleInputBuilder,
+}
 impl DeleteSipRuleFluentBuilder  {
     /// Creates a new `DeleteSipRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_sip_rule::DeleteSipRule, aws_http::retry::AwsResponseRetryClassifier,>,

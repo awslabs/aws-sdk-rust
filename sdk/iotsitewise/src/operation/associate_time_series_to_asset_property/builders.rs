@@ -8,16 +8,17 @@ pub use crate::operation::associate_time_series_to_asset_property::_associate_ti
 /// <p>Associates a time series (data stream) with an asset property.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateTimeSeriesToAssetPropertyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_time_series_to_asset_property::builders::AssociateTimeSeriesToAssetPropertyInputBuilder,
+}
 impl AssociateTimeSeriesToAssetPropertyFluentBuilder  {
     /// Creates a new `AssociateTimeSeriesToAssetProperty`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetProperty, aws_http::retry::AwsResponseRetryClassifier,>,

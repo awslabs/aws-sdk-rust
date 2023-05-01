@@ -9,16 +9,17 @@ pub use crate::operation::describe_project_versions::_describe_project_versions_
 /// <p>This operation requires permissions to perform the <code>rekognition:DescribeProjectVersions</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeProjectVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_project_versions::builders::DescribeProjectVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_project_versions::builders::DescribeProjectVersionsInputBuilder,
+}
 impl DescribeProjectVersionsFluentBuilder  {
     /// Creates a new `DescribeProjectVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_project_versions::DescribeProjectVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeProjectVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_project_versions::paginator::DescribeProjectVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_project_versions::paginator::DescribeProjectVersionsPaginator {
-                            crate::operation::describe_project_versions::paginator::DescribeProjectVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_project_versions::paginator::DescribeProjectVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_project_versions::paginator::DescribeProjectVersionsPaginator {
+                                crate::operation::describe_project_versions::paginator::DescribeProjectVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the project that contains the models you want to describe.</p>
     pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project_arn(input.into());

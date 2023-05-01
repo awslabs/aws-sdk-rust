@@ -24,16 +24,17 @@ pub use crate::operation::batch_delete_recipe_version::_batch_delete_recipe_vers
 /// <p>The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no other versions. If you try to delete <code>LATEST_WORKING</code> while other versions exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed as partial failure in the response.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteRecipeVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_recipe_version::builders::BatchDeleteRecipeVersionInputBuilder,
+}
 impl BatchDeleteRecipeVersionFluentBuilder  {
     /// Creates a new `BatchDeleteRecipeVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_recipe_version::BatchDeleteRecipeVersion, aws_http::retry::AwsResponseRetryClassifier,>,

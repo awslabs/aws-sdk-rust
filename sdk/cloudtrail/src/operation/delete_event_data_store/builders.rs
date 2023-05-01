@@ -9,16 +9,17 @@ pub use crate::operation::delete_event_data_store::_delete_event_data_store_inpu
 /// <p>After you run <code>DeleteEventDataStore</code> on an event data store, you cannot run <code>ListQueries</code>, <code>DescribeQuery</code>, or <code>GetQueryResults</code> on queries that are using an event data store in a <code>PENDING_DELETION</code> state. An event data store in the <code>PENDING_DELETION</code> state does not incur costs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEventDataStoreFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_event_data_store::builders::DeleteEventDataStoreInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_event_data_store::builders::DeleteEventDataStoreInputBuilder,
+}
 impl DeleteEventDataStoreFluentBuilder  {
     /// Creates a new `DeleteEventDataStore`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_event_data_store::DeleteEventDataStore, aws_http::retry::AwsResponseRetryClassifier,>,

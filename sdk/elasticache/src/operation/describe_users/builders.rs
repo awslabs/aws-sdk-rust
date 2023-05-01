@@ -8,16 +8,17 @@ pub use crate::operation::describe_users::_describe_users_input::DescribeUsersIn
 /// <p>Returns a list of users.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUsersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_users::builders::DescribeUsersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_users::builders::DescribeUsersInputBuilder,
+}
 impl DescribeUsersFluentBuilder  {
     /// Creates a new `DescribeUsers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_users::DescribeUsers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeUsersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_users::paginator::DescribeUsersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_users::paginator::DescribeUsersPaginator {
-                            crate::operation::describe_users::paginator::DescribeUsersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_users::paginator::DescribeUsersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_users::paginator::DescribeUsersPaginator {
+                                crate::operation::describe_users::paginator::DescribeUsersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Redis engine. </p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());

@@ -11,16 +11,17 @@ pub use crate::operation::get_access_key_info::_get_access_key_info_input::GetAc
 /// <p>This operation does not indicate the state of the access key. The key might be active, inactive, or deleted. Active keys might not have permissions to perform an operation. Providing a deleted access key might return an error that the key doesn't exist.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccessKeyInfoFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_access_key_info::builders::GetAccessKeyInfoInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_access_key_info::builders::GetAccessKeyInfoInputBuilder,
+}
 impl GetAccessKeyInfoFluentBuilder  {
     /// Creates a new `GetAccessKeyInfo`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_access_key_info::GetAccessKeyInfo, aws_http::retry::AwsResponseRetryClassifier,>,

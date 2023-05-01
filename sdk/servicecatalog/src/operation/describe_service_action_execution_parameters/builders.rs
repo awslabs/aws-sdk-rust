@@ -8,16 +8,17 @@ pub use crate::operation::describe_service_action_execution_parameters::_describ
 /// <p>Finds the default parameters for a specific self-service action on a specific provisioned product and returns a map of the results to the user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeServiceActionExecutionParametersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_service_action_execution_parameters::builders::DescribeServiceActionExecutionParametersInputBuilder,
+}
 impl DescribeServiceActionExecutionParametersFluentBuilder  {
     /// Creates a new `DescribeServiceActionExecutionParameters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParameters, aws_http::retry::AwsResponseRetryClassifier,>,

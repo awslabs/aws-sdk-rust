@@ -8,16 +8,17 @@ pub use crate::operation::get_upgrade_status::_get_upgrade_status_input::GetUpgr
 /// <p>Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUpgradeStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_upgrade_status::builders::GetUpgradeStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_upgrade_status::builders::GetUpgradeStatusInputBuilder,
+}
 impl GetUpgradeStatusFluentBuilder  {
     /// Creates a new `GetUpgradeStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_upgrade_status::GetUpgradeStatus, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_notebook_instance_lifecycle_config::_delete_not
 /// <p>Deletes a notebook instance lifecycle configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNotebookInstanceLifecycleConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_notebook_instance_lifecycle_config::builders::DeleteNotebookInstanceLifecycleConfigInputBuilder,
+}
 impl DeleteNotebookInstanceLifecycleConfigFluentBuilder  {
     /// Creates a new `DeleteNotebookInstanceLifecycleConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfig, aws_http::retry::AwsResponseRetryClassifier,>,

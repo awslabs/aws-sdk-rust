@@ -8,16 +8,17 @@ pub use crate::operation::create_streaming_url::_create_streaming_url_input::Cre
 /// <p>Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStreamingURLFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_streaming_url::builders::CreateStreamingUrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_streaming_url::builders::CreateStreamingUrlInputBuilder,
+}
 impl CreateStreamingURLFluentBuilder  {
     /// Creates a new `CreateStreamingURL`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_streaming_url::CreateStreamingURL, aws_http::retry::AwsResponseRetryClassifier,>,

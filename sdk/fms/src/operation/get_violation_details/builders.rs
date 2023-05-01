@@ -8,16 +8,17 @@ pub use crate::operation::get_violation_details::_get_violation_details_input::G
 /// <p>Retrieves violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetViolationDetailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_violation_details::builders::GetViolationDetailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_violation_details::builders::GetViolationDetailsInputBuilder,
+}
 impl GetViolationDetailsFluentBuilder  {
     /// Creates a new `GetViolationDetails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_violation_details::GetViolationDetails, aws_http::retry::AwsResponseRetryClassifier,>,

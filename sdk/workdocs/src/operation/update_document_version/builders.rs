@@ -9,16 +9,17 @@ pub use crate::operation::update_document_version::_update_document_version_inpu
 /// <p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document upload, after the client uploads the document to an S3-presigned URL returned by <code>InitiateDocumentVersionUpload</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDocumentVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_document_version::builders::UpdateDocumentVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_document_version::builders::UpdateDocumentVersionInputBuilder,
+}
 impl UpdateDocumentVersionFluentBuilder  {
     /// Creates a new `UpdateDocumentVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_document_version::UpdateDocumentVersion, aws_http::retry::AwsResponseRetryClassifier,>,

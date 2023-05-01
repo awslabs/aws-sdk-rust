@@ -8,16 +8,17 @@ pub use crate::operation::update_device_pool::_update_device_pool_input::UpdateD
 /// <p>Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a whole (or not at all).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDevicePoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_device_pool::builders::UpdateDevicePoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_device_pool::builders::UpdateDevicePoolInputBuilder,
+}
 impl UpdateDevicePoolFluentBuilder  {
     /// Creates a new `UpdateDevicePool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_device_pool::UpdateDevicePool, aws_http::retry::AwsResponseRetryClassifier,>,

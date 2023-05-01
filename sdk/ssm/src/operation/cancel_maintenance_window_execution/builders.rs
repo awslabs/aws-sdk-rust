@@ -8,16 +8,17 @@ pub use crate::operation::cancel_maintenance_window_execution::_cancel_maintenan
 /// <p>Stops a maintenance window execution that is already in progress and cancels any tasks in the window that haven't already starting running. Tasks already in progress will continue to completion.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelMaintenanceWindowExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_maintenance_window_execution::builders::CancelMaintenanceWindowExecutionInputBuilder,
+}
 impl CancelMaintenanceWindowExecutionFluentBuilder  {
     /// Creates a new `CancelMaintenanceWindowExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_maintenance_window_execution::CancelMaintenanceWindowExecution, aws_http::retry::AwsResponseRetryClassifier,>,

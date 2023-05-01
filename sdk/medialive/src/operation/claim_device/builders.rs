@@ -8,16 +8,17 @@ pub use crate::operation::claim_device::_claim_device_input::ClaimDeviceInputBui
 /// Send a request to claim an AWS Elemental device that you have purchased from a third-party vendor. After the request succeeds, you will own the device.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ClaimDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::claim_device::builders::ClaimDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::claim_device::builders::ClaimDeviceInputBuilder,
+}
 impl ClaimDeviceFluentBuilder  {
     /// Creates a new `ClaimDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::claim_device::ClaimDevice, aws_http::retry::AwsResponseRetryClassifier,>,

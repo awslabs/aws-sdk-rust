@@ -8,16 +8,17 @@ pub use crate::operation::delete_forecast_export_job::_delete_forecast_export_jo
 /// <p>Deletes a forecast export job created using the <code>CreateForecastExportJob</code> operation. You can delete only export jobs that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeForecastExportJob</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteForecastExportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_forecast_export_job::builders::DeleteForecastExportJobInputBuilder,
+}
 impl DeleteForecastExportJobFluentBuilder  {
     /// Creates a new `DeleteForecastExportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_forecast_export_job::DeleteForecastExportJob, aws_http::retry::AwsResponseRetryClassifier,>,

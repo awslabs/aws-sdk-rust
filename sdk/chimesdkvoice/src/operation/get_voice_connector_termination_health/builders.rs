@@ -8,16 +8,17 @@ pub use crate::operation::get_voice_connector_termination_health::_get_voice_con
 /// <p>Retrieves information about the last time a <code>SIP OPTIONS</code> ping was received from your SIP infrastructure for the specified Amazon Chime SDK Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVoiceConnectorTerminationHealthFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_voice_connector_termination_health::builders::GetVoiceConnectorTerminationHealthInputBuilder,
+}
 impl GetVoiceConnectorTerminationHealthFluentBuilder  {
     /// Creates a new `GetVoiceConnectorTerminationHealth`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_voice_connector_termination_health::GetVoiceConnectorTerminationHealth, aws_http::retry::AwsResponseRetryClassifier,>,

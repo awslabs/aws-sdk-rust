@@ -8,16 +8,17 @@ pub use crate::operation::list_annotation_stores::_list_annotation_stores_input:
 /// <p>Retrieves a list of annotation stores.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAnnotationStoresFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_annotation_stores::builders::ListAnnotationStoresInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_annotation_stores::builders::ListAnnotationStoresInputBuilder,
+}
 impl ListAnnotationStoresFluentBuilder  {
     /// Creates a new `ListAnnotationStores`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_annotation_stores::ListAnnotationStores, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAnnotationStoresFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator {
-                            crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator {
+                                crate::operation::list_annotation_stores::paginator::ListAnnotationStoresPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ids`.
     ///
     /// To override the contents of this collection use [`set_ids`](Self::set_ids).

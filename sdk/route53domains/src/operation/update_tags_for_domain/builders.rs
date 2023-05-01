@@ -9,16 +9,17 @@ pub use crate::operation::update_tags_for_domain::_update_tags_for_domain_input:
 /// <p>All tag operations are eventually consistent; subsequent operations might not immediately represent all issued operations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTagsForDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainInputBuilder,
+}
 impl UpdateTagsForDomainFluentBuilder  {
     /// Creates a new `UpdateTagsForDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_tags_for_domain::UpdateTagsForDomain, aws_http::retry::AwsResponseRetryClassifier,>,

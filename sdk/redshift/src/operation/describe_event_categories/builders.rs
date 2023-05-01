@@ -8,16 +8,17 @@ pub use crate::operation::describe_event_categories::_describe_event_categories_
 /// <p>Displays a list of event categories for all event source types, or for a specified source type. For a list of the event categories and source types, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-event-notifications.html">Amazon Redshift Event Notifications</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEventCategoriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_event_categories::builders::DescribeEventCategoriesInputBuilder,
+}
 impl DescribeEventCategoriesFluentBuilder  {
     /// Creates a new `DescribeEventCategories`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_event_categories::DescribeEventCategories, aws_http::retry::AwsResponseRetryClassifier,>,

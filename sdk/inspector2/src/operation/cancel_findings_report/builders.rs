@@ -8,16 +8,17 @@ pub use crate::operation::cancel_findings_report::_cancel_findings_report_input:
 /// <p>Cancels the given findings report.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelFindingsReportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_findings_report::builders::CancelFindingsReportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_findings_report::builders::CancelFindingsReportInputBuilder,
+}
 impl CancelFindingsReportFluentBuilder  {
     /// Creates a new `CancelFindingsReport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_findings_report::CancelFindingsReport, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -11,16 +11,17 @@ pub use crate::operation::create_medical_vocabulary::_create_medical_vocabulary_
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMedicalVocabularyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_medical_vocabulary::builders::CreateMedicalVocabularyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_medical_vocabulary::builders::CreateMedicalVocabularyInputBuilder,
+}
 impl CreateMedicalVocabularyFluentBuilder  {
     /// Creates a new `CreateMedicalVocabulary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_medical_vocabulary::CreateMedicalVocabulary, aws_http::retry::AwsResponseRetryClassifier,>,

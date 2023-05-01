@@ -8,16 +8,17 @@ pub use crate::operation::get_labels::_get_labels_input::GetLabelsInputBuilder;
 /// <p>Gets all labels or a specific label if name is provided. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 50 records per page. If you provide a <code>maxResults</code>, the value must be between 10 and 50. To get the next page results, provide the pagination token from the <code>GetGetLabelsResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLabelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_labels::builders::GetLabelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_labels::builders::GetLabelsInputBuilder,
+}
 impl GetLabelsFluentBuilder  {
     /// Creates a new `GetLabels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_labels::GetLabels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetLabelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_labels::paginator::GetLabelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_labels::paginator::GetLabelsPaginator {
-                            crate::operation::get_labels::paginator::GetLabelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_labels::paginator::GetLabelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_labels::paginator::GetLabelsPaginator {
+                                crate::operation::get_labels::paginator::GetLabelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the label or labels to get.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

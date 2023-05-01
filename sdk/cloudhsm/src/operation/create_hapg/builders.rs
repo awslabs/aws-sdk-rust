@@ -10,16 +10,17 @@ pub use crate::operation::create_hapg::_create_hapg_input::CreateHapgInputBuilde
 /// <p>Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateHapgFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_hapg::builders::CreateHapgInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_hapg::builders::CreateHapgInputBuilder,
+}
 impl CreateHapgFluentBuilder  {
     /// Creates a new `CreateHapg`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_hapg::CreateHapg, aws_http::retry::AwsResponseRetryClassifier,>,

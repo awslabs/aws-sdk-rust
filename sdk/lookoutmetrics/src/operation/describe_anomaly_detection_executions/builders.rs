@@ -8,16 +8,17 @@ pub use crate::operation::describe_anomaly_detection_executions::_describe_anoma
 /// <p>Returns information about the status of the specified anomaly detection jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAnomalyDetectionExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_anomaly_detection_executions::builders::DescribeAnomalyDetectionExecutionsInputBuilder,
+}
 impl DescribeAnomalyDetectionExecutionsFluentBuilder  {
     /// Creates a new `DescribeAnomalyDetectionExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_anomaly_detection_executions::DescribeAnomalyDetectionExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeAnomalyDetectionExecutionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_anomaly_detection_executions::paginator::DescribeAnomalyDetectionExecutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_anomaly_detection_executions::paginator::DescribeAnomalyDetectionExecutionsPaginator {
-                            crate::operation::describe_anomaly_detection_executions::paginator::DescribeAnomalyDetectionExecutionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_anomaly_detection_executions::paginator::DescribeAnomalyDetectionExecutionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_anomaly_detection_executions::paginator::DescribeAnomalyDetectionExecutionsPaginator {
+                                crate::operation::describe_anomaly_detection_executions::paginator::DescribeAnomalyDetectionExecutionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());

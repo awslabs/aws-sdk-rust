@@ -9,16 +9,17 @@ pub use crate::operation::batch_delete_import_data::_batch_delete_import_data_in
 /// <p>Amazon Web Services Application Discovery Service has built-in matching logic that will identify when discovered servers match existing entries that you've previously discovered, the information for the already-existing discovered server is updated. When you delete an import task that contains records that were used to match, the information in those matched records that comes from the deleted records will also be deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteImportDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_import_data::builders::BatchDeleteImportDataInputBuilder,
+}
 impl BatchDeleteImportDataFluentBuilder  {
     /// Creates a new `BatchDeleteImportData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_import_data::BatchDeleteImportData, aws_http::retry::AwsResponseRetryClassifier,>,

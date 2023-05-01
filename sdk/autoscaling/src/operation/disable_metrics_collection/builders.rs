@@ -8,16 +8,17 @@ pub use crate::operation::disable_metrics_collection::_disable_metrics_collectio
 /// <p>Disables group metrics collection for the specified Auto Scaling group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableMetricsCollectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_metrics_collection::builders::DisableMetricsCollectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_metrics_collection::builders::DisableMetricsCollectionInputBuilder,
+}
 impl DisableMetricsCollectionFluentBuilder  {
     /// Creates a new `DisableMetricsCollection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_metrics_collection::DisableMetricsCollection, aws_http::retry::AwsResponseRetryClassifier,>,

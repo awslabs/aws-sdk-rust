@@ -8,16 +8,17 @@ pub use crate::operation::export_earth_observation_job::_export_earth_observatio
 /// <p>Use this operation to export results of an Earth Observation job and optionally source images used as input to the EOJ to an Amazon S3 location.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportEarthObservationJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_earth_observation_job::builders::ExportEarthObservationJobInputBuilder,
+}
 impl ExportEarthObservationJobFluentBuilder  {
     /// Creates a new `ExportEarthObservationJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_earth_observation_job::ExportEarthObservationJob, aws_http::retry::AwsResponseRetryClassifier,>,

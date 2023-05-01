@@ -8,16 +8,17 @@ pub use crate::operation::update_trigger::_update_trigger_input::UpdateTriggerIn
 /// <p>Updates a trigger definition.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTriggerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_trigger::builders::UpdateTriggerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_trigger::builders::UpdateTriggerInputBuilder,
+}
 impl UpdateTriggerFluentBuilder  {
     /// Creates a new `UpdateTrigger`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_trigger::UpdateTrigger, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_orderable_cluster_options::_describe_orderabl
 /// <p>Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find what options are available, such as the EC2 Availability Zones (AZ) in the specific Amazon Web Services Region that you can specify, and the node types you can request. The node types differ by available storage, memory, CPU and price. With the cost involved you might want to obtain a list of cluster options in the specific region and specify values when creating a cluster. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOrderableClusterOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_orderable_cluster_options::builders::DescribeOrderableClusterOptionsInputBuilder,
+}
 impl DescribeOrderableClusterOptionsFluentBuilder  {
     /// Creates a new `DescribeOrderableClusterOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeOrderableClusterOptionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator {
-                            crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator {
+                                crate::operation::describe_orderable_cluster_options::paginator::DescribeOrderableClusterOptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p> 
     /// <p>Default: All versions.</p> 
     /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>

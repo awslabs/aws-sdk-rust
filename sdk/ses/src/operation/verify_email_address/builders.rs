@@ -8,16 +8,17 @@ pub use crate::operation::verify_email_address::_verify_email_address_input::Ver
 /// <p>Deprecated. Use the <code>VerifyEmailIdentity</code> operation to verify a new email address.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct VerifyEmailAddressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::verify_email_address::builders::VerifyEmailAddressInputBuilder,
+}
 impl VerifyEmailAddressFluentBuilder  {
     /// Creates a new `VerifyEmailAddress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::verify_email_address::VerifyEmailAddress, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_skill_group_from_room::_disassociate_skil
 /// <p>Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in the room.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateSkillGroupFromRoomFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomInputBuilder,
+}
 impl DisassociateSkillGroupFromRoomFluentBuilder  {
     /// Creates a new `DisassociateSkillGroupFromRoom`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoom, aws_http::retry::AwsResponseRetryClassifier,>,

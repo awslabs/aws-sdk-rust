@@ -8,16 +8,17 @@ pub use crate::operation::send_activation_code::_send_activation_code_input::Sen
 /// <p>Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in the console or with the <code>ActivateChannel</code> operation. Incident Manager can't engage a contact channel until it has been activated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendActivationCodeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_activation_code::builders::SendActivationCodeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_activation_code::builders::SendActivationCodeInputBuilder,
+}
 impl SendActivationCodeFluentBuilder  {
     /// Creates a new `SendActivationCode`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_activation_code::SendActivationCode, aws_http::retry::AwsResponseRetryClassifier,>,

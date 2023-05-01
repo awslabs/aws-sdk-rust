@@ -8,16 +8,17 @@ pub use crate::operation::set_local_console_password::_set_local_console_passwor
 /// <p>Sets the password for your VM local console. When you log in to the local console for the first time, you log in to the VM with the default credentials. We recommend that you set a new password. You don't need to know the default password to set a new password.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetLocalConsolePasswordFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_local_console_password::builders::SetLocalConsolePasswordInputBuilder,
+}
 impl SetLocalConsolePasswordFluentBuilder  {
     /// Creates a new `SetLocalConsolePassword`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_local_console_password::SetLocalConsolePassword, aws_http::retry::AwsResponseRetryClassifier,>,

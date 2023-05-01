@@ -8,16 +8,17 @@ pub use crate::operation::set_voice_message_spend_limit_override::_set_voice_mes
 /// <p>Sets an account level monthly spend limit override for sending voice messages. The requested spend limit must be less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetVoiceMessageSpendLimitOverrideFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_voice_message_spend_limit_override::builders::SetVoiceMessageSpendLimitOverrideInputBuilder,
+}
 impl SetVoiceMessageSpendLimitOverrideFluentBuilder  {
     /// Creates a new `SetVoiceMessageSpendLimitOverride`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_voice_message_spend_limit_override::SetVoiceMessageSpendLimitOverride, aws_http::retry::AwsResponseRetryClassifier,>,

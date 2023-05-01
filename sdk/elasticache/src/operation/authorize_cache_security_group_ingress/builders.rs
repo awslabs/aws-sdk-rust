@@ -10,16 +10,17 @@ pub use crate::operation::authorize_cache_security_group_ingress::_authorize_cac
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeCacheSecurityGroupIngressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::authorize_cache_security_group_ingress::builders::AuthorizeCacheSecurityGroupIngressInputBuilder,
+}
 impl AuthorizeCacheSecurityGroupIngressFluentBuilder  {
     /// Creates a new `AuthorizeCacheSecurityGroupIngress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngress, aws_http::retry::AwsResponseRetryClassifier,>,

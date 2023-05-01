@@ -8,16 +8,17 @@ pub use crate::operation::get_service_quota_increase_request_from_template::_get
 /// <p>Retrieves information about the specified quota increase request in your quota request template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetServiceQuotaIncreaseRequestFromTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_service_quota_increase_request_from_template::builders::GetServiceQuotaIncreaseRequestFromTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_service_quota_increase_request_from_template::builders::GetServiceQuotaIncreaseRequestFromTemplateInputBuilder,
+}
 impl GetServiceQuotaIncreaseRequestFromTemplateFluentBuilder  {
     /// Creates a new `GetServiceQuotaIncreaseRequestFromTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

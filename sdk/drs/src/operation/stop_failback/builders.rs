@@ -8,16 +8,17 @@ pub use crate::operation::stop_failback::_stop_failback_input::StopFailbackInput
 /// <p>Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery Instance back to FAILBACK_NOT_STARTED.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopFailbackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_failback::builders::StopFailbackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_failback::builders::StopFailbackInputBuilder,
+}
 impl StopFailbackFluentBuilder  {
     /// Creates a new `StopFailback`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_failback::StopFailback, aws_http::retry::AwsResponseRetryClassifier,>,

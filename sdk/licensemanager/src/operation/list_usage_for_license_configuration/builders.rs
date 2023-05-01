@@ -8,16 +8,17 @@ pub use crate::operation::list_usage_for_license_configuration::_list_usage_for_
 /// <p>Lists all license usage records for a license configuration, displaying license consumption details by resource at a selected point in time. Use this action to audit the current license consumption for any license inventory and configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListUsageForLicenseConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_usage_for_license_configuration::builders::ListUsageForLicenseConfigurationInputBuilder,
+}
 impl ListUsageForLicenseConfigurationFluentBuilder  {
     /// Creates a new `ListUsageForLicenseConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_usage_for_license_configuration::ListUsageForLicenseConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

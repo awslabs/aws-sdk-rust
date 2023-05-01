@@ -8,16 +8,17 @@ pub use crate::operation::accept_inbound_cross_cluster_search_connection::_accep
 /// <p>Allows the destination domain owner to accept an inbound cross-cluster search connection request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptInboundCrossClusterSearchConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_inbound_cross_cluster_search_connection::builders::AcceptInboundCrossClusterSearchConnectionInputBuilder,
+}
 impl AcceptInboundCrossClusterSearchConnectionFluentBuilder  {
     /// Creates a new `AcceptInboundCrossClusterSearchConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnection, aws_http::retry::AwsResponseRetryClassifier,>,

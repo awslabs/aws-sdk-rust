@@ -8,16 +8,17 @@ pub use crate::operation::describe_addon_versions::_describe_addon_versions_inpu
 /// <p>Describes the versions for an add-on. Information such as the Kubernetes versions that you can use the add-on with, the <code>owner</code>, <code>publisher</code>, and the <code>type</code> of the add-on are returned. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAddonVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_addon_versions::builders::DescribeAddonVersionsInputBuilder,
+}
 impl DescribeAddonVersionsFluentBuilder  {
     /// Creates a new `DescribeAddonVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_addon_versions::DescribeAddonVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeAddonVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator {
-                            crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator {
+                                crate::operation::describe_addon_versions::paginator::DescribeAddonVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Kubernetes versions that you can use the add-on with.</p>
     pub fn kubernetes_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.kubernetes_version(input.into());

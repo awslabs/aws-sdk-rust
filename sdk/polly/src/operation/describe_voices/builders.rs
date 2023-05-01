@@ -12,16 +12,17 @@ pub use crate::operation::describe_voices::_describe_voices_input::DescribeVoice
 /// <p>This operation requires permissions to perform the <code>polly:DescribeVoices</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVoicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_voices::builders::DescribeVoicesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_voices::builders::DescribeVoicesInputBuilder,
+}
 impl DescribeVoicesFluentBuilder  {
     /// Creates a new `DescribeVoices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_voices::DescribeVoices, aws_http::retry::AwsResponseRetryClassifier,>,

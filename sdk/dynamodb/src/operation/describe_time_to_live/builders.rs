@@ -8,16 +8,17 @@ pub use crate::operation::describe_time_to_live::_describe_time_to_live_input::D
 /// <p>Gives a description of the Time to Live (TTL) status on the specified table. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTimeToLiveFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_time_to_live::builders::DescribeTimeToLiveInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_time_to_live::builders::DescribeTimeToLiveInputBuilder,
+}
 impl DescribeTimeToLiveFluentBuilder  {
     /// Creates a new `DescribeTimeToLive`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_time_to_live::DescribeTimeToLive, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -12,16 +12,17 @@ pub use crate::operation::list_tags_log_group::_list_tags_log_group_input::ListT
 #[deprecated(note = "Please use the generic tagging API ListTagsForResource")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsLogGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tags_log_group::builders::ListTagsLogGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tags_log_group::builders::ListTagsLogGroupInputBuilder,
+}
 impl ListTagsLogGroupFluentBuilder  {
     /// Creates a new `ListTagsLogGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tags_log_group::ListTagsLogGroup, aws_http::retry::AwsResponseRetryClassifier,>,

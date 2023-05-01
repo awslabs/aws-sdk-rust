@@ -8,16 +8,17 @@ pub use crate::operation::delete_automatic_tape_creation_policy::_delete_automat
 /// <p>Deletes the automatic tape creation policy of a gateway. If you delete this policy, new virtual tapes must be created manually. Use the Amazon Resource Name (ARN) of the gateway in your request to remove the policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAutomaticTapeCreationPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_automatic_tape_creation_policy::builders::DeleteAutomaticTapeCreationPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_automatic_tape_creation_policy::builders::DeleteAutomaticTapeCreationPolicyInputBuilder,
+}
 impl DeleteAutomaticTapeCreationPolicyFluentBuilder  {
     /// Creates a new `DeleteAutomaticTapeCreationPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

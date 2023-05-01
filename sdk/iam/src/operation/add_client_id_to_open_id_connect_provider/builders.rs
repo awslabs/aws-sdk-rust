@@ -9,16 +9,17 @@ pub use crate::operation::add_client_id_to_open_id_connect_provider::_add_client
 /// <p>This operation is idempotent; it does not fail or return an error if you add an existing client ID to the provider.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddClientIDToOpenIDConnectProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIdToOpenIdConnectProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_client_id_to_open_id_connect_provider::builders::AddClientIdToOpenIdConnectProviderInputBuilder,
+}
 impl AddClientIDToOpenIDConnectProviderFluentBuilder  {
     /// Creates a new `AddClientIDToOpenIDConnectProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProvider, aws_http::retry::AwsResponseRetryClassifier,>,

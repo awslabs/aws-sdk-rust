@@ -9,16 +9,17 @@ pub use crate::operation::list_outposts::_list_outposts_input::ListOutpostsInput
 /// <p>Use filters to return specific results. If you specify multiple filters, the results include only the resources that match all of the specified filters. For a filter where you can specify multiple values, the results include items that match any of the values that you specify for the filter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListOutpostsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_outposts::builders::ListOutpostsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_outposts::builders::ListOutpostsInputBuilder,
+}
 impl ListOutpostsFluentBuilder  {
     /// Creates a new `ListOutposts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_outposts::ListOutposts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListOutpostsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_outposts::paginator::ListOutpostsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_outposts::paginator::ListOutpostsPaginator {
-                            crate::operation::list_outposts::paginator::ListOutpostsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_outposts::paginator::ListOutpostsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_outposts::paginator::ListOutpostsPaginator {
+                                crate::operation::list_outposts::paginator::ListOutpostsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

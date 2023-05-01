@@ -9,16 +9,17 @@ pub use crate::operation::delete_channel::_delete_channel_input::DeleteChannelIn
 /// <p>If you try to delete a live channel, you will get an error (409 ConflictException). To delete a channel that is live, call <code>StopStream</code>, wait for the Amazon EventBridge "Stream End" event (to verify that the stream's state is no longer Live), then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html"> Using EventBridge with Amazon IVS</a>.) </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_channel::builders::DeleteChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_channel::builders::DeleteChannelInputBuilder,
+}
 impl DeleteChannelFluentBuilder  {
     /// Creates a new `DeleteChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_channel::DeleteChannel, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_document_metadata_history::_list_document_metadat
 /// <p>Information about approval reviews for a version of a change template in Change Manager.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDocumentMetadataHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_document_metadata_history::builders::ListDocumentMetadataHistoryInputBuilder,
+}
 impl ListDocumentMetadataHistoryFluentBuilder  {
     /// Creates a new `ListDocumentMetadataHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_document_metadata_history::ListDocumentMetadataHistory, aws_http::retry::AwsResponseRetryClassifier,>,

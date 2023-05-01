@@ -8,16 +8,17 @@ pub use crate::operation::create_prepared_statement::_create_prepared_statement_
 /// <p>Creates a prepared statement for use with SQL queries in Athena.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePreparedStatementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder,
+}
 impl CreatePreparedStatementFluentBuilder  {
     /// Creates a new `CreatePreparedStatement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_prepared_statement::CreatePreparedStatement, aws_http::retry::AwsResponseRetryClassifier,>,

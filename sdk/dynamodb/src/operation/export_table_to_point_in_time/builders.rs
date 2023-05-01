@@ -8,16 +8,17 @@ pub use crate::operation::export_table_to_point_in_time::_export_table_to_point_
 /// <p>Exports table data to an S3 bucket. The table must have point in time recovery enabled, and you can export data from any time within the point in time recovery window.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportTableToPointInTimeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_table_to_point_in_time::builders::ExportTableToPointInTimeInputBuilder,
+}
 impl ExportTableToPointInTimeFluentBuilder  {
     /// Creates a new `ExportTableToPointInTime`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_table_to_point_in_time::ExportTableToPointInTime, aws_http::retry::AwsResponseRetryClassifier,>,

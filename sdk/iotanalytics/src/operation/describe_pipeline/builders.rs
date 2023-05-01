@@ -8,16 +8,17 @@ pub use crate::operation::describe_pipeline::_describe_pipeline_input::DescribeP
 /// <p>Retrieves information about a pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePipelineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_pipeline::builders::DescribePipelineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_pipeline::builders::DescribePipelineInputBuilder,
+}
 impl DescribePipelineFluentBuilder  {
     /// Creates a new `DescribePipeline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_pipeline::DescribePipeline, aws_http::retry::AwsResponseRetryClassifier,>,

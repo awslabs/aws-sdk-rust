@@ -8,16 +8,17 @@ pub use crate::operation::put_findings_publication_configuration::_put_findings_
 /// <p>Updates the configuration settings for publishing findings to Security Hub.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutFindingsPublicationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_findings_publication_configuration::builders::PutFindingsPublicationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_findings_publication_configuration::builders::PutFindingsPublicationConfigurationInputBuilder,
+}
 impl PutFindingsPublicationConfigurationFluentBuilder  {
     /// Creates a new `PutFindingsPublicationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::restore_managed_prefix_list_version::_restore_managed_
 /// <p>Restores the entries from a previous version of a managed prefix list to a new version of the prefix list.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreManagedPrefixListVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_managed_prefix_list_version::builders::RestoreManagedPrefixListVersionInputBuilder,
+}
 impl RestoreManagedPrefixListVersionFluentBuilder  {
     /// Creates a new `RestoreManagedPrefixListVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersion, aws_http::retry::AwsResponseRetryClassifier,>,

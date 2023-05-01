@@ -8,16 +8,17 @@ pub use crate::operation::create_allow_list::_create_allow_list_input::CreateAll
 /// <p>Creates and defines the settings for an allow list.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAllowListFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_allow_list::builders::CreateAllowListInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_allow_list::builders::CreateAllowListInputBuilder,
+}
 impl CreateAllowListFluentBuilder  {
     /// Creates a new `CreateAllowList`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_allow_list::CreateAllowList, aws_http::retry::AwsResponseRetryClassifier,>,

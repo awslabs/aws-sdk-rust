@@ -8,16 +8,17 @@ pub use crate::operation::delete_batch_import_job::_delete_batch_import_job_inpu
 /// <p>Deletes the specified batch import job ID record. This action does not delete the data that was batch imported. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBatchImportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobInputBuilder,
+}
 impl DeleteBatchImportJobFluentBuilder  {
     /// Creates a new `DeleteBatchImportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_batch_import_job::DeleteBatchImportJob, aws_http::retry::AwsResponseRetryClassifier,>,

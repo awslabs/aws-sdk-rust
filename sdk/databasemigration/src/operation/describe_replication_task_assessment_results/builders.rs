@@ -9,16 +9,17 @@ pub use crate::operation::describe_replication_task_assessment_results::_describ
 /// <p>For more information about DMS task assessments, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Creating a task assessment report</a> in the <i>Database Migration Service User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReplicationTaskAssessmentResultsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_replication_task_assessment_results::builders::DescribeReplicationTaskAssessmentResultsInputBuilder,
+}
 impl DescribeReplicationTaskAssessmentResultsFluentBuilder  {
     /// Creates a new `DescribeReplicationTaskAssessmentResults`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResults, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeReplicationTaskAssessmentResultsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_task_assessment_results::paginator::DescribeReplicationTaskAssessmentResultsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_replication_task_assessment_results::paginator::DescribeReplicationTaskAssessmentResultsPaginator {
-                            crate::operation::describe_replication_task_assessment_results::paginator::DescribeReplicationTaskAssessmentResultsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_task_assessment_results::paginator::DescribeReplicationTaskAssessmentResultsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_replication_task_assessment_results::paginator::DescribeReplicationTaskAssessmentResultsPaginator {
+                                crate::operation::describe_replication_task_assessment_results::paginator::DescribeReplicationTaskAssessmentResultsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When this input parameter is specified, the API returns only one result and ignore the values of the <code>MaxRecords</code> and <code>Marker</code> parameters. </p>
     pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.replication_task_arn(input.into());

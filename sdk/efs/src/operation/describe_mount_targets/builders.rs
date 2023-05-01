@@ -9,16 +9,17 @@ pub use crate::operation::describe_mount_targets::_describe_mount_targets_input:
 /// <p>This operation requires permissions for the <code>elasticfilesystem:DescribeMountTargets</code> action, on either the file system ID that you specify in <code>FileSystemId</code>, or on the file system of the mount target that you specify in <code>MountTargetId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMountTargetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_mount_targets::builders::DescribeMountTargetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_mount_targets::builders::DescribeMountTargetsInputBuilder,
+}
 impl DescribeMountTargetsFluentBuilder  {
     /// Creates a new `DescribeMountTargets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_mount_targets::DescribeMountTargets, aws_http::retry::AwsResponseRetryClassifier,>,

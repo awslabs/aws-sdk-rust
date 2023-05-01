@@ -8,16 +8,17 @@ pub use crate::operation::check_in_license::_check_in_license_input::CheckInLice
 /// <p>Checks in the specified license. Check in a license when it is no longer in use.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CheckInLicenseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::check_in_license::builders::CheckInLicenseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::check_in_license::builders::CheckInLicenseInputBuilder,
+}
 impl CheckInLicenseFluentBuilder  {
     /// Creates a new `CheckInLicense`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::check_in_license::CheckInLicense, aws_http::retry::AwsResponseRetryClassifier,>,

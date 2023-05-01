@@ -9,16 +9,17 @@ pub use crate::operation::batch_detect_targeted_sentiment::_batch_detect_targete
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDetectTargetedSentimentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_detect_targeted_sentiment::builders::BatchDetectTargetedSentimentInputBuilder,
+}
 impl BatchDetectTargetedSentimentFluentBuilder  {
     /// Creates a new `BatchDetectTargetedSentiment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentiment, aws_http::retry::AwsResponseRetryClassifier,>,

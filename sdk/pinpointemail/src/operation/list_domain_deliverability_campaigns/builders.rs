@@ -8,16 +8,17 @@ pub use crate::operation::list_domain_deliverability_campaigns::_list_domain_del
 /// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code> operation) for the domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDomainDeliverabilityCampaignsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsInputBuilder,
+}
 impl ListDomainDeliverabilityCampaignsFluentBuilder  {
     /// Creates a new `ListDomainDeliverabilityCampaigns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaigns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDomainDeliverabilityCampaignsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_domain_deliverability_campaigns::paginator::ListDomainDeliverabilityCampaignsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_domain_deliverability_campaigns::paginator::ListDomainDeliverabilityCampaignsPaginator {
-                            crate::operation::list_domain_deliverability_campaigns::paginator::ListDomainDeliverabilityCampaignsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_domain_deliverability_campaigns::paginator::ListDomainDeliverabilityCampaignsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_domain_deliverability_campaigns::paginator::ListDomainDeliverabilityCampaignsPaginator {
+                                crate::operation::list_domain_deliverability_campaigns::paginator::ListDomainDeliverabilityCampaignsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
     pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_date(input);

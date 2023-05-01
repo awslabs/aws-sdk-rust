@@ -11,16 +11,17 @@ pub use crate::operation::set_load_balancer_policies_for_backend_server::_set_lo
 /// <p>For more information about enabling back-end instance authentication, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt">Configure Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For more information about Proxy Protocol, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesForBackendServerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_load_balancer_policies_for_backend_server::builders::SetLoadBalancerPoliciesForBackendServerInputBuilder,
+}
 impl SetLoadBalancerPoliciesForBackendServerFluentBuilder  {
     /// Creates a new `SetLoadBalancerPoliciesForBackendServer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServer, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_mailbox_export_jobs::_list_mailbox_export_jobs_in
 /// <p>Lists the mailbox export jobs started for the specified organization within the last seven days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMailboxExportJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_mailbox_export_jobs::builders::ListMailboxExportJobsInputBuilder,
+}
 impl ListMailboxExportJobsFluentBuilder  {
     /// Creates a new `ListMailboxExportJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_mailbox_export_jobs::ListMailboxExportJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListMailboxExportJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator {
-                            crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator {
+                                crate::operation::list_mailbox_export_jobs::paginator::ListMailboxExportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The organization ID.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::get_connect_peer::_get_connect_peer_input::GetConnectP
 /// <p>Returns information about a core network Connect peer.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetConnectPeerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_connect_peer::builders::GetConnectPeerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_connect_peer::builders::GetConnectPeerInputBuilder,
+}
 impl GetConnectPeerFluentBuilder  {
     /// Creates a new `GetConnectPeer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_connect_peer::GetConnectPeer, aws_http::retry::AwsResponseRetryClassifier,>,

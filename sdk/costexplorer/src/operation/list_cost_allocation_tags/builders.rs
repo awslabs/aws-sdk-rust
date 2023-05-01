@@ -8,16 +8,17 @@ pub use crate::operation::list_cost_allocation_tags::_list_cost_allocation_tags_
 /// <p>Get a list of cost allocation tags. All inputs in the API are optional and serve as filters. By default, all cost allocation tags are returned. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCostAllocationTagsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_cost_allocation_tags::builders::ListCostAllocationTagsInputBuilder,
+}
 impl ListCostAllocationTagsFluentBuilder  {
     /// Creates a new `ListCostAllocationTags`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_cost_allocation_tags::ListCostAllocationTags, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCostAllocationTagsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator {
-                            crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator {
+                                crate::operation::list_cost_allocation_tags::paginator::ListCostAllocationTagsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The status of cost allocation tag keys that are returned for this request. </p>
     pub fn status(mut self, input: crate::types::CostAllocationTagStatus) -> Self {
         self.inner = self.inner.status(input);

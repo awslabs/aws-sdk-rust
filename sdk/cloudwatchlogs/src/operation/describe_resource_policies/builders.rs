@@ -8,16 +8,17 @@ pub use crate::operation::describe_resource_policies::_describe_resource_policie
 /// <p>Lists the resource policies in this account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeResourcePoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_resource_policies::builders::DescribeResourcePoliciesInputBuilder,
+}
 impl DescribeResourcePoliciesFluentBuilder  {
     /// Creates a new `DescribeResourcePolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_resource_policies::DescribeResourcePolicies, aws_http::retry::AwsResponseRetryClassifier,>,

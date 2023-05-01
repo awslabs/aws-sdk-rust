@@ -12,16 +12,17 @@ pub use crate::operation::enable_vpc_classic_link_dns_support::_enable_vpc_class
 /// <p>You must specify a VPC ID in the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableVpcClassicLinkDnsSupportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_vpc_classic_link_dns_support::builders::EnableVpcClassicLinkDnsSupportInputBuilder,
+}
 impl EnableVpcClassicLinkDnsSupportFluentBuilder  {
     /// Creates a new `EnableVpcClassicLinkDnsSupport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupport, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -11,16 +11,17 @@ pub use crate::operation::authorize_cluster_security_group_ingress::_authorize_c
 /// <p>You must also associate the security group with a cluster so that clients running on these IP addresses or the EC2 instance are authorized to connect to the cluster. For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Working with Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeClusterSecurityGroupIngressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::authorize_cluster_security_group_ingress::builders::AuthorizeClusterSecurityGroupIngressInputBuilder,
+}
 impl AuthorizeClusterSecurityGroupIngressFluentBuilder  {
     /// Creates a new `AuthorizeClusterSecurityGroupIngress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngress, aws_http::retry::AwsResponseRetryClassifier,>,

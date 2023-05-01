@@ -8,16 +8,17 @@ pub use crate::operation::describe_config_rule_evaluation_status::_describe_conf
 /// <p>Returns status information for each of your Config managed rules. The status includes information such as the last time Config invoked the rule, the last time Config failed to invoke the rule, and the related error for the last failure.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConfigRuleEvaluationStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_config_rule_evaluation_status::builders::DescribeConfigRuleEvaluationStatusInputBuilder,
+}
 impl DescribeConfigRuleEvaluationStatusFluentBuilder  {
     /// Creates a new `DescribeConfigRuleEvaluationStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeConfigRuleEvaluationStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator {
-                            crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator {
+                                crate::operation::describe_config_rule_evaluation_status::paginator::DescribeConfigRuleEvaluationStatusPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ConfigRuleNames`.
     ///
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).

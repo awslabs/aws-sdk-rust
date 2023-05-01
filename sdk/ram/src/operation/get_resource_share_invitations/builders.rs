@@ -8,16 +8,17 @@ pub use crate::operation::get_resource_share_invitations::_get_resource_share_in
 /// <p>Retrieves details about invitations that you have received for resource shares.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourceShareInvitationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_resource_share_invitations::builders::GetResourceShareInvitationsInputBuilder,
+}
 impl GetResourceShareInvitationsFluentBuilder  {
     /// Creates a new `GetResourceShareInvitations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_resource_share_invitations::GetResourceShareInvitations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetResourceShareInvitationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator {
-                            crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator {
+                                crate::operation::get_resource_share_invitations::paginator::GetResourceShareInvitationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `resourceShareInvitationArns`.
     ///
     /// To override the contents of this collection use [`set_resource_share_invitation_arns`](Self::set_resource_share_invitation_arns).

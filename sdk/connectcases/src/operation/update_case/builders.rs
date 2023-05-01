@@ -9,16 +9,17 @@ pub use crate::operation::update_case::_update_case_input::UpdateCaseInputBuilde
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCaseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_case::builders::UpdateCaseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_case::builders::UpdateCaseInputBuilder,
+}
 impl UpdateCaseFluentBuilder  {
     /// Creates a new `UpdateCase`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_case::UpdateCase, aws_http::retry::AwsResponseRetryClassifier,>,

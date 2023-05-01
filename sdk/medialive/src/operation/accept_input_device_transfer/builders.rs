@@ -8,16 +8,17 @@ pub use crate::operation::accept_input_device_transfer::_accept_input_device_tra
 /// Accept an incoming input device transfer. The ownership of the device will transfer to your AWS account.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptInputDeviceTransferFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_input_device_transfer::builders::AcceptInputDeviceTransferInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_input_device_transfer::builders::AcceptInputDeviceTransferInputBuilder,
+}
 impl AcceptInputDeviceTransferFluentBuilder  {
     /// Creates a new `AcceptInputDeviceTransfer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_input_device_transfer::AcceptInputDeviceTransfer, aws_http::retry::AwsResponseRetryClassifier,>,

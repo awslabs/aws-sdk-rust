@@ -8,16 +8,17 @@ pub use crate::operation::create_connection_alias::_create_connection_alias_inpu
 /// <p>Creates the specified connection alias for use with cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConnectionAliasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_connection_alias::builders::CreateConnectionAliasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_connection_alias::builders::CreateConnectionAliasInputBuilder,
+}
 impl CreateConnectionAliasFluentBuilder  {
     /// Creates a new `CreateConnectionAlias`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_connection_alias::CreateConnectionAlias, aws_http::retry::AwsResponseRetryClassifier,>,

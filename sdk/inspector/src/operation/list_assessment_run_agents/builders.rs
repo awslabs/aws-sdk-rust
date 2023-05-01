@@ -8,16 +8,17 @@ pub use crate::operation::list_assessment_run_agents::_list_assessment_run_agent
 /// <p>Lists the agents of the assessment runs that are specified by the ARNs of the assessment runs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssessmentRunAgentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_assessment_run_agents::builders::ListAssessmentRunAgentsInputBuilder,
+}
 impl ListAssessmentRunAgentsFluentBuilder  {
     /// Creates a new `ListAssessmentRunAgents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_assessment_run_agents::ListAssessmentRunAgents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAssessmentRunAgentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_run_agents::paginator::ListAssessmentRunAgentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_assessment_run_agents::paginator::ListAssessmentRunAgentsPaginator {
-                            crate::operation::list_assessment_run_agents::paginator::ListAssessmentRunAgentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_assessment_run_agents::paginator::ListAssessmentRunAgentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_assessment_run_agents::paginator::ListAssessmentRunAgentsPaginator {
+                                crate::operation::list_assessment_run_agents::paginator::ListAssessmentRunAgentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
     pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assessment_run_arn(input.into());

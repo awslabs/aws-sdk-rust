@@ -8,16 +8,17 @@ pub use crate::operation::update_phone_number_settings::_update_phone_number_set
 /// <p>Updates the phone number settings for the administrator's AWS account, such as the default outbound calling name. You can update the default outbound calling name once every seven days. Outbound calling names can take up to 72 hours to update.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePhoneNumberSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder,
+}
 impl UpdatePhoneNumberSettingsFluentBuilder  {
     /// Creates a new `UpdatePhoneNumberSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_phone_number_settings::UpdatePhoneNumberSettings, aws_http::retry::AwsResponseRetryClassifier,>,

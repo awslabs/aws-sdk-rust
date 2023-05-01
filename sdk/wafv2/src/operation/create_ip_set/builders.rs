@@ -8,16 +8,17 @@ pub use crate::operation::create_ip_set::_create_ip_set_input::CreateIpSetInputB
 /// <p>Creates an <code>IPSet</code>, which you use to identify web requests that originate from specific IP addresses or ranges of IP addresses. For example, if you're receiving a lot of requests from a ranges of IP addresses, you can configure WAF to block them using an IPSet that lists those IP addresses. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIPSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_ip_set::builders::CreateIpSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_ip_set::builders::CreateIpSetInputBuilder,
+}
 impl CreateIPSetFluentBuilder  {
     /// Creates a new `CreateIPSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_ip_set::CreateIPSet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::remove_thing_from_thing_group::_remove_thing_from_thin
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromThingGroup</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveThingFromThingGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder,
+}
 impl RemoveThingFromThingGroupFluentBuilder  {
     /// Creates a new `RemoveThingFromThingGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroup, aws_http::retry::AwsResponseRetryClassifier,>,

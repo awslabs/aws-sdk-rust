@@ -8,16 +8,17 @@ pub use crate::operation::update_data_cells_filter::_update_data_cells_filter_in
 /// <p>Updates a data cell filter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDataCellsFilterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_data_cells_filter::builders::UpdateDataCellsFilterInputBuilder,
+}
 impl UpdateDataCellsFilterFluentBuilder  {
     /// Creates a new `UpdateDataCellsFilter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_data_cells_filter::UpdateDataCellsFilter, aws_http::retry::AwsResponseRetryClassifier,>,

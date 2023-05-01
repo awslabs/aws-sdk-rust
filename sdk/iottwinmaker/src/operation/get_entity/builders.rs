@@ -8,16 +8,17 @@ pub use crate::operation::get_entity::_get_entity_input::GetEntityInputBuilder;
 /// <p>Retrieves information about an entity.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEntityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_entity::builders::GetEntityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_entity::builders::GetEntityInputBuilder,
+}
 impl GetEntityFluentBuilder  {
     /// Creates a new `GetEntity`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_entity::GetEntity, aws_http::retry::AwsResponseRetryClassifier,>,

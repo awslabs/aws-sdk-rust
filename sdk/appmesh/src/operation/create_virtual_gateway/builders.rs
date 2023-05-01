@@ -10,16 +10,17 @@ pub use crate::operation::create_virtual_gateway::_create_virtual_gateway_input:
 /// <p>For more information about virtual gateways, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html">Virtual gateways</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVirtualGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_virtual_gateway::builders::CreateVirtualGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_virtual_gateway::builders::CreateVirtualGatewayInputBuilder,
+}
 impl CreateVirtualGatewayFluentBuilder  {
     /// Creates a new `CreateVirtualGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_virtual_gateway::CreateVirtualGateway, aws_http::retry::AwsResponseRetryClassifier,>,

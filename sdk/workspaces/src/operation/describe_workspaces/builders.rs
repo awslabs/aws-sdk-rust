@@ -9,16 +9,17 @@ pub use crate::operation::describe_workspaces::_describe_workspaces_input::Descr
 /// <p>You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify only one filter at a time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeWorkspacesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_workspaces::builders::DescribeWorkspacesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_workspaces::builders::DescribeWorkspacesInputBuilder,
+}
 impl DescribeWorkspacesFluentBuilder  {
     /// Creates a new `DescribeWorkspaces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_workspaces::DescribeWorkspaces, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeWorkspacesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator {
-                            crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator {
+                                crate::operation::describe_workspaces::paginator::DescribeWorkspacesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `WorkspaceIds`.
     ///
     /// To override the contents of this collection use [`set_workspace_ids`](Self::set_workspace_ids).

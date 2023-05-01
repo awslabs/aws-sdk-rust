@@ -8,16 +8,17 @@ pub use crate::operation::reset_service_specific_credential::_reset_service_spec
 /// <p>Resets the password for a service-specific credential. The new password is Amazon Web Services generated and cryptographically strong. It cannot be configured by the user. Resetting the password immediately invalidates the previous password associated with this user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetServiceSpecificCredentialFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_service_specific_credential::builders::ResetServiceSpecificCredentialInputBuilder,
+}
 impl ResetServiceSpecificCredentialFluentBuilder  {
     /// Creates a new `ResetServiceSpecificCredential`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_service_specific_credential::ResetServiceSpecificCredential, aws_http::retry::AwsResponseRetryClassifier,>,

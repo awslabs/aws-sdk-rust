@@ -8,16 +8,17 @@ pub use crate::operation::list_knowledge_bases::_list_knowledge_bases_input::Lis
 /// <p>Lists the knowledge bases.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListKnowledgeBasesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesInputBuilder,
+}
 impl ListKnowledgeBasesFluentBuilder  {
     /// Creates a new `ListKnowledgeBases`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_knowledge_bases::ListKnowledgeBases, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListKnowledgeBasesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator {
-                            crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator {
+                                crate::operation::list_knowledge_bases::paginator::ListKnowledgeBasesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

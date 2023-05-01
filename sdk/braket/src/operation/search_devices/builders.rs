@@ -8,16 +8,17 @@ pub use crate::operation::search_devices::_search_devices_input::SearchDevicesIn
 /// <p>Searches for devices using the specified filters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchDevicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_devices::builders::SearchDevicesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_devices::builders::SearchDevicesInputBuilder,
+}
 impl SearchDevicesFluentBuilder  {
     /// Creates a new `SearchDevices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_devices::SearchDevices, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchDevicesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_devices::paginator::SearchDevicesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_devices::paginator::SearchDevicesPaginator {
-                            crate::operation::search_devices::paginator::SearchDevicesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_devices::paginator::SearchDevicesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_devices::paginator::SearchDevicesPaginator {
+                                crate::operation::search_devices::paginator::SearchDevicesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

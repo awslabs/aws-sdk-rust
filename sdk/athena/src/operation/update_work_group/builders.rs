@@ -8,16 +8,17 @@ pub use crate::operation::update_work_group::_update_work_group_input::UpdateWor
 /// <p>Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only <code>ConfigurationUpdates</code> can be specified.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWorkGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_work_group::builders::UpdateWorkGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_work_group::builders::UpdateWorkGroupInputBuilder,
+}
 impl UpdateWorkGroupFluentBuilder  {
     /// Creates a new `UpdateWorkGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_work_group::UpdateWorkGroup, aws_http::retry::AwsResponseRetryClassifier,>,

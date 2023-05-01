@@ -10,16 +10,17 @@ pub use crate::operation::put_cluster_capacity_providers::_put_cluster_capacity_
 /// <p>When creating a service or running a task on a cluster, if no capacity provider or launch type is specified, then the cluster's default capacity provider strategy is used. We recommend that you define a default capacity provider strategy for your cluster. However, you must specify an empty array (<code>[]</code>) to bypass defining a default strategy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutClusterCapacityProvidersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_cluster_capacity_providers::builders::PutClusterCapacityProvidersInputBuilder,
+}
 impl PutClusterCapacityProvidersFluentBuilder  {
     /// Creates a new `PutClusterCapacityProviders`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_cluster_capacity_providers::PutClusterCapacityProviders, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_event_source::_describe_event_source_input::D
 /// <p>This operation lists details about a partner event source that is shared with your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEventSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_event_source::builders::DescribeEventSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_event_source::builders::DescribeEventSourceInputBuilder,
+}
 impl DescribeEventSourceFluentBuilder  {
     /// Creates a new `DescribeEventSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_event_source::DescribeEventSource, aws_http::retry::AwsResponseRetryClassifier,>,

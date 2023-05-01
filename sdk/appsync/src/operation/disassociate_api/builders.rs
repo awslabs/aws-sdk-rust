@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_api::_disassociate_api_input::Disassociat
 /// <p>Removes an <code>ApiAssociation</code> object from a custom domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateApiFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_api::builders::DisassociateApiInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_api::builders::DisassociateApiInputBuilder,
+}
 impl DisassociateApiFluentBuilder  {
     /// Creates a new `DisassociateApi`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_api::DisassociateApi, aws_http::retry::AwsResponseRetryClassifier,>,

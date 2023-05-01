@@ -8,16 +8,17 @@ pub use crate::operation::create_firewall_domain_list::_create_firewall_domain_l
 /// <p>Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new list with a file, using <code>ImportFirewallDomains</code>, or with domain strings, using <code>UpdateFirewallDomains</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFirewallDomainListFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_firewall_domain_list::builders::CreateFirewallDomainListInputBuilder,
+}
 impl CreateFirewallDomainListFluentBuilder  {
     /// Creates a new `CreateFirewallDomainList`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_firewall_domain_list::CreateFirewallDomainList, aws_http::retry::AwsResponseRetryClassifier,>,

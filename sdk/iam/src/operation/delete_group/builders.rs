@@ -8,16 +8,17 @@ pub use crate::operation::delete_group::_delete_group_input::DeleteGroupInputBui
 /// <p>Deletes the specified IAM group. The group must not contain any users or have any attached policies.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_group::builders::DeleteGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_group::builders::DeleteGroupInputBuilder,
+}
 impl DeleteGroupFluentBuilder  {
     /// Creates a new `DeleteGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_group::DeleteGroup, aws_http::retry::AwsResponseRetryClassifier,>,

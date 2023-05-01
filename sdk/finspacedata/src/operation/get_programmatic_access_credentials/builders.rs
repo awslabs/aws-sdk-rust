@@ -8,16 +8,17 @@ pub use crate::operation::get_programmatic_access_credentials::_get_programmatic
 /// <p>Request programmatic credentials to use with FinSpace SDK.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetProgrammaticAccessCredentialsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_programmatic_access_credentials::builders::GetProgrammaticAccessCredentialsInputBuilder,
+}
 impl GetProgrammaticAccessCredentialsFluentBuilder  {
     /// Creates a new `GetProgrammaticAccessCredentials`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentials, aws_http::retry::AwsResponseRetryClassifier,>,

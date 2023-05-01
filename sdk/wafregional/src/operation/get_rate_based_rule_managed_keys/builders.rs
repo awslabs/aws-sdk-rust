@@ -12,16 +12,17 @@ pub use crate::operation::get_rate_based_rule_managed_keys::_get_rate_based_rule
 /// <p>Returns an array of IP addresses currently being blocked by the <code>RateBasedRule</code> that is specified by the <code>RuleId</code>. The maximum number of managed keys that will be blocked is 10,000. If more than 10,000 addresses exceed the rate limit, the 10,000 addresses with the highest rates will be blocked.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRateBasedRuleManagedKeysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_rate_based_rule_managed_keys::builders::GetRateBasedRuleManagedKeysInputBuilder,
+}
 impl GetRateBasedRuleManagedKeysFluentBuilder  {
     /// Creates a new `GetRateBasedRuleManagedKeys`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeys, aws_http::retry::AwsResponseRetryClassifier,>,

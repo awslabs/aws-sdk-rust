@@ -11,16 +11,17 @@ pub use crate::operation::register_stream_consumer::_register_stream_consumer_in
 /// <p>The use of this operation has a limit of five transactions per second per account. Also, only 5 consumers can be created simultaneously. In other words, you cannot have more than 5 consumers in a <code>CREATING</code> status at the same time. Registering a 6th consumer while there are 5 in a <code>CREATING</code> status results in a <code>LimitExceededException</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterStreamConsumerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_stream_consumer::builders::RegisterStreamConsumerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_stream_consumer::builders::RegisterStreamConsumerInputBuilder,
+}
 impl RegisterStreamConsumerFluentBuilder  {
     /// Creates a new `RegisterStreamConsumer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_stream_consumer::RegisterStreamConsumer, aws_http::retry::AwsResponseRetryClassifier,>,

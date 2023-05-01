@@ -11,16 +11,17 @@ pub use crate::operation::update_app_monitor::_update_app_monitor_input::UpdateA
 /// <p>After you update an app monitor, sign in to the CloudWatch RUM console to get the updated JavaScript code snippet to add to your web application. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How do I find a code snippet that I've already generated?</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAppMonitorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_app_monitor::builders::UpdateAppMonitorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_app_monitor::builders::UpdateAppMonitorInputBuilder,
+}
 impl UpdateAppMonitorFluentBuilder  {
     /// Creates a new `UpdateAppMonitor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_app_monitor::UpdateAppMonitor, aws_http::retry::AwsResponseRetryClassifier,>,

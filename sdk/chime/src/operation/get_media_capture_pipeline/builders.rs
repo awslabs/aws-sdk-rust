@@ -8,16 +8,17 @@ pub use crate::operation::get_media_capture_pipeline::_get_media_capture_pipelin
 /// <p>Gets an existing media capture pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMediaCapturePipelineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_media_capture_pipeline::builders::GetMediaCapturePipelineInputBuilder,
+}
 impl GetMediaCapturePipelineFluentBuilder  {
     /// Creates a new `GetMediaCapturePipeline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_media_capture_pipeline::GetMediaCapturePipeline, aws_http::retry::AwsResponseRetryClassifier,>,

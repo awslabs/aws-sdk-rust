@@ -8,16 +8,17 @@ pub use crate::operation::get_email_identity::_get_email_identity_input::GetEmai
 /// <p>Provides information about a specific identity, including the identity's verification status, sending authorization policies, its DKIM authentication status, and its custom Mail-From settings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEmailIdentityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_email_identity::builders::GetEmailIdentityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_email_identity::builders::GetEmailIdentityInputBuilder,
+}
 impl GetEmailIdentityFluentBuilder  {
     /// Creates a new `GetEmailIdentity`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_email_identity::GetEmailIdentity, aws_http::retry::AwsResponseRetryClassifier,>,

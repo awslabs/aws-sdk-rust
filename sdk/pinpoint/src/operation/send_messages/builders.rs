@@ -8,16 +8,17 @@ pub use crate::operation::send_messages::_send_messages_input::SendMessagesInput
 /// <p>Creates and sends a direct message.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendMessagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_messages::builders::SendMessagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_messages::builders::SendMessagesInputBuilder,
+}
 impl SendMessagesFluentBuilder  {
     /// Creates a new `SendMessages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_messages::SendMessages, aws_http::retry::AwsResponseRetryClassifier,>,

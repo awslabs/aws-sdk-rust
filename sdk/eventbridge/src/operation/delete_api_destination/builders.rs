@@ -8,16 +8,17 @@ pub use crate::operation::delete_api_destination::_delete_api_destination_input:
 /// <p>Deletes the specified API destination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteApiDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_api_destination::builders::DeleteApiDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_api_destination::builders::DeleteApiDestinationInputBuilder,
+}
 impl DeleteApiDestinationFluentBuilder  {
     /// Creates a new `DeleteApiDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_api_destination::DeleteApiDestination, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_distributions::_get_distributions_input::GetDistri
 /// <p>Returns information about one or more of your Amazon Lightsail content delivery network (CDN) distributions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDistributionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_distributions::builders::GetDistributionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_distributions::builders::GetDistributionsInputBuilder,
+}
 impl GetDistributionsFluentBuilder  {
     /// Creates a new `GetDistributions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_distributions::GetDistributions, aws_http::retry::AwsResponseRetryClassifier,>,

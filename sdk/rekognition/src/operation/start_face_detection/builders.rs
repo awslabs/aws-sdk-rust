@@ -10,16 +10,17 @@ pub use crate::operation::start_face_detection::_start_face_detection_input::Sta
 /// <p>For more information, see Detecting faces in a stored video in the Amazon Rekognition Developer Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartFaceDetectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_face_detection::builders::StartFaceDetectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_face_detection::builders::StartFaceDetectionInputBuilder,
+}
 impl StartFaceDetectionFluentBuilder  {
     /// Creates a new `StartFaceDetection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_face_detection::StartFaceDetection, aws_http::retry::AwsResponseRetryClassifier,>,

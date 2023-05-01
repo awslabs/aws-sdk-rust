@@ -8,16 +8,17 @@ pub use crate::operation::list_workflow_executions::_list_workflow_executions_in
 /// <p>Returns a list of workflow runtime instance metadata objects for a specific image build version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWorkflowExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsInputBuilder,
+}
 impl ListWorkflowExecutionsFluentBuilder  {
     /// Creates a new `ListWorkflowExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_workflow_executions::ListWorkflowExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWorkflowExecutionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator {
-                            crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator {
+                                crate::operation::list_workflow_executions::paginator::ListWorkflowExecutionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

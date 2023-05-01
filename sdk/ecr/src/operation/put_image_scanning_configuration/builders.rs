@@ -11,16 +11,17 @@ pub use crate::operation::put_image_scanning_configuration::_put_image_scanning_
 /// <p>Updates the image scanning configuration for the specified repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutImageScanningConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_image_scanning_configuration::builders::PutImageScanningConfigurationInputBuilder,
+}
 impl PutImageScanningConfigurationFluentBuilder  {
     /// Creates a new `PutImageScanningConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_image_scanning_configuration::PutImageScanningConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

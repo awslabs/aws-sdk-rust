@@ -8,16 +8,17 @@ pub use crate::operation::register_client::_register_client_input::RegisterClien
 /// <p>Registers a client with IAM Identity Center. This allows clients to initiate device authorization. The output should be persisted for reuse through many authentication requests.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterClientFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_client::builders::RegisterClientInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_client::builders::RegisterClientInputBuilder,
+}
 impl RegisterClientFluentBuilder  {
     /// Creates a new `RegisterClient`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_client::RegisterClient, aws_http::retry::AwsResponseRetryClassifier,>,

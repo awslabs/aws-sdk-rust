@@ -8,16 +8,17 @@ pub use crate::operation::stop_recommender::_stop_recommender_input::StopRecomme
 /// <p>Stops a recommender that is ACTIVE. Stopping a recommender halts billing and automatic retraining for the recommender.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopRecommenderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_recommender::builders::StopRecommenderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_recommender::builders::StopRecommenderInputBuilder,
+}
 impl StopRecommenderFluentBuilder  {
     /// Creates a new `StopRecommender`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_recommender::StopRecommender, aws_http::retry::AwsResponseRetryClassifier,>,

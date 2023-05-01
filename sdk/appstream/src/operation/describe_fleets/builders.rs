@@ -8,16 +8,17 @@ pub use crate::operation::describe_fleets::_describe_fleets_input::DescribeFleet
 /// <p>Retrieves a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFleetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_fleets::builders::DescribeFleetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_fleets::builders::DescribeFleetsInputBuilder,
+}
 impl DescribeFleetsFluentBuilder  {
     /// Creates a new `DescribeFleets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fleets::DescribeFleets, aws_http::retry::AwsResponseRetryClassifier,>,

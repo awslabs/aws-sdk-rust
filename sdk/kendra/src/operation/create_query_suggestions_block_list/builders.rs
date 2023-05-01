@@ -13,16 +13,17 @@ pub use crate::operation::create_query_suggestions_block_list::_create_query_sug
 /// <p>For an example of creating a block list for query suggestions using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#suggestions-block-list">Query suggestions block list</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateQuerySuggestionsBlockListFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_query_suggestions_block_list::builders::CreateQuerySuggestionsBlockListInputBuilder,
+}
 impl CreateQuerySuggestionsBlockListFluentBuilder  {
     /// Creates a new `CreateQuerySuggestionsBlockList`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockList, aws_http::retry::AwsResponseRetryClassifier,>,

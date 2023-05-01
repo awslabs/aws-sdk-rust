@@ -8,16 +8,17 @@ pub use crate::operation::list_code_repositories::_list_code_repositories_input:
 /// <p>Gets a list of the Git repositories in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCodeRepositoriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_code_repositories::builders::ListCodeRepositoriesInputBuilder,
+}
 impl ListCodeRepositoriesFluentBuilder  {
     /// Creates a new `ListCodeRepositories`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_code_repositories::ListCodeRepositories, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCodeRepositoriesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator {
-                            crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator {
+                                crate::operation::list_code_repositories::paginator::ListCodeRepositoriesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter that returns only Git repositories that were created after the specified time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);

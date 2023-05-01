@@ -9,16 +9,17 @@ pub use crate::operation::get_streaming_session::_get_streaming_session_input::G
 /// <p>Invoke this operation to poll for a streaming session state while creating or deleting a session.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetStreamingSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_streaming_session::builders::GetStreamingSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_streaming_session::builders::GetStreamingSessionInputBuilder,
+}
 impl GetStreamingSessionFluentBuilder  {
     /// Creates a new `GetStreamingSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_streaming_session::GetStreamingSession, aws_http::retry::AwsResponseRetryClassifier,>,

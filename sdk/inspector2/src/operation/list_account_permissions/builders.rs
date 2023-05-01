@@ -8,16 +8,17 @@ pub use crate::operation::list_account_permissions::_list_account_permissions_in
 /// <p>Lists the permissions an account has to configure Amazon Inspector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccountPermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_account_permissions::builders::ListAccountPermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_account_permissions::builders::ListAccountPermissionsInputBuilder,
+}
 impl ListAccountPermissionsFluentBuilder  {
     /// Creates a new `ListAccountPermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_account_permissions::ListAccountPermissions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAccountPermissionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_account_permissions::paginator::ListAccountPermissionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_account_permissions::paginator::ListAccountPermissionsPaginator {
-                            crate::operation::list_account_permissions::paginator::ListAccountPermissionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_account_permissions::paginator::ListAccountPermissionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_account_permissions::paginator::ListAccountPermissionsPaginator {
+                                crate::operation::list_account_permissions::paginator::ListAccountPermissionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The service scan type to check permissions for.</p>
     pub fn service(mut self, input: crate::types::Service) -> Self {
         self.inner = self.inner.service(input);

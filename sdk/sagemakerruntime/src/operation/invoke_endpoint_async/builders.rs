@@ -11,16 +11,17 @@ pub use crate::operation::invoke_endpoint_async::_invoke_endpoint_async_input::I
 /// <p>Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InvokeEndpointAsyncFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::invoke_endpoint_async::builders::InvokeEndpointAsyncInputBuilder,
+}
 impl InvokeEndpointAsyncFluentBuilder  {
     /// Creates a new `InvokeEndpointAsync`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::invoke_endpoint_async::InvokeEndpointAsync, aws_http::retry::AwsResponseRetryClassifier,>,

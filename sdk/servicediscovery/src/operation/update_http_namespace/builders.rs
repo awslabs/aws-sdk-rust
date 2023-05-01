@@ -8,16 +8,17 @@ pub use crate::operation::update_http_namespace::_update_http_namespace_input::U
 /// <p>Updates an HTTP namespace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateHttpNamespaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_http_namespace::builders::UpdateHttpNamespaceInputBuilder,
+}
 impl UpdateHttpNamespaceFluentBuilder  {
     /// Creates a new `UpdateHttpNamespace`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_http_namespace::UpdateHttpNamespace, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_regions::_get_regions_input::GetRegionsInputBuilde
 /// <p>Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code> parameter to also return the Availability Zones in a region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRegionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_regions::builders::GetRegionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_regions::builders::GetRegionsInputBuilder,
+}
 impl GetRegionsFluentBuilder  {
     /// Creates a new `GetRegions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_regions::GetRegions, aws_http::retry::AwsResponseRetryClassifier,>,

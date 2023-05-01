@@ -8,16 +8,17 @@ pub use crate::operation::list_ip_sets::_list_ip_sets_input::ListIpSetsInputBuil
 /// <p>Retrieves an array of <code>IPSetSummary</code> objects for the IP sets that you manage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIPSetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_ip_sets::builders::ListIpSetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_ip_sets::builders::ListIpSetsInputBuilder,
+}
 impl ListIPSetsFluentBuilder  {
     /// Creates a new `ListIPSets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_ip_sets::ListIPSets, aws_http::retry::AwsResponseRetryClassifier,>,

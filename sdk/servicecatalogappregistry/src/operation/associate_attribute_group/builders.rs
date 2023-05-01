@@ -8,16 +8,17 @@ pub use crate::operation::associate_attribute_group::_associate_attribute_group_
 /// <p>Associates an attribute group with an application to augment the application's metadata with the group's attributes. This feature enables applications to be described with user-defined details that are machine-readable, such as third-party integrations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateAttributeGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_attribute_group::builders::AssociateAttributeGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_attribute_group::builders::AssociateAttributeGroupInputBuilder,
+}
 impl AssociateAttributeGroupFluentBuilder  {
     /// Creates a new `AssociateAttributeGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_attribute_group::AssociateAttributeGroup, aws_http::retry::AwsResponseRetryClassifier,>,

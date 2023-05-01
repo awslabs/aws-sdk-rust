@@ -9,16 +9,17 @@ pub use crate::operation::modify_hosts::_modify_hosts_input::ModifyHostsInputBui
 /// <p>You can also use this API action to modify a Dedicated Host to support either multiple instance types in an instance family, or to support a specific instance type only.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyHostsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_hosts::builders::ModifyHostsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_hosts::builders::ModifyHostsInputBuilder,
+}
 impl ModifyHostsFluentBuilder  {
     /// Creates a new `ModifyHosts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_hosts::ModifyHosts, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::detect_key_phrases::_detect_key_phrases_input::DetectK
 /// <p>Detects the key noun phrases found in the text. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectKeyPhrasesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_key_phrases::builders::DetectKeyPhrasesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_key_phrases::builders::DetectKeyPhrasesInputBuilder,
+}
 impl DetectKeyPhrasesFluentBuilder  {
     /// Creates a new `DetectKeyPhrases`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_key_phrases::DetectKeyPhrases, aws_http::retry::AwsResponseRetryClassifier,>,

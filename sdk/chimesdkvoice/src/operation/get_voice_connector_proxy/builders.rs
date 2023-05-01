@@ -8,16 +8,17 @@ pub use crate::operation::get_voice_connector_proxy::_get_voice_connector_proxy_
 /// <p>Retrieves the proxy configuration details for the specified Amazon Chime SDK Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVoiceConnectorProxyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_voice_connector_proxy::builders::GetVoiceConnectorProxyInputBuilder,
+}
 impl GetVoiceConnectorProxyFluentBuilder  {
     /// Creates a new `GetVoiceConnectorProxy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_voice_connector_proxy::GetVoiceConnectorProxy, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::deregister_targets::_deregister_targets_input::Deregis
 /// <p>Deregisters the specified targets from the specified target group. After the targets are deregistered, they no longer receive traffic from the load balancer.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterTargetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_targets::builders::DeregisterTargetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_targets::builders::DeregisterTargetsInputBuilder,
+}
 impl DeregisterTargetsFluentBuilder  {
     /// Creates a new `DeregisterTargets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_targets::DeregisterTargets, aws_http::retry::AwsResponseRetryClassifier,>,

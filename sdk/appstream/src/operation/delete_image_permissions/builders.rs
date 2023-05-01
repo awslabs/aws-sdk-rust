@@ -8,16 +8,17 @@ pub use crate::operation::delete_image_permissions::_delete_image_permissions_in
 /// <p>Deletes permissions for the specified private image. After you delete permissions for an image, AWS accounts to which you previously granted these permissions can no longer use the image.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteImagePermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder,
+}
 impl DeleteImagePermissionsFluentBuilder  {
     /// Creates a new `DeleteImagePermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_image_permissions::DeleteImagePermissions, aws_http::retry::AwsResponseRetryClassifier,>,

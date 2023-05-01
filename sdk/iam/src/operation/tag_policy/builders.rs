@@ -18,16 +18,17 @@ pub use crate::operation::tag_policy::_tag_policy_input::TagPolicyInputBuilder;
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::tag_policy::builders::TagPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::tag_policy::builders::TagPolicyInputBuilder,
+}
 impl TagPolicyFluentBuilder  {
     /// Creates a new `TagPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::tag_policy::TagPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

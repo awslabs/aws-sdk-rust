@@ -13,16 +13,17 @@ pub use crate::operation::get_asset_property_value::_get_asset_property_value_in
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssetPropertyValueFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_asset_property_value::builders::GetAssetPropertyValueInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_asset_property_value::builders::GetAssetPropertyValueInputBuilder,
+}
 impl GetAssetPropertyValueFluentBuilder  {
     /// Creates a new `GetAssetPropertyValue`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_asset_property_value::GetAssetPropertyValue, aws_http::retry::AwsResponseRetryClassifier,>,

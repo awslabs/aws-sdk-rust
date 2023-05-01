@@ -8,16 +8,17 @@ pub use crate::operation::batch_reset_alarm::_batch_reset_alarm_input::BatchRese
 /// <p>Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after you reset them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchResetAlarmFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_reset_alarm::builders::BatchResetAlarmInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_reset_alarm::builders::BatchResetAlarmInputBuilder,
+}
 impl BatchResetAlarmFluentBuilder  {
     /// Creates a new `BatchResetAlarm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_reset_alarm::BatchResetAlarm, aws_http::retry::AwsResponseRetryClassifier,>,

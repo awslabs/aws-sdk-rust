@@ -8,16 +8,17 @@ pub use crate::operation::list_permission_versions::_list_permission_versions_in
 /// <p>Lists the available versions of the specified RAM permission.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPermissionVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_permission_versions::builders::ListPermissionVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_permission_versions::builders::ListPermissionVersionsInputBuilder,
+}
 impl ListPermissionVersionsFluentBuilder  {
     /// Creates a new `ListPermissionVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_permission_versions::ListPermissionVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPermissionVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator {
-                            crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator {
+                                crate::operation::list_permission_versions::paginator::ListPermissionVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You can use the <code>permissionVersion</code> parameter on the <code>AssociateResourceSharePermission</code> operation to specify a non-default version to attach.</p>
     pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());

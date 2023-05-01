@@ -8,16 +8,17 @@ pub use crate::operation::put_managed_scaling_policy::_put_managed_scaling_polic
 /// <p>Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the limits for resources, such as EC2 instances that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutManagedScalingPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_managed_scaling_policy::builders::PutManagedScalingPolicyInputBuilder,
+}
 impl PutManagedScalingPolicyFluentBuilder  {
     /// Creates a new `PutManagedScalingPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_managed_scaling_policy::PutManagedScalingPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

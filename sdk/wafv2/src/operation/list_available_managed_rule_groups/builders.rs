@@ -8,16 +8,17 @@ pub use crate::operation::list_available_managed_rule_groups::_list_available_ma
 /// <p>Retrieves an array of managed rule groups that are available for you to use. This list includes all Amazon Web Services Managed Rules rule groups and all of the Amazon Web Services Marketplace managed rule groups that you're subscribed to.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsInputBuilder,
+}
 impl ListAvailableManagedRuleGroupsFluentBuilder  {
     /// Creates a new `ListAvailableManagedRuleGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroups, aws_http::retry::AwsResponseRetryClassifier,>,

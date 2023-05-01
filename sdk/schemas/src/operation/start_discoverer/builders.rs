@@ -8,16 +8,17 @@ pub use crate::operation::start_discoverer::_start_discoverer_input::StartDiscov
 /// <p>Starts the discoverer</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDiscovererFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_discoverer::builders::StartDiscovererInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_discoverer::builders::StartDiscovererInputBuilder,
+}
 impl StartDiscovererFluentBuilder  {
     /// Creates a new `StartDiscoverer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_discoverer::StartDiscoverer, aws_http::retry::AwsResponseRetryClassifier,>,

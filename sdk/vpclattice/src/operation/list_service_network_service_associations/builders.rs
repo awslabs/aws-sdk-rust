@@ -9,16 +9,17 @@ pub use crate::operation::list_service_network_service_associations::_list_servi
 /// <p>Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN), such as when a service network is associated with a VPC or when a service is associated with a service network. If the association is for a resource that is shared with another account, the association will include the local account ID as the prefix in the ARN for each account the resource is shared with.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListServiceNetworkServiceAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_service_network_service_associations::builders::ListServiceNetworkServiceAssociationsInputBuilder,
+}
 impl ListServiceNetworkServiceAssociationsFluentBuilder  {
     /// Creates a new `ListServiceNetworkServiceAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListServiceNetworkServiceAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_service_network_service_associations::paginator::ListServiceNetworkServiceAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_service_network_service_associations::paginator::ListServiceNetworkServiceAssociationsPaginator {
-                            crate::operation::list_service_network_service_associations::paginator::ListServiceNetworkServiceAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_service_network_service_associations::paginator::ListServiceNetworkServiceAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_service_network_service_associations::paginator::ListServiceNetworkServiceAssociationsPaginator {
+                                crate::operation::list_service_network_service_associations::paginator::ListServiceNetworkServiceAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
     pub fn service_network_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_network_identifier(input.into());

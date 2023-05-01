@@ -8,16 +8,17 @@ pub use crate::operation::get_resolver::_get_resolver_input::GetResolverInputBui
 /// <p>Retrieves a <code>Resolver</code> object.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResolverFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_resolver::builders::GetResolverInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_resolver::builders::GetResolverInputBuilder,
+}
 impl GetResolverFluentBuilder  {
     /// Creates a new `GetResolver`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_resolver::GetResolver, aws_http::retry::AwsResponseRetryClassifier,>,

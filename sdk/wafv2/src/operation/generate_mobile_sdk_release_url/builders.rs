@@ -9,16 +9,17 @@ pub use crate::operation::generate_mobile_sdk_release_url::_generate_mobile_sdk_
 /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateMobileSdkReleaseUrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::generate_mobile_sdk_release_url::builders::GenerateMobileSdkReleaseUrlInputBuilder,
+}
 impl GenerateMobileSdkReleaseUrlFluentBuilder  {
     /// Creates a new `GenerateMobileSdkReleaseUrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrl, aws_http::retry::AwsResponseRetryClassifier,>,

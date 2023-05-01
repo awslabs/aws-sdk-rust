@@ -8,16 +8,17 @@ pub use crate::operation::get_compute_auth_token::_get_compute_auth_token_input:
 /// <p>Requests an authentication token from Amazon GameLift. The authentication token is used by your game server to authenticate with Amazon GameLift. Each authentication token has an expiration time. To continue using the compute resource to host your game server, regularly retrieve a new authorization token.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetComputeAuthTokenFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_compute_auth_token::builders::GetComputeAuthTokenInputBuilder,
+}
 impl GetComputeAuthTokenFluentBuilder  {
     /// Creates a new `GetComputeAuthToken`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_compute_auth_token::GetComputeAuthToken, aws_http::retry::AwsResponseRetryClassifier,>,

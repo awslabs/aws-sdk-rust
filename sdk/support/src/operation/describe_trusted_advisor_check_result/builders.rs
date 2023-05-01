@@ -26,16 +26,17 @@ pub use crate::operation::describe_trusted_advisor_check_result::_describe_trust
 /// <p>To call the Trusted Advisor operations in the Amazon Web Services Support API, you must use the US East (N. Virginia) endpoint. Currently, the US West (Oregon) and Europe (Ireland) endpoints don't support the Trusted Advisor operations. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckResultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_trusted_advisor_check_result::builders::DescribeTrustedAdvisorCheckResultInputBuilder,
+}
 impl DescribeTrustedAdvisorCheckResultFluentBuilder  {
     /// Creates a new `DescribeTrustedAdvisorCheckResult`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResult, aws_http::retry::AwsResponseRetryClassifier,>,

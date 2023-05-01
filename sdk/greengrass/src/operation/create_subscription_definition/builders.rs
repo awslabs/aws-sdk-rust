@@ -8,16 +8,17 @@ pub use crate::operation::create_subscription_definition::_create_subscription_d
 /// Creates a subscription definition. You may provide the initial version of the subscription definition now or use ''CreateSubscriptionDefinitionVersion'' at a later time.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSubscriptionDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_subscription_definition::builders::CreateSubscriptionDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_subscription_definition::builders::CreateSubscriptionDefinitionInputBuilder,
+}
 impl CreateSubscriptionDefinitionFluentBuilder  {
     /// Creates a new `CreateSubscriptionDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_subscription_definition::CreateSubscriptionDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

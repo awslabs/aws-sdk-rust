@@ -8,16 +8,17 @@ pub use crate::operation::describe_account_overview::_describe_account_overview_
 /// <p> For the time range passed in, returns the number of open reactive insight that were created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccountOverviewFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_account_overview::builders::DescribeAccountOverviewInputBuilder,
+}
 impl DescribeAccountOverviewFluentBuilder  {
     /// Creates a new `DescribeAccountOverview`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_account_overview::DescribeAccountOverview, aws_http::retry::AwsResponseRetryClassifier,>,

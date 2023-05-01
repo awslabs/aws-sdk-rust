@@ -9,16 +9,17 @@ pub use crate::operation::list_topic_rule_destinations::_list_topic_rule_destina
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRuleDestinations</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTopicRuleDestinationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_topic_rule_destinations::builders::ListTopicRuleDestinationsInputBuilder,
+}
 impl ListTopicRuleDestinationsFluentBuilder  {
     /// Creates a new `ListTopicRuleDestinations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_topic_rule_destinations::ListTopicRuleDestinations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListTopicRuleDestinationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_topic_rule_destinations::paginator::ListTopicRuleDestinationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_topic_rule_destinations::paginator::ListTopicRuleDestinationsPaginator {
-                            crate::operation::list_topic_rule_destinations::paginator::ListTopicRuleDestinationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_topic_rule_destinations::paginator::ListTopicRuleDestinationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_topic_rule_destinations::paginator::ListTopicRuleDestinationsPaginator {
+                                crate::operation::list_topic_rule_destinations::paginator::ListTopicRuleDestinationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

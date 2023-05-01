@@ -8,16 +8,17 @@ pub use crate::operation::get_readiness_check_resource_status::_get_readiness_ch
 /// <p>Gets individual readiness status for a readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in the recovery group, use GetRecoveryGroupReadinessSummary.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetReadinessCheckResourceStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder,
+}
 impl GetReadinessCheckResourceStatusFluentBuilder  {
     /// Creates a new `GetReadinessCheckResourceStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetReadinessCheckResourceStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_readiness_check_resource_status::paginator::GetReadinessCheckResourceStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_readiness_check_resource_status::paginator::GetReadinessCheckResourceStatusPaginator {
-                            crate::operation::get_readiness_check_resource_status::paginator::GetReadinessCheckResourceStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_readiness_check_resource_status::paginator::GetReadinessCheckResourceStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_readiness_check_resource_status::paginator::GetReadinessCheckResourceStatusPaginator {
+                                crate::operation::get_readiness_check_resource_status::paginator::GetReadinessCheckResourceStatusPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

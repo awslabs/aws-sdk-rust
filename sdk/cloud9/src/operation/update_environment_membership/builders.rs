@@ -8,16 +8,17 @@ pub use crate::operation::update_environment_membership::_update_environment_mem
 /// <p>Changes the settings of an existing environment member for an Cloud9 development environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEnvironmentMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_environment_membership::builders::UpdateEnvironmentMembershipInputBuilder,
+}
 impl UpdateEnvironmentMembershipFluentBuilder  {
     /// Creates a new `UpdateEnvironmentMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_environment_membership::UpdateEnvironmentMembership, aws_http::retry::AwsResponseRetryClassifier,>,

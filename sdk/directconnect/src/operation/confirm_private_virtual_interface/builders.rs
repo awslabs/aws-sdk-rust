@@ -9,16 +9,17 @@ pub use crate::operation::confirm_private_virtual_interface::_confirm_private_vi
 /// <p>After the virtual interface owner makes this call, the virtual interface is created and attached to the specified virtual private gateway or Direct Connect gateway, and is made available to handle traffic.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfirmPrivateVirtualInterfaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::confirm_private_virtual_interface::builders::ConfirmPrivateVirtualInterfaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::confirm_private_virtual_interface::builders::ConfirmPrivateVirtualInterfaceInputBuilder,
+}
 impl ConfirmPrivateVirtualInterfaceFluentBuilder  {
     /// Creates a new `ConfirmPrivateVirtualInterface`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterface, aws_http::retry::AwsResponseRetryClassifier,>,

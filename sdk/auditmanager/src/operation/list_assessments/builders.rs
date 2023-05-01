@@ -8,16 +8,17 @@ pub use crate::operation::list_assessments::_list_assessments_input::ListAssessm
 /// <p> Returns a list of current and past assessments from Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssessmentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_assessments::builders::ListAssessmentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_assessments::builders::ListAssessmentsInputBuilder,
+}
 impl ListAssessmentsFluentBuilder  {
     /// Creates a new `ListAssessments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_assessments::ListAssessments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAssessmentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_assessments::paginator::ListAssessmentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_assessments::paginator::ListAssessmentsPaginator {
-                            crate::operation::list_assessments::paginator::ListAssessmentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_assessments::paginator::ListAssessmentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_assessments::paginator::ListAssessmentsPaginator {
+                                crate::operation::list_assessments::paginator::ListAssessmentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The current status of the assessment.</p>
     pub fn status(mut self, input: crate::types::AssessmentStatus) -> Self {
         self.inner = self.inner.status(input);

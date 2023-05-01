@@ -8,16 +8,17 @@ pub use crate::operation::update_alert::_update_alert_input::UpdateAlertInputBui
 /// <p>Make changes to an existing alert.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAlertFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_alert::builders::UpdateAlertInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_alert::builders::UpdateAlertInputBuilder,
+}
 impl UpdateAlertFluentBuilder  {
     /// Creates a new `UpdateAlert`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_alert::UpdateAlert, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_resource_set::_delete_resource_set_input::Delet
 /// <p>Deletes the specified <code>ResourceSet</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteResourceSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_resource_set::builders::DeleteResourceSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_resource_set::builders::DeleteResourceSetInputBuilder,
+}
 impl DeleteResourceSetFluentBuilder  {
     /// Creates a new `DeleteResourceSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_resource_set::DeleteResourceSet, aws_http::retry::AwsResponseRetryClassifier,>,

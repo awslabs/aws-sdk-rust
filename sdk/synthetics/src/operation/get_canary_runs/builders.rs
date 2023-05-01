@@ -8,16 +8,17 @@ pub use crate::operation::get_canary_runs::_get_canary_runs_input::GetCanaryRuns
 /// <p>Retrieves a list of runs for a specified canary.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCanaryRunsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_canary_runs::builders::GetCanaryRunsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_canary_runs::builders::GetCanaryRunsInputBuilder,
+}
 impl GetCanaryRunsFluentBuilder  {
     /// Creates a new `GetCanaryRuns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_canary_runs::GetCanaryRuns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetCanaryRunsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_canary_runs::paginator::GetCanaryRunsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_canary_runs::paginator::GetCanaryRunsPaginator {
-                            crate::operation::get_canary_runs::paginator::GetCanaryRunsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_canary_runs::paginator::GetCanaryRunsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_canary_runs::paginator::GetCanaryRunsPaginator {
+                                crate::operation::get_canary_runs::paginator::GetCanaryRunsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the canary that you want to see runs for.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

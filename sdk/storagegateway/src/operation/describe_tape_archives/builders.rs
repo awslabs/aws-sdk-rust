@@ -9,16 +9,17 @@ pub use crate::operation::describe_tape_archives::_describe_tape_archives_input:
 /// <p>If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description of all virtual tapes found in the VTS associated with your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTapeArchivesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_tape_archives::builders::DescribeTapeArchivesInputBuilder,
+}
 impl DescribeTapeArchivesFluentBuilder  {
     /// Creates a new `DescribeTapeArchives`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_tape_archives::DescribeTapeArchives, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeTapeArchivesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator {
-                            crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator {
+                                crate::operation::describe_tape_archives::paginator::DescribeTapeArchivesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TapeARNs`.
     ///
     /// To override the contents of this collection use [`set_tape_ar_ns`](Self::set_tape_ar_ns).

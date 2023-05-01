@@ -10,16 +10,17 @@ pub use crate::operation::create_backup_vault::_create_backup_vault_input::Creat
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBackupVaultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_backup_vault::builders::CreateBackupVaultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_backup_vault::builders::CreateBackupVaultInputBuilder,
+}
 impl CreateBackupVaultFluentBuilder  {
     /// Creates a new `CreateBackupVault`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_backup_vault::CreateBackupVault, aws_http::retry::AwsResponseRetryClassifier,>,

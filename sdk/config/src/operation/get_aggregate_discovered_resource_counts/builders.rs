@@ -9,16 +9,17 @@ pub use crate::operation::get_aggregate_discovered_resource_counts::_get_aggrega
 /// <p>For example, if the input contains accountID 12345678910 and region us-east-1 in filters, the API returns the count of resources in account ID 12345678910 and region us-east-1. If the input contains ACCOUNT_ID as a GroupByKey, the API returns resource counts for all source accounts that are present in your aggregator.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAggregateDiscoveredResourceCountsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_aggregate_discovered_resource_counts::builders::GetAggregateDiscoveredResourceCountsInputBuilder,
+}
 impl GetAggregateDiscoveredResourceCountsFluentBuilder  {
     /// Creates a new `GetAggregateDiscoveredResourceCounts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_aggregate_discovered_resource_counts::GetAggregateDiscoveredResourceCounts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetAggregateDiscoveredResourceCountsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator {
-                            crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator {
+                                crate::operation::get_aggregate_discovered_resource_counts::paginator::GetAggregateDiscoveredResourceCountsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the configuration aggregator.</p>
     pub fn configuration_aggregator_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());

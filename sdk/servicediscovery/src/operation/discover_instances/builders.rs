@@ -8,16 +8,17 @@ pub use crate::operation::discover_instances::_discover_instances_input::Discove
 /// <p>Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code> to discover instances for any type of namespace. For public and private DNS namespaces, you can also use DNS queries to discover instances.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DiscoverInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::discover_instances::builders::DiscoverInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::discover_instances::builders::DiscoverInstancesInputBuilder,
+}
 impl DiscoverInstancesFluentBuilder  {
     /// Creates a new `DiscoverInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::discover_instances::DiscoverInstances, aws_http::retry::AwsResponseRetryClassifier,>,

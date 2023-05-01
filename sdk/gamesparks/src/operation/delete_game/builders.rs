@@ -8,16 +8,17 @@ pub use crate::operation::delete_game::_delete_game_input::DeleteGameInputBuilde
 /// <p>Deletes a game.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteGameFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_game::builders::DeleteGameInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_game::builders::DeleteGameInputBuilder,
+}
 impl DeleteGameFluentBuilder  {
     /// Creates a new `DeleteGame`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_game::DeleteGame, aws_http::retry::AwsResponseRetryClassifier,>,

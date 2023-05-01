@@ -8,16 +8,17 @@ pub use crate::operation::delete_control::_delete_control_input::DeleteControlIn
 /// <p> Deletes a custom control in Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteControlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_control::builders::DeleteControlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_control::builders::DeleteControlInputBuilder,
+}
 impl DeleteControlFluentBuilder  {
     /// Creates a new `DeleteControl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_control::DeleteControl, aws_http::retry::AwsResponseRetryClassifier,>,

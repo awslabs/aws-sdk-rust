@@ -8,16 +8,17 @@ pub use crate::operation::create_ops_metadata::_create_ops_metadata_input::Creat
 /// <p>If you create a new application in Application Manager, Amazon Web Services Systems Manager calls this API operation to specify information about the new application, including the application type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateOpsMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_ops_metadata::builders::CreateOpsMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_ops_metadata::builders::CreateOpsMetadataInputBuilder,
+}
 impl CreateOpsMetadataFluentBuilder  {
     /// Creates a new `CreateOpsMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_ops_metadata::CreateOpsMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

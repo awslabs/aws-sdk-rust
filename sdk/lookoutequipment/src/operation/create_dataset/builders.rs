@@ -8,16 +8,17 @@ pub use crate::operation::create_dataset::_create_dataset_input::CreateDatasetIn
 /// <p>Creates a container for a collection of data being ingested for analysis. The dataset contains the metadata describing where the data is and what the data actually looks like. In other words, it contains the location of the data source, the data schema, and other information. A dataset also contains any tags associated with the ingested data. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDatasetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_dataset::builders::CreateDatasetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_dataset::builders::CreateDatasetInputBuilder,
+}
 impl CreateDatasetFluentBuilder  {
     /// Creates a new `CreateDataset`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_dataset::CreateDataset, aws_http::retry::AwsResponseRetryClassifier,>,

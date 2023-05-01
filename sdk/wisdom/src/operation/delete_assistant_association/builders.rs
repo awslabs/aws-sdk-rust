@@ -8,16 +8,17 @@ pub use crate::operation::delete_assistant_association::_delete_assistant_associ
 /// <p>Deletes an assistant association.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAssistantAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationInputBuilder,
+}
 impl DeleteAssistantAssociationFluentBuilder  {
     /// Creates a new `DeleteAssistantAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_assistant_association::DeleteAssistantAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

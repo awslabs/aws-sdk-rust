@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_assets::_disassociate_assets_input::Disas
 /// <p>Disassociates a child asset from the given parent asset through a hierarchy defined in the parent asset's model.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateAssetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_assets::builders::DisassociateAssetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_assets::builders::DisassociateAssetsInputBuilder,
+}
 impl DisassociateAssetsFluentBuilder  {
     /// Creates a new `DisassociateAssets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_assets::DisassociateAssets, aws_http::retry::AwsResponseRetryClassifier,>,

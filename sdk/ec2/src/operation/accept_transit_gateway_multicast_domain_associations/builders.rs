@@ -8,16 +8,17 @@ pub use crate::operation::accept_transit_gateway_multicast_domain_associations::
 /// <p>Accepts a request to associate subnets with a transit gateway multicast domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptTransitGatewayMulticastDomainAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_transit_gateway_multicast_domain_associations::builders::AcceptTransitGatewayMulticastDomainAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_transit_gateway_multicast_domain_associations::builders::AcceptTransitGatewayMulticastDomainAssociationsInputBuilder,
+}
 impl AcceptTransitGatewayMulticastDomainAssociationsFluentBuilder  {
     /// Creates a new `AcceptTransitGatewayMulticastDomainAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_transit_gateway_multicast_domain_associations::AcceptTransitGatewayMulticastDomainAssociations, aws_http::retry::AwsResponseRetryClassifier,>,

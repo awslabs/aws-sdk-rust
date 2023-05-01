@@ -8,16 +8,17 @@ pub use crate::operation::create_work_group::_create_work_group_input::CreateWor
 /// <p>Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled workgroup or an Athena SQL workgroup.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWorkGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_work_group::builders::CreateWorkGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_work_group::builders::CreateWorkGroupInputBuilder,
+}
 impl CreateWorkGroupFluentBuilder  {
     /// Creates a new `CreateWorkGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_work_group::CreateWorkGroup, aws_http::retry::AwsResponseRetryClassifier,>,

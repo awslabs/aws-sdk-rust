@@ -9,16 +9,17 @@ pub use crate::operation::describe_projects::_describe_projects_input::DescribeP
 /// <p>This operation requires permissions to perform the <code>rekognition:DescribeProjects</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeProjectsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_projects::builders::DescribeProjectsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_projects::builders::DescribeProjectsInputBuilder,
+}
 impl DescribeProjectsFluentBuilder  {
     /// Creates a new `DescribeProjects`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_projects::DescribeProjects, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeProjectsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_projects::paginator::DescribeProjectsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_projects::paginator::DescribeProjectsPaginator {
-                            crate::operation::describe_projects::paginator::DescribeProjectsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_projects::paginator::DescribeProjectsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_projects::paginator::DescribeProjectsPaginator {
+                                crate::operation::describe_projects::paginator::DescribeProjectsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

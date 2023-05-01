@@ -8,16 +8,17 @@ pub use crate::operation::describe_data_shares_for_consumer::_describe_data_shar
 /// <p>Returns a list of datashares where the account identifier being called is a consumer account identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDataSharesForConsumerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_data_shares_for_consumer::builders::DescribeDataSharesForConsumerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_data_shares_for_consumer::builders::DescribeDataSharesForConsumerInputBuilder,
+}
 impl DescribeDataSharesForConsumerFluentBuilder  {
     /// Creates a new `DescribeDataSharesForConsumer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumer, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDataSharesForConsumerFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_data_shares_for_consumer::paginator::DescribeDataSharesForConsumerPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_data_shares_for_consumer::paginator::DescribeDataSharesForConsumerPaginator {
-                            crate::operation::describe_data_shares_for_consumer::paginator::DescribeDataSharesForConsumerPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_data_shares_for_consumer::paginator::DescribeDataSharesForConsumerPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_data_shares_for_consumer::paginator::DescribeDataSharesForConsumerPaginator {
+                                crate::operation::describe_data_shares_for_consumer::paginator::DescribeDataSharesForConsumerPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
     pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.consumer_arn(input.into());

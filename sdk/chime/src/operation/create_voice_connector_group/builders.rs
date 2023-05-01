@@ -9,16 +9,17 @@ pub use crate::operation::create_voice_connector_group::_create_voice_connector_
 /// <p>You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault tolerant mechanism for fallback in case of availability events.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVoiceConnectorGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_voice_connector_group::builders::CreateVoiceConnectorGroupInputBuilder,
+}
 impl CreateVoiceConnectorGroupFluentBuilder  {
     /// Creates a new `CreateVoiceConnectorGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_voice_connector_group::CreateVoiceConnectorGroup, aws_http::retry::AwsResponseRetryClassifier,>,

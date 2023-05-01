@@ -8,16 +8,17 @@ pub use crate::operation::get_assistant::_get_assistant_input::GetAssistantInput
 /// <p>Retrieves information about an assistant.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssistantFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_assistant::builders::GetAssistantInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_assistant::builders::GetAssistantInputBuilder,
+}
 impl GetAssistantFluentBuilder  {
     /// Creates a new `GetAssistant`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_assistant::GetAssistant, aws_http::retry::AwsResponseRetryClassifier,>,

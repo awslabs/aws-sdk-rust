@@ -9,16 +9,17 @@ pub use crate::operation::describe_access_points::_describe_access_points_input:
 /// <p>This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccessPointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_access_points::builders::DescribeAccessPointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_access_points::builders::DescribeAccessPointsInputBuilder,
+}
 impl DescribeAccessPointsFluentBuilder  {
     /// Creates a new `DescribeAccessPoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_access_points::DescribeAccessPoints, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeAccessPointsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator {
-                            crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator {
+                                crate::operation::describe_access_points::paginator::DescribeAccessPointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>(Optional) When retrieving all access points for a file system, you can optionally specify the <code>MaxItems</code> parameter to limit the number of objects returned in a response. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

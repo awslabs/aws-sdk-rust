@@ -8,16 +8,17 @@ pub use crate::operation::list_stages::_list_stages_input::ListStagesInputBuilde
 /// <p>Gets a paginated list of stage summaries from the game.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_stages::builders::ListStagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_stages::builders::ListStagesInputBuilder,
+}
 impl ListStagesFluentBuilder  {
     /// Creates a new `ListStages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_stages::ListStages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListStagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_stages::paginator::ListStagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_stages::paginator::ListStagesPaginator {
-                            crate::operation::list_stages::paginator::ListStagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_stages::paginator::ListStagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_stages::paginator::ListStagesPaginator {
+                                crate::operation::list_stages::paginator::ListStagesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the game.</p>
     pub fn game_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.game_name(input.into());

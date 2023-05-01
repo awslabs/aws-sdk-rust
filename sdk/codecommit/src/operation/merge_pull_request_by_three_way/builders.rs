@@ -8,16 +8,17 @@ pub use crate::operation::merge_pull_request_by_three_way::_merge_pull_request_b
 /// <p>Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the three-way merge strategy. If the merge is successful, it closes the pull request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct MergePullRequestByThreeWayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::merge_pull_request_by_three_way::builders::MergePullRequestByThreeWayInputBuilder,
+}
 impl MergePullRequestByThreeWayFluentBuilder  {
     /// Creates a new `MergePullRequestByThreeWay`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::merge_pull_request_by_three_way::MergePullRequestByThreeWay, aws_http::retry::AwsResponseRetryClassifier,>,

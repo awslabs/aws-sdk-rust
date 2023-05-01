@@ -8,16 +8,17 @@ pub use crate::operation::list_volume_initiators::_list_volume_initiators_input:
 /// <p>Lists iSCSI initiators that are connected to a volume. You can use this operation to determine whether a volume is being used or not. This operation is only supported in the cached volume and stored volume gateway types.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVolumeInitiatorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_volume_initiators::builders::ListVolumeInitiatorsInputBuilder,
+}
 impl ListVolumeInitiatorsFluentBuilder  {
     /// Creates a new `ListVolumeInitiators`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_volume_initiators::ListVolumeInitiators, aws_http::retry::AwsResponseRetryClassifier,>,

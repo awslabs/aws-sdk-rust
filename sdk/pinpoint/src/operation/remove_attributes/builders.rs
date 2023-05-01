@@ -8,16 +8,17 @@ pub use crate::operation::remove_attributes::_remove_attributes_input::RemoveAtt
 /// <p>Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_attributes::builders::RemoveAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_attributes::builders::RemoveAttributesInputBuilder,
+}
 impl RemoveAttributesFluentBuilder  {
     /// Creates a new `RemoveAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_attributes::RemoveAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

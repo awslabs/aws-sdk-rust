@@ -8,16 +8,17 @@ pub use crate::operation::create_publishing_destination::_create_publishing_dest
 /// <p>Creates a publishing destination to export findings to. The resource to export findings to must exist before you use this operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePublishingDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_publishing_destination::builders::CreatePublishingDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_publishing_destination::builders::CreatePublishingDestinationInputBuilder,
+}
 impl CreatePublishingDestinationFluentBuilder  {
     /// Creates a new `CreatePublishingDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_publishing_destination::CreatePublishingDestination, aws_http::retry::AwsResponseRetryClassifier,>,

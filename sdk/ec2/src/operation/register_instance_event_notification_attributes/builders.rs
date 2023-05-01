@@ -9,16 +9,17 @@ pub use crate::operation::register_instance_event_notification_attributes::_regi
 /// <p>To remove tags, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterInstanceEventNotificationAttributes.html">DeregisterInstanceEventNotificationAttributes</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterInstanceEventNotificationAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesInputBuilder,
+}
 impl RegisterInstanceEventNotificationAttributesFluentBuilder  {
     /// Creates a new `RegisterInstanceEventNotificationAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

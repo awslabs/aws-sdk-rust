@@ -8,16 +8,17 @@ pub use crate::operation::describe_organization::_describe_organization_input::D
 /// <p>Provides more information regarding a given organization based on its identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOrganizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_organization::builders::DescribeOrganizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_organization::builders::DescribeOrganizationInputBuilder,
+}
 impl DescribeOrganizationFluentBuilder  {
     /// Creates a new `DescribeOrganization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_organization::DescribeOrganization, aws_http::retry::AwsResponseRetryClassifier,>,

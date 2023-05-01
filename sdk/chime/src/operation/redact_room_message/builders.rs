@@ -8,16 +8,17 @@ pub use crate::operation::redact_room_message::_redact_room_message_input::Redac
 /// <p>Redacts the specified message from the specified Amazon Chime channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RedactRoomMessageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::redact_room_message::builders::RedactRoomMessageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::redact_room_message::builders::RedactRoomMessageInputBuilder,
+}
 impl RedactRoomMessageFluentBuilder  {
     /// Creates a new `RedactRoomMessage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::redact_room_message::RedactRoomMessage, aws_http::retry::AwsResponseRetryClassifier,>,

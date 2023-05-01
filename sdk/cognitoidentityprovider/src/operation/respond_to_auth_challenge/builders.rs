@@ -11,16 +11,17 @@ pub use crate::operation::respond_to_auth_challenge::_respond_to_auth_challenge_
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RespondToAuthChallengeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::respond_to_auth_challenge::builders::RespondToAuthChallengeInputBuilder,
+}
 impl RespondToAuthChallengeFluentBuilder  {
     /// Creates a new `RespondToAuthChallenge`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::respond_to_auth_challenge::RespondToAuthChallenge, aws_http::retry::AwsResponseRetryClassifier,>,

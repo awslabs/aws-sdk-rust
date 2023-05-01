@@ -8,16 +8,17 @@ pub use crate::operation::get_migration::_get_migration_input::GetMigrationInput
 /// <p>Provides details about an ongoing or complete migration from an Amazon Lex V1 bot to an Amazon Lex V2 bot. Use this operation to view the migration alerts and warnings related to the migration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMigrationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_migration::builders::GetMigrationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_migration::builders::GetMigrationInputBuilder,
+}
 impl GetMigrationFluentBuilder  {
     /// Creates a new `GetMigration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_migration::GetMigration, aws_http::retry::AwsResponseRetryClassifier,>,

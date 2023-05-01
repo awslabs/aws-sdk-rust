@@ -12,16 +12,17 @@ pub use crate::operation::validate_matchmaking_rule_set::_validate_matchmaking_r
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ValidateMatchmakingRuleSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::validate_matchmaking_rule_set::builders::ValidateMatchmakingRuleSetInputBuilder,
+}
 impl ValidateMatchmakingRuleSetFluentBuilder  {
     /// Creates a new `ValidateMatchmakingRuleSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_security_controls::_batch_get_security_contr
 /// <p> Provides details about a batch of security controls for the current Amazon Web Services account and Amazon Web Services Region. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetSecurityControlsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsInputBuilder,
+}
 impl BatchGetSecurityControlsFluentBuilder  {
     /// Creates a new `BatchGetSecurityControls`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_security_controls::BatchGetSecurityControls, aws_http::retry::AwsResponseRetryClassifier,>,

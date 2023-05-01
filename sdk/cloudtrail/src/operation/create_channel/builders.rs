@@ -8,16 +8,17 @@ pub use crate::operation::create_channel::_create_channel_input::CreateChannelIn
 /// <p>Creates a channel for CloudTrail to ingest events from a partner or external source. After you create a channel, a CloudTrail Lake event data store can log events from the partner or source that you specify.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_channel::builders::CreateChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_channel::builders::CreateChannelInputBuilder,
+}
 impl CreateChannelFluentBuilder  {
     /// Creates a new `CreateChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_channel::CreateChannel, aws_http::retry::AwsResponseRetryClassifier,>,

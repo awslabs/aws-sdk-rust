@@ -8,16 +8,17 @@ pub use crate::operation::list_profiles::_list_profiles_input::ListProfilesInput
 /// <p>Returns a list of the profiles for your system. If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code> parameter. If you ran the command previously and received a value for <code>NextToken</code>, you can supply that value to continue listing profiles from where you left off.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_profiles::builders::ListProfilesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_profiles::builders::ListProfilesInputBuilder,
+}
 impl ListProfilesFluentBuilder  {
     /// Creates a new `ListProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_profiles::ListProfiles, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListProfilesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_profiles::paginator::ListProfilesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_profiles::paginator::ListProfilesPaginator {
-                            crate::operation::list_profiles::paginator::ListProfilesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_profiles::paginator::ListProfilesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_profiles::paginator::ListProfilesPaginator {
+                                crate::operation::list_profiles::paginator::ListProfilesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of profiles to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

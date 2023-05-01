@@ -8,16 +8,17 @@ pub use crate::operation::describe_contact_evaluation::_describe_contact_evaluat
 /// <p>Describes a contact evaluation in the specified Amazon Connect instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeContactEvaluationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_contact_evaluation::builders::DescribeContactEvaluationInputBuilder,
+}
 impl DescribeContactEvaluationFluentBuilder  {
     /// Creates a new `DescribeContactEvaluation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_contact_evaluation::DescribeContactEvaluation, aws_http::retry::AwsResponseRetryClassifier,>,

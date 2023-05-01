@@ -9,16 +9,17 @@ pub use crate::operation::create_capacity_provider::_create_capacity_provider_in
 /// <p>Only capacity providers that use an Auto Scaling group can be created. Amazon ECS tasks on Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers. These providers are available to all accounts in the Amazon Web Services Regions that Fargate supports.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCapacityProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_capacity_provider::builders::CreateCapacityProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_capacity_provider::builders::CreateCapacityProviderInputBuilder,
+}
 impl CreateCapacityProviderFluentBuilder  {
     /// Creates a new `CreateCapacityProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_capacity_provider::CreateCapacityProvider, aws_http::retry::AwsResponseRetryClassifier,>,

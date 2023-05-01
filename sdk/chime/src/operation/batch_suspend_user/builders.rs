@@ -11,16 +11,17 @@ pub use crate::operation::batch_suspend_user::_batch_suspend_user_input::BatchSu
 /// <p> To sign out users without suspending them, use the <code>LogoutUser</code> action. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchSuspendUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_suspend_user::builders::BatchSuspendUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_suspend_user::builders::BatchSuspendUserInputBuilder,
+}
 impl BatchSuspendUserFluentBuilder  {
     /// Creates a new `BatchSuspendUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_suspend_user::BatchSuspendUser, aws_http::retry::AwsResponseRetryClassifier,>,

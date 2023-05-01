@@ -18,16 +18,17 @@ pub use crate::operation::get_dashboard_embed_url::_get_dashboard_embed_url_inpu
 /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDashboardEmbedUrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder,
+}
 impl GetDashboardEmbedUrlFluentBuilder  {
     /// Creates a new `GetDashboardEmbedUrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrl, aws_http::retry::AwsResponseRetryClassifier,>,

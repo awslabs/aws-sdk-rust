@@ -8,16 +8,17 @@ pub use crate::operation::modify_aqua_configuration::_modify_aqua_configuration_
 /// <p>This operation is retired. Calling this operation does not change AQUA configuration. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyAquaConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_aqua_configuration::builders::ModifyAquaConfigurationInputBuilder,
+}
 impl ModifyAquaConfigurationFluentBuilder  {
     /// Creates a new `ModifyAquaConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_aqua_configuration::ModifyAquaConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

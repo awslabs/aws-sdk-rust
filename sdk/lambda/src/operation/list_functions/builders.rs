@@ -11,16 +11,17 @@ pub use crate::operation::list_functions::_list_functions_input::ListFunctionsIn
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFunctionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_functions::builders::ListFunctionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_functions::builders::ListFunctionsInputBuilder,
+}
 impl ListFunctionsFluentBuilder  {
     /// Creates a new `ListFunctions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_functions::ListFunctions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListFunctionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_functions::paginator::ListFunctionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_functions::paginator::ListFunctionsPaginator {
-                            crate::operation::list_functions::paginator::ListFunctionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_functions::paginator::ListFunctionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_functions::paginator::ListFunctionsPaginator {
+                                crate::operation::list_functions::paginator::ListFunctionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
     pub fn master_region(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.master_region(input.into());

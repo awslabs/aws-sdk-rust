@@ -9,16 +9,17 @@ pub use crate::operation::list_delegated_administrators::_list_delegated_adminis
 /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDelegatedAdministratorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsInputBuilder,
+}
 impl ListDelegatedAdministratorsFluentBuilder  {
     /// Creates a new `ListDelegatedAdministrators`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_delegated_administrators::ListDelegatedAdministrators, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListDelegatedAdministratorsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator {
-                            crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator {
+                                crate::operation::list_delegated_administrators::paginator::ListDelegatedAdministratorsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies a service principal name. If specified, then the operation lists the delegated administrators only for the specified service.</p> 
     /// <p>If you don't specify a service principal, the operation lists all delegated administrators for all services in your organization.</p>
     pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {

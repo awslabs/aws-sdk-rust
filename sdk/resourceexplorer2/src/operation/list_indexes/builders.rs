@@ -8,16 +8,17 @@ pub use crate::operation::list_indexes::_list_indexes_input::ListIndexesInputBui
 /// <p>Retrieves a list of all of the indexes in Amazon Web Services Regions that are currently collecting resource information for Amazon Web Services Resource Explorer.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIndexesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_indexes::builders::ListIndexesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_indexes::builders::ListIndexesInputBuilder,
+}
 impl ListIndexesFluentBuilder  {
     /// Creates a new `ListIndexes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_indexes::ListIndexes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListIndexesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_indexes::paginator::ListIndexesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_indexes::paginator::ListIndexesPaginator {
-                            crate::operation::list_indexes::paginator::ListIndexesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_indexes::paginator::ListIndexesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_indexes::paginator::ListIndexesPaginator {
+                                crate::operation::list_indexes::paginator::ListIndexesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If specified, limits the output to only indexes of the specified Type, either <code>LOCAL</code> or <code>AGGREGATOR</code>.</p> 
     /// <p>Use this option to discover the aggregator index for your account.</p>
     pub fn r#type(mut self, input: crate::types::IndexType) -> Self {

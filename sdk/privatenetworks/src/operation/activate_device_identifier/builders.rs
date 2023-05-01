@@ -8,16 +8,17 @@ pub use crate::operation::activate_device_identifier::_activate_device_identifie
 /// <p>Activates the specified device identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ActivateDeviceIdentifierFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::activate_device_identifier::builders::ActivateDeviceIdentifierInputBuilder,
+}
 impl ActivateDeviceIdentifierFluentBuilder  {
     /// Creates a new `ActivateDeviceIdentifier`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::activate_device_identifier::ActivateDeviceIdentifier, aws_http::retry::AwsResponseRetryClassifier,>,

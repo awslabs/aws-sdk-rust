@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_asset_property_value::_batch_get_asset_prope
 /// <p>Gets the current value for one or more asset properties. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying current values</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_asset_property_value::builders::BatchGetAssetPropertyValueInputBuilder,
+}
 impl BatchGetAssetPropertyValueFluentBuilder  {
     /// Creates a new `BatchGetAssetPropertyValue`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValue, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl BatchGetAssetPropertyValueFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator {
-                            crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator {
+                                crate::operation::batch_get_asset_property_value::paginator::BatchGetAssetPropertyValuePaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `entries`.
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).

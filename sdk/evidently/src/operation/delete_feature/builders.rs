@@ -8,16 +8,17 @@ pub use crate::operation::delete_feature::_delete_feature_input::DeleteFeatureIn
 /// <p>Deletes an Evidently feature.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFeatureFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_feature::builders::DeleteFeatureInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_feature::builders::DeleteFeatureInputBuilder,
+}
 impl DeleteFeatureFluentBuilder  {
     /// Creates a new `DeleteFeature`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_feature::DeleteFeature, aws_http::retry::AwsResponseRetryClassifier,>,

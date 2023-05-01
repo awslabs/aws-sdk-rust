@@ -8,16 +8,17 @@ pub use crate::operation::update_studio_session_mapping::_update_studio_session_
 /// <p>Updates the session policy attached to the user or group for the specified Amazon EMR Studio.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateStudioSessionMappingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_studio_session_mapping::builders::UpdateStudioSessionMappingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_studio_session_mapping::builders::UpdateStudioSessionMappingInputBuilder,
+}
 impl UpdateStudioSessionMappingFluentBuilder  {
     /// Creates a new `UpdateStudioSessionMapping`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_studio_session_mapping::UpdateStudioSessionMapping, aws_http::retry::AwsResponseRetryClassifier,>,

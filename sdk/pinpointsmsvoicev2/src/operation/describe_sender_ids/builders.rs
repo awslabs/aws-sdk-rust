@@ -10,16 +10,17 @@ pub use crate::operation::describe_sender_ids::_describe_sender_ids_input::Descr
 /// <p>f you specify a sender ID that isn't valid, an Error is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSenderIdsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_sender_ids::builders::DescribeSenderIdsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_sender_ids::builders::DescribeSenderIdsInputBuilder,
+}
 impl DescribeSenderIdsFluentBuilder  {
     /// Creates a new `DescribeSenderIds`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_sender_ids::DescribeSenderIds, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeSenderIdsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator {
-                            crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator {
+                                crate::operation::describe_sender_ids::paginator::DescribeSenderIdsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `SenderIds`.
     ///
     /// To override the contents of this collection use [`set_sender_ids`](Self::set_sender_ids).

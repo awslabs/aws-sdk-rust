@@ -10,16 +10,17 @@ pub use crate::operation::disassociate_nat_gateway_address::_disassociate_nat_ga
 /// <p>An EIP will only be released at the end of MaxDrainDurationSeconds. The EIPs stay associated and support the existing connections but do not support any new connections (new connections are distributed across the remaining associated EIPs). As the existing connections drain out, the EIPs (and the corresponding private IPs mapped to them) get released.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateNatGatewayAddressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_nat_gateway_address::builders::DisassociateNatGatewayAddressInputBuilder,
+}
 impl DisassociateNatGatewayAddressFluentBuilder  {
     /// Creates a new `DisassociateNatGatewayAddress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddress, aws_http::retry::AwsResponseRetryClassifier,>,

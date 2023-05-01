@@ -8,16 +8,17 @@ pub use crate::operation::list_app_instance_users::_list_app_instance_users_inpu
 /// <p>List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAppInstanceUsersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_app_instance_users::builders::ListAppInstanceUsersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_app_instance_users::builders::ListAppInstanceUsersInputBuilder,
+}
 impl ListAppInstanceUsersFluentBuilder  {
     /// Creates a new `ListAppInstanceUsers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_app_instance_users::ListAppInstanceUsers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAppInstanceUsersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_app_instance_users::paginator::ListAppInstanceUsersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_app_instance_users::paginator::ListAppInstanceUsersPaginator {
-                            crate::operation::list_app_instance_users::paginator::ListAppInstanceUsersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_app_instance_users::paginator::ListAppInstanceUsersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_app_instance_users::paginator::ListAppInstanceUsersPaginator {
+                                crate::operation::list_app_instance_users::paginator::ListAppInstanceUsersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());

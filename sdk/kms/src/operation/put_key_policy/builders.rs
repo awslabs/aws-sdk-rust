@@ -12,16 +12,17 @@ pub use crate::operation::put_key_policy::_put_key_policy_input::PutKeyPolicyInp
 /// <p> <b>Related operations</b>: <code>GetKeyPolicy</code> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutKeyPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_key_policy::builders::PutKeyPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_key_policy::builders::PutKeyPolicyInputBuilder,
+}
 impl PutKeyPolicyFluentBuilder  {
     /// Creates a new `PutKeyPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_key_policy::PutKeyPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

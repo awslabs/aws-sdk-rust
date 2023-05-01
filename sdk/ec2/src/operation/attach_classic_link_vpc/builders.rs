@@ -13,16 +13,17 @@ pub use crate::operation::attach_classic_link_vpc::_attach_classic_link_vpc_inpu
 /// <p>Linking your instance to a VPC is sometimes referred to as <i>attaching</i> your instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AttachClassicLinkVpcFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::attach_classic_link_vpc::builders::AttachClassicLinkVpcInputBuilder,
+}
 impl AttachClassicLinkVpcFluentBuilder  {
     /// Creates a new `AttachClassicLinkVpc`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_classic_link_vpc::AttachClassicLinkVpc, aws_http::retry::AwsResponseRetryClassifier,>,

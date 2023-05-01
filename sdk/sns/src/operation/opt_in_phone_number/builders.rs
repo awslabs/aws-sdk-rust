@@ -9,16 +9,17 @@ pub use crate::operation::opt_in_phone_number::_opt_in_phone_number_input::OptIn
 /// <p>You can opt in a phone number only once every 30 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct OptInPhoneNumberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::opt_in_phone_number::builders::OptInPhoneNumberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::opt_in_phone_number::builders::OptInPhoneNumberInputBuilder,
+}
 impl OptInPhoneNumberFluentBuilder  {
     /// Creates a new `OptInPhoneNumber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::opt_in_phone_number::OptInPhoneNumber, aws_http::retry::AwsResponseRetryClassifier,>,

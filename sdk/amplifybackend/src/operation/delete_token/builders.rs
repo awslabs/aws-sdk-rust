@@ -8,16 +8,17 @@ pub use crate::operation::delete_token::_delete_token_input::DeleteTokenInputBui
 /// <p>Deletes the challenge token based on the given appId and sessionId.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTokenFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_token::builders::DeleteTokenInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_token::builders::DeleteTokenInputBuilder,
+}
 impl DeleteTokenFluentBuilder  {
     /// Creates a new `DeleteToken`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_token::DeleteToken, aws_http::retry::AwsResponseRetryClassifier,>,

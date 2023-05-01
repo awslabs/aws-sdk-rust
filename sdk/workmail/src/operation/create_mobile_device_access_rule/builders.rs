@@ -8,16 +8,17 @@ pub use crate::operation::create_mobile_device_access_rule::_create_mobile_devic
 /// <p>Creates a new mobile device access rule for the specified WorkMail organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMobileDeviceAccessRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_mobile_device_access_rule::builders::CreateMobileDeviceAccessRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_mobile_device_access_rule::builders::CreateMobileDeviceAccessRuleInputBuilder,
+}
 impl CreateMobileDeviceAccessRuleFluentBuilder  {
     /// Creates a new `CreateMobileDeviceAccessRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRule, aws_http::retry::AwsResponseRetryClassifier,>,

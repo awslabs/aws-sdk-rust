@@ -8,16 +8,17 @@ pub use crate::operation::create_vpc_endpoint::_create_vpc_endpoint_input::Creat
 /// <p>Creates an OpenSearch Serverless-managed interface VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon OpenSearch Serverless using an interface endpoint</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVpcEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_vpc_endpoint::builders::CreateVpcEndpointInputBuilder,
+}
 impl CreateVpcEndpointFluentBuilder  {
     /// Creates a new `CreateVpcEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_vpc_endpoint::CreateVpcEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

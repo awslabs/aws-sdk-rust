@@ -8,16 +8,17 @@ pub use crate::operation::update_domain::_update_domain_input::UpdateDomainInput
 /// <p>Updates the default settings for new user profiles in the domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_domain::builders::UpdateDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_domain::builders::UpdateDomainInputBuilder,
+}
 impl UpdateDomainFluentBuilder  {
     /// Creates a new `UpdateDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_domain::UpdateDomain, aws_http::retry::AwsResponseRetryClassifier,>,

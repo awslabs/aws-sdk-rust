@@ -8,16 +8,17 @@ pub use crate::operation::update_directory_config::_update_directory_config_inpu
 /// <p>Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDirectoryConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_directory_config::builders::UpdateDirectoryConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_directory_config::builders::UpdateDirectoryConfigInputBuilder,
+}
 impl UpdateDirectoryConfigFluentBuilder  {
     /// Creates a new `UpdateDirectoryConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_directory_config::UpdateDirectoryConfig, aws_http::retry::AwsResponseRetryClassifier,>,

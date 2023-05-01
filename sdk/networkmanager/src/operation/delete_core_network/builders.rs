@@ -8,16 +8,17 @@ pub use crate::operation::delete_core_network::_delete_core_network_input::Delet
 /// <p>Deletes a core network along with all core network policies. This can only be done if there are no attachments on a core network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCoreNetworkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_core_network::builders::DeleteCoreNetworkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_core_network::builders::DeleteCoreNetworkInputBuilder,
+}
 impl DeleteCoreNetworkFluentBuilder  {
     /// Creates a new `DeleteCoreNetwork`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_core_network::DeleteCoreNetwork, aws_http::retry::AwsResponseRetryClassifier,>,

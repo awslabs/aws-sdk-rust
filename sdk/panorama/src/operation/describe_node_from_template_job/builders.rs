@@ -8,16 +8,17 @@ pub use crate::operation::describe_node_from_template_job::_describe_node_from_t
 /// <p>Returns information about a job to create a camera stream node.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNodeFromTemplateJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobInputBuilder,
+}
 impl DescribeNodeFromTemplateJobFluentBuilder  {
     /// Creates a new `DescribeNodeFromTemplateJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJob, aws_http::retry::AwsResponseRetryClassifier,>,

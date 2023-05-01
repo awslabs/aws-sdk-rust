@@ -10,16 +10,17 @@ pub use crate::operation::reset_cache::_reset_cache_input::ResetCacheInputBuilde
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetCacheFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_cache::builders::ResetCacheInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_cache::builders::ResetCacheInputBuilder,
+}
 impl ResetCacheFluentBuilder  {
     /// Creates a new `ResetCache`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_cache::ResetCache, aws_http::retry::AwsResponseRetryClassifier,>,

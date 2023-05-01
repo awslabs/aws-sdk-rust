@@ -9,16 +9,17 @@ pub use crate::operation::put_container_policy::_put_container_policy_input::Put
 /// <p>For this release of the REST API, you can create only one policy for a container. If you enter <code>PutContainerPolicy</code> twice, the second command modifies the existing policy. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutContainerPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_container_policy::builders::PutContainerPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_container_policy::builders::PutContainerPolicyInputBuilder,
+}
 impl PutContainerPolicyFluentBuilder  {
     /// Creates a new `PutContainerPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_container_policy::PutContainerPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

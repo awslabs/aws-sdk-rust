@@ -8,16 +8,17 @@ pub use crate::operation::describe_stack_set::_describe_stack_set_input::Describ
 /// <p>Returns the description of the specified stack set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStackSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_stack_set::builders::DescribeStackSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_stack_set::builders::DescribeStackSetInputBuilder,
+}
 impl DescribeStackSetFluentBuilder  {
     /// Creates a new `DescribeStackSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_stack_set::DescribeStackSet, aws_http::retry::AwsResponseRetryClassifier,>,

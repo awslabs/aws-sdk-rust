@@ -9,16 +9,17 @@ pub use crate::operation::delete_mesh::_delete_mesh_input::DeleteMeshInputBuilde
 /// <p>You must delete all resources (virtual services, routes, virtual routers, and virtual nodes) in the service mesh before you can delete the mesh itself.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMeshFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_mesh::builders::DeleteMeshInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_mesh::builders::DeleteMeshInputBuilder,
+}
 impl DeleteMeshFluentBuilder  {
     /// Creates a new `DeleteMesh`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_mesh::DeleteMesh, aws_http::retry::AwsResponseRetryClassifier,>,

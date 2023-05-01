@@ -8,16 +8,17 @@ pub use crate::operation::delete_assessment_framework::_delete_assessment_framew
 /// <p> Deletes a custom framework in Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAssessmentFrameworkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_assessment_framework::builders::DeleteAssessmentFrameworkInputBuilder,
+}
 impl DeleteAssessmentFrameworkFluentBuilder  {
     /// Creates a new `DeleteAssessmentFramework`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_assessment_framework::DeleteAssessmentFramework, aws_http::retry::AwsResponseRetryClassifier,>,

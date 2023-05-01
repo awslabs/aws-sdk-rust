@@ -9,16 +9,17 @@ pub use crate::operation::start_query_planning::_start_query_planning_input::Sta
 /// <p>This operation generates work units that can be retrieved with the <code>GetWorkUnits</code> operation as soon as the query state is WORKUNITS_AVAILABLE or FINISHED.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartQueryPlanningFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_query_planning::builders::StartQueryPlanningInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_query_planning::builders::StartQueryPlanningInputBuilder,
+}
 impl StartQueryPlanningFluentBuilder  {
     /// Creates a new `StartQueryPlanning`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_query_planning::StartQueryPlanning, aws_http::retry::AwsResponseRetryClassifier,>,

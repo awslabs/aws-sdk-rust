@@ -8,16 +8,17 @@ pub use crate::operation::associate_resource_share_permission::_associate_resour
 /// <p>Adds or replaces the RAM permission for a resource type included in a resource share. You can have exactly one permission associated with each resource type in the resource share. You can add a new RAM permission only if there are currently no resources of that resource type currently in the resource share.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateResourceSharePermissionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_resource_share_permission::builders::AssociateResourceSharePermissionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_resource_share_permission::builders::AssociateResourceSharePermissionInputBuilder,
+}
 impl AssociateResourceSharePermissionFluentBuilder  {
     /// Creates a new `AssociateResourceSharePermission`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_resource_share_permission::AssociateResourceSharePermission, aws_http::retry::AwsResponseRetryClassifier,>,

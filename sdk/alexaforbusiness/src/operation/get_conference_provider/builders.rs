@@ -8,16 +8,17 @@ pub use crate::operation::get_conference_provider::_get_conference_provider_inpu
 /// <p>Gets details about a specific conference provider.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetConferenceProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_conference_provider::builders::GetConferenceProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_conference_provider::builders::GetConferenceProviderInputBuilder,
+}
 impl GetConferenceProviderFluentBuilder  {
     /// Creates a new `GetConferenceProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_conference_provider::GetConferenceProvider, aws_http::retry::AwsResponseRetryClassifier,>,

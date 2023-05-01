@@ -8,16 +8,17 @@ pub use crate::operation::create_resource::_create_resource_input::CreateResourc
 /// <p>Creates a new WorkMail resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_resource::builders::CreateResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_resource::builders::CreateResourceInputBuilder,
+}
 impl CreateResourceFluentBuilder  {
     /// Creates a new `CreateResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_resource::CreateResource, aws_http::retry::AwsResponseRetryClassifier,>,

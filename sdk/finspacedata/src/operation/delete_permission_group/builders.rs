@@ -8,16 +8,17 @@ pub use crate::operation::delete_permission_group::_delete_permission_group_inpu
 /// <p>Deletes a permission group. This action is irreversible.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePermissionGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_permission_group::builders::DeletePermissionGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_permission_group::builders::DeletePermissionGroupInputBuilder,
+}
 impl DeletePermissionGroupFluentBuilder  {
     /// Creates a new `DeletePermissionGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_permission_group::DeletePermissionGroup, aws_http::retry::AwsResponseRetryClassifier,>,

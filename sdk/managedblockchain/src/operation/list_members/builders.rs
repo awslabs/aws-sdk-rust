@@ -9,16 +9,17 @@ pub use crate::operation::list_members::_list_members_input::ListMembersInputBui
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMembersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_members::builders::ListMembersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_members::builders::ListMembersInputBuilder,
+}
 impl ListMembersFluentBuilder  {
     /// Creates a new `ListMembers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_members::ListMembers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListMembersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_members::paginator::ListMembersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_members::paginator::ListMembersPaginator {
-                            crate::operation::list_members::paginator::ListMembersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_members::paginator::ListMembersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_members::paginator::ListMembersPaginator {
+                                crate::operation::list_members::paginator::ListMembersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier of the network for which to list members.</p>
     pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.network_id(input.into());

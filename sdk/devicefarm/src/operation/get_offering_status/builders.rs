@@ -8,16 +8,17 @@ pub use crate::operation::get_offering_status::_get_offering_status_input::GetOf
 /// <p>Gets the current status and future status of all offerings purchased by an AWS account. The response indicates how many offerings are currently available and the offerings that will be available in the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOfferingStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_offering_status::builders::GetOfferingStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_offering_status::builders::GetOfferingStatusInputBuilder,
+}
 impl GetOfferingStatusFluentBuilder  {
     /// Creates a new `GetOfferingStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_offering_status::GetOfferingStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetOfferingStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator {
-                            crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator {
+                                crate::operation::get_offering_status::paginator::GetOfferingStatusPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

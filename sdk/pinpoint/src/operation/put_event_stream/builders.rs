@@ -8,16 +8,17 @@ pub use crate::operation::put_event_stream::_put_event_stream_input::PutEventStr
 /// <p>Creates a new event stream for an application or updates the settings of an existing event stream for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutEventStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_event_stream::builders::PutEventStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_event_stream::builders::PutEventStreamInputBuilder,
+}
 impl PutEventStreamFluentBuilder  {
     /// Creates a new `PutEventStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_event_stream::PutEventStream, aws_http::retry::AwsResponseRetryClassifier,>,

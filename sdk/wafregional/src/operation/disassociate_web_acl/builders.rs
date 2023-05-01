@@ -12,16 +12,17 @@ pub use crate::operation::disassociate_web_acl::_disassociate_web_acl_input::Dis
 /// <p>Removes a web ACL from the specified resource, either an application load balancer or Amazon API Gateway stage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateWebACLFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_web_acl::builders::DisassociateWebAclInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_web_acl::builders::DisassociateWebAclInputBuilder,
+}
 impl DisassociateWebACLFluentBuilder  {
     /// Creates a new `DisassociateWebACL`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_web_acl::DisassociateWebACL, aws_http::retry::AwsResponseRetryClassifier,>,

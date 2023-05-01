@@ -10,16 +10,17 @@ pub use crate::operation::tag_delivery_stream::_tag_delivery_stream_input::TagDe
 /// <p>This operation has a limit of five transactions per second per account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagDeliveryStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::tag_delivery_stream::builders::TagDeliveryStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::tag_delivery_stream::builders::TagDeliveryStreamInputBuilder,
+}
 impl TagDeliveryStreamFluentBuilder  {
     /// Creates a new `TagDeliveryStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::tag_delivery_stream::TagDeliveryStream, aws_http::retry::AwsResponseRetryClassifier,>,

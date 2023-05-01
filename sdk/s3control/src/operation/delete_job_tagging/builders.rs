@@ -15,16 +15,17 @@ pub use crate::operation::delete_job_tagging::_delete_job_tagging_input::DeleteJ
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteJobTaggingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_job_tagging::builders::DeleteJobTaggingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_job_tagging::builders::DeleteJobTaggingInputBuilder,
+}
 impl DeleteJobTaggingFluentBuilder  {
     /// Creates a new `DeleteJobTagging`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_job_tagging::DeleteJobTagging, aws_http::retry::AwsResponseRetryClassifier,>,

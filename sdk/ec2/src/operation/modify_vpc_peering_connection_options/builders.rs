@@ -17,16 +17,17 @@ pub use crate::operation::modify_vpc_peering_connection_options::_modify_vpc_pee
 /// <p>If the peered VPCs are in the same Amazon Web Services account, you can enable DNS resolution for queries from the local VPC. This ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This option is not available if the peered VPCs are in different Amazon Web Services accounts or different Regions. For peered VPCs in different Amazon Web Services accounts, each Amazon Web Services account owner must initiate a separate request to modify the peering connection options. For inter-region peering connections, you must use the Region for the requester VPC to modify the requester VPC peering options and the Region for the accepter VPC to modify the accepter VPC peering options. To verify which VPCs are the accepter and the requester for a VPC peering connection, use the <code>DescribeVpcPeeringConnections</code> command.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpcPeeringConnectionOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_vpc_peering_connection_options::builders::ModifyVpcPeeringConnectionOptionsInputBuilder,
+}
 impl ModifyVpcPeeringConnectionOptionsFluentBuilder  {
     /// Creates a new `ModifyVpcPeeringConnectionOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_peering_connection_options::ModifyVpcPeeringConnectionOptions, aws_http::retry::AwsResponseRetryClassifier,>,

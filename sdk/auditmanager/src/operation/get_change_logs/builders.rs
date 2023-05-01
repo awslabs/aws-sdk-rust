@@ -8,16 +8,17 @@ pub use crate::operation::get_change_logs::_get_change_logs_input::GetChangeLogs
 /// <p> Returns a list of changelogs from Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetChangeLogsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_change_logs::builders::GetChangeLogsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_change_logs::builders::GetChangeLogsInputBuilder,
+}
 impl GetChangeLogsFluentBuilder  {
     /// Creates a new `GetChangeLogs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_change_logs::GetChangeLogs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetChangeLogsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_change_logs::paginator::GetChangeLogsPaginator {
-                            crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_change_logs::paginator::GetChangeLogsPaginator {
+                                crate::operation::get_change_logs::paginator::GetChangeLogsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier for the assessment. </p>
     pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assessment_id(input.into());

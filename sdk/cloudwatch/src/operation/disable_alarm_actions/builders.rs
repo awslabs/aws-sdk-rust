@@ -8,16 +8,17 @@ pub use crate::operation::disable_alarm_actions::_disable_alarm_actions_input::D
 /// <p>Disables the actions for the specified alarms. When an alarm's actions are disabled, the alarm actions do not execute when the alarm state changes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableAlarmActionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_alarm_actions::builders::DisableAlarmActionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_alarm_actions::builders::DisableAlarmActionsInputBuilder,
+}
 impl DisableAlarmActionsFluentBuilder  {
     /// Creates a new `DisableAlarmActions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_alarm_actions::DisableAlarmActions, aws_http::retry::AwsResponseRetryClassifier,>,

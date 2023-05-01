@@ -8,16 +8,17 @@ pub use crate::operation::delete_virtual_gateway::_delete_virtual_gateway_input:
 /// <p>Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway routes are associated to it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVirtualGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_virtual_gateway::builders::DeleteVirtualGatewayInputBuilder,
+}
 impl DeleteVirtualGatewayFluentBuilder  {
     /// Creates a new `DeleteVirtualGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_virtual_gateway::DeleteVirtualGateway, aws_http::retry::AwsResponseRetryClassifier,>,

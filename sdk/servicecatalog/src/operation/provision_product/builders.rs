@@ -12,16 +12,17 @@ pub use crate::operation::provision_product::_provision_product_input::Provision
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ProvisionProductFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::provision_product::builders::ProvisionProductInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::provision_product::builders::ProvisionProductInputBuilder,
+}
 impl ProvisionProductFluentBuilder  {
     /// Creates a new `ProvisionProduct`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::provision_product::ProvisionProduct, aws_http::retry::AwsResponseRetryClassifier,>,

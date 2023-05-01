@@ -8,16 +8,17 @@ pub use crate::operation::get_import_jobs::_get_import_jobs_input::GetImportJobs
 /// <p>Retrieves information about the status and settings of all the import jobs for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetImportJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_import_jobs::builders::GetImportJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_import_jobs::builders::GetImportJobsInputBuilder,
+}
 impl GetImportJobsFluentBuilder  {
     /// Creates a new `GetImportJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_import_jobs::GetImportJobs, aws_http::retry::AwsResponseRetryClassifier,>,

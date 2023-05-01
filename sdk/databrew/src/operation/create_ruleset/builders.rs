@@ -8,16 +8,17 @@ pub use crate::operation::create_ruleset::_create_ruleset_input::CreateRulesetIn
 /// <p>Creates a new ruleset that can be used in a profile job to validate the data quality of a dataset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRulesetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_ruleset::builders::CreateRulesetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_ruleset::builders::CreateRulesetInputBuilder,
+}
 impl CreateRulesetFluentBuilder  {
     /// Creates a new `CreateRuleset`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_ruleset::CreateRuleset, aws_http::retry::AwsResponseRetryClassifier,>,

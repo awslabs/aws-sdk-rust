@@ -10,16 +10,17 @@ pub use crate::operation::delete_channel_flow::_delete_channel_flow_input::Delet
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChannelFlowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_channel_flow::builders::DeleteChannelFlowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_channel_flow::builders::DeleteChannelFlowInputBuilder,
+}
 impl DeleteChannelFlowFluentBuilder  {
     /// Creates a new `DeleteChannelFlow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_channel_flow::DeleteChannelFlow, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_member::_delete_member_input::DeleteMemberInput
 /// <p>Removes the specified member from a collaboration. The removed member is placed in the Removed status and can't interact with the collaboration. The removed member's data is inaccessible to active members of the collaboration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMemberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_member::builders::DeleteMemberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_member::builders::DeleteMemberInputBuilder,
+}
 impl DeleteMemberFluentBuilder  {
     /// Creates a new `DeleteMember`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_member::DeleteMember, aws_http::retry::AwsResponseRetryClassifier,>,

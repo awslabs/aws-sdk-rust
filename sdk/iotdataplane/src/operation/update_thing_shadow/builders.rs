@@ -10,16 +10,17 @@ pub use crate::operation::update_thing_shadow::_update_thing_shadow_input::Updat
 /// <p>For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a> in the IoT Developer Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateThingShadowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_thing_shadow::builders::UpdateThingShadowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_thing_shadow::builders::UpdateThingShadowInputBuilder,
+}
 impl UpdateThingShadowFluentBuilder  {
     /// Creates a new `UpdateThingShadow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_thing_shadow::UpdateThingShadow, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::apply_archive_rule::_apply_archive_rule_input::ApplyAr
 /// <p>Retroactively applies the archive rule to existing findings that meet the archive rule criteria.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ApplyArchiveRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::apply_archive_rule::builders::ApplyArchiveRuleInputBuilder,
+}
 impl ApplyArchiveRuleFluentBuilder  {
     /// Creates a new `ApplyArchiveRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::apply_archive_rule::ApplyArchiveRule, aws_http::retry::AwsResponseRetryClassifier,>,

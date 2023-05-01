@@ -10,16 +10,17 @@ pub use crate::operation::export_ebs_volume_recommendations::_export_ebs_volume_
 /// <p>You can have only one Amazon EBS volume export job in progress per Amazon Web Services Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportEBSVolumeRecommendationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_ebs_volume_recommendations::builders::ExportEbsVolumeRecommendationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_ebs_volume_recommendations::builders::ExportEbsVolumeRecommendationsInputBuilder,
+}
 impl ExportEBSVolumeRecommendationsFluentBuilder  {
     /// Creates a new `ExportEBSVolumeRecommendations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,

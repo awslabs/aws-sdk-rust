@@ -9,16 +9,17 @@ pub use crate::operation::check_if_phone_number_is_opted_out::_check_if_phone_nu
 /// <p>To resume sending messages, you can opt in the number by using the <code>OptInPhoneNumber</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CheckIfPhoneNumberIsOptedOutFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutInputBuilder,
+}
 impl CheckIfPhoneNumberIsOptedOutFluentBuilder  {
     /// Creates a new `CheckIfPhoneNumberIsOptedOut`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOut, aws_http::retry::AwsResponseRetryClassifier,>,

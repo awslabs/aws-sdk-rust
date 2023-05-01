@@ -8,16 +8,17 @@ pub use crate::operation::describe_logging_configuration::_describe_logging_conf
 /// Describes logging configuration.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_logging_configuration::builders::DescribeLoggingConfigurationInputBuilder,
+}
 impl DescribeLoggingConfigurationFluentBuilder  {
     /// Creates a new `DescribeLoggingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_logging_configuration::DescribeLoggingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::modify_vpc_endpoint::_modify_vpc_endpoint_input::Modif
 /// <p>Modifies attributes of a specified VPC endpoint. The attributes that you can modify depend on the type of VPC endpoint (interface, gateway, or Gateway Load Balancer). For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon Web Services PrivateLink Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpcEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_vpc_endpoint::builders::ModifyVpcEndpointInputBuilder,
+}
 impl ModifyVpcEndpointFluentBuilder  {
     /// Creates a new `ModifyVpcEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_endpoint::ModifyVpcEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

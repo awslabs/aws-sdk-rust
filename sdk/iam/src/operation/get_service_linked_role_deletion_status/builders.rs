@@ -8,16 +8,17 @@ pub use crate::operation::get_service_linked_role_deletion_status::_get_service_
 /// <p>Retrieves the status of your service-linked role deletion. After you use <code>DeleteServiceLinkedRole</code> to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code> parameter in <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the deletion. If the deletion fails, this operation returns the reason that it failed, if that information is returned by the service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetServiceLinkedRoleDeletionStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_service_linked_role_deletion_status::builders::GetServiceLinkedRoleDeletionStatusInputBuilder,
+}
 impl GetServiceLinkedRoleDeletionStatusFluentBuilder  {
     /// Creates a new `GetServiceLinkedRoleDeletionStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatus, aws_http::retry::AwsResponseRetryClassifier,>,

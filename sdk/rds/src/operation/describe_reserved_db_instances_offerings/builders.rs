@@ -8,16 +8,17 @@ pub use crate::operation::describe_reserved_db_instances_offerings::_describe_re
 /// <p>Lists available reserved DB instance offerings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReservedDBInstancesOfferingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_reserved_db_instances_offerings::builders::DescribeReservedDbInstancesOfferingsInputBuilder,
+}
 impl DescribeReservedDBInstancesOfferingsFluentBuilder  {
     /// Creates a new `DescribeReservedDBInstancesOfferings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDBInstancesOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeReservedDBInstancesOfferingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_db_instances_offerings::paginator::DescribeReservedDbInstancesOfferingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_reserved_db_instances_offerings::paginator::DescribeReservedDbInstancesOfferingsPaginator {
-                            crate::operation::describe_reserved_db_instances_offerings::paginator::DescribeReservedDbInstancesOfferingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_db_instances_offerings::paginator::DescribeReservedDbInstancesOfferingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_reserved_db_instances_offerings::paginator::DescribeReservedDbInstancesOfferingsPaginator {
+                                crate::operation::describe_reserved_db_instances_offerings::paginator::DescribeReservedDbInstancesOfferingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p> 
     /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> </p>
     pub fn reserved_db_instances_offering_id(mut self, input: impl Into<std::string::String>) -> Self {

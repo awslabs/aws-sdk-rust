@@ -8,16 +8,17 @@ pub use crate::operation::update_rule_metadata::_update_rule_metadata_input::Upd
 /// <p>Updates a rule's metadata. The description attribute can be updated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRuleMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_rule_metadata::builders::UpdateRuleMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_rule_metadata::builders::UpdateRuleMetadataInputBuilder,
+}
 impl UpdateRuleMetadataFluentBuilder  {
     /// Creates a new `UpdateRuleMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_rule_metadata::UpdateRuleMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

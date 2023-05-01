@@ -8,16 +8,17 @@ pub use crate::operation::complete_snapshot::_complete_snapshot_input::CompleteS
 /// <p>Seals and completes the snapshot after all of the required blocks of data have been written to it. Completing the snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has been completed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CompleteSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::complete_snapshot::builders::CompleteSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::complete_snapshot::builders::CompleteSnapshotInputBuilder,
+}
 impl CompleteSnapshotFluentBuilder  {
     /// Creates a new `CompleteSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::complete_snapshot::CompleteSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

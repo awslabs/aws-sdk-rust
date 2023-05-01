@@ -8,16 +8,17 @@ pub use crate::operation::search_schemas::_search_schemas_input::SearchSchemasIn
 /// <p>Search the schemas</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchSchemasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_schemas::builders::SearchSchemasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_schemas::builders::SearchSchemasInputBuilder,
+}
 impl SearchSchemasFluentBuilder  {
     /// Creates a new `SearchSchemas`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_schemas::SearchSchemas, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchSchemasFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_schemas::paginator::SearchSchemasPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_schemas::paginator::SearchSchemasPaginator {
-                            crate::operation::search_schemas::paginator::SearchSchemasPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_schemas::paginator::SearchSchemasPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_schemas::paginator::SearchSchemasPaginator {
+                                crate::operation::search_schemas::paginator::SearchSchemasPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifying this limits the results to only schemas that include the provided keywords.</p>
     pub fn keywords(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.keywords(input.into());

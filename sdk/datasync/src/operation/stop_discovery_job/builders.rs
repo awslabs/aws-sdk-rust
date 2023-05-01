@@ -9,16 +9,17 @@ pub use crate::operation::stop_discovery_job::_stop_discovery_job_input::StopDis
 /// <p>You can stop a discovery job anytime. A job that's stopped before it's scheduled to end likely will provide you some information about your on-premises storage system resources. To get recommendations for a stopped job, you must use the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_GenerateRecommendations.html">GenerateRecommendations</a> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopDiscoveryJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder,
+}
 impl StopDiscoveryJobFluentBuilder  {
     /// Creates a new `StopDiscoveryJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_discovery_job::StopDiscoveryJob, aws_http::retry::AwsResponseRetryClassifier,>,

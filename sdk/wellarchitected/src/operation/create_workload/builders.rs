@@ -13,16 +13,17 @@ pub use crate::operation::create_workload::_create_workload_input::CreateWorkloa
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWorkloadFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_workload::builders::CreateWorkloadInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_workload::builders::CreateWorkloadInputBuilder,
+}
 impl CreateWorkloadFluentBuilder  {
     /// Creates a new `CreateWorkload`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_workload::CreateWorkload, aws_http::retry::AwsResponseRetryClassifier,>,

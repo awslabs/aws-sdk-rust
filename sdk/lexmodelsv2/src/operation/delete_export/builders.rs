@@ -8,16 +8,17 @@ pub use crate::operation::delete_export::_delete_export_input::DeleteExportInput
 /// <p>Removes a previous export and the associated files stored in an S3 bucket.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteExportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_export::builders::DeleteExportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_export::builders::DeleteExportInputBuilder,
+}
 impl DeleteExportFluentBuilder  {
     /// Creates a new `DeleteExport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_export::DeleteExport, aws_http::retry::AwsResponseRetryClassifier,>,

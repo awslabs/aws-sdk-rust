@@ -9,16 +9,17 @@ pub use crate::operation::update_job_from_source_control::_update_job_from_sourc
 /// <p>This API supports optional parameters which take in the repository information.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateJobFromSourceControlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_job_from_source_control::builders::UpdateJobFromSourceControlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_job_from_source_control::builders::UpdateJobFromSourceControlInputBuilder,
+}
 impl UpdateJobFromSourceControlFluentBuilder  {
     /// Creates a new `UpdateJobFromSourceControl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_job_from_source_control::UpdateJobFromSourceControl, aws_http::retry::AwsResponseRetryClassifier,>,

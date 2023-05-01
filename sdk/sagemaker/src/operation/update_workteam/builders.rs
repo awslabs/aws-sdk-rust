@@ -8,16 +8,17 @@ pub use crate::operation::update_workteam::_update_workteam_input::UpdateWorktea
 /// <p>Updates an existing work team with new member definitions or description.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWorkteamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_workteam::builders::UpdateWorkteamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_workteam::builders::UpdateWorkteamInputBuilder,
+}
 impl UpdateWorkteamFluentBuilder  {
     /// Creates a new `UpdateWorkteam`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_workteam::UpdateWorkteam, aws_http::retry::AwsResponseRetryClassifier,>,

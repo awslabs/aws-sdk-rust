@@ -8,16 +8,17 @@ pub use crate::operation::list_rules_packages::_list_rules_packages_input::ListR
 /// <p>Lists all available Amazon Inspector rules packages.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRulesPackagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_rules_packages::builders::ListRulesPackagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_rules_packages::builders::ListRulesPackagesInputBuilder,
+}
 impl ListRulesPackagesFluentBuilder  {
     /// Creates a new `ListRulesPackages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_rules_packages::ListRulesPackages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRulesPackagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator {
-                            crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator {
+                                crate::operation::list_rules_packages::paginator::ListRulesPackagesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

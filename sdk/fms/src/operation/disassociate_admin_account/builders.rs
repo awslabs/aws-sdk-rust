@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_admin_account::_disassociate_admin_accoun
 /// <p>Disassociation of the default administrator account follows the first in, last out principle. If you are the default administrator, all Firewall Manager administrators within the organization must first disassociate their accounts before you can disassociate your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateAdminAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_admin_account::builders::DisassociateAdminAccountInputBuilder,
+}
 impl DisassociateAdminAccountFluentBuilder  {
     /// Creates a new `DisassociateAdminAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_admin_account::DisassociateAdminAccount, aws_http::retry::AwsResponseRetryClassifier,>,

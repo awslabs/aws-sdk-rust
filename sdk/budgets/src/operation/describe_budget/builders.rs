@@ -10,16 +10,17 @@ pub use crate::operation::describe_budget::_describe_budget_input::DescribeBudge
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBudgetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_budget::builders::DescribeBudgetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_budget::builders::DescribeBudgetInputBuilder,
+}
 impl DescribeBudgetFluentBuilder  {
     /// Creates a new `DescribeBudget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_budget::DescribeBudget, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_pull_request_title::_update_pull_request_title_
 /// <p>Replaces the title of a pull request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePullRequestTitleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_pull_request_title::builders::UpdatePullRequestTitleInputBuilder,
+}
 impl UpdatePullRequestTitleFluentBuilder  {
     /// Creates a new `UpdatePullRequestTitle`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_pull_request_title::UpdatePullRequestTitle, aws_http::retry::AwsResponseRetryClassifier,>,

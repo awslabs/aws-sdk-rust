@@ -8,16 +8,17 @@ pub use crate::operation::get_baidu_channel::_get_baidu_channel_input::GetBaiduC
 /// <p>Retrieves information about the status and settings of the Baidu channel for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBaiduChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_baidu_channel::builders::GetBaiduChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_baidu_channel::builders::GetBaiduChannelInputBuilder,
+}
 impl GetBaiduChannelFluentBuilder  {
     /// Creates a new `GetBaiduChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_baidu_channel::GetBaiduChannel, aws_http::retry::AwsResponseRetryClassifier,>,

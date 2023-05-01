@@ -17,16 +17,17 @@ pub use crate::operation::list_keys::_list_keys_input::ListKeysInputBuilder;
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListKeysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_keys::builders::ListKeysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_keys::builders::ListKeysInputBuilder,
+}
 impl ListKeysFluentBuilder  {
     /// Creates a new `ListKeys`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_keys::ListKeys, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -57,11 +58,11 @@ impl ListKeysFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_keys::paginator::ListKeysPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_keys::paginator::ListKeysPaginator {
-                            crate::operation::list_keys::paginator::ListKeysPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_keys::paginator::ListKeysPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_keys::paginator::ListKeysPaginator {
+                                crate::operation::list_keys::paginator::ListKeysPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p> 
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
     pub fn limit(mut self, input: i32) -> Self {

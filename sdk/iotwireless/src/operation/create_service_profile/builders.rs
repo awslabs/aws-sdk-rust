@@ -8,16 +8,17 @@ pub use crate::operation::create_service_profile::_create_service_profile_input:
 /// <p>Creates a new service profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateServiceProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_service_profile::builders::CreateServiceProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_service_profile::builders::CreateServiceProfileInputBuilder,
+}
 impl CreateServiceProfileFluentBuilder  {
     /// Creates a new `CreateServiceProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_service_profile::CreateServiceProfile, aws_http::retry::AwsResponseRetryClassifier,>,

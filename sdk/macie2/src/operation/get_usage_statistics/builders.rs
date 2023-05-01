@@ -8,16 +8,17 @@ pub use crate::operation::get_usage_statistics::_get_usage_statistics_input::Get
 /// <p>Retrieves (queries) quotas and aggregated usage data for one or more accounts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUsageStatisticsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_usage_statistics::builders::GetUsageStatisticsInputBuilder,
+}
 impl GetUsageStatisticsFluentBuilder  {
     /// Creates a new `GetUsageStatistics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_usage_statistics::GetUsageStatistics, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetUsageStatisticsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator {
-                            crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator {
+                                crate::operation::get_usage_statistics::paginator::GetUsageStatisticsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `filterBy`.
     ///
     /// To override the contents of this collection use [`set_filter_by`](Self::set_filter_by).

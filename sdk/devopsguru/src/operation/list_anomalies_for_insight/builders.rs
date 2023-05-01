@@ -8,16 +8,17 @@ pub use crate::operation::list_anomalies_for_insight::_list_anomalies_for_insigh
 /// <p> Returns a list of the anomalies that belong to an insight that you specify using its ID. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAnomaliesForInsightFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder,
+}
 impl ListAnomaliesForInsightFluentBuilder  {
     /// Creates a new `ListAnomaliesForInsight`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_anomalies_for_insight::ListAnomaliesForInsight, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAnomaliesForInsightFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator {
-                            crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator {
+                                crate::operation::list_anomalies_for_insight::paginator::ListAnomaliesForInsightPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.insight_id(input.into());

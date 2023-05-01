@@ -8,16 +8,17 @@ pub use crate::operation::start_object::_start_object_input::StartObjectInputBui
 /// Start upload containing one or many chunks.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartObjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_object::builders::StartObjectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_object::builders::StartObjectInputBuilder,
+}
 impl StartObjectFluentBuilder  {
     /// Creates a new `StartObject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_object::StartObject, aws_http::retry::AwsResponseRetryClassifier,>,

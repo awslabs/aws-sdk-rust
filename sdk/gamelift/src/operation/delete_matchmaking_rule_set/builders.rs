@@ -12,16 +12,17 @@ pub use crate::operation::delete_matchmaking_rule_set::_delete_matchmaking_rule_
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMatchmakingRuleSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_matchmaking_rule_set::builders::DeleteMatchmakingRuleSetInputBuilder,
+}
 impl DeleteMatchmakingRuleSetFluentBuilder  {
     /// Creates a new `DeleteMatchmakingRuleSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSet, aws_http::retry::AwsResponseRetryClassifier,>,

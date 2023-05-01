@@ -8,16 +8,17 @@ pub use crate::operation::get_generated_policy::_get_generated_policy_input::Get
 /// <p>Retrieves the policy that was generated using <code>StartPolicyGeneration</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetGeneratedPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_generated_policy::builders::GetGeneratedPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_generated_policy::builders::GetGeneratedPolicyInputBuilder,
+}
 impl GetGeneratedPolicyFluentBuilder  {
     /// Creates a new `GetGeneratedPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_generated_policy::GetGeneratedPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

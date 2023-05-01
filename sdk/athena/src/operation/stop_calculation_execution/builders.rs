@@ -10,16 +10,17 @@ pub use crate::operation::stop_calculation_execution::_stop_calculation_executio
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopCalculationExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_calculation_execution::builders::StopCalculationExecutionInputBuilder,
+}
 impl StopCalculationExecutionFluentBuilder  {
     /// Creates a new `StopCalculationExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_calculation_execution::StopCalculationExecution, aws_http::retry::AwsResponseRetryClassifier,>,

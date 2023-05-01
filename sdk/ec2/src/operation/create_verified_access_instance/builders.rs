@@ -8,16 +8,17 @@ pub use crate::operation::create_verified_access_instance::_create_verified_acce
 /// <p>An Amazon Web Services Verified Access instance is a regional entity that evaluates application requests and grants access only when your security requirements are met.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVerifiedAccessInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_verified_access_instance::builders::CreateVerifiedAccessInstanceInputBuilder,
+}
 impl CreateVerifiedAccessInstanceFluentBuilder  {
     /// Creates a new `CreateVerifiedAccessInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_verified_access_instance::CreateVerifiedAccessInstance, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::describe_metric_set::_describe_metric_set_input::Descr
 /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMetricSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_metric_set::builders::DescribeMetricSetInputBuilder,
+}
 impl DescribeMetricSetFluentBuilder  {
     /// Creates a new `DescribeMetricSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_metric_set::DescribeMetricSet, aws_http::retry::AwsResponseRetryClassifier,>,

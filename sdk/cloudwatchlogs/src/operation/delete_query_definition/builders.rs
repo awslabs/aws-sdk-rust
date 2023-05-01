@@ -10,16 +10,17 @@ pub use crate::operation::delete_query_definition::_delete_query_definition_inpu
 /// <p>You must have the <code>logs:DeleteQueryDefinition</code> permission to be able to perform this operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteQueryDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_query_definition::builders::DeleteQueryDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_query_definition::builders::DeleteQueryDefinitionInputBuilder,
+}
 impl DeleteQueryDefinitionFluentBuilder  {
     /// Creates a new `DeleteQueryDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_query_definition::DeleteQueryDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

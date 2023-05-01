@@ -8,16 +8,17 @@ pub use crate::operation::describe_agent::_describe_agent_input::DescribeAgentIn
 /// <p>Returns metadata about an DataSync agent, such as its name, endpoint type, and status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAgentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_agent::builders::DescribeAgentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_agent::builders::DescribeAgentInputBuilder,
+}
 impl DescribeAgentFluentBuilder  {
     /// Creates a new `DescribeAgent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_agent::DescribeAgent, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::deny_custom_routing_traffic::_deny_custom_routing_traf
 /// <p>After you make changes, you can verify that the updates are complete by checking the status of your accelerator: the status changes from IN_PROGRESS to DEPLOYED.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DenyCustomRoutingTrafficFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deny_custom_routing_traffic::builders::DenyCustomRoutingTrafficInputBuilder,
+}
 impl DenyCustomRoutingTrafficFluentBuilder  {
     /// Creates a new `DenyCustomRoutingTraffic`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTraffic, aws_http::retry::AwsResponseRetryClassifier,>,

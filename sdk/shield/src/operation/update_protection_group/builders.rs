@@ -8,16 +8,17 @@ pub use crate::operation::update_protection_group::_update_protection_group_inpu
 /// <p>Updates an existing protection group. A protection group is a grouping of protected resources so they can be handled as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProtectionGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_protection_group::builders::UpdateProtectionGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_protection_group::builders::UpdateProtectionGroupInputBuilder,
+}
 impl UpdateProtectionGroupFluentBuilder  {
     /// Creates a new `UpdateProtectionGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_protection_group::UpdateProtectionGroup, aws_http::retry::AwsResponseRetryClassifier,>,

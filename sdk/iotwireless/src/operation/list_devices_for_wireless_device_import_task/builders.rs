@@ -8,16 +8,17 @@ pub use crate::operation::list_devices_for_wireless_device_import_task::_list_de
 /// <p>List the Sidewalk devices in an import task and their onboarding status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDevicesForWirelessDeviceImportTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_devices_for_wireless_device_import_task::builders::ListDevicesForWirelessDeviceImportTaskInputBuilder,
+}
 impl ListDevicesForWirelessDeviceImportTaskFluentBuilder  {
     /// Creates a new `ListDevicesForWirelessDeviceImportTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_devices_for_wireless_device_import_task::ListDevicesForWirelessDeviceImportTask, aws_http::retry::AwsResponseRetryClassifier,>,

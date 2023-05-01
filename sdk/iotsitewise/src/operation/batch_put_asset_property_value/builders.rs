@@ -17,16 +17,17 @@ pub use crate::operation::batch_put_asset_property_value::_batch_put_asset_prope
 /// <p>IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue authorization</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchPutAssetPropertyValueFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_put_asset_property_value::builders::BatchPutAssetPropertyValueInputBuilder,
+}
 impl BatchPutAssetPropertyValueFluentBuilder  {
     /// Creates a new `BatchPutAssetPropertyValue`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValue, aws_http::retry::AwsResponseRetryClassifier,>,

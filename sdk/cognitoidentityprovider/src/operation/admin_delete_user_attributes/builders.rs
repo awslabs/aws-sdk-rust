@@ -9,16 +9,17 @@ pub use crate::operation::admin_delete_user_attributes::_admin_delete_user_attri
 /// <p>Calling this action requires developer credentials.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AdminDeleteUserAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::admin_delete_user_attributes::builders::AdminDeleteUserAttributesInputBuilder,
+}
 impl AdminDeleteUserAttributesFluentBuilder  {
     /// Creates a new `AdminDeleteUserAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

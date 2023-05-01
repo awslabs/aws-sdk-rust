@@ -8,16 +8,17 @@ pub use crate::operation::delete_cluster_subnet_group::_delete_cluster_subnet_gr
 /// <p>Deletes the specified cluster subnet group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteClusterSubnetGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_cluster_subnet_group::builders::DeleteClusterSubnetGroupInputBuilder,
+}
 impl DeleteClusterSubnetGroupFluentBuilder  {
     /// Creates a new `DeleteClusterSubnetGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_cluster_subnet_group::DeleteClusterSubnetGroup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_scheduled_action::_delete_scheduled_action_inpu
 /// <p>Deletes the specified scheduled action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteScheduledActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder,
+}
 impl DeleteScheduledActionFluentBuilder  {
     /// Creates a new `DeleteScheduledAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_scheduled_action::DeleteScheduledAction, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::modify_db_proxy_target_group::_modify_db_proxy_target_
 /// <p>Modifies the properties of a <code>DBProxyTargetGroup</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDBProxyTargetGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_db_proxy_target_group::builders::ModifyDbProxyTargetGroupInputBuilder,
+}
 impl ModifyDBProxyTargetGroupFluentBuilder  {
     /// Creates a new `ModifyDBProxyTargetGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroup, aws_http::retry::AwsResponseRetryClassifier,>,

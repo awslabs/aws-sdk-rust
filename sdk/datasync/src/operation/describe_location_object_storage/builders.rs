@@ -8,16 +8,17 @@ pub use crate::operation::describe_location_object_storage::_describe_location_o
 /// <p>Returns metadata about your DataSync location for an object storage system.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLocationObjectStorageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_location_object_storage::builders::DescribeLocationObjectStorageInputBuilder,
+}
 impl DescribeLocationObjectStorageFluentBuilder  {
     /// Creates a new `DescribeLocationObjectStorage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_location_object_storage::DescribeLocationObjectStorage, aws_http::retry::AwsResponseRetryClassifier,>,

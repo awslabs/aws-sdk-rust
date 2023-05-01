@@ -8,16 +8,17 @@ pub use crate::operation::start_smart_home_appliance_discovery::_start_smart_hom
 /// <p>Initiates the discovery of any smart home appliances associated with the room.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartSmartHomeApplianceDiscoveryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_smart_home_appliance_discovery::builders::StartSmartHomeApplianceDiscoveryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_smart_home_appliance_discovery::builders::StartSmartHomeApplianceDiscoveryInputBuilder,
+}
 impl StartSmartHomeApplianceDiscoveryFluentBuilder  {
     /// Creates a new `StartSmartHomeApplianceDiscovery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_smart_home_appliance_discovery::StartSmartHomeApplianceDiscovery, aws_http::retry::AwsResponseRetryClassifier,>,

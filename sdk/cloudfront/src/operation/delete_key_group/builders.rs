@@ -10,16 +10,17 @@ pub use crate::operation::delete_key_group::_delete_key_group_input::DeleteKeyGr
 /// <p>To delete a key group, you must provide the key group's identifier and version. To get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteKeyGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_key_group::builders::DeleteKeyGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_key_group::builders::DeleteKeyGroupInputBuilder,
+}
 impl DeleteKeyGroupFluentBuilder  {
     /// Creates a new `DeleteKeyGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_key_group::DeleteKeyGroup, aws_http::retry::AwsResponseRetryClassifier,>,

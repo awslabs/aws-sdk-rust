@@ -8,16 +8,17 @@ pub use crate::operation::update_acl::_update_acl_input::UpdateAclInputBuilder;
 /// <p>Changes the list of users that belong to the Access Control List.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateACLFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_acl::builders::UpdateAclInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_acl::builders::UpdateAclInputBuilder,
+}
 impl UpdateACLFluentBuilder  {
     /// Creates a new `UpdateACL`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_acl::UpdateACL, aws_http::retry::AwsResponseRetryClassifier,>,

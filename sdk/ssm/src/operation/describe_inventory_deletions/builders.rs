@@ -8,16 +8,17 @@ pub use crate::operation::describe_inventory_deletions::_describe_inventory_dele
 /// <p>Describes a specific delete inventory operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInventoryDeletionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_inventory_deletions::builders::DescribeInventoryDeletionsInputBuilder,
+}
 impl DescribeInventoryDeletionsFluentBuilder  {
     /// Creates a new `DescribeInventoryDeletions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_inventory_deletions::DescribeInventoryDeletions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeInventoryDeletionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_inventory_deletions::paginator::DescribeInventoryDeletionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_inventory_deletions::paginator::DescribeInventoryDeletionsPaginator {
-                            crate::operation::describe_inventory_deletions::paginator::DescribeInventoryDeletionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_inventory_deletions::paginator::DescribeInventoryDeletionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_inventory_deletions::paginator::DescribeInventoryDeletionsPaginator {
+                                crate::operation::describe_inventory_deletions::paginator::DescribeInventoryDeletionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> operation.</p>
     pub fn deletion_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.deletion_id(input.into());

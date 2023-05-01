@@ -8,16 +8,17 @@ pub use crate::operation::list_virtual_nodes::_list_virtual_nodes_input::ListVir
 /// <p>Returns a list of existing virtual nodes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVirtualNodesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_virtual_nodes::builders::ListVirtualNodesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_virtual_nodes::builders::ListVirtualNodesInputBuilder,
+}
 impl ListVirtualNodesFluentBuilder  {
     /// Creates a new `ListVirtualNodes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_virtual_nodes::ListVirtualNodes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListVirtualNodesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_nodes::paginator::ListVirtualNodesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_virtual_nodes::paginator::ListVirtualNodesPaginator {
-                            crate::operation::list_virtual_nodes::paginator::ListVirtualNodesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_nodes::paginator::ListVirtualNodesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_virtual_nodes::paginator::ListVirtualNodesPaginator {
+                                crate::operation::list_virtual_nodes::paginator::ListVirtualNodesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the service mesh to list virtual nodes in.</p>
     pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.mesh_name(input.into());

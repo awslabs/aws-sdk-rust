@@ -8,16 +8,17 @@ pub use crate::operation::describe_anomaly_detectors::_describe_anomaly_detector
 /// <p>Lists the anomaly detection models that you have created in your account. For single metric anomaly detectors, you can list all of the models in your account or filter the results to only the models that are related to a certain namespace, metric name, or metric dimension. For metric math anomaly detectors, you can list them by adding <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array. This will return all metric math anomaly detectors in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsInputBuilder,
+}
 impl DescribeAnomalyDetectorsFluentBuilder  {
     /// Creates a new `DescribeAnomalyDetectors`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectors, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeAnomalyDetectorsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator {
-                            crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator {
+                                crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

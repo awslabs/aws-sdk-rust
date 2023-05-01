@@ -10,16 +10,17 @@ pub use crate::operation::describe_auto_scaling_groups::_describe_auto_scaling_g
 /// <p>This operation also returns information about instances in Auto Scaling groups. To retrieve information about the instances in a warm pool, you must call the <code>DescribeWarmPool</code> API. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAutoScalingGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_auto_scaling_groups::builders::DescribeAutoScalingGroupsInputBuilder,
+}
 impl DescribeAutoScalingGroupsFluentBuilder  {
     /// Creates a new `DescribeAutoScalingGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeAutoScalingGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_auto_scaling_groups::paginator::DescribeAutoScalingGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_auto_scaling_groups::paginator::DescribeAutoScalingGroupsPaginator {
-                            crate::operation::describe_auto_scaling_groups::paginator::DescribeAutoScalingGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_auto_scaling_groups::paginator::DescribeAutoScalingGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_auto_scaling_groups::paginator::DescribeAutoScalingGroupsPaginator {
+                                crate::operation::describe_auto_scaling_groups::paginator::DescribeAutoScalingGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `AutoScalingGroupNames`.
     ///
     /// To override the contents of this collection use [`set_auto_scaling_group_names`](Self::set_auto_scaling_group_names).

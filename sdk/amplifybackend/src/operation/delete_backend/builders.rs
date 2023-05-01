@@ -8,16 +8,17 @@ pub use crate::operation::delete_backend::_delete_backend_input::DeleteBackendIn
 /// <p>Removes an existing environment from your Amplify project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBackendFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_backend::builders::DeleteBackendInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_backend::builders::DeleteBackendInputBuilder,
+}
 impl DeleteBackendFluentBuilder  {
     /// Creates a new `DeleteBackend`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_backend::DeleteBackend, aws_http::retry::AwsResponseRetryClassifier,>,

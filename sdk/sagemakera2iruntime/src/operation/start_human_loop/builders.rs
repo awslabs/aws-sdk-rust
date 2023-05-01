@@ -8,16 +8,17 @@ pub use crate::operation::start_human_loop::_start_human_loop_input::StartHumanL
 /// <p>Starts a human loop, provided that at least one activation condition is met.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartHumanLoopFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_human_loop::builders::StartHumanLoopInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_human_loop::builders::StartHumanLoopInputBuilder,
+}
 impl StartHumanLoopFluentBuilder  {
     /// Creates a new `StartHumanLoop`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_human_loop::StartHumanLoop, aws_http::retry::AwsResponseRetryClassifier,>,

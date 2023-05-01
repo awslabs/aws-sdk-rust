@@ -9,16 +9,17 @@ pub use crate::operation::set_v2_logging_level::_set_v2_logging_level_input::Set
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetV2LoggingLevel</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetV2LoggingLevelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_v2_logging_level::builders::SetV2LoggingLevelInputBuilder,
+}
 impl SetV2LoggingLevelFluentBuilder  {
     /// Creates a new `SetV2LoggingLevel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_v2_logging_level::SetV2LoggingLevel, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::attach_verified_access_trust_provider::_attach_verifie
 /// <p>Attaches the specified Amazon Web Services Verified Access trust provider to the specified Amazon Web Services Verified Access instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AttachVerifiedAccessTrustProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::attach_verified_access_trust_provider::builders::AttachVerifiedAccessTrustProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::attach_verified_access_trust_provider::builders::AttachVerifiedAccessTrustProviderInputBuilder,
+}
 impl AttachVerifiedAccessTrustProviderFluentBuilder  {
     /// Creates a new `AttachVerifiedAccessTrustProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_verified_access_trust_provider::AttachVerifiedAccessTrustProvider, aws_http::retry::AwsResponseRetryClassifier,>,

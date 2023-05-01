@@ -9,16 +9,17 @@ pub use crate::operation::create_impersonation_role::_create_impersonation_role_
 /// <p> <i>Idempotency</i> ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries also complete successfully without performing any further actions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateImpersonationRoleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_impersonation_role::builders::CreateImpersonationRoleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_impersonation_role::builders::CreateImpersonationRoleInputBuilder,
+}
 impl CreateImpersonationRoleFluentBuilder  {
     /// Creates a new `CreateImpersonationRole`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_impersonation_role::CreateImpersonationRole, aws_http::retry::AwsResponseRetryClassifier,>,

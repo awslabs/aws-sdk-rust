@@ -8,16 +8,17 @@ pub use crate::operation::get_access_key_last_used::_get_access_key_last_used_in
 /// <p>Retrieves information about when the specified access key was last used. The information includes the date and time of last use, along with the Amazon Web Services service and Region that were specified in the last request made with that key.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccessKeyLastUsedFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedInputBuilder,
+}
 impl GetAccessKeyLastUsedFluentBuilder  {
     /// Creates a new `GetAccessKeyLastUsed`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_access_key_last_used::GetAccessKeyLastUsed, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_pull_requests::_list_pull_requests_input::ListPul
 /// <p>Returns a list of pull requests for a specified repository. The return list can be refined by pull request status or pull request author ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPullRequestsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_pull_requests::builders::ListPullRequestsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_pull_requests::builders::ListPullRequestsInputBuilder,
+}
 impl ListPullRequestsFluentBuilder  {
     /// Creates a new `ListPullRequests`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_pull_requests::ListPullRequests, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPullRequestsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator {
-                            crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator {
+                                crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the repository for which you want to list pull requests.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::import_decoder_manifest::_import_decoder_manifest_inpu
 /// <p> Creates a decoder manifest using your existing CAN DBC file from your local device. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportDecoderManifestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_decoder_manifest::builders::ImportDecoderManifestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_decoder_manifest::builders::ImportDecoderManifestInputBuilder,
+}
 impl ImportDecoderManifestFluentBuilder  {
     /// Creates a new `ImportDecoderManifest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_decoder_manifest::ImportDecoderManifest, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::batch_detect_key_phrases::_batch_detect_key_phrases_in
 /// <p>Detects the key noun phrases found in a batch of documents.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDetectKeyPhrasesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_detect_key_phrases::builders::BatchDetectKeyPhrasesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_detect_key_phrases::builders::BatchDetectKeyPhrasesInputBuilder,
+}
 impl BatchDetectKeyPhrasesFluentBuilder  {
     /// Creates a new `BatchDetectKeyPhrases`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_detect_key_phrases::BatchDetectKeyPhrases, aws_http::retry::AwsResponseRetryClassifier,>,

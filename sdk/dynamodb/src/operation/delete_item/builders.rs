@@ -11,16 +11,17 @@ pub use crate::operation::delete_item::_delete_item_input::DeleteItemInputBuilde
 /// <p>Conditional deletes are useful for deleting items only if specific conditions are met. If those conditions are met, DynamoDB performs the delete. Otherwise, the item is not deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteItemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_item::builders::DeleteItemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_item::builders::DeleteItemInputBuilder,
+}
 impl DeleteItemFluentBuilder  {
     /// Creates a new `DeleteItem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_item::DeleteItem, aws_http::retry::AwsResponseRetryClassifier,>,

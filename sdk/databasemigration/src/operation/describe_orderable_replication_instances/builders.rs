@@ -8,16 +8,17 @@ pub use crate::operation::describe_orderable_replication_instances::_describe_or
 /// <p>Returns information about the replication instance types that can be created in the specified region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOrderableReplicationInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_orderable_replication_instances::builders::DescribeOrderableReplicationInstancesInputBuilder,
+}
 impl DescribeOrderableReplicationInstancesFluentBuilder  {
     /// Creates a new `DescribeOrderableReplicationInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstances, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeOrderableReplicationInstancesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_replication_instances::paginator::DescribeOrderableReplicationInstancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_orderable_replication_instances::paginator::DescribeOrderableReplicationInstancesPaginator {
-                            crate::operation::describe_orderable_replication_instances::paginator::DescribeOrderableReplicationInstancesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_replication_instances::paginator::DescribeOrderableReplicationInstancesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_orderable_replication_instances::paginator::DescribeOrderableReplicationInstancesPaginator {
+                                crate::operation::describe_orderable_replication_instances::paginator::DescribeOrderableReplicationInstancesPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining results can be retrieved. </p> 
     /// <p>Default: 100</p> 
     /// <p>Constraints: Minimum 20, maximum 100.</p>

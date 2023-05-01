@@ -8,16 +8,17 @@ pub use crate::operation::describe_repositories::_describe_repositories_input::D
 /// <p>Describes image repositories in a registry.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRepositoriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_repositories::builders::DescribeRepositoriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_repositories::builders::DescribeRepositoriesInputBuilder,
+}
 impl DescribeRepositoriesFluentBuilder  {
     /// Creates a new `DescribeRepositories`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_repositories::DescribeRepositories, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeRepositoriesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator {
-                            crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator {
+                                crate::operation::describe_repositories::paginator::DescribeRepositoriesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Web Services account ID associated with the registry that contains the repositories to be described. If you do not specify a registry, the default registry is assumed.</p>
     pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());

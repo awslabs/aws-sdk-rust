@@ -14,16 +14,17 @@ pub use crate::operation::put_multi_region_access_point_policy::_put_multi_regio
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutMultiRegionAccessPointPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_multi_region_access_point_policy::builders::PutMultiRegionAccessPointPolicyInputBuilder,
+}
 impl PutMultiRegionAccessPointPolicyFluentBuilder  {
     /// Creates a new `PutMultiRegionAccessPointPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_multi_region_access_point_policy::PutMultiRegionAccessPointPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

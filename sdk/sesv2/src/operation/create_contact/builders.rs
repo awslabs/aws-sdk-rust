@@ -8,16 +8,17 @@ pub use crate::operation::create_contact::_create_contact_input::CreateContactIn
 /// <p>Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateContactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_contact::builders::CreateContactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_contact::builders::CreateContactInputBuilder,
+}
 impl CreateContactFluentBuilder  {
     /// Creates a new `CreateContact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_contact::CreateContact, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::acknowledge_third_party_job::_acknowledge_third_party_
 /// <p>Confirms a job worker has received the specified job. Used for partner actions only.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcknowledgeThirdPartyJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::acknowledge_third_party_job::builders::AcknowledgeThirdPartyJobInputBuilder,
+}
 impl AcknowledgeThirdPartyJobFluentBuilder  {
     /// Creates a new `AcknowledgeThirdPartyJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJob, aws_http::retry::AwsResponseRetryClassifier,>,

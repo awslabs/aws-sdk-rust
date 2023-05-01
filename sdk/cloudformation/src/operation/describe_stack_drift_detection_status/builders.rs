@@ -9,16 +9,17 @@ pub use crate::operation::describe_stack_drift_detection_status::_describe_stack
 /// <p>Use <code>DetectStackDrift</code> to initiate a stack drift detection operation. <code>DetectStackDrift</code> returns a <code>StackDriftDetectionId</code> you can use to monitor the progress of the operation using <code>DescribeStackDriftDetectionStatus</code>. Once the drift detection operation has completed, use <code>DescribeStackResourceDrifts</code> to return drift information about the stack and its resources.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStackDriftDetectionStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_stack_drift_detection_status::builders::DescribeStackDriftDetectionStatusInputBuilder,
+}
 impl DescribeStackDriftDetectionStatusFluentBuilder  {
     /// Creates a new `DescribeStackDriftDetectionStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_stack_drift_detection_status::DescribeStackDriftDetectionStatus, aws_http::retry::AwsResponseRetryClassifier,>,

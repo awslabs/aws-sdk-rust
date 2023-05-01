@@ -8,16 +8,17 @@ pub use crate::operation::list_buckets::_list_buckets_input::ListBucketsInputBui
 /// <p>Returns a list of all buckets owned by the authenticated sender of the request. To use this operation, you must have the <code>s3:ListAllMyBuckets</code> permission.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBucketsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_buckets::builders::ListBucketsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_buckets::builders::ListBucketsInputBuilder,
+}
 impl ListBucketsFluentBuilder  {
     /// Creates a new `ListBuckets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_buckets::ListBuckets, aws_http::retry::AwsResponseRetryClassifier,>,

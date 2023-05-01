@@ -9,16 +9,17 @@ pub use crate::operation::get_query_logging_config::_get_query_logging_config_in
 /// <p>For more information about DNS query logs, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a> and <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html">Logging DNS Queries</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetQueryLoggingConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_query_logging_config::builders::GetQueryLoggingConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_query_logging_config::builders::GetQueryLoggingConfigInputBuilder,
+}
 impl GetQueryLoggingConfigFluentBuilder  {
     /// Creates a new `GetQueryLoggingConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_query_logging_config::GetQueryLoggingConfig, aws_http::retry::AwsResponseRetryClassifier,>,

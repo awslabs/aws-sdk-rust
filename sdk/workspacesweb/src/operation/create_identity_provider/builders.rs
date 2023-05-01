@@ -8,16 +8,17 @@ pub use crate::operation::create_identity_provider::_create_identity_provider_in
 /// <p>Creates an identity provider resource that is then associated with a web portal.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIdentityProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_identity_provider::builders::CreateIdentityProviderInputBuilder,
+}
 impl CreateIdentityProviderFluentBuilder  {
     /// Creates a new `CreateIdentityProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_identity_provider::CreateIdentityProvider, aws_http::retry::AwsResponseRetryClassifier,>,

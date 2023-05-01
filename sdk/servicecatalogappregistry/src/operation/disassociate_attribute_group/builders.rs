@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_attribute_group::_disassociate_attribute_
 /// <p>Disassociates an attribute group from an application to remove the extra attributes contained in the attribute group from the application's metadata. This operation reverts <code>AssociateAttributeGroup</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateAttributeGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_attribute_group::builders::DisassociateAttributeGroupInputBuilder,
+}
 impl DisassociateAttributeGroupFluentBuilder  {
     /// Creates a new `DisassociateAttributeGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_attribute_group::DisassociateAttributeGroup, aws_http::retry::AwsResponseRetryClassifier,>,

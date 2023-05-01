@@ -8,16 +8,17 @@ pub use crate::operation::list_core_network_policy_versions::_list_core_network_
 /// <p>Returns a list of core network policy versions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCoreNetworkPolicyVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_core_network_policy_versions::builders::ListCoreNetworkPolicyVersionsInputBuilder,
+}
 impl ListCoreNetworkPolicyVersionsFluentBuilder  {
     /// Creates a new `ListCoreNetworkPolicyVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCoreNetworkPolicyVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_core_network_policy_versions::paginator::ListCoreNetworkPolicyVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_core_network_policy_versions::paginator::ListCoreNetworkPolicyVersionsPaginator {
-                            crate::operation::list_core_network_policy_versions::paginator::ListCoreNetworkPolicyVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_core_network_policy_versions::paginator::ListCoreNetworkPolicyVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_core_network_policy_versions::paginator::ListCoreNetworkPolicyVersionsPaginator {
+                                crate::operation::list_core_network_policy_versions::paginator::ListCoreNetworkPolicyVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of a core network.</p>
     pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.core_network_id(input.into());

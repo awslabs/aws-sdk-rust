@@ -9,16 +9,17 @@ pub use crate::operation::get_scaling_plan_resource_forecast_data::_get_scaling_
 /// <p>Capacity forecasts are represented as predicted values, or data points, that are calculated using historical data points from a specified CloudWatch load metric. Data points are available for up to 56 days. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataInputBuilder,
+}
 impl GetScalingPlanResourceForecastDataFluentBuilder  {
     /// Creates a new `GetScalingPlanResourceForecastData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastData, aws_http::retry::AwsResponseRetryClassifier,>,

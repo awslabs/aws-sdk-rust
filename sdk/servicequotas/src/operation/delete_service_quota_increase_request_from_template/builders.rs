@@ -8,16 +8,17 @@ pub use crate::operation::delete_service_quota_increase_request_from_template::_
 /// <p>Deletes the quota increase request for the specified quota from your quota request template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteServiceQuotaIncreaseRequestFromTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_service_quota_increase_request_from_template::builders::DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder,
+}
 impl DeleteServiceQuotaIncreaseRequestFromTemplateFluentBuilder  {
     /// Creates a new `DeleteServiceQuotaIncreaseRequestFromTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

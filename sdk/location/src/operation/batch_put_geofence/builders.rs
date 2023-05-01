@@ -8,16 +8,17 @@ pub use crate::operation::batch_put_geofence::_batch_put_geofence_input::BatchPu
 /// <p>A batch request for storing geofence geometries into a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchPutGeofenceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_put_geofence::builders::BatchPutGeofenceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_put_geofence::builders::BatchPutGeofenceInputBuilder,
+}
 impl BatchPutGeofenceFluentBuilder  {
     /// Creates a new `BatchPutGeofence`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_put_geofence::BatchPutGeofence, aws_http::retry::AwsResponseRetryClassifier,>,

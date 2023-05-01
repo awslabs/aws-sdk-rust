@@ -8,16 +8,17 @@ pub use crate::operation::purchase_reserved_elasticsearch_instance_offering::_pu
 /// <p>Allows you to purchase reserved Elasticsearch instances.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PurchaseReservedElasticsearchInstanceOfferingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::purchase_reserved_elasticsearch_instance_offering::builders::PurchaseReservedElasticsearchInstanceOfferingInputBuilder,
+}
 impl PurchaseReservedElasticsearchInstanceOfferingFluentBuilder  {
     /// Creates a new `PurchaseReservedElasticsearchInstanceOffering`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOffering, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::archive_application::_archive_application_input::Archi
 /// <p>Archive application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ArchiveApplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::archive_application::builders::ArchiveApplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::archive_application::builders::ArchiveApplicationInputBuilder,
+}
 impl ArchiveApplicationFluentBuilder  {
     /// Creates a new `ArchiveApplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::archive_application::ArchiveApplication, aws_http::retry::AwsResponseRetryClassifier,>,

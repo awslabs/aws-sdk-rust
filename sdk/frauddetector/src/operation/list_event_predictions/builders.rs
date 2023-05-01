@@ -10,16 +10,17 @@ pub use crate::operation::list_event_predictions::_list_event_predictions_input:
 /// <p>This is a paginated API. If you provide a null <code>maxResults</code>, this action will retrieve a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 50 and 100. To get the next page results, provide the <code>nextToken</code> from the response as part of your request. A null <code>nextToken</code> fetches the records from the beginning. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEventPredictionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_event_predictions::builders::ListEventPredictionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_event_predictions::builders::ListEventPredictionsInputBuilder,
+}
 impl ListEventPredictionsFluentBuilder  {
     /// Creates a new `ListEventPredictions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_event_predictions::ListEventPredictions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListEventPredictionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator {
-                            crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator {
+                                crate::operation::list_event_predictions::paginator::ListEventPredictionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The event ID. </p>
     pub fn event_id(mut self, input: crate::types::FilterCondition) -> Self {
         self.inner = self.inner.event_id(input);

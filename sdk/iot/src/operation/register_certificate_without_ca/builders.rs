@@ -8,16 +8,17 @@ pub use crate::operation::register_certificate_without_ca::_register_certificate
 /// <p>Register a certificate that does not have a certificate authority (CA). For supported certificates, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms"> Certificate signing algorithms supported by IoT</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterCertificateWithoutCAFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder,
+}
 impl RegisterCertificateWithoutCAFluentBuilder  {
     /// Creates a new `RegisterCertificateWithoutCA`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCA, aws_http::retry::AwsResponseRetryClassifier,>,

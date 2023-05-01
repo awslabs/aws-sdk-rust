@@ -8,16 +8,17 @@ pub use crate::operation::put_job_failure_result::_put_job_failure_result_input:
 /// <p>Represents the failure of a job as returned to the pipeline by a job worker. Used for custom actions only.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutJobFailureResultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder,
+}
 impl PutJobFailureResultFluentBuilder  {
     /// Creates a new `PutJobFailureResult`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_job_failure_result::PutJobFailureResult, aws_http::retry::AwsResponseRetryClassifier,>,

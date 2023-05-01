@@ -8,16 +8,17 @@ pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_
 /// <p>Purchase a reservation with configurations that match those of your Dedicated Host. You must have active Dedicated Hosts in your account before you purchase a reservation. This action results in the specified reservation being purchased and charged to your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PurchaseHostReservationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder,
+}
 impl PurchaseHostReservationFluentBuilder  {
     /// Creates a new `PurchaseHostReservation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::purchase_host_reservation::PurchaseHostReservation, aws_http::retry::AwsResponseRetryClassifier,>,

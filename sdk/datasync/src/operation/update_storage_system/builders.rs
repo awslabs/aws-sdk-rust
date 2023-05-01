@@ -8,16 +8,17 @@ pub use crate::operation::update_storage_system::_update_storage_system_input::U
 /// <p>Modifies some configurations of an on-premises storage system resource that you're using with DataSync Discovery.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateStorageSystemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_storage_system::builders::UpdateStorageSystemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_storage_system::builders::UpdateStorageSystemInputBuilder,
+}
 impl UpdateStorageSystemFluentBuilder  {
     /// Creates a new `UpdateStorageSystem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_storage_system::UpdateStorageSystem, aws_http::retry::AwsResponseRetryClassifier,>,

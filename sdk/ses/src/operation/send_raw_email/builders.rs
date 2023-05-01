@@ -32,16 +32,17 @@ pub use crate::operation::send_raw_email::_send_raw_email_input::SendRawEmailInp
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendRawEmailFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_raw_email::builders::SendRawEmailInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_raw_email::builders::SendRawEmailInputBuilder,
+}
 impl SendRawEmailFluentBuilder  {
     /// Creates a new `SendRawEmail`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_raw_email::SendRawEmail, aws_http::retry::AwsResponseRetryClassifier,>,

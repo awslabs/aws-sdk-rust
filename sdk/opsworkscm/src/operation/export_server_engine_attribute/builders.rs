@@ -10,16 +10,17 @@ pub use crate::operation::export_server_engine_attribute::_export_server_engine_
 /// <p> A <code>ValidationException</code> is raised when parameters of the request are not valid. A <code>ResourceNotFoundException</code> is thrown when the server does not exist. An <code>InvalidStateException</code> is thrown when the server is in any of the following states: CREATING, TERMINATED, FAILED or DELETING. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportServerEngineAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_server_engine_attribute::builders::ExportServerEngineAttributeInputBuilder,
+}
 impl ExportServerEngineAttributeFluentBuilder  {
     /// Creates a new `ExportServerEngineAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_server_engine_attribute::ExportServerEngineAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

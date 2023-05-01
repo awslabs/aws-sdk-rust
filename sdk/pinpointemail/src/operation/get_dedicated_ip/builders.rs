@@ -8,16 +8,17 @@ pub use crate::operation::get_dedicated_ip::_get_dedicated_ip_input::GetDedicate
 /// <p>Get information about a dedicated IP address, including the name of the dedicated IP pool that it's associated with, as well information about the automatic warm-up process for the address.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDedicatedIpFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_dedicated_ip::builders::GetDedicatedIpInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_dedicated_ip::builders::GetDedicatedIpInputBuilder,
+}
 impl GetDedicatedIpFluentBuilder  {
     /// Creates a new `GetDedicatedIp`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_dedicated_ip::GetDedicatedIp, aws_http::retry::AwsResponseRetryClassifier,>,

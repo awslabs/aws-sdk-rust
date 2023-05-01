@@ -11,16 +11,17 @@ pub use crate::operation::delete_configuration_set_tracking_options::_delete_con
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConfigurationSetTrackingOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_configuration_set_tracking_options::builders::DeleteConfigurationSetTrackingOptionsInputBuilder,
+}
 impl DeleteConfigurationSetTrackingOptionsFluentBuilder  {
     /// Creates a new `DeleteConfigurationSetTrackingOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_configuration_set_tracking_options::DeleteConfigurationSetTrackingOptions, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::accept_shared_directory::_accept_shared_directory_inpu
 /// <p>Accepts a directory sharing request that was sent from the directory owner account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptSharedDirectoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_shared_directory::builders::AcceptSharedDirectoryInputBuilder,
+}
 impl AcceptSharedDirectoryFluentBuilder  {
     /// Creates a new `AcceptSharedDirectory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_shared_directory::AcceptSharedDirectory, aws_http::retry::AwsResponseRetryClassifier,>,

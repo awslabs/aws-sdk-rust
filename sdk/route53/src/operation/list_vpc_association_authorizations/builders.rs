@@ -9,16 +9,17 @@ pub use crate::operation::list_vpc_association_authorizations::_list_vpc_associa
 /// <p>The response includes a <code>VPCs</code> element with a <code>VPC</code> child element for each VPC that can be associated with the hosted zone.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVPCAssociationAuthorizationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsInputBuilder,
+}
 impl ListVPCAssociationAuthorizationsFluentBuilder  {
     /// Creates a new `ListVPCAssociationAuthorizations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizations, aws_http::retry::AwsResponseRetryClassifier,>,

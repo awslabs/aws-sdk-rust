@@ -8,16 +8,17 @@ pub use crate::operation::update_firewall_domains::_update_firewall_domains_inpu
 /// <p>Updates the firewall domain list from an array of domain specifications. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFirewallDomainsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder,
+}
 impl UpdateFirewallDomainsFluentBuilder  {
     /// Creates a new `UpdateFirewallDomains`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_firewall_domains::UpdateFirewallDomains, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_blueprints::_list_blueprints_input::ListBlueprint
 /// <p>Lists all the blueprint names in an account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBlueprintsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_blueprints::builders::ListBlueprintsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_blueprints::builders::ListBlueprintsInputBuilder,
+}
 impl ListBlueprintsFluentBuilder  {
     /// Creates a new `ListBlueprints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_blueprints::ListBlueprints, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBlueprintsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_blueprints::paginator::ListBlueprintsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_blueprints::paginator::ListBlueprintsPaginator {
-                            crate::operation::list_blueprints::paginator::ListBlueprintsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_blueprints::paginator::ListBlueprintsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_blueprints::paginator::ListBlueprintsPaginator {
+                                crate::operation::list_blueprints::paginator::ListBlueprintsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

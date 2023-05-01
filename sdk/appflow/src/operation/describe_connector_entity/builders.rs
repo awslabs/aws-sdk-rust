@@ -8,16 +8,17 @@ pub use crate::operation::describe_connector_entity::_describe_connector_entity_
 /// <p> Provides details regarding the entity used with the connector, with a description of the data model for each field in that entity. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConnectorEntityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder,
+}
 impl DescribeConnectorEntityFluentBuilder  {
     /// Creates a new `DescribeConnectorEntity`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_connector_entity::DescribeConnectorEntity, aws_http::retry::AwsResponseRetryClassifier,>,

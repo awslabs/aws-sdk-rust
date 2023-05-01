@@ -8,16 +8,17 @@ pub use crate::operation::list_classification_jobs::_list_classification_jobs_in
 /// <p>Retrieves a subset of information about one or more classification jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListClassificationJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_classification_jobs::builders::ListClassificationJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_classification_jobs::builders::ListClassificationJobsInputBuilder,
+}
 impl ListClassificationJobsFluentBuilder  {
     /// Creates a new `ListClassificationJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_classification_jobs::ListClassificationJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListClassificationJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator {
-                            crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator {
+                                crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The criteria to use to filter the results.</p>
     pub fn filter_criteria(mut self, input: crate::types::ListJobsFilterCriteria) -> Self {
         self.inner = self.inner.filter_criteria(input);

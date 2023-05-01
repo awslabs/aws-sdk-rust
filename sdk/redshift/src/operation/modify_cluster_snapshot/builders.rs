@@ -9,16 +9,17 @@ pub use crate::operation::modify_cluster_snapshot::_modify_cluster_snapshot_inpu
 /// <p>This exanmple modifies the manual retention period setting for a cluster snapshot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyClusterSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_cluster_snapshot::builders::ModifyClusterSnapshotInputBuilder,
+}
 impl ModifyClusterSnapshotFluentBuilder  {
     /// Creates a new `ModifyClusterSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_cluster_snapshot::ModifyClusterSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

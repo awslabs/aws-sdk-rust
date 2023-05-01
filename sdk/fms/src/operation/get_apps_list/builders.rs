@@ -8,16 +8,17 @@ pub use crate::operation::get_apps_list::_get_apps_list_input::GetAppsListInputB
 /// <p>Returns information about the specified Firewall Manager applications list.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAppsListFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_apps_list::builders::GetAppsListInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_apps_list::builders::GetAppsListInputBuilder,
+}
 impl GetAppsListFluentBuilder  {
     /// Creates a new `GetAppsList`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_apps_list::GetAppsList, aws_http::retry::AwsResponseRetryClassifier,>,

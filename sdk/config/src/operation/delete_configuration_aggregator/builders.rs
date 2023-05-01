@@ -8,16 +8,17 @@ pub use crate::operation::delete_configuration_aggregator::_delete_configuration
 /// <p>Deletes the specified configuration aggregator and the aggregated data associated with the aggregator.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConfigurationAggregatorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_configuration_aggregator::builders::DeleteConfigurationAggregatorInputBuilder,
+}
 impl DeleteConfigurationAggregatorFluentBuilder  {
     /// Creates a new `DeleteConfigurationAggregator`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_configuration_aggregator::DeleteConfigurationAggregator, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::modify_instance_groups::_modify_instance_groups_input:
 /// <p>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyInstanceGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsInputBuilder,
+}
 impl ModifyInstanceGroupsFluentBuilder  {
     /// Creates a new `ModifyInstanceGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_instance_groups::ModifyInstanceGroups, aws_http::retry::AwsResponseRetryClassifier,>,

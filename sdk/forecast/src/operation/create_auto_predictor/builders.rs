@@ -25,16 +25,17 @@ pub use crate::operation::create_auto_predictor::_create_auto_predictor_input::C
 /// <p>When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code> and <code>PredictorName</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAutoPredictorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_auto_predictor::builders::CreateAutoPredictorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_auto_predictor::builders::CreateAutoPredictorInputBuilder,
+}
 impl CreateAutoPredictorFluentBuilder  {
     /// Creates a new `CreateAutoPredictor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_auto_predictor::CreateAutoPredictor, aws_http::retry::AwsResponseRetryClassifier,>,

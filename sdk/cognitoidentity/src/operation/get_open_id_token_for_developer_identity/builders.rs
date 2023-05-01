@@ -10,16 +10,17 @@ pub use crate::operation::get_open_id_token_for_developer_identity::_get_open_id
 /// <p>You must use AWS Developer credentials to call this API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOpenIdTokenForDeveloperIdentityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder,
+}
 impl GetOpenIdTokenForDeveloperIdentityFluentBuilder  {
     /// Creates a new `GetOpenIdTokenForDeveloperIdentity`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentity, aws_http::retry::AwsResponseRetryClassifier,>,

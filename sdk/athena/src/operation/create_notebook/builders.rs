@@ -8,16 +8,17 @@ pub use crate::operation::create_notebook::_create_notebook_input::CreateNoteboo
 /// <p>Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup. Throws an error if a file in the workgroup with the same name already exists.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNotebookFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_notebook::builders::CreateNotebookInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_notebook::builders::CreateNotebookInputBuilder,
+}
 impl CreateNotebookFluentBuilder  {
     /// Creates a new `CreateNotebook`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_notebook::CreateNotebook, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::get_response_headers_policy_config::_get_response_head
 /// <p>To get a response headers policy configuration, you must provide the policy's identifier. If the response headers policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResponseHeadersPolicyConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_response_headers_policy_config::builders::GetResponseHeadersPolicyConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_response_headers_policy_config::builders::GetResponseHeadersPolicyConfigInputBuilder,
+}
 impl GetResponseHeadersPolicyConfigFluentBuilder  {
     /// Creates a new `GetResponseHeadersPolicyConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_response_headers_policy_config::GetResponseHeadersPolicyConfig, aws_http::retry::AwsResponseRetryClassifier,>,

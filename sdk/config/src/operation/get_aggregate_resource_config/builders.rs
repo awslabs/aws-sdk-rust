@@ -8,16 +8,17 @@ pub use crate::operation::get_aggregate_resource_config::_get_aggregate_resource
 /// <p>Returns configuration item that is aggregated for your specific resource in a specific source account and region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAggregateResourceConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_aggregate_resource_config::builders::GetAggregateResourceConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_aggregate_resource_config::builders::GetAggregateResourceConfigInputBuilder,
+}
 impl GetAggregateResourceConfigFluentBuilder  {
     /// Creates a new `GetAggregateResourceConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_aggregate_resource_config::GetAggregateResourceConfig, aws_http::retry::AwsResponseRetryClassifier,>,

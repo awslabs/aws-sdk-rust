@@ -8,16 +8,17 @@ pub use crate::operation::detach_object::_detach_object_input::DetachObjectInput
 /// <p>Detaches a given object from the parent object. The object that is to be detached from the parent is specified by the link name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachObjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detach_object::builders::DetachObjectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detach_object::builders::DetachObjectInputBuilder,
+}
 impl DetachObjectFluentBuilder  {
     /// Creates a new `DetachObject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detach_object::DetachObject, aws_http::retry::AwsResponseRetryClassifier,>,

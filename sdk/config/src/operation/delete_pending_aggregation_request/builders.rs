@@ -8,16 +8,17 @@ pub use crate::operation::delete_pending_aggregation_request::_delete_pending_ag
 /// <p>Deletes pending authorization requests for a specified aggregator account in a specified region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePendingAggregationRequestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder,
+}
 impl DeletePendingAggregationRequestFluentBuilder  {
     /// Creates a new `DeletePendingAggregationRequest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequest, aws_http::retry::AwsResponseRetryClassifier,>,

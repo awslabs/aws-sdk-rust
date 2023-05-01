@@ -14,16 +14,17 @@ pub use crate::operation::add_job_flow_steps::_add_job_flow_steps_input::AddJobF
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddJobFlowStepsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_job_flow_steps::builders::AddJobFlowStepsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_job_flow_steps::builders::AddJobFlowStepsInputBuilder,
+}
 impl AddJobFlowStepsFluentBuilder  {
     /// Creates a new `AddJobFlowSteps`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_job_flow_steps::AddJobFlowSteps, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_protected_resource::_describe_protected_resou
 /// <p>Returns information about a saved resource, including the last time it was backed up, its Amazon Resource Name (ARN), and the Amazon Web Services service type of the saved resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeProtectedResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_protected_resource::builders::DescribeProtectedResourceInputBuilder,
+}
 impl DescribeProtectedResourceFluentBuilder  {
     /// Creates a new `DescribeProtectedResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_protected_resource::DescribeProtectedResource, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -23,16 +23,17 @@ pub use crate::operation::put_log_events::_put_log_events_input::PutLogEventsInp
 /// <p>If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most likely cause is a non-valid Amazon Web Services access key ID or secret key. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutLogEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_log_events::builders::PutLogEventsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_log_events::builders::PutLogEventsInputBuilder,
+}
 impl PutLogEventsFluentBuilder  {
     /// Creates a new `PutLogEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_log_events::PutLogEvents, aws_http::retry::AwsResponseRetryClassifier,>,

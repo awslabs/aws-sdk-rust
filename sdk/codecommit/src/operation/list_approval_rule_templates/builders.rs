@@ -8,16 +8,17 @@ pub use crate::operation::list_approval_rule_templates::_list_approval_rule_temp
 /// <p>Lists all approval rule templates in the specified AWS Region in your AWS account. If an AWS Region is not specified, the AWS Region where you are signed in is used.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListApprovalRuleTemplatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_approval_rule_templates::builders::ListApprovalRuleTemplatesInputBuilder,
+}
 impl ListApprovalRuleTemplatesFluentBuilder  {
     /// Creates a new `ListApprovalRuleTemplates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_approval_rule_templates::ListApprovalRuleTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListApprovalRuleTemplatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_approval_rule_templates::paginator::ListApprovalRuleTemplatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_approval_rule_templates::paginator::ListApprovalRuleTemplatesPaginator {
-                            crate::operation::list_approval_rule_templates::paginator::ListApprovalRuleTemplatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_approval_rule_templates::paginator::ListApprovalRuleTemplatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_approval_rule_templates::paginator::ListApprovalRuleTemplatesPaginator {
+                                crate::operation::list_approval_rule_templates::paginator::ListApprovalRuleTemplatesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::copy_snapshot::_copy_snapshot_input::CopySnapshotInput
 /// <p>Makes a copy of an existing snapshot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CopySnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::copy_snapshot::builders::CopySnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::copy_snapshot::builders::CopySnapshotInputBuilder,
+}
 impl CopySnapshotFluentBuilder  {
     /// Creates a new `CopySnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::copy_snapshot::CopySnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

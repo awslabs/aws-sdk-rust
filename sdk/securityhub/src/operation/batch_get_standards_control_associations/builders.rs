@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_standards_control_associations::_batch_get_s
 /// <p> For a batch of security controls and standards, identifies whether each control is currently enabled or disabled in a standard. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetStandardsControlAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsInputBuilder,
+}
 impl BatchGetStandardsControlAssociationsFluentBuilder  {
     /// Creates a new `BatchGetStandardsControlAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociations, aws_http::retry::AwsResponseRetryClassifier,>,

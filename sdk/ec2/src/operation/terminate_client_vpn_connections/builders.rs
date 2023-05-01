@@ -8,16 +8,17 @@ pub use crate::operation::terminate_client_vpn_connections::_terminate_client_vp
 /// <p>Terminates active Client VPN endpoint connections. This action can be used to terminate a specific client connection, or up to five connections established by a specific user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TerminateClientVpnConnectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::terminate_client_vpn_connections::builders::TerminateClientVpnConnectionsInputBuilder,
+}
 impl TerminateClientVpnConnectionsFluentBuilder  {
     /// Creates a new `TerminateClientVpnConnections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnections, aws_http::retry::AwsResponseRetryClassifier,>,

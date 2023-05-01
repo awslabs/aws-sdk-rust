@@ -19,16 +19,17 @@ pub use crate::operation::register_slack_workspace_for_organization::_register_s
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterSlackWorkspaceForOrganizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_slack_workspace_for_organization::builders::RegisterSlackWorkspaceForOrganizationInputBuilder,
+}
 impl RegisterSlackWorkspaceForOrganizationFluentBuilder  {
     /// Creates a new `RegisterSlackWorkspaceForOrganization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganization, aws_http::retry::AwsResponseRetryClassifier,>,

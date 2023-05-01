@@ -18,16 +18,17 @@ pub use crate::operation::get_celebrity_recognition::_get_celebrity_recognition_
 /// <p>Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetCelebrityDetection</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetCelebrityRecognition</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCelebrityRecognitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_celebrity_recognition::builders::GetCelebrityRecognitionInputBuilder,
+}
 impl GetCelebrityRecognitionFluentBuilder  {
     /// Creates a new `GetCelebrityRecognition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_celebrity_recognition::GetCelebrityRecognition, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -58,11 +59,11 @@ impl GetCelebrityRecognitionFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_celebrity_recognition::paginator::GetCelebrityRecognitionPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_celebrity_recognition::paginator::GetCelebrityRecognitionPaginator {
-                            crate::operation::get_celebrity_recognition::paginator::GetCelebrityRecognitionPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_celebrity_recognition::paginator::GetCelebrityRecognitionPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_celebrity_recognition::paginator::GetCelebrityRecognitionPaginator {
+                                crate::operation::get_celebrity_recognition::paginator::GetCelebrityRecognitionPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to <code>StartCelebrityRecognition</code>.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());

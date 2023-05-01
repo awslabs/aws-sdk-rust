@@ -8,16 +8,17 @@ pub use crate::operation::add_resource_permissions::_add_resource_permissions_in
 /// <p>Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddResourcePermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_resource_permissions::builders::AddResourcePermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_resource_permissions::builders::AddResourcePermissionsInputBuilder,
+}
 impl AddResourcePermissionsFluentBuilder  {
     /// Creates a new `AddResourcePermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_resource_permissions::AddResourcePermissions, aws_http::retry::AwsResponseRetryClassifier,>,

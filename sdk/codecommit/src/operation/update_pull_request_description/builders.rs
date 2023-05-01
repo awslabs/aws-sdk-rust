@@ -8,16 +8,17 @@ pub use crate::operation::update_pull_request_description::_update_pull_request_
 /// <p>Replaces the contents of the description of a pull request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePullRequestDescriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_pull_request_description::builders::UpdatePullRequestDescriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_pull_request_description::builders::UpdatePullRequestDescriptionInputBuilder,
+}
 impl UpdatePullRequestDescriptionFluentBuilder  {
     /// Creates a new `UpdatePullRequestDescription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_pull_request_description::UpdatePullRequestDescription, aws_http::retry::AwsResponseRetryClassifier,>,

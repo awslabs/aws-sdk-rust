@@ -16,16 +16,17 @@ pub use crate::operation::start_transcription_job::_start_transcription_job_inpu
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartTranscriptionJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_transcription_job::builders::StartTranscriptionJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_transcription_job::builders::StartTranscriptionJobInputBuilder,
+}
 impl StartTranscriptionJobFluentBuilder  {
     /// Creates a new `StartTranscriptionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_transcription_job::StartTranscriptionJob, aws_http::retry::AwsResponseRetryClassifier,>,

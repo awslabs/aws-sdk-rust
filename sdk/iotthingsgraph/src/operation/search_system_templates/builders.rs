@@ -9,16 +9,17 @@ pub use crate::operation::search_system_templates::_search_system_templates_inpu
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchSystemTemplatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_system_templates::builders::SearchSystemTemplatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_system_templates::builders::SearchSystemTemplatesInputBuilder,
+}
 impl SearchSystemTemplatesFluentBuilder  {
     /// Creates a new `SearchSystemTemplates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_system_templates::SearchSystemTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl SearchSystemTemplatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator {
-                            crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator {
+                                crate::operation::search_system_templates::paginator::SearchSystemTemplatesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

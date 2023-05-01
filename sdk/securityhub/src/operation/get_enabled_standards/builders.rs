@@ -8,16 +8,17 @@ pub use crate::operation::get_enabled_standards::_get_enabled_standards_input::G
 /// <p>Returns a list of the standards that are currently enabled.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEnabledStandardsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_enabled_standards::builders::GetEnabledStandardsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_enabled_standards::builders::GetEnabledStandardsInputBuilder,
+}
 impl GetEnabledStandardsFluentBuilder  {
     /// Creates a new `GetEnabledStandards`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_enabled_standards::GetEnabledStandards, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetEnabledStandardsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator {
-                            crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator {
+                                crate::operation::get_enabled_standards::paginator::GetEnabledStandardsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `StandardsSubscriptionArns`.
     ///
     /// To override the contents of this collection use [`set_standards_subscription_arns`](Self::set_standards_subscription_arns).

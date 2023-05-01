@@ -13,16 +13,17 @@ pub use crate::operation::get_origin_request_policy::_get_origin_request_policy_
 /// <p>To get an origin request policy, you must provide the policy's identifier. If the origin request policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOriginRequestPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_origin_request_policy::builders::GetOriginRequestPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_origin_request_policy::builders::GetOriginRequestPolicyInputBuilder,
+}
 impl GetOriginRequestPolicyFluentBuilder  {
     /// Creates a new `GetOriginRequestPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_origin_request_policy::GetOriginRequestPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

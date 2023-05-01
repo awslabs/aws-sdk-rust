@@ -8,16 +8,17 @@ pub use crate::operation::describe_instance_health::_describe_instance_health_in
 /// <p>Describes the state of the specified instances with respect to the specified load balancer. If no instances are specified, the call describes the state of all instances that are currently registered with the load balancer. If instances are specified, their state is returned even if they are no longer registered with the load balancer. The state of terminated instances is not returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstanceHealthFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_instance_health::builders::DescribeInstanceHealthInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_instance_health::builders::DescribeInstanceHealthInputBuilder,
+}
 impl DescribeInstanceHealthFluentBuilder  {
     /// Creates a new `DescribeInstanceHealth`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_instance_health::DescribeInstanceHealth, aws_http::retry::AwsResponseRetryClassifier,>,

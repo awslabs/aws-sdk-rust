@@ -8,16 +8,17 @@ pub use crate::operation::put_configuration_set_tracking_options::_put_configura
 /// <p>Specify a custom domain to use for open and click tracking elements in email that you send using Amazon Pinpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutConfigurationSetTrackingOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_configuration_set_tracking_options::builders::PutConfigurationSetTrackingOptionsInputBuilder,
+}
 impl PutConfigurationSetTrackingOptionsFluentBuilder  {
     /// Creates a new `PutConfigurationSetTrackingOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_configuration_set_tracking_options::PutConfigurationSetTrackingOptions, aws_http::retry::AwsResponseRetryClassifier,>,

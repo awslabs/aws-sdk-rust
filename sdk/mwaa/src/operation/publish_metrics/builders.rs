@@ -8,16 +8,17 @@ pub use crate::operation::publish_metrics::_publish_metrics_input::PublishMetric
 /// <p> <b>Internal only</b>. Publishes environment health metrics to Amazon CloudWatch.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PublishMetricsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::publish_metrics::builders::PublishMetricsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::publish_metrics::builders::PublishMetricsInputBuilder,
+}
 impl PublishMetricsFluentBuilder  {
     /// Creates a new `PublishMetrics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::publish_metrics::PublishMetrics, aws_http::retry::AwsResponseRetryClassifier,>,

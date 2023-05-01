@@ -12,16 +12,17 @@ pub use crate::operation::add_tags_to_stream::_add_tags_to_stream_input::AddTags
 /// <p> <code>AddTagsToStream</code> has a limit of five transactions per second per account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddTagsToStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_tags_to_stream::builders::AddTagsToStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_tags_to_stream::builders::AddTagsToStreamInputBuilder,
+}
 impl AddTagsToStreamFluentBuilder  {
     /// Creates a new `AddTagsToStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_tags_to_stream::AddTagsToStream, aws_http::retry::AwsResponseRetryClassifier,>,

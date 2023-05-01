@@ -9,16 +9,17 @@ pub use crate::operation::reload_tables::_reload_tables_input::ReloadTablesInput
 /// <p>You can only use this operation with a task in the <code>RUNNING</code> state, otherwise the service will throw an <code>InvalidResourceStateFault</code> exception.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReloadTablesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reload_tables::builders::ReloadTablesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reload_tables::builders::ReloadTablesInputBuilder,
+}
 impl ReloadTablesFluentBuilder  {
     /// Creates a new `ReloadTables`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reload_tables::ReloadTables, aws_http::retry::AwsResponseRetryClassifier,>,

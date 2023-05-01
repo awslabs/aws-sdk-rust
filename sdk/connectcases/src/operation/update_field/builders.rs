@@ -8,16 +8,17 @@ pub use crate::operation::update_field::_update_field_input::UpdateFieldInputBui
 /// <p>Updates the properties of an existing field. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFieldFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_field::builders::UpdateFieldInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_field::builders::UpdateFieldInputBuilder,
+}
 impl UpdateFieldFluentBuilder  {
     /// Creates a new `UpdateField`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_field::UpdateField, aws_http::retry::AwsResponseRetryClassifier,>,

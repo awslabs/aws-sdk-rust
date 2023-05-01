@@ -8,16 +8,17 @@ pub use crate::operation::batch_delete_detector::_batch_delete_detector_input::B
 /// <p>Deletes one or more detectors that were created. When a detector is deleted, its state will be cleared and the detector will be removed from the list of detectors. The deleted detector will no longer appear if referenced in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">ListDetectors</a> API call.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteDetectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_detector::builders::BatchDeleteDetectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_detector::builders::BatchDeleteDetectorInputBuilder,
+}
 impl BatchDeleteDetectorFluentBuilder  {
     /// Creates a new `BatchDeleteDetector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_detector::BatchDeleteDetector, aws_http::retry::AwsResponseRetryClassifier,>,

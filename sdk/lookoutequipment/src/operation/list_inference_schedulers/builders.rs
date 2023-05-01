@@ -8,16 +8,17 @@ pub use crate::operation::list_inference_schedulers::_list_inference_schedulers_
 /// <p>Retrieves a list of all inference schedulers currently available for your account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInferenceSchedulersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersInputBuilder,
+}
 impl ListInferenceSchedulersFluentBuilder  {
     /// Creates a new `ListInferenceSchedulers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_inference_schedulers::ListInferenceSchedulers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListInferenceSchedulersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_inference_schedulers::paginator::ListInferenceSchedulersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_inference_schedulers::paginator::ListInferenceSchedulersPaginator {
-                            crate::operation::list_inference_schedulers::paginator::ListInferenceSchedulersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_inference_schedulers::paginator::ListInferenceSchedulersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_inference_schedulers::paginator::ListInferenceSchedulersPaginator {
+                                crate::operation::list_inference_schedulers::paginator::ListInferenceSchedulersPaginator::new(self.handle, self.inner)
+                            }
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

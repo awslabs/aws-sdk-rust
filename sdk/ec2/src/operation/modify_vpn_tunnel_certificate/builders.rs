@@ -8,16 +8,17 @@ pub use crate::operation::modify_vpn_tunnel_certificate::_modify_vpn_tunnel_cert
 /// <p>Modifies the VPN tunnel endpoint certificate.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpnTunnelCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_vpn_tunnel_certificate::builders::ModifyVpnTunnelCertificateInputBuilder,
+}
 impl ModifyVpnTunnelCertificateFluentBuilder  {
     /// Creates a new `ModifyVpnTunnelCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_vpn_tunnel_certificate::ModifyVpnTunnelCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

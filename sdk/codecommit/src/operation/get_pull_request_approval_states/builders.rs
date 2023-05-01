@@ -8,16 +8,17 @@ pub use crate::operation::get_pull_request_approval_states::_get_pull_request_ap
 /// <p>Gets information about the approval states for a specified pull request. Approval states only apply to pull requests that have one or more approval rules applied to them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPullRequestApprovalStatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_pull_request_approval_states::builders::GetPullRequestApprovalStatesInputBuilder,
+}
 impl GetPullRequestApprovalStatesFluentBuilder  {
     /// Creates a new `GetPullRequestApprovalStates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStates, aws_http::retry::AwsResponseRetryClassifier,>,

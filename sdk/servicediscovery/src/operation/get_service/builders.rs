@@ -8,16 +8,17 @@ pub use crate::operation::get_service::_get_service_input::GetServiceInputBuilde
 /// <p>Gets the settings for a specified service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetServiceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_service::builders::GetServiceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_service::builders::GetServiceInputBuilder,
+}
 impl GetServiceFluentBuilder  {
     /// Creates a new `GetService`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_service::GetService, aws_http::retry::AwsResponseRetryClassifier,>,

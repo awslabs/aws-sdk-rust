@@ -9,16 +9,17 @@ pub use crate::operation::list_traffic_policy_versions::_list_traffic_policy_ver
 /// <p>Traffic policy versions are listed in numerical order by <code>VersionNumber</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrafficPolicyVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsInputBuilder,
+}
 impl ListTrafficPolicyVersionsFluentBuilder  {
     /// Creates a new `ListTrafficPolicyVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersions, aws_http::retry::AwsResponseRetryClassifier,>,

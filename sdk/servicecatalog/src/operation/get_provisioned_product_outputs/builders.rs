@@ -8,16 +8,17 @@ pub use crate::operation::get_provisioned_product_outputs::_get_provisioned_prod
 /// <p>This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a list of one or more output keys, and responds with the key/value pairs of those outputs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetProvisionedProductOutputsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsInputBuilder,
+}
 impl GetProvisionedProductOutputsFluentBuilder  {
     /// Creates a new `GetProvisionedProductOutputs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetProvisionedProductOutputsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator {
-                            crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator {
+                                crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The language code.</p> 
     /// <ul> 
     /// <li> <p> <code>jp</code> - Japanese</p> </li> 

@@ -9,16 +9,17 @@ pub use crate::operation::delete_ota_update::_delete_ota_update_input::DeleteOta
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteOTAUpdate</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteOTAUpdateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_ota_update::builders::DeleteOtaUpdateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_ota_update::builders::DeleteOtaUpdateInputBuilder,
+}
 impl DeleteOTAUpdateFluentBuilder  {
     /// Creates a new `DeleteOTAUpdate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_ota_update::DeleteOTAUpdate, aws_http::retry::AwsResponseRetryClassifier,>,

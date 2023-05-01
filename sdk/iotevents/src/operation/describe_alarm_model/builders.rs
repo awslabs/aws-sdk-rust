@@ -8,16 +8,17 @@ pub use crate::operation::describe_alarm_model::_describe_alarm_model_input::Des
 /// <p>Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code> parameter, the latest version is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAlarmModelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_alarm_model::builders::DescribeAlarmModelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_alarm_model::builders::DescribeAlarmModelInputBuilder,
+}
 impl DescribeAlarmModelFluentBuilder  {
     /// Creates a new `DescribeAlarmModel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_alarm_model::DescribeAlarmModel, aws_http::retry::AwsResponseRetryClassifier,>,

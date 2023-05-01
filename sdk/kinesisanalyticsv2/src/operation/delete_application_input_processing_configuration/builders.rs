@@ -8,16 +8,17 @@ pub use crate::operation::delete_application_input_processing_configuration::_de
 /// <p>Deletes an <code>InputProcessingConfiguration</code> from an input.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteApplicationInputProcessingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_application_input_processing_configuration::builders::DeleteApplicationInputProcessingConfigurationInputBuilder,
+}
 impl DeleteApplicationInputProcessingConfigurationFluentBuilder  {
     /// Creates a new `DeleteApplicationInputProcessingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_application_input_processing_configuration::DeleteApplicationInputProcessingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_associated_role::_get_associated_role_input::GetAs
 /// Retrieves the role associated with a particular group.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssociatedRoleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_associated_role::builders::GetAssociatedRoleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_associated_role::builders::GetAssociatedRoleInputBuilder,
+}
 impl GetAssociatedRoleFluentBuilder  {
     /// Creates a new `GetAssociatedRole`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_associated_role::GetAssociatedRole, aws_http::retry::AwsResponseRetryClassifier,>,

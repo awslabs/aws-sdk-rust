@@ -9,16 +9,17 @@ pub use crate::operation::delete_function_event_invoke_config::_delete_function_
 /// <p>To configure options for asynchronous invocation, use <code>PutFunctionEventInvokeConfig</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFunctionEventInvokeConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_function_event_invoke_config::builders::DeleteFunctionEventInvokeConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_function_event_invoke_config::builders::DeleteFunctionEventInvokeConfigInputBuilder,
+}
 impl DeleteFunctionEventInvokeConfigFluentBuilder  {
     /// Creates a new `DeleteFunctionEventInvokeConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfig, aws_http::retry::AwsResponseRetryClassifier,>,

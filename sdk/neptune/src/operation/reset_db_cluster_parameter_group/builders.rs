@@ -9,16 +9,17 @@ pub use crate::operation::reset_db_cluster_parameter_group::_reset_db_cluster_pa
 /// <p> When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code> request. You must call <code>RebootDBInstance</code> for every DB instance in your DB cluster that you want the updated static parameter to apply to.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetDBClusterParameterGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_db_cluster_parameter_group::builders::ResetDbClusterParameterGroupInputBuilder,
+}
 impl ResetDBClusterParameterGroupFluentBuilder  {
     /// Creates a new `ResetDBClusterParameterGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_db_cluster_parameter_group::ResetDBClusterParameterGroup, aws_http::retry::AwsResponseRetryClassifier,>,

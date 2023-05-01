@@ -14,16 +14,17 @@ pub use crate::operation::describe_usage_limits::_describe_usage_limits_input::D
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUsageLimitsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_usage_limits::builders::DescribeUsageLimitsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_usage_limits::builders::DescribeUsageLimitsInputBuilder,
+}
 impl DescribeUsageLimitsFluentBuilder  {
     /// Creates a new `DescribeUsageLimits`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_usage_limits::DescribeUsageLimits, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -54,11 +55,11 @@ impl DescribeUsageLimitsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator {
-                            crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator {
+                                crate::operation::describe_usage_limits::paginator::DescribeUsageLimitsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the usage limit to describe.</p>
     pub fn usage_limit_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.usage_limit_id(input.into());

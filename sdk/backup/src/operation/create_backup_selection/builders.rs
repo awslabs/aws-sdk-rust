@@ -8,16 +8,17 @@ pub use crate::operation::create_backup_selection::_create_backup_selection_inpu
 /// <p>Creates a JSON document that specifies a set of resources to assign to a backup plan. For examples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/assigning-resources.html#assigning-resources-json">Assigning resources programmatically</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBackupSelectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_backup_selection::builders::CreateBackupSelectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_backup_selection::builders::CreateBackupSelectionInputBuilder,
+}
 impl CreateBackupSelectionFluentBuilder  {
     /// Creates a new `CreateBackupSelection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_backup_selection::CreateBackupSelection, aws_http::retry::AwsResponseRetryClassifier,>,

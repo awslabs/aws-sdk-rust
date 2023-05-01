@@ -8,16 +8,17 @@ pub use crate::operation::list_byoip_cidrs::_list_byoip_cidrs_input::ListByoipCi
 /// <p>Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>, including the current state and a history of state changes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListByoipCidrsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_byoip_cidrs::builders::ListByoipCidrsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_byoip_cidrs::builders::ListByoipCidrsInputBuilder,
+}
 impl ListByoipCidrsFluentBuilder  {
     /// Creates a new `ListByoipCidrs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_byoip_cidrs::ListByoipCidrs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListByoipCidrsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_byoip_cidrs::paginator::ListByoipCidrsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_byoip_cidrs::paginator::ListByoipCidrsPaginator {
-                            crate::operation::list_byoip_cidrs::paginator::ListByoipCidrsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_byoip_cidrs::paginator::ListByoipCidrsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_byoip_cidrs::paginator::ListByoipCidrsPaginator {
+                                crate::operation::list_byoip_cidrs::paginator::ListByoipCidrsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

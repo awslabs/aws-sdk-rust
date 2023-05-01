@@ -8,16 +8,17 @@ pub use crate::operation::create_metric_attribution::_create_metric_attribution_
 /// <p>Creates a metric attribution. A metric attribution creates reports on the data that you import into Amazon Personalize. Depending on how you imported the data, you can view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMetricAttributionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_metric_attribution::builders::CreateMetricAttributionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_metric_attribution::builders::CreateMetricAttributionInputBuilder,
+}
 impl CreateMetricAttributionFluentBuilder  {
     /// Creates a new `CreateMetricAttribution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_metric_attribution::CreateMetricAttribution, aws_http::retry::AwsResponseRetryClassifier,>,

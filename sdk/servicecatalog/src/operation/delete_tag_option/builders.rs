@@ -9,16 +9,17 @@ pub use crate::operation::delete_tag_option::_delete_tag_option_input::DeleteTag
 /// <p>You cannot delete a TagOption if it is associated with a product or portfolio.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTagOptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_tag_option::builders::DeleteTagOptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_tag_option::builders::DeleteTagOptionInputBuilder,
+}
 impl DeleteTagOptionFluentBuilder  {
     /// Creates a new `DeleteTagOption`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_tag_option::DeleteTagOption, aws_http::retry::AwsResponseRetryClassifier,>,

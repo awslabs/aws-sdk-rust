@@ -8,16 +8,17 @@ pub use crate::operation::get_group_id::_get_group_id_input::GetGroupIdInputBuil
 /// <p>Retrieves <code>GroupId</code> in an identity store.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetGroupIdFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_group_id::builders::GetGroupIdInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_group_id::builders::GetGroupIdInputBuilder,
+}
 impl GetGroupIdFluentBuilder  {
     /// Creates a new `GetGroupId`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_group_id::GetGroupId, aws_http::retry::AwsResponseRetryClassifier,>,

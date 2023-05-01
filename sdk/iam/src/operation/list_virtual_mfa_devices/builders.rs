@@ -11,16 +11,17 @@ pub use crate::operation::list_virtual_mfa_devices::_list_virtual_mfa_devices_in
 /// <p>You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVirtualMFADevicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_virtual_mfa_devices::builders::ListVirtualMfaDevicesInputBuilder,
+}
 impl ListVirtualMFADevicesFluentBuilder  {
     /// Creates a new `ListVirtualMFADevices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_virtual_mfa_devices::ListVirtualMFADevices, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListVirtualMFADevicesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator {
-                            crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator {
+                                crate::operation::list_virtual_mfa_devices::paginator::ListVirtualMfaDevicesPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code>, which lists both assigned and unassigned virtual MFA devices.,</p>
     pub fn assignment_status(mut self, input: crate::types::AssignmentStatusType) -> Self {
         self.inner = self.inner.assignment_status(input);

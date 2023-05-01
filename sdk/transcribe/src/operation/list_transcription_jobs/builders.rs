@@ -9,16 +9,17 @@ pub use crate::operation::list_transcription_jobs::_list_transcription_jobs_inpu
 /// <p>To get detailed information about a specific transcription job, use the operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTranscriptionJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsInputBuilder,
+}
 impl ListTranscriptionJobsFluentBuilder  {
     /// Creates a new `ListTranscriptionJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_transcription_jobs::ListTranscriptionJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListTranscriptionJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_transcription_jobs::paginator::ListTranscriptionJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_transcription_jobs::paginator::ListTranscriptionJobsPaginator {
-                            crate::operation::list_transcription_jobs::paginator::ListTranscriptionJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_transcription_jobs::paginator::ListTranscriptionJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_transcription_jobs::paginator::ListTranscriptionJobsPaginator {
+                                crate::operation::list_transcription_jobs::paginator::ListTranscriptionJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Returns only transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all transcription jobs are returned.</p>
     pub fn status(mut self, input: crate::types::TranscriptionJobStatus) -> Self {
         self.inner = self.inner.status(input);

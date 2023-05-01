@@ -8,16 +8,17 @@ pub use crate::operation::get_field_level_encryption::_get_field_level_encryptio
 /// <p>Get the field-level encryption configuration information.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFieldLevelEncryptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_field_level_encryption::builders::GetFieldLevelEncryptionInputBuilder,
+}
 impl GetFieldLevelEncryptionFluentBuilder  {
     /// Creates a new `GetFieldLevelEncryption`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_field_level_encryption::GetFieldLevelEncryption, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::update_service_setting::_update_service_setting_input:
 /// <p>Update the service setting for the account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServiceSettingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder,
+}
 impl UpdateServiceSettingFluentBuilder  {
     /// Creates a new `UpdateServiceSetting`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_service_setting::UpdateServiceSetting, aws_http::retry::AwsResponseRetryClassifier,>,

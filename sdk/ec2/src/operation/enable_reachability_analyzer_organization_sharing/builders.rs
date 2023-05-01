@@ -9,16 +9,17 @@ pub use crate::operation::enable_reachability_analyzer_organization_sharing::_en
 /// <p>After you establish a trust relationship, a user in the management account or a delegated administrator account can run a cross-account analysis using resources from the member accounts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableReachabilityAnalyzerOrganizationSharingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_reachability_analyzer_organization_sharing::builders::EnableReachabilityAnalyzerOrganizationSharingInputBuilder,
+}
 impl EnableReachabilityAnalyzerOrganizationSharingFluentBuilder  {
     /// Creates a new `EnableReachabilityAnalyzerOrganizationSharing`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_reachability_analyzer_organization_sharing::EnableReachabilityAnalyzerOrganizationSharing, aws_http::retry::AwsResponseRetryClassifier,>,

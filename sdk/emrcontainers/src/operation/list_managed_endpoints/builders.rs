@@ -8,16 +8,17 @@ pub use crate::operation::list_managed_endpoints::_list_managed_endpoints_input:
 /// <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListManagedEndpointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder,
+}
 impl ListManagedEndpointsFluentBuilder  {
     /// Creates a new `ListManagedEndpoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_managed_endpoints::ListManagedEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListManagedEndpointsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator {
-                            crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator {
+                                crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the virtual cluster.</p>
     pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.virtual_cluster_id(input.into());

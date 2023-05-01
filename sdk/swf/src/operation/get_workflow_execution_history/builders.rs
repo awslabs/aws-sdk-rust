@@ -18,16 +18,17 @@ pub use crate::operation::get_workflow_execution_history::_get_workflow_executio
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetWorkflowExecutionHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_workflow_execution_history::builders::GetWorkflowExecutionHistoryInputBuilder,
+}
 impl GetWorkflowExecutionHistoryFluentBuilder  {
     /// Creates a new `GetWorkflowExecutionHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistory, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -58,11 +59,11 @@ impl GetWorkflowExecutionHistoryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_workflow_execution_history::paginator::GetWorkflowExecutionHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_workflow_execution_history::paginator::GetWorkflowExecutionHistoryPaginator {
-                            crate::operation::get_workflow_execution_history::paginator::GetWorkflowExecutionHistoryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_workflow_execution_history::paginator::GetWorkflowExecutionHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_workflow_execution_history::paginator::GetWorkflowExecutionHistoryPaginator {
+                                crate::operation::get_workflow_execution_history::paginator::GetWorkflowExecutionHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the domain containing the workflow execution.</p>
     pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());

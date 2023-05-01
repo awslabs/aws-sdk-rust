@@ -8,16 +8,17 @@ pub use crate::operation::allocate_hosts::_allocate_hosts_input::AllocateHostsIn
 /// <p>Allocates a Dedicated Host to your account. At a minimum, specify the supported instance type or instance family, the Availability Zone in which to allocate the host, and the number of hosts to allocate.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AllocateHostsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::allocate_hosts::builders::AllocateHostsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::allocate_hosts::builders::AllocateHostsInputBuilder,
+}
 impl AllocateHostsFluentBuilder  {
     /// Creates a new `AllocateHosts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::allocate_hosts::AllocateHosts, aws_http::retry::AwsResponseRetryClassifier,>,

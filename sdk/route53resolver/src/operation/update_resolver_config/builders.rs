@@ -8,16 +8,17 @@ pub use crate::operation::update_resolver_config::_update_resolver_config_input:
 /// <p>Updates the behavior configuration of Route&nbsp;53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResolverConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_resolver_config::builders::UpdateResolverConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_resolver_config::builders::UpdateResolverConfigInputBuilder,
+}
 impl UpdateResolverConfigFluentBuilder  {
     /// Creates a new `UpdateResolverConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_resolver_config::UpdateResolverConfig, aws_http::retry::AwsResponseRetryClassifier,>,

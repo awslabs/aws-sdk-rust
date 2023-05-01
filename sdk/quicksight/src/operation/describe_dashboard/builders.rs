@@ -8,16 +8,17 @@ pub use crate::operation::describe_dashboard::_describe_dashboard_input::Describ
 /// <p>Provides a summary for a dashboard.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDashboardFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_dashboard::builders::DescribeDashboardInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_dashboard::builders::DescribeDashboardInputBuilder,
+}
 impl DescribeDashboardFluentBuilder  {
     /// Creates a new `DescribeDashboard`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_dashboard::DescribeDashboard, aws_http::retry::AwsResponseRetryClassifier,>,

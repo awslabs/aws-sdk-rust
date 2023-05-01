@@ -8,16 +8,17 @@ pub use crate::operation::back_test_anomaly_detector::_back_test_anomaly_detecto
 /// <p>Runs a backtest for anomaly detection for the specified resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BackTestAnomalyDetectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorInputBuilder,
+}
 impl BackTestAnomalyDetectorFluentBuilder  {
     /// Creates a new `BackTestAnomalyDetector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::back_test_anomaly_detector::BackTestAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,

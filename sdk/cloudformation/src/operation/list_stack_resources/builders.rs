@@ -9,16 +9,17 @@ pub use crate::operation::list_stack_resources::_list_stack_resources_input::Lis
 /// <p>For deleted stacks, ListStackResources returns resource information for up to 90 days after the stack has been deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStackResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_stack_resources::builders::ListStackResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_stack_resources::builders::ListStackResourcesInputBuilder,
+}
 impl ListStackResourcesFluentBuilder  {
     /// Creates a new `ListStackResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_stack_resources::ListStackResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListStackResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator {
-                            crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator {
+                                crate::operation::list_stack_resources::paginator::ListStackResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name or the unique stack ID that is associated with the stack, which aren't always interchangeable:</p> 
     /// <ul> 
     /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 

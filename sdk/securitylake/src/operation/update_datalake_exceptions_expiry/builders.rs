@@ -8,16 +8,17 @@ pub use crate::operation::update_datalake_exceptions_expiry::_update_datalake_ex
 /// <p>Update the expiration period for the exception message to your preferred time, and control the time-to-live (TTL) for the exception message to remain. Exceptions are stored by default for 2 weeks from when a record was created in Amazon Security Lake. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDatalakeExceptionsExpiryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_datalake_exceptions_expiry::builders::UpdateDatalakeExceptionsExpiryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_datalake_exceptions_expiry::builders::UpdateDatalakeExceptionsExpiryInputBuilder,
+}
 impl UpdateDatalakeExceptionsExpiryFluentBuilder  {
     /// Creates a new `UpdateDatalakeExceptionsExpiry`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_datalake_exceptions_expiry::UpdateDatalakeExceptionsExpiry, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::scan_provisioned_products::_scan_provisioned_products_
 /// <p>To use additional filtering, see <code>SearchProvisionedProducts</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ScanProvisionedProductsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::scan_provisioned_products::builders::ScanProvisionedProductsInputBuilder,
+}
 impl ScanProvisionedProductsFluentBuilder  {
     /// Creates a new `ScanProvisionedProducts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::scan_provisioned_products::ScanProvisionedProducts, aws_http::retry::AwsResponseRetryClassifier,>,

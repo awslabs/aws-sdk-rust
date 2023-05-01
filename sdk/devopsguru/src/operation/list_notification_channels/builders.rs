@@ -8,16 +8,17 @@ pub use crate::operation::list_notification_channels::_list_notification_channel
 /// <p> Returns a list of notification channels configured for DevOps Guru. Each notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNotificationChannelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_notification_channels::builders::ListNotificationChannelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_notification_channels::builders::ListNotificationChannelsInputBuilder,
+}
 impl ListNotificationChannelsFluentBuilder  {
     /// Creates a new `ListNotificationChannels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_notification_channels::ListNotificationChannels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListNotificationChannelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_notification_channels::paginator::ListNotificationChannelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_notification_channels::paginator::ListNotificationChannelsPaginator {
-                            crate::operation::list_notification_channels::paginator::ListNotificationChannelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_notification_channels::paginator::ListNotificationChannelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_notification_channels::paginator::ListNotificationChannelsPaginator {
+                                crate::operation::list_notification_channels::paginator::ListNotificationChannelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -10,16 +10,17 @@ pub use crate::operation::describe_portfolio_shares::_describe_portfolio_shares_
 /// <p>The <code>PortfolioId</code> and <code>Type</code> parameters are both required.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePortfolioSharesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder,
+}
 impl DescribePortfolioSharesFluentBuilder  {
     /// Creates a new `DescribePortfolioShares`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_portfolio_shares::DescribePortfolioShares, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribePortfolioSharesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_portfolio_shares::paginator::DescribePortfolioSharesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_portfolio_shares::paginator::DescribePortfolioSharesPaginator {
-                            crate::operation::describe_portfolio_shares::paginator::DescribePortfolioSharesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_portfolio_shares::paginator::DescribePortfolioSharesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_portfolio_shares::paginator::DescribePortfolioSharesPaginator {
+                                crate::operation::describe_portfolio_shares::paginator::DescribePortfolioSharesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
     pub fn portfolio_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.portfolio_id(input.into());

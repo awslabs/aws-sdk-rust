@@ -8,16 +8,17 @@ pub use crate::operation::create_rest_api::_create_rest_api_input::CreateRestApi
 /// <p>Creates a new RestApi resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRestApiFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_rest_api::builders::CreateRestApiInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_rest_api::builders::CreateRestApiInputBuilder,
+}
 impl CreateRestApiFluentBuilder  {
     /// Creates a new `CreateRestApi`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_rest_api::CreateRestApi, aws_http::retry::AwsResponseRetryClassifier,>,

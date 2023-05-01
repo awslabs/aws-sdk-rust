@@ -11,16 +11,17 @@ pub use crate::operation::describe_db_cluster_backtracks::_describe_db_cluster_b
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBClusterBacktracksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_cluster_backtracks::builders::DescribeDbClusterBacktracksInputBuilder,
+}
 impl DescribeDBClusterBacktracksFluentBuilder  {
     /// Creates a new `DescribeDBClusterBacktracks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_cluster_backtracks::DescribeDBClusterBacktracks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl DescribeDBClusterBacktracksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_backtracks::paginator::DescribeDbClusterBacktracksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_cluster_backtracks::paginator::DescribeDbClusterBacktracksPaginator {
-                            crate::operation::describe_db_cluster_backtracks::paginator::DescribeDbClusterBacktracksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_backtracks::paginator::DescribeDbClusterBacktracksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_cluster_backtracks::paginator::DescribeDbClusterBacktracksPaginator {
+                                crate::operation::describe_db_cluster_backtracks::paginator::DescribeDbClusterBacktracksPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is stored as a lowercase string.</p> 
     /// <p>Constraints:</p> 
     /// <ul> 

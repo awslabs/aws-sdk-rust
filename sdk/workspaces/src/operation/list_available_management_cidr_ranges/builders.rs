@@ -10,16 +10,17 @@ pub use crate::operation::list_available_management_cidr_ranges::_list_available
 /// <p>The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAvailableManagementCidrRangesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesInputBuilder,
+}
 impl ListAvailableManagementCidrRangesFluentBuilder  {
     /// Creates a new `ListAvailableManagementCidrRanges`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRanges, aws_http::retry::AwsResponseRetryClassifier,>,

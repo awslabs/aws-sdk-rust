@@ -8,16 +8,17 @@ pub use crate::operation::list_contact_flow_modules::_list_contact_flow_modules_
 /// <p>Provides information about the flow modules for the specified Amazon Connect instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListContactFlowModulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_contact_flow_modules::builders::ListContactFlowModulesInputBuilder,
+}
 impl ListContactFlowModulesFluentBuilder  {
     /// Creates a new `ListContactFlowModules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_contact_flow_modules::ListContactFlowModules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListContactFlowModulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator {
-                            crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator {
+                                crate::operation::list_contact_flow_modules::paginator::ListContactFlowModulesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());

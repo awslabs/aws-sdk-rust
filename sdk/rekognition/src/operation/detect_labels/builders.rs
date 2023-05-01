@@ -44,16 +44,17 @@ pub use crate::operation::detect_labels::_detect_labels_input::DetectLabelsInput
 /// <p>This operation requires permissions to perform the <code>rekognition:DetectLabels</code> action. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectLabelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_labels::builders::DetectLabelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_labels::builders::DetectLabelsInputBuilder,
+}
 impl DetectLabelsFluentBuilder  {
     /// Creates a new `DetectLabels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_labels::DetectLabels, aws_http::retry::AwsResponseRetryClassifier,>,

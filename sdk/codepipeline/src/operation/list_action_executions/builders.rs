@@ -8,16 +8,17 @@ pub use crate::operation::list_action_executions::_list_action_executions_input:
 /// <p>Lists the action executions that have occurred in a pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListActionExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_action_executions::builders::ListActionExecutionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_action_executions::builders::ListActionExecutionsInputBuilder,
+}
 impl ListActionExecutionsFluentBuilder  {
     /// Creates a new `ListActionExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_action_executions::ListActionExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListActionExecutionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator {
-                            crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator {
+                                crate::operation::list_action_executions::paginator::ListActionExecutionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The name of the pipeline for which you want to list action execution history.</p>
     pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.pipeline_name(input.into());

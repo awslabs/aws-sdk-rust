@@ -9,16 +9,17 @@ pub use crate::operation::get_suite_run_report::_get_suite_run_report_input::Get
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetSuiteRunReport</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSuiteRunReportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_suite_run_report::builders::GetSuiteRunReportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_suite_run_report::builders::GetSuiteRunReportInputBuilder,
+}
 impl GetSuiteRunReportFluentBuilder  {
     /// Creates a new `GetSuiteRunReport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_suite_run_report::GetSuiteRunReport, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::decline_handshake::_decline_handshake_input::DeclineHa
 /// <p>After you decline a handshake, it continues to appear in the results of relevant APIs for only 30 days. After that, it's deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeclineHandshakeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::decline_handshake::builders::DeclineHandshakeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::decline_handshake::builders::DeclineHandshakeInputBuilder,
+}
 impl DeclineHandshakeFluentBuilder  {
     /// Creates a new `DeclineHandshake`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::decline_handshake::DeclineHandshake, aws_http::retry::AwsResponseRetryClassifier,>,

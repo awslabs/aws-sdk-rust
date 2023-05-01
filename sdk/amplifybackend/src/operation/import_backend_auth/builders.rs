@@ -8,16 +8,17 @@ pub use crate::operation::import_backend_auth::_import_backend_auth_input::Impor
 /// <p>Imports an existing backend authentication resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportBackendAuthFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_backend_auth::builders::ImportBackendAuthInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_backend_auth::builders::ImportBackendAuthInputBuilder,
+}
 impl ImportBackendAuthFluentBuilder  {
     /// Creates a new `ImportBackendAuth`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_backend_auth::ImportBackendAuth, aws_http::retry::AwsResponseRetryClassifier,>,

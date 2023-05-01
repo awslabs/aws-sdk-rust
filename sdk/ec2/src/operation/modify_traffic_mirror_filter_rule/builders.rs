@@ -9,16 +9,17 @@ pub use crate::operation::modify_traffic_mirror_filter_rule::_modify_traffic_mir
 /// <p> <code>DestinationCidrBlock</code> and <code>SourceCidrBlock</code> must both be an IPv4 range or an IPv6 range.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyTrafficMirrorFilterRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_traffic_mirror_filter_rule::builders::ModifyTrafficMirrorFilterRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_traffic_mirror_filter_rule::builders::ModifyTrafficMirrorFilterRuleInputBuilder,
+}
 impl ModifyTrafficMirrorFilterRuleFluentBuilder  {
     /// Creates a new `ModifyTrafficMirrorFilterRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_traffic_mirror_filter_rule::ModifyTrafficMirrorFilterRule, aws_http::retry::AwsResponseRetryClassifier,>,

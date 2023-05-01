@@ -8,16 +8,17 @@ pub use crate::operation::list_environment_templates::_list_environment_template
 /// <p>List environment templates.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEnvironmentTemplatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesInputBuilder,
+}
 impl ListEnvironmentTemplatesFluentBuilder  {
     /// Creates a new `ListEnvironmentTemplates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_environment_templates::ListEnvironmentTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEnvironmentTemplatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_environment_templates::paginator::ListEnvironmentTemplatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_environment_templates::paginator::ListEnvironmentTemplatesPaginator {
-                            crate::operation::list_environment_templates::paginator::ListEnvironmentTemplatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_environment_templates::paginator::ListEnvironmentTemplatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_environment_templates::paginator::ListEnvironmentTemplatesPaginator {
+                                crate::operation::list_environment_templates::paginator::ListEnvironmentTemplatesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the list of environment templates that was previously requested.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

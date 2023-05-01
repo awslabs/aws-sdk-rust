@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_skill_from_users::_disassociate_skill_fro
 /// <p>Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateSkillFromUsersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_skill_from_users::builders::DisassociateSkillFromUsersInputBuilder,
+}
 impl DisassociateSkillFromUsersFluentBuilder  {
     /// Creates a new `DisassociateSkillFromUsers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsers, aws_http::retry::AwsResponseRetryClassifier,>,

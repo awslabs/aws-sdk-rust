@@ -8,16 +8,17 @@ pub use crate::operation::provide_anomaly_feedback::_provide_anomaly_feedback_in
 /// <p>Modifies the feedback property of a given cost anomaly. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ProvideAnomalyFeedbackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackInputBuilder,
+}
 impl ProvideAnomalyFeedbackFluentBuilder  {
     /// Creates a new `ProvideAnomalyFeedback`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedback, aws_http::retry::AwsResponseRetryClassifier,>,

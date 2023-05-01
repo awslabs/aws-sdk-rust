@@ -8,16 +8,17 @@ pub use crate::operation::describe_app_instance::_describe_app_instance_input::D
 /// <p>Returns the full details of an <code>AppInstance</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAppInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_app_instance::builders::DescribeAppInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_app_instance::builders::DescribeAppInstanceInputBuilder,
+}
 impl DescribeAppInstanceFluentBuilder  {
     /// Creates a new `DescribeAppInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_app_instance::DescribeAppInstance, aws_http::retry::AwsResponseRetryClassifier,>,

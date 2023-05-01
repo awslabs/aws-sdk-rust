@@ -8,16 +8,17 @@ pub use crate::operation::modify_snapshot_copy_retention_period::_modify_snapsho
 /// <p>Modifies the number of days to retain snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. By default, this operation only changes the retention period of copied automated snapshots. The retention periods for both new and existing copied automated snapshots are updated with the new retention period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set this option, only newly copied manual snapshots have the new retention period. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifySnapshotCopyRetentionPeriodFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_snapshot_copy_retention_period::builders::ModifySnapshotCopyRetentionPeriodInputBuilder,
+}
 impl ModifySnapshotCopyRetentionPeriodFluentBuilder  {
     /// Creates a new `ModifySnapshotCopyRetentionPeriod`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriod, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_ops_summary::_get_ops_summary_input::GetOpsSummary
 /// <p>View a summary of operations metadata (OpsData) based on specified filters and aggregators. OpsData can include information about Amazon Web Services Systems Manager OpsCenter operational workitems (OpsItems) as well as information about any Amazon Web Services resource or service configured to report OpsData to Amazon Web Services Systems Manager Explorer. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOpsSummaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_ops_summary::builders::GetOpsSummaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_ops_summary::builders::GetOpsSummaryInputBuilder,
+}
 impl GetOpsSummaryFluentBuilder  {
     /// Creates a new `GetOpsSummary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_ops_summary::GetOpsSummary, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetOpsSummaryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator {
-                            crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator {
+                                crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specify the name of a resource data sync to get.</p>
     pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sync_name(input.into());

@@ -9,16 +9,17 @@ pub use crate::operation::delete_fleet_metric::_delete_fleet_metric_input::Delet
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteFleetMetric</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFleetMetricFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_fleet_metric::builders::DeleteFleetMetricInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_fleet_metric::builders::DeleteFleetMetricInputBuilder,
+}
 impl DeleteFleetMetricFluentBuilder  {
     /// Creates a new `DeleteFleetMetric`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_fleet_metric::DeleteFleetMetric, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::get_dev_endpoints::_get_dev_endpoints_input::GetDevEnd
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDevEndpointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_dev_endpoints::builders::GetDevEndpointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_dev_endpoints::builders::GetDevEndpointsInputBuilder,
+}
 impl GetDevEndpointsFluentBuilder  {
     /// Creates a new `GetDevEndpoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_dev_endpoints::GetDevEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl GetDevEndpointsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator {
-                            crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator {
+                                crate::operation::get_dev_endpoints::paginator::GetDevEndpointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum size of information to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

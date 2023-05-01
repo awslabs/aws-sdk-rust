@@ -12,16 +12,17 @@ pub use crate::operation::enable_ebs_encryption_by_default::_enable_ebs_encrypti
 /// <p>After you enable encryption by default, you can no longer launch instances using instance types that do not support encryption. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported instance types</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableEbsEncryptionByDefaultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_ebs_encryption_by_default::builders::EnableEbsEncryptionByDefaultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_ebs_encryption_by_default::builders::EnableEbsEncryptionByDefaultInputBuilder,
+}
 impl EnableEbsEncryptionByDefaultFluentBuilder  {
     /// Creates a new `EnableEbsEncryptionByDefault`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefault, aws_http::retry::AwsResponseRetryClassifier,>,

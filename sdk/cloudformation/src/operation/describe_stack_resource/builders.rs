@@ -9,16 +9,17 @@ pub use crate::operation::describe_stack_resource::_describe_stack_resource_inpu
 /// <p>For deleted stacks, DescribeStackResource returns resource information for up to 90 days after the stack has been deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStackResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_stack_resource::builders::DescribeStackResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_stack_resource::builders::DescribeStackResourceInputBuilder,
+}
 impl DescribeStackResourceFluentBuilder  {
     /// Creates a new `DescribeStackResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_stack_resource::DescribeStackResource, aws_http::retry::AwsResponseRetryClassifier,>,

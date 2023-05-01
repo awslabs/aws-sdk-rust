@@ -13,16 +13,17 @@ pub use crate::operation::put_group_configuration::_put_group_configuration_inpu
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutGroupConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_group_configuration::builders::PutGroupConfigurationInputBuilder,
+}
 impl PutGroupConfigurationFluentBuilder  {
     /// Creates a new `PutGroupConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_group_configuration::PutGroupConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

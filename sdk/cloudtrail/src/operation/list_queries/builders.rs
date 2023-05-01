@@ -8,16 +8,17 @@ pub use crate::operation::list_queries::_list_queries_input::ListQueriesInputBui
 /// <p>Returns a list of queries and query statuses for the past seven days. You must specify an ARN value for <code>EventDataStore</code>. Optionally, to shorten the list of results, you can specify a time range, formatted as timestamps, by adding <code>StartTime</code> and <code>EndTime</code> parameters, and a <code>QueryStatus</code> value. Valid values for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListQueriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_queries::builders::ListQueriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_queries::builders::ListQueriesInputBuilder,
+}
 impl ListQueriesFluentBuilder  {
     /// Creates a new `ListQueries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_queries::ListQueries, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListQueriesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_queries::paginator::ListQueriesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_queries::paginator::ListQueriesPaginator {
-                            crate::operation::list_queries::paginator::ListQueriesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_queries::paginator::ListQueriesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_queries::paginator::ListQueriesPaginator {
+                                crate::operation::list_queries::paginator::ListQueriesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries were run.</p>
     pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.event_data_store(input.into());

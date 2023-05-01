@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_security_key::_disassociate_security_key_
 /// <p>Deletes the specified security key.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateSecurityKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_security_key::builders::DisassociateSecurityKeyInputBuilder,
+}
 impl DisassociateSecurityKeyFluentBuilder  {
     /// Creates a new `DisassociateSecurityKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_security_key::DisassociateSecurityKey, aws_http::retry::AwsResponseRetryClassifier,>,

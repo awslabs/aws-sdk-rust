@@ -8,16 +8,17 @@ pub use crate::operation::disconnect_participant::_disconnect_participant_input:
 /// <p>Disconnects a specified participant and revokes the participant permanently from a specified stage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisconnectParticipantFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disconnect_participant::builders::DisconnectParticipantInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disconnect_participant::builders::DisconnectParticipantInputBuilder,
+}
 impl DisconnectParticipantFluentBuilder  {
     /// Creates a new `DisconnectParticipant`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disconnect_participant::DisconnectParticipant, aws_http::retry::AwsResponseRetryClassifier,>,

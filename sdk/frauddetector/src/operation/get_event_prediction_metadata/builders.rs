@@ -8,16 +8,17 @@ pub use crate::operation::get_event_prediction_metadata::_get_event_prediction_m
 /// <p> Gets details of the past fraud predictions for the specified event ID, event type, detector ID, and detector version ID that was generated in the specified time period. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventPredictionMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_event_prediction_metadata::builders::GetEventPredictionMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_event_prediction_metadata::builders::GetEventPredictionMetadataInputBuilder,
+}
 impl GetEventPredictionMetadataFluentBuilder  {
     /// Creates a new `GetEventPredictionMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_event_prediction_metadata::GetEventPredictionMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

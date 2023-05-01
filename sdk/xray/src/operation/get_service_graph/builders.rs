@@ -8,16 +8,17 @@ pub use crate::operation::get_service_graph::_get_service_graph_input::GetServic
 /// <p>Retrieves a document that describes services that process incoming requests, and downstream services that they call as a result. Root services process incoming requests and make calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">Amazon Web Services X-Ray SDK</a>. Downstream services can be other applications, Amazon Web Services resources, HTTP web APIs, or SQL databases.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetServiceGraphFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_service_graph::builders::GetServiceGraphInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_service_graph::builders::GetServiceGraphInputBuilder,
+}
 impl GetServiceGraphFluentBuilder  {
     /// Creates a new `GetServiceGraph`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_service_graph::GetServiceGraph, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetServiceGraphFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_service_graph::paginator::GetServiceGraphPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_service_graph::paginator::GetServiceGraphPaginator {
-                            crate::operation::get_service_graph::paginator::GetServiceGraphPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_service_graph::paginator::GetServiceGraphPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_service_graph::paginator::GetServiceGraphPaginator {
+                                crate::operation::get_service_graph::paginator::GetServiceGraphPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The start of the time frame for which to generate a graph.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);

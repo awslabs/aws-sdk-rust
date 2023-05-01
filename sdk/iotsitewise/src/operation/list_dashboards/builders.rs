@@ -8,16 +8,17 @@ pub use crate::operation::list_dashboards::_list_dashboards_input::ListDashboard
 /// <p>Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDashboardsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_dashboards::builders::ListDashboardsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_dashboards::builders::ListDashboardsInputBuilder,
+}
 impl ListDashboardsFluentBuilder  {
     /// Creates a new `ListDashboards`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_dashboards::ListDashboards, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDashboardsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_dashboards::paginator::ListDashboardsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_dashboards::paginator::ListDashboardsPaginator {
-                            crate::operation::list_dashboards::paginator::ListDashboardsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_dashboards::paginator::ListDashboardsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_dashboards::paginator::ListDashboardsPaginator {
+                                crate::operation::list_dashboards::paginator::ListDashboardsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the project.</p>
     pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project_id(input.into());

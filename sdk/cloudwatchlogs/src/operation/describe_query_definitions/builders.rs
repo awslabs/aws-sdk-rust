@@ -9,16 +9,17 @@ pub use crate::operation::describe_query_definitions::_describe_query_definition
 /// <p>You can use the <code>queryDefinitionNamePrefix</code> parameter to limit the results to only the query definitions that have names that start with a certain string.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeQueryDefinitionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_query_definitions::builders::DescribeQueryDefinitionsInputBuilder,
+}
 impl DescribeQueryDefinitionsFluentBuilder  {
     /// Creates a new `DescribeQueryDefinitions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_query_definitions::DescribeQueryDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,

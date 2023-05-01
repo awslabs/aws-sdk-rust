@@ -8,16 +8,17 @@ pub use crate::operation::create_recovery_group::_create_recovery_group_input::C
 /// <p>Creates a recovery group in an account. A recovery group corresponds to an application and includes a list of the cells that make up the application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRecoveryGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_recovery_group::builders::CreateRecoveryGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_recovery_group::builders::CreateRecoveryGroupInputBuilder,
+}
 impl CreateRecoveryGroupFluentBuilder  {
     /// Creates a new `CreateRecoveryGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_recovery_group::CreateRecoveryGroup, aws_http::retry::AwsResponseRetryClassifier,>,

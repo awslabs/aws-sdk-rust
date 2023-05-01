@@ -8,16 +8,17 @@ pub use crate::operation::list_dominant_language_detection_jobs::_list_dominant_
 /// <p>Gets a list of the dominant language detection jobs that you have submitted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDominantLanguageDetectionJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_dominant_language_detection_jobs::builders::ListDominantLanguageDetectionJobsInputBuilder,
+}
 impl ListDominantLanguageDetectionJobsFluentBuilder  {
     /// Creates a new `ListDominantLanguageDetectionJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_dominant_language_detection_jobs::ListDominantLanguageDetectionJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDominantLanguageDetectionJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_dominant_language_detection_jobs::paginator::ListDominantLanguageDetectionJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_dominant_language_detection_jobs::paginator::ListDominantLanguageDetectionJobsPaginator {
-                            crate::operation::list_dominant_language_detection_jobs::paginator::ListDominantLanguageDetectionJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_dominant_language_detection_jobs::paginator::ListDominantLanguageDetectionJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_dominant_language_detection_jobs::paginator::ListDominantLanguageDetectionJobsPaginator {
+                                crate::operation::list_dominant_language_detection_jobs::paginator::ListDominantLanguageDetectionJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     pub fn filter(mut self, input: crate::types::DominantLanguageDetectionJobFilter) -> Self {
         self.inner = self.inner.filter(input);

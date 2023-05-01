@@ -8,16 +8,17 @@ pub use crate::operation::list_monitored_resources::_list_monitored_resources_in
 /// <p> Returns the list of all log groups that are being monitored and tagged by DevOps Guru. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMonitoredResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_monitored_resources::builders::ListMonitoredResourcesInputBuilder,
+}
 impl ListMonitoredResourcesFluentBuilder  {
     /// Creates a new `ListMonitoredResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_monitored_resources::ListMonitoredResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListMonitoredResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator {
-                            crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator {
+                                crate::operation::list_monitored_resources::paginator::ListMonitoredResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p> Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status. </p>
     pub fn filters(mut self, input: crate::types::ListMonitoredResourcesFilters) -> Self {
         self.inner = self.inner.filters(input);

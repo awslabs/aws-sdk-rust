@@ -8,16 +8,17 @@ pub use crate::operation::create_access_preview::_create_access_preview_input::C
 /// <p>Creates an access preview that allows you to preview IAM Access Analyzer findings for your resource before deploying resource permissions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAccessPreviewFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_access_preview::builders::CreateAccessPreviewInputBuilder,
+}
 impl CreateAccessPreviewFluentBuilder  {
     /// Creates a new `CreateAccessPreview`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_access_preview::CreateAccessPreview, aws_http::retry::AwsResponseRetryClassifier,>,

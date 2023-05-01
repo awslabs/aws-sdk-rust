@@ -8,16 +8,17 @@ pub use crate::operation::list_user_profiles::_list_user_profiles_input::ListUse
 /// <p>Lists all the user profiles configured for your AWS account in AWS CodeStar.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListUserProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder,
+}
 impl ListUserProfilesFluentBuilder  {
     /// Creates a new `ListUserProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_user_profiles::ListUserProfiles, aws_http::retry::AwsResponseRetryClassifier,>,

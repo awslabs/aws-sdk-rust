@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_resolver_endpoint_ip_address::_disassocia
 /// <p>To add an IP address to an endpoint, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html">AssociateResolverEndpointIpAddress</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateResolverEndpointIpAddressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_resolver_endpoint_ip_address::builders::DisassociateResolverEndpointIpAddressInputBuilder,
+}
 impl DisassociateResolverEndpointIpAddressFluentBuilder  {
     /// Creates a new `DisassociateResolverEndpointIpAddress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddress, aws_http::retry::AwsResponseRetryClassifier,>,

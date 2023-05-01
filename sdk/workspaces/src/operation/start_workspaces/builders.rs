@@ -9,16 +9,17 @@ pub use crate::operation::start_workspaces::_start_workspaces_input::StartWorksp
 /// <p>You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code> and a state of <code>STOPPED</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartWorkspacesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_workspaces::builders::StartWorkspacesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_workspaces::builders::StartWorkspacesInputBuilder,
+}
 impl StartWorkspacesFluentBuilder  {
     /// Creates a new `StartWorkspaces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_workspaces::StartWorkspaces, aws_http::retry::AwsResponseRetryClassifier,>,

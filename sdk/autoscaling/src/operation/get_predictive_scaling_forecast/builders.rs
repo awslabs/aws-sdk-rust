@@ -11,16 +11,17 @@ pub use crate::operation::get_predictive_scaling_forecast::_get_predictive_scali
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPredictiveScalingForecastFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_predictive_scaling_forecast::builders::GetPredictiveScalingForecastInputBuilder,
+}
 impl GetPredictiveScalingForecastFluentBuilder  {
     /// Creates a new `GetPredictiveScalingForecast`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_predictive_scaling_forecast::GetPredictiveScalingForecast, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_audit_suppression::_describe_audit_suppressio
 /// <p> Gets information about a Device Defender audit suppression. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAuditSuppressionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_audit_suppression::builders::DescribeAuditSuppressionInputBuilder,
+}
 impl DescribeAuditSuppressionFluentBuilder  {
     /// Creates a new `DescribeAuditSuppression`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_audit_suppression::DescribeAuditSuppression, aws_http::retry::AwsResponseRetryClassifier,>,

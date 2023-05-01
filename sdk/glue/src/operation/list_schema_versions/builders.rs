@@ -8,16 +8,17 @@ pub use crate::operation::list_schema_versions::_list_schema_versions_input::Lis
 /// <p>Returns a list of schema versions that you have created, with minimal information. Schema versions in Deleted status will not be included in the results. Empty results will be returned if there are no schema versions available.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSchemaVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_schema_versions::builders::ListSchemaVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_schema_versions::builders::ListSchemaVersionsInputBuilder,
+}
 impl ListSchemaVersionsFluentBuilder  {
     /// Creates a new `ListSchemaVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_schema_versions::ListSchemaVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSchemaVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator {
-                            crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator {
+                                crate::operation::list_schema_versions::paginator::ListSchemaVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
     /// <ul> 
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> 

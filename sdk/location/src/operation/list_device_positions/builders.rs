@@ -8,16 +8,17 @@ pub use crate::operation::list_device_positions::_list_device_positions_input::L
 /// <p>A batch request to retrieve all device positions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDevicePositionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_device_positions::builders::ListDevicePositionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_device_positions::builders::ListDevicePositionsInputBuilder,
+}
 impl ListDevicePositionsFluentBuilder  {
     /// Creates a new `ListDevicePositions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_device_positions::ListDevicePositions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDevicePositionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator {
-                            crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator {
+                                crate::operation::list_device_positions::paginator::ListDevicePositionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The tracker resource containing the requested devices.</p>
     pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.tracker_name(input.into());

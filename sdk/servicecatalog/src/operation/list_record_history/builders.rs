@@ -8,16 +8,17 @@ pub use crate::operation::list_record_history::_list_record_history_input::ListR
 /// <p>Lists the specified requests or all performed requests.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRecordHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_record_history::builders::ListRecordHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_record_history::builders::ListRecordHistoryInputBuilder,
+}
 impl ListRecordHistoryFluentBuilder  {
     /// Creates a new `ListRecordHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_record_history::ListRecordHistory, aws_http::retry::AwsResponseRetryClassifier,>,

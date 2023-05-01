@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_report_groups::_batch_get_report_groups_inpu
 /// <p> Returns an array of report groups. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetReportGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_report_groups::builders::BatchGetReportGroupsInputBuilder,
+}
 impl BatchGetReportGroupsFluentBuilder  {
     /// Creates a new `BatchGetReportGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_report_groups::BatchGetReportGroups, aws_http::retry::AwsResponseRetryClassifier,>,

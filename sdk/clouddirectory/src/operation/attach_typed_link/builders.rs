@@ -8,16 +8,17 @@ pub use crate::operation::attach_typed_link::_attach_typed_link_input::AttachTyp
 /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AttachTypedLinkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::attach_typed_link::builders::AttachTypedLinkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::attach_typed_link::builders::AttachTypedLinkInputBuilder,
+}
 impl AttachTypedLinkFluentBuilder  {
     /// Creates a new `AttachTypedLink`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_typed_link::AttachTypedLink, aws_http::retry::AwsResponseRetryClassifier,>,

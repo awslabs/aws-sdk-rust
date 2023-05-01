@@ -9,16 +9,17 @@ pub use crate::operation::update_traffic_distribution::_update_traffic_distribut
 /// <p>For more information about updating a traffic distribution group, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon Connect Administrator Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTrafficDistributionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_traffic_distribution::builders::UpdateTrafficDistributionInputBuilder,
+}
 impl UpdateTrafficDistributionFluentBuilder  {
     /// Creates a new `UpdateTrafficDistribution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_traffic_distribution::UpdateTrafficDistribution, aws_http::retry::AwsResponseRetryClassifier,>,

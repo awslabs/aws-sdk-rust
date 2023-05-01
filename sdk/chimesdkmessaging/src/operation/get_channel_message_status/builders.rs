@@ -41,16 +41,17 @@ pub use crate::operation::get_channel_message_status::_get_channel_message_statu
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetChannelMessageStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_channel_message_status::builders::GetChannelMessageStatusInputBuilder,
+}
 impl GetChannelMessageStatusFluentBuilder  {
     /// Creates a new `GetChannelMessageStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_channel_message_status::GetChannelMessageStatus, aws_http::retry::AwsResponseRetryClassifier,>,

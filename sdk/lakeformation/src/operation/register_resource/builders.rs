@@ -13,16 +13,17 @@ pub use crate::operation::register_resource::_register_resource_input::RegisterR
 /// <p> <code>arn:aws:iam::12345:role/my-data-access-role</code> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_resource::builders::RegisterResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_resource::builders::RegisterResourceInputBuilder,
+}
 impl RegisterResourceFluentBuilder  {
     /// Creates a new `RegisterResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_resource::RegisterResource, aws_http::retry::AwsResponseRetryClassifier,>,

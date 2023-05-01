@@ -8,16 +8,17 @@ pub use crate::operation::list_profile_object_types::_list_profile_object_types_
 /// <p>Lists all of the templates available within the service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProfileObjectTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_profile_object_types::builders::ListProfileObjectTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_profile_object_types::builders::ListProfileObjectTypesInputBuilder,
+}
 impl ListProfileObjectTypesFluentBuilder  {
     /// Creates a new `ListProfileObjectTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_profile_object_types::ListProfileObjectTypes, aws_http::retry::AwsResponseRetryClassifier,>,

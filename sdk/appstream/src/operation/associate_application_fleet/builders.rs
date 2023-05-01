@@ -8,16 +8,17 @@ pub use crate::operation::associate_application_fleet::_associate_application_fl
 /// <p>Associates the specified application with the specified fleet. This is only supported for Elastic fleets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateApplicationFleetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_application_fleet::builders::AssociateApplicationFleetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_application_fleet::builders::AssociateApplicationFleetInputBuilder,
+}
 impl AssociateApplicationFleetFluentBuilder  {
     /// Creates a new `AssociateApplicationFleet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_application_fleet::AssociateApplicationFleet, aws_http::retry::AwsResponseRetryClassifier,>,

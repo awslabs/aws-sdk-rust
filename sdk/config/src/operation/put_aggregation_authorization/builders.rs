@@ -10,16 +10,17 @@ pub use crate::operation::put_aggregation_authorization::_put_aggregation_author
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAggregationAuthorizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_aggregation_authorization::builders::PutAggregationAuthorizationInputBuilder,
+}
 impl PutAggregationAuthorizationFluentBuilder  {
     /// Creates a new `PutAggregationAuthorization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_aggregation_authorization::PutAggregationAuthorization, aws_http::retry::AwsResponseRetryClassifier,>,

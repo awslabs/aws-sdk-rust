@@ -8,16 +8,17 @@ pub use crate::operation::delete_usage_plan_key::_delete_usage_plan_key_input::D
 /// <p>Deletes a usage plan key and remove the underlying API key from the associated usage plan.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteUsagePlanKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_usage_plan_key::builders::DeleteUsagePlanKeyInputBuilder,
+}
 impl DeleteUsagePlanKeyFluentBuilder  {
     /// Creates a new `DeleteUsagePlanKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_usage_plan_key::DeleteUsagePlanKey, aws_http::retry::AwsResponseRetryClassifier,>,

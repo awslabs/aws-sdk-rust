@@ -9,16 +9,17 @@ pub use crate::operation::cancel_resource_request::_cancel_resource_request_inpu
 /// <p>Only resource operations requests with a status of <code>PENDING</code> or <code>IN_PROGRESS</code> can be canceled.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelResourceRequestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_resource_request::builders::CancelResourceRequestInputBuilder,
+}
 impl CancelResourceRequestFluentBuilder  {
     /// Creates a new `CancelResourceRequest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_resource_request::CancelResourceRequest, aws_http::retry::AwsResponseRetryClassifier,>,

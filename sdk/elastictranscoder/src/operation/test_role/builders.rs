@@ -10,16 +10,17 @@ pub use crate::operation::test_role::_test_role_input::TestRoleInputBuilder;
 #[deprecated]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TestRoleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::test_role::builders::TestRoleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::test_role::builders::TestRoleInputBuilder,
+}
 impl TestRoleFluentBuilder  {
     /// Creates a new `TestRole`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::test_role::TestRole, aws_http::retry::AwsResponseRetryClassifier,>,

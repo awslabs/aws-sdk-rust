@@ -11,16 +11,17 @@ pub use crate::operation::list_policies_for_target::_list_policies_for_target_in
 /// <p>This operation can be called only from the organization's management account or by a member account that is a delegated administrator for an Amazon Web Services service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPoliciesForTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_policies_for_target::builders::ListPoliciesForTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_policies_for_target::builders::ListPoliciesForTargetInputBuilder,
+}
 impl ListPoliciesForTargetFluentBuilder  {
     /// Creates a new `ListPoliciesForTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_policies_for_target::ListPoliciesForTarget, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListPoliciesForTargetFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator {
-                            crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator {
+                                crate::operation::list_policies_for_target::paginator::ListPoliciesForTargetPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies you want to list.</p> 
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target ID string requires one of the following:</p> 
     /// <ul> 

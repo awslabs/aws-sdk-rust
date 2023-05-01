@@ -8,16 +8,17 @@ pub use crate::operation::delete_launch_configuration_template::_delete_launch_c
 /// <p>Deletes a single Launch Configuration Template by ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLaunchConfigurationTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_launch_configuration_template::builders::DeleteLaunchConfigurationTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_launch_configuration_template::builders::DeleteLaunchConfigurationTemplateInputBuilder,
+}
 impl DeleteLaunchConfigurationTemplateFluentBuilder  {
     /// Creates a new `DeleteLaunchConfigurationTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

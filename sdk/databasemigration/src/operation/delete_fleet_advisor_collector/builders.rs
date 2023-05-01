@@ -8,16 +8,17 @@ pub use crate::operation::delete_fleet_advisor_collector::_delete_fleet_advisor_
 /// <p>Deletes the specified Fleet Advisor collector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFleetAdvisorCollectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_fleet_advisor_collector::builders::DeleteFleetAdvisorCollectorInputBuilder,
+}
 impl DeleteFleetAdvisorCollectorFluentBuilder  {
     /// Creates a new `DeleteFleetAdvisorCollector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollector, aws_http::retry::AwsResponseRetryClassifier,>,

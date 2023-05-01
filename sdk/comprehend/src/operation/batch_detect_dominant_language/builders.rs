@@ -8,16 +8,17 @@ pub use crate::operation::batch_detect_dominant_language::_batch_detect_dominant
 /// <p>Determines the dominant language of the input text for a batch of documents. For a list of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDetectDominantLanguageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder,
+}
 impl BatchDetectDominantLanguageFluentBuilder  {
     /// Creates a new `BatchDetectDominantLanguage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguage, aws_http::retry::AwsResponseRetryClassifier,>,

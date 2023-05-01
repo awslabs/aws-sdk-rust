@@ -8,16 +8,17 @@ pub use crate::operation::claim_devices_by_claim_code::_claim_devices_by_claim_c
 /// <p>Adds device(s) to your account (i.e., claim one or more devices) if and only if you received a claim code with the device(s).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ClaimDevicesByClaimCodeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeInputBuilder,
+}
 impl ClaimDevicesByClaimCodeFluentBuilder  {
     /// Creates a new `ClaimDevicesByClaimCode`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCode, aws_http::retry::AwsResponseRetryClassifier,>,

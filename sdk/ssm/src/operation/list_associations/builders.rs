@@ -8,16 +8,17 @@ pub use crate::operation::list_associations::_list_associations_input::ListAssoc
 /// <p>Returns all State Manager associations in the current Amazon Web Services account and Amazon Web Services Region. You can limit the results to a specific State Manager association document or managed node by specifying a filter. State Manager is a capability of Amazon Web Services Systems Manager.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_associations::builders::ListAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_associations::builders::ListAssociationsInputBuilder,
+}
 impl ListAssociationsFluentBuilder  {
     /// Creates a new `ListAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_associations::ListAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_associations::paginator::ListAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_associations::paginator::ListAssociationsPaginator {
-                            crate::operation::list_associations::paginator::ListAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_associations::paginator::ListAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_associations::paginator::ListAssociationsPaginator {
+                                crate::operation::list_associations::paginator::ListAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `AssociationFilterList`.
     ///
     /// To override the contents of this collection use [`set_association_filter_list`](Self::set_association_filter_list).

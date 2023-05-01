@@ -8,16 +8,17 @@ pub use crate::operation::describe_virtual_cluster::_describe_virtual_cluster_in
 /// <p>Displays detailed information about a specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVirtualClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterInputBuilder,
+}
 impl DescribeVirtualClusterFluentBuilder  {
     /// Creates a new `DescribeVirtualCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_virtual_cluster::DescribeVirtualCluster, aws_http::retry::AwsResponseRetryClassifier,>,

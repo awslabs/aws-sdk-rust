@@ -10,16 +10,17 @@ pub use crate::operation::delete_configuration_template::_delete_configuration_t
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConfigurationTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_configuration_template::builders::DeleteConfigurationTemplateInputBuilder,
+}
 impl DeleteConfigurationTemplateFluentBuilder  {
     /// Creates a new `DeleteConfigurationTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_configuration_template::DeleteConfigurationTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

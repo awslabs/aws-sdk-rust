@@ -8,16 +8,17 @@ pub use crate::operation::delete_configuration_set::_delete_configuration_set_in
 /// Deletes an existing configuration set.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteConfigurationSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_configuration_set::builders::DeleteConfigurationSetInputBuilder,
+}
 impl DeleteConfigurationSetFluentBuilder  {
     /// Creates a new `DeleteConfigurationSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_configuration_set::DeleteConfigurationSet, aws_http::retry::AwsResponseRetryClassifier,>,

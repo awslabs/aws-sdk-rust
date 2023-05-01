@@ -9,16 +9,17 @@ pub use crate::operation::describe_vtl_devices::_describe_vtl_devices_input::Des
 /// <p>This operation is only supported in the tape gateway type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVTLDevicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_vtl_devices::builders::DescribeVtlDevicesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_vtl_devices::builders::DescribeVtlDevicesInputBuilder,
+}
 impl DescribeVTLDevicesFluentBuilder  {
     /// Creates a new `DescribeVTLDevices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_vtl_devices::DescribeVTLDevices, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeVTLDevicesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator {
-                            crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator {
+                                crate::operation::describe_vtl_devices::paginator::DescribeVtlDevicesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());

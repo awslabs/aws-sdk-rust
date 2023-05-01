@@ -8,16 +8,17 @@ pub use crate::operation::delete_browser_settings::_delete_browser_settings_inpu
 /// <p>Deletes browser settings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBrowserSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_browser_settings::builders::DeleteBrowserSettingsInputBuilder,
+}
 impl DeleteBrowserSettingsFluentBuilder  {
     /// Creates a new `DeleteBrowserSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_browser_settings::DeleteBrowserSettings, aws_http::retry::AwsResponseRetryClassifier,>,

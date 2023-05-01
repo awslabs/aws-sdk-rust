@@ -12,16 +12,17 @@ pub use crate::operation::delete_task_definitions::_delete_task_definitions_inpu
 /// <p> A task definition revision will stay in <code>DELETE_IN_PROGRESS</code> status until all the associated tasks and services have been terminated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTaskDefinitionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_task_definitions::builders::DeleteTaskDefinitionsInputBuilder,
+}
 impl DeleteTaskDefinitionsFluentBuilder  {
     /// Creates a new `DeleteTaskDefinitions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_task_definitions::DeleteTaskDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,

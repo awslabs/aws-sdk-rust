@@ -8,16 +8,17 @@ pub use crate::operation::put_resource_log_level::_put_resource_log_level_input:
 /// <p>Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway or a wireless device. A limit of 200 log level override can be set per account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutResourceLogLevelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_resource_log_level::builders::PutResourceLogLevelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_resource_log_level::builders::PutResourceLogLevelInputBuilder,
+}
 impl PutResourceLogLevelFluentBuilder  {
     /// Creates a new `PutResourceLogLevel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_resource_log_level::PutResourceLogLevel, aws_http::retry::AwsResponseRetryClassifier,>,

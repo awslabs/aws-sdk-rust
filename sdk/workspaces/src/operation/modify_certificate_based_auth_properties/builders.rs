@@ -8,16 +8,17 @@ pub use crate::operation::modify_certificate_based_auth_properties::_modify_cert
 /// <p>Modifies the properties of the certificate-based authentication you want to use with your WorkSpaces.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyCertificateBasedAuthPropertiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_certificate_based_auth_properties::builders::ModifyCertificateBasedAuthPropertiesInputBuilder,
+}
 impl ModifyCertificateBasedAuthPropertiesFluentBuilder  {
     /// Creates a new `ModifyCertificateBasedAuthProperties`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthProperties, aws_http::retry::AwsResponseRetryClassifier,>,

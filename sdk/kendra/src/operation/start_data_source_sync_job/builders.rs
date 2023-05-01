@@ -8,16 +8,17 @@ pub use crate::operation::start_data_source_sync_job::_start_data_source_sync_jo
 /// <p>Starts a synchronization job for a data source connector. If a synchronization job is already in progress, Amazon Kendra returns a <code>ResourceInUseException</code> exception.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDataSourceSyncJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobInputBuilder,
+}
 impl StartDataSourceSyncJobFluentBuilder  {
     /// Creates a new `StartDataSourceSyncJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_data_source_sync_job::StartDataSourceSyncJob, aws_http::retry::AwsResponseRetryClassifier,>,

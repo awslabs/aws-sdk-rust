@@ -8,16 +8,17 @@ pub use crate::operation::describe_origin_endpoint::_describe_origin_endpoint_in
 /// Gets details about an existing OriginEndpoint.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOriginEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_origin_endpoint::builders::DescribeOriginEndpointInputBuilder,
+}
 impl DescribeOriginEndpointFluentBuilder  {
     /// Creates a new `DescribeOriginEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_origin_endpoint::DescribeOriginEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

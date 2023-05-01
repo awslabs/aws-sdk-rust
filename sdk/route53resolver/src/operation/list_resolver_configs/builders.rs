@@ -8,16 +8,17 @@ pub use crate::operation::list_resolver_configs::_list_resolver_configs_input::L
 /// <p>Retrieves the Resolver configurations that you have defined. Route&nbsp;53 Resolver uses the configurations to manage DNS resolution behavior for your VPCs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResolverConfigsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resolver_configs::builders::ListResolverConfigsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resolver_configs::builders::ListResolverConfigsInputBuilder,
+}
 impl ListResolverConfigsFluentBuilder  {
     /// Creates a new `ListResolverConfigs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resolver_configs::ListResolverConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListResolverConfigsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_configs::paginator::ListResolverConfigsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resolver_configs::paginator::ListResolverConfigsPaginator {
-                            crate::operation::list_resolver_configs::paginator::ListResolverConfigsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_configs::paginator::ListResolverConfigsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_resolver_configs::paginator::ListResolverConfigsPaginator {
+                                crate::operation::list_resolver_configs::paginator::ListResolverConfigsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of Resolver configurations that you want to return in the response to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>, up to 100 Resolver configurations are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

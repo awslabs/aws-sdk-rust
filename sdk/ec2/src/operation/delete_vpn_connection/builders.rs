@@ -10,16 +10,17 @@ pub use crate::operation::delete_vpn_connection::_delete_vpn_connection_input::D
 /// <p>For certificate-based authentication, delete all Certificate Manager (ACM) private certificates used for the Amazon Web Services-side tunnel endpoints for the VPN connection before deleting the VPN connection.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpnConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vpn_connection::builders::DeleteVpnConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vpn_connection::builders::DeleteVpnConnectionInputBuilder,
+}
 impl DeleteVpnConnectionFluentBuilder  {
     /// Creates a new `DeleteVpnConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vpn_connection::DeleteVpnConnection, aws_http::retry::AwsResponseRetryClassifier,>,

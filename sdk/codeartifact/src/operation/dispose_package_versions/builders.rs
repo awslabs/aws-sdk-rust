@@ -10,16 +10,17 @@ pub use crate::operation::dispose_package_versions::_dispose_package_versions_in
 /// <p> To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisposePackageVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::dispose_package_versions::builders::DisposePackageVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::dispose_package_versions::builders::DisposePackageVersionsInputBuilder,
+}
 impl DisposePackageVersionsFluentBuilder  {
     /// Creates a new `DisposePackageVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::dispose_package_versions::DisposePackageVersions, aws_http::retry::AwsResponseRetryClassifier,>,

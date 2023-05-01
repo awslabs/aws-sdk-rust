@@ -10,16 +10,17 @@ pub use crate::operation::describe_backups::_describe_backups_input::DescribeBac
 /// <p> A <code>ResourceNotFoundException</code> is thrown when the backup does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBackupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_backups::builders::DescribeBackupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_backups::builders::DescribeBackupsInputBuilder,
+}
 impl DescribeBackupsFluentBuilder  {
     /// Creates a new `DescribeBackups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_backups::DescribeBackups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeBackupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_backups::paginator::DescribeBackupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_backups::paginator::DescribeBackupsPaginator {
-                            crate::operation::describe_backups::paginator::DescribeBackupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_backups::paginator::DescribeBackupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_backups::paginator::DescribeBackupsPaginator {
+                                crate::operation::describe_backups::paginator::DescribeBackupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Describes a single backup. </p>
     pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.backup_id(input.into());

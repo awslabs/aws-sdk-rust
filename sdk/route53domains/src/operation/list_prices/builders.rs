@@ -15,16 +15,17 @@ pub use crate::operation::list_prices::_list_prices_input::ListPricesInputBuilde
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPricesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_prices::builders::ListPricesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_prices::builders::ListPricesInputBuilder,
+}
 impl ListPricesFluentBuilder  {
     /// Creates a new `ListPrices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_prices::ListPrices, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -55,11 +56,11 @@ impl ListPricesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_prices::paginator::ListPricesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_prices::paginator::ListPricesPaginator {
-                            crate::operation::list_prices::paginator::ListPricesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_prices::paginator::ListPricesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_prices::paginator::ListPricesPaginator {
+                                crate::operation::list_prices::paginator::ListPricesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The TLD for which you want to receive the pricing information. For example. <code>.net</code>.</p> 
     /// <p>If a <code>Tld</code> value is not provided, a list of prices for all TLDs supported by Route&nbsp;53 is returned.</p>
     pub fn tld(mut self, input: impl Into<std::string::String>) -> Self {

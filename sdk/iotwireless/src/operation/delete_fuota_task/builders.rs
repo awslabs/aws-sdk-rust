@@ -8,16 +8,17 @@ pub use crate::operation::delete_fuota_task::_delete_fuota_task_input::DeleteFuo
 /// <p>Deletes a FUOTA task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFuotaTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_fuota_task::builders::DeleteFuotaTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_fuota_task::builders::DeleteFuotaTaskInputBuilder,
+}
 impl DeleteFuotaTaskFluentBuilder  {
     /// Creates a new `DeleteFuotaTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_fuota_task::DeleteFuotaTask, aws_http::retry::AwsResponseRetryClassifier,>,

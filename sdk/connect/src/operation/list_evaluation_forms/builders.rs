@@ -8,16 +8,17 @@ pub use crate::operation::list_evaluation_forms::_list_evaluation_forms_input::L
 /// <p>Lists evaluation forms in the specified Amazon Connect instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEvaluationFormsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_evaluation_forms::builders::ListEvaluationFormsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_evaluation_forms::builders::ListEvaluationFormsInputBuilder,
+}
 impl ListEvaluationFormsFluentBuilder  {
     /// Creates a new `ListEvaluationForms`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_evaluation_forms::ListEvaluationForms, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEvaluationFormsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_evaluation_forms::paginator::ListEvaluationFormsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_evaluation_forms::paginator::ListEvaluationFormsPaginator {
-                            crate::operation::list_evaluation_forms::paginator::ListEvaluationFormsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_evaluation_forms::paginator::ListEvaluationFormsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_evaluation_forms::paginator::ListEvaluationFormsPaginator {
+                                crate::operation::list_evaluation_forms::paginator::ListEvaluationFormsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());

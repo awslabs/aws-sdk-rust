@@ -8,16 +8,17 @@ pub use crate::operation::list_streaming_sessions::_list_streaming_sessions_inpu
 /// <p>Lists the streaming sessions in a studio.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStreamingSessionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_streaming_sessions::builders::ListStreamingSessionsInputBuilder,
+}
 impl ListStreamingSessionsFluentBuilder  {
     /// Creates a new `ListStreamingSessions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_streaming_sessions::ListStreamingSessions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListStreamingSessionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator {
-                            crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator {
+                                crate::operation::list_streaming_sessions::paginator::ListStreamingSessionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Filters the request to streaming sessions created by the given user.</p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.created_by(input.into());

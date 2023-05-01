@@ -8,16 +8,17 @@ pub use crate::operation::invoke_screen_automation::_invoke_screen_automation_in
 /// <p> The InvokeScreenAutomation API allows invoking an action defined in a screen in a Honeycode app. The API allows setting local variables, which can then be used in the automation being invoked. This allows automating the Honeycode app interactions to write, update or delete data in the workbook. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InvokeScreenAutomationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::invoke_screen_automation::builders::InvokeScreenAutomationInputBuilder,
+}
 impl InvokeScreenAutomationFluentBuilder  {
     /// Creates a new `InvokeScreenAutomation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::invoke_screen_automation::InvokeScreenAutomation, aws_http::retry::AwsResponseRetryClassifier,>,

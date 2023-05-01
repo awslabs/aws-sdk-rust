@@ -8,16 +8,17 @@ pub use crate::operation::get_query_statistics::_get_query_statistics_input::Get
 /// <p>Retrieves statistics on the planning and execution of a query.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetQueryStatisticsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_query_statistics::builders::GetQueryStatisticsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_query_statistics::builders::GetQueryStatisticsInputBuilder,
+}
 impl GetQueryStatisticsFluentBuilder  {
     /// Creates a new `GetQueryStatistics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_query_statistics::GetQueryStatistics, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -11,16 +11,17 @@ pub use crate::operation::create_access_point::_create_access_point_input::Creat
 /// <p>This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAccessPointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_access_point::builders::CreateAccessPointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_access_point::builders::CreateAccessPointInputBuilder,
+}
 impl CreateAccessPointFluentBuilder  {
     /// Creates a new `CreateAccessPoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_access_point::CreateAccessPoint, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::send_otp_message::_send_otp_message_input::SendOtpMess
 /// <p>Send an OTP message</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendOTPMessageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_otp_message::builders::SendOtpMessageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_otp_message::builders::SendOtpMessageInputBuilder,
+}
 impl SendOTPMessageFluentBuilder  {
     /// Creates a new `SendOTPMessage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_otp_message::SendOTPMessage, aws_http::retry::AwsResponseRetryClassifier,>,

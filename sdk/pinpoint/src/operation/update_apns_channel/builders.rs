@@ -8,16 +8,17 @@ pub use crate::operation::update_apns_channel::_update_apns_channel_input::Updat
 /// <p>Enables the APNs channel for an application or updates the status and settings of the APNs channel for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateApnsChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_apns_channel::builders::UpdateApnsChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_apns_channel::builders::UpdateApnsChannelInputBuilder,
+}
 impl UpdateApnsChannelFluentBuilder  {
     /// Creates a new `UpdateApnsChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_apns_channel::UpdateApnsChannel, aws_http::retry::AwsResponseRetryClassifier,>,

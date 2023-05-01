@@ -8,16 +8,17 @@ pub use crate::operation::get_bootstrap_brokers::_get_bootstrap_brokers_input::G
 /// <p>A list of brokers that a client application can use to bootstrap.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBootstrapBrokersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_bootstrap_brokers::builders::GetBootstrapBrokersInputBuilder,
+}
 impl GetBootstrapBrokersFluentBuilder  {
     /// Creates a new `GetBootstrapBrokers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_bootstrap_brokers::GetBootstrapBrokers, aws_http::retry::AwsResponseRetryClassifier,>,

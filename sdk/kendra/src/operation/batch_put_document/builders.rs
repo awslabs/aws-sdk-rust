@@ -11,16 +11,17 @@ pub use crate::operation::batch_put_document::_batch_put_document_input::BatchPu
 /// <p>For an example of ingesting inline documents using Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-binary-doc.html">Adding files directly to an index</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchPutDocumentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_put_document::builders::BatchPutDocumentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_put_document::builders::BatchPutDocumentInputBuilder,
+}
 impl BatchPutDocumentFluentBuilder  {
     /// Creates a new `BatchPutDocument`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_put_document::BatchPutDocument, aws_http::retry::AwsResponseRetryClassifier,>,

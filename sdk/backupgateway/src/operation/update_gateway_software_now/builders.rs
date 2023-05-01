@@ -10,16 +10,17 @@ pub use crate::operation::update_gateway_software_now::_update_gateway_software_
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGatewaySoftwareNowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowInputBuilder,
+}
 impl UpdateGatewaySoftwareNowFluentBuilder  {
     /// Creates a new `UpdateGatewaySoftwareNow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNow, aws_http::retry::AwsResponseRetryClassifier,>,

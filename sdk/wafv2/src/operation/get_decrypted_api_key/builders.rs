@@ -8,16 +8,17 @@ pub use crate::operation::get_decrypted_api_key::_get_decrypted_api_key_input::G
 /// <p>Returns your API key in decrypted form. Use this to check the token domains that you have defined for the key. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDecryptedAPIKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyInputBuilder,
+}
 impl GetDecryptedAPIKeyFluentBuilder  {
     /// Creates a new `GetDecryptedAPIKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_decrypted_api_key::GetDecryptedAPIKey, aws_http::retry::AwsResponseRetryClassifier,>,

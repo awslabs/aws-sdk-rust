@@ -10,16 +10,17 @@ pub use crate::operation::associate_connection_with_lag::_associate_connection_w
 /// <p>For interconnects, any hosted connections are automatically re-associated with the LAG. If the interconnect was originally associated with a different LAG, the hosted connections remain associated with the original LAG.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateConnectionWithLagFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_connection_with_lag::builders::AssociateConnectionWithLagInputBuilder,
+}
 impl AssociateConnectionWithLagFluentBuilder  {
     /// Creates a new `AssociateConnectionWithLag`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_connection_with_lag::AssociateConnectionWithLag, aws_http::retry::AwsResponseRetryClassifier,>,

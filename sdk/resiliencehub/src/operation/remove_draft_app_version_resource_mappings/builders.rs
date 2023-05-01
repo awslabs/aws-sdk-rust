@@ -8,16 +8,17 @@ pub use crate::operation::remove_draft_app_version_resource_mappings::_remove_dr
 /// <p>Removes resource mappings from a draft application version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveDraftAppVersionResourceMappingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsInputBuilder,
+}
 impl RemoveDraftAppVersionResourceMappingsFluentBuilder  {
     /// Creates a new `RemoveDraftAppVersionResourceMappings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappings, aws_http::retry::AwsResponseRetryClassifier,>,

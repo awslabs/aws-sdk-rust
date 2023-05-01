@@ -8,16 +8,17 @@ pub use crate::operation::decrease_replica_count::_decrease_replica_count_input:
 /// <p>Dynamically decreases the number of replicas in a Redis (cluster mode disabled) replication group or the number of replica nodes in one or more node groups (shards) of a Redis (cluster mode enabled) replication group. This operation is performed with no cluster down time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DecreaseReplicaCountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::decrease_replica_count::builders::DecreaseReplicaCountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::decrease_replica_count::builders::DecreaseReplicaCountInputBuilder,
+}
 impl DecreaseReplicaCountFluentBuilder  {
     /// Creates a new `DecreaseReplicaCount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::decrease_replica_count::DecreaseReplicaCount, aws_http::retry::AwsResponseRetryClassifier,>,

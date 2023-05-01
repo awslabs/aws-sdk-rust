@@ -8,16 +8,17 @@ pub use crate::operation::batch_associate_user_stack::_batch_associate_user_stac
 /// <p>Associates the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchAssociateUserStackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_associate_user_stack::builders::BatchAssociateUserStackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_associate_user_stack::builders::BatchAssociateUserStackInputBuilder,
+}
 impl BatchAssociateUserStackFluentBuilder  {
     /// Creates a new `BatchAssociateUserStack`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_associate_user_stack::BatchAssociateUserStack, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::get_aggregate_compliance_details_by_config_rule::_get_
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAggregateComplianceDetailsByConfigRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_aggregate_compliance_details_by_config_rule::builders::GetAggregateComplianceDetailsByConfigRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_aggregate_compliance_details_by_config_rule::builders::GetAggregateComplianceDetailsByConfigRuleInputBuilder,
+}
 impl GetAggregateComplianceDetailsByConfigRuleFluentBuilder  {
     /// Creates a new `GetAggregateComplianceDetailsByConfigRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_aggregate_compliance_details_by_config_rule::GetAggregateComplianceDetailsByConfigRule, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl GetAggregateComplianceDetailsByConfigRuleFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_aggregate_compliance_details_by_config_rule::paginator::GetAggregateComplianceDetailsByConfigRulePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_aggregate_compliance_details_by_config_rule::paginator::GetAggregateComplianceDetailsByConfigRulePaginator {
-                            crate::operation::get_aggregate_compliance_details_by_config_rule::paginator::GetAggregateComplianceDetailsByConfigRulePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_aggregate_compliance_details_by_config_rule::paginator::GetAggregateComplianceDetailsByConfigRulePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_aggregate_compliance_details_by_config_rule::paginator::GetAggregateComplianceDetailsByConfigRulePaginator {
+                                crate::operation::get_aggregate_compliance_details_by_config_rule::paginator::GetAggregateComplianceDetailsByConfigRulePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the configuration aggregator.</p>
     pub fn configuration_aggregator_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());

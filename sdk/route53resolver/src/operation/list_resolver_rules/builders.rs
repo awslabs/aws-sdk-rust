@@ -8,16 +8,17 @@ pub use crate::operation::list_resolver_rules::_list_resolver_rules_input::ListR
 /// <p>Lists the Resolver rules that were created using the current Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResolverRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resolver_rules::builders::ListResolverRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resolver_rules::builders::ListResolverRulesInputBuilder,
+}
 impl ListResolverRulesFluentBuilder  {
     /// Creates a new `ListResolverRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resolver_rules::ListResolverRules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListResolverRulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_rules::paginator::ListResolverRulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resolver_rules::paginator::ListResolverRulesPaginator {
-                            crate::operation::list_resolver_rules::paginator::ListResolverRulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resolver_rules::paginator::ListResolverRulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_resolver_rules::paginator::ListResolverRulesPaginator {
+                                crate::operation::list_resolver_rules::paginator::ListResolverRulesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

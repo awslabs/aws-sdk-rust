@@ -9,16 +9,17 @@ pub use crate::operation::provision_byoip_cidr::_provision_byoip_cidr_input::Pro
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ProvisionByoipCidrFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder,
+}
 impl ProvisionByoipCidrFluentBuilder  {
     /// Creates a new `ProvisionByoipCidr`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::provision_byoip_cidr::ProvisionByoipCidr, aws_http::retry::AwsResponseRetryClassifier,>,

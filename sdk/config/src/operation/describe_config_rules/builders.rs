@@ -8,16 +8,17 @@ pub use crate::operation::describe_config_rules::_describe_config_rules_input::D
 /// <p>Returns details about your Config rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConfigRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_config_rules::builders::DescribeConfigRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_config_rules::builders::DescribeConfigRulesInputBuilder,
+}
 impl DescribeConfigRulesFluentBuilder  {
     /// Creates a new `DescribeConfigRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_config_rules::DescribeConfigRules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeConfigRulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator {
-                            crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator {
+                                crate::operation::describe_config_rules::paginator::DescribeConfigRulesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ConfigRuleNames`.
     ///
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).

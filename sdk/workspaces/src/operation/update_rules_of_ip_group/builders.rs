@@ -8,16 +8,17 @@ pub use crate::operation::update_rules_of_ip_group::_update_rules_of_ip_group_in
 /// <p>Replaces the current rules of the specified IP access control group with the specified rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRulesOfIpGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_rules_of_ip_group::builders::UpdateRulesOfIpGroupInputBuilder,
+}
 impl UpdateRulesOfIpGroupFluentBuilder  {
     /// Creates a new `UpdateRulesOfIpGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_rules_of_ip_group::UpdateRulesOfIpGroup, aws_http::retry::AwsResponseRetryClassifier,>,

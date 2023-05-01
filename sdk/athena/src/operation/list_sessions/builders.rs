@@ -8,16 +8,17 @@ pub use crate::operation::list_sessions::_list_sessions_input::ListSessionsInput
 /// <p>Lists the sessions in a workgroup that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code>, or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSessionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_sessions::builders::ListSessionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_sessions::builders::ListSessionsInputBuilder,
+}
 impl ListSessionsFluentBuilder  {
     /// Creates a new `ListSessions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_sessions::ListSessions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSessionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_sessions::paginator::ListSessionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_sessions::paginator::ListSessionsPaginator {
-                            crate::operation::list_sessions::paginator::ListSessionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_sessions::paginator::ListSessionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_sessions::paginator::ListSessionsPaginator {
+                                crate::operation::list_sessions::paginator::ListSessionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The workgroup to which the session belongs.</p>
     pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.work_group(input.into());

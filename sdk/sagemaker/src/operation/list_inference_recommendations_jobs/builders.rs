@@ -8,16 +8,17 @@ pub use crate::operation::list_inference_recommendations_jobs::_list_inference_r
 /// <p>Lists recommendation jobs that satisfy various filters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_inference_recommendations_jobs::builders::ListInferenceRecommendationsJobsInputBuilder,
+}
 impl ListInferenceRecommendationsJobsFluentBuilder  {
     /// Creates a new `ListInferenceRecommendationsJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListInferenceRecommendationsJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_inference_recommendations_jobs::paginator::ListInferenceRecommendationsJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_inference_recommendations_jobs::paginator::ListInferenceRecommendationsJobsPaginator {
-                            crate::operation::list_inference_recommendations_jobs::paginator::ListInferenceRecommendationsJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_inference_recommendations_jobs::paginator::ListInferenceRecommendationsJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_inference_recommendations_jobs::paginator::ListInferenceRecommendationsJobsPaginator {
+                                crate::operation::list_inference_recommendations_jobs::paginator::ListInferenceRecommendationsJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);

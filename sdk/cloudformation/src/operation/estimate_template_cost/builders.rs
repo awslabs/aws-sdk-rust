@@ -8,16 +8,17 @@ pub use crate::operation::estimate_template_cost::_estimate_template_cost_input:
 /// <p>Returns the estimated monthly cost of a template. The return value is an Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EstimateTemplateCostFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::estimate_template_cost::builders::EstimateTemplateCostInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::estimate_template_cost::builders::EstimateTemplateCostInputBuilder,
+}
 impl EstimateTemplateCostFluentBuilder  {
     /// Creates a new `EstimateTemplateCost`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::estimate_template_cost::EstimateTemplateCost, aws_http::retry::AwsResponseRetryClassifier,>,

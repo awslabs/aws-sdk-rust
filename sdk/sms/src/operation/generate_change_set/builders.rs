@@ -8,16 +8,17 @@ pub use crate::operation::generate_change_set::_generate_change_set_input::Gener
 /// <p>Generates a target change set for a currently launched stack and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateChangeSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::generate_change_set::builders::GenerateChangeSetInputBuilder,
+}
 impl GenerateChangeSetFluentBuilder  {
     /// Creates a new `GenerateChangeSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::generate_change_set::GenerateChangeSet, aws_http::retry::AwsResponseRetryClassifier,>,

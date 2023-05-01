@@ -12,16 +12,17 @@ pub use crate::operation::get_size_constraint_set::_get_size_constraint_set_inpu
 /// <p>Returns the <code>SizeConstraintSet</code> specified by <code>SizeConstraintSetId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSizeConstraintSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_size_constraint_set::builders::GetSizeConstraintSetInputBuilder,
+}
 impl GetSizeConstraintSetFluentBuilder  {
     /// Creates a new `GetSizeConstraintSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_size_constraint_set::GetSizeConstraintSet, aws_http::retry::AwsResponseRetryClassifier,>,

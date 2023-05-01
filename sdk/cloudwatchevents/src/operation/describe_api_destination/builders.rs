@@ -8,16 +8,17 @@ pub use crate::operation::describe_api_destination::_describe_api_destination_in
 /// <p>Retrieves details about an API destination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeApiDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_api_destination::builders::DescribeApiDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_api_destination::builders::DescribeApiDestinationInputBuilder,
+}
 impl DescribeApiDestinationFluentBuilder  {
     /// Creates a new `DescribeApiDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_api_destination::DescribeApiDestination, aws_http::retry::AwsResponseRetryClassifier,>,

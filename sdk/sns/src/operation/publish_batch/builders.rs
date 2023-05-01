@@ -15,16 +15,17 @@ pub use crate::operation::publish_batch::_publish_batch_input::PublishBatchInput
 /// <p>When a <code>messageId</code> is returned, the batch message is saved and Amazon SNS immediately delivers the message to subscribers.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PublishBatchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::publish_batch::builders::PublishBatchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::publish_batch::builders::PublishBatchInputBuilder,
+}
 impl PublishBatchFluentBuilder  {
     /// Creates a new `PublishBatch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::publish_batch::PublishBatch, aws_http::retry::AwsResponseRetryClassifier,>,

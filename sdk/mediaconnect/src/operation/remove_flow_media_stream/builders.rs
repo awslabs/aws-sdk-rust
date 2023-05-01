@@ -8,16 +8,17 @@ pub use crate::operation::remove_flow_media_stream::_remove_flow_media_stream_in
 /// Removes a media stream from a flow. This action is only available if the media stream is not associated with a source or output.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveFlowMediaStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamInputBuilder,
+}
 impl RemoveFlowMediaStreamFluentBuilder  {
     /// Creates a new `RemoveFlowMediaStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_flow_media_stream::RemoveFlowMediaStream, aws_http::retry::AwsResponseRetryClassifier,>,

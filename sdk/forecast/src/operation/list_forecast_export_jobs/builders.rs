@@ -8,16 +8,17 @@ pub use crate::operation::list_forecast_export_jobs::_list_forecast_export_jobs_
 /// <p>Returns a list of forecast export jobs created using the <code>CreateForecastExportJob</code> operation. For each forecast export job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). To retrieve the complete set of properties, use the ARN with the <code>DescribeForecastExportJob</code> operation. You can filter the list using an array of <code>Filter</code> objects.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListForecastExportJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_forecast_export_jobs::builders::ListForecastExportJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_forecast_export_jobs::builders::ListForecastExportJobsInputBuilder,
+}
 impl ListForecastExportJobsFluentBuilder  {
     /// Creates a new `ListForecastExportJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_forecast_export_jobs::ListForecastExportJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListForecastExportJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_forecast_export_jobs::paginator::ListForecastExportJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_forecast_export_jobs::paginator::ListForecastExportJobsPaginator {
-                            crate::operation::list_forecast_export_jobs::paginator::ListForecastExportJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_forecast_export_jobs::paginator::ListForecastExportJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_forecast_export_jobs::paginator::ListForecastExportJobsPaginator {
+                                crate::operation::list_forecast_export_jobs::paginator::ListForecastExportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

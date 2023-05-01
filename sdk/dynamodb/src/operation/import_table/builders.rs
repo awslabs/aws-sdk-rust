@@ -8,16 +8,17 @@ pub use crate::operation::import_table::_import_table_input::ImportTableInputBui
 /// <p> Imports table data from an S3 bucket. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportTableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_table::builders::ImportTableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_table::builders::ImportTableInputBuilder,
+}
 impl ImportTableFluentBuilder  {
     /// Creates a new `ImportTable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_table::ImportTable, aws_http::retry::AwsResponseRetryClassifier,>,

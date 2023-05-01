@@ -9,16 +9,17 @@ pub use crate::operation::update_signaling_channel::_update_signaling_channel_in
 /// <p>If the <code>MessageTtlSeconds</code> value is updated (either increased or reduced), it only applies to new messages sent via this channel after it's been updated. Existing messages are still expired as per the previous <code>MessageTtlSeconds</code> value.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSignalingChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_signaling_channel::builders::UpdateSignalingChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_signaling_channel::builders::UpdateSignalingChannelInputBuilder,
+}
 impl UpdateSignalingChannelFluentBuilder  {
     /// Creates a new `UpdateSignalingChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_signaling_channel::UpdateSignalingChannel, aws_http::retry::AwsResponseRetryClassifier,>,

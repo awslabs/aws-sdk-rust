@@ -8,16 +8,17 @@ pub use crate::operation::delete_network_settings::_delete_network_settings_inpu
 /// <p>Deletes network settings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNetworkSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_network_settings::builders::DeleteNetworkSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_network_settings::builders::DeleteNetworkSettingsInputBuilder,
+}
 impl DeleteNetworkSettingsFluentBuilder  {
     /// Creates a new `DeleteNetworkSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_network_settings::DeleteNetworkSettings, aws_http::retry::AwsResponseRetryClassifier,>,

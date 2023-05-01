@@ -9,16 +9,17 @@ pub use crate::operation::get_deliverability_dashboard_options::_get_deliverabil
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDeliverabilityDashboardOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_deliverability_dashboard_options::builders::GetDeliverabilityDashboardOptionsInputBuilder,
+}
 impl GetDeliverabilityDashboardOptionsFluentBuilder  {
     /// Creates a new `GetDeliverabilityDashboardOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptions, aws_http::retry::AwsResponseRetryClassifier,>,

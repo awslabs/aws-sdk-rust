@@ -8,16 +8,17 @@ pub use crate::operation::describe_merge_conflicts::_describe_merge_conflicts_in
 /// <p>Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the squash or three-way merge strategy. If the merge option for the attempted merge is specified as FAST_FORWARD_MERGE, an exception is thrown.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMergeConflictsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsInputBuilder,
+}
 impl DescribeMergeConflictsFluentBuilder  {
     /// Creates a new `DescribeMergeConflicts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_merge_conflicts::DescribeMergeConflicts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeMergeConflictsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator {
-                            crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator {
+                                crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the repository where you want to get information about a merge conflict.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());

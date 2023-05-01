@@ -8,16 +8,17 @@ pub use crate::operation::get_site_address::_get_site_address_input::GetSiteAddr
 /// <p> Gets the site address of the specified site. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSiteAddressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_site_address::builders::GetSiteAddressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_site_address::builders::GetSiteAddressInputBuilder,
+}
 impl GetSiteAddressFluentBuilder  {
     /// Creates a new `GetSiteAddress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_site_address::GetSiteAddress, aws_http::retry::AwsResponseRetryClassifier,>,

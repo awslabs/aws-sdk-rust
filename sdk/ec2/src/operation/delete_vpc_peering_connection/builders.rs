@@ -8,16 +8,17 @@ pub use crate::operation::delete_vpc_peering_connection::_delete_vpc_peering_con
 /// <p>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the accepter VPC can delete the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can delete a VPC peering connection in the <code>pending-acceptance</code> state. You cannot delete a VPC peering connection that's in the <code>failed</code> state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpcPeeringConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vpc_peering_connection::builders::DeleteVpcPeeringConnectionInputBuilder,
+}
 impl DeleteVpcPeeringConnectionFluentBuilder  {
     /// Creates a new `DeleteVpcPeeringConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnection, aws_http::retry::AwsResponseRetryClassifier,>,

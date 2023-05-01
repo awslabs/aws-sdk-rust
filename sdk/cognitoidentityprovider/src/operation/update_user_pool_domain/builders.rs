@@ -15,16 +15,17 @@ pub use crate::operation::update_user_pool_domain::_update_user_pool_domain_inpu
 /// <p>For more information about adding a custom domain to your user pool, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using Your Own Domain for the Hosted UI</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateUserPoolDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_user_pool_domain::builders::UpdateUserPoolDomainInputBuilder,
+}
 impl UpdateUserPoolDomainFluentBuilder  {
     /// Creates a new `UpdateUserPoolDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_user_pool_domain::UpdateUserPoolDomain, aws_http::retry::AwsResponseRetryClassifier,>,

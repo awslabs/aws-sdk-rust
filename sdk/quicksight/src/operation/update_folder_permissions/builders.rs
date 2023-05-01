@@ -8,16 +8,17 @@ pub use crate::operation::update_folder_permissions::_update_folder_permissions_
 /// <p>Updates permissions of a folder.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFolderPermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_folder_permissions::builders::UpdateFolderPermissionsInputBuilder,
+}
 impl UpdateFolderPermissionsFluentBuilder  {
     /// Creates a new `UpdateFolderPermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_folder_permissions::UpdateFolderPermissions, aws_http::retry::AwsResponseRetryClassifier,>,

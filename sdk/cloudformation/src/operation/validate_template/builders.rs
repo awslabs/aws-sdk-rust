@@ -8,16 +8,17 @@ pub use crate::operation::validate_template::_validate_template_input::ValidateT
 /// <p>Validates a specified template. CloudFormation first checks if the template is valid JSON. If it isn't, CloudFormation checks if the template is valid YAML. If both these checks fail, CloudFormation returns a template validation error.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ValidateTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::validate_template::builders::ValidateTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::validate_template::builders::ValidateTemplateInputBuilder,
+}
 impl ValidateTemplateFluentBuilder  {
     /// Creates a new `ValidateTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::validate_template::ValidateTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

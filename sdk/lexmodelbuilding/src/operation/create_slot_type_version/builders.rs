@@ -12,16 +12,17 @@ pub use crate::operation::create_slot_type_version::_create_slot_type_version_in
 /// <p>This operation requires permissions for the <code>lex:CreateSlotTypeVersion</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSlotTypeVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_slot_type_version::builders::CreateSlotTypeVersionInputBuilder,
+}
 impl CreateSlotTypeVersionFluentBuilder  {
     /// Creates a new `CreateSlotTypeVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_slot_type_version::CreateSlotTypeVersion, aws_http::retry::AwsResponseRetryClassifier,>,

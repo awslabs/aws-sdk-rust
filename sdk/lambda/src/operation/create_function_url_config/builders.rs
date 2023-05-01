@@ -8,16 +8,17 @@ pub use crate::operation::create_function_url_config::_create_function_url_confi
 /// <p>Creates a Lambda function URL with the specified configuration parameters. A function URL is a dedicated HTTP(S) endpoint that you can use to invoke your function.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFunctionUrlConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_function_url_config::builders::CreateFunctionUrlConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_function_url_config::builders::CreateFunctionUrlConfigInputBuilder,
+}
 impl CreateFunctionUrlConfigFluentBuilder  {
     /// Creates a new `CreateFunctionUrlConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_function_url_config::CreateFunctionUrlConfig, aws_http::retry::AwsResponseRetryClassifier,>,

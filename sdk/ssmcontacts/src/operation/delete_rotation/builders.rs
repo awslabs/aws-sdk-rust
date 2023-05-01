@@ -8,16 +8,17 @@ pub use crate::operation::delete_rotation::_delete_rotation_input::DeleteRotatio
 /// <p>Deletes a rotation from the system. If a rotation belongs to more than one on-call schedule, this operation deletes it from all of them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRotationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_rotation::builders::DeleteRotationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_rotation::builders::DeleteRotationInputBuilder,
+}
 impl DeleteRotationFluentBuilder  {
     /// Creates a new `DeleteRotation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_rotation::DeleteRotation, aws_http::retry::AwsResponseRetryClassifier,>,

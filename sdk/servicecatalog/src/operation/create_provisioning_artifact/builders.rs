@@ -10,16 +10,17 @@ pub use crate::operation::create_provisioning_artifact::_create_provisioning_art
 /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source in the information data section.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProvisioningArtifactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_provisioning_artifact::builders::CreateProvisioningArtifactInputBuilder,
+}
 impl CreateProvisioningArtifactFluentBuilder  {
     /// Creates a new `CreateProvisioningArtifact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_provisioning_artifact::CreateProvisioningArtifact, aws_http::retry::AwsResponseRetryClassifier,>,

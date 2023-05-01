@@ -8,16 +8,17 @@ pub use crate::operation::list_access_policies::_list_access_policies_input::Lis
 /// <p>Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccessPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder,
+}
 impl ListAccessPoliciesFluentBuilder  {
     /// Creates a new `ListAccessPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_access_policies::ListAccessPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAccessPoliciesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator {
-                            crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator {
+                                crate::operation::list_access_policies::paginator::ListAccessPoliciesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.inner = self.inner.identity_type(input);

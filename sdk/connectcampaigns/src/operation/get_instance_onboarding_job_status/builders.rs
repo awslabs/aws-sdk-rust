@@ -8,16 +8,17 @@ pub use crate::operation::get_instance_onboarding_job_status::_get_instance_onbo
 /// Get the specific instance onboarding job status.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInstanceOnboardingJobStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_instance_onboarding_job_status::builders::GetInstanceOnboardingJobStatusInputBuilder,
+}
 impl GetInstanceOnboardingJobStatusFluentBuilder  {
     /// Creates a new `GetInstanceOnboardingJobStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_instance_onboarding_job_status::GetInstanceOnboardingJobStatus, aws_http::retry::AwsResponseRetryClassifier,>,

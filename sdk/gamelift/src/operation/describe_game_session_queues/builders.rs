@@ -10,16 +10,17 @@ pub use crate::operation::describe_game_session_queues::_describe_game_session_q
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html"> View Your Queues</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGameSessionQueuesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_game_session_queues::builders::DescribeGameSessionQueuesInputBuilder,
+}
 impl DescribeGameSessionQueuesFluentBuilder  {
     /// Creates a new `DescribeGameSessionQueues`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_game_session_queues::DescribeGameSessionQueues, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeGameSessionQueuesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_game_session_queues::paginator::DescribeGameSessionQueuesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_game_session_queues::paginator::DescribeGameSessionQueuesPaginator {
-                            crate::operation::describe_game_session_queues::paginator::DescribeGameSessionQueuesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_game_session_queues::paginator::DescribeGameSessionQueuesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_game_session_queues::paginator::DescribeGameSessionQueuesPaginator {
+                                crate::operation::describe_game_session_queues::paginator::DescribeGameSessionQueuesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Names`.
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).

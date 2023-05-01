@@ -8,16 +8,17 @@ pub use crate::operation::update_device_status::_update_device_status_input::Upd
 /// <p>Updates the device status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDeviceStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_device_status::builders::UpdateDeviceStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_device_status::builders::UpdateDeviceStatusInputBuilder,
+}
 impl UpdateDeviceStatusFluentBuilder  {
     /// Creates a new `UpdateDeviceStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_device_status::UpdateDeviceStatus, aws_http::retry::AwsResponseRetryClassifier,>,

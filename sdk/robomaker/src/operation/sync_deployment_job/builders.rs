@@ -11,16 +11,17 @@ pub use crate::operation::sync_deployment_job::_sync_deployment_job_input::SyncD
 #[deprecated(note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SyncDeploymentJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::sync_deployment_job::builders::SyncDeploymentJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::sync_deployment_job::builders::SyncDeploymentJobInputBuilder,
+}
 impl SyncDeploymentJobFluentBuilder  {
     /// Creates a new `SyncDeploymentJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::sync_deployment_job::SyncDeploymentJob, aws_http::retry::AwsResponseRetryClassifier,>,

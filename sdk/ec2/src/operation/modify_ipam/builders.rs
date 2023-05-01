@@ -8,16 +8,17 @@ pub use crate::operation::modify_ipam::_modify_ipam_input::ModifyIpamInputBuilde
 /// <p>Modify the configurations of an IPAM. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyIpamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_ipam::builders::ModifyIpamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_ipam::builders::ModifyIpamInputBuilder,
+}
 impl ModifyIpamFluentBuilder  {
     /// Creates a new `ModifyIpam`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_ipam::ModifyIpam, aws_http::retry::AwsResponseRetryClassifier,>,

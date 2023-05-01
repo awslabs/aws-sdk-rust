@@ -10,16 +10,17 @@ pub use crate::operation::get_savings_plans_utilization_details::_get_savings_pl
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSavingsPlansUtilizationDetailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_savings_plans_utilization_details::builders::GetSavingsPlansUtilizationDetailsInputBuilder,
+}
 impl GetSavingsPlansUtilizationDetailsFluentBuilder  {
     /// Creates a new `GetSavingsPlansUtilizationDetails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetails, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl GetSavingsPlansUtilizationDetailsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator {
-                            crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator {
+                                crate::operation::get_savings_plans_utilization_details::paginator::GetSavingsPlansUtilizationDetailsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
     pub fn time_period(mut self, input: crate::types::DateInterval) -> Self {
         self.inner = self.inner.time_period(input);

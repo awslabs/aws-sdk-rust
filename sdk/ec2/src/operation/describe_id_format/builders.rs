@@ -10,16 +10,17 @@ pub use crate::operation::describe_id_format::_describe_id_format_input::Describ
 /// <p>These settings apply to the IAM user who makes the request; they do not apply to the entire Amazon Web Services account. By default, an IAM user defaults to the same settings as the root user, unless they explicitly override the settings by running the <code>ModifyIdFormat</code> command. Resources created with longer IDs are visible to all IAM users, regardless of these settings and provided that they have permission to use the relevant <code>Describe</code> command for the resource type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeIdFormatFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_id_format::builders::DescribeIdFormatInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_id_format::builders::DescribeIdFormatInputBuilder,
+}
 impl DescribeIdFormatFluentBuilder  {
     /// Creates a new `DescribeIdFormat`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_id_format::DescribeIdFormat, aws_http::retry::AwsResponseRetryClassifier,>,

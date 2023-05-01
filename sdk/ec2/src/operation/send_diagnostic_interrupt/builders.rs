@@ -11,16 +11,17 @@ pub use crate::operation::send_diagnostic_interrupt::_send_diagnostic_interrupt_
 /// <p>For more information about configuring your operating system to generate a crash dump when a kernel panic or stop error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send a diagnostic interrupt (for advanced users)</a> (Linux instances) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send a diagnostic interrupt (for advanced users)</a> (Windows instances).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendDiagnosticInterruptFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_diagnostic_interrupt::builders::SendDiagnosticInterruptInputBuilder,
+}
 impl SendDiagnosticInterruptFluentBuilder  {
     /// Creates a new `SendDiagnosticInterrupt`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_diagnostic_interrupt::SendDiagnosticInterrupt, aws_http::retry::AwsResponseRetryClassifier,>,

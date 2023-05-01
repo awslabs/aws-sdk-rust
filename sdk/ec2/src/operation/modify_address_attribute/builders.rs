@@ -8,16 +8,17 @@ pub use crate::operation::modify_address_attribute::_modify_address_attribute_in
 /// <p>Modifies an attribute of the specified Elastic IP address. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using reverse DNS for email applications</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyAddressAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_address_attribute::builders::ModifyAddressAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_address_attribute::builders::ModifyAddressAttributeInputBuilder,
+}
 impl ModifyAddressAttributeFluentBuilder  {
     /// Creates a new `ModifyAddressAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_address_attribute::ModifyAddressAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_geofence_collection::_create_geofence_collectio
 /// <p>Creates a geofence collection, which manages and stores geofences.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGeofenceCollectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionInputBuilder,
+}
 impl CreateGeofenceCollectionFluentBuilder  {
     /// Creates a new `CreateGeofenceCollection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_geofence_collection::CreateGeofenceCollection, aws_http::retry::AwsResponseRetryClassifier,>,

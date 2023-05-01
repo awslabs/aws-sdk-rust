@@ -8,16 +8,17 @@ pub use crate::operation::stop_product_subscription::_stop_product_subscription_
 /// <p>Stops a product subscription for a user with the specified identity provider.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopProductSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder,
+}
 impl StopProductSubscriptionFluentBuilder  {
     /// Creates a new `StopProductSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_product_subscription::StopProductSubscription, aws_http::retry::AwsResponseRetryClassifier,>,

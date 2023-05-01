@@ -8,16 +8,17 @@ pub use crate::operation::import_notebook::_import_notebook_input::ImportNoteboo
 /// <p>Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportNotebookFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_notebook::builders::ImportNotebookInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_notebook::builders::ImportNotebookInputBuilder,
+}
 impl ImportNotebookFluentBuilder  {
     /// Creates a new `ImportNotebook`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_notebook::ImportNotebook, aws_http::retry::AwsResponseRetryClassifier,>,

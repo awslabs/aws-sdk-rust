@@ -9,16 +9,17 @@ pub use crate::operation::describe_virtual_gateways::_describe_virtual_gateways_
 /// <p>You can create one or more Direct Connect private virtual interfaces linked to a virtual private gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVirtualGatewaysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_virtual_gateways::builders::DescribeVirtualGatewaysInputBuilder,
+}
 impl DescribeVirtualGatewaysFluentBuilder  {
     /// Creates a new `DescribeVirtualGateways`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_virtual_gateways::DescribeVirtualGateways, aws_http::retry::AwsResponseRetryClassifier,>,

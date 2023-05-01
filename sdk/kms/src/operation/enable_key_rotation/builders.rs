@@ -23,16 +23,17 @@ pub use crate::operation::enable_key_rotation::_enable_key_rotation_input::Enabl
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableKeyRotationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_key_rotation::builders::EnableKeyRotationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_key_rotation::builders::EnableKeyRotationInputBuilder,
+}
 impl EnableKeyRotationFluentBuilder  {
     /// Creates a new `EnableKeyRotation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_key_rotation::EnableKeyRotation, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_anomaly_detector::_delete_anomaly_detector_inpu
 /// <p> Deletes the specified anomaly detection model from your account. For more information about how to delete an anomaly detection model, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Anomaly_Detection_Alarm.html#Delete_Anomaly_Detection_Model">Deleting an anomaly detection model</a> in the <i>CloudWatch User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAnomalyDetectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder,
+}
 impl DeleteAnomalyDetectorFluentBuilder  {
     /// Creates a new `DeleteAnomalyDetector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_anomaly_detector::DeleteAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_named_query::_batch_get_named_query_input::B
 /// <p>Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Requires you to have access to the workgroup in which the queries were saved. Use <code>ListNamedQueriesInput</code> to get the list of named query IDs in the specified workgroup. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under <code>UnprocessedNamedQueryId</code>. Named queries differ from executed queries. Use <code>BatchGetQueryExecutionInput</code> to get details about each unique query execution, and <code>ListQueryExecutionsInput</code> to get a list of query execution IDs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetNamedQueryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_named_query::builders::BatchGetNamedQueryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_named_query::builders::BatchGetNamedQueryInputBuilder,
+}
 impl BatchGetNamedQueryFluentBuilder  {
     /// Creates a new `BatchGetNamedQuery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_named_query::BatchGetNamedQuery, aws_http::retry::AwsResponseRetryClassifier,>,

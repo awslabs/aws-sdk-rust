@@ -8,16 +8,17 @@ pub use crate::operation::describe_job_definitions::_describe_job_definitions_in
 /// <p>Describes a list of job definitions. You can specify a <code>status</code> (such as <code>ACTIVE</code>) to only return job definitions that match that status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeJobDefinitionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_job_definitions::builders::DescribeJobDefinitionsInputBuilder,
+}
 impl DescribeJobDefinitionsFluentBuilder  {
     /// Creates a new `DescribeJobDefinitions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_job_definitions::DescribeJobDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeJobDefinitionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_job_definitions::paginator::DescribeJobDefinitionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_job_definitions::paginator::DescribeJobDefinitionsPaginator {
-                            crate::operation::describe_job_definitions::paginator::DescribeJobDefinitionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_job_definitions::paginator::DescribeJobDefinitionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_job_definitions::paginator::DescribeJobDefinitionsPaginator {
+                                crate::operation::describe_job_definitions::paginator::DescribeJobDefinitionsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `jobDefinitions`.
     ///
     /// To override the contents of this collection use [`set_job_definitions`](Self::set_job_definitions).

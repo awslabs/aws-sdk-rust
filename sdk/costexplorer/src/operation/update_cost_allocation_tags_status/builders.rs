@@ -8,16 +8,17 @@ pub use crate::operation::update_cost_allocation_tags_status::_update_cost_alloc
 /// <p>Updates status for cost allocation tags in bulk, with maximum batch size of 20. If the tag status that's updated is the same as the existing tag status, the request doesn't fail. Instead, it doesn't have any effect on the tag status (for example, activating the active tag). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCostAllocationTagsStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_cost_allocation_tags_status::builders::UpdateCostAllocationTagsStatusInputBuilder,
+}
 impl UpdateCostAllocationTagsStatusFluentBuilder  {
     /// Creates a new `UpdateCostAllocationTagsStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatus, aws_http::retry::AwsResponseRetryClassifier,>,

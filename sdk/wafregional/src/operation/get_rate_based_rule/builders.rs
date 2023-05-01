@@ -12,16 +12,17 @@ pub use crate::operation::get_rate_based_rule::_get_rate_based_rule_input::GetRa
 /// <p>Returns the <code>RateBasedRule</code> that is specified by the <code>RuleId</code> that you included in the <code>GetRateBasedRule</code> request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRateBasedRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_rate_based_rule::builders::GetRateBasedRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_rate_based_rule::builders::GetRateBasedRuleInputBuilder,
+}
 impl GetRateBasedRuleFluentBuilder  {
     /// Creates a new `GetRateBasedRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_rate_based_rule::GetRateBasedRule, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::update_custom_metric::_update_custom_metric_input::Upd
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCustomMetric</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCustomMetricFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_custom_metric::builders::UpdateCustomMetricInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_custom_metric::builders::UpdateCustomMetricInputBuilder,
+}
 impl UpdateCustomMetricFluentBuilder  {
     /// Creates a new `UpdateCustomMetric`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_custom_metric::UpdateCustomMetric, aws_http::retry::AwsResponseRetryClassifier,>,

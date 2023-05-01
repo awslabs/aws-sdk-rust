@@ -8,16 +8,17 @@ pub use crate::operation::get_metadata::_get_metadata_input::GetMetadataInputBui
 /// <p>Returns existing metadata for an Amplify app.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_metadata::builders::GetMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_metadata::builders::GetMetadataInputBuilder,
+}
 impl GetMetadataFluentBuilder  {
     /// Creates a new `GetMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_metadata::GetMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

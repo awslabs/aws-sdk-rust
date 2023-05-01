@@ -8,16 +8,17 @@ pub use crate::operation::get_subscription_state::_get_subscription_state_input:
 /// <p>Returns the <code>SubscriptionState</code>, either <code>Active</code> or <code>Inactive</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSubscriptionStateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_subscription_state::builders::GetSubscriptionStateInputBuilder,
+}
 impl GetSubscriptionStateFluentBuilder  {
     /// Creates a new `GetSubscriptionState`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_subscription_state::GetSubscriptionState, aws_http::retry::AwsResponseRetryClassifier,>,

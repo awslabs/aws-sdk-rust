@@ -9,16 +9,17 @@ pub use crate::operation::delete_launch::_delete_launch_input::DeleteLaunchInput
 /// <p>To stop a launch without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopLaunch.html">StopLaunch</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLaunchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_launch::builders::DeleteLaunchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_launch::builders::DeleteLaunchInputBuilder,
+}
 impl DeleteLaunchFluentBuilder  {
     /// Creates a new `DeleteLaunch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_launch::DeleteLaunch, aws_http::retry::AwsResponseRetryClassifier,>,

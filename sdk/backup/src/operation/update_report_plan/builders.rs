@@ -8,16 +8,17 @@ pub use crate::operation::update_report_plan::_update_report_plan_input::UpdateR
 /// <p>Updates an existing report plan identified by its <code>ReportPlanName</code> with the input document in JSON format.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateReportPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_report_plan::builders::UpdateReportPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_report_plan::builders::UpdateReportPlanInputBuilder,
+}
 impl UpdateReportPlanFluentBuilder  {
     /// Creates a new `UpdateReportPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_report_plan::UpdateReportPlan, aws_http::retry::AwsResponseRetryClassifier,>,

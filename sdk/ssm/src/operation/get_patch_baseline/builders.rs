@@ -8,16 +8,17 @@ pub use crate::operation::get_patch_baseline::_get_patch_baseline_input::GetPatc
 /// <p>Retrieves information about a patch baseline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPatchBaselineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_patch_baseline::builders::GetPatchBaselineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_patch_baseline::builders::GetPatchBaselineInputBuilder,
+}
 impl GetPatchBaselineFluentBuilder  {
     /// Creates a new `GetPatchBaseline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_patch_baseline::GetPatchBaseline, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::put_schema_version_metadata::_put_schema_version_metad
 /// <p>Puts the metadata key value pair for a specified schema version ID. A maximum of 10 key value pairs will be allowed per schema version. They can be added over one or more calls.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutSchemaVersionMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_schema_version_metadata::builders::PutSchemaVersionMetadataInputBuilder,
+}
 impl PutSchemaVersionMetadataFluentBuilder  {
     /// Creates a new `PutSchemaVersionMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_schema_version_metadata::PutSchemaVersionMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

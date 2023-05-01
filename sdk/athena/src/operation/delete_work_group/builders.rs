@@ -8,16 +8,17 @@ pub use crate::operation::delete_work_group::_delete_work_group_input::DeleteWor
 /// <p>Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteWorkGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_work_group::builders::DeleteWorkGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_work_group::builders::DeleteWorkGroupInputBuilder,
+}
 impl DeleteWorkGroupFluentBuilder  {
     /// Creates a new `DeleteWorkGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_work_group::DeleteWorkGroup, aws_http::retry::AwsResponseRetryClassifier,>,

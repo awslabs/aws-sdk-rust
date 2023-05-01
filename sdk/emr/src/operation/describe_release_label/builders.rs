@@ -8,16 +8,17 @@ pub use crate::operation::describe_release_label::_describe_release_label_input:
 /// <p>Provides EMR release label details, such as releases available the region where the API request is run, and the available applications for a specific EMR release label. Can also list EMR release versions that support a specified version of Spark.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReleaseLabelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_release_label::builders::DescribeReleaseLabelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_release_label::builders::DescribeReleaseLabelInputBuilder,
+}
 impl DescribeReleaseLabelFluentBuilder  {
     /// Creates a new `DescribeReleaseLabel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_release_label::DescribeReleaseLabel, aws_http::retry::AwsResponseRetryClassifier,>,

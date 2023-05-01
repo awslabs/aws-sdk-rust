@@ -8,16 +8,17 @@ pub use crate::operation::list_event_subscriptions::_list_event_subscriptions_in
 /// <p>Lists all the event subscriptions for the assessment template that is specified by the ARN of the assessment template. For more information, see <code>SubscribeToEvent</code> and <code>UnsubscribeFromEvent</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEventSubscriptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsInputBuilder,
+}
 impl ListEventSubscriptionsFluentBuilder  {
     /// Creates a new `ListEventSubscriptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_event_subscriptions::ListEventSubscriptions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEventSubscriptionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_event_subscriptions::paginator::ListEventSubscriptionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_event_subscriptions::paginator::ListEventSubscriptionsPaginator {
-                            crate::operation::list_event_subscriptions::paginator::ListEventSubscriptionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_event_subscriptions::paginator::ListEventSubscriptionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_event_subscriptions::paginator::ListEventSubscriptionsPaginator {
+                                crate::operation::list_event_subscriptions::paginator::ListEventSubscriptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::stop_streaming_session::_stop_streaming_session_input:
 /// <p>Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code> state. The <code>STOP_IN_PROGRESS</code> state is the intermediate state between the <code>READY</code> and <code>STOPPED</code> states.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopStreamingSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder,
+}
 impl StopStreamingSessionFluentBuilder  {
     /// Creates a new `StopStreamingSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_streaming_session::StopStreamingSession, aws_http::retry::AwsResponseRetryClassifier,>,

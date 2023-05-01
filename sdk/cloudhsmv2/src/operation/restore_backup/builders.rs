@@ -8,16 +8,17 @@ pub use crate::operation::restore_backup::_restore_backup_input::RestoreBackupIn
 /// <p>Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code> state. For mor information on deleting a backup, see <code>DeleteBackup</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreBackupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_backup::builders::RestoreBackupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_backup::builders::RestoreBackupInputBuilder,
+}
 impl RestoreBackupFluentBuilder  {
     /// Creates a new `RestoreBackup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_backup::RestoreBackup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_lf_tag::_delete_lf_tag_input::DeleteLfTagInputB
 /// <p>Deletes the specified LF-tag given a key name. If the input parameter tag key was not found, then the operation will throw an exception. When you delete an LF-tag, the <code>LFTagPolicy</code> attached to the LF-tag becomes invalid. If the deleted LF-tag was still assigned to any resource, the tag policy attach to the deleted LF-tag will no longer be applied to the resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLFTagFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_lf_tag::builders::DeleteLfTagInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_lf_tag::builders::DeleteLfTagInputBuilder,
+}
 impl DeleteLFTagFluentBuilder  {
     /// Creates a new `DeleteLFTag`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_lf_tag::DeleteLFTag, aws_http::retry::AwsResponseRetryClassifier,>,

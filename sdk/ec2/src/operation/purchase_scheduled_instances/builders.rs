@@ -13,16 +13,17 @@ pub use crate::operation::purchase_scheduled_instances::_purchase_scheduled_inst
 /// <p>After you purchase a Scheduled Instance, you can't cancel, modify, or resell your purchase.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PurchaseScheduledInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::purchase_scheduled_instances::builders::PurchaseScheduledInstancesInputBuilder,
+}
 impl PurchaseScheduledInstancesFluentBuilder  {
     /// Creates a new `PurchaseScheduledInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::purchase_scheduled_instances::PurchaseScheduledInstances, aws_http::retry::AwsResponseRetryClassifier,>,

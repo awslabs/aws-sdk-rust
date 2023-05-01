@@ -8,16 +8,17 @@ pub use crate::operation::describe_framework::_describe_framework_input::Describ
 /// <p>Returns the framework details for the specified <code>FrameworkName</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFrameworkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_framework::builders::DescribeFrameworkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_framework::builders::DescribeFrameworkInputBuilder,
+}
 impl DescribeFrameworkFluentBuilder  {
     /// Creates a new `DescribeFramework`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_framework::DescribeFramework, aws_http::retry::AwsResponseRetryClassifier,>,

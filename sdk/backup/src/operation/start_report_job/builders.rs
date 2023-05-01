@@ -8,16 +8,17 @@ pub use crate::operation::start_report_job::_start_report_job_input::StartReport
 /// <p>Starts an on-demand report job for the specified report plan.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartReportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_report_job::builders::StartReportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_report_job::builders::StartReportJobInputBuilder,
+}
 impl StartReportJobFluentBuilder  {
     /// Creates a new `StartReportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_report_job::StartReportJob, aws_http::retry::AwsResponseRetryClassifier,>,

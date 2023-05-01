@@ -9,16 +9,17 @@ pub use crate::operation::get_folder_path::_get_folder_path_input::GetFolderPath
 /// <p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and only includes the IDs of the parent folders in the path. You can limit the maximum number of levels. You can also request the parent folder names.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFolderPathFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_folder_path::builders::GetFolderPathInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_folder_path::builders::GetFolderPathInputBuilder,
+}
 impl GetFolderPathFluentBuilder  {
     /// Creates a new `GetFolderPath`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_folder_path::GetFolderPath, aws_http::retry::AwsResponseRetryClassifier,>,

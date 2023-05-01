@@ -8,16 +8,17 @@ pub use crate::operation::delete_client_vpn_route::_delete_client_vpn_route_inpu
 /// <p>Deletes a route from a Client VPN endpoint. You can only delete routes that you manually added using the <b>CreateClientVpnRoute</b> action. You cannot delete routes that were automatically added when associating a subnet. To remove routes that have been automatically added, disassociate the target subnet from the Client VPN endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteClientVpnRouteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_client_vpn_route::builders::DeleteClientVpnRouteInputBuilder,
+}
 impl DeleteClientVpnRouteFluentBuilder  {
     /// Creates a new `DeleteClientVpnRoute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_client_vpn_route::DeleteClientVpnRoute, aws_http::retry::AwsResponseRetryClassifier,>,

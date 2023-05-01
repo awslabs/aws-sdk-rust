@@ -10,16 +10,17 @@ pub use crate::operation::release_ipam_pool_allocation::_release_ipam_pool_alloc
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReleaseIpamPoolAllocationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::release_ipam_pool_allocation::builders::ReleaseIpamPoolAllocationInputBuilder,
+}
 impl ReleaseIpamPoolAllocationFluentBuilder  {
     /// Creates a new `ReleaseIpamPoolAllocation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocation, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_managed_prefix_list::_create_managed_prefix_lis
 /// <p>Creates a managed prefix list. You can specify one or more entries for the prefix list. Each entry consists of a CIDR block and an optional description.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateManagedPrefixListFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_managed_prefix_list::builders::CreateManagedPrefixListInputBuilder,
+}
 impl CreateManagedPrefixListFluentBuilder  {
     /// Creates a new `CreateManagedPrefixList`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_managed_prefix_list::CreateManagedPrefixList, aws_http::retry::AwsResponseRetryClassifier,>,

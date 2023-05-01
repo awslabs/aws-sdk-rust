@@ -13,16 +13,17 @@ pub use crate::operation::delete_message_batch::_delete_message_batch_input::Del
 /// <p> <code>&amp;AttributeName.2=second</code> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMessageBatchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_message_batch::builders::DeleteMessageBatchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_message_batch::builders::DeleteMessageBatchInputBuilder,
+}
 impl DeleteMessageBatchFluentBuilder  {
     /// Creates a new `DeleteMessageBatch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_message_batch::DeleteMessageBatch, aws_http::retry::AwsResponseRetryClassifier,>,

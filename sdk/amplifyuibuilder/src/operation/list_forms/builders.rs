@@ -8,16 +8,17 @@ pub use crate::operation::list_forms::_list_forms_input::ListFormsInputBuilder;
 /// <p>Retrieves a list of forms for a specified Amplify app and backend environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFormsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_forms::builders::ListFormsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_forms::builders::ListFormsInputBuilder,
+}
 impl ListFormsFluentBuilder  {
     /// Creates a new `ListForms`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_forms::ListForms, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFormsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_forms::paginator::ListFormsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_forms::paginator::ListFormsPaginator {
-                            crate::operation::list_forms::paginator::ListFormsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_forms::paginator::ListFormsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_forms::paginator::ListFormsPaginator {
+                                crate::operation::list_forms::paginator::ListFormsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique ID for the Amplify app.</p>
     pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());

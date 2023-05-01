@@ -13,16 +13,17 @@ pub use crate::operation::get_role_policy::_get_role_policy_input::GetRolePolicy
 /// <p>For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using roles to delegate permissions and federate identities</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRolePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_role_policy::builders::GetRolePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_role_policy::builders::GetRolePolicyInputBuilder,
+}
 impl GetRolePolicyFluentBuilder  {
     /// Creates a new `GetRolePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_role_policy::GetRolePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

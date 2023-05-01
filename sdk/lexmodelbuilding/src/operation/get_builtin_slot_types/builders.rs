@@ -10,16 +10,17 @@ pub use crate::operation::get_builtin_slot_types::_get_builtin_slot_types_input:
 /// <p>This operation requires permission for the <code>lex:GetBuiltInSlotTypes</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBuiltinSlotTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder,
+}
 impl GetBuiltinSlotTypesFluentBuilder  {
     /// Creates a new `GetBuiltinSlotTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl GetBuiltinSlotTypesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator {
-                            crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator {
+                                crate::operation::get_builtin_slot_types::paginator::GetBuiltinSlotTypesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A list of locales that the slot type supports.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.inner = self.inner.locale(input);

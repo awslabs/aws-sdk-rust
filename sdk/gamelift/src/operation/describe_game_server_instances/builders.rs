@@ -13,16 +13,17 @@ pub use crate::operation::describe_game_server_instances::_describe_game_server_
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGameServerInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_game_server_instances::builders::DescribeGameServerInstancesInputBuilder,
+}
 impl DescribeGameServerInstancesFluentBuilder  {
     /// Creates a new `DescribeGameServerInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_game_server_instances::DescribeGameServerInstances, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -53,11 +54,11 @@ impl DescribeGameServerInstancesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_game_server_instances::paginator::DescribeGameServerInstancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_game_server_instances::paginator::DescribeGameServerInstancesPaginator {
-                            crate::operation::describe_game_server_instances::paginator::DescribeGameServerInstancesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_game_server_instances::paginator::DescribeGameServerInstancesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_game_server_instances::paginator::DescribeGameServerInstancesPaginator {
+                                crate::operation::describe_game_server_instances::paginator::DescribeGameServerInstancesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
     pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());

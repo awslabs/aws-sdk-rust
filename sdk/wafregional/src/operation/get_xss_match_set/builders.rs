@@ -12,16 +12,17 @@ pub use crate::operation::get_xss_match_set::_get_xss_match_set_input::GetXssMat
 /// <p>Returns the <code>XssMatchSet</code> that is specified by <code>XssMatchSetId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetXssMatchSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_xss_match_set::builders::GetXssMatchSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_xss_match_set::builders::GetXssMatchSetInputBuilder,
+}
 impl GetXssMatchSetFluentBuilder  {
     /// Creates a new `GetXssMatchSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_xss_match_set::GetXssMatchSet, aws_http::retry::AwsResponseRetryClassifier,>,

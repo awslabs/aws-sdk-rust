@@ -10,16 +10,17 @@ pub use crate::operation::put_package_origin_configuration::_put_package_origin_
 /// <p> <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't yet exist in the repository. When called on a package that does not exist, a package is created in the repository with no versions and the requested restrictions are set on the package. This can be used to preemptively block ingesting or retaining any versions from external connections or upstream repositories, or to block publishing any versions of the package into the repository before connecting any package managers or publishers to the repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutPackageOriginConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder,
+}
 impl PutPackageOriginConfigurationFluentBuilder  {
     /// Creates a new `PutPackageOriginConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_package_origin_configuration::PutPackageOriginConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

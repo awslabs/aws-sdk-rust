@@ -8,16 +8,17 @@ pub use crate::operation::batch_delete_table_rows::_batch_delete_table_rows_inpu
 /// <p> The BatchDeleteTableRows API allows you to delete one or more rows from a table in a workbook. You need to specify the ids of the rows that you want to delete from the table. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteTableRowsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_table_rows::builders::BatchDeleteTableRowsInputBuilder,
+}
 impl BatchDeleteTableRowsFluentBuilder  {
     /// Creates a new `BatchDeleteTableRows`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_table_rows::BatchDeleteTableRows, aws_http::retry::AwsResponseRetryClassifier,>,

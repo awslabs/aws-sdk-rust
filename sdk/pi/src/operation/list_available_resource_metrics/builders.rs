@@ -8,16 +8,17 @@ pub use crate::operation::list_available_resource_metrics::_list_available_resou
 /// <p>Retrieve metrics of the specified types that can be queried for a specified DB instance. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAvailableResourceMetricsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder,
+}
 impl ListAvailableResourceMetricsFluentBuilder  {
     /// Creates a new `ListAvailableResourceMetrics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_available_resource_metrics::ListAvailableResourceMetrics, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAvailableResourceMetricsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator {
-                            crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator {
+                                crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.inner = self.inner.service_type(input);

@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_service_role_from_account::_disassociate_
 /// Disassociates the service role from your account. Without a service role, deployments will not work.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateServiceRoleFromAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_service_role_from_account::builders::DisassociateServiceRoleFromAccountInputBuilder,
+}
 impl DisassociateServiceRoleFromAccountFluentBuilder  {
     /// Creates a new `DisassociateServiceRoleFromAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccount, aws_http::retry::AwsResponseRetryClassifier,>,

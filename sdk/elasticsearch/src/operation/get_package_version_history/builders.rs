@@ -8,16 +8,17 @@ pub use crate::operation::get_package_version_history::_get_package_version_hist
 /// <p>Returns a list of versions of the package, along with their creation time and commit message.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPackageVersionHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_package_version_history::builders::GetPackageVersionHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_package_version_history::builders::GetPackageVersionHistoryInputBuilder,
+}
 impl GetPackageVersionHistoryFluentBuilder  {
     /// Creates a new `GetPackageVersionHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_package_version_history::GetPackageVersionHistory, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetPackageVersionHistoryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_package_version_history::paginator::GetPackageVersionHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_package_version_history::paginator::GetPackageVersionHistoryPaginator {
-                            crate::operation::get_package_version_history::paginator::GetPackageVersionHistoryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_package_version_history::paginator::GetPackageVersionHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_package_version_history::paginator::GetPackageVersionHistoryPaginator {
+                                crate::operation::get_package_version_history::paginator::GetPackageVersionHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Returns an audit history of versions of the package.</p>
     pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.package_id(input.into());

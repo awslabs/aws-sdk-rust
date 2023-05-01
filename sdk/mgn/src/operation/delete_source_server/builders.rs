@@ -8,16 +8,17 @@ pub use crate::operation::delete_source_server::_delete_source_server_input::Del
 /// <p>Deletes a single source server by ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSourceServerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_source_server::builders::DeleteSourceServerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_source_server::builders::DeleteSourceServerInputBuilder,
+}
 impl DeleteSourceServerFluentBuilder  {
     /// Creates a new `DeleteSourceServer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_source_server::DeleteSourceServer, aws_http::retry::AwsResponseRetryClassifier,>,

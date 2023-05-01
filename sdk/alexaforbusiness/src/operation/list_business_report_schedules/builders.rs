@@ -8,16 +8,17 @@ pub use crate::operation::list_business_report_schedules::_list_business_report_
 /// <p>Lists the details of the schedules that a user configured. A download URL of the report associated with each schedule is returned every time this action is called. A new download URL is returned each time, and is valid for 24 hours.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBusinessReportSchedulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_business_report_schedules::builders::ListBusinessReportSchedulesInputBuilder,
+}
 impl ListBusinessReportSchedulesFluentBuilder  {
     /// Creates a new `ListBusinessReportSchedules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_business_report_schedules::ListBusinessReportSchedules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBusinessReportSchedulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_business_report_schedules::paginator::ListBusinessReportSchedulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_business_report_schedules::paginator::ListBusinessReportSchedulesPaginator {
-                            crate::operation::list_business_report_schedules::paginator::ListBusinessReportSchedulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_business_report_schedules::paginator::ListBusinessReportSchedulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_business_report_schedules::paginator::ListBusinessReportSchedulesPaginator {
+                                crate::operation::list_business_report_schedules::paginator::ListBusinessReportSchedulesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The token used to list the remaining schedules from the previous API call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

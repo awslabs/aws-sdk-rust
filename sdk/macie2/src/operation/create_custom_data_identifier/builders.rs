@@ -8,16 +8,17 @@ pub use crate::operation::create_custom_data_identifier::_create_custom_data_ide
 /// <p>Creates and defines the criteria and other settings for a custom data identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCustomDataIdentifierFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_custom_data_identifier::builders::CreateCustomDataIdentifierInputBuilder,
+}
 impl CreateCustomDataIdentifierFluentBuilder  {
     /// Creates a new `CreateCustomDataIdentifier`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_custom_data_identifier::CreateCustomDataIdentifier, aws_http::retry::AwsResponseRetryClassifier,>,

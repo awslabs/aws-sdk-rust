@@ -9,16 +9,17 @@ pub use crate::operation::attach_load_balancer_to_subnets::_attach_load_balancer
 /// <p>The load balancer evenly distributes requests across all registered subnets. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AttachLoadBalancerToSubnetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::attach_load_balancer_to_subnets::builders::AttachLoadBalancerToSubnetsInputBuilder,
+}
 impl AttachLoadBalancerToSubnetsFluentBuilder  {
     /// Creates a new `AttachLoadBalancerToSubnets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnets, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::provision_byoip_cidr::_provision_byoip_cidr_input::Pro
 /// <p>Provisioning an address range is an asynchronous operation, so the call returns immediately, but the address range is not ready to use until its status changes from <code>pending-provision</code> to <code>provisioned</code>. To monitor the status of an address range, use <code>DescribeByoipCidrs</code>. To allocate an Elastic IP address from your IPv4 address pool, use <code>AllocateAddress</code> with either the specific address from the address pool or the ID of the address pool.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ProvisionByoipCidrFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::provision_byoip_cidr::builders::ProvisionByoipCidrInputBuilder,
+}
 impl ProvisionByoipCidrFluentBuilder  {
     /// Creates a new `ProvisionByoipCidr`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::provision_byoip_cidr::ProvisionByoipCidr, aws_http::retry::AwsResponseRetryClassifier,>,

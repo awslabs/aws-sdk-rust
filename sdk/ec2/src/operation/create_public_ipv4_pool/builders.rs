@@ -8,16 +8,17 @@ pub use crate::operation::create_public_ipv4_pool::_create_public_ipv4_pool_inpu
 /// <p>Creates a public IPv4 address pool. A public IPv4 pool is an EC2 IP address pool required for the public IPv4 CIDRs that you own and bring to Amazon Web Services to manage with IPAM. IPv6 addresses you bring to Amazon Web Services, however, use IPAM pools only. To monitor the status of pool creation, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePublicIpv4Pools.html">DescribePublicIpv4Pools</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePublicIpv4PoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_public_ipv4_pool::builders::CreatePublicIpv4PoolInputBuilder,
+}
 impl CreatePublicIpv4PoolFluentBuilder  {
     /// Creates a new `CreatePublicIpv4Pool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_public_ipv4_pool::CreatePublicIpv4Pool, aws_http::retry::AwsResponseRetryClassifier,>,

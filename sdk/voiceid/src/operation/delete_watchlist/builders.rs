@@ -8,16 +8,17 @@ pub use crate::operation::delete_watchlist::_delete_watchlist_input::DeleteWatch
 /// <p>Deletes the specified watchlist from Voice ID. This API throws an exception when there are fraudsters in the watchlist that you are trying to delete. You must delete the fraudsters, and then delete the watchlist. Every domain has a default watchlist which cannot be deleted. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteWatchlistFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_watchlist::builders::DeleteWatchlistInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_watchlist::builders::DeleteWatchlistInputBuilder,
+}
 impl DeleteWatchlistFluentBuilder  {
     /// Creates a new `DeleteWatchlist`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_watchlist::DeleteWatchlist, aws_http::retry::AwsResponseRetryClassifier,>,

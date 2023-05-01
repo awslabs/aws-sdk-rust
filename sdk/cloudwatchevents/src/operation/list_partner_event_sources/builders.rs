@@ -8,16 +8,17 @@ pub use crate::operation::list_partner_event_sources::_list_partner_event_source
 /// <p>An SaaS partner can use this operation to list all the partner event source names that they have created. This operation is not used by Amazon Web Services customers.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPartnerEventSourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_partner_event_sources::builders::ListPartnerEventSourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_partner_event_sources::builders::ListPartnerEventSourcesInputBuilder,
+}
 impl ListPartnerEventSourcesFluentBuilder  {
     /// Creates a new `ListPartnerEventSources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_partner_event_sources::ListPartnerEventSources, aws_http::retry::AwsResponseRetryClassifier,>,

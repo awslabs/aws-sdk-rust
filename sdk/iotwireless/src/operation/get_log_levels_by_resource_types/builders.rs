@@ -8,16 +8,17 @@ pub use crate::operation::get_log_levels_by_resource_types::_get_log_levels_by_r
 /// <p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be for wireless device log options or wireless gateway log options.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLogLevelsByResourceTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_log_levels_by_resource_types::builders::GetLogLevelsByResourceTypesInputBuilder,
+}
 impl GetLogLevelsByResourceTypesFluentBuilder  {
     /// Creates a new `GetLogLevelsByResourceTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypes, aws_http::retry::AwsResponseRetryClassifier,>,

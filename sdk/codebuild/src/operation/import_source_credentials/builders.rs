@@ -8,16 +8,17 @@ pub use crate::operation::import_source_credentials::_import_source_credentials_
 /// <p> Imports the source repository credentials for an CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportSourceCredentialsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_source_credentials::builders::ImportSourceCredentialsInputBuilder,
+}
 impl ImportSourceCredentialsFluentBuilder  {
     /// Creates a new `ImportSourceCredentials`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_source_credentials::ImportSourceCredentials, aws_http::retry::AwsResponseRetryClassifier,>,

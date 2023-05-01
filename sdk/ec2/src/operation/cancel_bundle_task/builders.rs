@@ -8,16 +8,17 @@ pub use crate::operation::cancel_bundle_task::_cancel_bundle_task_input::CancelB
 /// <p>Cancels a bundling operation for an instance store-backed Windows instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelBundleTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_bundle_task::builders::CancelBundleTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_bundle_task::builders::CancelBundleTaskInputBuilder,
+}
 impl CancelBundleTaskFluentBuilder  {
     /// Creates a new `CancelBundleTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_bundle_task::CancelBundleTask, aws_http::retry::AwsResponseRetryClassifier,>,

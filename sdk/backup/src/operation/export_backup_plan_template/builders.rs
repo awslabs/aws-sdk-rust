@@ -8,16 +8,17 @@ pub use crate::operation::export_backup_plan_template::_export_backup_plan_templ
 /// <p>Returns the backup plan that is specified by the plan ID as a backup template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportBackupPlanTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateInputBuilder,
+}
 impl ExportBackupPlanTemplateFluentBuilder  {
     /// Creates a new `ExportBackupPlanTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_backup_plan_template::ExportBackupPlanTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

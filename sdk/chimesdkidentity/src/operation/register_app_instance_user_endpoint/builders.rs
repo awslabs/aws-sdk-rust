@@ -8,16 +8,17 @@ pub use crate::operation::register_app_instance_user_endpoint::_register_app_ins
 /// <p>Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The endpoint receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterAppInstanceUserEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_app_instance_user_endpoint::builders::RegisterAppInstanceUserEndpointInputBuilder,
+}
 impl RegisterAppInstanceUserEndpointFluentBuilder  {
     /// Creates a new `RegisterAppInstanceUserEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

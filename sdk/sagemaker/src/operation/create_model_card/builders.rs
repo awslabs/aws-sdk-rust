@@ -9,16 +9,17 @@ pub use crate::operation::create_model_card::_create_model_card_input::CreateMod
 /// <p>For information about how to use model cards, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon SageMaker Model Card</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateModelCardFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_model_card::builders::CreateModelCardInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_model_card::builders::CreateModelCardInputBuilder,
+}
 impl CreateModelCardFluentBuilder  {
     /// Creates a new `CreateModelCard`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_model_card::CreateModelCard, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::apply_pending_maintenance_action::_apply_pending_maint
 /// <p>Applies a pending maintenance action to a resource (for example, to a replication instance).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ApplyPendingMaintenanceActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::apply_pending_maintenance_action::builders::ApplyPendingMaintenanceActionInputBuilder,
+}
 impl ApplyPendingMaintenanceActionFluentBuilder  {
     /// Creates a new `ApplyPendingMaintenanceAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceAction, aws_http::retry::AwsResponseRetryClassifier,>,

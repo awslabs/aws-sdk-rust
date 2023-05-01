@@ -9,16 +9,17 @@ pub use crate::operation::open_tunnel::_open_tunnel_input::OpenTunnelInputBuilde
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">OpenTunnel</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct OpenTunnelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::open_tunnel::builders::OpenTunnelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::open_tunnel::builders::OpenTunnelInputBuilder,
+}
 impl OpenTunnelFluentBuilder  {
     /// Creates a new `OpenTunnel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::open_tunnel::OpenTunnel, aws_http::retry::AwsResponseRetryClassifier,>,

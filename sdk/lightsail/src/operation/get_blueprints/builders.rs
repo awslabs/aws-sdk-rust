@@ -10,16 +10,17 @@ pub use crate::operation::get_blueprints::_get_blueprints_input::GetBlueprintsIn
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBlueprintsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_blueprints::builders::GetBlueprintsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_blueprints::builders::GetBlueprintsInputBuilder,
+}
 impl GetBlueprintsFluentBuilder  {
     /// Creates a new `GetBlueprints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_blueprints::GetBlueprints, aws_http::retry::AwsResponseRetryClassifier,>,

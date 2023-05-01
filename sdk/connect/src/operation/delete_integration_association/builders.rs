@@ -8,16 +8,17 @@ pub use crate::operation::delete_integration_association::_delete_integration_as
 /// <p>Deletes an Amazon Web Services resource association from an Amazon Connect instance. The association must not have any use cases associated with it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteIntegrationAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_integration_association::builders::DeleteIntegrationAssociationInputBuilder,
+}
 impl DeleteIntegrationAssociationFluentBuilder  {
     /// Creates a new `DeleteIntegrationAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_integration_association::DeleteIntegrationAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

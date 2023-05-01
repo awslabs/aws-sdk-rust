@@ -11,16 +11,17 @@ pub use crate::operation::create_traffic_mirror_target::_create_traffic_mirror_t
 /// <p>To use the target in a Traffic Mirror session, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorSession.htm">CreateTrafficMirrorSession</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTrafficMirrorTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_traffic_mirror_target::builders::CreateTrafficMirrorTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_traffic_mirror_target::builders::CreateTrafficMirrorTargetInputBuilder,
+}
 impl CreateTrafficMirrorTargetFluentBuilder  {
     /// Creates a new `CreateTrafficMirrorTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTarget, aws_http::retry::AwsResponseRetryClassifier,>,

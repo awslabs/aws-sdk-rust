@@ -8,16 +8,17 @@ pub use crate::operation::delete_file::_delete_file_input::DeleteFileInputBuilde
 /// <p>Deletes a specified file from a specified branch. A commit is created on the branch that contains the revision. The file still exists in the commits earlier to the commit that contains the deletion.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_file::builders::DeleteFileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_file::builders::DeleteFileInputBuilder,
+}
 impl DeleteFileFluentBuilder  {
     /// Creates a new `DeleteFile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_file::DeleteFile, aws_http::retry::AwsResponseRetryClassifier,>,

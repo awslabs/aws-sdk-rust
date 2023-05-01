@@ -8,16 +8,17 @@ pub use crate::operation::describe_assessment_templates::_describe_assessment_te
 /// <p>Describes the assessment templates that are specified by the ARNs of the assessment templates.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssessmentTemplatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_assessment_templates::builders::DescribeAssessmentTemplatesInputBuilder,
+}
 impl DescribeAssessmentTemplatesFluentBuilder  {
     /// Creates a new `DescribeAssessmentTemplates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_assessment_templates::DescribeAssessmentTemplates, aws_http::retry::AwsResponseRetryClassifier,>,

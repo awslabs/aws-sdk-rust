@@ -8,16 +8,17 @@ pub use crate::operation::create_game::_create_game_input::CreateGameInputBuilde
 /// <p> Creates a new game with an empty configuration. After creating your game, you can update the configuration using <code>UpdateGameConfiguration</code> or <code>ImportGameConfiguration</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGameFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_game::builders::CreateGameInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_game::builders::CreateGameInputBuilder,
+}
 impl CreateGameFluentBuilder  {
     /// Creates a new `CreateGame`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_game::CreateGame, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_deployments::_get_deployments_input::GetDeployment
 /// <p>Gets information about a Deployments collection.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDeploymentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_deployments::builders::GetDeploymentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_deployments::builders::GetDeploymentsInputBuilder,
+}
 impl GetDeploymentsFluentBuilder  {
     /// Creates a new `GetDeployments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_deployments::GetDeployments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetDeploymentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_deployments::paginator::GetDeploymentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_deployments::paginator::GetDeploymentsPaginator {
-                            crate::operation::get_deployments::paginator::GetDeploymentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_deployments::paginator::GetDeploymentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_deployments::paginator::GetDeploymentsPaginator {
+                                crate::operation::get_deployments::paginator::GetDeploymentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.rest_api_id(input.into());

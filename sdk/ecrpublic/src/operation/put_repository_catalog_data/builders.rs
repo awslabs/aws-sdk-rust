@@ -8,16 +8,17 @@ pub use crate::operation::put_repository_catalog_data::_put_repository_catalog_d
 /// <p>Creates or updates the catalog data for a repository in a public registry.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutRepositoryCatalogDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_repository_catalog_data::builders::PutRepositoryCatalogDataInputBuilder,
+}
 impl PutRepositoryCatalogDataFluentBuilder  {
     /// Creates a new `PutRepositoryCatalogData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_repository_catalog_data::PutRepositoryCatalogData, aws_http::retry::AwsResponseRetryClassifier,>,

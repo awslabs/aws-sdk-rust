@@ -8,16 +8,17 @@ pub use crate::operation::put_app_validation_configuration::_put_app_validation_
 /// <p>Creates or updates a validation configuration for the specified application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAppValidationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_app_validation_configuration::builders::PutAppValidationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_app_validation_configuration::builders::PutAppValidationConfigurationInputBuilder,
+}
 impl PutAppValidationConfigurationFluentBuilder  {
     /// Creates a new `PutAppValidationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_app_validation_configuration::PutAppValidationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

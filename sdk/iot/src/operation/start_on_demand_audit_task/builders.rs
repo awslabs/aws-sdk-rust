@@ -9,16 +9,17 @@ pub use crate::operation::start_on_demand_audit_task::_start_on_demand_audit_tas
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartOnDemandAuditTask</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartOnDemandAuditTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_on_demand_audit_task::builders::StartOnDemandAuditTaskInputBuilder,
+}
 impl StartOnDemandAuditTaskFluentBuilder  {
     /// Creates a new `StartOnDemandAuditTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_on_demand_audit_task::StartOnDemandAuditTask, aws_http::retry::AwsResponseRetryClassifier,>,

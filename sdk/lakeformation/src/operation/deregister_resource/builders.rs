@@ -9,16 +9,17 @@ pub use crate::operation::deregister_resource::_deregister_resource_input::Dereg
 /// <p>When you deregister a path, Lake Formation removes the path from the inline policy attached to your service-linked role.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_resource::builders::DeregisterResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_resource::builders::DeregisterResourceInputBuilder,
+}
 impl DeregisterResourceFluentBuilder  {
     /// Creates a new `DeregisterResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_resource::DeregisterResource, aws_http::retry::AwsResponseRetryClassifier,>,

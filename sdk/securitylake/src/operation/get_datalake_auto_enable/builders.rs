@@ -8,16 +8,17 @@ pub use crate::operation::get_datalake_auto_enable::_get_datalake_auto_enable_in
 /// <p>Retrieves the configuration that will be automatically set up for accounts added to the organization after the organization has onboarded to Amazon Security Lake. This API does not take input parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDatalakeAutoEnableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_datalake_auto_enable::builders::GetDatalakeAutoEnableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_datalake_auto_enable::builders::GetDatalakeAutoEnableInputBuilder,
+}
 impl GetDatalakeAutoEnableFluentBuilder  {
     /// Creates a new `GetDatalakeAutoEnable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_datalake_auto_enable::GetDatalakeAutoEnable, aws_http::retry::AwsResponseRetryClassifier,>,

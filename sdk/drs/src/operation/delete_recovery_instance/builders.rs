@@ -8,16 +8,17 @@ pub use crate::operation::delete_recovery_instance::_delete_recovery_instance_in
 /// <p>Deletes a single Recovery Instance by ID. This deletes the Recovery Instance resource from Elastic Disaster Recovery. The Recovery Instance must be disconnected first in order to delete it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRecoveryInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_recovery_instance::builders::DeleteRecoveryInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_recovery_instance::builders::DeleteRecoveryInstanceInputBuilder,
+}
 impl DeleteRecoveryInstanceFluentBuilder  {
     /// Creates a new `DeleteRecoveryInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_recovery_instance::DeleteRecoveryInstance, aws_http::retry::AwsResponseRetryClassifier,>,

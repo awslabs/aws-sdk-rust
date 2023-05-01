@@ -8,16 +8,17 @@ pub use crate::operation::get_datalake_status::_get_datalake_status_input::GetDa
 /// <p>Retrieves a snapshot of the current Region, including whether Amazon Security Lake is enabled for those accounts and which sources Security Lake is collecting data from. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDatalakeStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_datalake_status::builders::GetDatalakeStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_datalake_status::builders::GetDatalakeStatusInputBuilder,
+}
 impl GetDatalakeStatusFluentBuilder  {
     /// Creates a new `GetDatalakeStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_datalake_status::GetDatalakeStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetDatalakeStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_datalake_status::paginator::GetDatalakeStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_datalake_status::paginator::GetDatalakeStatusPaginator {
-                            crate::operation::get_datalake_status::paginator::GetDatalakeStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_datalake_status::paginator::GetDatalakeStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_datalake_status::paginator::GetDatalakeStatusPaginator {
+                                crate::operation::get_datalake_status::paginator::GetDatalakeStatusPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `accountSet`.
     ///
     /// To override the contents of this collection use [`set_account_set`](Self::set_account_set).

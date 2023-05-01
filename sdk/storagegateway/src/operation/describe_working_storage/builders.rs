@@ -11,16 +11,17 @@ pub use crate::operation::describe_working_storage::_describe_working_storage_in
 /// <p>The response includes disk IDs that are configured as working storage, and it includes the amount of working storage allocated and used.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeWorkingStorageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_working_storage::builders::DescribeWorkingStorageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_working_storage::builders::DescribeWorkingStorageInputBuilder,
+}
 impl DescribeWorkingStorageFluentBuilder  {
     /// Creates a new `DescribeWorkingStorage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_working_storage::DescribeWorkingStorage, aws_http::retry::AwsResponseRetryClassifier,>,

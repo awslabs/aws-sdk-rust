@@ -8,16 +8,17 @@ pub use crate::operation::delete_anomaly_subscription::_delete_anomaly_subscript
 /// <p>Deletes a cost anomaly subscription. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAnomalySubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_anomaly_subscription::builders::DeleteAnomalySubscriptionInputBuilder,
+}
 impl DeleteAnomalySubscriptionFluentBuilder  {
     /// Creates a new `DeleteAnomalySubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_anomaly_subscription::DeleteAnomalySubscription, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::deregister_managed_instance::_deregister_managed_insta
 /// <p>Removes the server or virtual machine from the list of registered servers. You can reregister the node again at any time. If you don't plan to use Run Command on the server, we suggest uninstalling SSM Agent first.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterManagedInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_managed_instance::builders::DeregisterManagedInstanceInputBuilder,
+}
 impl DeregisterManagedInstanceFluentBuilder  {
     /// Creates a new `DeregisterManagedInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_managed_instance::DeregisterManagedInstance, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::start_deployment::_start_deployment_input::StartDeploy
 /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <code>ListOperations</code> call to track the operation's progress.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDeploymentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_deployment::builders::StartDeploymentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_deployment::builders::StartDeploymentInputBuilder,
+}
 impl StartDeploymentFluentBuilder  {
     /// Creates a new `StartDeployment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_deployment::StartDeployment, aws_http::retry::AwsResponseRetryClassifier,>,

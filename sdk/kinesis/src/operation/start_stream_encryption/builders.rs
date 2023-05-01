@@ -13,16 +13,17 @@ pub use crate::operation::start_stream_encryption::_start_stream_encryption_inpu
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartStreamEncryptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_stream_encryption::builders::StartStreamEncryptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_stream_encryption::builders::StartStreamEncryptionInputBuilder,
+}
 impl StartStreamEncryptionFluentBuilder  {
     /// Creates a new `StartStreamEncryption`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_stream_encryption::StartStreamEncryption, aws_http::retry::AwsResponseRetryClassifier,>,

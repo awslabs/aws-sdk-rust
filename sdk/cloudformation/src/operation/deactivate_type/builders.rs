@@ -9,16 +9,17 @@ pub use crate::operation::deactivate_type::_deactivate_type_input::DeactivateTyp
 /// <p>Once deactivated, an extension can't be used in any CloudFormation operation. This includes stack update operations where the stack template includes the extension, even if no updates are being made to the extension. In addition, deactivated extensions aren't automatically updated if a new version of the extension is released.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeactivateTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deactivate_type::builders::DeactivateTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deactivate_type::builders::DeactivateTypeInputBuilder,
+}
 impl DeactivateTypeFluentBuilder  {
     /// Creates a new `DeactivateType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deactivate_type::DeactivateType, aws_http::retry::AwsResponseRetryClassifier,>,

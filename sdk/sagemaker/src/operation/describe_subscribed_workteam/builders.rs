@@ -8,16 +8,17 @@ pub use crate::operation::describe_subscribed_workteam::_describe_subscribed_wor
 /// <p>Gets information about a work team provided by a vendor. It returns details about the subscription with a vendor in the Amazon Web Services Marketplace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSubscribedWorkteamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_subscribed_workteam::builders::DescribeSubscribedWorkteamInputBuilder,
+}
 impl DescribeSubscribedWorkteamFluentBuilder  {
     /// Creates a new `DescribeSubscribedWorkteam`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteam, aws_http::retry::AwsResponseRetryClassifier,>,

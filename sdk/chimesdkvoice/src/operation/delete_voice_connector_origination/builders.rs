@@ -10,16 +10,17 @@ pub use crate::operation::delete_voice_connector_origination::_delete_voice_conn
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVoiceConnectorOriginationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_voice_connector_origination::builders::DeleteVoiceConnectorOriginationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_voice_connector_origination::builders::DeleteVoiceConnectorOriginationInputBuilder,
+}
 impl DeleteVoiceConnectorOriginationFluentBuilder  {
     /// Creates a new `DeleteVoiceConnectorOrigination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_voice_connector_origination::DeleteVoiceConnectorOrigination, aws_http::retry::AwsResponseRetryClassifier,>,

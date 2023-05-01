@@ -8,16 +8,17 @@ pub use crate::operation::update_subscriber::_update_subscriber_input::UpdateSub
 /// <p>Updates an existing subscription for the given Amazon Security Lake account ID. You can update a subscriber by changing the sources that the subscriber consumes data from. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSubscriberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_subscriber::builders::UpdateSubscriberInputBuilder,
+}
 impl UpdateSubscriberFluentBuilder  {
     /// Creates a new `UpdateSubscriber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_subscriber::UpdateSubscriber, aws_http::retry::AwsResponseRetryClassifier,>,

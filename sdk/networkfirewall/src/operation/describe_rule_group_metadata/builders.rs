@@ -8,16 +8,17 @@ pub use crate::operation::describe_rule_group_metadata::_describe_rule_group_met
 /// <p>High-level information about a rule group, returned by operations like create and describe. You can use the information provided in the metadata to retrieve and manage a rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRuleGroupMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_rule_group_metadata::builders::DescribeRuleGroupMetadataInputBuilder,
+}
 impl DescribeRuleGroupMetadataFluentBuilder  {
     /// Creates a new `DescribeRuleGroupMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

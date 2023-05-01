@@ -10,16 +10,17 @@ pub use crate::operation::get_streaming_session_stream::_get_streaming_session_s
 /// <p>After the <code>StreamingSessionStream</code> changes to the <code>READY</code> state, the url property will contain a stream to be used with the DCV streaming client.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetStreamingSessionStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_streaming_session_stream::builders::GetStreamingSessionStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_streaming_session_stream::builders::GetStreamingSessionStreamInputBuilder,
+}
 impl GetStreamingSessionStreamFluentBuilder  {
     /// Creates a new `GetStreamingSessionStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_streaming_session_stream::GetStreamingSessionStream, aws_http::retry::AwsResponseRetryClassifier,>,

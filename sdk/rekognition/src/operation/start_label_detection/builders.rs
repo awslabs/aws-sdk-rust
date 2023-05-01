@@ -14,16 +14,17 @@ pub use crate::operation::start_label_detection::_start_label_detection_input::S
 /// <p>You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The default is 50.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartLabelDetectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_label_detection::builders::StartLabelDetectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_label_detection::builders::StartLabelDetectionInputBuilder,
+}
 impl StartLabelDetectionFluentBuilder  {
     /// Creates a new `StartLabelDetection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_label_detection::StartLabelDetection, aws_http::retry::AwsResponseRetryClassifier,>,

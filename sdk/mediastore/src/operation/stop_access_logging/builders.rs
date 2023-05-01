@@ -8,16 +8,17 @@ pub use crate::operation::stop_access_logging::_stop_access_logging_input::StopA
 /// <p>Stops access logging on the specified container. When you stop access logging on a container, MediaStore stops sending access logs to Amazon CloudWatch Logs. These access logs are not saved and are not retrievable.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopAccessLoggingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_access_logging::builders::StopAccessLoggingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_access_logging::builders::StopAccessLoggingInputBuilder,
+}
 impl StopAccessLoggingFluentBuilder  {
     /// Creates a new `StopAccessLogging`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_access_logging::StopAccessLogging, aws_http::retry::AwsResponseRetryClassifier,>,

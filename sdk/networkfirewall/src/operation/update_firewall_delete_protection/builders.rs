@@ -8,16 +8,17 @@ pub use crate::operation::update_firewall_delete_protection::_update_firewall_de
 /// <p>Modifies the flag, <code>DeleteProtection</code>, which indicates whether it is possible to delete the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected against deletion. This setting helps protect against accidentally deleting a firewall that's in use. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFirewallDeleteProtectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_firewall_delete_protection::builders::UpdateFirewallDeleteProtectionInputBuilder,
+}
 impl UpdateFirewallDeleteProtectionFluentBuilder  {
     /// Creates a new `UpdateFirewallDeleteProtection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtection, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_studio::_describe_studio_input::DescribeStudi
 /// <p>Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStudioFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_studio::builders::DescribeStudioInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_studio::builders::DescribeStudioInputBuilder,
+}
 impl DescribeStudioFluentBuilder  {
     /// Creates a new `DescribeStudio`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_studio::DescribeStudio, aws_http::retry::AwsResponseRetryClassifier,>,

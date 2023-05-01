@@ -8,16 +8,17 @@ pub use crate::operation::get_recommendation_report_details::_get_recommendation
 /// <p> Retrieves detailed information about the specified recommendation report. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRecommendationReportDetailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_recommendation_report_details::builders::GetRecommendationReportDetailsInputBuilder,
+}
 impl GetRecommendationReportDetailsFluentBuilder  {
     /// Creates a new `GetRecommendationReportDetails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_recommendation_report_details::GetRecommendationReportDetails, aws_http::retry::AwsResponseRetryClassifier,>,

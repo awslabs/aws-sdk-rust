@@ -9,16 +9,17 @@ pub use crate::operation::get_lambda_function_recommendations::_get_lambda_funct
 /// <p>Compute Optimizer generates recommendations for functions that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLambdaFunctionRecommendationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_lambda_function_recommendations::builders::GetLambdaFunctionRecommendationsInputBuilder,
+}
 impl GetLambdaFunctionRecommendationsFluentBuilder  {
     /// Creates a new `GetLambdaFunctionRecommendations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_lambda_function_recommendations::GetLambdaFunctionRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetLambdaFunctionRecommendationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_lambda_function_recommendations::paginator::GetLambdaFunctionRecommendationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_lambda_function_recommendations::paginator::GetLambdaFunctionRecommendationsPaginator {
-                            crate::operation::get_lambda_function_recommendations::paginator::GetLambdaFunctionRecommendationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_lambda_function_recommendations::paginator::GetLambdaFunctionRecommendationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_lambda_function_recommendations::paginator::GetLambdaFunctionRecommendationsPaginator {
+                                crate::operation::get_lambda_function_recommendations::paginator::GetLambdaFunctionRecommendationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `functionArns`.
     ///
     /// To override the contents of this collection use [`set_function_arns`](Self::set_function_arns).

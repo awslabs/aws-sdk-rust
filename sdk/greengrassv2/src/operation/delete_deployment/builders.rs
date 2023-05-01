@@ -9,16 +9,17 @@ pub use crate::operation::delete_deployment::_delete_deployment_input::DeleteDep
 /// <p>Deleting a deployment doesn't affect core devices that run that deployment, because core devices store the deployment's configuration on the device. Additionally, core devices can roll back to a previous deployment that has been deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDeploymentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_deployment::builders::DeleteDeploymentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_deployment::builders::DeleteDeploymentInputBuilder,
+}
 impl DeleteDeploymentFluentBuilder  {
     /// Creates a new `DeleteDeployment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_deployment::DeleteDeployment, aws_http::retry::AwsResponseRetryClassifier,>,

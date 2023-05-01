@@ -8,16 +8,17 @@ pub use crate::operation::list_notebook_sessions::_list_notebook_sessions_input:
 /// <p>Lists, in descending order, the sessions that have been created in a notebook that are in an active state like <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code> or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNotebookSessionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_notebook_sessions::builders::ListNotebookSessionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_notebook_sessions::builders::ListNotebookSessionsInputBuilder,
+}
 impl ListNotebookSessionsFluentBuilder  {
     /// Creates a new `ListNotebookSessions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_notebook_sessions::ListNotebookSessions, aws_http::retry::AwsResponseRetryClassifier,>,

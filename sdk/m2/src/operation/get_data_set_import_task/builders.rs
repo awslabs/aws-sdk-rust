@@ -8,16 +8,17 @@ pub use crate::operation::get_data_set_import_task::_get_data_set_import_task_in
 /// <p>Gets the status of a data set import task initiated with the <code>CreateDataSetImportTask</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDataSetImportTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskInputBuilder,
+}
 impl GetDataSetImportTaskFluentBuilder  {
     /// Creates a new `GetDataSetImportTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_data_set_import_task::GetDataSetImportTask, aws_http::retry::AwsResponseRetryClassifier,>,

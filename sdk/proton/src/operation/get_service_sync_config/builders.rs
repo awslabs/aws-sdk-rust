@@ -8,16 +8,17 @@ pub use crate::operation::get_service_sync_config::_get_service_sync_config_inpu
 /// <p>Get detailed information for the service sync configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetServiceSyncConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_service_sync_config::builders::GetServiceSyncConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_service_sync_config::builders::GetServiceSyncConfigInputBuilder,
+}
 impl GetServiceSyncConfigFluentBuilder  {
     /// Creates a new `GetServiceSyncConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_service_sync_config::GetServiceSyncConfig, aws_http::retry::AwsResponseRetryClassifier,>,

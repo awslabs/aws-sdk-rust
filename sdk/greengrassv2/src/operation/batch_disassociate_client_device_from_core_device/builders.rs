@@ -8,16 +8,17 @@ pub use crate::operation::batch_disassociate_client_device_from_core_device::_ba
 /// <p>Disassociates a list of client devices from a core device. After you disassociate a client device from a core device, the client device won't be able to use cloud discovery to retrieve the core device's connectivity information and certificates.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDisassociateClientDeviceFromCoreDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_disassociate_client_device_from_core_device::builders::BatchDisassociateClientDeviceFromCoreDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_disassociate_client_device_from_core_device::builders::BatchDisassociateClientDeviceFromCoreDeviceInputBuilder,
+}
 impl BatchDisassociateClientDeviceFromCoreDeviceFluentBuilder  {
     /// Creates a new `BatchDisassociateClientDeviceFromCoreDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDevice, aws_http::retry::AwsResponseRetryClassifier,>,

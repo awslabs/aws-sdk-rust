@@ -8,16 +8,17 @@ pub use crate::operation::disable_stage_transition::_disable_stage_transition_in
 /// <p>Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableStageTransitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_stage_transition::builders::DisableStageTransitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_stage_transition::builders::DisableStageTransitionInputBuilder,
+}
 impl DisableStageTransitionFluentBuilder  {
     /// Creates a new `DisableStageTransition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_stage_transition::DisableStageTransition, aws_http::retry::AwsResponseRetryClassifier,>,

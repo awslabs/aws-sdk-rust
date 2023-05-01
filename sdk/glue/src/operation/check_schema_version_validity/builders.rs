@@ -8,16 +8,17 @@ pub use crate::operation::check_schema_version_validity::_check_schema_version_v
 /// <p>Validates the supplied schema. This call has no side effects, it simply validates using the supplied schema using <code>DataFormat</code> as the format. Since it does not take a schema set name, no compatibility checks are performed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CheckSchemaVersionValidityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::check_schema_version_validity::builders::CheckSchemaVersionValidityInputBuilder,
+}
 impl CheckSchemaVersionValidityFluentBuilder  {
     /// Creates a new `CheckSchemaVersionValidity`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::check_schema_version_validity::CheckSchemaVersionValidity, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::confirm_sign_up::_confirm_sign_up_input::ConfirmSignUp
 /// <p>Confirms registration of a new user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfirmSignUpFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::confirm_sign_up::builders::ConfirmSignUpInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::confirm_sign_up::builders::ConfirmSignUpInputBuilder,
+}
 impl ConfirmSignUpFluentBuilder  {
     /// Creates a new `ConfirmSignUp`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::confirm_sign_up::ConfirmSignUp, aws_http::retry::AwsResponseRetryClassifier,>,

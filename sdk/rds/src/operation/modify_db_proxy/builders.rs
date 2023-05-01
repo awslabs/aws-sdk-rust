@@ -8,16 +8,17 @@ pub use crate::operation::modify_db_proxy::_modify_db_proxy_input::ModifyDbProxy
 /// <p>Changes the settings for an existing DB proxy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDBProxyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_db_proxy::builders::ModifyDbProxyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_db_proxy::builders::ModifyDbProxyInputBuilder,
+}
 impl ModifyDBProxyFluentBuilder  {
     /// Creates a new `ModifyDBProxy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_db_proxy::ModifyDBProxy, aws_http::retry::AwsResponseRetryClassifier,>,

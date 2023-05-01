@@ -8,16 +8,17 @@ pub use crate::operation::cancel_batch_import_job::_cancel_batch_import_job_inpu
 /// <p> Cancels an in-progress batch import job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelBatchImportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_batch_import_job::builders::CancelBatchImportJobInputBuilder,
+}
 impl CancelBatchImportJobFluentBuilder  {
     /// Creates a new `CancelBatchImportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_batch_import_job::CancelBatchImportJob, aws_http::retry::AwsResponseRetryClassifier,>,

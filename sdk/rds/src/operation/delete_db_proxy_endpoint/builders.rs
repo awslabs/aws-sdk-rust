@@ -8,16 +8,17 @@ pub use crate::operation::delete_db_proxy_endpoint::_delete_db_proxy_endpoint_in
 /// <p>Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the DB proxy using the endpoint that you defined. The endpoint that you delete might have provided capabilities such as read/write or read-only operations, or using a different VPC than the DB proxy's default VPC.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDBProxyEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_db_proxy_endpoint::builders::DeleteDbProxyEndpointInputBuilder,
+}
 impl DeleteDBProxyEndpointFluentBuilder  {
     /// Creates a new `DeleteDBProxyEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

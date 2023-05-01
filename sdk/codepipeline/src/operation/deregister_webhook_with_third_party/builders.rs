@@ -8,16 +8,17 @@ pub use crate::operation::deregister_webhook_with_third_party::_deregister_webho
 /// <p>Removes the connection between the webhook that was created by CodePipeline and the external tool with events to be detected. Currently supported only for webhooks that target an action type of GitHub.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterWebhookWithThirdPartyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_webhook_with_third_party::builders::DeregisterWebhookWithThirdPartyInputBuilder,
+}
 impl DeregisterWebhookWithThirdPartyFluentBuilder  {
     /// Creates a new `DeregisterWebhookWithThirdParty`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdParty, aws_http::retry::AwsResponseRetryClassifier,>,

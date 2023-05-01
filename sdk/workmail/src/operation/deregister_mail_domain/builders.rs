@@ -8,16 +8,17 @@ pub use crate::operation::deregister_mail_domain::_deregister_mail_domain_input:
 /// <p>Removes a domain from WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address used by WorkMail entities before you remove the domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterMailDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_mail_domain::builders::DeregisterMailDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_mail_domain::builders::DeregisterMailDomainInputBuilder,
+}
 impl DeregisterMailDomainFluentBuilder  {
     /// Creates a new `DeregisterMailDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_mail_domain::DeregisterMailDomain, aws_http::retry::AwsResponseRetryClassifier,>,

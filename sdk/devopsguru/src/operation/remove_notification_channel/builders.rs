@@ -8,16 +8,17 @@ pub use crate::operation::remove_notification_channel::_remove_notification_chan
 /// <p> Removes a notification channel from DevOps Guru. A notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveNotificationChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_notification_channel::builders::RemoveNotificationChannelInputBuilder,
+}
 impl RemoveNotificationChannelFluentBuilder  {
     /// Creates a new `RemoveNotificationChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_notification_channel::RemoveNotificationChannel, aws_http::retry::AwsResponseRetryClassifier,>,

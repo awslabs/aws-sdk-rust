@@ -8,16 +8,17 @@ pub use crate::operation::modify_transit_gateway_vpc_attachment::_modify_transit
 /// <p>Modifies the specified VPC attachment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyTransitGatewayVpcAttachmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_transit_gateway_vpc_attachment::builders::ModifyTransitGatewayVpcAttachmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_transit_gateway_vpc_attachment::builders::ModifyTransitGatewayVpcAttachmentInputBuilder,
+}
 impl ModifyTransitGatewayVpcAttachmentFluentBuilder  {
     /// Creates a new `ModifyTransitGatewayVpcAttachment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachment, aws_http::retry::AwsResponseRetryClassifier,>,

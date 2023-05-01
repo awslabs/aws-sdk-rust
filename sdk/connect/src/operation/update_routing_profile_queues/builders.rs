@@ -8,16 +8,17 @@ pub use crate::operation::update_routing_profile_queues::_update_routing_profile
 /// <p>Updates the properties associated with a set of queues for a routing profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRoutingProfileQueuesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_routing_profile_queues::builders::UpdateRoutingProfileQueuesInputBuilder,
+}
 impl UpdateRoutingProfileQueuesFluentBuilder  {
     /// Creates a new `UpdateRoutingProfileQueues`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_routing_profile_queues::UpdateRoutingProfileQueues, aws_http::retry::AwsResponseRetryClassifier,>,

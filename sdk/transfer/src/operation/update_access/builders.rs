@@ -8,16 +8,17 @@ pub use crate::operation::update_access::_update_access_input::UpdateAccessInput
 /// <p>Allows you to update parameters for the access specified in the <code>ServerID</code> and <code>ExternalID</code> parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_access::builders::UpdateAccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_access::builders::UpdateAccessInputBuilder,
+}
 impl UpdateAccessFluentBuilder  {
     /// Creates a new `UpdateAccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_access::UpdateAccess, aws_http::retry::AwsResponseRetryClassifier,>,

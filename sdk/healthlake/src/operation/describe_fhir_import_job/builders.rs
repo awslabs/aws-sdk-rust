@@ -8,16 +8,17 @@ pub use crate::operation::describe_fhir_import_job::_describe_fhir_import_job_in
 /// <p>Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFHIRImportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_fhir_import_job::builders::DescribeFhirImportJobInputBuilder,
+}
 impl DescribeFHIRImportJobFluentBuilder  {
     /// Creates a new `DescribeFHIRImportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fhir_import_job::DescribeFHIRImportJob, aws_http::retry::AwsResponseRetryClassifier,>,

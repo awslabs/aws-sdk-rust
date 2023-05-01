@@ -8,16 +8,17 @@ pub use crate::operation::start_app_assessment::_start_app_assessment_input::Sta
 /// <p>Creates a new application assessment for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartAppAssessmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_app_assessment::builders::StartAppAssessmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_app_assessment::builders::StartAppAssessmentInputBuilder,
+}
 impl StartAppAssessmentFluentBuilder  {
     /// Creates a new `StartAppAssessment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_app_assessment::StartAppAssessment, aws_http::retry::AwsResponseRetryClassifier,>,

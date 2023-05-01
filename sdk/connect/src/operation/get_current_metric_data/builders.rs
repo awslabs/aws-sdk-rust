@@ -9,16 +9,17 @@ pub use crate::operation::get_current_metric_data::_get_current_metric_data_inpu
 /// <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCurrentMetricDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_current_metric_data::builders::GetCurrentMetricDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_current_metric_data::builders::GetCurrentMetricDataInputBuilder,
+}
 impl GetCurrentMetricDataFluentBuilder  {
     /// Creates a new `GetCurrentMetricData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_current_metric_data::GetCurrentMetricData, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetCurrentMetricDataFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator {
-                            crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator {
+                                crate::operation::get_current_metric_data::paginator::GetCurrentMetricDataPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());

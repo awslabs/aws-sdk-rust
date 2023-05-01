@@ -8,16 +8,17 @@ pub use crate::operation::list_batch_inference_jobs::_list_batch_inference_jobs_
 /// <p>Gets a list of the batch inference jobs that have been performed off of a solution version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBatchInferenceJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_batch_inference_jobs::builders::ListBatchInferenceJobsInputBuilder,
+}
 impl ListBatchInferenceJobsFluentBuilder  {
     /// Creates a new `ListBatchInferenceJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_batch_inference_jobs::ListBatchInferenceJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBatchInferenceJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator {
-                            crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator {
+                                crate::operation::list_batch_inference_jobs::paginator::ListBatchInferenceJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the solution version from which the batch inference jobs were created.</p>
     pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.solution_version_arn(input.into());

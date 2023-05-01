@@ -8,16 +8,17 @@ pub use crate::operation::modify_cluster_snapshot_schedule::_modify_cluster_snap
 /// <p>Modifies a snapshot schedule for a cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyClusterSnapshotScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_cluster_snapshot_schedule::builders::ModifyClusterSnapshotScheduleInputBuilder,
+}
 impl ModifyClusterSnapshotScheduleFluentBuilder  {
     /// Creates a new `ModifyClusterSnapshotSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_cluster_snapshot_schedule::ModifyClusterSnapshotSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

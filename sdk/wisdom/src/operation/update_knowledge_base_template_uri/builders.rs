@@ -8,16 +8,17 @@ pub use crate::operation::update_knowledge_base_template_uri::_update_knowledge_
 /// <p>Updates the template URI of a knowledge base. This is only supported for knowledge bases of type EXTERNAL. Include a single variable in <code>${variable}</code> format; this interpolated by Wisdom using ingested content. For example, if you ingest a Salesforce article, it has an <code>Id</code> value, and you can set the template URI to <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateKnowledgeBaseTemplateUriFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_knowledge_base_template_uri::builders::UpdateKnowledgeBaseTemplateUriInputBuilder,
+}
 impl UpdateKnowledgeBaseTemplateUriFluentBuilder  {
     /// Creates a new `UpdateKnowledgeBaseTemplateUri`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUri, aws_http::retry::AwsResponseRetryClassifier,>,

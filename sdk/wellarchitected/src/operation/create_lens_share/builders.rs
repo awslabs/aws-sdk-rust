@@ -15,16 +15,17 @@ pub use crate::operation::create_lens_share::_create_lens_share_input::CreateLen
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLensShareFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_lens_share::builders::CreateLensShareInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_lens_share::builders::CreateLensShareInputBuilder,
+}
 impl CreateLensShareFluentBuilder  {
     /// Creates a new `CreateLensShare`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_lens_share::CreateLensShare, aws_http::retry::AwsResponseRetryClassifier,>,

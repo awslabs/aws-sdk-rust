@@ -9,16 +9,17 @@ pub use crate::operation::list_vocabularies::_list_vocabularies_input::ListVocab
 /// <p>To get detailed information about a specific custom vocabulary, use the operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVocabulariesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_vocabularies::builders::ListVocabulariesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_vocabularies::builders::ListVocabulariesInputBuilder,
+}
 impl ListVocabulariesFluentBuilder  {
     /// Creates a new `ListVocabularies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_vocabularies::ListVocabularies, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListVocabulariesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator {
-                            crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator {
+                                crate::operation::list_vocabularies::paginator::ListVocabulariesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If your <code>ListVocabularies</code> request returns more results than can be displayed, <code>NextToken</code> is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

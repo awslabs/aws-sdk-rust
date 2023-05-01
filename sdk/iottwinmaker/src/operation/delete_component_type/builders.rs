@@ -8,16 +8,17 @@ pub use crate::operation::delete_component_type::_delete_component_type_input::D
 /// <p>Deletes a component type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteComponentTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_component_type::builders::DeleteComponentTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_component_type::builders::DeleteComponentTypeInputBuilder,
+}
 impl DeleteComponentTypeFluentBuilder  {
     /// Creates a new `DeleteComponentType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_component_type::DeleteComponentType, aws_http::retry::AwsResponseRetryClassifier,>,

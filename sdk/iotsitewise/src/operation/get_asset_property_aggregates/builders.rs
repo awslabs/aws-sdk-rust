@@ -13,16 +13,17 @@ pub use crate::operation::get_asset_property_aggregates::_get_asset_property_agg
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssetPropertyAggregatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_asset_property_aggregates::builders::GetAssetPropertyAggregatesInputBuilder,
+}
 impl GetAssetPropertyAggregatesFluentBuilder  {
     /// Creates a new `GetAssetPropertyAggregates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -53,11 +54,11 @@ impl GetAssetPropertyAggregatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator {
-                            crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator {
+                                crate::operation::get_asset_property_aggregates::paginator::GetAssetPropertyAggregatesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the asset.</p>
     pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.asset_id(input.into());

@@ -11,16 +11,17 @@ pub use crate::operation::disassociate_lenses::_disassociate_lenses_input::Disas
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateLensesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_lenses::builders::DisassociateLensesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_lenses::builders::DisassociateLensesInputBuilder,
+}
 impl DisassociateLensesFluentBuilder  {
     /// Creates a new `DisassociateLenses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_lenses::DisassociateLenses, aws_http::retry::AwsResponseRetryClassifier,>,

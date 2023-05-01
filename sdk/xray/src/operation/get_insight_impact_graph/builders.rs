@@ -8,16 +8,17 @@ pub use crate::operation::get_insight_impact_graph::_get_insight_impact_graph_in
 /// <p>Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only structural information. For a complete service graph, use this API with the GetServiceGraph API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInsightImpactGraphFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_insight_impact_graph::builders::GetInsightImpactGraphInputBuilder,
+}
 impl GetInsightImpactGraphFluentBuilder  {
     /// Creates a new `GetInsightImpactGraph`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_insight_impact_graph::GetInsightImpactGraph, aws_http::retry::AwsResponseRetryClassifier,>,

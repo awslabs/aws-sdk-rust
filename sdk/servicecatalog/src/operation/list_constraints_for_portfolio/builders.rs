@@ -8,16 +8,17 @@ pub use crate::operation::list_constraints_for_portfolio::_list_constraints_for_
 /// <p>Lists the constraints for the specified portfolio and product.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListConstraintsForPortfolioFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_constraints_for_portfolio::builders::ListConstraintsForPortfolioInputBuilder,
+}
 impl ListConstraintsForPortfolioFluentBuilder  {
     /// Creates a new `ListConstraintsForPortfolio`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_constraints_for_portfolio::ListConstraintsForPortfolio, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListConstraintsForPortfolioFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_constraints_for_portfolio::paginator::ListConstraintsForPortfolioPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_constraints_for_portfolio::paginator::ListConstraintsForPortfolioPaginator {
-                            crate::operation::list_constraints_for_portfolio::paginator::ListConstraintsForPortfolioPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_constraints_for_portfolio::paginator::ListConstraintsForPortfolioPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_constraints_for_portfolio::paginator::ListConstraintsForPortfolioPaginator {
+                                crate::operation::list_constraints_for_portfolio::paginator::ListConstraintsForPortfolioPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The language code.</p> 
     /// <ul> 
     /// <li> <p> <code>jp</code> - Japanese</p> </li> 

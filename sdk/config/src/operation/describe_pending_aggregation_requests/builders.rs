@@ -8,16 +8,17 @@ pub use crate::operation::describe_pending_aggregation_requests::_describe_pendi
 /// <p>Returns a list of all pending aggregation requests.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePendingAggregationRequestsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_pending_aggregation_requests::builders::DescribePendingAggregationRequestsInputBuilder,
+}
 impl DescribePendingAggregationRequestsFluentBuilder  {
     /// Creates a new `DescribePendingAggregationRequests`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_pending_aggregation_requests::DescribePendingAggregationRequests, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribePendingAggregationRequestsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_pending_aggregation_requests::paginator::DescribePendingAggregationRequestsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_pending_aggregation_requests::paginator::DescribePendingAggregationRequestsPaginator {
-                            crate::operation::describe_pending_aggregation_requests::paginator::DescribePendingAggregationRequestsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_pending_aggregation_requests::paginator::DescribePendingAggregationRequestsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_pending_aggregation_requests::paginator::DescribePendingAggregationRequestsPaginator {
+                                crate::operation::describe_pending_aggregation_requests::paginator::DescribePendingAggregationRequestsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of evaluation results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);

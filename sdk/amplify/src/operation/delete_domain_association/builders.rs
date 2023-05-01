@@ -8,16 +8,17 @@ pub use crate::operation::delete_domain_association::_delete_domain_association_
 /// <p> Deletes a domain association for an Amplify app. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDomainAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_domain_association::builders::DeleteDomainAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_domain_association::builders::DeleteDomainAssociationInputBuilder,
+}
 impl DeleteDomainAssociationFluentBuilder  {
     /// Creates a new `DeleteDomainAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_domain_association::DeleteDomainAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

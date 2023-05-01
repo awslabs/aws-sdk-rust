@@ -9,16 +9,17 @@ pub use crate::operation::verify_user_attribute::_verify_user_attribute_input::V
 /// <p> If your user pool requires verification before Amazon Cognito updates the attribute value, VerifyUserAttribute updates the affected attribute to its pending value. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html"> UserAttributeUpdateSettingsType</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct VerifyUserAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::verify_user_attribute::builders::VerifyUserAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::verify_user_attribute::builders::VerifyUserAttributeInputBuilder,
+}
 impl VerifyUserAttributeFluentBuilder  {
     /// Creates a new `VerifyUserAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::verify_user_attribute::VerifyUserAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

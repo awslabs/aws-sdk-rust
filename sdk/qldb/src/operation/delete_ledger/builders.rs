@@ -9,16 +9,17 @@ pub use crate::operation::delete_ledger::_delete_ledger_input::DeleteLedgerInput
 /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLedgerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_ledger::builders::DeleteLedgerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_ledger::builders::DeleteLedgerInputBuilder,
+}
 impl DeleteLedgerFluentBuilder  {
     /// Creates a new `DeleteLedger`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_ledger::DeleteLedger, aws_http::retry::AwsResponseRetryClassifier,>,

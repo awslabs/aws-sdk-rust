@@ -16,16 +16,17 @@ pub use crate::operation::simulate_principal_policy::_simulate_principal_policy_
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SimulatePrincipalPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::simulate_principal_policy::builders::SimulatePrincipalPolicyInputBuilder,
+}
 impl SimulatePrincipalPolicyFluentBuilder  {
     /// Creates a new `SimulatePrincipalPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::simulate_principal_policy::SimulatePrincipalPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -56,11 +57,11 @@ impl SimulatePrincipalPolicyFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::simulate_principal_policy::paginator::SimulatePrincipalPolicyPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::simulate_principal_policy::paginator::SimulatePrincipalPolicyPaginator {
-                            crate::operation::simulate_principal_policy::paginator::SimulatePrincipalPolicyPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::simulate_principal_policy::paginator::SimulatePrincipalPolicyPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::simulate_principal_policy::paginator::SimulatePrincipalPolicyPaginator {
+                                crate::operation::simulate_principal_policy::paginator::SimulatePrincipalPolicyPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of a user, group, or role whose policies you want to include in the simulation. If you specify a user, group, or role, the simulation includes all policies that are associated with that entity. If you specify a user, the simulation also includes all policies that are attached to any groups the user belongs to.</p> 
     /// <p>The maximum length of the policy document that you can pass in this operation, including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p> 
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>

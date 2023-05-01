@@ -8,16 +8,17 @@ pub use crate::operation::import_certificate::_import_certificate_input::ImportC
 /// <p>Uploads the specified certificate.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_certificate::builders::ImportCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_certificate::builders::ImportCertificateInputBuilder,
+}
 impl ImportCertificateFluentBuilder  {
     /// Creates a new `ImportCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_certificate::ImportCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_subnet::_delete_subnet_input::DeleteSubnetInput
 /// <p>Deletes the specified subnet. You must terminate all running instances in the subnet before you can delete the subnet.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSubnetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_subnet::builders::DeleteSubnetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_subnet::builders::DeleteSubnetInputBuilder,
+}
 impl DeleteSubnetFluentBuilder  {
     /// Creates a new `DeleteSubnet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_subnet::DeleteSubnet, aws_http::retry::AwsResponseRetryClassifier,>,

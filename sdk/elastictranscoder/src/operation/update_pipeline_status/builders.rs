@@ -9,16 +9,17 @@ pub use crate::operation::update_pipeline_status::_update_pipeline_status_input:
 /// <p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can't cancel jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel, and to send a <code>CancelJob</code> request. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePipelineStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_pipeline_status::builders::UpdatePipelineStatusInputBuilder,
+}
 impl UpdatePipelineStatusFluentBuilder  {
     /// Creates a new `UpdatePipelineStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_pipeline_status::UpdatePipelineStatus, aws_http::retry::AwsResponseRetryClassifier,>,

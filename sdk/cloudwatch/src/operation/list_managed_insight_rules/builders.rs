@@ -8,16 +8,17 @@ pub use crate::operation::list_managed_insight_rules::_list_managed_insight_rule
 /// <p> Returns a list that contains the number of managed Contributor Insights rules in your account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListManagedInsightRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_managed_insight_rules::builders::ListManagedInsightRulesInputBuilder,
+}
 impl ListManagedInsightRulesFluentBuilder  {
     /// Creates a new `ListManagedInsightRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_managed_insight_rules::ListManagedInsightRules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListManagedInsightRulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_managed_insight_rules::paginator::ListManagedInsightRulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_managed_insight_rules::paginator::ListManagedInsightRulesPaginator {
-                            crate::operation::list_managed_insight_rules::paginator::ListManagedInsightRulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_managed_insight_rules::paginator::ListManagedInsightRulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_managed_insight_rules::paginator::ListManagedInsightRulesPaginator {
+                                crate::operation::list_managed_insight_rules::paginator::ListManagedInsightRulesPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. </p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());

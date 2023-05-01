@@ -8,16 +8,17 @@ pub use crate::operation::revoke_revision::_revoke_revision_input::RevokeRevisio
 /// <p>This operation revokes subscribers' access to a revision.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RevokeRevisionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::revoke_revision::builders::RevokeRevisionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::revoke_revision::builders::RevokeRevisionInputBuilder,
+}
 impl RevokeRevisionFluentBuilder  {
     /// Creates a new `RevokeRevision`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::revoke_revision::RevokeRevision, aws_http::retry::AwsResponseRetryClassifier,>,

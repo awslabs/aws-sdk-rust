@@ -8,16 +8,17 @@ pub use crate::operation::batch_disassociate_scram_secret::_batch_disassociate_s
 /// <p>Disassociates one or more Scram Secrets from an Amazon MSK cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDisassociateScramSecretFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_disassociate_scram_secret::builders::BatchDisassociateScramSecretInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_disassociate_scram_secret::builders::BatchDisassociateScramSecretInputBuilder,
+}
 impl BatchDisassociateScramSecretFluentBuilder  {
     /// Creates a new `BatchDisassociateScramSecret`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecret, aws_http::retry::AwsResponseRetryClassifier,>,

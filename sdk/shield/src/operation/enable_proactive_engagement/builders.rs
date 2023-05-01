@@ -8,16 +8,17 @@ pub use crate::operation::enable_proactive_engagement::_enable_proactive_engagem
 /// <p>Authorizes the Shield Response Team (SRT) to use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableProactiveEngagementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_proactive_engagement::builders::EnableProactiveEngagementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_proactive_engagement::builders::EnableProactiveEngagementInputBuilder,
+}
 impl EnableProactiveEngagementFluentBuilder  {
     /// Creates a new `EnableProactiveEngagement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_proactive_engagement::EnableProactiveEngagement, aws_http::retry::AwsResponseRetryClassifier,>,

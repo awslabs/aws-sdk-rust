@@ -9,16 +9,17 @@ pub use crate::operation::associate_encryption_config::_associate_encryption_con
 /// <p>You can use this API to enable encryption on existing clusters which do not have encryption already enabled. This allows you to implement a defense-in-depth security strategy without migrating applications to new Amazon EKS clusters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateEncryptionConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_encryption_config::builders::AssociateEncryptionConfigInputBuilder,
+}
 impl AssociateEncryptionConfigFluentBuilder  {
     /// Creates a new `AssociateEncryptionConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_encryption_config::AssociateEncryptionConfig, aws_http::retry::AwsResponseRetryClassifier,>,

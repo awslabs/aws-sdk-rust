@@ -8,16 +8,17 @@ pub use crate::operation::unassign_ipv6_addresses::_unassign_ipv6_addresses_inpu
 /// <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network interface.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UnassignIpv6AddressesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::unassign_ipv6_addresses::builders::UnassignIpv6AddressesInputBuilder,
+}
 impl UnassignIpv6AddressesFluentBuilder  {
     /// Creates a new `UnassignIpv6Addresses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::unassign_ipv6_addresses::UnassignIpv6Addresses, aws_http::retry::AwsResponseRetryClassifier,>,

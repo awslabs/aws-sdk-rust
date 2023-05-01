@@ -9,16 +9,17 @@ pub use crate::operation::list_audit_mitigation_actions_tasks::_list_audit_mitig
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsTasks</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAuditMitigationActionsTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_audit_mitigation_actions_tasks::builders::ListAuditMitigationActionsTasksInputBuilder,
+}
 impl ListAuditMitigationActionsTasksFluentBuilder  {
     /// Creates a new `ListAuditMitigationActionsTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_audit_mitigation_actions_tasks::ListAuditMitigationActionsTasks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListAuditMitigationActionsTasksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_audit_mitigation_actions_tasks::paginator::ListAuditMitigationActionsTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_audit_mitigation_actions_tasks::paginator::ListAuditMitigationActionsTasksPaginator {
-                            crate::operation::list_audit_mitigation_actions_tasks::paginator::ListAuditMitigationActionsTasksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_audit_mitigation_actions_tasks::paginator::ListAuditMitigationActionsTasksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_audit_mitigation_actions_tasks::paginator::ListAuditMitigationActionsTasksPaginator {
+                                crate::operation::list_audit_mitigation_actions_tasks::paginator::ListAuditMitigationActionsTasksPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specify this filter to limit results to tasks that were applied to results for a specific audit.</p>
     pub fn audit_task_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.audit_task_id(input.into());

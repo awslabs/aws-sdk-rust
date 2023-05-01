@@ -8,16 +8,17 @@ pub use crate::operation::delete_backup_plan::_delete_backup_plan_input::DeleteB
 /// <p>Deletes a backup plan. A backup plan can only be deleted after all associated selections of resources have been deleted. Deleting a backup plan deletes the current version of a backup plan. Previous versions, if any, will still exist.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBackupPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_backup_plan::builders::DeleteBackupPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_backup_plan::builders::DeleteBackupPlanInputBuilder,
+}
 impl DeleteBackupPlanFluentBuilder  {
     /// Creates a new `DeleteBackupPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_backup_plan::DeleteBackupPlan, aws_http::retry::AwsResponseRetryClassifier,>,

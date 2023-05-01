@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_commits::_batch_get_commits_input::BatchGetC
 /// <p>Returns information about the contents of one or more commits in a repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetCommitsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_commits::builders::BatchGetCommitsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_commits::builders::BatchGetCommitsInputBuilder,
+}
 impl BatchGetCommitsFluentBuilder  {
     /// Creates a new `BatchGetCommits`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_commits::BatchGetCommits, aws_http::retry::AwsResponseRetryClassifier,>,

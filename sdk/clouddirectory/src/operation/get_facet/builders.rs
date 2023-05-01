@@ -8,16 +8,17 @@ pub use crate::operation::get_facet::_get_facet_input::GetFacetInputBuilder;
 /// <p>Gets details of the <code>Facet</code>, such as facet name, attributes, <code>Rule</code>s, or <code>ObjectType</code>. You can call this on all kinds of schema facets -- published, development, or applied.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFacetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_facet::builders::GetFacetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_facet::builders::GetFacetInputBuilder,
+}
 impl GetFacetFluentBuilder  {
     /// Creates a new `GetFacet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_facet::GetFacet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::delete_delivery_stream::_delete_delivery_stream_input:
 /// <p>While the delivery stream is in the <code>DELETING</code> state, the service might continue to accept records, but it doesn't make any guarantees with respect to delivering the data. Therefore, as a best practice, first stop any applications that are sending records before you delete a delivery stream.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDeliveryStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_delivery_stream::builders::DeleteDeliveryStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_delivery_stream::builders::DeleteDeliveryStreamInputBuilder,
+}
 impl DeleteDeliveryStreamFluentBuilder  {
     /// Creates a new `DeleteDeliveryStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_delivery_stream::DeleteDeliveryStream, aws_http::retry::AwsResponseRetryClassifier,>,

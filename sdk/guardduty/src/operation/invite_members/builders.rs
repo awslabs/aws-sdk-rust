@@ -8,16 +8,17 @@ pub use crate::operation::invite_members::_invite_members_input::InviteMembersIn
 /// <p>Invites other Amazon Web Services accounts (created as members of the current Amazon Web Services account by CreateMembers) to enable GuardDuty, and allow the current Amazon Web Services account to view and manage these accounts' findings on their behalf as the GuardDuty administrator account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InviteMembersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::invite_members::builders::InviteMembersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::invite_members::builders::InviteMembersInputBuilder,
+}
 impl InviteMembersFluentBuilder  {
     /// Creates a new `InviteMembers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::invite_members::InviteMembers, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_reference_metadata::_get_reference_metadata_input:
 /// <p>Gets information about a genome reference's metadata.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetReferenceMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_reference_metadata::builders::GetReferenceMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_reference_metadata::builders::GetReferenceMetadataInputBuilder,
+}
 impl GetReferenceMetadataFluentBuilder  {
     /// Creates a new `GetReferenceMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_reference_metadata::GetReferenceMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

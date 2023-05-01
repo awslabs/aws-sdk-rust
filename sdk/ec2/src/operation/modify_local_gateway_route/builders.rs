@@ -8,16 +8,17 @@ pub use crate::operation::modify_local_gateway_route::_modify_local_gateway_rout
 /// <p>Modifies the specified local gateway route.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyLocalGatewayRouteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder,
+}
 impl ModifyLocalGatewayRouteFluentBuilder  {
     /// Creates a new `ModifyLocalGatewayRoute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_local_gateway_route::ModifyLocalGatewayRoute, aws_http::retry::AwsResponseRetryClassifier,>,

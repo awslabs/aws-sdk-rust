@@ -8,16 +8,17 @@ pub use crate::operation::start_campaign::_start_campaign_input::StartCampaignIn
 /// Starts a campaign for the specified Amazon Connect account.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartCampaignFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_campaign::builders::StartCampaignInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_campaign::builders::StartCampaignInputBuilder,
+}
 impl StartCampaignFluentBuilder  {
     /// Creates a new `StartCampaign`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_campaign::StartCampaign, aws_http::retry::AwsResponseRetryClassifier,>,

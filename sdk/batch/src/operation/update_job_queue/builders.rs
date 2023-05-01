@@ -8,16 +8,17 @@ pub use crate::operation::update_job_queue::_update_job_queue_input::UpdateJobQu
 /// <p>Updates a job queue.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateJobQueueFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_job_queue::builders::UpdateJobQueueInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_job_queue::builders::UpdateJobQueueInputBuilder,
+}
 impl UpdateJobQueueFluentBuilder  {
     /// Creates a new `UpdateJobQueue`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_job_queue::UpdateJobQueue, aws_http::retry::AwsResponseRetryClassifier,>,

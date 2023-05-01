@@ -38,10 +38,12 @@ pub(crate) fn uuid_v4(input: u128) -> String {
 /// for testing, two options are available:
 /// 1. Utilize the From<&'static str>` implementation to hard code an idempotency token
 /// 2. Seed the token provider with [`IdempotencyTokenProvider::with_seed`](IdempotencyTokenProvider::with_seed)
+#[derive(Debug)]
 pub struct IdempotencyTokenProvider {
     inner: Inner,
 }
 
+#[derive(Debug)]
 enum Inner {
     Static(&'static str),
     Random(Mutex<fastrand::Rng>),

@@ -9,16 +9,17 @@ pub use crate::operation::create_connect_client_add_in::_create_connect_client_a
 /// <p>This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConnectClientAddInFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInInputBuilder,
+}
 impl CreateConnectClientAddInFluentBuilder  {
     /// Creates a new `CreateConnectClientAddIn`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_connect_client_add_in::CreateConnectClientAddIn, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::search_tables::_search_tables_input::SearchTablesInput
 /// <p>You can only get tables that you have access to based on the security policies defined in Lake Formation. You need at least a read-only access to the table for it to be returned. If you do not have access to all the columns in the table, these columns will not be searched against when returning the list of tables back to you. If you have access to the columns but not the data in the columns, those columns and the associated metadata for those columns will be included in the search. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchTablesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_tables::builders::SearchTablesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_tables::builders::SearchTablesInputBuilder,
+}
 impl SearchTablesFluentBuilder  {
     /// Creates a new `SearchTables`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_tables::SearchTables, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl SearchTablesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_tables::paginator::SearchTablesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_tables::paginator::SearchTablesPaginator {
-                            crate::operation::search_tables::paginator::SearchTablesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_tables::paginator::SearchTablesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_tables::paginator::SearchTablesPaginator {
+                                crate::operation::search_tables::paginator::SearchTablesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());

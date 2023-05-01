@@ -8,16 +8,17 @@ pub use crate::operation::describe_cache_subnet_groups::_describe_cache_subnet_g
 /// <p>Returns a list of cache subnet group descriptions. If a subnet group name is specified, the list contains only the description of that group. This is applicable only when you have ElastiCache in VPC setup. All ElastiCache clusters now launch in VPC by default. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCacheSubnetGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cache_subnet_groups::builders::DescribeCacheSubnetGroupsInputBuilder,
+}
 impl DescribeCacheSubnetGroupsFluentBuilder  {
     /// Creates a new `DescribeCacheSubnetGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeCacheSubnetGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_subnet_groups::paginator::DescribeCacheSubnetGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_cache_subnet_groups::paginator::DescribeCacheSubnetGroupsPaginator {
-                            crate::operation::describe_cache_subnet_groups::paginator::DescribeCacheSubnetGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_subnet_groups::paginator::DescribeCacheSubnetGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_cache_subnet_groups::paginator::DescribeCacheSubnetGroupsPaginator {
+                                crate::operation::describe_cache_subnet_groups::paginator::DescribeCacheSubnetGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the cache subnet group to return details for.</p>
     pub fn cache_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cache_subnet_group_name(input.into());

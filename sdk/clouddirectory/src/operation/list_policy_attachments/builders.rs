@@ -8,16 +8,17 @@ pub use crate::operation::list_policy_attachments::_list_policy_attachments_inpu
 /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPolicyAttachmentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsInputBuilder,
+}
 impl ListPolicyAttachmentsFluentBuilder  {
     /// Creates a new `ListPolicyAttachments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_policy_attachments::ListPolicyAttachments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPolicyAttachmentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator {
-                            crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator {
+                                crate::operation::list_policy_attachments::paginator::ListPolicyAttachmentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where objects reside. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());

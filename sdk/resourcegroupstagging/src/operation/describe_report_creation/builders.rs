@@ -9,16 +9,17 @@ pub use crate::operation::describe_report_creation::_describe_report_creation_in
 /// <p>You can call this operation only from the organization's management account and from the us-east-1 Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReportCreationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_report_creation::builders::DescribeReportCreationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_report_creation::builders::DescribeReportCreationInputBuilder,
+}
 impl DescribeReportCreationFluentBuilder  {
     /// Creates a new `DescribeReportCreation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_report_creation::DescribeReportCreation, aws_http::retry::AwsResponseRetryClassifier,>,

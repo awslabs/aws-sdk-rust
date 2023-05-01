@@ -9,16 +9,17 @@ pub use crate::operation::describe_scheduled_audit::_describe_scheduled_audit_in
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeScheduledAudit</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeScheduledAuditFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder,
+}
 impl DescribeScheduledAuditFluentBuilder  {
     /// Creates a new `DescribeScheduledAudit`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_scheduled_audit::DescribeScheduledAudit, aws_http::retry::AwsResponseRetryClassifier,>,

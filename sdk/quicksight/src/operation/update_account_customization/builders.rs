@@ -9,16 +9,17 @@ pub use crate::operation::update_account_customization::_update_account_customiz
 /// <p>You can use customizations for your Amazon Web Services account or, if you specify a namespace, for a Amazon QuickSight namespace instead. Customizations that apply to a namespace override customizations that apply to an Amazon Web Services account. To find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAccountCustomizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_account_customization::builders::UpdateAccountCustomizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_account_customization::builders::UpdateAccountCustomizationInputBuilder,
+}
 impl UpdateAccountCustomizationFluentBuilder  {
     /// Creates a new `UpdateAccountCustomization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_account_customization::UpdateAccountCustomization, aws_http::retry::AwsResponseRetryClassifier,>,

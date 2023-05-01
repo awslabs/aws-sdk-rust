@@ -8,16 +8,17 @@ pub use crate::operation::deregister_gateway_instance::_deregister_gateway_insta
 /// Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped. If you want to deregister an instance without stopping the bridges, you must use the --force option.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterGatewayInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_gateway_instance::builders::DeregisterGatewayInstanceInputBuilder,
+}
 impl DeregisterGatewayInstanceFluentBuilder  {
     /// Creates a new `DeregisterGatewayInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_gateway_instance::DeregisterGatewayInstance, aws_http::retry::AwsResponseRetryClassifier,>,

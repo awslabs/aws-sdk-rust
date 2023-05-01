@@ -8,16 +8,17 @@ pub use crate::operation::list_multiplex_programs::_list_multiplex_programs_inpu
 /// List the programs that currently exist for a specific multiplex.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMultiplexProgramsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_multiplex_programs::builders::ListMultiplexProgramsInputBuilder,
+}
 impl ListMultiplexProgramsFluentBuilder  {
     /// Creates a new `ListMultiplexPrograms`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_multiplex_programs::ListMultiplexPrograms, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListMultiplexProgramsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator {
-                            crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator {
+                                crate::operation::list_multiplex_programs::paginator::ListMultiplexProgramsPaginator::new(self.handle, self.inner)
+                            }
     /// The maximum number of items to return.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

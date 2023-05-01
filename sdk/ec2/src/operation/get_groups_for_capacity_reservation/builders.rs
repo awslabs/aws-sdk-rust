@@ -8,16 +8,17 @@ pub use crate::operation::get_groups_for_capacity_reservation::_get_groups_for_c
 /// <p>Lists the resource groups to which a Capacity Reservation has been added.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetGroupsForCapacityReservationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_groups_for_capacity_reservation::builders::GetGroupsForCapacityReservationInputBuilder,
+}
 impl GetGroupsForCapacityReservationFluentBuilder  {
     /// Creates a new `GetGroupsForCapacityReservation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_groups_for_capacity_reservation::GetGroupsForCapacityReservation, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetGroupsForCapacityReservationFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_groups_for_capacity_reservation::paginator::GetGroupsForCapacityReservationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_groups_for_capacity_reservation::paginator::GetGroupsForCapacityReservationPaginator {
-                            crate::operation::get_groups_for_capacity_reservation::paginator::GetGroupsForCapacityReservationPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_groups_for_capacity_reservation::paginator::GetGroupsForCapacityReservationPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_groups_for_capacity_reservation::paginator::GetGroupsForCapacityReservationPaginator {
+                                crate::operation::get_groups_for_capacity_reservation::paginator::GetGroupsForCapacityReservationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation that is shared with you, the operation returns only Capacity Reservation groups that you own.</p>
     pub fn capacity_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.capacity_reservation_id(input.into());

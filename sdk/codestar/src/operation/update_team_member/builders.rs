@@ -8,16 +8,17 @@ pub use crate::operation::update_team_member::_update_team_member_input::UpdateT
 /// <p>Updates a team member's attributes in an AWS CodeStar project. For example, you can change a team member's role in the project, or change whether they have remote access to project resources.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTeamMemberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_team_member::builders::UpdateTeamMemberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_team_member::builders::UpdateTeamMemberInputBuilder,
+}
 impl UpdateTeamMemberFluentBuilder  {
     /// Creates a new `UpdateTeamMember`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_team_member::UpdateTeamMember, aws_http::retry::AwsResponseRetryClassifier,>,

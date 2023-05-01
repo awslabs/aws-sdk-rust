@@ -15,16 +15,17 @@ pub use crate::operation::start_medical_stream_transcription::_start_medical_str
 /// <p>For more information on streaming with Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
 #[derive(std::fmt::Debug)]
 pub struct StartMedicalStreamTranscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionInputBuilder,
+}
 impl StartMedicalStreamTranscriptionFluentBuilder  {
     /// Creates a new `StartMedicalStreamTranscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscription, aws_http::retry::AwsResponseRetryClassifier,>,

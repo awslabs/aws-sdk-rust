@@ -10,16 +10,17 @@ pub use crate::operation::delete_notebook_instance::_delete_notebook_instance_in
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNotebookInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceInputBuilder,
+}
 impl DeleteNotebookInstanceFluentBuilder  {
     /// Creates a new `DeleteNotebookInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_notebook_instance::DeleteNotebookInstance, aws_http::retry::AwsResponseRetryClassifier,>,

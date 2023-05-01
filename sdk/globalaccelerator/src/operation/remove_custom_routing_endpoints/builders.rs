@@ -8,16 +8,17 @@ pub use crate::operation::remove_custom_routing_endpoints::_remove_custom_routin
 /// <p>Remove endpoints from a custom routing accelerator.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveCustomRoutingEndpointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_custom_routing_endpoints::builders::RemoveCustomRoutingEndpointsInputBuilder,
+}
 impl RemoveCustomRoutingEndpointsFluentBuilder  {
     /// Creates a new `RemoveCustomRoutingEndpoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,

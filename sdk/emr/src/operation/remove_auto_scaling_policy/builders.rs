@@ -8,16 +8,17 @@ pub use crate::operation::remove_auto_scaling_policy::_remove_auto_scaling_polic
 /// <p>Removes an automatic scaling policy from a specified instance group within an EMR cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveAutoScalingPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_auto_scaling_policy::builders::RemoveAutoScalingPolicyInputBuilder,
+}
 impl RemoveAutoScalingPolicyFluentBuilder  {
     /// Creates a new `RemoveAutoScalingPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

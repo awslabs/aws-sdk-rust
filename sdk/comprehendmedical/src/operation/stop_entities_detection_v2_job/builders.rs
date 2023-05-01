@@ -8,16 +8,17 @@ pub use crate::operation::stop_entities_detection_v2_job::_stop_entities_detecti
 /// <p>Stops a medical entities detection job in progress.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopEntitiesDetectionV2JobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_entities_detection_v2_job::builders::StopEntitiesDetectionV2JobInputBuilder,
+}
 impl StopEntitiesDetectionV2JobFluentBuilder  {
     /// Creates a new `StopEntitiesDetectionV2Job`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_entities_detection_v2_job::StopEntitiesDetectionV2Job, aws_http::retry::AwsResponseRetryClassifier,>,

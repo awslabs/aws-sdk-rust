@@ -8,16 +8,17 @@ pub use crate::operation::batch_create_partition::_batch_create_partition_input:
 /// <p>Creates one or more partitions in a batch operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchCreatePartitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_create_partition::builders::BatchCreatePartitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_create_partition::builders::BatchCreatePartitionInputBuilder,
+}
 impl BatchCreatePartitionFluentBuilder  {
     /// Creates a new `BatchCreatePartition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_create_partition::BatchCreatePartition, aws_http::retry::AwsResponseRetryClassifier,>,

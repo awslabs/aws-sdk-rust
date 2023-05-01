@@ -8,16 +8,17 @@ pub use crate::operation::update_routing_profile_name::_update_routing_profile_n
 /// <p>Updates the name and description of a routing profile. The request accepts the following data in JSON format. At least <code>Name</code> or <code>Description</code> must be provided.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRoutingProfileNameFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameInputBuilder,
+}
 impl UpdateRoutingProfileNameFluentBuilder  {
     /// Creates a new `UpdateRoutingProfileName`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_routing_profile_name::UpdateRoutingProfileName, aws_http::retry::AwsResponseRetryClassifier,>,

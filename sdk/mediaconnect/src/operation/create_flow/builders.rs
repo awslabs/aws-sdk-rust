@@ -8,16 +8,17 @@ pub use crate::operation::create_flow::_create_flow_input::CreateFlowInputBuilde
 /// Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFlowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_flow::builders::CreateFlowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_flow::builders::CreateFlowInputBuilder,
+}
 impl CreateFlowFluentBuilder  {
     /// Creates a new `CreateFlow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_flow::CreateFlow, aws_http::retry::AwsResponseRetryClassifier,>,

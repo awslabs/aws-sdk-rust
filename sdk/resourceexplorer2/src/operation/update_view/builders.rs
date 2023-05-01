@@ -8,16 +8,17 @@ pub use crate::operation::update_view::_update_view_input::UpdateViewInputBuilde
 /// <p>Modifies some of the details of a view. You can change the filter string and the list of included properties. You can't change the name of the view.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateViewFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_view::builders::UpdateViewInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_view::builders::UpdateViewInputBuilder,
+}
 impl UpdateViewFluentBuilder  {
     /// Creates a new `UpdateView`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_view::UpdateView, aws_http::retry::AwsResponseRetryClassifier,>,

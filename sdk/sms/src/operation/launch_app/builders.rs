@@ -8,16 +8,17 @@ pub use crate::operation::launch_app::_launch_app_input::LaunchAppInputBuilder;
 /// <p>Launches the specified application as a stack in CloudFormation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct LaunchAppFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::launch_app::builders::LaunchAppInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::launch_app::builders::LaunchAppInputBuilder,
+}
 impl LaunchAppFluentBuilder  {
     /// Creates a new `LaunchApp`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::launch_app::LaunchApp, aws_http::retry::AwsResponseRetryClassifier,>,

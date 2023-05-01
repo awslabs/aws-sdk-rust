@@ -8,16 +8,17 @@ pub use crate::operation::update_timeline_event::_update_timeline_event_input::U
 /// <p>Updates a timeline event. You can update events of type <code>Custom Event</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTimelineEventFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder,
+}
 impl UpdateTimelineEventFluentBuilder  {
     /// Creates a new `UpdateTimelineEvent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_timeline_event::UpdateTimelineEvent, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::send_announcement::_send_announcement_input::SendAnnou
 /// <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search or filter. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendAnnouncementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_announcement::builders::SendAnnouncementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_announcement::builders::SendAnnouncementInputBuilder,
+}
 impl SendAnnouncementFluentBuilder  {
     /// Creates a new `SendAnnouncement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_announcement::SendAnnouncement, aws_http::retry::AwsResponseRetryClassifier,>,

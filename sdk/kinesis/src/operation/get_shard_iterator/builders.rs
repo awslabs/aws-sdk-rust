@@ -16,16 +16,17 @@ pub use crate::operation::get_shard_iterator::_get_shard_iterator_input::GetShar
 /// <p> <code>GetShardIterator</code> has a limit of five transactions per second per account per open shard.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetShardIteratorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_shard_iterator::builders::GetShardIteratorInputBuilder,
+}
 impl GetShardIteratorFluentBuilder  {
     /// Creates a new `GetShardIterator`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_shard_iterator::GetShardIterator, aws_http::retry::AwsResponseRetryClassifier,>,

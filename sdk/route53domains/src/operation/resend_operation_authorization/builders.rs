@@ -8,16 +8,17 @@ pub use crate::operation::resend_operation_authorization::_resend_operation_auth
 /// <p> Resend the form of authorization email for this operation. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResendOperationAuthorizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::resend_operation_authorization::builders::ResendOperationAuthorizationInputBuilder,
+}
 impl ResendOperationAuthorizationFluentBuilder  {
     /// Creates a new `ResendOperationAuthorization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::resend_operation_authorization::ResendOperationAuthorization, aws_http::retry::AwsResponseRetryClassifier,>,

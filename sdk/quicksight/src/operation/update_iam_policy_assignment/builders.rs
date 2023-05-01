@@ -8,16 +8,17 @@ pub use crate::operation::update_iam_policy_assignment::_update_iam_policy_assig
 /// <p>Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that are specified in the request. This overwrites all of the users included in <code>Identities</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateIAMPolicyAssignmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_iam_policy_assignment::builders::UpdateIamPolicyAssignmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_iam_policy_assignment::builders::UpdateIamPolicyAssignmentInputBuilder,
+}
 impl UpdateIAMPolicyAssignmentFluentBuilder  {
     /// Creates a new `UpdateIAMPolicyAssignment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_iam_policy_assignment::UpdateIAMPolicyAssignment, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::start_targeted_sentiment_detection_job::_start_targete
 /// <p>Starts an asynchronous targeted sentiment detection job for a collection of documents. Use the <code>DescribeTargetedSentimentDetectionJob</code> operation to track the status of a job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartTargetedSentimentDetectionJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_targeted_sentiment_detection_job::builders::StartTargetedSentimentDetectionJobInputBuilder,
+}
 impl StartTargetedSentimentDetectionJobFluentBuilder  {
     /// Creates a new `StartTargetedSentimentDetectionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_targeted_sentiment_detection_job::StartTargetedSentimentDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,

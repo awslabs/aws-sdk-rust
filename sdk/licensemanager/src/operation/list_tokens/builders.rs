@@ -8,16 +8,17 @@ pub use crate::operation::list_tokens::_list_tokens_input::ListTokensInputBuilde
 /// <p>Lists your tokens.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTokensFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tokens::builders::ListTokensInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tokens::builders::ListTokensInputBuilder,
+}
 impl ListTokensFluentBuilder  {
     /// Creates a new `ListTokens`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tokens::ListTokens, aws_http::retry::AwsResponseRetryClassifier,>,

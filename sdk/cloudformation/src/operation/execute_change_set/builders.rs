@@ -11,16 +11,17 @@ pub use crate::operation::execute_change_set::_execute_change_set_input::Execute
 /// <p>To create a change set for the entire stack hierarchy, <code>IncludeNestedStacks</code> must have been set to <code>True</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExecuteChangeSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::execute_change_set::builders::ExecuteChangeSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::execute_change_set::builders::ExecuteChangeSetInputBuilder,
+}
 impl ExecuteChangeSetFluentBuilder  {
     /// Creates a new `ExecuteChangeSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::execute_change_set::ExecuteChangeSet, aws_http::retry::AwsResponseRetryClassifier,>,

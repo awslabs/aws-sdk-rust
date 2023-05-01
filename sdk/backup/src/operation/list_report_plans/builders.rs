@@ -8,16 +8,17 @@ pub use crate::operation::list_report_plans::_list_report_plans_input::ListRepor
 /// <p>Returns a list of your report plans. For detailed information about a single report plan, use <code>DescribeReportPlan</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReportPlansFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_report_plans::builders::ListReportPlansInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_report_plans::builders::ListReportPlansInputBuilder,
+}
 impl ListReportPlansFluentBuilder  {
     /// Creates a new `ListReportPlans`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_report_plans::ListReportPlans, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListReportPlansFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_report_plans::paginator::ListReportPlansPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_report_plans::paginator::ListReportPlansPaginator {
-                            crate::operation::list_report_plans::paginator::ListReportPlansPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_report_plans::paginator::ListReportPlansPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_report_plans::paginator::ListReportPlansPaginator {
+                                crate::operation::list_report_plans::paginator::ListReportPlansPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

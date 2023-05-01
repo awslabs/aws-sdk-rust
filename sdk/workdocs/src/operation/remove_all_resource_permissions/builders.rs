@@ -8,16 +8,17 @@ pub use crate::operation::remove_all_resource_permissions::_remove_all_resource_
 /// <p>Removes all the permissions from the specified resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveAllResourcePermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsInputBuilder,
+}
 impl RemoveAllResourcePermissionsFluentBuilder  {
     /// Creates a new `RemoveAllResourcePermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissions, aws_http::retry::AwsResponseRetryClassifier,>,

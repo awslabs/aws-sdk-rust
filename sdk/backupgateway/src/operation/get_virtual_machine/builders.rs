@@ -8,16 +8,17 @@ pub use crate::operation::get_virtual_machine::_get_virtual_machine_input::GetVi
 /// <p>By providing the ARN (Amazon Resource Name), this API returns the virtual machine.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVirtualMachineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_virtual_machine::builders::GetVirtualMachineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_virtual_machine::builders::GetVirtualMachineInputBuilder,
+}
 impl GetVirtualMachineFluentBuilder  {
     /// Creates a new `GetVirtualMachine`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_virtual_machine::GetVirtualMachine, aws_http::retry::AwsResponseRetryClassifier,>,

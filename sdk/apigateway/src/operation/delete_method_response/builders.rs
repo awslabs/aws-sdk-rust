@@ -8,16 +8,17 @@ pub use crate::operation::delete_method_response::_delete_method_response_input:
 /// <p>Deletes an existing MethodResponse resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMethodResponseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_method_response::builders::DeleteMethodResponseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_method_response::builders::DeleteMethodResponseInputBuilder,
+}
 impl DeleteMethodResponseFluentBuilder  {
     /// Creates a new `DeleteMethodResponse`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_method_response::DeleteMethodResponse, aws_http::retry::AwsResponseRetryClassifier,>,

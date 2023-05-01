@@ -21,16 +21,17 @@ pub use crate::operation::submit_multi_region_access_point_routes::_submit_multi
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SubmitMultiRegionAccessPointRoutesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesInputBuilder,
+}
 impl SubmitMultiRegionAccessPointRoutesFluentBuilder  {
     /// Creates a new `SubmitMultiRegionAccessPointRoutes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutes, aws_http::retry::AwsResponseRetryClassifier,>,

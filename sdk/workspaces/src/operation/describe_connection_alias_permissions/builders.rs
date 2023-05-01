@@ -8,16 +8,17 @@ pub use crate::operation::describe_connection_alias_permissions::_describe_conne
 /// <p>Describes the permissions that the owner of a connection alias has granted to another Amazon Web Services account for the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConnectionAliasPermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_connection_alias_permissions::builders::DescribeConnectionAliasPermissionsInputBuilder,
+}
 impl DescribeConnectionAliasPermissionsFluentBuilder  {
     /// Creates a new `DescribeConnectionAliasPermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissions, aws_http::retry::AwsResponseRetryClassifier,>,

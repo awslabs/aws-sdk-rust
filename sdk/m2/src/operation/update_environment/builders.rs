@@ -8,16 +8,17 @@ pub use crate::operation::update_environment::_update_environment_input::UpdateE
 /// <p>Updates the configuration details for a specific runtime environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEnvironmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder,
+}
 impl UpdateEnvironmentFluentBuilder  {
     /// Creates a new `UpdateEnvironment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_environment::UpdateEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,

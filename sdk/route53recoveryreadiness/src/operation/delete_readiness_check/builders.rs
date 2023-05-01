@@ -8,16 +8,17 @@ pub use crate::operation::delete_readiness_check::_delete_readiness_check_input:
 /// <p>Deletes a readiness check.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteReadinessCheckFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_readiness_check::builders::DeleteReadinessCheckInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_readiness_check::builders::DeleteReadinessCheckInputBuilder,
+}
 impl DeleteReadinessCheckFluentBuilder  {
     /// Creates a new `DeleteReadinessCheck`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_readiness_check::DeleteReadinessCheck, aws_http::retry::AwsResponseRetryClassifier,>,

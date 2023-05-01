@@ -8,16 +8,17 @@ pub use crate::operation::get_contact_channel::_get_contact_channel_input::GetCo
 /// <p>List details about a specific contact channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetContactChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_contact_channel::builders::GetContactChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_contact_channel::builders::GetContactChannelInputBuilder,
+}
 impl GetContactChannelFluentBuilder  {
     /// Creates a new `GetContactChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_contact_channel::GetContactChannel, aws_http::retry::AwsResponseRetryClassifier,>,

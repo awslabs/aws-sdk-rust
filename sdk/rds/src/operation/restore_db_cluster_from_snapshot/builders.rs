@@ -13,16 +13,17 @@ pub use crate::operation::restore_db_cluster_from_snapshot::_restore_db_cluster_
 /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreDBClusterFromSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDbClusterFromSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDbClusterFromSnapshotInputBuilder,
+}
 impl RestoreDBClusterFromSnapshotFluentBuilder  {
     /// Creates a new `RestoreDBClusterFromSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

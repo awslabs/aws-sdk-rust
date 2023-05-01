@@ -8,16 +8,17 @@ pub use crate::operation::stop_campaign::_stop_campaign_input::StopCampaignInput
 /// Stops a campaign for the specified Amazon Connect account.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopCampaignFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_campaign::builders::StopCampaignInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_campaign::builders::StopCampaignInputBuilder,
+}
 impl StopCampaignFluentBuilder  {
     /// Creates a new `StopCampaign`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_campaign::StopCampaign, aws_http::retry::AwsResponseRetryClassifier,>,

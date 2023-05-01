@@ -8,16 +8,17 @@ pub use crate::operation::list_vpc_ingress_connections::_list_vpc_ingress_connec
 /// <p>Return a list of App Runner VPC Ingress Connections in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVpcIngressConnectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_vpc_ingress_connections::builders::ListVpcIngressConnectionsInputBuilder,
+}
 impl ListVpcIngressConnectionsFluentBuilder  {
     /// Creates a new `ListVpcIngressConnections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_vpc_ingress_connections::ListVpcIngressConnections, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListVpcIngressConnectionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_vpc_ingress_connections::paginator::ListVpcIngressConnectionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_vpc_ingress_connections::paginator::ListVpcIngressConnectionsPaginator {
-                            crate::operation::list_vpc_ingress_connections::paginator::ListVpcIngressConnectionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_vpc_ingress_connections::paginator::ListVpcIngressConnectionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_vpc_ingress_connections::paginator::ListVpcIngressConnectionsPaginator {
+                                crate::operation::list_vpc_ingress_connections::paginator::ListVpcIngressConnectionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The VPC Ingress Connections to be listed based on either the Service Arn or Vpc Endpoint Id, or both.</p>
     pub fn filter(mut self, input: crate::types::ListVpcIngressConnectionsFilter) -> Self {
         self.inner = self.inner.filter(input);

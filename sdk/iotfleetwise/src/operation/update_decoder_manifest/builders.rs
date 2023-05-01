@@ -9,16 +9,17 @@ pub use crate::operation::update_decoder_manifest::_update_decoder_manifest_inpu
 /// <p>A decoder manifest can only be updated when the status is <code>DRAFT</code>. Only <code>ACTIVE</code> decoder manifests can be associated with vehicles.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDecoderManifestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestInputBuilder,
+}
 impl UpdateDecoderManifestFluentBuilder  {
     /// Creates a new `UpdateDecoderManifest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_decoder_manifest::UpdateDecoderManifest, aws_http::retry::AwsResponseRetryClassifier,>,

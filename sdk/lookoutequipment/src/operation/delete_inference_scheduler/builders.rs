@@ -8,16 +8,17 @@ pub use crate::operation::delete_inference_scheduler::_delete_inference_schedule
 /// <p>Deletes an inference scheduler that has been set up. Already processed output results are not affected. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInferenceSchedulerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerInputBuilder,
+}
 impl DeleteInferenceSchedulerFluentBuilder  {
     /// Creates a new `DeleteInferenceScheduler`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_inference_scheduler::DeleteInferenceScheduler, aws_http::retry::AwsResponseRetryClassifier,>,

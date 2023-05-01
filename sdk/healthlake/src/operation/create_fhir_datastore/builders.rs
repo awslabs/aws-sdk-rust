@@ -8,16 +8,17 @@ pub use crate::operation::create_fhir_datastore::_create_fhir_datastore_input::C
 /// <p>Creates a Data Store that can ingest and export FHIR formatted data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFHIRDatastoreFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_fhir_datastore::builders::CreateFhirDatastoreInputBuilder,
+}
 impl CreateFHIRDatastoreFluentBuilder  {
     /// Creates a new `CreateFHIRDatastore`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_fhir_datastore::CreateFHIRDatastore, aws_http::retry::AwsResponseRetryClassifier,>,

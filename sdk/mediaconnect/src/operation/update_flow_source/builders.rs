@@ -8,16 +8,17 @@ pub use crate::operation::update_flow_source::_update_flow_source_input::UpdateF
 /// Updates the source of a flow.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFlowSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_flow_source::builders::UpdateFlowSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_flow_source::builders::UpdateFlowSourceInputBuilder,
+}
 impl UpdateFlowSourceFluentBuilder  {
     /// Creates a new `UpdateFlowSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_flow_source::UpdateFlowSource, aws_http::retry::AwsResponseRetryClassifier,>,

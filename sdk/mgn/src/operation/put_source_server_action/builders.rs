@@ -8,16 +8,17 @@ pub use crate::operation::put_source_server_action::_put_source_server_action_in
 /// <p>Put source server post migration custom action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutSourceServerActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_source_server_action::builders::PutSourceServerActionInputBuilder,
+}
 impl PutSourceServerActionFluentBuilder  {
     /// Creates a new `PutSourceServerAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_source_server_action::PutSourceServerAction, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_deployment_strategy::_create_deployment_strateg
 /// <p>Creates a deployment strategy that defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDeploymentStrategyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder,
+}
 impl CreateDeploymentStrategyFluentBuilder  {
     /// Creates a new `CreateDeploymentStrategy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_deployment_strategy::CreateDeploymentStrategy, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_route_table::_delete_route_table_input::DeleteR
 /// <p>Deletes the specified route table. You must disassociate the route table from any subnets before you can delete it. You can't delete the main route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRouteTableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_route_table::builders::DeleteRouteTableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_route_table::builders::DeleteRouteTableInputBuilder,
+}
 impl DeleteRouteTableFluentBuilder  {
     /// Creates a new `DeleteRouteTable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_route_table::DeleteRouteTable, aws_http::retry::AwsResponseRetryClassifier,>,

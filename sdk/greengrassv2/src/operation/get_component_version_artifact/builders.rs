@@ -8,16 +8,17 @@ pub use crate::operation::get_component_version_artifact::_get_component_version
 /// <p>Gets the pre-signed URL to download a public or a Lambda component artifact. Core devices call this operation to identify the URL that they can use to download an artifact to install.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetComponentVersionArtifactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_component_version_artifact::builders::GetComponentVersionArtifactInputBuilder,
+}
 impl GetComponentVersionArtifactFluentBuilder  {
     /// Creates a new `GetComponentVersionArtifact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_component_version_artifact::GetComponentVersionArtifact, aws_http::retry::AwsResponseRetryClassifier,>,

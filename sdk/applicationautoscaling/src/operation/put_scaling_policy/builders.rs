@@ -14,16 +14,17 @@ pub use crate::operation::put_scaling_policy::_put_scaling_policy_input::PutScal
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutScalingPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder,
+}
 impl PutScalingPolicyFluentBuilder  {
     /// Creates a new `PutScalingPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_scaling_policy::PutScalingPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

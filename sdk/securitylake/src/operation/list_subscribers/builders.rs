@@ -8,16 +8,17 @@ pub use crate::operation::list_subscribers::_list_subscribers_input::ListSubscri
 /// <p>List all subscribers for the specific Amazon Security Lake account ID. You can retrieve a list of subscriptions associated with a specific organization or Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSubscribersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_subscribers::builders::ListSubscribersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_subscribers::builders::ListSubscribersInputBuilder,
+}
 impl ListSubscribersFluentBuilder  {
     /// Creates a new `ListSubscribers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_subscribers::ListSubscribers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSubscribersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_subscribers::paginator::ListSubscribersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_subscribers::paginator::ListSubscribersPaginator {
-                            crate::operation::list_subscribers::paginator::ListSubscribersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_subscribers::paginator::ListSubscribersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_subscribers::paginator::ListSubscribersPaginator {
+                                crate::operation::list_subscribers::paginator::ListSubscribersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If nextToken is returned, there are more results available. You can repeat the call using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

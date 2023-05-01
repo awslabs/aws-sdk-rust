@@ -8,16 +8,17 @@ pub use crate::operation::describe_snapshot_schedule::_describe_snapshot_schedul
 /// <p>Describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes intervals at which snapshots are automatically initiated on the volume. This operation is only supported in the cached volume and stored volume types.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSnapshotScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_snapshot_schedule::builders::DescribeSnapshotScheduleInputBuilder,
+}
 impl DescribeSnapshotScheduleFluentBuilder  {
     /// Creates a new `DescribeSnapshotSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_snapshot_schedule::DescribeSnapshotSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::modify_db_snapshot::_modify_db_snapshot_input::ModifyD
 /// <p>Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This command doesn't apply to RDS Custom.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDBSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_db_snapshot::builders::ModifyDbSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_db_snapshot::builders::ModifyDbSnapshotInputBuilder,
+}
 impl ModifyDBSnapshotFluentBuilder  {
     /// Creates a new `ModifyDBSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_db_snapshot::ModifyDBSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -22,16 +22,17 @@ pub use crate::operation::get_document_analysis::_get_document_analysis_input::G
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document Text Analysis</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDocumentAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_document_analysis::builders::GetDocumentAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_document_analysis::builders::GetDocumentAnalysisInputBuilder,
+}
 impl GetDocumentAnalysisFluentBuilder  {
     /// Creates a new `GetDocumentAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_document_analysis::GetDocumentAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

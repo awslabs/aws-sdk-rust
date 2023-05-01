@@ -8,16 +8,17 @@ pub use crate::operation::restore_core_network_policy_version::_restore_core_net
 /// <p>Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and restored policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreCoreNetworkPolicyVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_core_network_policy_version::builders::RestoreCoreNetworkPolicyVersionInputBuilder,
+}
 impl RestoreCoreNetworkPolicyVersionFluentBuilder  {
     /// Creates a new `RestoreCoreNetworkPolicyVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersion, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_reserved_elasticsearch_instance_offerings::_d
 /// <p>Lists available reserved Elasticsearch instance offerings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReservedElasticsearchInstanceOfferingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_reserved_elasticsearch_instance_offerings::builders::DescribeReservedElasticsearchInstanceOfferingsInputBuilder,
+}
 impl DescribeReservedElasticsearchInstanceOfferingsFluentBuilder  {
     /// Creates a new `DescribeReservedElasticsearchInstanceOfferings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_elasticsearch_instance_offerings::DescribeReservedElasticsearchInstanceOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeReservedElasticsearchInstanceOfferingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_elasticsearch_instance_offerings::paginator::DescribeReservedElasticsearchInstanceOfferingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::paginator::DescribeReservedElasticsearchInstanceOfferingsPaginator {
-                            crate::operation::describe_reserved_elasticsearch_instance_offerings::paginator::DescribeReservedElasticsearchInstanceOfferingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_elasticsearch_instance_offerings::paginator::DescribeReservedElasticsearchInstanceOfferingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_reserved_elasticsearch_instance_offerings::paginator::DescribeReservedElasticsearchInstanceOfferingsPaginator {
+                                crate::operation::describe_reserved_elasticsearch_instance_offerings::paginator::DescribeReservedElasticsearchInstanceOfferingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
     pub fn reserved_elasticsearch_instance_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.reserved_elasticsearch_instance_offering_id(input.into());

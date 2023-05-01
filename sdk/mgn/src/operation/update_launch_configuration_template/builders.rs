@@ -8,16 +8,17 @@ pub use crate::operation::update_launch_configuration_template::_update_launch_c
 /// <p>Updates an existing Launch Configuration Template by ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateInputBuilder,
+}
 impl UpdateLaunchConfigurationTemplateFluentBuilder  {
     /// Creates a new `UpdateLaunchConfigurationTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

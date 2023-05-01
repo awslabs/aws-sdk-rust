@@ -8,16 +8,17 @@ pub use crate::operation::modify_security_group_rules::_modify_security_group_ru
 /// <p>Modifies the rules of a security group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifySecurityGroupRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_security_group_rules::builders::ModifySecurityGroupRulesInputBuilder,
+}
 impl ModifySecurityGroupRulesFluentBuilder  {
     /// Creates a new `ModifySecurityGroupRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_security_group_rules::ModifySecurityGroupRules, aws_http::retry::AwsResponseRetryClassifier,>,

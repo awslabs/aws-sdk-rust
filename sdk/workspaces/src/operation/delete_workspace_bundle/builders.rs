@@ -8,16 +8,17 @@ pub use crate::operation::delete_workspace_bundle::_delete_workspace_bundle_inpu
 /// <p>Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html"> Delete a Custom WorkSpaces Bundle or Image</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteWorkspaceBundleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_workspace_bundle::builders::DeleteWorkspaceBundleInputBuilder,
+}
 impl DeleteWorkspaceBundleFluentBuilder  {
     /// Creates a new `DeleteWorkspaceBundle`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_workspace_bundle::DeleteWorkspaceBundle, aws_http::retry::AwsResponseRetryClassifier,>,

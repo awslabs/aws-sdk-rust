@@ -8,16 +8,17 @@ pub use crate::operation::cancel_job::_cancel_job_input::CancelJobInputBuilder;
 /// <p>This operation cancels a job. Jobs can be cancelled only when they are in the WAITING state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_job::builders::CancelJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_job::builders::CancelJobInputBuilder,
+}
 impl CancelJobFluentBuilder  {
     /// Creates a new `CancelJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_job::CancelJob, aws_http::retry::AwsResponseRetryClassifier,>,

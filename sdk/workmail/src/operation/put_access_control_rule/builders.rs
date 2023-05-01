@@ -8,16 +8,17 @@ pub use crate::operation::put_access_control_rule::_put_access_control_rule_inpu
 /// <p>Adds a new access control rule for the specified organization. The rule allows or denies access to the organization for the specified IPv4 addresses, access protocol actions, user IDs and impersonation IDs. Adding a new rule with the same name as an existing rule replaces the older rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAccessControlRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_access_control_rule::builders::PutAccessControlRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_access_control_rule::builders::PutAccessControlRuleInputBuilder,
+}
 impl PutAccessControlRuleFluentBuilder  {
     /// Creates a new `PutAccessControlRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_access_control_rule::PutAccessControlRule, aws_http::retry::AwsResponseRetryClassifier,>,

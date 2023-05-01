@@ -8,16 +8,17 @@ pub use crate::operation::describe_traffic_distribution_group::_describe_traffic
 /// <p>Gets details and status of a traffic distribution group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTrafficDistributionGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_traffic_distribution_group::builders::DescribeTrafficDistributionGroupInputBuilder,
+}
 impl DescribeTrafficDistributionGroupFluentBuilder  {
     /// Creates a new `DescribeTrafficDistributionGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroup, aws_http::retry::AwsResponseRetryClassifier,>,

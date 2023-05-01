@@ -19,16 +19,17 @@ pub use crate::operation::revoke_grant::_revoke_grant_input::RevokeGrantInputBui
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RevokeGrantFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::revoke_grant::builders::RevokeGrantInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::revoke_grant::builders::RevokeGrantInputBuilder,
+}
 impl RevokeGrantFluentBuilder  {
     /// Creates a new `RevokeGrant`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::revoke_grant::RevokeGrant, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_voice_profile_domain::_get_voice_profile_domain_in
 /// <p>Retrieves the details of the specified voice profile domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVoiceProfileDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainInputBuilder,
+}
 impl GetVoiceProfileDomainFluentBuilder  {
     /// Creates a new `GetVoiceProfileDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_voice_profile_domain::GetVoiceProfileDomain, aws_http::retry::AwsResponseRetryClassifier,>,

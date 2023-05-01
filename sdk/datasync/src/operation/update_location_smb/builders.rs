@@ -8,16 +8,17 @@ pub use crate::operation::update_location_smb::_update_location_smb_input::Updat
 /// <p>Updates some of the parameters of a previously created location for Server Message Block (SMB) file system access. For information about creating an SMB location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating a location for SMB</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLocationSmbFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_location_smb::builders::UpdateLocationSmbInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_location_smb::builders::UpdateLocationSmbInputBuilder,
+}
 impl UpdateLocationSmbFluentBuilder  {
     /// Creates a new `UpdateLocationSmb`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_location_smb::UpdateLocationSmb, aws_http::retry::AwsResponseRetryClassifier,>,

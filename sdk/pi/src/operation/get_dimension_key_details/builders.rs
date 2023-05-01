@@ -8,16 +8,17 @@ pub use crate::operation::get_dimension_key_details::_get_dimension_key_details_
 /// <p>Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension <code>db.sql.statement</code> associated with this ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code> don't support retrieval of large SQL statement text.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDimensionKeyDetailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsInputBuilder,
+}
 impl GetDimensionKeyDetailsFluentBuilder  {
     /// Creates a new `GetDimensionKeyDetails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_dimension_key_details::GetDimensionKeyDetails, aws_http::retry::AwsResponseRetryClassifier,>,

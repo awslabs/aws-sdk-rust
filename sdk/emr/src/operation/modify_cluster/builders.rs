@@ -8,16 +8,17 @@ pub use crate::operation::modify_cluster::_modify_cluster_input::ModifyClusterIn
 /// <p>Modifies the number of steps that can be executed concurrently for the cluster specified using ClusterID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_cluster::builders::ModifyClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_cluster::builders::ModifyClusterInputBuilder,
+}
 impl ModifyClusterFluentBuilder  {
     /// Creates a new `ModifyCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_cluster::ModifyCluster, aws_http::retry::AwsResponseRetryClassifier,>,

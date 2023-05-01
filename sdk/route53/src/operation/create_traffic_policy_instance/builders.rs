@@ -8,16 +8,17 @@ pub use crate::operation::create_traffic_policy_instance::_create_traffic_policy
 /// <p>Creates resource record sets in a specified hosted zone based on the settings in a specified traffic policy version. In addition, <code>CreateTrafficPolicyInstance</code> associates the resource record sets with a specified domain name (such as example.com) or subdomain name (such as www.example.com). Amazon Route 53 responds to DNS queries for the domain or subdomain name by using the resource record sets that <code>CreateTrafficPolicyInstance</code> created.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTrafficPolicyInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_traffic_policy_instance::builders::CreateTrafficPolicyInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_traffic_policy_instance::builders::CreateTrafficPolicyInstanceInputBuilder,
+}
 impl CreateTrafficPolicyInstanceFluentBuilder  {
     /// Creates a new `CreateTrafficPolicyInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstance, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -13,16 +13,17 @@ pub use crate::operation::set_identity_dkim_enabled::_set_identity_dkim_enabled_
 /// <p>For more information about Easy DKIM signing, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder,
+}
 impl SetIdentityDkimEnabledFluentBuilder  {
     /// Creates a new `SetIdentityDkimEnabled`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabled, aws_http::retry::AwsResponseRetryClassifier,>,

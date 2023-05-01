@@ -10,16 +10,17 @@ pub use crate::operation::associate_customer_gateway::_associate_customer_gatewa
 /// <p>You cannot associate a customer gateway with more than one device and link. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateCustomerGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder,
+}
 impl AssociateCustomerGatewayFluentBuilder  {
     /// Creates a new `AssociateCustomerGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_customer_gateway::AssociateCustomerGateway, aws_http::retry::AwsResponseRetryClassifier,>,

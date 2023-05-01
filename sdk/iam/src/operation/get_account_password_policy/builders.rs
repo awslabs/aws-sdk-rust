@@ -8,16 +8,17 @@ pub use crate::operation::get_account_password_policy::_get_account_password_pol
 /// <p>Retrieves the password policy for the Amazon Web Services account. This tells you the complexity requirements and mandatory rotation periods for the IAM user passwords in your account. For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM password policy</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccountPasswordPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyInputBuilder,
+}
 impl GetAccountPasswordPolicyFluentBuilder  {
     /// Creates a new `GetAccountPasswordPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_account_password_policy::GetAccountPasswordPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

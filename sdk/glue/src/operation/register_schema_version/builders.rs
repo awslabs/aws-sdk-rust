@@ -10,16 +10,17 @@ pub use crate::operation::register_schema_version::_register_schema_version_inpu
 /// <p>If the same schema definition is already stored in Schema Registry as a version, the schema ID of the existing schema is returned to the caller.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterSchemaVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_schema_version::builders::RegisterSchemaVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_schema_version::builders::RegisterSchemaVersionInputBuilder,
+}
 impl RegisterSchemaVersionFluentBuilder  {
     /// Creates a new `RegisterSchemaVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_schema_version::RegisterSchemaVersion, aws_http::retry::AwsResponseRetryClassifier,>,

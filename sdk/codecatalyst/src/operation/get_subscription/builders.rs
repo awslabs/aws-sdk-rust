@@ -8,16 +8,17 @@ pub use crate::operation::get_subscription::_get_subscription_input::GetSubscrip
 /// <p>Returns information about the Amazon Web Services account used for billing purposes and the billing plan for the space.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_subscription::builders::GetSubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_subscription::builders::GetSubscriptionInputBuilder,
+}
 impl GetSubscriptionFluentBuilder  {
     /// Creates a new `GetSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_subscription::GetSubscription, aws_http::retry::AwsResponseRetryClassifier,>,

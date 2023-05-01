@@ -8,16 +8,17 @@ pub use crate::operation::list_identity_provider_configs::_list_identity_provide
 /// <p>A list of identity provider configurations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIdentityProviderConfigsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_identity_provider_configs::builders::ListIdentityProviderConfigsInputBuilder,
+}
 impl ListIdentityProviderConfigsFluentBuilder  {
     /// Creates a new `ListIdentityProviderConfigs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_identity_provider_configs::ListIdentityProviderConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListIdentityProviderConfigsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_identity_provider_configs::paginator::ListIdentityProviderConfigsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_identity_provider_configs::paginator::ListIdentityProviderConfigsPaginator {
-                            crate::operation::list_identity_provider_configs::paginator::ListIdentityProviderConfigsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_identity_provider_configs::paginator::ListIdentityProviderConfigsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_identity_provider_configs::paginator::ListIdentityProviderConfigsPaginator {
+                                crate::operation::list_identity_provider_configs::paginator::ListIdentityProviderConfigsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The cluster name that you want to list identity provider configurations for.</p>
     pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());

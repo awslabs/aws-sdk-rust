@@ -8,16 +8,17 @@ pub use crate::operation::get_authorization_token::_get_authorization_token_inpu
 /// <p>Retrieves an authorization token. An authorization token represents your IAM authentication credentials. You can use it to access any Amazon ECR registry that your IAM principal has access to. The authorization token is valid for 12 hours. This API requires the <code>ecr-public:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAuthorizationTokenFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_authorization_token::builders::GetAuthorizationTokenInputBuilder,
+}
 impl GetAuthorizationTokenFluentBuilder  {
     /// Creates a new `GetAuthorizationToken`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_authorization_token::GetAuthorizationToken, aws_http::retry::AwsResponseRetryClassifier,>,

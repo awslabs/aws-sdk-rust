@@ -20,16 +20,17 @@ pub use crate::operation::update_container_instances_state::_update_container_in
 /// <p>When a container instance has been drained, you can set a container instance to <code>ACTIVE</code> status and once it has reached that status the Amazon ECS scheduler can begin scheduling tasks on the instance again.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContainerInstancesStateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_container_instances_state::builders::UpdateContainerInstancesStateInputBuilder,
+}
 impl UpdateContainerInstancesStateFluentBuilder  {
     /// Creates a new `UpdateContainerInstancesState`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_container_instances_state::UpdateContainerInstancesState, aws_http::retry::AwsResponseRetryClassifier,>,

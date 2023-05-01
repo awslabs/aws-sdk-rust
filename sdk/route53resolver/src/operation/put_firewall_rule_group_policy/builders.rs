@@ -8,16 +8,17 @@ pub use crate::operation::put_firewall_rule_group_policy::_put_firewall_rule_gro
 /// <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing the rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutFirewallRuleGroupPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_firewall_rule_group_policy::builders::PutFirewallRuleGroupPolicyInputBuilder,
+}
 impl PutFirewallRuleGroupPolicyFluentBuilder  {
     /// Creates a new `PutFirewallRuleGroupPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

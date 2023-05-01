@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_certificate::_disassociate_certificate_in
 /// Removes an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert resource.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_certificate::builders::DisassociateCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_certificate::builders::DisassociateCertificateInputBuilder,
+}
 impl DisassociateCertificateFluentBuilder  {
     /// Creates a new `DisassociateCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_certificate::DisassociateCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

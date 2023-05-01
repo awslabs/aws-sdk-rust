@@ -8,16 +8,17 @@ pub use crate::operation::export_bundle::_export_bundle_input::ExportBundleInput
 /// <p> Generates customized software development kit (SDK) and or tool packages used to integrate mobile web or mobile app clients with backend AWS resources. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportBundleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_bundle::builders::ExportBundleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_bundle::builders::ExportBundleInputBuilder,
+}
 impl ExportBundleFluentBuilder  {
     /// Creates a new `ExportBundle`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_bundle::ExportBundle, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -11,16 +11,17 @@ pub use crate::operation::delete_aws_log_source::_delete_aws_log_source_input::D
 /// <p>When you don't provide a dimension, Security Lake assumes that the missing dimension refers to the entire set. For example, if you don't provide specific accounts, the API applies to the entire set of accounts in your organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAwsLogSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_aws_log_source::builders::DeleteAwsLogSourceInputBuilder,
+}
 impl DeleteAwsLogSourceFluentBuilder  {
     /// Creates a new `DeleteAwsLogSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_aws_log_source::DeleteAwsLogSource, aws_http::retry::AwsResponseRetryClassifier,>,

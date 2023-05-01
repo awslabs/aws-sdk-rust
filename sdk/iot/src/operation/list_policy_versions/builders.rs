@@ -9,16 +9,17 @@ pub use crate::operation::list_policy_versions::_list_policy_versions_input::Lis
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyVersions</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPolicyVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder,
+}
 impl ListPolicyVersionsFluentBuilder  {
     /// Creates a new `ListPolicyVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_policy_versions::ListPolicyVersions, aws_http::retry::AwsResponseRetryClassifier,>,

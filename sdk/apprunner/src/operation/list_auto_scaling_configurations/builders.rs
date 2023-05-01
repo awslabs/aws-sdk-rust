@@ -9,16 +9,17 @@ pub use crate::operation::list_auto_scaling_configurations::_list_auto_scaling_c
 /// <p>To retrieve a full description of a particular configuration revision, call and provide one of the ARNs returned by <code>ListAutoScalingConfigurations</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAutoScalingConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_auto_scaling_configurations::builders::ListAutoScalingConfigurationsInputBuilder,
+}
 impl ListAutoScalingConfigurationsFluentBuilder  {
     /// Creates a new `ListAutoScalingConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_auto_scaling_configurations::ListAutoScalingConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListAutoScalingConfigurationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_auto_scaling_configurations::paginator::ListAutoScalingConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_auto_scaling_configurations::paginator::ListAutoScalingConfigurationsPaginator {
-                            crate::operation::list_auto_scaling_configurations::paginator::ListAutoScalingConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_auto_scaling_configurations::paginator::ListAutoScalingConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_auto_scaling_configurations::paginator::ListAutoScalingConfigurationsPaginator {
+                                crate::operation::list_auto_scaling_configurations::paginator::ListAutoScalingConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner returns revisions of all active configurations.</p>
     pub fn auto_scaling_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_configuration_name(input.into());

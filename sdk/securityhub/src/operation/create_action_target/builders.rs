@@ -9,16 +9,17 @@ pub use crate::operation::create_action_target::_create_action_target_input::Cre
 /// <p>You can use custom actions on findings and insights in Security Hub to trigger target actions in Amazon CloudWatch Events.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateActionTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_action_target::builders::CreateActionTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_action_target::builders::CreateActionTargetInputBuilder,
+}
 impl CreateActionTargetFluentBuilder  {
     /// Creates a new `CreateActionTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_action_target::CreateActionTarget, aws_http::retry::AwsResponseRetryClassifier,>,

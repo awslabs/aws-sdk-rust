@@ -8,16 +8,17 @@ pub use crate::operation::reset_user_password::_reset_user_password_input::Reset
 /// <p>Resets the password for a specified user ID and generates a temporary one. Only a superuser can reset password for other users. Resetting the password immediately invalidates the previous password associated with the user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetUserPasswordFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_user_password::builders::ResetUserPasswordInputBuilder,
+}
 impl ResetUserPasswordFluentBuilder  {
     /// Creates a new `ResetUserPassword`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_user_password::ResetUserPassword, aws_http::retry::AwsResponseRetryClassifier,>,

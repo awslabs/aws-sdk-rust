@@ -47,16 +47,17 @@ pub use crate::operation::head_object::_head_object_input::HeadObjectInputBuilde
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct HeadObjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::head_object::builders::HeadObjectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::head_object::builders::HeadObjectInputBuilder,
+}
 impl HeadObjectFluentBuilder  {
     /// Creates a new `HeadObject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::head_object::HeadObject, aws_http::retry::AwsResponseRetryClassifier,>,

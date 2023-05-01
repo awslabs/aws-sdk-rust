@@ -8,16 +8,17 @@ pub use crate::operation::create_theme::_create_theme_input::CreateThemeInputBui
 /// <p>Creates a theme to apply to the components in an Amplify app.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateThemeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_theme::builders::CreateThemeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_theme::builders::CreateThemeInputBuilder,
+}
 impl CreateThemeFluentBuilder  {
     /// Creates a new `CreateTheme`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_theme::CreateTheme, aws_http::retry::AwsResponseRetryClassifier,>,

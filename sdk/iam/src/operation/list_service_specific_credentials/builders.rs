@@ -8,16 +8,17 @@ pub use crate::operation::list_service_specific_credentials::_list_service_speci
 /// <p>Returns information about the service-specific credentials associated with the specified IAM user. If none exists, the operation returns an empty list. The service-specific credentials returned by this operation are used only for authenticating the IAM user to a specific service. For more information about using service-specific credentials to authenticate to an Amazon Web Services service, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set up service-specific credentials</a> in the CodeCommit User Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListServiceSpecificCredentialsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_service_specific_credentials::builders::ListServiceSpecificCredentialsInputBuilder,
+}
 impl ListServiceSpecificCredentialsFluentBuilder  {
     /// Creates a new `ListServiceSpecificCredentials`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentials, aws_http::retry::AwsResponseRetryClassifier,>,

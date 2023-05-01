@@ -31,16 +31,17 @@ pub use crate::operation::update_service_pipeline::_update_service_pipeline_inpu
 /// </dl>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServicePipelineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_service_pipeline::builders::UpdateServicePipelineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_service_pipeline::builders::UpdateServicePipelineInputBuilder,
+}
 impl UpdateServicePipelineFluentBuilder  {
     /// Creates a new `UpdateServicePipeline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_service_pipeline::UpdateServicePipeline, aws_http::retry::AwsResponseRetryClassifier,>,

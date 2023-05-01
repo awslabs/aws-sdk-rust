@@ -8,16 +8,17 @@ pub use crate::operation::get_phone_number::_get_phone_number_input::GetPhoneNum
 /// <p>Retrieves details for the specified phone number ID, such as associations, capabilities, and product type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPhoneNumberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_phone_number::builders::GetPhoneNumberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_phone_number::builders::GetPhoneNumberInputBuilder,
+}
 impl GetPhoneNumberFluentBuilder  {
     /// Creates a new `GetPhoneNumber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_phone_number::GetPhoneNumber, aws_http::retry::AwsResponseRetryClassifier,>,

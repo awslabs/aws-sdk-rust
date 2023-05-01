@@ -8,16 +8,17 @@ pub use crate::operation::list_playback_key_pairs::_list_playback_key_pairs_inpu
 /// <p>Gets summary information about playback key pairs. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPlaybackKeyPairsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsInputBuilder,
+}
 impl ListPlaybackKeyPairsFluentBuilder  {
     /// Creates a new `ListPlaybackKeyPairs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_playback_key_pairs::ListPlaybackKeyPairs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPlaybackKeyPairsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator {
-                            crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator {
+                                crate::operation::list_playback_key_pairs::paginator::ListPlaybackKeyPairsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

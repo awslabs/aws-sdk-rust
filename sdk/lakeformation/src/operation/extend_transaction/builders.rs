@@ -9,16 +9,17 @@ pub use crate::operation::extend_transaction::_extend_transaction_input::ExtendT
 /// <p>Write transactions that remain idle for a long period are automatically aborted unless explicitly extended.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExtendTransactionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::extend_transaction::builders::ExtendTransactionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::extend_transaction::builders::ExtendTransactionInputBuilder,
+}
 impl ExtendTransactionFluentBuilder  {
     /// Creates a new `ExtendTransaction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::extend_transaction::ExtendTransaction, aws_http::retry::AwsResponseRetryClassifier,>,

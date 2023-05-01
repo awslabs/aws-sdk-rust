@@ -10,16 +10,17 @@ pub use crate::operation::describe_db_cluster_snapshots::_describe_db_cluster_sn
 /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBClusterSnapshotsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder,
+}
 impl DescribeDBClusterSnapshotsFluentBuilder  {
     /// Creates a new `DescribeDBClusterSnapshots`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshots, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeDBClusterSnapshotsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_snapshots::paginator::DescribeDbClusterSnapshotsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_cluster_snapshots::paginator::DescribeDbClusterSnapshotsPaginator {
-                            crate::operation::describe_db_cluster_snapshots::paginator::DescribeDbClusterSnapshotsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_snapshots::paginator::DescribeDbClusterSnapshotsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_cluster_snapshots::paginator::DescribeDbClusterSnapshotsPaginator {
+                                crate::operation::describe_db_cluster_snapshots::paginator::DescribeDbClusterSnapshotsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter. This parameter isn't case-sensitive.</p> 
     /// <p>Constraints:</p> 
     /// <ul> 

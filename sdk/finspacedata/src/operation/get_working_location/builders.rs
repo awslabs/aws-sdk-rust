@@ -8,16 +8,17 @@ pub use crate::operation::get_working_location::_get_working_location_input::Get
 /// <p>A temporary Amazon S3 location, where you can copy your files from a source location to stage or use as a scratch space in FinSpace notebook.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetWorkingLocationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_working_location::builders::GetWorkingLocationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_working_location::builders::GetWorkingLocationInputBuilder,
+}
 impl GetWorkingLocationFluentBuilder  {
     /// Creates a new `GetWorkingLocation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_working_location::GetWorkingLocation, aws_http::retry::AwsResponseRetryClassifier,>,

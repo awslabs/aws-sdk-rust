@@ -11,16 +11,17 @@ pub use crate::operation::delete_ipam_pool::_delete_ipam_pool_input::DeleteIpamP
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/delete-pool-ipam.html">Delete a pool</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteIpamPoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_ipam_pool::builders::DeleteIpamPoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_ipam_pool::builders::DeleteIpamPoolInputBuilder,
+}
 impl DeleteIpamPoolFluentBuilder  {
     /// Creates a new `DeleteIpamPool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_ipam_pool::DeleteIpamPool, aws_http::retry::AwsResponseRetryClassifier,>,

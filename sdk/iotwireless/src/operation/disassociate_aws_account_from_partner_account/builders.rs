@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_aws_account_from_partner_account::_disass
 /// <p>Disassociates your AWS account from a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, disassociates your AWS account from all partner accounts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateAwsAccountFromPartnerAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_aws_account_from_partner_account::builders::DisassociateAwsAccountFromPartnerAccountInputBuilder,
+}
 impl DisassociateAwsAccountFromPartnerAccountFluentBuilder  {
     /// Creates a new `DisassociateAwsAccountFromPartnerAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccount, aws_http::retry::AwsResponseRetryClassifier,>,

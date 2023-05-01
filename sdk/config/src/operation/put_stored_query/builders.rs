@@ -10,16 +10,17 @@ pub use crate::operation::put_stored_query::_put_stored_query_input::PutStoredQu
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutStoredQueryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_stored_query::builders::PutStoredQueryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_stored_query::builders::PutStoredQueryInputBuilder,
+}
 impl PutStoredQueryFluentBuilder  {
     /// Creates a new `PutStoredQuery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_stored_query::PutStoredQuery, aws_http::retry::AwsResponseRetryClassifier,>,

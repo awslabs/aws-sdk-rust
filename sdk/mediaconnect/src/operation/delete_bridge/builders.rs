@@ -8,16 +8,17 @@ pub use crate::operation::delete_bridge::_delete_bridge_input::DeleteBridgeInput
 /// Deletes a bridge. Before you can delete a bridge, you must stop the bridge.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBridgeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_bridge::builders::DeleteBridgeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_bridge::builders::DeleteBridgeInputBuilder,
+}
 impl DeleteBridgeFluentBuilder  {
     /// Creates a new `DeleteBridge`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_bridge::DeleteBridge, aws_http::retry::AwsResponseRetryClassifier,>,

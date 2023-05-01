@@ -9,16 +9,17 @@ pub use crate::operation::get_behavior_model_training_summaries::_get_behavior_m
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBehaviorModelTrainingSummariesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_behavior_model_training_summaries::builders::GetBehaviorModelTrainingSummariesInputBuilder,
+}
 impl GetBehaviorModelTrainingSummariesFluentBuilder  {
     /// Creates a new `GetBehaviorModelTrainingSummaries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_behavior_model_training_summaries::GetBehaviorModelTrainingSummaries, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetBehaviorModelTrainingSummariesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_behavior_model_training_summaries::paginator::GetBehaviorModelTrainingSummariesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_behavior_model_training_summaries::paginator::GetBehaviorModelTrainingSummariesPaginator {
-                            crate::operation::get_behavior_model_training_summaries::paginator::GetBehaviorModelTrainingSummariesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_behavior_model_training_summaries::paginator::GetBehaviorModelTrainingSummariesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_behavior_model_training_summaries::paginator::GetBehaviorModelTrainingSummariesPaginator {
+                                crate::operation::get_behavior_model_training_summaries::paginator::GetBehaviorModelTrainingSummariesPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The name of the security profile. </p>
     pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.security_profile_name(input.into());

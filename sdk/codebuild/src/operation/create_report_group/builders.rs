@@ -8,16 +8,17 @@ pub use crate::operation::create_report_group::_create_report_group_input::Creat
 /// <p> Creates a report group. A report group contains a collection of reports. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateReportGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_report_group::builders::CreateReportGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_report_group::builders::CreateReportGroupInputBuilder,
+}
 impl CreateReportGroupFluentBuilder  {
     /// Creates a new `CreateReportGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_report_group::CreateReportGroup, aws_http::retry::AwsResponseRetryClassifier,>,

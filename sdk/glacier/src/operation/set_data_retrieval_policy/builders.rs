@@ -9,16 +9,17 @@ pub use crate::operation::set_data_retrieval_policy::_set_data_retrieval_policy_
 /// <p>The set policy operation does not affect retrieval jobs that were in progress before the policy was enacted. For more information about data retrieval policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon Glacier Data Retrieval Policies</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetDataRetrievalPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_data_retrieval_policy::builders::SetDataRetrievalPolicyInputBuilder,
+}
 impl SetDataRetrievalPolicyFluentBuilder  {
     /// Creates a new `SetDataRetrievalPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

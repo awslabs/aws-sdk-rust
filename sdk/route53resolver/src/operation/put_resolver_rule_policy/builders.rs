@@ -8,16 +8,17 @@ pub use crate::operation::put_resolver_rule_policy::_put_resolver_rule_policy_in
 /// <p>Specifies an Amazon Web Services rule that you want to share with another account, the account that you want to share the rule with, and the operations that you want the account to be able to perform on the rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutResolverRulePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_resolver_rule_policy::builders::PutResolverRulePolicyInputBuilder,
+}
 impl PutResolverRulePolicyFluentBuilder  {
     /// Creates a new `PutResolverRulePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_resolver_rule_policy::PutResolverRulePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

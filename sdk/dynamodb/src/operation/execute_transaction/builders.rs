@@ -10,16 +10,17 @@ pub use crate::operation::execute_transaction::_execute_transaction_input::Execu
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExecuteTransactionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::execute_transaction::builders::ExecuteTransactionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::execute_transaction::builders::ExecuteTransactionInputBuilder,
+}
 impl ExecuteTransactionFluentBuilder  {
     /// Creates a new `ExecuteTransaction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::execute_transaction::ExecuteTransaction, aws_http::retry::AwsResponseRetryClassifier,>,

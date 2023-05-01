@@ -8,16 +8,17 @@ pub use crate::operation::create_usage_plan_key::_create_usage_plan_key_input::C
 /// <p>Creates a usage plan key for adding an existing API key to a usage plan.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateUsagePlanKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_usage_plan_key::builders::CreateUsagePlanKeyInputBuilder,
+}
 impl CreateUsagePlanKeyFluentBuilder  {
     /// Creates a new `CreateUsagePlanKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_usage_plan_key::CreateUsagePlanKey, aws_http::retry::AwsResponseRetryClassifier,>,

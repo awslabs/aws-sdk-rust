@@ -10,16 +10,17 @@ pub use crate::operation::get_qualification_score::_get_qualification_score_inpu
 /// <p>Only the owner of a Qualification type can query the value of a Worker's Qualification of that type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetQualificationScoreFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_qualification_score::builders::GetQualificationScoreInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_qualification_score::builders::GetQualificationScoreInputBuilder,
+}
 impl GetQualificationScoreFluentBuilder  {
     /// Creates a new `GetQualificationScore`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_qualification_score::GetQualificationScore, aws_http::retry::AwsResponseRetryClassifier,>,

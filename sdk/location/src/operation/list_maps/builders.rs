@@ -8,16 +8,17 @@ pub use crate::operation::list_maps::_list_maps_input::ListMapsInputBuilder;
 /// <p>Lists map resources in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMapsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_maps::builders::ListMapsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_maps::builders::ListMapsInputBuilder,
+}
 impl ListMapsFluentBuilder  {
     /// Creates a new `ListMaps`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_maps::ListMaps, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListMapsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_maps::paginator::ListMapsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_maps::paginator::ListMapsPaginator {
-                            crate::operation::list_maps::paginator::ListMapsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_maps::paginator::ListMapsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_maps::paginator::ListMapsPaginator {
+                                crate::operation::list_maps::paginator::ListMapsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An optional limit for the number of resources returned in a single call. </p> 
     /// <p>Default value: <code>100</code> </p>
     pub fn max_results(mut self, input: i32) -> Self {

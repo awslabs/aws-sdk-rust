@@ -9,16 +9,17 @@ pub use crate::operation::delete_model_package::_delete_model_package_input::Del
 /// <p>A model package is used to create SageMaker models or list on Amazon Web Services Marketplace. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in SageMaker.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteModelPackageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_model_package::builders::DeleteModelPackageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_model_package::builders::DeleteModelPackageInputBuilder,
+}
 impl DeleteModelPackageFluentBuilder  {
     /// Creates a new `DeleteModelPackage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_model_package::DeleteModelPackage, aws_http::retry::AwsResponseRetryClassifier,>,

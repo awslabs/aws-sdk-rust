@@ -8,16 +8,17 @@ pub use crate::operation::list_layers::_list_layers_input::ListLayersInputBuilde
 /// <p>Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-layers.html">Lambda layers</a> and shows information about the latest version of each. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only layers that indicate that they're compatible with that runtime. Specify a compatible architecture to include only layers that are compatible with that <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLayersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_layers::builders::ListLayersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_layers::builders::ListLayersInputBuilder,
+}
 impl ListLayersFluentBuilder  {
     /// Creates a new `ListLayers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_layers::ListLayers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListLayersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_layers::paginator::ListLayersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_layers::paginator::ListLayersPaginator {
-                            crate::operation::list_layers::paginator::ListLayersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_layers::paginator::ListLayersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_layers::paginator::ListLayersPaginator {
+                                crate::operation::list_layers::paginator::ListLayersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     pub fn compatible_runtime(mut self, input: crate::types::Runtime) -> Self {
         self.inner = self.inner.compatible_runtime(input);

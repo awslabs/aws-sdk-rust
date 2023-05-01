@@ -8,16 +8,17 @@ pub use crate::operation::describe_db_subnet_groups::_describe_db_subnet_groups_
 /// <p>Returns a list of <code>DBSubnetGroup</code> descriptions. If a <code>DBSubnetGroupName</code> is specified, the list will contain only the descriptions of the specified <code>DBSubnetGroup</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBSubnetGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_subnet_groups::builders::DescribeDbSubnetGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_subnet_groups::builders::DescribeDbSubnetGroupsInputBuilder,
+}
 impl DescribeDBSubnetGroupsFluentBuilder  {
     /// Creates a new `DescribeDBSubnetGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_subnet_groups::DescribeDBSubnetGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDBSubnetGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_subnet_groups::paginator::DescribeDbSubnetGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_subnet_groups::paginator::DescribeDbSubnetGroupsPaginator {
-                            crate::operation::describe_db_subnet_groups::paginator::DescribeDbSubnetGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_subnet_groups::paginator::DescribeDbSubnetGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_subnet_groups::paginator::DescribeDbSubnetGroupsPaginator {
+                                crate::operation::describe_db_subnet_groups::paginator::DescribeDbSubnetGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the subnet group to return details for.</p>
     pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());

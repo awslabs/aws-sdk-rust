@@ -8,16 +8,17 @@ pub use crate::operation::export_components::_export_components_input::ExportCom
 /// <p>Exports component configurations to code that is ready to integrate into an Amplify app.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportComponentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_components::builders::ExportComponentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_components::builders::ExportComponentsInputBuilder,
+}
 impl ExportComponentsFluentBuilder  {
     /// Creates a new `ExportComponents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_components::ExportComponents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ExportComponentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::export_components::paginator::ExportComponentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::export_components::paginator::ExportComponentsPaginator {
-                            crate::operation::export_components::paginator::ExportComponentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::export_components::paginator::ExportComponentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::export_components::paginator::ExportComponentsPaginator {
+                                crate::operation::export_components::paginator::ExportComponentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique ID of the Amplify app to export components to.</p>
     pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());

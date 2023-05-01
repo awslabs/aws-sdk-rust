@@ -8,16 +8,17 @@ pub use crate::operation::list_typed_link_facet_names::_list_typed_link_facet_na
 /// <p>Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTypedLinkFacetNamesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_typed_link_facet_names::builders::ListTypedLinkFacetNamesInputBuilder,
+}
 impl ListTypedLinkFacetNamesFluentBuilder  {
     /// Creates a new `ListTypedLinkFacetNames`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNames, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTypedLinkFacetNamesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_typed_link_facet_names::paginator::ListTypedLinkFacetNamesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_typed_link_facet_names::paginator::ListTypedLinkFacetNamesPaginator {
-                            crate::operation::list_typed_link_facet_names::paginator::ListTypedLinkFacetNamesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_typed_link_facet_names::paginator::ListTypedLinkFacetNamesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_typed_link_facet_names::paginator::ListTypedLinkFacetNamesPaginator {
+                                crate::operation::list_typed_link_facet_names::paginator::ListTypedLinkFacetNamesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.schema_arn(input.into());

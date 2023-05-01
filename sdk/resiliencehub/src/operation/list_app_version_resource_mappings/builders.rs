@@ -8,16 +8,17 @@ pub use crate::operation::list_app_version_resource_mappings::_list_app_version_
 /// <p>Lists how the resources in an application version are mapped/sourced from. Mappings can be physical resource identifiers, CloudFormation stacks, resource-groups, or an application registry app.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAppVersionResourceMappingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_app_version_resource_mappings::builders::ListAppVersionResourceMappingsInputBuilder,
+}
 impl ListAppVersionResourceMappingsFluentBuilder  {
     /// Creates a new `ListAppVersionResourceMappings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_app_version_resource_mappings::ListAppVersionResourceMappings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAppVersionResourceMappingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_app_version_resource_mappings::paginator::ListAppVersionResourceMappingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_app_version_resource_mappings::paginator::ListAppVersionResourceMappingsPaginator {
-                            crate::operation::list_app_version_resource_mappings::paginator::ListAppVersionResourceMappingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_app_version_resource_mappings::paginator::ListAppVersionResourceMappingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_app_version_resource_mappings::paginator::ListAppVersionResourceMappingsPaginator {
+                                crate::operation::list_app_version_resource_mappings::paginator::ListAppVersionResourceMappingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());

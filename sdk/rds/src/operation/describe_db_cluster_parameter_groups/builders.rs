@@ -10,16 +10,17 @@ pub use crate::operation::describe_db_cluster_parameter_groups::_describe_db_clu
 /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBClusterParameterGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_cluster_parameter_groups::builders::DescribeDbClusterParameterGroupsInputBuilder,
+}
 impl DescribeDBClusterParameterGroupsFluentBuilder  {
     /// Creates a new `DescribeDBClusterParameterGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_cluster_parameter_groups::DescribeDBClusterParameterGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeDBClusterParameterGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_parameter_groups::paginator::DescribeDbClusterParameterGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_cluster_parameter_groups::paginator::DescribeDbClusterParameterGroupsPaginator {
-                            crate::operation::describe_db_cluster_parameter_groups::paginator::DescribeDbClusterParameterGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_parameter_groups::paginator::DescribeDbClusterParameterGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_cluster_parameter_groups::paginator::DescribeDbClusterParameterGroupsPaginator {
+                                crate::operation::describe_db_cluster_parameter_groups::paginator::DescribeDbClusterParameterGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of a specific DB cluster parameter group to return details for.</p> 
     /// <p>Constraints:</p> 
     /// <ul> 

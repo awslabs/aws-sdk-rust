@@ -8,16 +8,17 @@ pub use crate::operation::get_action_type::_get_action_type_input::GetActionType
 /// <p>Returns information about an action type created for an external provider, where the action is to be used by customers of the external provider. The action can be created with any supported integration model.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetActionTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_action_type::builders::GetActionTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_action_type::builders::GetActionTypeInputBuilder,
+}
 impl GetActionTypeFluentBuilder  {
     /// Creates a new `GetActionType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_action_type::GetActionType, aws_http::retry::AwsResponseRetryClassifier,>,

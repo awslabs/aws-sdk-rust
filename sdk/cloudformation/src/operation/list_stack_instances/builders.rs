@@ -8,16 +8,17 @@ pub use crate::operation::list_stack_instances::_list_stack_instances_input::Lis
 /// <p>Returns summary information about stack instances that are associated with the specified stack set. You can filter for stack instances that are associated with a specific Amazon Web Services account name or Region, or that have a specific status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStackInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_stack_instances::builders::ListStackInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_stack_instances::builders::ListStackInstancesInputBuilder,
+}
 impl ListStackInstancesFluentBuilder  {
     /// Creates a new `ListStackInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_stack_instances::ListStackInstances, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListStackInstancesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator {
-                            crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator {
+                                crate::operation::list_stack_instances::paginator::ListStackInstancesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name or unique ID of the stack set that you want to list stack instances for.</p>
     pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());

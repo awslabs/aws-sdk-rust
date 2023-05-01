@@ -8,16 +8,17 @@ pub use crate::operation::create_harvest_job::_create_harvest_job_input::CreateH
 /// Creates a new HarvestJob record.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateHarvestJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_harvest_job::builders::CreateHarvestJobInputBuilder,
+}
 impl CreateHarvestJobFluentBuilder  {
     /// Creates a new `CreateHarvestJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_harvest_job::CreateHarvestJob, aws_http::retry::AwsResponseRetryClassifier,>,

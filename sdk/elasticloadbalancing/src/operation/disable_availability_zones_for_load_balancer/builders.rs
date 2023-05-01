@@ -11,16 +11,17 @@ pub use crate::operation::disable_availability_zones_for_load_balancer::_disable
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableAvailabilityZonesForLoadBalancerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_availability_zones_for_load_balancer::builders::DisableAvailabilityZonesForLoadBalancerInputBuilder,
+}
 impl DisableAvailabilityZonesForLoadBalancerFluentBuilder  {
     /// Creates a new `DisableAvailabilityZonesForLoadBalancer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancer, aws_http::retry::AwsResponseRetryClassifier,>,

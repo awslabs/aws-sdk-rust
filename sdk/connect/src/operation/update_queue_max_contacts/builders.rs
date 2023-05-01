@@ -9,16 +9,17 @@ pub use crate::operation::update_queue_max_contacts::_update_queue_max_contacts_
 /// <p>Updates the maximum number of contacts allowed in a queue before it is considered full.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateQueueMaxContactsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_queue_max_contacts::builders::UpdateQueueMaxContactsInputBuilder,
+}
 impl UpdateQueueMaxContactsFluentBuilder  {
     /// Creates a new `UpdateQueueMaxContacts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_queue_max_contacts::UpdateQueueMaxContacts, aws_http::retry::AwsResponseRetryClassifier,>,

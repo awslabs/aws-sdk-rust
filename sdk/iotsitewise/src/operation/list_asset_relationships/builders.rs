@@ -8,16 +8,17 @@ pub use crate::operation::list_asset_relationships::_list_asset_relationships_in
 /// <p>Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset's root asset and all associated assets between that asset and its root.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssetRelationshipsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_asset_relationships::builders::ListAssetRelationshipsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_asset_relationships::builders::ListAssetRelationshipsInputBuilder,
+}
 impl ListAssetRelationshipsFluentBuilder  {
     /// Creates a new `ListAssetRelationships`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_asset_relationships::ListAssetRelationships, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAssetRelationshipsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator {
-                            crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator {
+                                crate::operation::list_asset_relationships::paginator::ListAssetRelationshipsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the asset.</p>
     pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.asset_id(input.into());

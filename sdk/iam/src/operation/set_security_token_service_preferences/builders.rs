@@ -11,16 +11,17 @@ pub use crate::operation::set_security_token_service_preferences::_set_security_
 /// <p>To view the current session token version, see the <code>GlobalEndpointTokenVersion</code> entry in the response of the <code>GetAccountSummary</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetSecurityTokenServicePreferencesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_security_token_service_preferences::builders::SetSecurityTokenServicePreferencesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_security_token_service_preferences::builders::SetSecurityTokenServicePreferencesInputBuilder,
+}
 impl SetSecurityTokenServicePreferencesFluentBuilder  {
     /// Creates a new `SetSecurityTokenServicePreferences`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_security_token_service_preferences::SetSecurityTokenServicePreferences, aws_http::retry::AwsResponseRetryClassifier,>,

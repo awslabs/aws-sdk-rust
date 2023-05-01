@@ -8,16 +8,17 @@ pub use crate::operation::describe_local_gateway_route_table_virtual_interface_g
 /// <p>Describes the associations between virtual interface groups and local gateway route tables.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::builders::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::builders::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder,
+}
 impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilder  {
     /// Creates a new `DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsFluentBuilde
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
-                            crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
+                                crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::paginator::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `LocalGatewayRouteTableVirtualInterfaceGroupAssociationIds`.
     ///
     /// To override the contents of this collection use [`set_local_gateway_route_table_virtual_interface_group_association_ids`](Self::set_local_gateway_route_table_virtual_interface_group_association_ids).

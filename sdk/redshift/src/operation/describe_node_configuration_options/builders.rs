@@ -8,16 +8,17 @@ pub use crate::operation::describe_node_configuration_options::_describe_node_co
 /// <p>Returns properties of possible node configurations such as node type, number of nodes, and disk usage for the specified action type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNodeConfigurationOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_node_configuration_options::builders::DescribeNodeConfigurationOptionsInputBuilder,
+}
 impl DescribeNodeConfigurationOptionsFluentBuilder  {
     /// Creates a new `DescribeNodeConfigurationOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_node_configuration_options::DescribeNodeConfigurationOptions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeNodeConfigurationOptionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator {
-                            crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator {
+                                crate::operation::describe_node_configuration_options::paginator::DescribeNodeConfigurationOptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The action type to evaluate for possible node configurations. Specify "restore-cluster" to get configuration combinations based on an existing snapshot. Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot. Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster. </p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
         self.inner = self.inner.action_type(input);

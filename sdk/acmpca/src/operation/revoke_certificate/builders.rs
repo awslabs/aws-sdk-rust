@@ -13,16 +13,17 @@ pub use crate::operation::revoke_certificate::_revoke_certificate_input::RevokeC
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RevokeCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::revoke_certificate::builders::RevokeCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::revoke_certificate::builders::RevokeCertificateInputBuilder,
+}
 impl RevokeCertificateFluentBuilder  {
     /// Creates a new `RevokeCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::revoke_certificate::RevokeCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

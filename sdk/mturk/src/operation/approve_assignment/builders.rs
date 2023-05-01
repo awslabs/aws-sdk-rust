@@ -15,16 +15,17 @@ pub use crate::operation::approve_assignment::_approve_assignment_input::Approve
 /// <p> You can also call this operation for assignments that were previous rejected and approve them by explicitly overriding the previous rejection. This only works on rejected assignments that were submitted within the previous 30 days and only if the assignment's related HIT has not been deleted. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ApproveAssignmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::approve_assignment::builders::ApproveAssignmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::approve_assignment::builders::ApproveAssignmentInputBuilder,
+}
 impl ApproveAssignmentFluentBuilder  {
     /// Creates a new `ApproveAssignment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::approve_assignment::ApproveAssignment, aws_http::retry::AwsResponseRetryClassifier,>,

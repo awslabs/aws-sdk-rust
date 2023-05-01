@@ -8,16 +8,17 @@ pub use crate::operation::import_documentation_parts::_import_documentation_part
 /// <p>Imports documentation parts</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportDocumentationPartsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_documentation_parts::builders::ImportDocumentationPartsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_documentation_parts::builders::ImportDocumentationPartsInputBuilder,
+}
 impl ImportDocumentationPartsFluentBuilder  {
     /// Creates a new `ImportDocumentationParts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_documentation_parts::ImportDocumentationParts, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::update_matchmaking_configuration::_update_matchmaking_
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html"> Design a FlexMatch matchmaker</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMatchmakingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_matchmaking_configuration::builders::UpdateMatchmakingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_matchmaking_configuration::builders::UpdateMatchmakingConfigurationInputBuilder,
+}
 impl UpdateMatchmakingConfigurationFluentBuilder  {
     /// Creates a new `UpdateMatchmakingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

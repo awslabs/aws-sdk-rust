@@ -14,16 +14,17 @@ pub use crate::operation::describe_affected_entities::_describe_affected_entitie
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAffectedEntitiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_affected_entities::builders::DescribeAffectedEntitiesInputBuilder,
+}
 impl DescribeAffectedEntitiesFluentBuilder  {
     /// Creates a new `DescribeAffectedEntities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_affected_entities::DescribeAffectedEntities, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -54,11 +55,11 @@ impl DescribeAffectedEntitiesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_affected_entities::paginator::DescribeAffectedEntitiesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_affected_entities::paginator::DescribeAffectedEntitiesPaginator {
-                            crate::operation::describe_affected_entities::paginator::DescribeAffectedEntitiesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_affected_entities::paginator::DescribeAffectedEntitiesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_affected_entities::paginator::DescribeAffectedEntitiesPaginator {
+                                crate::operation::describe_affected_entities::paginator::DescribeAffectedEntitiesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Values to narrow the results returned. At least one event ARN is required.</p>
     pub fn filter(mut self, input: crate::types::EntityFilter) -> Self {
         self.inner = self.inner.filter(input);

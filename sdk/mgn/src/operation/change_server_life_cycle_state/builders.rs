@@ -8,16 +8,17 @@ pub use crate::operation::change_server_life_cycle_state::_change_server_life_cy
 /// <p>Allows the user to set the SourceServer.LifeCycle.state property for specific Source Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER. This command only works if the Source Server is already launchable (dataReplicationInfo.lagDuration is not null.)</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ChangeServerLifeCycleStateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder,
+}
 impl ChangeServerLifeCycleStateFluentBuilder  {
     /// Creates a new `ChangeServerLifeCycleState`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleState, aws_http::retry::AwsResponseRetryClassifier,>,

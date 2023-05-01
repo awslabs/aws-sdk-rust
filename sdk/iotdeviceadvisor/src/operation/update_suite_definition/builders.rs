@@ -9,16 +9,17 @@ pub use crate::operation::update_suite_definition::_update_suite_definition_inpu
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSuiteDefinition</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSuiteDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_suite_definition::builders::UpdateSuiteDefinitionInputBuilder,
+}
 impl UpdateSuiteDefinitionFluentBuilder  {
     /// Creates a new `UpdateSuiteDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_suite_definition::UpdateSuiteDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_recovery_point::_describe_recovery_point_inpu
 /// <p>Returns metadata associated with a recovery point, including ID, status, encryption, and lifecycle.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRecoveryPointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_recovery_point::builders::DescribeRecoveryPointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_recovery_point::builders::DescribeRecoveryPointInputBuilder,
+}
 impl DescribeRecoveryPointFluentBuilder  {
     /// Creates a new `DescribeRecoveryPoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_recovery_point::DescribeRecoveryPoint, aws_http::retry::AwsResponseRetryClassifier,>,

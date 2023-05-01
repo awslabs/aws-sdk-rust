@@ -8,16 +8,17 @@ pub use crate::operation::describe_budget_performance_history::_describe_budget_
 /// <p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code> budgets. Budget history isn't available for <code>ANNUAL</code> budgets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBudgetPerformanceHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_budget_performance_history::builders::DescribeBudgetPerformanceHistoryInputBuilder,
+}
 impl DescribeBudgetPerformanceHistoryFluentBuilder  {
     /// Creates a new `DescribeBudgetPerformanceHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistory, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeBudgetPerformanceHistoryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator {
-                            crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator {
+                                crate::operation::describe_budget_performance_history::paginator::DescribeBudgetPerformanceHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());

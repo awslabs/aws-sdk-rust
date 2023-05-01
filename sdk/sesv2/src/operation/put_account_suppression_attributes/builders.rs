@@ -8,16 +8,17 @@ pub use crate::operation::put_account_suppression_attributes::_put_account_suppr
 /// <p>Change the settings for the account-level suppression list.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAccountSuppressionAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_account_suppression_attributes::builders::PutAccountSuppressionAttributesInputBuilder,
+}
 impl PutAccountSuppressionAttributesFluentBuilder  {
     /// Creates a new `PutAccountSuppressionAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_account_suppression_attributes::PutAccountSuppressionAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

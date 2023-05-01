@@ -8,16 +8,17 @@ pub use crate::operation::list_launch_profile_members::_list_launch_profile_memb
 /// <p>Get all users in a given launch profile membership.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLaunchProfileMembersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_launch_profile_members::builders::ListLaunchProfileMembersInputBuilder,
+}
 impl ListLaunchProfileMembersFluentBuilder  {
     /// Creates a new `ListLaunchProfileMembers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_launch_profile_members::ListLaunchProfileMembers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListLaunchProfileMembersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_launch_profile_members::paginator::ListLaunchProfileMembersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_launch_profile_members::paginator::ListLaunchProfileMembersPaginator {
-                            crate::operation::list_launch_profile_members::paginator::ListLaunchProfileMembersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_launch_profile_members::paginator::ListLaunchProfileMembersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_launch_profile_members::paginator::ListLaunchProfileMembersPaginator {
+                                crate::operation::list_launch_profile_members::paginator::ListLaunchProfileMembersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub fn launch_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.launch_profile_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::update_code_signing_config::_update_code_signing_confi
 /// <p>Update the code signing configuration. Changes to the code signing configuration take effect the next time a user tries to deploy a code package to the function. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCodeSigningConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_code_signing_config::builders::UpdateCodeSigningConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_code_signing_config::builders::UpdateCodeSigningConfigInputBuilder,
+}
 impl UpdateCodeSigningConfigFluentBuilder  {
     /// Creates a new `UpdateCodeSigningConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_code_signing_config::UpdateCodeSigningConfig, aws_http::retry::AwsResponseRetryClassifier,>,

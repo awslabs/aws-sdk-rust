@@ -8,16 +8,17 @@ pub use crate::operation::stop_multiplex::_stop_multiplex_input::StopMultiplexIn
 /// Stops a running multiplex. If the multiplex isn't running, this action has no effect.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopMultiplexFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_multiplex::builders::StopMultiplexInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_multiplex::builders::StopMultiplexInputBuilder,
+}
 impl StopMultiplexFluentBuilder  {
     /// Creates a new `StopMultiplex`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_multiplex::StopMultiplex, aws_http::retry::AwsResponseRetryClassifier,>,

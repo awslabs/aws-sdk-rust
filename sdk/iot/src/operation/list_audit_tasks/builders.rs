@@ -9,16 +9,17 @@ pub use crate::operation::list_audit_tasks::_list_audit_tasks_input::ListAuditTa
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditTasks</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAuditTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_audit_tasks::builders::ListAuditTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_audit_tasks::builders::ListAuditTasksInputBuilder,
+}
 impl ListAuditTasksFluentBuilder  {
     /// Creates a new `ListAuditTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_audit_tasks::ListAuditTasks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListAuditTasksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator {
-                            crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator {
+                                crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);

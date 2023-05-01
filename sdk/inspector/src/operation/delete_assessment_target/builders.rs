@@ -8,16 +8,17 @@ pub use crate::operation::delete_assessment_target::_delete_assessment_target_in
 /// <p>Deletes the assessment target that is specified by the ARN of the assessment target.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAssessmentTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_assessment_target::builders::DeleteAssessmentTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_assessment_target::builders::DeleteAssessmentTargetInputBuilder,
+}
 impl DeleteAssessmentTargetFluentBuilder  {
     /// Creates a new `DeleteAssessmentTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_assessment_target::DeleteAssessmentTarget, aws_http::retry::AwsResponseRetryClassifier,>,

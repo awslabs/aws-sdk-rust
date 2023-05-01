@@ -8,16 +8,17 @@ pub use crate::operation::update_api_mapping::_update_api_mapping_input::UpdateA
 /// <p>The API mapping.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateApiMappingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_api_mapping::builders::UpdateApiMappingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_api_mapping::builders::UpdateApiMappingInputBuilder,
+}
 impl UpdateApiMappingFluentBuilder  {
     /// Creates a new `UpdateApiMapping`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_api_mapping::UpdateApiMapping, aws_http::retry::AwsResponseRetryClassifier,>,

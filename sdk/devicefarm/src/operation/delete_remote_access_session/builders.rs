@@ -8,16 +8,17 @@ pub use crate::operation::delete_remote_access_session::_delete_remote_access_se
 /// <p>Deletes a completed remote access session and its results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRemoteAccessSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionInputBuilder,
+}
 impl DeleteRemoteAccessSessionFluentBuilder  {
     /// Creates a new `DeleteRemoteAccessSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_remote_access_session::DeleteRemoteAccessSession, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::deactivate_evaluation_form::_deactivate_evaluation_for
 /// <p>Deactivates an evaluation form in the specified Amazon Connect instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeactivateEvaluationFormFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deactivate_evaluation_form::builders::DeactivateEvaluationFormInputBuilder,
+}
 impl DeactivateEvaluationFormFluentBuilder  {
     /// Creates a new `DeactivateEvaluationForm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deactivate_evaluation_form::DeactivateEvaluationForm, aws_http::retry::AwsResponseRetryClassifier,>,

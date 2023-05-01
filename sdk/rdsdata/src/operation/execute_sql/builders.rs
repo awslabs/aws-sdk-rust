@@ -11,16 +11,17 @@ pub use crate::operation::execute_sql::_execute_sql_input::ExecuteSqlInputBuilde
 #[deprecated(note = "The ExecuteSql API is deprecated, please use the ExecuteStatement API.", since = "2019-03-21")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExecuteSqlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::execute_sql::builders::ExecuteSqlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::execute_sql::builders::ExecuteSqlInputBuilder,
+}
 impl ExecuteSqlFluentBuilder  {
     /// Creates a new `ExecuteSql`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::execute_sql::ExecuteSql, aws_http::retry::AwsResponseRetryClassifier,>,

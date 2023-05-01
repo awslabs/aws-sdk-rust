@@ -9,16 +9,17 @@ pub use crate::operation::list_proposals::_list_proposals_input::ListProposalsIn
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProposalsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_proposals::builders::ListProposalsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_proposals::builders::ListProposalsInputBuilder,
+}
 impl ListProposalsFluentBuilder  {
     /// Creates a new `ListProposals`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_proposals::ListProposals, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListProposalsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_proposals::paginator::ListProposalsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_proposals::paginator::ListProposalsPaginator {
-                            crate::operation::list_proposals::paginator::ListProposalsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_proposals::paginator::ListProposalsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_proposals::paginator::ListProposalsPaginator {
+                                crate::operation::list_proposals::paginator::ListProposalsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The unique identifier of the network. </p>
     pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.network_id(input.into());

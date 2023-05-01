@@ -12,16 +12,17 @@ pub use crate::operation::get_geo_match_set::_get_geo_match_set_input::GetGeoMat
 /// <p>Returns the <code>GeoMatchSet</code> that is specified by <code>GeoMatchSetId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetGeoMatchSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_geo_match_set::builders::GetGeoMatchSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_geo_match_set::builders::GetGeoMatchSetInputBuilder,
+}
 impl GetGeoMatchSetFluentBuilder  {
     /// Creates a new `GetGeoMatchSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_geo_match_set::GetGeoMatchSet, aws_http::retry::AwsResponseRetryClassifier,>,

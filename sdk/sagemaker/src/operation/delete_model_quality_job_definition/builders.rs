@@ -8,16 +8,17 @@ pub use crate::operation::delete_model_quality_job_definition::_delete_model_qua
 /// <p>Deletes the secified model quality monitoring job definition.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteModelQualityJobDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionInputBuilder,
+}
 impl DeleteModelQualityJobDefinitionFluentBuilder  {
     /// Creates a new `DeleteModelQualityJobDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

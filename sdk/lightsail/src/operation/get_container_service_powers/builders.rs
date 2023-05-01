@@ -9,16 +9,17 @@ pub use crate::operation::get_container_service_powers::_get_container_service_p
 /// <p>The power specifies the amount of memory, the number of vCPUs, and the base price of the container service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetContainerServicePowersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_container_service_powers::builders::GetContainerServicePowersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_container_service_powers::builders::GetContainerServicePowersInputBuilder,
+}
 impl GetContainerServicePowersFluentBuilder  {
     /// Creates a new `GetContainerServicePowers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_container_service_powers::GetContainerServicePowers, aws_http::retry::AwsResponseRetryClassifier,>,

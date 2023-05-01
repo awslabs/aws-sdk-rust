@@ -16,16 +16,17 @@ pub use crate::operation::get_vault_lock::_get_vault_lock_input::GetVaultLockInp
 /// <p>If there is no vault lock policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault lock policies, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon Glacier Access Control with Vault Lock Policies</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVaultLockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_vault_lock::builders::GetVaultLockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_vault_lock::builders::GetVaultLockInputBuilder,
+}
 impl GetVaultLockFluentBuilder  {
     /// Creates a new `GetVaultLock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_vault_lock::GetVaultLock, aws_http::retry::AwsResponseRetryClassifier,>,

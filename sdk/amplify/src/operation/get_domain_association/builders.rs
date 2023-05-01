@@ -8,16 +8,17 @@ pub use crate::operation::get_domain_association::_get_domain_association_input:
 /// <p> Returns the domain information for an Amplify app. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDomainAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_domain_association::builders::GetDomainAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_domain_association::builders::GetDomainAssociationInputBuilder,
+}
 impl GetDomainAssociationFluentBuilder  {
     /// Creates a new `GetDomainAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_domain_association::GetDomainAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

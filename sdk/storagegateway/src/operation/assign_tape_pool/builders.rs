@@ -8,16 +8,17 @@ pub use crate::operation::assign_tape_pool::_assign_tape_pool_input::AssignTapeP
 /// <p>Assigns a tape to a tape pool for archiving. The tape assigned to a pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the S3 storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssignTapePoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::assign_tape_pool::builders::AssignTapePoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::assign_tape_pool::builders::AssignTapePoolInputBuilder,
+}
 impl AssignTapePoolFluentBuilder  {
     /// Creates a new `AssignTapePool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::assign_tape_pool::AssignTapePool, aws_http::retry::AwsResponseRetryClassifier,>,

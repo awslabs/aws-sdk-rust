@@ -8,16 +8,17 @@ pub use crate::operation::update_medical_vocabulary::_update_medical_vocabulary_
 /// <p>Updates an existing custom medical vocabulary with new values. This operation overwrites all existing information with your new values; you cannot append new terms onto an existing custom vocabulary.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMedicalVocabularyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_medical_vocabulary::builders::UpdateMedicalVocabularyInputBuilder,
+}
 impl UpdateMedicalVocabularyFluentBuilder  {
     /// Creates a new `UpdateMedicalVocabulary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_medical_vocabulary::UpdateMedicalVocabulary, aws_http::retry::AwsResponseRetryClassifier,>,

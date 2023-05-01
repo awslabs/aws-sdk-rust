@@ -9,16 +9,17 @@ pub use crate::operation::get_launch_template_data::_get_launch_template_data_in
 /// <p>This action calls on other describe actions to get instance information. Depending on your instance configuration, you may need to allow the following actions in your IAM policy: <code>DescribeSpotInstanceRequests</code>, <code>DescribeInstanceCreditSpecifications</code>, <code>DescribeVolumes</code>, <code>DescribeInstanceAttribute</code>, and <code>DescribeElasticGpus</code>. Or, you can allow <code>describe*</code> depending on your instance requirements.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLaunchTemplateDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_launch_template_data::builders::GetLaunchTemplateDataInputBuilder,
+}
 impl GetLaunchTemplateDataFluentBuilder  {
     /// Creates a new `GetLaunchTemplateData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_launch_template_data::GetLaunchTemplateData, aws_http::retry::AwsResponseRetryClassifier,>,

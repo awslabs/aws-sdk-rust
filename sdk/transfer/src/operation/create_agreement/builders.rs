@@ -9,16 +9,17 @@ pub use crate::operation::create_agreement::_create_agreement_input::CreateAgree
 /// <p>The partner is identified with the <code>PartnerProfileId</code>, and the AS2 process is identified with the <code>LocalProfileId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAgreementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_agreement::builders::CreateAgreementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_agreement::builders::CreateAgreementInputBuilder,
+}
 impl CreateAgreementFluentBuilder  {
     /// Creates a new `CreateAgreement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_agreement::CreateAgreement, aws_http::retry::AwsResponseRetryClassifier,>,

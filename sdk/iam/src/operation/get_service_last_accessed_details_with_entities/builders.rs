@@ -15,16 +15,17 @@ pub use crate::operation::get_service_last_accessed_details_with_entities::_get_
 /// <p>By default, the list of associated entities is sorted by date, with the most recent access listed first.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetServiceLastAccessedDetailsWithEntitiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_service_last_accessed_details_with_entities::builders::GetServiceLastAccessedDetailsWithEntitiesInputBuilder,
+}
 impl GetServiceLastAccessedDetailsWithEntitiesFluentBuilder  {
     /// Creates a new `GetServiceLastAccessedDetailsWithEntities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntities, aws_http::retry::AwsResponseRetryClassifier,>,

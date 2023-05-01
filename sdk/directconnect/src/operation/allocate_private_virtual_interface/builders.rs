@@ -9,16 +9,17 @@ pub use crate::operation::allocate_private_virtual_interface::_allocate_private_
 /// <p>Virtual interfaces created using this action must be confirmed by the owner using <code>ConfirmPrivateVirtualInterface</code>. Until then, the virtual interface is in the <code>Confirming</code> state and is not available to handle traffic.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AllocatePrivateVirtualInterfaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::allocate_private_virtual_interface::builders::AllocatePrivateVirtualInterfaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::allocate_private_virtual_interface::builders::AllocatePrivateVirtualInterfaceInputBuilder,
+}
 impl AllocatePrivateVirtualInterfaceFluentBuilder  {
     /// Creates a new `AllocatePrivateVirtualInterface`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::allocate_private_virtual_interface::AllocatePrivateVirtualInterface, aws_http::retry::AwsResponseRetryClassifier,>,

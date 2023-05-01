@@ -8,16 +8,17 @@ pub use crate::operation::describe_transit_gateway_attachments::_describe_transi
 /// <p>Describes one or more attachments between resources and transit gateways. By default, all attachments are described. Alternatively, you can filter the results by attachment ID, attachment state, resource ID, or resource owner.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTransitGatewayAttachmentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_transit_gateway_attachments::builders::DescribeTransitGatewayAttachmentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_transit_gateway_attachments::builders::DescribeTransitGatewayAttachmentsInputBuilder,
+}
 impl DescribeTransitGatewayAttachmentsFluentBuilder  {
     /// Creates a new `DescribeTransitGatewayAttachments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeTransitGatewayAttachmentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_transit_gateway_attachments::paginator::DescribeTransitGatewayAttachmentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_transit_gateway_attachments::paginator::DescribeTransitGatewayAttachmentsPaginator {
-                            crate::operation::describe_transit_gateway_attachments::paginator::DescribeTransitGatewayAttachmentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_transit_gateway_attachments::paginator::DescribeTransitGatewayAttachmentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_transit_gateway_attachments::paginator::DescribeTransitGatewayAttachmentsPaginator {
+                                crate::operation::describe_transit_gateway_attachments::paginator::DescribeTransitGatewayAttachmentsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TransitGatewayAttachmentIds`.
     ///
     /// To override the contents of this collection use [`set_transit_gateway_attachment_ids`](Self::set_transit_gateway_attachment_ids).

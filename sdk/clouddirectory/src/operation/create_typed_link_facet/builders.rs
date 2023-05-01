@@ -8,16 +8,17 @@ pub use crate::operation::create_typed_link_facet::_create_typed_link_facet_inpu
 /// <p>Creates a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTypedLinkFacetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_typed_link_facet::builders::CreateTypedLinkFacetInputBuilder,
+}
 impl CreateTypedLinkFacetFluentBuilder  {
     /// Creates a new `CreateTypedLinkFacet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_typed_link_facet::CreateTypedLinkFacet, aws_http::retry::AwsResponseRetryClassifier,>,

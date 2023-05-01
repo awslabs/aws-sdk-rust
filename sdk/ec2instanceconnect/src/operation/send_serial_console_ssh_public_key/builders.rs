@@ -8,16 +8,17 @@ pub use crate::operation::send_serial_console_ssh_public_key::_send_serial_conso
 /// <p>Pushes an SSH public key to the specified EC2 instance. The key remains for 60 seconds, which gives you 60 seconds to establish a serial console connection to the instance using SSH. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2 Serial Console</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendSerialConsoleSSHPublicKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_serial_console_ssh_public_key::builders::SendSerialConsoleSshPublicKeyInputBuilder,
+}
 impl SendSerialConsoleSSHPublicKeyFluentBuilder  {
     /// Creates a new `SendSerialConsoleSSHPublicKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKey, aws_http::retry::AwsResponseRetryClassifier,>,

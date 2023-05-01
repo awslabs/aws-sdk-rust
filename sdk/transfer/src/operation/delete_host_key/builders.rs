@@ -8,16 +8,17 @@ pub use crate::operation::delete_host_key::_delete_host_key_input::DeleteHostKey
 /// <p>Deletes the host key that's specified in the <code>HoskKeyId</code> parameter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteHostKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_host_key::builders::DeleteHostKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_host_key::builders::DeleteHostKeyInputBuilder,
+}
 impl DeleteHostKeyFluentBuilder  {
     /// Creates a new `DeleteHostKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_host_key::DeleteHostKey, aws_http::retry::AwsResponseRetryClassifier,>,

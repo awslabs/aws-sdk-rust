@@ -8,16 +8,17 @@ pub use crate::operation::put_voice_connector_emergency_calling_configuration::_
 /// <p>Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime Voice Connector before emergency calling can be configured.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_voice_connector_emergency_calling_configuration::builders::PutVoiceConnectorEmergencyCallingConfigurationInputBuilder,
+}
 impl PutVoiceConnectorEmergencyCallingConfigurationFluentBuilder  {
     /// Creates a new `PutVoiceConnectorEmergencyCallingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

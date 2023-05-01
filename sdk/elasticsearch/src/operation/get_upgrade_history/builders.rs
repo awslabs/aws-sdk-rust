@@ -8,16 +8,17 @@ pub use crate::operation::get_upgrade_history::_get_upgrade_history_input::GetUp
 /// <p>Retrieves the complete history of the last 10 upgrades that were performed on the domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUpgradeHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_upgrade_history::builders::GetUpgradeHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_upgrade_history::builders::GetUpgradeHistoryInputBuilder,
+}
 impl GetUpgradeHistoryFluentBuilder  {
     /// Creates a new `GetUpgradeHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_upgrade_history::GetUpgradeHistory, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetUpgradeHistoryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_upgrade_history::paginator::GetUpgradeHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_upgrade_history::paginator::GetUpgradeHistoryPaginator {
-                            crate::operation::get_upgrade_history::paginator::GetUpgradeHistoryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_upgrade_history::paginator::GetUpgradeHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_upgrade_history::paginator::GetUpgradeHistoryPaginator {
+                                crate::operation::get_upgrade_history::paginator::GetUpgradeHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::update_apns_voip_sandbox_channel::_update_apns_voip_sa
 /// <p>Enables the APNs VoIP sandbox channel for an application or updates the status and settings of the APNs VoIP sandbox channel for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateApnsVoipSandboxChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_apns_voip_sandbox_channel::builders::UpdateApnsVoipSandboxChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_apns_voip_sandbox_channel::builders::UpdateApnsVoipSandboxChannelInputBuilder,
+}
 impl UpdateApnsVoipSandboxChannelFluentBuilder  {
     /// Creates a new `UpdateApnsVoipSandboxChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_apns_voip_sandbox_channel::UpdateApnsVoipSandboxChannel, aws_http::retry::AwsResponseRetryClassifier,>,

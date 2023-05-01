@@ -8,16 +8,17 @@ pub use crate::operation::list_branches::_list_branches_input::ListBranchesInput
 /// <p> Lists the branches of an Amplify app. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBranchesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_branches::builders::ListBranchesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_branches::builders::ListBranchesInputBuilder,
+}
 impl ListBranchesFluentBuilder  {
     /// Creates a new `ListBranches`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_branches::ListBranches, aws_http::retry::AwsResponseRetryClassifier,>,

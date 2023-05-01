@@ -8,16 +8,17 @@ pub use crate::operation::delete_subscription_notification_configuration::_delet
 /// <p>Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSubscriptionNotificationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_subscription_notification_configuration::builders::DeleteSubscriptionNotificationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_subscription_notification_configuration::builders::DeleteSubscriptionNotificationConfigurationInputBuilder,
+}
 impl DeleteSubscriptionNotificationConfigurationFluentBuilder  {
     /// Creates a new `DeleteSubscriptionNotificationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_subscription_notification_configuration::DeleteSubscriptionNotificationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

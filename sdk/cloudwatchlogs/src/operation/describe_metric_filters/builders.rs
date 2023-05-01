@@ -8,16 +8,17 @@ pub use crate::operation::describe_metric_filters::_describe_metric_filters_inpu
 /// <p>Lists the specified metric filters. You can list all of the metric filters or filter the results by log name, prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMetricFiltersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_metric_filters::builders::DescribeMetricFiltersInputBuilder,
+}
 impl DescribeMetricFiltersFluentBuilder  {
     /// Creates a new `DescribeMetricFilters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_metric_filters::DescribeMetricFilters, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeMetricFiltersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator {
-                            crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator {
+                                crate::operation::describe_metric_filters::paginator::DescribeMetricFiltersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the log group.</p>
     pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());

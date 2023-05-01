@@ -9,16 +9,17 @@ pub use crate::operation::describe_cache::_describe_cache_input::DescribeCacheIn
 /// <p>The response includes disk IDs that are configured as cache, and it includes the amount of cache allocated and used.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCacheFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cache::builders::DescribeCacheInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cache::builders::DescribeCacheInputBuilder,
+}
 impl DescribeCacheFluentBuilder  {
     /// Creates a new `DescribeCache`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cache::DescribeCache, aws_http::retry::AwsResponseRetryClassifier,>,

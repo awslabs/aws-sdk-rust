@@ -8,16 +8,17 @@ pub use crate::operation::list_webhooks::_list_webhooks_input::ListWebhooksInput
 /// <p> Returns a list of webhooks for an Amplify app. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWebhooksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_webhooks::builders::ListWebhooksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_webhooks::builders::ListWebhooksInputBuilder,
+}
 impl ListWebhooksFluentBuilder  {
     /// Creates a new `ListWebhooks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_webhooks::ListWebhooks, aws_http::retry::AwsResponseRetryClassifier,>,

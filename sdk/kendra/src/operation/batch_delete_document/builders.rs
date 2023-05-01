@@ -9,16 +9,17 @@ pub use crate::operation::batch_delete_document::_batch_delete_document_input::B
 /// <p>The documents are deleted asynchronously. You can see the progress of the deletion by using Amazon Web Services CloudWatch. Any error messages related to the processing of the batch are sent to you CloudWatch log.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteDocumentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_document::builders::BatchDeleteDocumentInputBuilder,
+}
 impl BatchDeleteDocumentFluentBuilder  {
     /// Creates a new `BatchDeleteDocument`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_document::BatchDeleteDocument, aws_http::retry::AwsResponseRetryClassifier,>,

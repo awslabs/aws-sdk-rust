@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_applications::_batch_get_applications_input:
 /// <p>Gets information about one or more applications. The maximum number of applications that can be returned is 100.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetApplicationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_applications::builders::BatchGetApplicationsInputBuilder,
+}
 impl BatchGetApplicationsFluentBuilder  {
     /// Creates a new `BatchGetApplications`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_applications::BatchGetApplications, aws_http::retry::AwsResponseRetryClassifier,>,

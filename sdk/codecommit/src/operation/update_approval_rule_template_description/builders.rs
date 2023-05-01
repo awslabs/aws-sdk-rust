@@ -8,16 +8,17 @@ pub use crate::operation::update_approval_rule_template_description::_update_app
 /// <p>Updates the description for a specified approval rule template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateDescriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_approval_rule_template_description::builders::UpdateApprovalRuleTemplateDescriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_approval_rule_template_description::builders::UpdateApprovalRuleTemplateDescriptionInputBuilder,
+}
 impl UpdateApprovalRuleTemplateDescriptionFluentBuilder  {
     /// Creates a new `UpdateApprovalRuleTemplateDescription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_approval_rule_template_description::UpdateApprovalRuleTemplateDescription, aws_http::retry::AwsResponseRetryClassifier,>,

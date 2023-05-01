@@ -8,16 +8,17 @@ pub use crate::operation::list_run_groups::_list_run_groups_input::ListRunGroups
 /// <p>Retrieves a list of run groups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRunGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_run_groups::builders::ListRunGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_run_groups::builders::ListRunGroupsInputBuilder,
+}
 impl ListRunGroupsFluentBuilder  {
     /// Creates a new `ListRunGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_run_groups::ListRunGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRunGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_run_groups::paginator::ListRunGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_run_groups::paginator::ListRunGroupsPaginator {
-                            crate::operation::list_run_groups::paginator::ListRunGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_run_groups::paginator::ListRunGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_run_groups::paginator::ListRunGroupsPaginator {
+                                crate::operation::list_run_groups::paginator::ListRunGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The run groups' name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

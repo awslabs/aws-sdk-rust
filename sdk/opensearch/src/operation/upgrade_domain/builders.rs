@@ -8,16 +8,17 @@ pub use crate::operation::upgrade_domain::_upgrade_domain_input::UpgradeDomainIn
 /// <p>Allows you to either upgrade your Amazon OpenSearch Service domain or perform an upgrade eligibility check to a compatible version of OpenSearch or Elasticsearch.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpgradeDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::upgrade_domain::builders::UpgradeDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::upgrade_domain::builders::UpgradeDomainInputBuilder,
+}
 impl UpgradeDomainFluentBuilder  {
     /// Creates a new `UpgradeDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::upgrade_domain::UpgradeDomain, aws_http::retry::AwsResponseRetryClassifier,>,

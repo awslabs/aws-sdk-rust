@@ -8,16 +8,17 @@ pub use crate::operation::create_replication_job::_create_replication_job_input:
 /// <p>Creates a replication job. The replication job schedules periodic replication runs to replicate your server to Amazon Web Services. Each replication run creates an Amazon Machine Image (AMI).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateReplicationJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_replication_job::builders::CreateReplicationJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_replication_job::builders::CreateReplicationJobInputBuilder,
+}
 impl CreateReplicationJobFluentBuilder  {
     /// Creates a new `CreateReplicationJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_replication_job::CreateReplicationJob, aws_http::retry::AwsResponseRetryClassifier,>,

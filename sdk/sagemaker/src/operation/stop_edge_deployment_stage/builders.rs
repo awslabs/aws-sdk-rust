@@ -8,16 +8,17 @@ pub use crate::operation::stop_edge_deployment_stage::_stop_edge_deployment_stag
 /// <p>Stops a stage in an edge deployment plan.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopEdgeDeploymentStageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageInputBuilder,
+}
 impl StopEdgeDeploymentStageFluentBuilder  {
     /// Creates a new `StopEdgeDeploymentStage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStage, aws_http::retry::AwsResponseRetryClassifier,>,

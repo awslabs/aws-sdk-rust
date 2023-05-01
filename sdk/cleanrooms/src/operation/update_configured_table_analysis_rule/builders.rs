@@ -8,16 +8,17 @@ pub use crate::operation::update_configured_table_analysis_rule::_update_configu
 /// <p>Updates a configured table analysis rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateConfiguredTableAnalysisRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_configured_table_analysis_rule::builders::UpdateConfiguredTableAnalysisRuleInputBuilder,
+}
 impl UpdateConfiguredTableAnalysisRuleFluentBuilder  {
     /// Creates a new `UpdateConfiguredTableAnalysisRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRule, aws_http::retry::AwsResponseRetryClassifier,>,

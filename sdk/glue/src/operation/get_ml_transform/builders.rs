@@ -8,16 +8,17 @@ pub use crate::operation::get_ml_transform::_get_ml_transform_input::GetMlTransf
 /// <p>Gets an Glue machine learning transform artifact and all its corresponding metadata. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. You can retrieve their metadata by calling <code>GetMLTransform</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMLTransformFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_ml_transform::builders::GetMlTransformInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_ml_transform::builders::GetMlTransformInputBuilder,
+}
 impl GetMLTransformFluentBuilder  {
     /// Creates a new `GetMLTransform`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_ml_transform::GetMLTransform, aws_http::retry::AwsResponseRetryClassifier,>,

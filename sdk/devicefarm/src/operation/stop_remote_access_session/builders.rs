@@ -8,16 +8,17 @@ pub use crate::operation::stop_remote_access_session::_stop_remote_access_sessio
 /// <p>Ends a specified remote access session.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopRemoteAccessSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_remote_access_session::builders::StopRemoteAccessSessionInputBuilder,
+}
 impl StopRemoteAccessSessionFluentBuilder  {
     /// Creates a new `StopRemoteAccessSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_remote_access_session::StopRemoteAccessSession, aws_http::retry::AwsResponseRetryClassifier,>,

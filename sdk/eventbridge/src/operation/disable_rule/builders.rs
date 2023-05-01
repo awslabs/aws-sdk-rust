@@ -9,16 +9,17 @@ pub use crate::operation::disable_rule::_disable_rule_input::DisableRuleInputBui
 /// <p>When you disable a rule, incoming events might continue to match to the disabled rule. Allow a short period of time for changes to take effect.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_rule::builders::DisableRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_rule::builders::DisableRuleInputBuilder,
+}
 impl DisableRuleFluentBuilder  {
     /// Creates a new `DisableRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_rule::DisableRule, aws_http::retry::AwsResponseRetryClassifier,>,

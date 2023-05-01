@@ -10,16 +10,17 @@ pub use crate::operation::describe_dimension_keys::_describe_dimension_keys_inpu
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDimensionKeysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_dimension_keys::builders::DescribeDimensionKeysInputBuilder,
+}
 impl DescribeDimensionKeysFluentBuilder  {
     /// Creates a new `DescribeDimensionKeys`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_dimension_keys::DescribeDimensionKeys, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeDimensionKeysFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator {
-                            crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator {
+                                crate::operation::describe_dimension_keys::paginator::DescribeDimensionKeysPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:</p> 
     /// <ul> 
     /// <li> <p> <code>RDS</code> </p> </li> 

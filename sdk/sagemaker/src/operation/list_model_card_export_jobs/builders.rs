@@ -8,16 +8,17 @@ pub use crate::operation::list_model_card_export_jobs::_list_model_card_export_j
 /// <p>List the export jobs for the Amazon SageMaker Model Card.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListModelCardExportJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_model_card_export_jobs::builders::ListModelCardExportJobsInputBuilder,
+}
 impl ListModelCardExportJobsFluentBuilder  {
     /// Creates a new `ListModelCardExportJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_model_card_export_jobs::ListModelCardExportJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListModelCardExportJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_model_card_export_jobs::paginator::ListModelCardExportJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_model_card_export_jobs::paginator::ListModelCardExportJobsPaginator {
-                            crate::operation::list_model_card_export_jobs::paginator::ListModelCardExportJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_model_card_export_jobs::paginator::ListModelCardExportJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_model_card_export_jobs::paginator::ListModelCardExportJobsPaginator {
+                                crate::operation::list_model_card_export_jobs::paginator::ListModelCardExportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>List export jobs for the model card with the specified name.</p>
     pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.model_card_name(input.into());

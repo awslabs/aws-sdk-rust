@@ -8,16 +8,17 @@ pub use crate::operation::create_protection_group::_create_protection_group_inpu
 /// <p>Creates a grouping of protected resources so they can be handled as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProtectionGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_protection_group::builders::CreateProtectionGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_protection_group::builders::CreateProtectionGroupInputBuilder,
+}
 impl CreateProtectionGroupFluentBuilder  {
     /// Creates a new `CreateProtectionGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_protection_group::CreateProtectionGroup, aws_http::retry::AwsResponseRetryClassifier,>,

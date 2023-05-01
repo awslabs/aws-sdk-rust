@@ -8,16 +8,17 @@ pub use crate::operation::create_inference_scheduler::_create_inference_schedule
 /// <p> Creates a scheduled inference. Scheduling an inference is setting up a continuous real-time inference plan to analyze new measurement data. When setting up the schedule, you provide an S3 bucket location for the input data, assign it a delimiter between separate entries in the data, set an offset delay if desired, and set the frequency of inferencing. You must also provide an S3 bucket location for the output data. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateInferenceSchedulerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_inference_scheduler::builders::CreateInferenceSchedulerInputBuilder,
+}
 impl CreateInferenceSchedulerFluentBuilder  {
     /// Creates a new `CreateInferenceScheduler`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_inference_scheduler::CreateInferenceScheduler, aws_http::retry::AwsResponseRetryClassifier,>,

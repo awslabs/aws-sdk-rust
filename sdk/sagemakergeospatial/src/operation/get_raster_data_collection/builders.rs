@@ -8,16 +8,17 @@ pub use crate::operation::get_raster_data_collection::_get_raster_data_collectio
 /// <p>Use this operation to get details of a specific raster data collection.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRasterDataCollectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionInputBuilder,
+}
 impl GetRasterDataCollectionFluentBuilder  {
     /// Creates a new `GetRasterDataCollection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_raster_data_collection::GetRasterDataCollection, aws_http::retry::AwsResponseRetryClassifier,>,

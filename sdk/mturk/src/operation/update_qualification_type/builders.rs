@@ -14,16 +14,17 @@ pub use crate::operation::update_qualification_type::_update_qualification_type_
 /// <p> You can also update the AutoGranted and AutoGrantedValue attributes of the Qualification type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateQualificationTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_qualification_type::builders::UpdateQualificationTypeInputBuilder,
+}
 impl UpdateQualificationTypeFluentBuilder  {
     /// Creates a new `UpdateQualificationType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_qualification_type::UpdateQualificationType, aws_http::retry::AwsResponseRetryClassifier,>,

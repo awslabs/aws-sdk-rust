@@ -8,16 +8,17 @@ pub use crate::operation::delete_cross_account_authorization::_delete_cross_acco
 /// <p>Deletes cross account readiness authorization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCrossAccountAuthorizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_cross_account_authorization::builders::DeleteCrossAccountAuthorizationInputBuilder,
+}
 impl DeleteCrossAccountAuthorizationFluentBuilder  {
     /// Creates a new `DeleteCrossAccountAuthorization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorization, aws_http::retry::AwsResponseRetryClassifier,>,

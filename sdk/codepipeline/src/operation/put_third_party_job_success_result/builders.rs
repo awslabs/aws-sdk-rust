@@ -8,16 +8,17 @@ pub use crate::operation::put_third_party_job_success_result::_put_third_party_j
 /// <p>Represents the success of a third party job as returned to the pipeline by a job worker. Used for partner actions only.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutThirdPartyJobSuccessResultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_third_party_job_success_result::builders::PutThirdPartyJobSuccessResultInputBuilder,
+}
 impl PutThirdPartyJobSuccessResultFluentBuilder  {
     /// Creates a new `PutThirdPartyJobSuccessResult`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_third_party_job_success_result::PutThirdPartyJobSuccessResult, aws_http::retry::AwsResponseRetryClassifier,>,

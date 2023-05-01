@@ -9,16 +9,17 @@ pub use crate::operation::list_identities::_list_identities_input::ListIdentitie
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIdentitiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_identities::builders::ListIdentitiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_identities::builders::ListIdentitiesInputBuilder,
+}
 impl ListIdentitiesFluentBuilder  {
     /// Creates a new `ListIdentities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_identities::ListIdentities, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListIdentitiesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_identities::paginator::ListIdentitiesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_identities::paginator::ListIdentitiesPaginator {
-                            crate::operation::list_identities::paginator::ListIdentitiesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_identities::paginator::ListIdentitiesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_identities::paginator::ListIdentitiesPaginator {
+                                crate::operation::list_identities::paginator::ListIdentitiesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
         self.inner = self.inner.identity_type(input);

@@ -9,16 +9,17 @@ pub use crate::operation::put_sol_function_package_content::_put_sol_function_pa
 /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutSolFunctionPackageContentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_sol_function_package_content::builders::PutSolFunctionPackageContentInputBuilder,
+}
 impl PutSolFunctionPackageContentFluentBuilder  {
     /// Creates a new `PutSolFunctionPackageContent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_sol_function_package_content::PutSolFunctionPackageContent, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_migrations::_get_migrations_input::GetMigrationsIn
 /// <p>Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMigrationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_migrations::builders::GetMigrationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_migrations::builders::GetMigrationsInputBuilder,
+}
 impl GetMigrationsFluentBuilder  {
     /// Creates a new `GetMigrations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_migrations::GetMigrations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetMigrationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_migrations::paginator::GetMigrationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_migrations::paginator::GetMigrationsPaginator {
-                            crate::operation::get_migrations::paginator::GetMigrationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_migrations::paginator::GetMigrationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_migrations::paginator::GetMigrationsPaginator {
+                                crate::operation::get_migrations::paginator::GetMigrationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</p>
     pub fn sort_by_attribute(mut self, input: crate::types::MigrationSortAttribute) -> Self {
         self.inner = self.inner.sort_by_attribute(input);

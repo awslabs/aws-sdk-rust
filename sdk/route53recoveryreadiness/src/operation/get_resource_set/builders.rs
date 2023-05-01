@@ -8,16 +8,17 @@ pub use crate::operation::get_resource_set::_get_resource_set_input::GetResource
 /// <p>Displays the details about a resource set, including a list of the resources in the set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourceSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_resource_set::builders::GetResourceSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_resource_set::builders::GetResourceSetInputBuilder,
+}
 impl GetResourceSetFluentBuilder  {
     /// Creates a new `GetResourceSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_resource_set::GetResourceSet, aws_http::retry::AwsResponseRetryClassifier,>,

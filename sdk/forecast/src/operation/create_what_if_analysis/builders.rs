@@ -12,16 +12,17 @@ pub use crate::operation::create_what_if_analysis::_create_what_if_analysis_inpu
 /// <p>The <code>TimeSeriesSelector</code> object defines the items that you want in the what-if analysis.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWhatIfAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_what_if_analysis::builders::CreateWhatIfAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_what_if_analysis::builders::CreateWhatIfAnalysisInputBuilder,
+}
 impl CreateWhatIfAnalysisFluentBuilder  {
     /// Creates a new `CreateWhatIfAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_what_if_analysis::CreateWhatIfAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

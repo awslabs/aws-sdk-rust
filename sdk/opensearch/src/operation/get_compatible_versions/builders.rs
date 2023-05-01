@@ -8,16 +8,17 @@ pub use crate::operation::get_compatible_versions::_get_compatible_versions_inpu
 /// <p>Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCompatibleVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_compatible_versions::builders::GetCompatibleVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_compatible_versions::builders::GetCompatibleVersionsInputBuilder,
+}
 impl GetCompatibleVersionsFluentBuilder  {
     /// Creates a new `GetCompatibleVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_compatible_versions::GetCompatibleVersions, aws_http::retry::AwsResponseRetryClassifier,>,

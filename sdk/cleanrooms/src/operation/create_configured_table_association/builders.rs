@@ -8,16 +8,17 @@ pub use crate::operation::create_configured_table_association::_create_configure
 /// <p>Creates a configured table association. A configured table association links a configured table with a collaboration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConfiguredTableAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_configured_table_association::builders::CreateConfiguredTableAssociationInputBuilder,
+}
 impl CreateConfiguredTableAssociationFluentBuilder  {
     /// Creates a new `CreateConfiguredTableAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_configured_table_association::CreateConfiguredTableAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

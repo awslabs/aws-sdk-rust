@@ -8,16 +8,17 @@ pub use crate::operation::get_temporary_glue_table_credentials::_get_temporary_g
 /// <p>Allows a caller in a secure environment to assume a role with permission to access Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated with a registered location, for example an Amazon S3 bucket, with a scope down policy which restricts the access to a single prefix.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTemporaryGlueTableCredentialsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_temporary_glue_table_credentials::builders::GetTemporaryGlueTableCredentialsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_temporary_glue_table_credentials::builders::GetTemporaryGlueTableCredentialsInputBuilder,
+}
 impl GetTemporaryGlueTableCredentialsFluentBuilder  {
     /// Creates a new `GetTemporaryGlueTableCredentials`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentials, aws_http::retry::AwsResponseRetryClassifier,>,

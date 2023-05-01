@@ -8,16 +8,17 @@ pub use crate::operation::create_location_fsx_ontap::_create_location_fsx_ontap_
 /// <p>Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Creating a location for FSx for ONTAP</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLocationFsxOntapFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_location_fsx_ontap::builders::CreateLocationFsxOntapInputBuilder,
+}
 impl CreateLocationFsxOntapFluentBuilder  {
     /// Creates a new `CreateLocationFsxOntap`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_location_fsx_ontap::CreateLocationFsxOntap, aws_http::retry::AwsResponseRetryClassifier,>,

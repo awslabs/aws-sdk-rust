@@ -8,16 +8,17 @@ pub use crate::operation::list_offering_promotions::_list_offering_promotions_in
 /// <p>Returns a list of offering promotions. Each offering promotion record contains the ID and description of the promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you must be able to invoke this operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListOfferingPromotionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_offering_promotions::builders::ListOfferingPromotionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_offering_promotions::builders::ListOfferingPromotionsInputBuilder,
+}
 impl ListOfferingPromotionsFluentBuilder  {
     /// Creates a new `ListOfferingPromotions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_offering_promotions::ListOfferingPromotions, aws_http::retry::AwsResponseRetryClassifier,>,

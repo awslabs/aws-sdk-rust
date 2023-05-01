@@ -8,16 +8,17 @@ pub use crate::operation::get_legal_hold::_get_legal_hold_input::GetLegalHoldInp
 /// <p>This action returns details for a specified legal hold. The details are the body of a legal hold in JSON format, in addition to metadata.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLegalHoldFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_legal_hold::builders::GetLegalHoldInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_legal_hold::builders::GetLegalHoldInputBuilder,
+}
 impl GetLegalHoldFluentBuilder  {
     /// Creates a new `GetLegalHold`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_legal_hold::GetLegalHold, aws_http::retry::AwsResponseRetryClassifier,>,

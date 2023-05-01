@@ -8,16 +8,17 @@ pub use crate::operation::update_gateway_information::_update_gateway_informatio
 /// <p>Updates a gateway's name. Specify which gateway to update using the Amazon Resource Name (ARN) of the gateway in your request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGatewayInformationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder,
+}
 impl UpdateGatewayInformationFluentBuilder  {
     /// Creates a new `UpdateGatewayInformation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_gateway_information::UpdateGatewayInformation, aws_http::retry::AwsResponseRetryClassifier,>,

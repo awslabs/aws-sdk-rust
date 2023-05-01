@@ -8,16 +8,17 @@ pub use crate::operation::list_vpc_connectors::_list_vpc_connectors_input::ListV
 /// <p>Returns a list of App Runner VPC connectors in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVpcConnectorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_vpc_connectors::builders::ListVpcConnectorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_vpc_connectors::builders::ListVpcConnectorsInputBuilder,
+}
 impl ListVpcConnectorsFluentBuilder  {
     /// Creates a new `ListVpcConnectors`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_vpc_connectors::ListVpcConnectors, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListVpcConnectorsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator {
-                            crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator {
+                                crate::operation::list_vpc_connectors::paginator::ListVpcConnectorsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p> 
     /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
     pub fn max_results(mut self, input: i32) -> Self {

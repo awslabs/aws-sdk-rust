@@ -8,16 +8,17 @@ pub use crate::operation::put_outcome::_put_outcome_input::PutOutcomeInputBuilde
 /// <p>Creates or updates an outcome. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutOutcomeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_outcome::builders::PutOutcomeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_outcome::builders::PutOutcomeInputBuilder,
+}
 impl PutOutcomeFluentBuilder  {
     /// Creates a new `PutOutcome`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_outcome::PutOutcome, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_workflow_run_properties::_get_workflow_run_propert
 /// <p>Retrieves the workflow run properties which were set during the run.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetWorkflowRunPropertiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_workflow_run_properties::builders::GetWorkflowRunPropertiesInputBuilder,
+}
 impl GetWorkflowRunPropertiesFluentBuilder  {
     /// Creates a new `GetWorkflowRunProperties`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_workflow_run_properties::GetWorkflowRunProperties, aws_http::retry::AwsResponseRetryClassifier,>,

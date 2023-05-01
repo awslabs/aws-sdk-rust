@@ -9,16 +9,17 @@ pub use crate::operation::create_api_key::_create_api_key_input::CreateApiKeyInp
 /// <p>The CAPTCHA API requires a key that authorizes CAPTCHA use from the client application domain. You can use a single key for up to 5 domains. After you generate a key, you can copy it for use in your JavaScript integration. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAPIKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_api_key::builders::CreateApiKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_api_key::builders::CreateApiKeyInputBuilder,
+}
 impl CreateAPIKeyFluentBuilder  {
     /// Creates a new `CreateAPIKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_api_key::CreateAPIKey, aws_http::retry::AwsResponseRetryClassifier,>,

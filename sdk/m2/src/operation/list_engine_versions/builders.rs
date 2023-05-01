@@ -8,16 +8,17 @@ pub use crate::operation::list_engine_versions::_list_engine_versions_input::Lis
 /// <p>Lists the available engine versions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEngineVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_engine_versions::builders::ListEngineVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_engine_versions::builders::ListEngineVersionsInputBuilder,
+}
 impl ListEngineVersionsFluentBuilder  {
     /// Creates a new `ListEngineVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_engine_versions::ListEngineVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEngineVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator {
-                            crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator {
+                                crate::operation::list_engine_versions::paginator::ListEngineVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of target platform.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
         self.inner = self.inner.engine_type(input);

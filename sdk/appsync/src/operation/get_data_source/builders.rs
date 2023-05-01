@@ -8,16 +8,17 @@ pub use crate::operation::get_data_source::_get_data_source_input::GetDataSource
 /// <p>Retrieves a <code>DataSource</code> object.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDataSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_data_source::builders::GetDataSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_data_source::builders::GetDataSourceInputBuilder,
+}
 impl GetDataSourceFluentBuilder  {
     /// Creates a new `GetDataSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_data_source::GetDataSource, aws_http::retry::AwsResponseRetryClassifier,>,

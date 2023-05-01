@@ -9,16 +9,17 @@ pub use crate::operation::delete_human_loop::_delete_human_loop_input::DeleteHum
 /// <p>If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteHumanLoopFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_human_loop::builders::DeleteHumanLoopInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_human_loop::builders::DeleteHumanLoopInputBuilder,
+}
 impl DeleteHumanLoopFluentBuilder  {
     /// Creates a new `DeleteHumanLoop`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_human_loop::DeleteHumanLoop, aws_http::retry::AwsResponseRetryClassifier,>,

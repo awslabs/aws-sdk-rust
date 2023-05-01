@@ -9,16 +9,17 @@ pub use crate::operation::disable_trust_anchor::_disable_trust_anchor_input::Dis
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:DisableTrustAnchor</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableTrustAnchorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_trust_anchor::builders::DisableTrustAnchorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_trust_anchor::builders::DisableTrustAnchorInputBuilder,
+}
 impl DisableTrustAnchorFluentBuilder  {
     /// Creates a new `DisableTrustAnchor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_trust_anchor::DisableTrustAnchor, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::start_replication_task_assessment_run::_start_replicat
 /// <p>The assessments that you can specify depend on the source and target database engine and the migration type defined for the given task. To run this operation, your migration task must already be created. After you run this operation, you can review the status of each individual assessment. You can also run the migration task manually after the assessment run and its individual assessments complete.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartReplicationTaskAssessmentRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_replication_task_assessment_run::builders::StartReplicationTaskAssessmentRunInputBuilder,
+}
 impl StartReplicationTaskAssessmentRunFluentBuilder  {
     /// Creates a new `StartReplicationTaskAssessmentRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRun, aws_http::retry::AwsResponseRetryClassifier,>,

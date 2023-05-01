@@ -8,16 +8,17 @@ pub use crate::operation::restore_table_from_snapshot::_restore_table_from_snaps
 /// <p>Restores a table from a snapshot to your Amazon Redshift Serverless instance. You can't use this operation to restore tables with <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved sort keys</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreTableFromSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_table_from_snapshot::builders::RestoreTableFromSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_table_from_snapshot::builders::RestoreTableFromSnapshotInputBuilder,
+}
 impl RestoreTableFromSnapshotFluentBuilder  {
     /// Creates a new `RestoreTableFromSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

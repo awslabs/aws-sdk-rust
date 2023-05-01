@@ -8,16 +8,17 @@ pub use crate::operation::list_read_set_import_jobs::_list_read_set_import_jobs_
 /// <p>Retrieves a list of read set import jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReadSetImportJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsInputBuilder,
+}
 impl ListReadSetImportJobsFluentBuilder  {
     /// Creates a new `ListReadSetImportJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_read_set_import_jobs::ListReadSetImportJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListReadSetImportJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_read_set_import_jobs::paginator::ListReadSetImportJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_read_set_import_jobs::paginator::ListReadSetImportJobsPaginator {
-                            crate::operation::list_read_set_import_jobs::paginator::ListReadSetImportJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_read_set_import_jobs::paginator::ListReadSetImportJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_read_set_import_jobs::paginator::ListReadSetImportJobsPaginator {
+                                crate::operation::list_read_set_import_jobs::paginator::ListReadSetImportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of jobs to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

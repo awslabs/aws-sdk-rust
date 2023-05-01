@@ -9,16 +9,17 @@ pub use crate::operation::describe_blue_green_deployments::_describe_blue_green_
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBlueGreenDeploymentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_blue_green_deployments::builders::DescribeBlueGreenDeploymentsInputBuilder,
+}
 impl DescribeBlueGreenDeploymentsFluentBuilder  {
     /// Creates a new `DescribeBlueGreenDeployments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_blue_green_deployments::DescribeBlueGreenDeployments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeBlueGreenDeploymentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_blue_green_deployments::paginator::DescribeBlueGreenDeploymentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_blue_green_deployments::paginator::DescribeBlueGreenDeploymentsPaginator {
-                            crate::operation::describe_blue_green_deployments::paginator::DescribeBlueGreenDeploymentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_blue_green_deployments::paginator::DescribeBlueGreenDeploymentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_blue_green_deployments::paginator::DescribeBlueGreenDeploymentsPaginator {
+                                crate::operation::describe_blue_green_deployments::paginator::DescribeBlueGreenDeploymentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The blue/green deployment identifier. If this parameter is specified, information from only the specific blue/green deployment is returned. This parameter isn't case-sensitive.</p> 
     /// <p>Constraints:</p> 
     /// <ul> 

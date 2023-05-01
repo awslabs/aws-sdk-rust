@@ -8,16 +8,17 @@ pub use crate::operation::create_verified_access_group::_create_verified_access_
 /// <p>An Amazon Web Services Verified Access group is a collection of Amazon Web Services Verified Access endpoints who's associated applications have similar security requirements. Each instance within a Verified Access group shares an Verified Access policy. For example, you can group all Verified Access instances associated with "sales" applications together and use one common Verified Access policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVerifiedAccessGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_verified_access_group::builders::CreateVerifiedAccessGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_verified_access_group::builders::CreateVerifiedAccessGroupInputBuilder,
+}
 impl CreateVerifiedAccessGroupFluentBuilder  {
     /// Creates a new `CreateVerifiedAccessGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_verified_access_group::CreateVerifiedAccessGroup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_objects::_list_objects_input::ListObjectsInputBui
 /// List all Objects in a given Backup.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListObjectsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_objects::builders::ListObjectsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_objects::builders::ListObjectsInputBuilder,
+}
 impl ListObjectsFluentBuilder  {
     /// Creates a new `ListObjects`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_objects::ListObjects, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListObjectsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_objects::paginator::ListObjectsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_objects::paginator::ListObjectsPaginator {
-                            crate::operation::list_objects::paginator::ListObjectsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_objects::paginator::ListObjectsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_objects::paginator::ListObjectsPaginator {
+                                crate::operation::list_objects::paginator::ListObjectsPaginator::new(self.handle, self.inner)
+                            }
     /// Storage job id
     pub fn storage_job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.storage_job_id(input.into());

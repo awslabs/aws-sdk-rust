@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_subnets::_disassociate_subnets_input::Dis
 /// <p>Removes the specified subnet associations from the firewall. This removes the firewall endpoints from the subnets and removes any network filtering protections that the endpoints were providing. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateSubnetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_subnets::builders::DisassociateSubnetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_subnets::builders::DisassociateSubnetsInputBuilder,
+}
 impl DisassociateSubnetsFluentBuilder  {
     /// Creates a new `DisassociateSubnets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_subnets::DisassociateSubnets, aws_http::retry::AwsResponseRetryClassifier,>,

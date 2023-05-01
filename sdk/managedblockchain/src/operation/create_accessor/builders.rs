@@ -8,16 +8,17 @@ pub use crate::operation::create_accessor::_create_accessor_input::CreateAccesso
 /// <p>Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor contains information required for token based access to your Ethereum nodes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAccessorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_accessor::builders::CreateAccessorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_accessor::builders::CreateAccessorInputBuilder,
+}
 impl CreateAccessorFluentBuilder  {
     /// Creates a new `CreateAccessor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_accessor::CreateAccessor, aws_http::retry::AwsResponseRetryClassifier,>,

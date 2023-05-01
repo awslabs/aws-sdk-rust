@@ -8,16 +8,17 @@ pub use crate::operation::list_application_revisions::_list_application_revision
 /// <p>Lists information about revisions for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListApplicationRevisionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_application_revisions::builders::ListApplicationRevisionsInputBuilder,
+}
 impl ListApplicationRevisionsFluentBuilder  {
     /// Creates a new `ListApplicationRevisions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_application_revisions::ListApplicationRevisions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListApplicationRevisionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator {
-                            crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator {
+                                crate::operation::list_application_revisions::paginator::ListApplicationRevisionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account. </p>
     pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::list_deployments::_list_deployments_input::ListDeploym
 /// <p>Lists the deployments in a deployment group for an application registered with the IAM user or Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeploymentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_deployments::builders::ListDeploymentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_deployments::builders::ListDeploymentsInputBuilder,
+}
 impl ListDeploymentsFluentBuilder  {
     /// Creates a new `ListDeployments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_deployments::ListDeployments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDeploymentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_deployments::paginator::ListDeploymentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
-                            crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_deployments::paginator::ListDeploymentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
+                                crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.</p> <note> 
     /// <p>If <code>applicationName</code> is specified, then <code>deploymentGroupName</code> must be specified. If it is not specified, then <code>deploymentGroupName</code> must not be specified. </p> 
     /// </note>

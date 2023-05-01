@@ -23,16 +23,17 @@ pub use crate::operation::describe_custom_key_stores::_describe_custom_key_store
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCustomKeyStoresFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresInputBuilder,
+}
 impl DescribeCustomKeyStoresFluentBuilder  {
     /// Creates a new `DescribeCustomKeyStores`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_custom_key_stores::DescribeCustomKeyStores, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -63,11 +64,11 @@ impl DescribeCustomKeyStoresFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_custom_key_stores::paginator::DescribeCustomKeyStoresPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_custom_key_stores::paginator::DescribeCustomKeyStoresPaginator {
-                            crate::operation::describe_custom_key_stores::paginator::DescribeCustomKeyStoresPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_custom_key_stores::paginator::DescribeCustomKeyStoresPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_custom_key_stores::paginator::DescribeCustomKeyStoresPaginator {
+                                crate::operation::describe_custom_key_stores::paginator::DescribeCustomKeyStoresPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p> 
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
     pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {

@@ -8,16 +8,17 @@ pub use crate::operation::list_calculation_executions::_list_calculation_executi
 /// <p>Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed first; older calculations are listed later.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCalculationExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_calculation_executions::builders::ListCalculationExecutionsInputBuilder,
+}
 impl ListCalculationExecutionsFluentBuilder  {
     /// Creates a new `ListCalculationExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_calculation_executions::ListCalculationExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCalculationExecutionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_calculation_executions::paginator::ListCalculationExecutionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_calculation_executions::paginator::ListCalculationExecutionsPaginator {
-                            crate::operation::list_calculation_executions::paginator::ListCalculationExecutionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_calculation_executions::paginator::ListCalculationExecutionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_calculation_executions::paginator::ListCalculationExecutionsPaginator {
+                                crate::operation::list_calculation_executions::paginator::ListCalculationExecutionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The session ID.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());

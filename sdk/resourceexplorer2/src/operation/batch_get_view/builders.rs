@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_view::_batch_get_view_input::BatchGetViewInp
 /// <p>Retrieves details about a list of views.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetViewFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_view::builders::BatchGetViewInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_view::builders::BatchGetViewInputBuilder,
+}
 impl BatchGetViewFluentBuilder  {
     /// Creates a new `BatchGetView`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_view::BatchGetView, aws_http::retry::AwsResponseRetryClassifier,>,

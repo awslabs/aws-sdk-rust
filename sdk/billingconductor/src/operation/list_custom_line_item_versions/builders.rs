@@ -8,16 +8,17 @@ pub use crate::operation::list_custom_line_item_versions::_list_custom_line_item
 /// <p>A paginated call to get a list of all custom line item versions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_custom_line_item_versions::builders::ListCustomLineItemVersionsInputBuilder,
+}
 impl ListCustomLineItemVersionsFluentBuilder  {
     /// Creates a new `ListCustomLineItemVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_custom_line_item_versions::ListCustomLineItemVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCustomLineItemVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_custom_line_item_versions::paginator::ListCustomLineItemVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_custom_line_item_versions::paginator::ListCustomLineItemVersionsPaginator {
-                            crate::operation::list_custom_line_item_versions::paginator::ListCustomLineItemVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_custom_line_item_versions::paginator::ListCustomLineItemVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_custom_line_item_versions::paginator::ListCustomLineItemVersionsPaginator {
+                                crate::operation::list_custom_line_item_versions::paginator::ListCustomLineItemVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) for the custom line item.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());

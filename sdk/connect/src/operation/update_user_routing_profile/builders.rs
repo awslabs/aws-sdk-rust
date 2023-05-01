@@ -8,16 +8,17 @@ pub use crate::operation::update_user_routing_profile::_update_user_routing_prof
 /// <p>Assigns the specified routing profile to the specified user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateUserRoutingProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_user_routing_profile::builders::UpdateUserRoutingProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_user_routing_profile::builders::UpdateUserRoutingProfileInputBuilder,
+}
 impl UpdateUserRoutingProfileFluentBuilder  {
     /// Creates a new `UpdateUserRoutingProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_user_routing_profile::UpdateUserRoutingProfile, aws_http::retry::AwsResponseRetryClassifier,>,

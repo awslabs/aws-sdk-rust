@@ -9,16 +9,17 @@ pub use crate::operation::delete_traffic_mirror_filter::_delete_traffic_mirror_f
 /// <p>You cannot delete a Traffic Mirror filter that is in use by a Traffic Mirror session.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTrafficMirrorFilterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_traffic_mirror_filter::builders::DeleteTrafficMirrorFilterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_traffic_mirror_filter::builders::DeleteTrafficMirrorFilterInputBuilder,
+}
 impl DeleteTrafficMirrorFilterFluentBuilder  {
     /// Creates a new `DeleteTrafficMirrorFilter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_traffic_mirror_filter::DeleteTrafficMirrorFilter, aws_http::retry::AwsResponseRetryClassifier,>,

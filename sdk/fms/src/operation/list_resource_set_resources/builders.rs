@@ -8,16 +8,17 @@ pub use crate::operation::list_resource_set_resources::_list_resource_set_resour
 /// <p>Returns an array of resources that are currently associated to a resource set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourceSetResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resource_set_resources::builders::ListResourceSetResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resource_set_resources::builders::ListResourceSetResourcesInputBuilder,
+}
 impl ListResourceSetResourcesFluentBuilder  {
     /// Creates a new `ListResourceSetResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resource_set_resources::ListResourceSetResources, aws_http::retry::AwsResponseRetryClassifier,>,

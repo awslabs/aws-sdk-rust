@@ -8,16 +8,17 @@ pub use crate::operation::list_event_integration_associations::_list_event_integ
 /// <p>Returns a paginated list of event integration associations in the account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEventIntegrationAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsInputBuilder,
+}
 impl ListEventIntegrationAssociationsFluentBuilder  {
     /// Creates a new `ListEventIntegrationAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_event_integration_associations::ListEventIntegrationAssociations, aws_http::retry::AwsResponseRetryClassifier,>,

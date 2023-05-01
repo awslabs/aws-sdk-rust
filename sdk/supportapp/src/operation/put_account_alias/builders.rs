@@ -8,16 +8,17 @@ pub use crate::operation::put_account_alias::_put_account_alias_input::PutAccoun
 /// <p>Creates or updates an individual alias for each Amazon Web Services account ID. The alias appears in the Amazon Web Services Support App page of the Amazon Web Services Support Center. The alias also appears in Slack messages from the Amazon Web Services Support App.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAccountAliasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_account_alias::builders::PutAccountAliasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_account_alias::builders::PutAccountAliasInputBuilder,
+}
 impl PutAccountAliasFluentBuilder  {
     /// Creates a new `PutAccountAlias`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_account_alias::PutAccountAlias, aws_http::retry::AwsResponseRetryClassifier,>,

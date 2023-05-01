@@ -9,16 +9,17 @@ pub use crate::operation::delete_faces::_delete_faces_input::DeleteFacesInputBui
 /// <p>This operation requires permissions to perform the <code>rekognition:DeleteFaces</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFacesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_faces::builders::DeleteFacesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_faces::builders::DeleteFacesInputBuilder,
+}
 impl DeleteFacesFluentBuilder  {
     /// Creates a new `DeleteFaces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_faces::DeleteFaces, aws_http::retry::AwsResponseRetryClassifier,>,

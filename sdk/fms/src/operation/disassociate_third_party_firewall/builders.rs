@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_third_party_firewall::_disassociate_third
 /// <p>Disassociates a Firewall Manager policy administrator from a third-party firewall tenant. When you call <code>DisassociateThirdPartyFirewall</code>, the third-party firewall vendor deletes all of the firewalls that are associated with the account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateThirdPartyFirewallFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_third_party_firewall::builders::DisassociateThirdPartyFirewallInputBuilder,
+}
 impl DisassociateThirdPartyFirewallFluentBuilder  {
     /// Creates a new `DisassociateThirdPartyFirewall`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewall, aws_http::retry::AwsResponseRetryClassifier,>,

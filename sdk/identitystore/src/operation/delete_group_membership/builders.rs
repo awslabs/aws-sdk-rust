@@ -8,16 +8,17 @@ pub use crate::operation::delete_group_membership::_delete_group_membership_inpu
 /// <p>Delete a membership within a group given <code>MembershipId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteGroupMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_group_membership::builders::DeleteGroupMembershipInputBuilder,
+}
 impl DeleteGroupMembershipFluentBuilder  {
     /// Creates a new `DeleteGroupMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_group_membership::DeleteGroupMembership, aws_http::retry::AwsResponseRetryClassifier,>,

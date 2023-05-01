@@ -12,16 +12,17 @@ pub use crate::operation::scan::_scan_input::ScanInputBuilder;
 /// <p> <code>Scan</code> uses eventually consistent reads when accessing the data in a table; therefore, the result set might not include the changes to data in the table immediately before the operation began. If you need a consistent copy of the data, as of the time that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter to <code>true</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ScanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::scan::builders::ScanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::scan::builders::ScanInputBuilder,
+}
 impl ScanFluentBuilder  {
     /// Creates a new `Scan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::scan::Scan, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -52,11 +53,11 @@ impl ScanFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::scan::paginator::ScanPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::scan::paginator::ScanPaginator {
-                            crate::operation::scan::paginator::ScanPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::scan::paginator::ScanPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::scan::paginator::ScanPaginator {
+                                crate::operation::scan::paginator::ScanPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the table to which that index belongs.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());

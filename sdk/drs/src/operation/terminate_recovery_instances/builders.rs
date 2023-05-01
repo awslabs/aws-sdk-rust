@@ -8,16 +8,17 @@ pub use crate::operation::terminate_recovery_instances::_terminate_recovery_inst
 /// <p>Initiates a Job for terminating the EC2 resources associated with the specified Recovery Instances, and then will delete the Recovery Instances from the Elastic Disaster Recovery service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder,
+}
 impl TerminateRecoveryInstancesFluentBuilder  {
     /// Creates a new `TerminateRecoveryInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::terminate_recovery_instances::TerminateRecoveryInstances, aws_http::retry::AwsResponseRetryClassifier,>,

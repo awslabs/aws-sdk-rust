@@ -15,16 +15,17 @@ pub use crate::operation::list_image_scan_finding_aggregations::_list_image_scan
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImageScanFindingAggregationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_image_scan_finding_aggregations::builders::ListImageScanFindingAggregationsInputBuilder,
+}
 impl ListImageScanFindingAggregationsFluentBuilder  {
     /// Creates a new `ListImageScanFindingAggregations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -55,11 +56,11 @@ impl ListImageScanFindingAggregationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator {
-                            crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator {
+                                crate::operation::list_image_scan_finding_aggregations::paginator::ListImageScanFindingAggregationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter name and value pair that is used to return a more specific list of results from a list operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filter(input);

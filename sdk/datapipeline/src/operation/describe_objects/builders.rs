@@ -15,16 +15,17 @@ pub use crate::operation::describe_objects::_describe_objects_input::DescribeObj
 /// </examples>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeObjectsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_objects::builders::DescribeObjectsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_objects::builders::DescribeObjectsInputBuilder,
+}
 impl DescribeObjectsFluentBuilder  {
     /// Creates a new `DescribeObjects`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_objects::DescribeObjects, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -55,11 +56,11 @@ impl DescribeObjectsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_objects::paginator::DescribeObjectsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_objects::paginator::DescribeObjectsPaginator {
-                            crate::operation::describe_objects::paginator::DescribeObjectsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_objects::paginator::DescribeObjectsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_objects::paginator::DescribeObjectsPaginator {
+                                crate::operation::describe_objects::paginator::DescribeObjectsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the pipeline that contains the object definitions.</p>
     pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.pipeline_id(input.into());

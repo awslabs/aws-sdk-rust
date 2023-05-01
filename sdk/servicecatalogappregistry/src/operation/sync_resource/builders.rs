@@ -9,16 +9,17 @@ pub use crate::operation::sync_resource::_sync_resource_input::SyncResourceInput
 /// <p>Specifically, the resource’s AppRegistry system tags sync with its associated application. We remove the resource's AppRegistry system tags if it does not associate with the application. The caller must have permissions to read and update the resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SyncResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::sync_resource::builders::SyncResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::sync_resource::builders::SyncResourceInputBuilder,
+}
 impl SyncResourceFluentBuilder  {
     /// Creates a new `SyncResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::sync_resource::SyncResource, aws_http::retry::AwsResponseRetryClassifier,>,

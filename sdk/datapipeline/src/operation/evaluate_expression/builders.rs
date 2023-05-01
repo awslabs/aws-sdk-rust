@@ -15,16 +15,17 @@ pub use crate::operation::evaluate_expression::_evaluate_expression_input::Evalu
 /// </examples>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EvaluateExpressionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::evaluate_expression::builders::EvaluateExpressionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::evaluate_expression::builders::EvaluateExpressionInputBuilder,
+}
 impl EvaluateExpressionFluentBuilder  {
     /// Creates a new `EvaluateExpression`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::evaluate_expression::EvaluateExpression, aws_http::retry::AwsResponseRetryClassifier,>,

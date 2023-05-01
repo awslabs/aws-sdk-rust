@@ -8,16 +8,17 @@ pub use crate::operation::update_vpc_link::_update_vpc_link_input::UpdateVpcLink
 /// <p>Updates an existing VpcLink of a specified identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateVpcLinkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_vpc_link::builders::UpdateVpcLinkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_vpc_link::builders::UpdateVpcLinkInputBuilder,
+}
 impl UpdateVpcLinkFluentBuilder  {
     /// Creates a new `UpdateVpcLink`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_vpc_link::UpdateVpcLink, aws_http::retry::AwsResponseRetryClassifier,>,

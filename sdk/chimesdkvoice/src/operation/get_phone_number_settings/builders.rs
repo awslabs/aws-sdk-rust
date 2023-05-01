@@ -8,16 +8,17 @@ pub use crate::operation::get_phone_number_settings::_get_phone_number_settings_
 /// <p>Retrieves the phone number settings for the administrator's AWS account, such as the default outbound calling name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPhoneNumberSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_phone_number_settings::builders::GetPhoneNumberSettingsInputBuilder,
+}
 impl GetPhoneNumberSettingsFluentBuilder  {
     /// Creates a new `GetPhoneNumberSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_phone_number_settings::GetPhoneNumberSettings, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_connect_client_add_in::_update_connect_client_a
 /// <p>Updates a Amazon Connect client add-in. Use this action to update the name and endpoint URL of a Amazon Connect client add-in.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateConnectClientAddInFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_connect_client_add_in::builders::UpdateConnectClientAddInInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_connect_client_add_in::builders::UpdateConnectClientAddInInputBuilder,
+}
 impl UpdateConnectClientAddInFluentBuilder  {
     /// Creates a new `UpdateConnectClientAddIn`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_connect_client_add_in::UpdateConnectClientAddIn, aws_http::retry::AwsResponseRetryClassifier,>,

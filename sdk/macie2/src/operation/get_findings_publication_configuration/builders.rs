@@ -8,16 +8,17 @@ pub use crate::operation::get_findings_publication_configuration::_get_findings_
 /// <p>Retrieves the configuration settings for publishing findings to Security Hub.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFindingsPublicationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_findings_publication_configuration::builders::GetFindingsPublicationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_findings_publication_configuration::builders::GetFindingsPublicationConfigurationInputBuilder,
+}
 impl GetFindingsPublicationConfigurationFluentBuilder  {
     /// Creates a new `GetFindingsPublicationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_findings_publication_configuration::GetFindingsPublicationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

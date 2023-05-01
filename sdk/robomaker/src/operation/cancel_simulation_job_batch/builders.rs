@@ -8,16 +8,17 @@ pub use crate::operation::cancel_simulation_job_batch::_cancel_simulation_job_ba
 /// <p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active simulation jobs created as part of the batch. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelSimulationJobBatchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_simulation_job_batch::builders::CancelSimulationJobBatchInputBuilder,
+}
 impl CancelSimulationJobBatchFluentBuilder  {
     /// Creates a new `CancelSimulationJobBatch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatch, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_principals::_list_principals_input::ListPrincipal
 /// <p>Lists the principals that you are sharing resources with or that are sharing resources with you.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPrincipalsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_principals::builders::ListPrincipalsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_principals::builders::ListPrincipalsInputBuilder,
+}
 impl ListPrincipalsFluentBuilder  {
     /// Creates a new `ListPrincipals`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_principals::ListPrincipals, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPrincipalsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_principals::paginator::ListPrincipalsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_principals::paginator::ListPrincipalsPaginator {
-                            crate::operation::list_principals::paginator::ListPrincipalsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_principals::paginator::ListPrincipalsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_principals::paginator::ListPrincipalsPaginator {
+                                crate::operation::list_principals::paginator::ListPrincipalsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies that you want to list information for only resource shares that match the following:</p> 
     /// <ul> 
     /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li> 

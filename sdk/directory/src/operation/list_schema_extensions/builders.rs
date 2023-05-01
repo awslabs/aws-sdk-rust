@@ -8,16 +8,17 @@ pub use crate::operation::list_schema_extensions::_list_schema_extensions_input:
 /// <p>Lists all schema extensions applied to a Microsoft AD Directory.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSchemaExtensionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_schema_extensions::builders::ListSchemaExtensionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_schema_extensions::builders::ListSchemaExtensionsInputBuilder,
+}
 impl ListSchemaExtensionsFluentBuilder  {
     /// Creates a new `ListSchemaExtensions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_schema_extensions::ListSchemaExtensions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSchemaExtensionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator {
-                            crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator {
+                                crate::operation::list_schema_extensions::paginator::ListSchemaExtensionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
     pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());

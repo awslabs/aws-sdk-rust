@@ -9,16 +9,17 @@ pub use crate::operation::get_rules::_get_rules_input::GetRulesInputBuilder;
 /// <p>This is a paginated API. Providing null maxResults results in retrieving maximum of 100 records per page. If you provide maxResults the value must be between 50 and 100. To get the next page result, a provide a pagination token from GetRulesResult as part of your request. Null pagination token fetches the records from the beginning.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_rules::builders::GetRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_rules::builders::GetRulesInputBuilder,
+}
 impl GetRulesFluentBuilder  {
     /// Creates a new `GetRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_rules::GetRules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetRulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_rules::paginator::GetRulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_rules::paginator::GetRulesPaginator {
-                            crate::operation::get_rules::paginator::GetRulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_rules::paginator::GetRulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_rules::paginator::GetRulesPaginator {
+                                crate::operation::get_rules::paginator::GetRulesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The rule ID.</p>
     pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.rule_id(input.into());

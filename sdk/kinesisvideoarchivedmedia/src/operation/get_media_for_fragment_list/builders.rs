@@ -19,16 +19,17 @@ pub use crate::operation::get_media_for_fragment_list::_get_media_for_fragment_l
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMediaForFragmentListFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_media_for_fragment_list::builders::GetMediaForFragmentListInputBuilder,
+}
 impl GetMediaForFragmentListFluentBuilder  {
     /// Creates a new `GetMediaForFragmentList`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_media_for_fragment_list::GetMediaForFragmentList, aws_http::retry::AwsResponseRetryClassifier,>,

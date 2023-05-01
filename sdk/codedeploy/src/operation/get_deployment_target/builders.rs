@@ -8,16 +8,17 @@ pub use crate::operation::get_deployment_target::_get_deployment_target_input::G
 /// <p> Returns information about a deployment target. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDeploymentTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_deployment_target::builders::GetDeploymentTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_deployment_target::builders::GetDeploymentTargetInputBuilder,
+}
 impl GetDeploymentTargetFluentBuilder  {
     /// Creates a new `GetDeploymentTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_deployment_target::GetDeploymentTarget, aws_http::retry::AwsResponseRetryClassifier,>,

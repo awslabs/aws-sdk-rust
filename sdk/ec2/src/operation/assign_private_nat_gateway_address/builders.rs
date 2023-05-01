@@ -8,16 +8,17 @@ pub use crate::operation::assign_private_nat_gateway_address::_assign_private_na
 /// <p>Assigns one or more private IPv4 addresses to a private NAT gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssignPrivateNatGatewayAddressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::assign_private_nat_gateway_address::builders::AssignPrivateNatGatewayAddressInputBuilder,
+}
 impl AssignPrivateNatGatewayAddressFluentBuilder  {
     /// Creates a new `AssignPrivateNatGatewayAddress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddress, aws_http::retry::AwsResponseRetryClassifier,>,

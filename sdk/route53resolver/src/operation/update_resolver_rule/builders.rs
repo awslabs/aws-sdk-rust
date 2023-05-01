@@ -8,16 +8,17 @@ pub use crate::operation::update_resolver_rule::_update_resolver_rule_input::Upd
 /// <p>Updates settings for a specified Resolver rule. <code>ResolverRuleId</code> is required, and all other parameters are optional. If you don't specify a parameter, it retains its current value.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResolverRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_resolver_rule::builders::UpdateResolverRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_resolver_rule::builders::UpdateResolverRuleInputBuilder,
+}
 impl UpdateResolverRuleFluentBuilder  {
     /// Creates a new `UpdateResolverRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_resolver_rule::UpdateResolverRule, aws_http::retry::AwsResponseRetryClassifier,>,

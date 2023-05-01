@@ -9,16 +9,17 @@ pub use crate::operation::list_phone_numbers_opted_out::_list_phone_numbers_opte
 /// <p>The results for <code>ListPhoneNumbersOptedOut</code> are paginated, and each page returns up to 100 phone numbers. If additional phone numbers are available after the first page of results, then a <code>NextToken</code> string will be returned. To receive the next page, you call <code>ListPhoneNumbersOptedOut</code> again using the <code>NextToken</code> string received from the previous call. When there are no more records to return, <code>NextToken</code> will be null.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPhoneNumbersOptedOutFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_phone_numbers_opted_out::builders::ListPhoneNumbersOptedOutInputBuilder,
+}
 impl ListPhoneNumbersOptedOutFluentBuilder  {
     /// Creates a new `ListPhoneNumbersOptedOut`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_phone_numbers_opted_out::ListPhoneNumbersOptedOut, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListPhoneNumbersOptedOutFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_phone_numbers_opted_out::paginator::ListPhoneNumbersOptedOutPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_phone_numbers_opted_out::paginator::ListPhoneNumbersOptedOutPaginator {
-                            crate::operation::list_phone_numbers_opted_out::paginator::ListPhoneNumbersOptedOutPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_phone_numbers_opted_out::paginator::ListPhoneNumbersOptedOutPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_phone_numbers_opted_out::paginator::ListPhoneNumbersOptedOutPaginator {
+                                crate::operation::list_phone_numbers_opted_out::paginator::ListPhoneNumbersOptedOutPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A <code>NextToken</code> string is used when you call the <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are available after the first page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

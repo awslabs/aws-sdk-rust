@@ -8,16 +8,17 @@ pub use crate::operation::get_organization_custom_rule_policy::_get_organization
 /// <p>Returns the policy definition containing the logic for your organization Config Custom Policy rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOrganizationCustomRulePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyInputBuilder,
+}
 impl GetOrganizationCustomRulePolicyFluentBuilder  {
     /// Creates a new `GetOrganizationCustomRulePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

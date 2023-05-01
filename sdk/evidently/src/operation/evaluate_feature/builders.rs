@@ -15,16 +15,17 @@ pub use crate::operation::evaluate_feature::_evaluate_feature_input::EvaluateFea
 /// <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EvaluateFeatureFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::evaluate_feature::builders::EvaluateFeatureInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::evaluate_feature::builders::EvaluateFeatureInputBuilder,
+}
 impl EvaluateFeatureFluentBuilder  {
     /// Creates a new `EvaluateFeature`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::evaluate_feature::EvaluateFeature, aws_http::retry::AwsResponseRetryClassifier,>,

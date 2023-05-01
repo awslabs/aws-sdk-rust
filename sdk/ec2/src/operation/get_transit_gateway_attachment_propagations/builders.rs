@@ -8,16 +8,17 @@ pub use crate::operation::get_transit_gateway_attachment_propagations::_get_tran
 /// <p>Lists the route tables to which the specified resource attachment propagates routes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTransitGatewayAttachmentPropagationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_transit_gateway_attachment_propagations::builders::GetTransitGatewayAttachmentPropagationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_transit_gateway_attachment_propagations::builders::GetTransitGatewayAttachmentPropagationsInputBuilder,
+}
 impl GetTransitGatewayAttachmentPropagationsFluentBuilder  {
     /// Creates a new `GetTransitGatewayAttachmentPropagations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetTransitGatewayAttachmentPropagationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_transit_gateway_attachment_propagations::paginator::GetTransitGatewayAttachmentPropagationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_transit_gateway_attachment_propagations::paginator::GetTransitGatewayAttachmentPropagationsPaginator {
-                            crate::operation::get_transit_gateway_attachment_propagations::paginator::GetTransitGatewayAttachmentPropagationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_transit_gateway_attachment_propagations::paginator::GetTransitGatewayAttachmentPropagationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_transit_gateway_attachment_propagations::paginator::GetTransitGatewayAttachmentPropagationsPaginator {
+                                crate::operation::get_transit_gateway_attachment_propagations::paginator::GetTransitGatewayAttachmentPropagationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the attachment.</p>
     pub fn transit_gateway_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.transit_gateway_attachment_id(input.into());

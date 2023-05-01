@@ -8,16 +8,17 @@ pub use crate::operation::create_comment::_create_comment_input::CreateCommentIn
 /// <p>Adds a new comment to the specified document version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCommentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_comment::builders::CreateCommentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_comment::builders::CreateCommentInputBuilder,
+}
 impl CreateCommentFluentBuilder  {
     /// Creates a new `CreateComment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_comment::CreateComment, aws_http::retry::AwsResponseRetryClassifier,>,

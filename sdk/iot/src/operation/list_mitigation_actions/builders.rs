@@ -9,16 +9,17 @@ pub use crate::operation::list_mitigation_actions::_list_mitigation_actions_inpu
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListMitigationActions</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMitigationActionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_mitigation_actions::builders::ListMitigationActionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_mitigation_actions::builders::ListMitigationActionsInputBuilder,
+}
 impl ListMitigationActionsFluentBuilder  {
     /// Creates a new `ListMitigationActions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_mitigation_actions::ListMitigationActions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListMitigationActionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator {
-                            crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator {
+                                crate::operation::list_mitigation_actions::paginator::ListMitigationActionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specify a value to limit the result to mitigation actions with a specific action type.</p>
     pub fn action_type(mut self, input: crate::types::MitigationActionType) -> Self {
         self.inner = self.inner.action_type(input);

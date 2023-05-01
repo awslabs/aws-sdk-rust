@@ -8,16 +8,17 @@ pub use crate::operation::get_host::_get_host_input::GetHostInputBuilder;
 /// <p>Returns the host ARN and details such as status, provider type, endpoint, and, if applicable, the VPC configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetHostFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_host::builders::GetHostInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_host::builders::GetHostInputBuilder,
+}
 impl GetHostFluentBuilder  {
     /// Creates a new `GetHost`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_host::GetHost, aws_http::retry::AwsResponseRetryClassifier,>,

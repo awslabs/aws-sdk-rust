@@ -8,16 +8,17 @@ pub use crate::operation::preview_agents::_preview_agents_input::PreviewAgentsIn
 /// <p>Previews the agents installed on the EC2 instances that are part of the specified assessment target.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PreviewAgentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::preview_agents::builders::PreviewAgentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::preview_agents::builders::PreviewAgentsInputBuilder,
+}
 impl PreviewAgentsFluentBuilder  {
     /// Creates a new `PreviewAgents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::preview_agents::PreviewAgents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl PreviewAgentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::preview_agents::paginator::PreviewAgentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::preview_agents::paginator::PreviewAgentsPaginator {
-                            crate::operation::preview_agents::paginator::PreviewAgentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::preview_agents::paginator::PreviewAgentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::preview_agents::paginator::PreviewAgentsPaginator {
+                                crate::operation::preview_agents::paginator::PreviewAgentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the assessment target whose agents you want to preview.</p>
     pub fn preview_agents_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.preview_agents_arn(input.into());

@@ -9,16 +9,17 @@ pub use crate::operation::modify_vpn_connection_options::_modify_vpn_connection_
 /// <p>When you modify the VPN connection options, the VPN endpoint IP addresses on the Amazon Web Services side do not change, and the tunnel options do not change. Your VPN connection will be temporarily unavailable for a brief period while the VPN connection is updated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpnConnectionOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsInputBuilder,
+}
 impl ModifyVpnConnectionOptionsFluentBuilder  {
     /// Creates a new `ModifyVpnConnectionOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptions, aws_http::retry::AwsResponseRetryClassifier,>,

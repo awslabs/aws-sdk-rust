@@ -8,16 +8,17 @@ pub use crate::operation::delete_elasticsearch_service_role::_delete_elasticsear
 /// <p>Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before deleting the role. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr" target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteElasticsearchServiceRoleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_elasticsearch_service_role::builders::DeleteElasticsearchServiceRoleInputBuilder,
+}
 impl DeleteElasticsearchServiceRoleFluentBuilder  {
     /// Creates a new `DeleteElasticsearchServiceRole`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRole, aws_http::retry::AwsResponseRetryClassifier,>,

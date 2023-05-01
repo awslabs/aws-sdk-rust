@@ -8,16 +8,17 @@ pub use crate::operation::describe_component::_describe_component_input::Describ
 /// <p>Describes a component and lists the resources that are grouped together in a component.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeComponentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_component::builders::DescribeComponentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_component::builders::DescribeComponentInputBuilder,
+}
 impl DescribeComponentFluentBuilder  {
     /// Creates a new `DescribeComponent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_component::DescribeComponent, aws_http::retry::AwsResponseRetryClassifier,>,

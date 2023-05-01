@@ -9,16 +9,17 @@ pub use crate::operation::describe_alarms_for_metric::_describe_alarms_for_metri
 /// <p>This operation retrieves only standard alarms that are based on the specified metric. It does not return alarms based on math expressions that use the specified metric, or composite alarms that use the specified metric.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAlarmsForMetricFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder,
+}
 impl DescribeAlarmsForMetricFluentBuilder  {
     /// Creates a new `DescribeAlarmsForMetric`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetric, aws_http::retry::AwsResponseRetryClassifier,>,

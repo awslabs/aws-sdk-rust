@@ -11,16 +11,17 @@ pub use crate::operation::list_traffic_policy_instances_by_hosted_zone::_list_tr
 /// <p>Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesByHostedZoneFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_traffic_policy_instances_by_hosted_zone::builders::ListTrafficPolicyInstancesByHostedZoneInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_traffic_policy_instances_by_hosted_zone::builders::ListTrafficPolicyInstancesByHostedZoneInputBuilder,
+}
 impl ListTrafficPolicyInstancesByHostedZoneFluentBuilder  {
     /// Creates a new `ListTrafficPolicyInstancesByHostedZone`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZone, aws_http::retry::AwsResponseRetryClassifier,>,

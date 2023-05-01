@@ -8,16 +8,17 @@ pub use crate::operation::update_capacity_provider::_update_capacity_provider_in
 /// <p>Modifies the parameters for a capacity provider.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCapacityProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_capacity_provider::builders::UpdateCapacityProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_capacity_provider::builders::UpdateCapacityProviderInputBuilder,
+}
 impl UpdateCapacityProviderFluentBuilder  {
     /// Creates a new `UpdateCapacityProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_capacity_provider::UpdateCapacityProvider, aws_http::retry::AwsResponseRetryClassifier,>,

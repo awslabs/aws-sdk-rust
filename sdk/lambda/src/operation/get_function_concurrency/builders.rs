@@ -8,16 +8,17 @@ pub use crate::operation::get_function_concurrency::_get_function_concurrency_in
 /// <p>Returns details about the reserved concurrency configuration for a function. To set a concurrency limit for a function, use <code>PutFunctionConcurrency</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFunctionConcurrencyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_function_concurrency::builders::GetFunctionConcurrencyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_function_concurrency::builders::GetFunctionConcurrencyInputBuilder,
+}
 impl GetFunctionConcurrencyFluentBuilder  {
     /// Creates a new `GetFunctionConcurrency`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_function_concurrency::GetFunctionConcurrency, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::batch_disable_alarm::_batch_disable_alarm_input::Batch
 /// <p>Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDisableAlarmFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_disable_alarm::builders::BatchDisableAlarmInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_disable_alarm::builders::BatchDisableAlarmInputBuilder,
+}
 impl BatchDisableAlarmFluentBuilder  {
     /// Creates a new `BatchDisableAlarm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_disable_alarm::BatchDisableAlarm, aws_http::retry::AwsResponseRetryClassifier,>,

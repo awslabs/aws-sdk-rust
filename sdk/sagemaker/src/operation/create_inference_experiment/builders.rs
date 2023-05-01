@@ -11,16 +11,17 @@ pub use crate::operation::create_inference_experiment::_create_inference_experim
 /// <p> While the experiment is in progress or after it has concluded, you can view metrics that compare your model variants. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View, monitor, and edit shadow tests</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateInferenceExperimentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_inference_experiment::builders::CreateInferenceExperimentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_inference_experiment::builders::CreateInferenceExperimentInputBuilder,
+}
 impl CreateInferenceExperimentFluentBuilder  {
     /// Creates a new `CreateInferenceExperiment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_inference_experiment::CreateInferenceExperiment, aws_http::retry::AwsResponseRetryClassifier,>,

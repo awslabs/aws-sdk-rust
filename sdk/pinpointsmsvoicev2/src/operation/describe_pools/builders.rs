@@ -11,16 +11,17 @@ pub use crate::operation::describe_pools::_describe_pools_input::DescribePoolsIn
 /// <p>A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds that are associated with your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePoolsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_pools::builders::DescribePoolsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_pools::builders::DescribePoolsInputBuilder,
+}
 impl DescribePoolsFluentBuilder  {
     /// Creates a new `DescribePools`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_pools::DescribePools, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl DescribePoolsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_pools::paginator::DescribePoolsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_pools::paginator::DescribePoolsPaginator {
-                            crate::operation::describe_pools::paginator::DescribePoolsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_pools::paginator::DescribePoolsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_pools::paginator::DescribePoolsPaginator {
+                                crate::operation::describe_pools::paginator::DescribePoolsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `PoolIds`.
     ///
     /// To override the contents of this collection use [`set_pool_ids`](Self::set_pool_ids).

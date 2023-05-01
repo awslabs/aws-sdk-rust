@@ -8,16 +8,17 @@ pub use crate::operation::update_hit_type_of_hit::_update_hit_type_of_hit_input:
 /// <p> The <code>UpdateHITTypeOfHIT</code> operation allows you to change the HITType properties of a HIT. This operation disassociates the HIT from its old HITType properties and associates it with the new HITType properties. The HIT takes on the properties of the new HITType in place of the old ones. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateHITTypeOfHITFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_hit_type_of_hit::builders::UpdateHitTypeOfHitInputBuilder,
+}
 impl UpdateHITTypeOfHITFluentBuilder  {
     /// Creates a new `UpdateHITTypeOfHIT`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHIT, aws_http::retry::AwsResponseRetryClassifier,>,

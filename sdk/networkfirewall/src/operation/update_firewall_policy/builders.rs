@@ -8,16 +8,17 @@ pub use crate::operation::update_firewall_policy::_update_firewall_policy_input:
 /// <p>Updates the properties of the specified firewall policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFirewallPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_firewall_policy::builders::UpdateFirewallPolicyInputBuilder,
+}
 impl UpdateFirewallPolicyFluentBuilder  {
     /// Creates a new `UpdateFirewallPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_firewall_policy::UpdateFirewallPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

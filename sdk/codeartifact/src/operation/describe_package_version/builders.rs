@@ -8,16 +8,17 @@ pub use crate::operation::describe_package_version::_describe_package_version_in
 /// <p> Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePackageVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_package_version::builders::DescribePackageVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_package_version::builders::DescribePackageVersionInputBuilder,
+}
 impl DescribePackageVersionFluentBuilder  {
     /// Creates a new `DescribePackageVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_package_version::DescribePackageVersion, aws_http::retry::AwsResponseRetryClassifier,>,

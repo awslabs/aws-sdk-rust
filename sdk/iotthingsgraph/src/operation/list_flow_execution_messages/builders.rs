@@ -9,16 +9,17 @@ pub use crate::operation::list_flow_execution_messages::_list_flow_execution_mes
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFlowExecutionMessagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesInputBuilder,
+}
 impl ListFlowExecutionMessagesFluentBuilder  {
     /// Creates a new `ListFlowExecutionMessages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_flow_execution_messages::ListFlowExecutionMessages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListFlowExecutionMessagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_flow_execution_messages::paginator::ListFlowExecutionMessagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_flow_execution_messages::paginator::ListFlowExecutionMessagesPaginator {
-                            crate::operation::list_flow_execution_messages::paginator::ListFlowExecutionMessagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_flow_execution_messages::paginator::ListFlowExecutionMessagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_flow_execution_messages::paginator::ListFlowExecutionMessagesPaginator {
+                                crate::operation::list_flow_execution_messages::paginator::ListFlowExecutionMessagesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the flow execution.</p>
     pub fn flow_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.flow_execution_id(input.into());

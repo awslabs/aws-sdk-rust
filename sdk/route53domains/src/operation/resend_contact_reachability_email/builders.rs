@@ -8,16 +8,17 @@ pub use crate::operation::resend_contact_reachability_email::_resend_contact_rea
 /// <p>For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, this operation resends the confirmation email to the current email address for the registrant contact.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResendContactReachabilityEmailFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::resend_contact_reachability_email::builders::ResendContactReachabilityEmailInputBuilder,
+}
 impl ResendContactReachabilityEmailFluentBuilder  {
     /// Creates a new `ResendContactReachabilityEmail`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmail, aws_http::retry::AwsResponseRetryClassifier,>,

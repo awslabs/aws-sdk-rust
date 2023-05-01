@@ -8,16 +8,17 @@ pub use crate::operation::export_client_vpn_client_configuration::_export_client
 /// <p>Downloads the contents of the Client VPN endpoint configuration file for the specified Client VPN endpoint. The Client VPN endpoint configuration file includes the Client VPN endpoint and certificate information clients need to establish a connection with the Client VPN endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportClientVpnClientConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationInputBuilder,
+}
 impl ExportClientVpnClientConfigurationFluentBuilder  {
     /// Creates a new `ExportClientVpnClientConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_user_associations::_list_user_associations_input:
 /// <p>Lists user associations for an identity provider.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListUserAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_user_associations::builders::ListUserAssociationsInputBuilder,
+}
 impl ListUserAssociationsFluentBuilder  {
     /// Creates a new `ListUserAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_user_associations::ListUserAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListUserAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator {
-                            crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator {
+                                crate::operation::list_user_associations::paginator::ListUserAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the EC2 instance, which provides user-based subscriptions.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());

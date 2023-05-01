@@ -8,16 +8,17 @@ pub use crate::operation::analyze_id::_analyze_id_input::AnalyzeIdInputBuilder;
 /// <p>Analyzes identity documents for relevant information. This information is extracted and returned as <code>IdentityDocumentFields</code>, which records both the normalized field and value of the extracted text. Unlike other Amazon Textract operations, <code>AnalyzeID</code> doesn't return any Geometry data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AnalyzeIDFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::analyze_id::builders::AnalyzeIdInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::analyze_id::builders::AnalyzeIdInputBuilder,
+}
 impl AnalyzeIDFluentBuilder  {
     /// Creates a new `AnalyzeID`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::analyze_id::AnalyzeID, aws_http::retry::AwsResponseRetryClassifier,>,

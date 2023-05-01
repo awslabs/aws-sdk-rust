@@ -11,16 +11,17 @@ pub use crate::operation::complete_attachment_upload::_complete_attachment_uploa
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CompleteAttachmentUploadFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder,
+}
 impl CompleteAttachmentUploadFluentBuilder  {
     /// Creates a new `CompleteAttachmentUpload`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::complete_attachment_upload::CompleteAttachmentUpload, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_image_version::_update_image_version_input::Upd
 /// <p>Updates the properties of a SageMaker image version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateImageVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_image_version::builders::UpdateImageVersionInputBuilder,
+}
 impl UpdateImageVersionFluentBuilder  {
     /// Creates a new `UpdateImageVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_image_version::UpdateImageVersion, aws_http::retry::AwsResponseRetryClassifier,>,

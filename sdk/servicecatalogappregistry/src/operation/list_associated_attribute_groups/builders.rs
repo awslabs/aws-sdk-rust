@@ -8,16 +8,17 @@ pub use crate::operation::list_associated_attribute_groups::_list_associated_att
 /// <p>Lists all attribute groups that are associated with specified application. Results are paginated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssociatedAttributeGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_associated_attribute_groups::builders::ListAssociatedAttributeGroupsInputBuilder,
+}
 impl ListAssociatedAttributeGroupsFluentBuilder  {
     /// Creates a new `ListAssociatedAttributeGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAssociatedAttributeGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_associated_attribute_groups::paginator::ListAssociatedAttributeGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_associated_attribute_groups::paginator::ListAssociatedAttributeGroupsPaginator {
-                            crate::operation::list_associated_attribute_groups::paginator::ListAssociatedAttributeGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_associated_attribute_groups::paginator::ListAssociatedAttributeGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_associated_attribute_groups::paginator::ListAssociatedAttributeGroupsPaginator {
+                                crate::operation::list_associated_attribute_groups::paginator::ListAssociatedAttributeGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name or ID of the application.</p>
     pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());

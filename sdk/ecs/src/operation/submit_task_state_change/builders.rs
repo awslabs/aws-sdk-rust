@@ -11,16 +11,17 @@ pub use crate::operation::submit_task_state_change::_submit_task_state_change_in
 /// <p>Sent to acknowledge that a task changed states.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SubmitTaskStateChangeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::submit_task_state_change::builders::SubmitTaskStateChangeInputBuilder,
+}
 impl SubmitTaskStateChangeFluentBuilder  {
     /// Creates a new `SubmitTaskStateChange`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::submit_task_state_change::SubmitTaskStateChange, aws_http::retry::AwsResponseRetryClassifier,>,

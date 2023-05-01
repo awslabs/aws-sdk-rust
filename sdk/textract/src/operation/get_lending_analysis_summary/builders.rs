@@ -10,16 +10,17 @@ pub use crate::operation::get_lending_analysis_summary::_get_lending_analysis_su
 /// <p>To get the results of the text analysis operation, first check that the status value published to the Amazon SNS topic is SUCCEEDED. If so, call <code>GetLendingAnalysisSummary</code>, and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLendingAnalysis</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLendingAnalysisSummaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_lending_analysis_summary::builders::GetLendingAnalysisSummaryInputBuilder,
+}
 impl GetLendingAnalysisSummaryFluentBuilder  {
     /// Creates a new `GetLendingAnalysisSummary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummary, aws_http::retry::AwsResponseRetryClassifier,>,

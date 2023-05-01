@@ -8,16 +8,17 @@ pub use crate::operation::describe_inbound_dmarc_settings::_describe_inbound_dma
 /// <p>Lists the settings in a DMARC policy for a specified organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInboundDmarcSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_inbound_dmarc_settings::builders::DescribeInboundDmarcSettingsInputBuilder,
+}
 impl DescribeInboundDmarcSettingsFluentBuilder  {
     /// Creates a new `DescribeInboundDmarcSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettings, aws_http::retry::AwsResponseRetryClassifier,>,

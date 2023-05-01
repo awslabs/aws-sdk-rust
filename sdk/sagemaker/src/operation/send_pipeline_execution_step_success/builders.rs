@@ -8,16 +8,17 @@ pub use crate::operation::send_pipeline_execution_step_success::_send_pipeline_e
 /// <p>Notifies the pipeline that the execution of a callback step succeeded and provides a list of the step's output parameters. When a callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendPipelineExecutionStepSuccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_pipeline_execution_step_success::builders::SendPipelineExecutionStepSuccessInputBuilder,
+}
 impl SendPipelineExecutionStepSuccessFluentBuilder  {
     /// Creates a new `SendPipelineExecutionStepSuccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_pipeline_execution_step_success::SendPipelineExecutionStepSuccess, aws_http::retry::AwsResponseRetryClassifier,>,

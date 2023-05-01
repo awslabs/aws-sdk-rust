@@ -15,16 +15,17 @@ pub use crate::operation::put_access_point_policy::_put_access_point_policy_inpu
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAccessPointPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_access_point_policy::builders::PutAccessPointPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_access_point_policy::builders::PutAccessPointPolicyInputBuilder,
+}
 impl PutAccessPointPolicyFluentBuilder  {
     /// Creates a new `PutAccessPointPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_access_point_policy::PutAccessPointPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

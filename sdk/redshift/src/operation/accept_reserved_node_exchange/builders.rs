@@ -8,16 +8,17 @@ pub use crate::operation::accept_reserved_node_exchange::_accept_reserved_node_e
 /// <p>Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type, or number of nodes) and no additional costs. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptReservedNodeExchangeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_reserved_node_exchange::builders::AcceptReservedNodeExchangeInputBuilder,
+}
 impl AcceptReservedNodeExchangeFluentBuilder  {
     /// Creates a new `AcceptReservedNodeExchange`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchange, aws_http::retry::AwsResponseRetryClassifier,>,

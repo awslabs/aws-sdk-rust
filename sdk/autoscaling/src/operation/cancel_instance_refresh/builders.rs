@@ -10,16 +10,17 @@ pub use crate::operation::cancel_instance_refresh::_cancel_instance_refresh_inpu
 /// <p>When you cancel an instance refresh, this does not roll back any changes that it made. Use the <code>RollbackInstanceRefresh</code> API to roll back instead.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelInstanceRefreshFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_instance_refresh::builders::CancelInstanceRefreshInputBuilder,
+}
 impl CancelInstanceRefreshFluentBuilder  {
     /// Creates a new `CancelInstanceRefresh`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_instance_refresh::CancelInstanceRefresh, aws_http::retry::AwsResponseRetryClassifier,>,

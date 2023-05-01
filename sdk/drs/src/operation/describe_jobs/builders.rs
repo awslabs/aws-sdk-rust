@@ -8,16 +8,17 @@ pub use crate::operation::describe_jobs::_describe_jobs_input::DescribeJobsInput
 /// <p>Returns a list of Jobs. Use the JobsID and fromDate and toDate filters to limit which jobs are returned. The response is sorted by creationDataTime - latest date first. Jobs are created by the StartRecovery, TerminateRecoveryInstances and StartFailbackLaunch APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances, which are APIs available only to *Support* and only used in response to relevant support tickets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_jobs::builders::DescribeJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_jobs::builders::DescribeJobsInputBuilder,
+}
 impl DescribeJobsFluentBuilder  {
     /// Creates a new `DescribeJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_jobs::DescribeJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_jobs::paginator::DescribeJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_jobs::paginator::DescribeJobsPaginator {
-                            crate::operation::describe_jobs::paginator::DescribeJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_jobs::paginator::DescribeJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_jobs::paginator::DescribeJobsPaginator {
+                                crate::operation::describe_jobs::paginator::DescribeJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A set of filters by which to return Jobs.</p>
     pub fn filters(mut self, input: crate::types::DescribeJobsRequestFilters) -> Self {
         self.inner = self.inner.filters(input);

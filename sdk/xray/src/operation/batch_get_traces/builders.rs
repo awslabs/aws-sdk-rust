@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_traces::_batch_get_traces_input::BatchGetTra
 /// <p>Retrieves a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use <code>GetTraceSummaries</code> to get a list of trace IDs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetTracesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_traces::builders::BatchGetTracesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_traces::builders::BatchGetTracesInputBuilder,
+}
 impl BatchGetTracesFluentBuilder  {
     /// Creates a new `BatchGetTraces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_traces::BatchGetTraces, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl BatchGetTracesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator {
-                            crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator {
+                                crate::operation::batch_get_traces::paginator::BatchGetTracesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TraceIds`.
     ///
     /// To override the contents of this collection use [`set_trace_ids`](Self::set_trace_ids).

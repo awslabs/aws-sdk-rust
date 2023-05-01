@@ -8,16 +8,17 @@ pub use crate::operation::delete_tls_inspection_configuration::_delete_tls_inspe
 /// <p>Deletes the specified <code>TLSInspectionConfiguration</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTLSInspectionConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_tls_inspection_configuration::builders::DeleteTlsInspectionConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_tls_inspection_configuration::builders::DeleteTlsInspectionConfigurationInputBuilder,
+}
 impl DeleteTLSInspectionConfigurationFluentBuilder  {
     /// Creates a new `DeleteTLSInspectionConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

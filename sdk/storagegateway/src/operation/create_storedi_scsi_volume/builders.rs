@@ -10,16 +10,17 @@ pub use crate::operation::create_storedi_scsi_volume::_create_storedi_scsi_volum
 /// <p>In the request, you must specify the gateway and the disk information on which you are creating the volume. In response, the gateway creates the volume and returns volume information such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStorediSCSIVolumeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_storedi_scsi_volume::builders::CreateStorediScsiVolumeInputBuilder,
+}
 impl CreateStorediSCSIVolumeFluentBuilder  {
     /// Creates a new `CreateStorediSCSIVolume`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolume, aws_http::retry::AwsResponseRetryClassifier,>,

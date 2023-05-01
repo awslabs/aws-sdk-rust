@@ -8,16 +8,17 @@ pub use crate::operation::enable_ipam_organization_admin_account::_enable_ipam_o
 /// <p>Enable an Organizations member account as the IPAM admin account. You cannot select the Organizations management account as the IPAM admin account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableIpamOrganizationAdminAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_ipam_organization_admin_account::builders::EnableIpamOrganizationAdminAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_ipam_organization_admin_account::builders::EnableIpamOrganizationAdminAccountInputBuilder,
+}
 impl EnableIpamOrganizationAdminAccountFluentBuilder  {
     /// Creates a new `EnableIpamOrganizationAdminAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccount, aws_http::retry::AwsResponseRetryClassifier,>,

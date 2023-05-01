@@ -10,16 +10,17 @@ pub use crate::operation::describe_instance_refreshes::_describe_instance_refres
 /// <p>To help you determine the status of an instance refresh, Amazon EC2 Auto Scaling returns information about the instance refreshes you previously initiated, including their status, start time, end time, the percentage of the instance refresh that is complete, and the number of instances remaining to update before the instance refresh is complete. If a rollback is initiated while an instance refresh is in progress, Amazon EC2 Auto Scaling also returns information about the rollback of the instance refresh.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstanceRefreshesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesInputBuilder,
+}
 impl DescribeInstanceRefreshesFluentBuilder  {
     /// Creates a new `DescribeInstanceRefreshes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_instance_refreshes::DescribeInstanceRefreshes, aws_http::retry::AwsResponseRetryClassifier,>,

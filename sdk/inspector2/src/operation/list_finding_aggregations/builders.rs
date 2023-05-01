@@ -8,16 +8,17 @@ pub use crate::operation::list_finding_aggregations::_list_finding_aggregations_
 /// <p>Lists aggregated finding data for your environment based on specific criteria.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFindingAggregationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder,
+}
 impl ListFindingAggregationsFluentBuilder  {
     /// Creates a new `ListFindingAggregations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_finding_aggregations::ListFindingAggregations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFindingAggregationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_finding_aggregations::paginator::ListFindingAggregationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_finding_aggregations::paginator::ListFindingAggregationsPaginator {
-                            crate::operation::list_finding_aggregations::paginator::ListFindingAggregationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_finding_aggregations::paginator::ListFindingAggregationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_finding_aggregations::paginator::ListFindingAggregationsPaginator {
+                                crate::operation::list_finding_aggregations::paginator::ListFindingAggregationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of the aggregation request.</p>
     pub fn aggregation_type(mut self, input: crate::types::AggregationType) -> Self {
         self.inner = self.inner.aggregation_type(input);

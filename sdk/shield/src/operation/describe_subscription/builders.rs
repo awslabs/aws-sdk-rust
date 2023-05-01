@@ -8,16 +8,17 @@ pub use crate::operation::describe_subscription::_describe_subscription_input::D
 /// <p>Provides details about the Shield Advanced subscription for an account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_subscription::builders::DescribeSubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_subscription::builders::DescribeSubscriptionInputBuilder,
+}
 impl DescribeSubscriptionFluentBuilder  {
     /// Creates a new `DescribeSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_subscription::DescribeSubscription, aws_http::retry::AwsResponseRetryClassifier,>,

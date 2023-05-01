@@ -22,16 +22,17 @@ pub use crate::operation::put_records::_put_records_input::PutRecordsInputBuilde
 /// <p>By default, data records are accessible for 24 hours from the time that they are added to a stream. You can use <code>IncreaseStreamRetentionPeriod</code> or <code>DecreaseStreamRetentionPeriod</code> to modify this retention period.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutRecordsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_records::builders::PutRecordsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_records::builders::PutRecordsInputBuilder,
+}
 impl PutRecordsFluentBuilder  {
     /// Creates a new `PutRecords`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_records::PutRecords, aws_http::retry::AwsResponseRetryClassifier,>,

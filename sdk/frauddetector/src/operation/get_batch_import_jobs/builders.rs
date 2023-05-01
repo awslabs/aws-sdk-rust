@@ -8,16 +8,17 @@ pub use crate::operation::get_batch_import_jobs::_get_batch_import_jobs_input::G
 /// <p>Gets all batch import jobs or a specific job of the specified ID. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 50 records per page. If you provide a <code>maxResults</code>, the value must be between 1 and 50. To get the next page results, provide the pagination token from the <code>GetBatchImportJobsResponse</code> as part of your request. A null pagination token fetches the records from the beginning.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBatchImportJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_batch_import_jobs::builders::GetBatchImportJobsInputBuilder,
+}
 impl GetBatchImportJobsFluentBuilder  {
     /// Creates a new `GetBatchImportJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_batch_import_jobs::GetBatchImportJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetBatchImportJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_batch_import_jobs::paginator::GetBatchImportJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_batch_import_jobs::paginator::GetBatchImportJobsPaginator {
-                            crate::operation::get_batch_import_jobs::paginator::GetBatchImportJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_batch_import_jobs::paginator::GetBatchImportJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_batch_import_jobs::paginator::GetBatchImportJobsPaginator {
+                                crate::operation::get_batch_import_jobs::paginator::GetBatchImportJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the batch import job to get.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());

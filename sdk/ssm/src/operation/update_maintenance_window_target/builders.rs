@@ -18,16 +18,17 @@ pub use crate::operation::update_maintenance_window_target::_update_maintenance_
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMaintenanceWindowTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder,
+}
 impl UpdateMaintenanceWindowTargetFluentBuilder  {
     /// Creates a new `UpdateMaintenanceWindowTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTarget, aws_http::retry::AwsResponseRetryClassifier,>,

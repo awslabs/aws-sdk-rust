@@ -8,16 +8,17 @@ pub use crate::operation::describe_publishing_destination::_describe_publishing_
 /// <p>Returns information about the publishing destination specified by the provided <code>destinationId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePublishingDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_publishing_destination::builders::DescribePublishingDestinationInputBuilder,
+}
 impl DescribePublishingDestinationFluentBuilder  {
     /// Creates a new `DescribePublishingDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_publishing_destination::DescribePublishingDestination, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::get_ice_server_config::_get_ice_server_config_input::G
 /// <p> You can invoke this API to establish a fallback mechanism in case either of the peers is unable to establish a direct peer-to-peer connection over a signaling channel. You must specify either a signaling channel ARN or the client ID in order to invoke this API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIceServerConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_ice_server_config::builders::GetIceServerConfigInputBuilder,
+}
 impl GetIceServerConfigFluentBuilder  {
     /// Creates a new `GetIceServerConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_ice_server_config::GetIceServerConfig, aws_http::retry::AwsResponseRetryClassifier,>,

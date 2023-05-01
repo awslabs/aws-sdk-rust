@@ -16,16 +16,17 @@ pub use crate::operation::get_person_tracking::_get_person_tracking_input::GetPe
 /// <p>Use the <code>MaxResults</code> parameter to limit the number of items returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetPersonTracking</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetPersonTracking</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPersonTrackingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_person_tracking::builders::GetPersonTrackingInputBuilder,
+}
 impl GetPersonTrackingFluentBuilder  {
     /// Creates a new `GetPersonTracking`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_person_tracking::GetPersonTracking, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -56,11 +57,11 @@ impl GetPersonTrackingFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator {
-                            crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator {
+                                crate::operation::get_person_tracking::paginator::GetPersonTrackingPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier for a job that tracks persons in a video. You get the <code>JobId</code> from a call to <code>StartPersonTracking</code>. </p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());

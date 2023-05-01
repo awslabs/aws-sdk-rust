@@ -13,16 +13,17 @@ pub use crate::operation::describe_cache_clusters::_describe_cache_clusters_inpu
 /// <p>If cache nodes are currently being removed from the cluster, no endpoint information for the removed nodes is displayed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCacheClustersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cache_clusters::builders::DescribeCacheClustersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cache_clusters::builders::DescribeCacheClustersInputBuilder,
+}
 impl DescribeCacheClustersFluentBuilder  {
     /// Creates a new `DescribeCacheClusters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cache_clusters::DescribeCacheClusters, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -53,11 +54,11 @@ impl DescribeCacheClustersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator {
-                            crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator {
+                                crate::operation::describe_cache_clusters::paginator::DescribeCacheClustersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.</p>
     pub fn cache_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cache_cluster_id(input.into());

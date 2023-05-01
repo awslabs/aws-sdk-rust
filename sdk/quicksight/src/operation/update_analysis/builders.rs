@@ -8,16 +8,17 @@ pub use crate::operation::update_analysis::_update_analysis_input::UpdateAnalysi
 /// <p>Updates an analysis in Amazon QuickSight</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_analysis::builders::UpdateAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_analysis::builders::UpdateAnalysisInputBuilder,
+}
 impl UpdateAnalysisFluentBuilder  {
     /// Creates a new `UpdateAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_analysis::UpdateAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

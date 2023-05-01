@@ -8,16 +8,17 @@ pub use crate::operation::batch_disassociate_resources_from_custom_line_item::_b
 /// <p> Disassociates a batch of resources from a percentage custom line item. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDisassociateResourcesFromCustomLineItemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_disassociate_resources_from_custom_line_item::builders::BatchDisassociateResourcesFromCustomLineItemInputBuilder,
+}
 impl BatchDisassociateResourcesFromCustomLineItemFluentBuilder  {
     /// Creates a new `BatchDisassociateResourcesFromCustomLineItem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_disassociate_resources_from_custom_line_item::BatchDisassociateResourcesFromCustomLineItem, aws_http::retry::AwsResponseRetryClassifier,>,

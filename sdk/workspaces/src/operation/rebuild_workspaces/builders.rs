@@ -11,16 +11,17 @@ pub use crate::operation::rebuild_workspaces::_rebuild_workspaces_input::Rebuild
 /// <p>This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RebuildWorkspacesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::rebuild_workspaces::builders::RebuildWorkspacesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::rebuild_workspaces::builders::RebuildWorkspacesInputBuilder,
+}
 impl RebuildWorkspacesFluentBuilder  {
     /// Creates a new `RebuildWorkspaces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::rebuild_workspaces::RebuildWorkspaces, aws_http::retry::AwsResponseRetryClassifier,>,

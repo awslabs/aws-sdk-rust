@@ -9,16 +9,17 @@ pub use crate::operation::list_firewall_configs::_list_firewall_configs_input::L
 /// <p>A single call might return only a partial list of the configurations. For information, see <code>MaxResults</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFirewallConfigsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_firewall_configs::builders::ListFirewallConfigsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_firewall_configs::builders::ListFirewallConfigsInputBuilder,
+}
 impl ListFirewallConfigsFluentBuilder  {
     /// Creates a new `ListFirewallConfigs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_firewall_configs::ListFirewallConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListFirewallConfigsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator {
-                            crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator {
+                                crate::operation::list_firewall_configs::paginator::ListFirewallConfigsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of objects that you want Resolver to return for this request. If more objects are available, in the response, Resolver provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p> 
     /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
     pub fn max_results(mut self, input: i32) -> Self {

@@ -8,16 +8,17 @@ pub use crate::operation::list_templates::_list_templates_input::ListTemplatesIn
 /// <p>Retrieves information about all the message templates that are associated with your Amazon Pinpoint account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTemplatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_templates::builders::ListTemplatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_templates::builders::ListTemplatesInputBuilder,
+}
 impl ListTemplatesFluentBuilder  {
     /// Creates a new `ListTemplates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_templates::ListTemplates, aws_http::retry::AwsResponseRetryClassifier,>,

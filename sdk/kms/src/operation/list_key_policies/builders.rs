@@ -15,16 +15,17 @@ pub use crate::operation::list_key_policies::_list_key_policies_input::ListKeyPo
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListKeyPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_key_policies::builders::ListKeyPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_key_policies::builders::ListKeyPoliciesInputBuilder,
+}
 impl ListKeyPoliciesFluentBuilder  {
     /// Creates a new `ListKeyPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_key_policies::ListKeyPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -55,11 +56,11 @@ impl ListKeyPoliciesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator {
-                            crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator {
+                                crate::operation::list_key_policies::paginator::ListKeyPoliciesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Gets the names of key policies for the specified KMS key.</p> 
     /// <p>Specify the key ID or key ARN of the KMS key.</p> 
     /// <p>For example:</p> 

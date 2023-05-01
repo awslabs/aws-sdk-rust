@@ -10,16 +10,17 @@ pub use crate::operation::update_model_card::_update_model_card_input::UpdateMod
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateModelCardFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_model_card::builders::UpdateModelCardInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_model_card::builders::UpdateModelCardInputBuilder,
+}
 impl UpdateModelCardFluentBuilder  {
     /// Creates a new `UpdateModelCard`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_model_card::UpdateModelCard, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::list_journal_s3_exports_for_ledger::_list_journal_s3_e
 /// <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListJournalS3ExportsForLedgerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_journal_s3_exports_for_ledger::builders::ListJournalS3ExportsForLedgerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_journal_s3_exports_for_ledger::builders::ListJournalS3ExportsForLedgerInputBuilder,
+}
 impl ListJournalS3ExportsForLedgerFluentBuilder  {
     /// Creates a new `ListJournalS3ExportsForLedger`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedger, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListJournalS3ExportsForLedgerFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_journal_s3_exports_for_ledger::paginator::ListJournalS3ExportsForLedgerPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_journal_s3_exports_for_ledger::paginator::ListJournalS3ExportsForLedgerPaginator {
-                            crate::operation::list_journal_s3_exports_for_ledger::paginator::ListJournalS3ExportsForLedgerPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_journal_s3_exports_for_ledger::paginator::ListJournalS3ExportsForLedgerPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_journal_s3_exports_for_ledger::paginator::ListJournalS3ExportsForLedgerPaginator {
+                                crate::operation::list_journal_s3_exports_for_ledger::paginator::ListJournalS3ExportsForLedgerPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the ledger.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

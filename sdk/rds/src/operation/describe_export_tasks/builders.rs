@@ -8,16 +8,17 @@ pub use crate::operation::describe_export_tasks::_describe_export_tasks_input::D
 /// <p>Returns information about a snapshot or cluster export to Amazon S3. This API operation supports pagination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeExportTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder,
+}
 impl DescribeExportTasksFluentBuilder  {
     /// Creates a new `DescribeExportTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_export_tasks::DescribeExportTasks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeExportTasksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator {
-                            crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator {
+                                crate::operation::describe_export_tasks::paginator::DescribeExportTasksPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the snapshot or cluster export task to be described.</p>
     pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.export_task_identifier(input.into());

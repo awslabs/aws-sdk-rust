@@ -8,16 +8,17 @@ pub use crate::operation::list_event_types::_list_event_types_input::ListEventTy
 /// <p>Returns information about the event types available for configuring notifications.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEventTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_event_types::builders::ListEventTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_event_types::builders::ListEventTypesInputBuilder,
+}
 impl ListEventTypesFluentBuilder  {
     /// Creates a new `ListEventTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_event_types::ListEventTypes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEventTypesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_event_types::paginator::ListEventTypesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_event_types::paginator::ListEventTypesPaginator {
-                            crate::operation::list_event_types::paginator::ListEventTypesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_event_types::paginator::ListEventTypesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_event_types::paginator::ListEventTypesPaginator {
+                                crate::operation::list_event_types::paginator::ListEventTypesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

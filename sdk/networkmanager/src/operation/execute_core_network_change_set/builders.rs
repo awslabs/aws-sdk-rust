@@ -8,16 +8,17 @@ pub use crate::operation::execute_core_network_change_set::_execute_core_network
 /// <p>Executes a change set on your core network. Deploys changes globally based on the policy submitted..</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExecuteCoreNetworkChangeSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::execute_core_network_change_set::builders::ExecuteCoreNetworkChangeSetInputBuilder,
+}
 impl ExecuteCoreNetworkChangeSetFluentBuilder  {
     /// Creates a new `ExecuteCoreNetworkChangeSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSet, aws_http::retry::AwsResponseRetryClassifier,>,

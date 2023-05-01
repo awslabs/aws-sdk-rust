@@ -8,16 +8,17 @@ pub use crate::operation::deauthorize_connection::_deauthorize_connection_input:
 /// <p>Removes all authorization parameters from the connection. This lets you remove the secret from the connection so you can reuse it without having to create a new connection.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeauthorizeConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deauthorize_connection::builders::DeauthorizeConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deauthorize_connection::builders::DeauthorizeConnectionInputBuilder,
+}
 impl DeauthorizeConnectionFluentBuilder  {
     /// Creates a new `DeauthorizeConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deauthorize_connection::DeauthorizeConnection, aws_http::retry::AwsResponseRetryClassifier,>,

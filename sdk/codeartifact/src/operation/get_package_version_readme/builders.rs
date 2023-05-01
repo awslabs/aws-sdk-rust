@@ -9,16 +9,17 @@ pub use crate::operation::get_package_version_readme::_get_package_version_readm
 /// <p> The returned text might contain formatting. For example, it might contain formatting for Markdown or reStructuredText. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPackageVersionReadmeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeInputBuilder,
+}
 impl GetPackageVersionReadmeFluentBuilder  {
     /// Creates a new `GetPackageVersionReadme`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_package_version_readme::GetPackageVersionReadme, aws_http::retry::AwsResponseRetryClassifier,>,

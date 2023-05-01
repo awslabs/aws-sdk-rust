@@ -8,16 +8,17 @@ pub use crate::operation::update_membership::_update_membership_input::UpdateMem
 /// <p>Updates a membership.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_membership::builders::UpdateMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_membership::builders::UpdateMembershipInputBuilder,
+}
 impl UpdateMembershipFluentBuilder  {
     /// Creates a new `UpdateMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_membership::UpdateMembership, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_package::_update_package_input::UpdatePackageIn
 /// <p>Updates a package for use with Amazon ES domains.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePackageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_package::builders::UpdatePackageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_package::builders::UpdatePackageInputBuilder,
+}
 impl UpdatePackageFluentBuilder  {
     /// Creates a new `UpdatePackage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_package::UpdatePackage, aws_http::retry::AwsResponseRetryClassifier,>,

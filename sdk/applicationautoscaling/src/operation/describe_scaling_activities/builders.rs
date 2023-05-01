@@ -10,16 +10,17 @@ pub use crate::operation::describe_scaling_activities::_describe_scaling_activit
 /// <p>For information about viewing scaling activities using the Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html">Scaling activities for Application Auto Scaling</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeScalingActivitiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder,
+}
 impl DescribeScalingActivitiesFluentBuilder  {
     /// Creates a new `DescribeScalingActivities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_scaling_activities::DescribeScalingActivities, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeScalingActivitiesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator {
-                            crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator {
+                                crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided by your own application or service, use <code>custom-resource</code> instead.</p>
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
         self.inner = self.inner.service_namespace(input);

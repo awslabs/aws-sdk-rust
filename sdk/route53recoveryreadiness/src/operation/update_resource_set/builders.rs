@@ -8,16 +8,17 @@ pub use crate::operation::update_resource_set::_update_resource_set_input::Updat
 /// <p>Updates a resource set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResourceSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_resource_set::builders::UpdateResourceSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_resource_set::builders::UpdateResourceSetInputBuilder,
+}
 impl UpdateResourceSetFluentBuilder  {
     /// Creates a new `UpdateResourceSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_resource_set::UpdateResourceSet, aws_http::retry::AwsResponseRetryClassifier,>,

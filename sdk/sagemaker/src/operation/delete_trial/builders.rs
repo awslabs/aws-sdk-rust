@@ -8,16 +8,17 @@ pub use crate::operation::delete_trial::_delete_trial_input::DeleteTrialInputBui
 /// <p>Deletes the specified trial. All trial components that make up the trial must be deleted first. Use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrialComponent.html">DescribeTrialComponent</a> API to get the list of trial components.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTrialFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_trial::builders::DeleteTrialInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_trial::builders::DeleteTrialInputBuilder,
+}
 impl DeleteTrialFluentBuilder  {
     /// Creates a new `DeleteTrial`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_trial::DeleteTrial, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_parameters::_delete_parameters_input::DeletePar
 /// <p>Delete a list of parameters. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteParametersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_parameters::builders::DeleteParametersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_parameters::builders::DeleteParametersInputBuilder,
+}
 impl DeleteParametersFluentBuilder  {
     /// Creates a new `DeleteParameters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_parameters::DeleteParameters, aws_http::retry::AwsResponseRetryClassifier,>,

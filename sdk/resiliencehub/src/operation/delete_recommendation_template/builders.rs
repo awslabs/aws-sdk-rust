@@ -8,16 +8,17 @@ pub use crate::operation::delete_recommendation_template::_delete_recommendation
 /// <p>Deletes a recommendation template. This is a destructive action that can't be undone.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRecommendationTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder,
+}
 impl DeleteRecommendationTemplateFluentBuilder  {
     /// Creates a new `DeleteRecommendationTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_recommendation_template::DeleteRecommendationTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

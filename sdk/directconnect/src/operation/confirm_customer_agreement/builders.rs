@@ -8,16 +8,17 @@ pub use crate::operation::confirm_customer_agreement::_confirm_customer_agreemen
 /// <p> The confirmation of the terms of agreement when creating the connection/link aggregation group (LAG). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfirmCustomerAgreementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder,
+}
 impl ConfirmCustomerAgreementFluentBuilder  {
     /// Creates a new `ConfirmCustomerAgreement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::confirm_customer_agreement::ConfirmCustomerAgreement, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_datalake_auto_enable::_delete_datalake_auto_ena
 /// <p> <code>DeleteDatalakeAutoEnable</code> removes automatic enablement of configuration settings for new member accounts (but keeps settings for the delegated administrator) from Amazon Security Lake. You must run this API using credentials of the delegated administrator. When you run this API, new member accounts that are added after the organization enables Security Lake won't contribute to the data lake.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDatalakeAutoEnableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_datalake_auto_enable::builders::DeleteDatalakeAutoEnableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_datalake_auto_enable::builders::DeleteDatalakeAutoEnableInputBuilder,
+}
 impl DeleteDatalakeAutoEnableFluentBuilder  {
     /// Creates a new `DeleteDatalakeAutoEnable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnable, aws_http::retry::AwsResponseRetryClassifier,>,

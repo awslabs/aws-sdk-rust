@@ -8,16 +8,17 @@ pub use crate::operation::delete_ruleset::_delete_ruleset_input::DeleteRulesetIn
 /// <p>Deletes a ruleset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRulesetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_ruleset::builders::DeleteRulesetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_ruleset::builders::DeleteRulesetInputBuilder,
+}
 impl DeleteRulesetFluentBuilder  {
     /// Creates a new `DeleteRuleset`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_ruleset::DeleteRuleset, aws_http::retry::AwsResponseRetryClassifier,>,

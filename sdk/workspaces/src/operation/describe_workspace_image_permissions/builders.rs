@@ -8,16 +8,17 @@ pub use crate::operation::describe_workspace_image_permissions::_describe_worksp
 /// <p>Describes the permissions that the owner of an image has granted to other Amazon Web Services accounts for an image.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeWorkspaceImagePermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_workspace_image_permissions::builders::DescribeWorkspaceImagePermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_workspace_image_permissions::builders::DescribeWorkspaceImagePermissionsInputBuilder,
+}
 impl DescribeWorkspaceImagePermissionsFluentBuilder  {
     /// Creates a new `DescribeWorkspaceImagePermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_workspace_image_permissions::DescribeWorkspaceImagePermissions, aws_http::retry::AwsResponseRetryClassifier,>,

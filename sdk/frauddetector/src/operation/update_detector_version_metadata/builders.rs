@@ -8,16 +8,17 @@ pub use crate::operation::update_detector_version_metadata::_update_detector_ver
 /// <p>Updates the detector version's description. You can update the metadata for any detector version (<code>DRAFT, ACTIVE,</code> or <code>INACTIVE</code>). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDetectorVersionMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_detector_version_metadata::builders::UpdateDetectorVersionMetadataInputBuilder,
+}
 impl UpdateDetectorVersionMetadataFluentBuilder  {
     /// Creates a new `UpdateDetectorVersionMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_detector_version_metadata::UpdateDetectorVersionMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

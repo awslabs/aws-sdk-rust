@@ -9,16 +9,17 @@ pub use crate::operation::describe_portfolio::_describe_portfolio_input::Describ
 /// <p>A delegated admin is authorized to invoke this command.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePortfolioFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_portfolio::builders::DescribePortfolioInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_portfolio::builders::DescribePortfolioInputBuilder,
+}
 impl DescribePortfolioFluentBuilder  {
     /// Creates a new `DescribePortfolio`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_portfolio::DescribePortfolio, aws_http::retry::AwsResponseRetryClassifier,>,

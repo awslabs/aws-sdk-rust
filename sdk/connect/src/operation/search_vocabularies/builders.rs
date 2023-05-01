@@ -8,16 +8,17 @@ pub use crate::operation::search_vocabularies::_search_vocabularies_input::Searc
 /// <p>Searches for vocabularies within a specific Amazon Connect instance using <code>State</code>, <code>NameStartsWith</code>, and <code>LanguageCode</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchVocabulariesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_vocabularies::builders::SearchVocabulariesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_vocabularies::builders::SearchVocabulariesInputBuilder,
+}
 impl SearchVocabulariesFluentBuilder  {
     /// Creates a new `SearchVocabularies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_vocabularies::SearchVocabularies, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchVocabulariesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator {
-                            crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator {
+                                crate::operation::search_vocabularies::paginator::SearchVocabulariesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_resource_share::_disassociate_resource_sh
 /// <p>Removes the specified principals or resources from participating in the specified resource share.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateResourceShareFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder,
+}
 impl DisassociateResourceShareFluentBuilder  {
     /// Creates a new `DisassociateResourceShare`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_resource_share::DisassociateResourceShare, aws_http::retry::AwsResponseRetryClassifier,>,

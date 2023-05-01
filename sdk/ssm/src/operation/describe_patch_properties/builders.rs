@@ -71,16 +71,17 @@ pub use crate::operation::describe_patch_properties::_describe_patch_properties_
 /// </dl>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePatchPropertiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder,
+}
 impl DescribePatchPropertiesFluentBuilder  {
     /// Creates a new `DescribePatchProperties`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_patch_properties::DescribePatchProperties, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -111,11 +112,11 @@ impl DescribePatchPropertiesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator {
-                            crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator {
+                                crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The operating system type for which to list patches.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.inner = self.inner.operating_system(input);

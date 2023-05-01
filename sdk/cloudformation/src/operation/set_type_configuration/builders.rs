@@ -11,16 +11,17 @@ pub use crate::operation::set_type_configuration::_set_type_configuration_input:
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetTypeConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_type_configuration::builders::SetTypeConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_type_configuration::builders::SetTypeConfigurationInputBuilder,
+}
 impl SetTypeConfigurationFluentBuilder  {
     /// Creates a new `SetTypeConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_type_configuration::SetTypeConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

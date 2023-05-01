@@ -9,16 +9,17 @@ pub use crate::operation::update_config::_update_config_input::UpdateConfigInput
 /// <p>Updating a <code>Config</code> will not update the execution parameters for existing future contacts scheduled with this <code>Config</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_config::builders::UpdateConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_config::builders::UpdateConfigInputBuilder,
+}
 impl UpdateConfigFluentBuilder  {
     /// Creates a new `UpdateConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_config::UpdateConfig, aws_http::retry::AwsResponseRetryClassifier,>,

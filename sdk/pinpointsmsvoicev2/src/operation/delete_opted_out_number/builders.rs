@@ -10,16 +10,17 @@ pub use crate::operation::delete_opted_out_number::_delete_opted_out_number_inpu
 /// <p>If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an Error is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteOptedOutNumberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberInputBuilder,
+}
 impl DeleteOptedOutNumberFluentBuilder  {
     /// Creates a new `DeleteOptedOutNumber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_opted_out_number::DeleteOptedOutNumber, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -17,16 +17,17 @@ pub use crate::operation::update_lag::_update_lag_input::UpdateLagInputBuilder;
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLagFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_lag::builders::UpdateLagInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_lag::builders::UpdateLagInputBuilder,
+}
 impl UpdateLagFluentBuilder  {
     /// Creates a new `UpdateLag`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_lag::UpdateLag, aws_http::retry::AwsResponseRetryClassifier,>,

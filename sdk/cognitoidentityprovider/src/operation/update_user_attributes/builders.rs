@@ -11,16 +11,17 @@ pub use crate::operation::update_user_attributes::_update_user_attributes_input:
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateUserAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_user_attributes::builders::UpdateUserAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_user_attributes::builders::UpdateUserAttributesInputBuilder,
+}
 impl UpdateUserAttributesFluentBuilder  {
     /// Creates a new `UpdateUserAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_user_attributes::UpdateUserAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

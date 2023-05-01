@@ -8,16 +8,17 @@ pub use crate::operation::stop_bgp_failover_test::_stop_bgp_failover_test_input:
 /// <p>Stops the virtual interface failover test.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopBgpFailoverTestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestInputBuilder,
+}
 impl StopBgpFailoverTestFluentBuilder  {
     /// Creates a new `StopBgpFailoverTest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_bgp_failover_test::StopBgpFailoverTest, aws_http::retry::AwsResponseRetryClassifier,>,

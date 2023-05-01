@@ -8,16 +8,17 @@ pub use crate::operation::get_capacity_reservation_usage::_get_capacity_reservat
 /// <p>Gets usage information about a Capacity Reservation. If the Capacity Reservation is shared, it shows usage information for the Capacity Reservation owner and each Amazon Web Services account that is currently using the shared capacity. If the Capacity Reservation is not shared, it shows only the Capacity Reservation owner's usage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCapacityReservationUsageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_capacity_reservation_usage::builders::GetCapacityReservationUsageInputBuilder,
+}
 impl GetCapacityReservationUsageFluentBuilder  {
     /// Creates a new `GetCapacityReservationUsage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsage, aws_http::retry::AwsResponseRetryClassifier,>,

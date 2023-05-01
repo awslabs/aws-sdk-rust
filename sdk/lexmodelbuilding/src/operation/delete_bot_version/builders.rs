@@ -9,16 +9,17 @@ pub use crate::operation::delete_bot_version::_delete_bot_version_input::DeleteB
 /// <p>This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBotVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_bot_version::builders::DeleteBotVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_bot_version::builders::DeleteBotVersionInputBuilder,
+}
 impl DeleteBotVersionFluentBuilder  {
     /// Creates a new `DeleteBotVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_bot_version::DeleteBotVersion, aws_http::retry::AwsResponseRetryClassifier,>,

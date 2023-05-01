@@ -11,16 +11,17 @@ pub use crate::operation::remove_thing_from_billing_group::_remove_thing_from_bi
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveThingFromBillingGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_thing_from_billing_group::builders::RemoveThingFromBillingGroupInputBuilder,
+}
 impl RemoveThingFromBillingGroupFluentBuilder  {
     /// Creates a new `RemoveThingFromBillingGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroup, aws_http::retry::AwsResponseRetryClassifier,>,

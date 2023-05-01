@@ -8,16 +8,17 @@ pub use crate::operation::get_data_quality_ruleset_evaluation_run::_get_data_qua
 /// <p>Retrieves a specific run where a ruleset is evaluated against a data source.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDataQualityRulesetEvaluationRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_data_quality_ruleset_evaluation_run::builders::GetDataQualityRulesetEvaluationRunInputBuilder,
+}
 impl GetDataQualityRulesetEvaluationRunFluentBuilder  {
     /// Creates a new `GetDataQualityRulesetEvaluationRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_data_quality_ruleset_evaluation_run::GetDataQualityRulesetEvaluationRun, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::associate_service_quota_template::_associate_service_q
 /// <p>Associates your quota request template with your organization. When a new account is created in your organization, the quota increase requests in the template are automatically applied to the account. You can add a quota increase request for any adjustable quota to your template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateServiceQuotaTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_service_quota_template::builders::AssociateServiceQuotaTemplateInputBuilder,
+}
 impl AssociateServiceQuotaTemplateFluentBuilder  {
     /// Creates a new `AssociateServiceQuotaTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

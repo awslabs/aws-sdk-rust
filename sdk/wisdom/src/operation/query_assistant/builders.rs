@@ -8,16 +8,17 @@ pub use crate::operation::query_assistant::_query_assistant_input::QueryAssistan
 /// <p>Performs a manual search against the specified assistant. To retrieve recommendations for an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct QueryAssistantFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::query_assistant::builders::QueryAssistantInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::query_assistant::builders::QueryAssistantInputBuilder,
+}
 impl QueryAssistantFluentBuilder  {
     /// Creates a new `QueryAssistant`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::query_assistant::QueryAssistant, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl QueryAssistantFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::query_assistant::paginator::QueryAssistantPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::query_assistant::paginator::QueryAssistantPaginator {
-                            crate::operation::query_assistant::paginator::QueryAssistantPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::query_assistant::paginator::QueryAssistantPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::query_assistant::paginator::QueryAssistantPaginator {
+                                crate::operation::query_assistant::paginator::QueryAssistantPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assistant_id(input.into());

@@ -21,16 +21,17 @@ pub use crate::operation::put_bucket_versioning::_put_bucket_versioning_input::P
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutBucketVersioningFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_bucket_versioning::builders::PutBucketVersioningInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_bucket_versioning::builders::PutBucketVersioningInputBuilder,
+}
 impl PutBucketVersioningFluentBuilder  {
     /// Creates a new `PutBucketVersioning`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_bucket_versioning::PutBucketVersioning, aws_http::retry::AwsResponseRetryClassifier,>,

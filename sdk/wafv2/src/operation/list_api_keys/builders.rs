@@ -8,16 +8,17 @@ pub use crate::operation::list_api_keys::_list_api_keys_input::ListApiKeysInputB
 /// <p>Retrieves a list of the API keys that you've defined for the specified scope. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAPIKeysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_api_keys::builders::ListApiKeysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_api_keys::builders::ListApiKeysInputBuilder,
+}
 impl ListAPIKeysFluentBuilder  {
     /// Creates a new `ListAPIKeys`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_api_keys::ListAPIKeys, aws_http::retry::AwsResponseRetryClassifier,>,

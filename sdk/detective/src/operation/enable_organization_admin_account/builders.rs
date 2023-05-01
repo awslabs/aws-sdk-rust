@@ -12,16 +12,17 @@ pub use crate::operation::enable_organization_admin_account::_enable_organizatio
 /// <p>If the organization does not have a delegated administrator account in Organizations, then you can choose any account in the organization. If you choose an account other than the organization management account, Detective calls Organizations to make that account the delegated administrator account for Detective. The organization management account cannot be the delegated administrator account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableOrganizationAdminAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_organization_admin_account::builders::EnableOrganizationAdminAccountInputBuilder,
+}
 impl EnableOrganizationAdminAccountFluentBuilder  {
     /// Creates a new `EnableOrganizationAdminAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_organization_admin_account::EnableOrganizationAdminAccount, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_use_case::_delete_use_case_input::DeleteUseCase
 /// <p>Deletes a use case from an integration association.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteUseCaseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_use_case::builders::DeleteUseCaseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_use_case::builders::DeleteUseCaseInputBuilder,
+}
 impl DeleteUseCaseFluentBuilder  {
     /// Creates a new `DeleteUseCase`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_use_case::DeleteUseCase, aws_http::retry::AwsResponseRetryClassifier,>,

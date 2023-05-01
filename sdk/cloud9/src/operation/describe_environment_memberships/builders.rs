@@ -8,16 +8,17 @@ pub use crate::operation::describe_environment_memberships::_describe_environmen
 /// <p>Gets information about environment members for an Cloud9 development environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEnvironmentMembershipsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder,
+}
 impl DescribeEnvironmentMembershipsFluentBuilder  {
     /// Creates a new `DescribeEnvironmentMemberships`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_environment_memberships::DescribeEnvironmentMemberships, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeEnvironmentMembershipsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator {
-                            crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator {
+                                crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>
     pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_arn(input.into());

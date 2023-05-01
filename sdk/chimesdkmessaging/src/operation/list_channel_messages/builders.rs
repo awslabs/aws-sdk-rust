@@ -11,16 +11,17 @@ pub use crate::operation::list_channel_messages::_list_channel_messages_input::L
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelMessagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder,
+}
 impl ListChannelMessagesFluentBuilder  {
     /// Creates a new `ListChannelMessages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_channel_messages::ListChannelMessages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListChannelMessagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator {
-                            crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator {
+                                crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());

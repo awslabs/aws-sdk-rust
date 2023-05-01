@@ -8,16 +8,17 @@ pub use crate::operation::update_permission_group::_update_permission_group_inpu
 /// <p>Modifies the details of a permission group. You cannot modify a <code>permissionGroupID</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePermissionGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_permission_group::builders::UpdatePermissionGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_permission_group::builders::UpdatePermissionGroupInputBuilder,
+}
 impl UpdatePermissionGroupFluentBuilder  {
     /// Creates a new `UpdatePermissionGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_permission_group::UpdatePermissionGroup, aws_http::retry::AwsResponseRetryClassifier,>,

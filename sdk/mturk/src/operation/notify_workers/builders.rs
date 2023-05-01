@@ -8,16 +8,17 @@ pub use crate::operation::notify_workers::_notify_workers_input::NotifyWorkersIn
 /// <p> The <code>NotifyWorkers</code> operation sends an email to one or more Workers that you specify with the Worker ID. You can specify up to 100 Worker IDs to send the same message with a single call to the NotifyWorkers operation. The NotifyWorkers operation will send a notification email to a Worker only if you have previously approved or rejected work from the Worker. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct NotifyWorkersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::notify_workers::builders::NotifyWorkersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::notify_workers::builders::NotifyWorkersInputBuilder,
+}
 impl NotifyWorkersFluentBuilder  {
     /// Creates a new `NotifyWorkers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::notify_workers::NotifyWorkers, aws_http::retry::AwsResponseRetryClassifier,>,

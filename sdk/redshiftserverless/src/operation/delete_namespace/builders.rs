@@ -8,16 +8,17 @@ pub use crate::operation::delete_namespace::_delete_namespace_input::DeleteNames
 /// <p>Deletes a namespace from Amazon Redshift Serverless. Before you delete the namespace, you can create a final snapshot that has all of the data within the namespace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNamespaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_namespace::builders::DeleteNamespaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_namespace::builders::DeleteNamespaceInputBuilder,
+}
 impl DeleteNamespaceFluentBuilder  {
     /// Creates a new `DeleteNamespace`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_namespace::DeleteNamespace, aws_http::retry::AwsResponseRetryClassifier,>,

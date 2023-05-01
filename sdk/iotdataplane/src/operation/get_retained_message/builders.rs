@@ -11,16 +11,17 @@ pub use crate::operation::get_retained_message::_get_retained_message_input::Get
 /// <p>For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/#Messaging">Amazon Web Services IoT Core pricing - Messaging</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRetainedMessageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_retained_message::builders::GetRetainedMessageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_retained_message::builders::GetRetainedMessageInputBuilder,
+}
 impl GetRetainedMessageFluentBuilder  {
     /// Creates a new `GetRetainedMessage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_retained_message::GetRetainedMessage, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::set_ip_address_type::_set_ip_address_type_input::SetIp
 /// <p>Sets the type of IP addresses used by the subnets of the specified load balancer.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetIpAddressTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder,
+}
 impl SetIpAddressTypeFluentBuilder  {
     /// Creates a new `SetIpAddressType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_ip_address_type::SetIpAddressType, aws_http::retry::AwsResponseRetryClassifier,>,

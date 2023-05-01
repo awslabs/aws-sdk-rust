@@ -8,16 +8,17 @@ pub use crate::operation::get_instance_port_states::_get_instance_port_states_in
 /// <p>Returns the firewall port states for a specific Amazon Lightsail instance, the IP addresses allowed to connect to the instance through the ports, and the protocol.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInstancePortStatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_instance_port_states::builders::GetInstancePortStatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_instance_port_states::builders::GetInstancePortStatesInputBuilder,
+}
 impl GetInstancePortStatesFluentBuilder  {
     /// Creates a new `GetInstancePortStates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_instance_port_states::GetInstancePortStates, aws_http::retry::AwsResponseRetryClassifier,>,

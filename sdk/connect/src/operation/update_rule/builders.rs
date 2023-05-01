@@ -9,16 +9,17 @@ pub use crate::operation::update_rule::_update_rule_input::UpdateRuleInputBuilde
 /// <p>Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules Function language</a> to code conditions for the rule. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_rule::builders::UpdateRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_rule::builders::UpdateRuleInputBuilder,
+}
 impl UpdateRuleFluentBuilder  {
     /// Creates a new `UpdateRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_rule::UpdateRule, aws_http::retry::AwsResponseRetryClassifier,>,

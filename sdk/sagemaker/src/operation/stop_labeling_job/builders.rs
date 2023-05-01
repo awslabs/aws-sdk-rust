@@ -8,16 +8,17 @@ pub use crate::operation::stop_labeling_job::_stop_labeling_job_input::StopLabel
 /// <p>Stops a running labeling job. A job that is stopped cannot be restarted. Any results obtained before the job is stopped are placed in the Amazon S3 output bucket.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopLabelingJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_labeling_job::builders::StopLabelingJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_labeling_job::builders::StopLabelingJobInputBuilder,
+}
 impl StopLabelingJobFluentBuilder  {
     /// Creates a new `StopLabelingJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_labeling_job::StopLabelingJob, aws_http::retry::AwsResponseRetryClassifier,>,

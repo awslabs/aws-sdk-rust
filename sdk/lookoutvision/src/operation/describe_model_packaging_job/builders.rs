@@ -10,16 +10,17 @@ pub use crate::operation::describe_model_packaging_job::_describe_model_packagin
 /// <p>For more information, see <i>Using your Amazon Lookout for Vision model on an edge device</i> in the Amazon Lookout for Vision Developer Guide. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeModelPackagingJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder,
+}
 impl DescribeModelPackagingJobFluentBuilder  {
     /// Creates a new `DescribeModelPackagingJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_model_packaging_job::DescribeModelPackagingJob, aws_http::retry::AwsResponseRetryClassifier,>,

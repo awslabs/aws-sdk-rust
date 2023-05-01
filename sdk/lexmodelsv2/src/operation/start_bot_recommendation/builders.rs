@@ -8,16 +8,17 @@ pub use crate::operation::start_bot_recommendation::_start_bot_recommendation_in
 /// <p>Use this to provide your transcript data, and to start the bot recommendation process.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartBotRecommendationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_bot_recommendation::builders::StartBotRecommendationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_bot_recommendation::builders::StartBotRecommendationInputBuilder,
+}
 impl StartBotRecommendationFluentBuilder  {
     /// Creates a new `StartBotRecommendation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_bot_recommendation::StartBotRecommendation, aws_http::retry::AwsResponseRetryClassifier,>,

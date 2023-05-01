@@ -8,16 +8,17 @@ pub use crate::operation::get_access_control_effect::_get_access_control_effect_
 /// <p>Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access protocol action, and user ID or impersonation role ID. You must provide either the user ID or impersonation role ID. Impersonation role ID can only be used with Action EWS.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAccessControlEffectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_access_control_effect::builders::GetAccessControlEffectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_access_control_effect::builders::GetAccessControlEffectInputBuilder,
+}
 impl GetAccessControlEffectFluentBuilder  {
     /// Creates a new `GetAccessControlEffect`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_access_control_effect::GetAccessControlEffect, aws_http::retry::AwsResponseRetryClassifier,>,

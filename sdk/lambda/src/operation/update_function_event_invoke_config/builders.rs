@@ -9,16 +9,17 @@ pub use crate::operation::update_function_event_invoke_config::_update_function_
 /// <p>To configure options for asynchronous invocation, use <code>PutFunctionEventInvokeConfig</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFunctionEventInvokeConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_function_event_invoke_config::builders::UpdateFunctionEventInvokeConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_function_event_invoke_config::builders::UpdateFunctionEventInvokeConfigInputBuilder,
+}
 impl UpdateFunctionEventInvokeConfigFluentBuilder  {
     /// Creates a new `UpdateFunctionEventInvokeConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfig, aws_http::retry::AwsResponseRetryClassifier,>,

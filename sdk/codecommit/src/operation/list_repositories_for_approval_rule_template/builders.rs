@@ -8,16 +8,17 @@ pub use crate::operation::list_repositories_for_approval_rule_template::_list_re
 /// <p>Lists all repositories associated with the specified approval rule template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRepositoriesForApprovalRuleTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_repositories_for_approval_rule_template::builders::ListRepositoriesForApprovalRuleTemplateInputBuilder,
+}
 impl ListRepositoriesForApprovalRuleTemplateFluentBuilder  {
     /// Creates a new `ListRepositoriesForApprovalRuleTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRepositoriesForApprovalRuleTemplateFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_repositories_for_approval_rule_template::paginator::ListRepositoriesForApprovalRuleTemplatePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_repositories_for_approval_rule_template::paginator::ListRepositoriesForApprovalRuleTemplatePaginator {
-                            crate::operation::list_repositories_for_approval_rule_template::paginator::ListRepositoriesForApprovalRuleTemplatePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_repositories_for_approval_rule_template::paginator::ListRepositoriesForApprovalRuleTemplatePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_repositories_for_approval_rule_template::paginator::ListRepositoriesForApprovalRuleTemplatePaginator {
+                                crate::operation::list_repositories_for_approval_rule_template::paginator::ListRepositoriesForApprovalRuleTemplatePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
     pub fn approval_rule_template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_template_name(input.into());

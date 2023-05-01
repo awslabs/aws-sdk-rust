@@ -8,16 +8,17 @@ pub use crate::operation::associate_aws_account_with_partner_account::_associate
 /// <p>Associates a partner account with your AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateAwsAccountWithPartnerAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_aws_account_with_partner_account::builders::AssociateAwsAccountWithPartnerAccountInputBuilder,
+}
 impl AssociateAwsAccountWithPartnerAccountFluentBuilder  {
     /// Creates a new `AssociateAwsAccountWithPartnerAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccount, aws_http::retry::AwsResponseRetryClassifier,>,

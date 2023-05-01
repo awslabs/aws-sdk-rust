@@ -13,16 +13,17 @@ pub use crate::operation::detach_load_balancers::_detach_load_balancers_input::D
 /// <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using the <code>DescribeLoadBalancers</code> API call. The instances remain running.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachLoadBalancersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detach_load_balancers::builders::DetachLoadBalancersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detach_load_balancers::builders::DetachLoadBalancersInputBuilder,
+}
 impl DetachLoadBalancersFluentBuilder  {
     /// Creates a new `DetachLoadBalancers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detach_load_balancers::DetachLoadBalancers, aws_http::retry::AwsResponseRetryClassifier,>,

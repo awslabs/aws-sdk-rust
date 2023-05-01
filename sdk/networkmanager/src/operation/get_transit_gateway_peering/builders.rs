@@ -8,16 +8,17 @@ pub use crate::operation::get_transit_gateway_peering::_get_transit_gateway_peer
 /// <p>Returns information about a transit gateway peer.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTransitGatewayPeeringFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_transit_gateway_peering::builders::GetTransitGatewayPeeringInputBuilder,
+}
 impl GetTransitGatewayPeeringFluentBuilder  {
     /// Creates a new `GetTransitGatewayPeering`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_transit_gateway_peering::GetTransitGatewayPeering, aws_http::retry::AwsResponseRetryClassifier,>,

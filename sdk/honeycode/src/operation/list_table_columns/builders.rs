@@ -8,16 +8,17 @@ pub use crate::operation::list_table_columns::_list_table_columns_input::ListTab
 /// <p> The ListTableColumns API allows you to retrieve a list of all the columns in a table in a workbook. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTableColumnsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_table_columns::builders::ListTableColumnsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_table_columns::builders::ListTableColumnsInputBuilder,
+}
 impl ListTableColumnsFluentBuilder  {
     /// Creates a new `ListTableColumns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_table_columns::ListTableColumns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTableColumnsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_table_columns::paginator::ListTableColumnsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_table_columns::paginator::ListTableColumnsPaginator {
-                            crate::operation::list_table_columns::paginator::ListTableColumnsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_table_columns::paginator::ListTableColumnsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_table_columns::paginator::ListTableColumnsPaginator {
+                                crate::operation::list_table_columns::paginator::ListTableColumnsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the workbook that contains the table whose columns are being retrieved.</p> 
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {

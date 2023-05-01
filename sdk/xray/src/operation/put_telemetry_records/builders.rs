@@ -8,16 +8,17 @@ pub use crate::operation::put_telemetry_records::_put_telemetry_records_input::P
 /// <p>Used by the Amazon Web Services X-Ray daemon to upload telemetry.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutTelemetryRecordsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder,
+}
 impl PutTelemetryRecordsFluentBuilder  {
     /// Creates a new `PutTelemetryRecords`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_telemetry_records::PutTelemetryRecords, aws_http::retry::AwsResponseRetryClassifier,>,

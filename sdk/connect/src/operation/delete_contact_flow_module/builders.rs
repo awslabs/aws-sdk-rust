@@ -8,16 +8,17 @@ pub use crate::operation::delete_contact_flow_module::_delete_contact_flow_modul
 /// <p>Deletes the specified flow module.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteContactFlowModuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_contact_flow_module::builders::DeleteContactFlowModuleInputBuilder,
+}
 impl DeleteContactFlowModuleFluentBuilder  {
     /// Creates a new `DeleteContactFlowModule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_contact_flow_module::DeleteContactFlowModule, aws_http::retry::AwsResponseRetryClassifier,>,

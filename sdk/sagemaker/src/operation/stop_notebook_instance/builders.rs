@@ -9,16 +9,17 @@ pub use crate::operation::stop_notebook_instance::_stop_notebook_instance_input:
 /// <p>To access data on the ML storage volume for a notebook instance that has been terminated, call the <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code> launches another ML compute instance, configures it, and attaches the preserved ML storage volume so you can continue your work. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopNotebookInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_notebook_instance::builders::StopNotebookInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_notebook_instance::builders::StopNotebookInstanceInputBuilder,
+}
 impl StopNotebookInstanceFluentBuilder  {
     /// Creates a new `StopNotebookInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_notebook_instance::StopNotebookInstance, aws_http::retry::AwsResponseRetryClassifier,>,

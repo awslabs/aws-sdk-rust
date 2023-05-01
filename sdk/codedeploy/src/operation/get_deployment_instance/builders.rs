@@ -9,16 +9,17 @@ pub use crate::operation::get_deployment_instance::_get_deployment_instance_inpu
 #[deprecated(note = "This operation is deprecated, use GetDeploymentTarget instead.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDeploymentInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_deployment_instance::builders::GetDeploymentInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_deployment_instance::builders::GetDeploymentInstanceInputBuilder,
+}
 impl GetDeploymentInstanceFluentBuilder  {
     /// Creates a new `GetDeploymentInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_deployment_instance::GetDeploymentInstance, aws_http::retry::AwsResponseRetryClassifier,>,

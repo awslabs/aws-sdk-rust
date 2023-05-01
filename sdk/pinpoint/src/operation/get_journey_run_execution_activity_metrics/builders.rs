@@ -8,16 +8,17 @@ pub use crate::operation::get_journey_run_execution_activity_metrics::_get_journ
 /// <p>Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey activity.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetJourneyRunExecutionActivityMetricsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_journey_run_execution_activity_metrics::builders::GetJourneyRunExecutionActivityMetricsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_journey_run_execution_activity_metrics::builders::GetJourneyRunExecutionActivityMetricsInputBuilder,
+}
 impl GetJourneyRunExecutionActivityMetricsFluentBuilder  {
     /// Creates a new `GetJourneyRunExecutionActivityMetrics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_journey_run_execution_activity_metrics::GetJourneyRunExecutionActivityMetrics, aws_http::retry::AwsResponseRetryClassifier,>,

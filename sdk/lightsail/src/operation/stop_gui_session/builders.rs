@@ -8,16 +8,17 @@ pub use crate::operation::stop_gui_session::_stop_gui_session_input::StopGuiSess
 /// <p>Terminates a web-based NICE DCV session that’s used to access a virtual computer’s operating system or application. The session will close and any unsaved data will be lost.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopGUISessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_gui_session::builders::StopGuiSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_gui_session::builders::StopGuiSessionInputBuilder,
+}
 impl StopGUISessionFluentBuilder  {
     /// Creates a new `StopGUISession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_gui_session::StopGUISession, aws_http::retry::AwsResponseRetryClassifier,>,

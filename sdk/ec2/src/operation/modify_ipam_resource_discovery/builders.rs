@@ -8,16 +8,17 @@ pub use crate::operation::modify_ipam_resource_discovery::_modify_ipam_resource_
 /// <p>Modifies a resource discovery. A resource discovery is an IPAM component that enables IPAM to manage and monitor resources that belong to the owning account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyIpamResourceDiscoveryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_ipam_resource_discovery::builders::ModifyIpamResourceDiscoveryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_ipam_resource_discovery::builders::ModifyIpamResourceDiscoveryInputBuilder,
+}
 impl ModifyIpamResourceDiscoveryFluentBuilder  {
     /// Creates a new `ModifyIpamResourceDiscovery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscovery, aws_http::retry::AwsResponseRetryClassifier,>,

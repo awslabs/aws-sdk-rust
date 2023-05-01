@@ -8,16 +8,17 @@ pub use crate::operation::put_account_setting_default::_put_account_setting_defa
 /// <p>Modifies an account setting for all users on an account for whom no individual account setting has been specified. Account settings are set on a per-Region basis.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAccountSettingDefaultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_account_setting_default::builders::PutAccountSettingDefaultInputBuilder,
+}
 impl PutAccountSettingDefaultFluentBuilder  {
     /// Creates a new `PutAccountSettingDefault`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_account_setting_default::PutAccountSettingDefault, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -12,16 +12,17 @@ pub use crate::operation::reboot_cache_cluster::_reboot_cache_cluster_input::Reb
 /// <p>If you make changes to parameters that require a Redis (cluster mode enabled) cluster reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">Rebooting a Cluster</a> for an alternate process.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RebootCacheClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reboot_cache_cluster::builders::RebootCacheClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reboot_cache_cluster::builders::RebootCacheClusterInputBuilder,
+}
 impl RebootCacheClusterFluentBuilder  {
     /// Creates a new `RebootCacheCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reboot_cache_cluster::RebootCacheCluster, aws_http::retry::AwsResponseRetryClassifier,>,

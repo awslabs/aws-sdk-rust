@@ -8,16 +8,17 @@ pub use crate::operation::delete_trail::_delete_trail_input::DeleteTrailInputBui
 /// <p>Deletes a trail. This operation must be called from the region in which the trail was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTrailFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_trail::builders::DeleteTrailInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_trail::builders::DeleteTrailInputBuilder,
+}
 impl DeleteTrailFluentBuilder  {
     /// Creates a new `DeleteTrail`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_trail::DeleteTrail, aws_http::retry::AwsResponseRetryClassifier,>,

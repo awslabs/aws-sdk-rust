@@ -8,16 +8,17 @@ pub use crate::operation::update_job_template::_update_job_template_input::Updat
 /// Modify one of your existing job templates.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateJobTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_job_template::builders::UpdateJobTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_job_template::builders::UpdateJobTemplateInputBuilder,
+}
 impl UpdateJobTemplateFluentBuilder  {
     /// Creates a new `UpdateJobTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_job_template::UpdateJobTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_dedicated_ip_pools::_list_dedicated_ip_pools_inpu
 /// <p>List all of the dedicated IP pools that exist in your Amazon Pinpoint account in the current AWS Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDedicatedIpPoolsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsInputBuilder,
+}
 impl ListDedicatedIpPoolsFluentBuilder  {
     /// Creates a new `ListDedicatedIpPools`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_dedicated_ip_pools::ListDedicatedIpPools, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDedicatedIpPoolsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator {
-                            crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator {
+                                crate::operation::list_dedicated_ip_pools::paginator::ListDedicatedIpPoolsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

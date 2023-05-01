@@ -8,16 +8,17 @@ pub use crate::operation::update_agreement::_update_agreement_input::UpdateAgree
 /// <p>Updates some of the parameters for an existing agreement. Provide the <code>AgreementId</code> and the <code>ServerId</code> for the agreement that you want to update, along with the new values for the parameters to update.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAgreementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_agreement::builders::UpdateAgreementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_agreement::builders::UpdateAgreementInputBuilder,
+}
 impl UpdateAgreementFluentBuilder  {
     /// Creates a new `UpdateAgreement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_agreement::UpdateAgreement, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_network_analyzer_configurations::_list_network_an
 /// <p>Lists the network analyzer configurations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNetworkAnalyzerConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_network_analyzer_configurations::builders::ListNetworkAnalyzerConfigurationsInputBuilder,
+}
 impl ListNetworkAnalyzerConfigurationsFluentBuilder  {
     /// Creates a new `ListNetworkAnalyzerConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListNetworkAnalyzerConfigurationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_network_analyzer_configurations::paginator::ListNetworkAnalyzerConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_network_analyzer_configurations::paginator::ListNetworkAnalyzerConfigurationsPaginator {
-                            crate::operation::list_network_analyzer_configurations::paginator::ListNetworkAnalyzerConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_network_analyzer_configurations::paginator::ListNetworkAnalyzerConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_network_analyzer_configurations::paginator::ListNetworkAnalyzerConfigurationsPaginator {
+                                crate::operation::list_network_analyzer_configurations::paginator::ListNetworkAnalyzerConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

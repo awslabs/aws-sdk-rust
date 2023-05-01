@@ -8,16 +8,17 @@ pub use crate::operation::update_event_integration::_update_event_integration_in
 /// <p>Updates the description of an event integration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEventIntegrationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_event_integration::builders::UpdateEventIntegrationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_event_integration::builders::UpdateEventIntegrationInputBuilder,
+}
 impl UpdateEventIntegrationFluentBuilder  {
     /// Creates a new `UpdateEventIntegration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_event_integration::UpdateEventIntegration, aws_http::retry::AwsResponseRetryClassifier,>,

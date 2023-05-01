@@ -8,16 +8,17 @@ pub use crate::operation::create_browser_settings::_create_browser_settings_inpu
 /// <p>Creates a browser settings resource that can be associated with a web portal. Once associated with a web portal, browser settings control how the browser will behave once a user starts a streaming session for the web portal. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBrowserSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_browser_settings::builders::CreateBrowserSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_browser_settings::builders::CreateBrowserSettingsInputBuilder,
+}
 impl CreateBrowserSettingsFluentBuilder  {
     /// Creates a new `CreateBrowserSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_browser_settings::CreateBrowserSettings, aws_http::retry::AwsResponseRetryClassifier,>,

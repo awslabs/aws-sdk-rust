@@ -9,16 +9,17 @@ pub use crate::operation::attach_security_profile::_attach_security_profile_inpu
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachSecurityProfile</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AttachSecurityProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::attach_security_profile::builders::AttachSecurityProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::attach_security_profile::builders::AttachSecurityProfileInputBuilder,
+}
 impl AttachSecurityProfileFluentBuilder  {
     /// Creates a new `AttachSecurityProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_security_profile::AttachSecurityProfile, aws_http::retry::AwsResponseRetryClassifier,>,

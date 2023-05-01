@@ -8,16 +8,17 @@ pub use crate::operation::get_layer_version::_get_layer_version_input::GetLayerV
 /// <p>Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>, with a link to download the layer archive that's valid for 10 minutes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLayerVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_layer_version::builders::GetLayerVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_layer_version::builders::GetLayerVersionInputBuilder,
+}
 impl GetLayerVersionFluentBuilder  {
     /// Creates a new `GetLayerVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_layer_version::GetLayerVersion, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_license_versions::_list_license_versions_input::L
 /// <p>Lists all versions of the specified license.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLicenseVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_license_versions::builders::ListLicenseVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_license_versions::builders::ListLicenseVersionsInputBuilder,
+}
 impl ListLicenseVersionsFluentBuilder  {
     /// Creates a new `ListLicenseVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_license_versions::ListLicenseVersions, aws_http::retry::AwsResponseRetryClassifier,>,

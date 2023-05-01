@@ -8,16 +8,17 @@ pub use crate::operation::update_anomaly_detector::_update_anomaly_detector_inpu
 /// <p>Updates a detector. After activation, you can only change a detector's ingestion delay and description.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAnomalyDetectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_anomaly_detector::builders::UpdateAnomalyDetectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_anomaly_detector::builders::UpdateAnomalyDetectorInputBuilder,
+}
 impl UpdateAnomalyDetectorFluentBuilder  {
     /// Creates a new `UpdateAnomalyDetector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_anomaly_detector::UpdateAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,

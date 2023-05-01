@@ -8,16 +8,17 @@ pub use crate::operation::export_themes::_export_themes_input::ExportThemesInput
 /// <p>Exports theme configurations to code that is ready to integrate into an Amplify app.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportThemesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_themes::builders::ExportThemesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_themes::builders::ExportThemesInputBuilder,
+}
 impl ExportThemesFluentBuilder  {
     /// Creates a new `ExportThemes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_themes::ExportThemes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ExportThemesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::export_themes::paginator::ExportThemesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::export_themes::paginator::ExportThemesPaginator {
-                            crate::operation::export_themes::paginator::ExportThemesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::export_themes::paginator::ExportThemesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::export_themes::paginator::ExportThemesPaginator {
+                                crate::operation::export_themes::paginator::ExportThemesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique ID of the Amplify app to export the themes to.</p>
     pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());

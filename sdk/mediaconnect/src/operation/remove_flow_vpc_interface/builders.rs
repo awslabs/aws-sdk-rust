@@ -8,16 +8,17 @@ pub use crate::operation::remove_flow_vpc_interface::_remove_flow_vpc_interface_
 /// Removes a VPC Interface from an existing flow. This request can be made only on a VPC interface that does not have a Source or Output associated with it. If the VPC interface is referenced by a Source or Output, you must first delete or update the Source or Output to no longer reference the VPC interface.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveFlowVpcInterfaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_flow_vpc_interface::builders::RemoveFlowVpcInterfaceInputBuilder,
+}
 impl RemoveFlowVpcInterfaceFluentBuilder  {
     /// Creates a new `RemoveFlowVpcInterface`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterface, aws_http::retry::AwsResponseRetryClassifier,>,

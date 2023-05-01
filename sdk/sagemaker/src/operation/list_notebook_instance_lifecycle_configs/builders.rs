@@ -8,16 +8,17 @@ pub use crate::operation::list_notebook_instance_lifecycle_configs::_list_notebo
 /// <p>Lists notebook instance lifestyle configurations created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a> API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNotebookInstanceLifecycleConfigsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsInputBuilder,
+}
 impl ListNotebookInstanceLifecycleConfigsFluentBuilder  {
     /// Creates a new `ListNotebookInstanceLifecycleConfigs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator {
-                            crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator {
+                                crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

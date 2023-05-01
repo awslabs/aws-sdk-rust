@@ -8,16 +8,17 @@ pub use crate::operation::describe_instance_patch_states::_describe_instance_pat
 /// <p>Retrieves the high-level patch state of one or more managed nodes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstancePatchStatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_instance_patch_states::builders::DescribeInstancePatchStatesInputBuilder,
+}
 impl DescribeInstancePatchStatesFluentBuilder  {
     /// Creates a new `DescribeInstancePatchStates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_instance_patch_states::DescribeInstancePatchStates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeInstancePatchStatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_patch_states::paginator::DescribeInstancePatchStatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_instance_patch_states::paginator::DescribeInstancePatchStatesPaginator {
-                            crate::operation::describe_instance_patch_states::paginator::DescribeInstancePatchStatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_instance_patch_states::paginator::DescribeInstancePatchStatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_instance_patch_states::paginator::DescribeInstancePatchStatesPaginator {
+                                crate::operation::describe_instance_patch_states::paginator::DescribeInstancePatchStatesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `InstanceIds`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).

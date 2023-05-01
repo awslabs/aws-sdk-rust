@@ -8,16 +8,17 @@ pub use crate::operation::put_account_sending_attributes::_put_account_sending_a
 /// <p>Enable or disable the ability of your account to send email.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAccountSendingAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_account_sending_attributes::builders::PutAccountSendingAttributesInputBuilder,
+}
 impl PutAccountSendingAttributesFluentBuilder  {
     /// Creates a new `PutAccountSendingAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_account_sending_attributes::PutAccountSendingAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::add_draft_app_version_resource_mappings::_add_draft_ap
 /// <p>Adds the resource mapping for the draft application version. You can also update an existing resource mapping to a new physical resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddDraftAppVersionResourceMappingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_draft_app_version_resource_mappings::builders::AddDraftAppVersionResourceMappingsInputBuilder,
+}
 impl AddDraftAppVersionResourceMappingsFluentBuilder  {
     /// Creates a new `AddDraftAppVersionResourceMappings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappings, aws_http::retry::AwsResponseRetryClassifier,>,

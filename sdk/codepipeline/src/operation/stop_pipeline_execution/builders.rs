@@ -8,16 +8,17 @@ pub use crate::operation::stop_pipeline_execution::_stop_pipeline_execution_inpu
 /// <p>Stops the specified pipeline execution. You choose to either stop the pipeline execution by completing in-progress actions without starting subsequent actions, or by abandoning in-progress actions. While completing or abandoning in-progress actions, the pipeline execution is in a <code>Stopping</code> state. After all in-progress actions are completed or abandoned, the pipeline execution is in a <code>Stopped</code> state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopPipelineExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_pipeline_execution::builders::StopPipelineExecutionInputBuilder,
+}
 impl StopPipelineExecutionFluentBuilder  {
     /// Creates a new `StopPipelineExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_pipeline_execution::StopPipelineExecution, aws_http::retry::AwsResponseRetryClassifier,>,

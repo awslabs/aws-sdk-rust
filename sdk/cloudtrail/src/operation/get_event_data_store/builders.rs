@@ -8,16 +8,17 @@ pub use crate::operation::get_event_data_store::_get_event_data_store_input::Get
 /// <p>Returns information about an event data store specified as either an ARN or the ID portion of the ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventDataStoreFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_event_data_store::builders::GetEventDataStoreInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_event_data_store::builders::GetEventDataStoreInputBuilder,
+}
 impl GetEventDataStoreFluentBuilder  {
     /// Creates a new `GetEventDataStore`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_event_data_store::GetEventDataStore, aws_http::retry::AwsResponseRetryClassifier,>,

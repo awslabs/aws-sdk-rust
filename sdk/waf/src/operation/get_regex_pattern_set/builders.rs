@@ -12,16 +12,17 @@ pub use crate::operation::get_regex_pattern_set::_get_regex_pattern_set_input::G
 /// <p>Returns the <code>RegexPatternSet</code> specified by <code>RegexPatternSetId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRegexPatternSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_regex_pattern_set::builders::GetRegexPatternSetInputBuilder,
+}
 impl GetRegexPatternSetFluentBuilder  {
     /// Creates a new `GetRegexPatternSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_regex_pattern_set::GetRegexPatternSet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_endpoints_batch::_update_endpoints_batch_input:
 /// <p>Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing endpoints for an application. You can also use this operation to define custom attributes for a batch of endpoints. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEndpointsBatchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_endpoints_batch::builders::UpdateEndpointsBatchInputBuilder,
+}
 impl UpdateEndpointsBatchFluentBuilder  {
     /// Creates a new `UpdateEndpointsBatch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_endpoints_batch::UpdateEndpointsBatch, aws_http::retry::AwsResponseRetryClassifier,>,

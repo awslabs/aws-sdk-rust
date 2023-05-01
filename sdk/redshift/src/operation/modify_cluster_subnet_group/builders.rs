@@ -8,16 +8,17 @@ pub use crate::operation::modify_cluster_subnet_group::_modify_cluster_subnet_gr
 /// <p>Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets with the new list of subnets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyClusterSubnetGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_cluster_subnet_group::builders::ModifyClusterSubnetGroupInputBuilder,
+}
 impl ModifyClusterSubnetGroupFluentBuilder  {
     /// Creates a new `ModifyClusterSubnetGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_cluster_subnet_group::ModifyClusterSubnetGroup, aws_http::retry::AwsResponseRetryClassifier,>,

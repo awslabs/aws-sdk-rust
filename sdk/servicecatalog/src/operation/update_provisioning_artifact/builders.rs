@@ -9,16 +9,17 @@ pub use crate::operation::update_provisioning_artifact::_update_provisioning_art
 /// <p>You cannot update a provisioning artifact for a product that was shared with you.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProvisioningArtifactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_provisioning_artifact::builders::UpdateProvisioningArtifactInputBuilder,
+}
 impl UpdateProvisioningArtifactFluentBuilder  {
     /// Creates a new `UpdateProvisioningArtifact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_provisioning_artifact::UpdateProvisioningArtifact, aws_http::retry::AwsResponseRetryClassifier,>,

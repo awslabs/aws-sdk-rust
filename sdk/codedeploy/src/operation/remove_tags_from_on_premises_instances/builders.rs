@@ -8,16 +8,17 @@ pub use crate::operation::remove_tags_from_on_premises_instances::_remove_tags_f
 /// <p>Removes one or more tags from one or more on-premises instances.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveTagsFromOnPremisesInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_tags_from_on_premises_instances::builders::RemoveTagsFromOnPremisesInstancesInputBuilder,
+}
 impl RemoveTagsFromOnPremisesInstancesFluentBuilder  {
     /// Creates a new `RemoveTagsFromOnPremisesInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstances, aws_http::retry::AwsResponseRetryClassifier,>,

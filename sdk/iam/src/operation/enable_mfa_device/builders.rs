@@ -8,16 +8,17 @@ pub use crate::operation::enable_mfa_device::_enable_mfa_device_input::EnableMfa
 /// <p>Enables the specified MFA device and associates it with the specified IAM user. When enabled, the MFA device is required for every subsequent login by the IAM user associated with the device.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableMFADeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_mfa_device::builders::EnableMfaDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_mfa_device::builders::EnableMfaDeviceInputBuilder,
+}
 impl EnableMFADeviceFluentBuilder  {
     /// Creates a new `EnableMFADevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_mfa_device::EnableMFADevice, aws_http::retry::AwsResponseRetryClassifier,>,

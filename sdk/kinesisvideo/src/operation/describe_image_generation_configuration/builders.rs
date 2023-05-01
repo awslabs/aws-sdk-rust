@@ -8,16 +8,17 @@ pub use crate::operation::describe_image_generation_configuration::_describe_ima
 /// <p>Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video stream.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeImageGenerationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_image_generation_configuration::builders::DescribeImageGenerationConfigurationInputBuilder,
+}
 impl DescribeImageGenerationConfigurationFluentBuilder  {
     /// Creates a new `DescribeImageGenerationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_image_generation_configuration::DescribeImageGenerationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

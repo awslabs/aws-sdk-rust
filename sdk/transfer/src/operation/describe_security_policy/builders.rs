@@ -8,16 +8,17 @@ pub use crate::operation::describe_security_policy::_describe_security_policy_in
 /// <p>Describes the security policy that is attached to your file transfer protocol-enabled server. The response contains a description of the security policy's properties. For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security policies</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSecurityPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_security_policy::builders::DescribeSecurityPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_security_policy::builders::DescribeSecurityPolicyInputBuilder,
+}
 impl DescribeSecurityPolicyFluentBuilder  {
     /// Creates a new `DescribeSecurityPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_security_policy::DescribeSecurityPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

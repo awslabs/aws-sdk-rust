@@ -8,16 +8,17 @@ pub use crate::operation::put_external_model::_put_external_model_input::PutExte
 /// <p>Creates or updates an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutExternalModelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_external_model::builders::PutExternalModelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_external_model::builders::PutExternalModelInputBuilder,
+}
 impl PutExternalModelFluentBuilder  {
     /// Creates a new `PutExternalModel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_external_model::PutExternalModel, aws_http::retry::AwsResponseRetryClassifier,>,

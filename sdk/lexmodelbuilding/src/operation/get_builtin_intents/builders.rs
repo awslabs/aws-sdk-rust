@@ -9,16 +9,17 @@ pub use crate::operation::get_builtin_intents::_get_builtin_intents_input::GetBu
 /// <p>This operation requires permission for the <code>lex:GetBuiltinIntents</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBuiltinIntentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_builtin_intents::builders::GetBuiltinIntentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_builtin_intents::builders::GetBuiltinIntentsInputBuilder,
+}
 impl GetBuiltinIntentsFluentBuilder  {
     /// Creates a new `GetBuiltinIntents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_builtin_intents::GetBuiltinIntents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetBuiltinIntentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator {
-                            crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator {
+                                crate::operation::get_builtin_intents::paginator::GetBuiltinIntentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A list of locales that the intent supports.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
         self.inner = self.inner.locale(input);

@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_fraudster::_disassociate_fraudster_input:
 /// <p>Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster from its only watchlist, a <code>ValidationException</code> is thrown. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateFraudsterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_fraudster::builders::DisassociateFraudsterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_fraudster::builders::DisassociateFraudsterInputBuilder,
+}
 impl DisassociateFraudsterFluentBuilder  {
     /// Creates a new `DisassociateFraudster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_fraudster::DisassociateFraudster, aws_http::retry::AwsResponseRetryClassifier,>,

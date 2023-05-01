@@ -8,16 +8,17 @@ pub use crate::operation::update_nodegroup_config::_update_nodegroup_config_inpu
 /// <p>Updates an Amazon EKS managed node group configuration. Your node group continues to function during the update. The response output includes an update ID that you can use to track the status of your node group update with the <code>DescribeUpdate</code> API operation. Currently you can update the Kubernetes labels for a node group or the scaling configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateNodegroupConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigInputBuilder,
+}
 impl UpdateNodegroupConfigFluentBuilder  {
     /// Creates a new `UpdateNodegroupConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_nodegroup_config::UpdateNodegroupConfig, aws_http::retry::AwsResponseRetryClassifier,>,

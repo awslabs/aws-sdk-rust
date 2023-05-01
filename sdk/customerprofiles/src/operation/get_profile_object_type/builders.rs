@@ -8,16 +8,17 @@ pub use crate::operation::get_profile_object_type::_get_profile_object_type_inpu
 /// <p>Returns the object types for a specific domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetProfileObjectTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_profile_object_type::builders::GetProfileObjectTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_profile_object_type::builders::GetProfileObjectTypeInputBuilder,
+}
 impl GetProfileObjectTypeFluentBuilder  {
     /// Creates a new `GetProfileObjectType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_profile_object_type::GetProfileObjectType, aws_http::retry::AwsResponseRetryClassifier,>,

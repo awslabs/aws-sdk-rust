@@ -8,16 +8,17 @@ pub use crate::operation::describe_reserved_node_exchange_status::_describe_rese
 /// <p>Returns exchange status details and associated metadata for a reserved-node exchange. Statuses include such values as in progress and requested.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReservedNodeExchangeStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_reserved_node_exchange_status::builders::DescribeReservedNodeExchangeStatusInputBuilder,
+}
 impl DescribeReservedNodeExchangeStatusFluentBuilder  {
     /// Creates a new `DescribeReservedNodeExchangeStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeReservedNodeExchangeStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_node_exchange_status::paginator::DescribeReservedNodeExchangeStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_reserved_node_exchange_status::paginator::DescribeReservedNodeExchangeStatusPaginator {
-                            crate::operation::describe_reserved_node_exchange_status::paginator::DescribeReservedNodeExchangeStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_reserved_node_exchange_status::paginator::DescribeReservedNodeExchangeStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_reserved_node_exchange_status::paginator::DescribeReservedNodeExchangeStatusPaginator {
+                                crate::operation::describe_reserved_node_exchange_status::paginator::DescribeReservedNodeExchangeStatusPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
     pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.reserved_node_id(input.into());

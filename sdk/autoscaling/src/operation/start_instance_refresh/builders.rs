@@ -12,16 +12,17 @@ pub use crate::operation::start_instance_refresh::_start_instance_refresh_input:
 /// <p>If you enable auto rollback, your Auto Scaling group will be rolled back automatically when the instance refresh fails. You can enable this feature before starting an instance refresh by specifying the <code>AutoRollback</code> property in the instance refresh preferences. Otherwise, to roll back an instance refresh before it finishes, use the <code>RollbackInstanceRefresh</code> API. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartInstanceRefreshFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_instance_refresh::builders::StartInstanceRefreshInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_instance_refresh::builders::StartInstanceRefreshInputBuilder,
+}
 impl StartInstanceRefreshFluentBuilder  {
     /// Creates a new `StartInstanceRefresh`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_instance_refresh::StartInstanceRefresh, aws_http::retry::AwsResponseRetryClassifier,>,

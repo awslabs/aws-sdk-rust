@@ -9,16 +9,17 @@ pub use crate::operation::stop_training_document_classifier::_stop_training_docu
 /// <p>If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and put into the <code>STOPPED</code> state and the service sends back an HTTP 200 response with an empty HTTP body. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopTrainingDocumentClassifierFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_training_document_classifier::builders::StopTrainingDocumentClassifierInputBuilder,
+}
 impl StopTrainingDocumentClassifierFluentBuilder  {
     /// Creates a new `StopTrainingDocumentClassifier`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifier, aws_http::retry::AwsResponseRetryClassifier,>,

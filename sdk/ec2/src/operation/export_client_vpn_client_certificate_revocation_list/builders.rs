@@ -8,16 +8,17 @@ pub use crate::operation::export_client_vpn_client_certificate_revocation_list::
 /// <p>Downloads the client certificate revocation list for the specified Client VPN endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExportClientVpnClientCertificateRevocationListFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::export_client_vpn_client_certificate_revocation_list::builders::ExportClientVpnClientCertificateRevocationListInputBuilder,
+}
 impl ExportClientVpnClientCertificateRevocationListFluentBuilder  {
     /// Creates a new `ExportClientVpnClientCertificateRevocationList`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::export_client_vpn_client_certificate_revocation_list::ExportClientVpnClientCertificateRevocationList, aws_http::retry::AwsResponseRetryClassifier,>,

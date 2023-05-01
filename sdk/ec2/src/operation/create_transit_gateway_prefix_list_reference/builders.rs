@@ -8,16 +8,17 @@ pub use crate::operation::create_transit_gateway_prefix_list_reference::_create_
 /// <p>Creates a reference (route) to a prefix list in a specified transit gateway route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTransitGatewayPrefixListReferenceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_transit_gateway_prefix_list_reference::builders::CreateTransitGatewayPrefixListReferenceInputBuilder,
+}
 impl CreateTransitGatewayPrefixListReferenceFluentBuilder  {
     /// Creates a new `CreateTransitGatewayPrefixListReference`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReference, aws_http::retry::AwsResponseRetryClassifier,>,

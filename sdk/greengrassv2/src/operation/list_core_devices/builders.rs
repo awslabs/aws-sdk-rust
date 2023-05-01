@@ -18,16 +18,17 @@ pub use crate::operation::list_core_devices::_list_core_devices_input::ListCoreD
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCoreDevicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_core_devices::builders::ListCoreDevicesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_core_devices::builders::ListCoreDevicesInputBuilder,
+}
 impl ListCoreDevicesFluentBuilder  {
     /// Creates a new `ListCoreDevices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_core_devices::ListCoreDevices, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -58,11 +59,11 @@ impl ListCoreDevicesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator {
-                            crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator {
+                                crate::operation::list_core_devices::paginator::ListCoreDevicesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the list includes only core devices that have successfully deployed a deployment that targets the thing group. When you remove a core device from a thing group, the list continues to include that core device.</p>
     pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.thing_group_arn(input.into());

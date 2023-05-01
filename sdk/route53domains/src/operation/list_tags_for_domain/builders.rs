@@ -9,16 +9,17 @@ pub use crate::operation::list_tags_for_domain::_list_tags_for_domain_input::Lis
 /// <p>All tag operations are eventually consistent; subsequent operations might not immediately represent all issued operations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tags_for_domain::builders::ListTagsForDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tags_for_domain::builders::ListTagsForDomainInputBuilder,
+}
 impl ListTagsForDomainFluentBuilder  {
     /// Creates a new `ListTagsForDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tags_for_domain::ListTagsForDomain, aws_http::retry::AwsResponseRetryClassifier,>,

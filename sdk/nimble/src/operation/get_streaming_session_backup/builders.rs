@@ -9,16 +9,17 @@ pub use crate::operation::get_streaming_session_backup::_get_streaming_session_b
 /// <p>Invoke this operation to poll for a streaming session backup while stopping a streaming session.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetStreamingSessionBackupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_streaming_session_backup::builders::GetStreamingSessionBackupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_streaming_session_backup::builders::GetStreamingSessionBackupInputBuilder,
+}
 impl GetStreamingSessionBackupFluentBuilder  {
     /// Creates a new `GetStreamingSessionBackup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_streaming_session_backup::GetStreamingSessionBackup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_artifact::_delete_artifact_input::DeleteArtifac
 /// <p>Deletes an artifact. Either <code>ArtifactArn</code> or <code>Source</code> must be specified.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteArtifactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_artifact::builders::DeleteArtifactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_artifact::builders::DeleteArtifactInputBuilder,
+}
 impl DeleteArtifactFluentBuilder  {
     /// Creates a new `DeleteArtifact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_artifact::DeleteArtifact, aws_http::retry::AwsResponseRetryClassifier,>,

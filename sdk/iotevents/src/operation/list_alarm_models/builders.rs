@@ -8,16 +8,17 @@ pub use crate::operation::list_alarm_models::_list_alarm_models_input::ListAlarm
 /// <p>Lists the alarm models that you created. The operation returns only the metadata associated with each alarm model.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAlarmModelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_alarm_models::builders::ListAlarmModelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_alarm_models::builders::ListAlarmModelsInputBuilder,
+}
 impl ListAlarmModelsFluentBuilder  {
     /// Creates a new `ListAlarmModels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_alarm_models::ListAlarmModels, aws_http::retry::AwsResponseRetryClassifier,>,

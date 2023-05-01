@@ -11,16 +11,17 @@ pub use crate::operation::rotate_tunnel_access_token::_rotate_tunnel_access_toke
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RotateTunnelAccessTokenFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::rotate_tunnel_access_token::builders::RotateTunnelAccessTokenInputBuilder,
+}
 impl RotateTunnelAccessTokenFluentBuilder  {
     /// Creates a new `RotateTunnelAccessToken`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::rotate_tunnel_access_token::RotateTunnelAccessToken, aws_http::retry::AwsResponseRetryClassifier,>,

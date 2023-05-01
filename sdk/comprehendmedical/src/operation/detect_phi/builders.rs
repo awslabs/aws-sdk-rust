@@ -8,16 +8,17 @@ pub use crate::operation::detect_phi::_detect_phi_input::DetectPhiInputBuilder;
 /// <p> Inspects the clinical text for protected health information (PHI) entities and returns the entity category, location, and confidence score for each entity. Amazon Comprehend Medical only detects entities in English language texts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectPHIFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_phi::builders::DetectPhiInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_phi::builders::DetectPhiInputBuilder,
+}
 impl DetectPHIFluentBuilder  {
     /// Creates a new `DetectPHI`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_phi::DetectPHI, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_worker_block::_delete_worker_block_input::Delet
 /// <p>The <code>DeleteWorkerBlock</code> operation allows you to reinstate a blocked Worker to work on your HITs. This operation reverses the effects of the CreateWorkerBlock operation. You need the Worker ID to use this operation. If the Worker ID is missing or invalid, this operation fails and returns the message “WorkerId is invalid.” If the specified Worker is not blocked, this operation returns successfully.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteWorkerBlockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_worker_block::builders::DeleteWorkerBlockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_worker_block::builders::DeleteWorkerBlockInputBuilder,
+}
 impl DeleteWorkerBlockFluentBuilder  {
     /// Creates a new `DeleteWorkerBlock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_worker_block::DeleteWorkerBlock, aws_http::retry::AwsResponseRetryClassifier,>,

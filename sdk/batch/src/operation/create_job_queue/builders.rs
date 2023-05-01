@@ -9,16 +9,17 @@ pub use crate::operation::create_job_queue::_create_job_queue_input::CreateJobQu
 /// <p>You also set a priority to the job queue that determines the order that the Batch scheduler places jobs onto its associated compute environments. For example, if a compute environment is associated with more than one job queue, the job queue with a higher priority is given preference for scheduling jobs to that compute environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateJobQueueFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_job_queue::builders::CreateJobQueueInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_job_queue::builders::CreateJobQueueInputBuilder,
+}
 impl CreateJobQueueFluentBuilder  {
     /// Creates a new `CreateJobQueue`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_job_queue::CreateJobQueue, aws_http::retry::AwsResponseRetryClassifier,>,

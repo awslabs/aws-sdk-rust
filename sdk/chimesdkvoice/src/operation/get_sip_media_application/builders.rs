@@ -8,16 +8,17 @@ pub use crate::operation::get_sip_media_application::_get_sip_media_application_
 /// <p>Retrieves the information for a SIP media application, including name, AWS Region, and endpoints.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSipMediaApplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_sip_media_application::builders::GetSipMediaApplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_sip_media_application::builders::GetSipMediaApplicationInputBuilder,
+}
 impl GetSipMediaApplicationFluentBuilder  {
     /// Creates a new `GetSipMediaApplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_sip_media_application::GetSipMediaApplication, aws_http::retry::AwsResponseRetryClassifier,>,

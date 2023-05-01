@@ -8,16 +8,17 @@ pub use crate::operation::describe_orderable_db_instance_options::_describe_orde
 /// <p>Returns a list of orderable DB instance options for the specified DB engine, DB engine version, and DB instance class.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOrderableDBInstanceOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder,
+}
 impl DescribeOrderableDBInstanceOptionsFluentBuilder  {
     /// Creates a new `DescribeOrderableDBInstanceOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator {
-                            crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator {
+                                crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the engine to retrieve DB instance options for.</p> 
     /// <p>Valid Values:</p> 
     /// <ul> 

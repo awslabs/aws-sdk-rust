@@ -13,16 +13,17 @@ pub use crate::operation::batch_get_aggregate_resource_config::_batch_get_aggreg
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetAggregateResourceConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder,
+}
 impl BatchGetAggregateResourceConfigFluentBuilder  {
     /// Creates a new `BatchGetAggregateResourceConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfig, aws_http::retry::AwsResponseRetryClassifier,>,

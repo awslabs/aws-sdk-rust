@@ -8,16 +8,17 @@ pub use crate::operation::list_field_level_encryption_profiles::_list_field_leve
 /// <p>Request a list of field-level encryption profiles that have been created in CloudFront for this account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_field_level_encryption_profiles::builders::ListFieldLevelEncryptionProfilesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_field_level_encryption_profiles::builders::ListFieldLevelEncryptionProfilesInputBuilder,
+}
 impl ListFieldLevelEncryptionProfilesFluentBuilder  {
     /// Creates a new `ListFieldLevelEncryptionProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_field_level_encryption_profiles::ListFieldLevelEncryptionProfiles, aws_http::retry::AwsResponseRetryClassifier,>,

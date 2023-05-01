@@ -8,16 +8,17 @@ pub use crate::operation::stop_stream_processor::_stop_stream_processor_input::S
 /// <p>Stops a running stream processor that was created by <code>CreateStreamProcessor</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopStreamProcessorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_stream_processor::builders::StopStreamProcessorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_stream_processor::builders::StopStreamProcessorInputBuilder,
+}
 impl StopStreamProcessorFluentBuilder  {
     /// Creates a new `StopStreamProcessor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_stream_processor::StopStreamProcessor, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_organization_admin_account::_get_organization_admi
 /// <p> Returns the name of the delegated Amazon Web Services administrator account for the organization. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOrganizationAdminAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_organization_admin_account::builders::GetOrganizationAdminAccountInputBuilder,
+}
 impl GetOrganizationAdminAccountFluentBuilder  {
     /// Creates a new `GetOrganizationAdminAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_organization_admin_account::GetOrganizationAdminAccount, aws_http::retry::AwsResponseRetryClassifier,>,

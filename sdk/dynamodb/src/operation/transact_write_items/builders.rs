@@ -24,16 +24,17 @@ pub use crate::operation::transact_write_items::_transact_write_items_input::Tra
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TransactWriteItemsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::transact_write_items::builders::TransactWriteItemsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::transact_write_items::builders::TransactWriteItemsInputBuilder,
+}
 impl TransactWriteItemsFluentBuilder  {
     /// Creates a new `TransactWriteItems`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::transact_write_items::TransactWriteItems, aws_http::retry::AwsResponseRetryClassifier,>,

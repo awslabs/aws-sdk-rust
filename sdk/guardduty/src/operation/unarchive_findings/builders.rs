@@ -8,16 +8,17 @@ pub use crate::operation::unarchive_findings::_unarchive_findings_input::Unarchi
 /// <p>Unarchives GuardDuty findings specified by the <code>findingIds</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UnarchiveFindingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::unarchive_findings::builders::UnarchiveFindingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::unarchive_findings::builders::UnarchiveFindingsInputBuilder,
+}
 impl UnarchiveFindingsFluentBuilder  {
     /// Creates a new `UnarchiveFindings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::unarchive_findings::UnarchiveFindings, aws_http::retry::AwsResponseRetryClassifier,>,

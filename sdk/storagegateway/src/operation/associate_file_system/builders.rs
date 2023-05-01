@@ -8,16 +8,17 @@ pub use crate::operation::associate_file_system::_associate_file_system_input::A
 /// <p>Associate an Amazon FSx file system with the FSx File Gateway. After the association process is complete, the file shares on the Amazon FSx file system are available for access through the gateway. This operation only supports the FSx File Gateway type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateFileSystemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_file_system::builders::AssociateFileSystemInputBuilder,
+}
 impl AssociateFileSystemFluentBuilder  {
     /// Creates a new `AssociateFileSystem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_file_system::AssociateFileSystem, aws_http::retry::AwsResponseRetryClassifier,>,

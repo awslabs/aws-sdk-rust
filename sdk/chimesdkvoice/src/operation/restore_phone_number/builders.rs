@@ -8,16 +8,17 @@ pub use crate::operation::restore_phone_number::_restore_phone_number_input::Res
 /// <p>Restores a deleted phone number.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestorePhoneNumberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_phone_number::builders::RestorePhoneNumberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_phone_number::builders::RestorePhoneNumberInputBuilder,
+}
 impl RestorePhoneNumberFluentBuilder  {
     /// Creates a new `RestorePhoneNumber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_phone_number::RestorePhoneNumber, aws_http::retry::AwsResponseRetryClassifier,>,

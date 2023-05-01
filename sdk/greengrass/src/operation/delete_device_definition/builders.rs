@@ -8,16 +8,17 @@ pub use crate::operation::delete_device_definition::_delete_device_definition_in
 /// Deletes a device definition.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDeviceDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionInputBuilder,
+}
 impl DeleteDeviceDefinitionFluentBuilder  {
     /// Creates a new `DeleteDeviceDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_device_definition::DeleteDeviceDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

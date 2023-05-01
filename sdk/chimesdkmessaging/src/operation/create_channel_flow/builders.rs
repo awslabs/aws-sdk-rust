@@ -16,16 +16,17 @@ pub use crate::operation::create_channel_flow::_create_channel_flow_input::Creat
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChannelFlowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_channel_flow::builders::CreateChannelFlowInputBuilder,
+}
 impl CreateChannelFlowFluentBuilder  {
     /// Creates a new `CreateChannelFlow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_channel_flow::CreateChannelFlow, aws_http::retry::AwsResponseRetryClassifier,>,

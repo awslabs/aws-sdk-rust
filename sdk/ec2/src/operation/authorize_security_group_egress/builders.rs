@@ -12,16 +12,17 @@ pub use crate::operation::authorize_security_group_egress::_authorize_security_g
 /// <p>For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupEgressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::authorize_security_group_egress::builders::AuthorizeSecurityGroupEgressInputBuilder,
+}
 impl AuthorizeSecurityGroupEgressFluentBuilder  {
     /// Creates a new `AuthorizeSecurityGroupEgress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgress, aws_http::retry::AwsResponseRetryClassifier,>,

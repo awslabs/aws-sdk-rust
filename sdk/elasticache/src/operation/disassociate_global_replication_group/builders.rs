@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_global_replication_group::_disassociate_g
 /// <p>Remove a secondary cluster from the Global datastore using the Global datastore name. The secondary cluster will no longer receive updates from the primary cluster, but will remain as a standalone cluster in that Amazon region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateGlobalReplicationGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_global_replication_group::builders::DisassociateGlobalReplicationGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_global_replication_group::builders::DisassociateGlobalReplicationGroupInputBuilder,
+}
 impl DisassociateGlobalReplicationGroupFluentBuilder  {
     /// Creates a new `DisassociateGlobalReplicationGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_global_replication_group::DisassociateGlobalReplicationGroup, aws_http::retry::AwsResponseRetryClassifier,>,

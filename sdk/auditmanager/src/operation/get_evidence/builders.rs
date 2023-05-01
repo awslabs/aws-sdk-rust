@@ -8,16 +8,17 @@ pub use crate::operation::get_evidence::_get_evidence_input::GetEvidenceInputBui
 /// <p> Returns evidence from Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEvidenceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_evidence::builders::GetEvidenceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_evidence::builders::GetEvidenceInputBuilder,
+}
 impl GetEvidenceFluentBuilder  {
     /// Creates a new `GetEvidence`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_evidence::GetEvidence, aws_http::retry::AwsResponseRetryClassifier,>,

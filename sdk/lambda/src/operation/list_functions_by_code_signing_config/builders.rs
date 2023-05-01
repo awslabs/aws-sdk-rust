@@ -8,16 +8,17 @@ pub use crate::operation::list_functions_by_code_signing_config::_list_functions
 /// <p>List the functions that use the specified code signing configuration. You can use this method prior to deleting a code signing configuration, to verify that no functions are using it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFunctionsByCodeSigningConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigInputBuilder,
+}
 impl ListFunctionsByCodeSigningConfigFluentBuilder  {
     /// Creates a new `ListFunctionsByCodeSigningConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfig, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFunctionsByCodeSigningConfigFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_functions_by_code_signing_config::paginator::ListFunctionsByCodeSigningConfigPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_functions_by_code_signing_config::paginator::ListFunctionsByCodeSigningConfigPaginator {
-                            crate::operation::list_functions_by_code_signing_config::paginator::ListFunctionsByCodeSigningConfigPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_functions_by_code_signing_config::paginator::ListFunctionsByCodeSigningConfigPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_functions_by_code_signing_config::paginator::ListFunctionsByCodeSigningConfigPaginator {
+                                crate::operation::list_functions_by_code_signing_config::paginator::ListFunctionsByCodeSigningConfigPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.code_signing_config_arn(input.into());

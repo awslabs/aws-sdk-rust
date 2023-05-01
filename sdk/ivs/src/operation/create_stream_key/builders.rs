@@ -9,16 +9,17 @@ pub use crate::operation::create_stream_key::_create_stream_key_input::CreateStr
 /// <p>Note that <code>CreateChannel</code> creates a stream key. If you subsequently use CreateStreamKey on the same channel, it will fail because a stream key already exists and there is a limit of 1 stream key per channel. To reset the stream key on a channel, use <code>DeleteStreamKey</code> and then CreateStreamKey.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStreamKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_stream_key::builders::CreateStreamKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_stream_key::builders::CreateStreamKeyInputBuilder,
+}
 impl CreateStreamKeyFluentBuilder  {
     /// Creates a new `CreateStreamKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_stream_key::CreateStreamKey, aws_http::retry::AwsResponseRetryClassifier,>,

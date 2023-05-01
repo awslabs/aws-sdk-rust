@@ -8,16 +8,17 @@ pub use crate::operation::describe_evaluations::_describe_evaluations_input::Des
 /// <p>Returns a list of <code>DescribeEvaluations</code> that match the search criteria in the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEvaluationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder,
+}
 impl DescribeEvaluationsFluentBuilder  {
     /// Creates a new `DescribeEvaluations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_evaluations::DescribeEvaluations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeEvaluationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator {
-                            crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator {
+                                crate::operation::describe_evaluations::paginator::DescribeEvaluationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p> 
     /// <ul> 
     /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</p> </li> 

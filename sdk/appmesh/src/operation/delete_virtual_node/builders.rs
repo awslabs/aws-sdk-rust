@@ -9,16 +9,17 @@ pub use crate::operation::delete_virtual_node::_delete_virtual_node_input::Delet
 /// <p>You must delete any virtual services that list a virtual node as a service provider before you can delete the virtual node itself.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVirtualNodeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_virtual_node::builders::DeleteVirtualNodeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_virtual_node::builders::DeleteVirtualNodeInputBuilder,
+}
 impl DeleteVirtualNodeFluentBuilder  {
     /// Creates a new `DeleteVirtualNode`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_virtual_node::DeleteVirtualNode, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::describe_delivery_stream::_describe_delivery_stream_in
 /// <p>If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However, you can invoke the <code>DeleteDeliveryStream</code> operation to delete it. If the status is <code>DELETING_FAILED</code>, you can force deletion by invoking <code>DeleteDeliveryStream</code> again but with <code>DeleteDeliveryStreamInput$AllowForceDelete</code> set to true.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDeliveryStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_delivery_stream::builders::DescribeDeliveryStreamInputBuilder,
+}
 impl DescribeDeliveryStreamFluentBuilder  {
     /// Creates a new `DescribeDeliveryStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_delivery_stream::DescribeDeliveryStream, aws_http::retry::AwsResponseRetryClassifier,>,

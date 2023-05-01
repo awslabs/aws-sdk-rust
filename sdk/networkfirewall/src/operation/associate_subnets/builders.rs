@@ -9,16 +9,17 @@ pub use crate::operation::associate_subnets::_associate_subnets_input::Associate
 /// <p>This request creates an Network Firewall firewall endpoint in each of the subnets. To enable the firewall's protections, you must also modify the VPC's route tables for each subnet's Availability Zone, to redirect the traffic that's coming into and going out of the zone through the firewall endpoint. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateSubnetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_subnets::builders::AssociateSubnetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_subnets::builders::AssociateSubnetsInputBuilder,
+}
 impl AssociateSubnetsFluentBuilder  {
     /// Creates a new `AssociateSubnets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_subnets::AssociateSubnets, aws_http::retry::AwsResponseRetryClassifier,>,

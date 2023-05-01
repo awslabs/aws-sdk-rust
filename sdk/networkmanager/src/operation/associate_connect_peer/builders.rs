@@ -9,16 +9,17 @@ pub use crate::operation::associate_connect_peer::_associate_connect_peer_input:
 /// <p>If you specify a link, it must be associated with the specified device. You can only associate core network Connect peers that have been created on a core network Connect attachment on a core network. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateConnectPeerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_connect_peer::builders::AssociateConnectPeerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_connect_peer::builders::AssociateConnectPeerInputBuilder,
+}
 impl AssociateConnectPeerFluentBuilder  {
     /// Creates a new `AssociateConnectPeer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_connect_peer::AssociateConnectPeer, aws_http::retry::AwsResponseRetryClassifier,>,

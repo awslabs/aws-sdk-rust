@@ -8,16 +8,17 @@ pub use crate::operation::get_crawlers::_get_crawlers_input::GetCrawlersInputBui
 /// <p>Retrieves metadata for all crawlers defined in the customer account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCrawlersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_crawlers::builders::GetCrawlersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_crawlers::builders::GetCrawlersInputBuilder,
+}
 impl GetCrawlersFluentBuilder  {
     /// Creates a new `GetCrawlers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_crawlers::GetCrawlers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetCrawlersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_crawlers::paginator::GetCrawlersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_crawlers::paginator::GetCrawlersPaginator {
-                            crate::operation::get_crawlers::paginator::GetCrawlersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_crawlers::paginator::GetCrawlersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_crawlers::paginator::GetCrawlersPaginator {
+                                crate::operation::get_crawlers::paginator::GetCrawlersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The number of crawlers to return on each call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

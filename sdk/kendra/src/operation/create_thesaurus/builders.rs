@@ -9,16 +9,17 @@ pub use crate::operation::create_thesaurus::_create_thesaurus_input::CreateThesa
 /// <p>For an example of adding a thesaurus file to an index, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/index-synonyms-adding-thesaurus-file.html">Adding custom synonyms to an index</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateThesaurusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_thesaurus::builders::CreateThesaurusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_thesaurus::builders::CreateThesaurusInputBuilder,
+}
 impl CreateThesaurusFluentBuilder  {
     /// Creates a new `CreateThesaurus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_thesaurus::CreateThesaurus, aws_http::retry::AwsResponseRetryClassifier,>,

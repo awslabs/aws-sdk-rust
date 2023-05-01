@@ -8,16 +8,17 @@ pub use crate::operation::describe_offering::_describe_offering_input::DescribeO
 /// Displays the details of an offering. The response includes the offering description, duration, outbound bandwidth, price, and Amazon Resource Name (ARN).
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOfferingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_offering::builders::DescribeOfferingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_offering::builders::DescribeOfferingInputBuilder,
+}
 impl DescribeOfferingFluentBuilder  {
     /// Creates a new `DescribeOffering`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_offering::DescribeOffering, aws_http::retry::AwsResponseRetryClassifier,>,

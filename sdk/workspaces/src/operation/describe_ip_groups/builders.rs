@@ -8,16 +8,17 @@ pub use crate::operation::describe_ip_groups::_describe_ip_groups_input::Describ
 /// <p>Describes one or more of your IP access control groups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeIpGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_ip_groups::builders::DescribeIpGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_ip_groups::builders::DescribeIpGroupsInputBuilder,
+}
 impl DescribeIpGroupsFluentBuilder  {
     /// Creates a new `DescribeIpGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_ip_groups::DescribeIpGroups, aws_http::retry::AwsResponseRetryClassifier,>,

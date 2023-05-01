@@ -8,16 +8,17 @@ pub use crate::operation::create_membership::_create_membership_input::CreateMem
 /// <p>Creates a membership for a specific collaboration identifier and joins the collaboration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_membership::builders::CreateMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_membership::builders::CreateMembershipInputBuilder,
+}
 impl CreateMembershipFluentBuilder  {
     /// Creates a new `CreateMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_membership::CreateMembership, aws_http::retry::AwsResponseRetryClassifier,>,

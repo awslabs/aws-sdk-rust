@@ -8,16 +8,17 @@ pub use crate::operation::delete_verified_access_instance::_delete_verified_acce
 /// <p>Delete an Amazon Web Services Verified Access instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVerifiedAccessInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_verified_access_instance::builders::DeleteVerifiedAccessInstanceInputBuilder,
+}
 impl DeleteVerifiedAccessInstanceFluentBuilder  {
     /// Creates a new `DeleteVerifiedAccessInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_verified_access_instance::DeleteVerifiedAccessInstance, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_internet_gateway::_delete_internet_gateway_inpu
 /// <p>Deletes the specified internet gateway. You must detach the internet gateway from the VPC before you can delete it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInternetGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_internet_gateway::builders::DeleteInternetGatewayInputBuilder,
+}
 impl DeleteInternetGatewayFluentBuilder  {
     /// Creates a new `DeleteInternetGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_internet_gateway::DeleteInternetGateway, aws_http::retry::AwsResponseRetryClassifier,>,

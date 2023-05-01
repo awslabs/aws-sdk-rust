@@ -8,16 +8,17 @@ pub use crate::operation::describe_group_membership::_describe_group_membership_
 /// <p>Use the <code>DescribeGroupMembership</code> operation to determine if a user is a member of the specified group. If the user exists and is a member of the specified group, an associated <code>GroupMember</code> object is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGroupMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_group_membership::builders::DescribeGroupMembershipInputBuilder,
+}
 impl DescribeGroupMembershipFluentBuilder  {
     /// Creates a new `DescribeGroupMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_group_membership::DescribeGroupMembership, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_profile_key::_delete_profile_key_input::DeleteP
 /// <p>Removes a searchable key from a customer profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteProfileKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_profile_key::builders::DeleteProfileKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_profile_key::builders::DeleteProfileKeyInputBuilder,
+}
 impl DeleteProfileKeyFluentBuilder  {
     /// Creates a new `DeleteProfileKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_profile_key::DeleteProfileKey, aws_http::retry::AwsResponseRetryClassifier,>,

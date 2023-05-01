@@ -8,16 +8,17 @@ pub use crate::operation::delete_network_acl_entry::_delete_network_acl_entry_in
 /// <p>Deletes the specified ingress or egress entry (rule) from the specified network ACL.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNetworkAclEntryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_network_acl_entry::builders::DeleteNetworkAclEntryInputBuilder,
+}
 impl DeleteNetworkAclEntryFluentBuilder  {
     /// Creates a new `DeleteNetworkAclEntry`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_network_acl_entry::DeleteNetworkAclEntry, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_budget_action::_update_budget_action_input::Upd
 /// <p> Updates a budget action. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBudgetActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_budget_action::builders::UpdateBudgetActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_budget_action::builders::UpdateBudgetActionInputBuilder,
+}
 impl UpdateBudgetActionFluentBuilder  {
     /// Creates a new `UpdateBudgetAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_budget_action::UpdateBudgetAction, aws_http::retry::AwsResponseRetryClassifier,>,

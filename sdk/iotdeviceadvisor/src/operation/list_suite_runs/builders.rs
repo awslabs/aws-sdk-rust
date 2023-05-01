@@ -9,16 +9,17 @@ pub use crate::operation::list_suite_runs::_list_suite_runs_input::ListSuiteRuns
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSuiteRuns</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSuiteRunsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_suite_runs::builders::ListSuiteRunsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_suite_runs::builders::ListSuiteRunsInputBuilder,
+}
 impl ListSuiteRunsFluentBuilder  {
     /// Creates a new `ListSuiteRuns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_suite_runs::ListSuiteRuns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListSuiteRunsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator {
-                            crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator {
+                                crate::operation::list_suite_runs::paginator::ListSuiteRunsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
     pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.suite_definition_id(input.into());

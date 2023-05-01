@@ -8,16 +8,17 @@ pub use crate::operation::get_pipeline::_get_pipeline_input::GetPipelineInputBui
 /// <p>Returns the metadata, structure, stages, and actions of a pipeline. Can be used to return the entire structure of a pipeline in JSON format, which can then be modified and used to update the pipeline structure with <code>UpdatePipeline</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPipelineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_pipeline::builders::GetPipelineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_pipeline::builders::GetPipelineInputBuilder,
+}
 impl GetPipelineFluentBuilder  {
     /// Creates a new `GetPipeline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_pipeline::GetPipeline, aws_http::retry::AwsResponseRetryClassifier,>,

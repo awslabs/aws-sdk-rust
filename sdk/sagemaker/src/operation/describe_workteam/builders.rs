@@ -8,16 +8,17 @@ pub use crate::operation::describe_workteam::_describe_workteam_input::DescribeW
 /// <p>Gets information about a specific work team. You can see information such as the create date, the last updated date, membership information, and the work team's Amazon Resource Name (ARN).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeWorkteamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_workteam::builders::DescribeWorkteamInputBuilder,
+}
 impl DescribeWorkteamFluentBuilder  {
     /// Creates a new `DescribeWorkteam`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_workteam::DescribeWorkteam, aws_http::retry::AwsResponseRetryClassifier,>,

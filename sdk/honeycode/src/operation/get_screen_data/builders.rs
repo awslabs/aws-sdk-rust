@@ -8,16 +8,17 @@ pub use crate::operation::get_screen_data::_get_screen_data_input::GetScreenData
 /// <p> The GetScreenData API allows retrieval of data from a screen in a Honeycode app. The API allows setting local variables in the screen to filter, sort or otherwise affect what will be displayed on the screen. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetScreenDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_screen_data::builders::GetScreenDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_screen_data::builders::GetScreenDataInputBuilder,
+}
 impl GetScreenDataFluentBuilder  {
     /// Creates a new `GetScreenData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_screen_data::GetScreenData, aws_http::retry::AwsResponseRetryClassifier,>,

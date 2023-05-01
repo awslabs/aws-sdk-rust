@@ -8,16 +8,17 @@ pub use crate::operation::delete_managed_endpoint::_delete_managed_endpoint_inpu
 /// <p>Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteManagedEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_managed_endpoint::builders::DeleteManagedEndpointInputBuilder,
+}
 impl DeleteManagedEndpointFluentBuilder  {
     /// Creates a new `DeleteManagedEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_managed_endpoint::DeleteManagedEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

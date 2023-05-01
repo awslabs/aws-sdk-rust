@@ -8,16 +8,17 @@ pub use crate::operation::list_rule_names_by_target::_list_rule_names_by_target_
 /// <p>Lists the rules for the specified target. You can see which of the rules in Amazon EventBridge can invoke a specific target in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRuleNamesByTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_rule_names_by_target::builders::ListRuleNamesByTargetInputBuilder,
+}
 impl ListRuleNamesByTargetFluentBuilder  {
     /// Creates a new `ListRuleNamesByTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_rule_names_by_target::ListRuleNamesByTarget, aws_http::retry::AwsResponseRetryClassifier,>,

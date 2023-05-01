@@ -8,16 +8,17 @@ pub use crate::operation::create_workspace_api_key::_create_workspace_api_key_in
 /// <p>Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example requests.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWorkspaceApiKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_workspace_api_key::builders::CreateWorkspaceApiKeyInputBuilder,
+}
 impl CreateWorkspaceApiKeyFluentBuilder  {
     /// Creates a new `CreateWorkspaceApiKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_workspace_api_key::CreateWorkspaceApiKey, aws_http::retry::AwsResponseRetryClassifier,>,

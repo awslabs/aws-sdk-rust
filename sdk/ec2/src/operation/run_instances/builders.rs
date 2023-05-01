@@ -25,16 +25,17 @@ pub use crate::operation::run_instances::_run_instances_input::RunInstancesInput
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RunInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::run_instances::builders::RunInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::run_instances::builders::RunInstancesInputBuilder,
+}
 impl RunInstancesFluentBuilder  {
     /// Creates a new `RunInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::run_instances::RunInstances, aws_http::retry::AwsResponseRetryClassifier,>,

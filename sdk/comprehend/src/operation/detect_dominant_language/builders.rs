@@ -8,16 +8,17 @@ pub use crate::operation::detect_dominant_language::_detect_dominant_language_in
 /// <p>Determines the dominant language of the input text. For a list of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectDominantLanguageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_dominant_language::builders::DetectDominantLanguageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_dominant_language::builders::DetectDominantLanguageInputBuilder,
+}
 impl DetectDominantLanguageFluentBuilder  {
     /// Creates a new `DetectDominantLanguage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_dominant_language::DetectDominantLanguage, aws_http::retry::AwsResponseRetryClassifier,>,

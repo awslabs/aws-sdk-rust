@@ -13,16 +13,17 @@ pub use crate::operation::describe_volume_status::_describe_volume_status_input:
 /// <p>Volume status is based on the volume status checks, and does not reflect the volume state. Therefore, volume status does not indicate volumes in the <code>error</code> state (for example, when a volume is incapable of accepting I/O.)</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVolumeStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_volume_status::builders::DescribeVolumeStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_volume_status::builders::DescribeVolumeStatusInputBuilder,
+}
 impl DescribeVolumeStatusFluentBuilder  {
     /// Creates a new `DescribeVolumeStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_volume_status::DescribeVolumeStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -53,11 +54,11 @@ impl DescribeVolumeStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator {
-                            crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator {
+                                crate::operation::describe_volume_status::paginator::DescribeVolumeStatusPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

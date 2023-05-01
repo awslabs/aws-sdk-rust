@@ -9,16 +9,17 @@ pub use crate::operation::test_event_pattern::_test_event_pattern_input::TestEve
 /// <p>Most services in Amazon Web Services treat : or / as the same character in Amazon Resource Names (ARNs). However, EventBridge uses an exact match in event patterns and rules. Be sure to use the correct ARN characters when creating event patterns so that they match the ARN syntax in the event you want to match.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TestEventPatternFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::test_event_pattern::builders::TestEventPatternInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::test_event_pattern::builders::TestEventPatternInputBuilder,
+}
 impl TestEventPatternFluentBuilder  {
     /// Creates a new `TestEventPattern`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::test_event_pattern::TestEventPattern, aws_http::retry::AwsResponseRetryClassifier,>,

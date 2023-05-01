@@ -8,16 +8,17 @@ pub use crate::operation::get_assessment::_get_assessment_input::GetAssessmentIn
 /// <p>Returns an assessment from Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssessmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_assessment::builders::GetAssessmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_assessment::builders::GetAssessmentInputBuilder,
+}
 impl GetAssessmentFluentBuilder  {
     /// Creates a new `GetAssessment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_assessment::GetAssessment, aws_http::retry::AwsResponseRetryClassifier,>,

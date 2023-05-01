@@ -8,16 +8,17 @@ pub use crate::operation::list_type_registrations::_list_type_registrations_inpu
 /// <p>Returns a list of registration tokens for the specified extension(s).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTypeRegistrationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_type_registrations::builders::ListTypeRegistrationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_type_registrations::builders::ListTypeRegistrationsInputBuilder,
+}
 impl ListTypeRegistrationsFluentBuilder  {
     /// Creates a new `ListTypeRegistrations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_type_registrations::ListTypeRegistrations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTypeRegistrationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator {
-                            crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator {
+                                crate::operation::list_type_registrations::paginator::ListTypeRegistrationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The kind of extension.</p> 
     /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
     pub fn r#type(mut self, input: crate::types::RegistryType) -> Self {

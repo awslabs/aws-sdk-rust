@@ -8,16 +8,17 @@ pub use crate::operation::put_permissions_boundary_to_permission_set::_put_permi
 /// <p>Attaches an AWS managed or customer managed policy to the specified <code>PermissionSet</code> as a permissions boundary.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutPermissionsBoundaryToPermissionSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_permissions_boundary_to_permission_set::builders::PutPermissionsBoundaryToPermissionSetInputBuilder,
+}
 impl PutPermissionsBoundaryToPermissionSetFluentBuilder  {
     /// Creates a new `PutPermissionsBoundaryToPermissionSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSet, aws_http::retry::AwsResponseRetryClassifier,>,

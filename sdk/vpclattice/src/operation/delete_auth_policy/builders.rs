@@ -8,16 +8,17 @@ pub use crate::operation::delete_auth_policy::_delete_auth_policy_input::DeleteA
 /// <p>Deletes the specified auth policy. If an auth is set to <code>AWS_IAM</code> and the auth policy is deleted, all requests will be denied by default. If you are trying to remove the auth policy completely, you must set the auth_type to <code>NONE</code>. If auth is enabled on the resource, but no auth policy is set, all requests will be denied.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAuthPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_auth_policy::builders::DeleteAuthPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_auth_policy::builders::DeleteAuthPolicyInputBuilder,
+}
 impl DeleteAuthPolicyFluentBuilder  {
     /// Creates a new `DeleteAuthPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_auth_policy::DeleteAuthPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

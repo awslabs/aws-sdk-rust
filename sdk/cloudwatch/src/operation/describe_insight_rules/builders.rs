@@ -9,16 +9,17 @@ pub use crate::operation::describe_insight_rules::_describe_insight_rules_input:
 /// <p>For more information about Contributor Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor Insights to Analyze High-Cardinality Data</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInsightRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_insight_rules::builders::DescribeInsightRulesInputBuilder,
+}
 impl DescribeInsightRulesFluentBuilder  {
     /// Creates a new `DescribeInsightRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_insight_rules::DescribeInsightRules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeInsightRulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator {
-                            crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator {
+                                crate::operation::describe_insight_rules::paginator::DescribeInsightRulesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Include this value, if it was returned by the previous operation, to get the next set of rules.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

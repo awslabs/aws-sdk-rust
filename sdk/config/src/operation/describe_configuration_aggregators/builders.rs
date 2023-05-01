@@ -8,16 +8,17 @@ pub use crate::operation::describe_configuration_aggregators::_describe_configur
 /// <p>Returns the details of one or more configuration aggregators. If the configuration aggregator is not specified, this action returns the details for all the configuration aggregators associated with the account. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConfigurationAggregatorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_configuration_aggregators::builders::DescribeConfigurationAggregatorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_configuration_aggregators::builders::DescribeConfigurationAggregatorsInputBuilder,
+}
 impl DescribeConfigurationAggregatorsFluentBuilder  {
     /// Creates a new `DescribeConfigurationAggregators`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregators, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeConfigurationAggregatorsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_configuration_aggregators::paginator::DescribeConfigurationAggregatorsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_configuration_aggregators::paginator::DescribeConfigurationAggregatorsPaginator {
-                            crate::operation::describe_configuration_aggregators::paginator::DescribeConfigurationAggregatorsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_configuration_aggregators::paginator::DescribeConfigurationAggregatorsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_configuration_aggregators::paginator::DescribeConfigurationAggregatorsPaginator {
+                                crate::operation::describe_configuration_aggregators::paginator::DescribeConfigurationAggregatorsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ConfigurationAggregatorNames`.
     ///
     /// To override the contents of this collection use [`set_configuration_aggregator_names`](Self::set_configuration_aggregator_names).

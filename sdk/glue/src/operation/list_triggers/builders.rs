@@ -9,16 +9,17 @@ pub use crate::operation::list_triggers::_list_triggers_input::ListTriggersInput
 /// <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTriggersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_triggers::builders::ListTriggersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_triggers::builders::ListTriggersInputBuilder,
+}
 impl ListTriggersFluentBuilder  {
     /// Creates a new `ListTriggers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_triggers::ListTriggers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListTriggersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_triggers::paginator::ListTriggersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_triggers::paginator::ListTriggersPaginator {
-                            crate::operation::list_triggers::paginator::ListTriggersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_triggers::paginator::ListTriggersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_triggers::paginator::ListTriggersPaginator {
+                                crate::operation::list_triggers::paginator::ListTriggersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

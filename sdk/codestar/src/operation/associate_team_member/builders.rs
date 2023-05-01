@@ -8,16 +8,17 @@ pub use crate::operation::associate_team_member::_associate_team_member_input::A
 /// <p>Adds an IAM user to the team for an AWS CodeStar project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateTeamMemberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_team_member::builders::AssociateTeamMemberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_team_member::builders::AssociateTeamMemberInputBuilder,
+}
 impl AssociateTeamMemberFluentBuilder  {
     /// Creates a new `AssociateTeamMember`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_team_member::AssociateTeamMember, aws_http::retry::AwsResponseRetryClassifier,>,

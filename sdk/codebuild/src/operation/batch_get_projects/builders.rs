@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_projects::_batch_get_projects_input::BatchGe
 /// <p>Gets information about one or more build projects.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetProjectsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_projects::builders::BatchGetProjectsInputBuilder,
+}
 impl BatchGetProjectsFluentBuilder  {
     /// Creates a new `BatchGetProjects`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_projects::BatchGetProjects, aws_http::retry::AwsResponseRetryClassifier,>,

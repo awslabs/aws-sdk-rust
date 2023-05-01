@@ -8,16 +8,17 @@ pub use crate::operation::create_cost_category_definition::_create_cost_category
 /// <p>Creates a new Cost Category with the requested name and rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCostCategoryDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_cost_category_definition::builders::CreateCostCategoryDefinitionInputBuilder,
+}
 impl CreateCostCategoryDefinitionFluentBuilder  {
     /// Creates a new `CreateCostCategoryDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_cost_category_definition::CreateCostCategoryDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

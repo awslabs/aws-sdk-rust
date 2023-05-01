@@ -8,16 +8,17 @@ pub use crate::operation::list_license_conversion_tasks::_list_license_conversio
 /// <p>Lists the license type conversion tasks for your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLicenseConversionTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_license_conversion_tasks::builders::ListLicenseConversionTasksInputBuilder,
+}
 impl ListLicenseConversionTasksFluentBuilder  {
     /// Creates a new `ListLicenseConversionTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_license_conversion_tasks::ListLicenseConversionTasks, aws_http::retry::AwsResponseRetryClassifier,>,

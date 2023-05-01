@@ -10,16 +10,17 @@ pub use crate::operation::put_bot::_put_bot_input::PutBotInputBuilder;
 /// <p>This operation requires permissions for the <code>lex:PutBot</code> action. For more information, see <code>security-iam</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutBotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_bot::builders::PutBotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_bot::builders::PutBotInputBuilder,
+}
 impl PutBotFluentBuilder  {
     /// Creates a new `PutBot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_bot::PutBot, aws_http::retry::AwsResponseRetryClassifier,>,

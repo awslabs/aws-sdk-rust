@@ -9,16 +9,17 @@ pub use crate::operation::describe_cost_category_definition::_describe_cost_cate
 /// <p>You have the option to use <code>EffectiveOn</code> to return a Cost Category that's active on a specific date. If there's no <code>EffectiveOn</code> specified, you see a Cost Category that's effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCostCategoryDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cost_category_definition::builders::DescribeCostCategoryDefinitionInputBuilder,
+}
 impl DescribeCostCategoryDefinitionFluentBuilder  {
     /// Creates a new `DescribeCostCategoryDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_publishing_destinations::_list_publishing_destina
 /// <p>Returns a list of publishing destinations associated with the specified <code>detectorId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPublishingDestinationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_publishing_destinations::builders::ListPublishingDestinationsInputBuilder,
+}
 impl ListPublishingDestinationsFluentBuilder  {
     /// Creates a new `ListPublishingDestinations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_publishing_destinations::ListPublishingDestinations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPublishingDestinationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_publishing_destinations::paginator::ListPublishingDestinationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_publishing_destinations::paginator::ListPublishingDestinationsPaginator {
-                            crate::operation::list_publishing_destinations::paginator::ListPublishingDestinationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_publishing_destinations::paginator::ListPublishingDestinationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_publishing_destinations::paginator::ListPublishingDestinationsPaginator {
+                                crate::operation::list_publishing_destinations::paginator::ListPublishingDestinationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the detector to retrieve publishing destinations for.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());

@@ -9,16 +9,17 @@ pub use crate::operation::delete_external_model::_delete_external_model_input::D
 /// <p>You can remove an Amazon SageMaker model if it is not associated with a detector version. Removing a SageMaker model disconnects it from Amazon Fraud Detector, but the model remains available in SageMaker.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteExternalModelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_external_model::builders::DeleteExternalModelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_external_model::builders::DeleteExternalModelInputBuilder,
+}
 impl DeleteExternalModelFluentBuilder  {
     /// Creates a new `DeleteExternalModel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_external_model::DeleteExternalModel, aws_http::retry::AwsResponseRetryClassifier,>,

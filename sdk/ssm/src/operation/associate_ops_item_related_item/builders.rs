@@ -8,16 +8,17 @@ pub use crate::operation::associate_ops_item_related_item::_associate_ops_item_r
 /// <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services Systems Manager.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateOpsItemRelatedItemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_ops_item_related_item::builders::AssociateOpsItemRelatedItemInputBuilder,
+}
 impl AssociateOpsItemRelatedItemFluentBuilder  {
     /// Creates a new `AssociateOpsItemRelatedItem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItem, aws_http::retry::AwsResponseRetryClassifier,>,

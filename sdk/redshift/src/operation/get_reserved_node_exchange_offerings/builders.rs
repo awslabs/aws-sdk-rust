@@ -8,16 +8,17 @@ pub use crate::operation::get_reserved_node_exchange_offerings::_get_reserved_no
 /// <p>Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given DC1 reserved node.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetReservedNodeExchangeOfferingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsInputBuilder,
+}
 impl GetReservedNodeExchangeOfferingsFluentBuilder  {
     /// Creates a new `GetReservedNodeExchangeOfferings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetReservedNodeExchangeOfferingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_reserved_node_exchange_offerings::paginator::GetReservedNodeExchangeOfferingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_reserved_node_exchange_offerings::paginator::GetReservedNodeExchangeOfferingsPaginator {
-                            crate::operation::get_reserved_node_exchange_offerings::paginator::GetReservedNodeExchangeOfferingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_reserved_node_exchange_offerings::paginator::GetReservedNodeExchangeOfferingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_reserved_node_exchange_offerings::paginator::GetReservedNodeExchangeOfferingsPaginator {
+                                crate::operation::get_reserved_node_exchange_offerings::paginator::GetReservedNodeExchangeOfferingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
     pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.reserved_node_id(input.into());

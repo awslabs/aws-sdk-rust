@@ -8,16 +8,17 @@ pub use crate::operation::verify_session::_verify_session_input::VerifySessionIn
 /// <p>Verifies whether the calling user has a valid Amazon CodeCatalyst login and session. If successful, this returns the ID of the user in Amazon CodeCatalyst.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct VerifySessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::verify_session::builders::VerifySessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::verify_session::builders::VerifySessionInputBuilder,
+}
 impl VerifySessionFluentBuilder  {
     /// Creates a new `VerifySession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::verify_session::VerifySession, aws_http::retry::AwsResponseRetryClassifier,>,

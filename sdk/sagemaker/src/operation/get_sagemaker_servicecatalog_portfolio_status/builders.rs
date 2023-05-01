@@ -8,16 +8,17 @@ pub use crate::operation::get_sagemaker_servicecatalog_portfolio_status::_get_sa
 /// <p>Gets the status of Service Catalog in SageMaker. Service Catalog is used to create SageMaker projects.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSagemakerServicecatalogPortfolioStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_sagemaker_servicecatalog_portfolio_status::builders::GetSagemakerServicecatalogPortfolioStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_sagemaker_servicecatalog_portfolio_status::builders::GetSagemakerServicecatalogPortfolioStatusInputBuilder,
+}
 impl GetSagemakerServicecatalogPortfolioStatusFluentBuilder  {
     /// Creates a new `GetSagemakerServicecatalogPortfolioStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_sagemaker_servicecatalog_portfolio_status::GetSagemakerServicecatalogPortfolioStatus, aws_http::retry::AwsResponseRetryClassifier,>,

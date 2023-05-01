@@ -9,16 +9,17 @@ pub use crate::operation::put_repository_permissions_policy::_put_repository_per
 /// <p> When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on the repository is ignored when evaluting permissions. This ensures that the owner of a repository cannot lock themselves out of the repository, which would prevent them from being able to update the resource policy. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutRepositoryPermissionsPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_repository_permissions_policy::builders::PutRepositoryPermissionsPolicyInputBuilder,
+}
 impl PutRepositoryPermissionsPolicyFluentBuilder  {
     /// Creates a new `PutRepositoryPermissionsPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

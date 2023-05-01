@@ -8,16 +8,17 @@ pub use crate::operation::update_email_template::_update_email_template_input::U
 /// <p>Updates an existing message template for messages that are sent through the email channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEmailTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_email_template::builders::UpdateEmailTemplateInputBuilder,
+}
 impl UpdateEmailTemplateFluentBuilder  {
     /// Creates a new `UpdateEmailTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_email_template::UpdateEmailTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

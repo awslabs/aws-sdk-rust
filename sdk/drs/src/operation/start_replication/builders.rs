@@ -8,16 +8,17 @@ pub use crate::operation::start_replication::_start_replication_input::StartRepl
 /// <p>Starts replication for a stopped Source Server. This action would make the Source Server protected again and restart billing for it.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartReplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_replication::builders::StartReplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_replication::builders::StartReplicationInputBuilder,
+}
 impl StartReplicationFluentBuilder  {
     /// Creates a new `StartReplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_replication::StartReplication, aws_http::retry::AwsResponseRetryClassifier,>,

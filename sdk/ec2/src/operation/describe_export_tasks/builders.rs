@@ -8,16 +8,17 @@ pub use crate::operation::describe_export_tasks::_describe_export_tasks_input::D
 /// <p>Describes the specified export instance tasks or all of your export instance tasks.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeExportTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_export_tasks::builders::DescribeExportTasksInputBuilder,
+}
 impl DescribeExportTasksFluentBuilder  {
     /// Creates a new `DescribeExportTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_export_tasks::DescribeExportTasks, aws_http::retry::AwsResponseRetryClassifier,>,

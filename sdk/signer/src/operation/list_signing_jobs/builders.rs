@@ -8,16 +8,17 @@ pub use crate::operation::list_signing_jobs::_list_signing_jobs_input::ListSigni
 /// <p>Lists all your signing jobs. You can use the <code>maxResults</code> parameter to limit the number of signing jobs that are returned in the response. If additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSigningJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_signing_jobs::builders::ListSigningJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_signing_jobs::builders::ListSigningJobsInputBuilder,
+}
 impl ListSigningJobsFluentBuilder  {
     /// Creates a new `ListSigningJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_signing_jobs::ListSigningJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSigningJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator {
-                            crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator {
+                                crate::operation::list_signing_jobs::paginator::ListSigningJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A status value with which to filter your results.</p>
     pub fn status(mut self, input: crate::types::SigningStatus) -> Self {
         self.inner = self.inner.status(input);

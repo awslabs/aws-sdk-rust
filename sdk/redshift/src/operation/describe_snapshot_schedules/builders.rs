@@ -8,16 +8,17 @@ pub use crate::operation::describe_snapshot_schedules::_describe_snapshot_schedu
 /// <p>Returns a list of snapshot schedules. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSnapshotSchedulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_snapshot_schedules::builders::DescribeSnapshotSchedulesInputBuilder,
+}
 impl DescribeSnapshotSchedulesFluentBuilder  {
     /// Creates a new `DescribeSnapshotSchedules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_snapshot_schedules::DescribeSnapshotSchedules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeSnapshotSchedulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshot_schedules::paginator::DescribeSnapshotSchedulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_snapshot_schedules::paginator::DescribeSnapshotSchedulesPaginator {
-                            crate::operation::describe_snapshot_schedules::paginator::DescribeSnapshotSchedulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshot_schedules::paginator::DescribeSnapshotSchedulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_snapshot_schedules::paginator::DescribeSnapshotSchedulesPaginator {
+                                crate::operation::describe_snapshot_schedules::paginator::DescribeSnapshotSchedulesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier for the cluster whose snapshot schedules you want to view.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());

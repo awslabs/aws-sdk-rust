@@ -8,16 +8,17 @@ pub use crate::operation::describe_import_tasks::_describe_import_tasks_input::D
 /// <p>Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeImportTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_import_tasks::builders::DescribeImportTasksInputBuilder,
+}
 impl DescribeImportTasksFluentBuilder  {
     /// Creates a new `DescribeImportTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_import_tasks::DescribeImportTasks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeImportTasksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator {
-                            crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator {
+                                crate::operation::describe_import_tasks::paginator::DescribeImportTasksPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

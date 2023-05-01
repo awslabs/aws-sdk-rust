@@ -8,16 +8,17 @@ pub use crate::operation::get_usage_limit::_get_usage_limit_input::GetUsageLimit
 /// <p>Returns information about a usage limit.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUsageLimitFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_usage_limit::builders::GetUsageLimitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_usage_limit::builders::GetUsageLimitInputBuilder,
+}
 impl GetUsageLimitFluentBuilder  {
     /// Creates a new `GetUsageLimit`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_usage_limit::GetUsageLimit, aws_http::retry::AwsResponseRetryClassifier,>,

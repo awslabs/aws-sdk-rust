@@ -8,16 +8,17 @@ pub use crate::operation::put_voice_connector_streaming_configuration::_put_voic
 /// <p>Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration specifies whether media streaming is enabled for sending to Kinesis. It also sets the retention period, in hours, for the Amazon Kinesis data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutVoiceConnectorStreamingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_voice_connector_streaming_configuration::builders::PutVoiceConnectorStreamingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_voice_connector_streaming_configuration::builders::PutVoiceConnectorStreamingConfigurationInputBuilder,
+}
 impl PutVoiceConnectorStreamingConfigurationFluentBuilder  {
     /// Creates a new `PutVoiceConnectorStreamingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

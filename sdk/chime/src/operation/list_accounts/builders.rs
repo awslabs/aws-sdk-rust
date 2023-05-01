@@ -8,16 +8,17 @@ pub use crate::operation::list_accounts::_list_accounts_input::ListAccountsInput
 /// <p>Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts by account name prefix. To find out which Amazon Chime account a user belongs to, you can filter by the user's email address, which returns one account result.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccountsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_accounts::builders::ListAccountsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_accounts::builders::ListAccountsInputBuilder,
+}
 impl ListAccountsFluentBuilder  {
     /// Creates a new `ListAccounts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_accounts::ListAccounts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAccountsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_accounts::paginator::ListAccountsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_accounts::paginator::ListAccountsPaginator {
-                            crate::operation::list_accounts::paginator::ListAccountsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_accounts::paginator::ListAccountsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_accounts::paginator::ListAccountsPaginator {
+                                crate::operation::list_accounts::paginator::ListAccountsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Amazon Chime account name prefix with which to filter results.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

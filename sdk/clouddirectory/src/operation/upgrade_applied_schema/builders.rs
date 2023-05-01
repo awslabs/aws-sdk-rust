@@ -8,16 +8,17 @@ pub use crate::operation::upgrade_applied_schema::_upgrade_applied_schema_input:
 /// <p>Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with schema updates found in <code>MinorVersion</code>. Backwards-compatible minor version upgrades are instantaneously available for readers on all objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a given directory per call. To upgrade multiple directories from one schema, you would need to call this API on each directory.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpgradeAppliedSchemaFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder,
+}
 impl UpgradeAppliedSchemaFluentBuilder  {
     /// Creates a new `UpgradeAppliedSchema`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::upgrade_applied_schema::UpgradeAppliedSchema, aws_http::retry::AwsResponseRetryClassifier,>,

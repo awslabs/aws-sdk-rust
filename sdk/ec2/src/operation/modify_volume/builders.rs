@@ -12,16 +12,17 @@ pub use crate::operation::modify_volume::_modify_volume_input::ModifyVolumeInput
 /// <p>After modifying a volume, you must wait at least six hours and ensure that the volume is in the <code>in-use</code> or <code>available</code> state before you can modify the same volume. This is sometimes referred to as a cooldown period.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVolumeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_volume::builders::ModifyVolumeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_volume::builders::ModifyVolumeInputBuilder,
+}
 impl ModifyVolumeFluentBuilder  {
     /// Creates a new `ModifyVolume`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_volume::ModifyVolume, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -13,16 +13,17 @@ pub use crate::operation::get_document_text_detection::_get_document_text_detect
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document Text Detection</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDocumentTextDetectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_document_text_detection::builders::GetDocumentTextDetectionInputBuilder,
+}
 impl GetDocumentTextDetectionFluentBuilder  {
     /// Creates a new `GetDocumentTextDetection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_document_text_detection::GetDocumentTextDetection, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_mailbox_export_job::_describe_mailbox_export_
 /// <p>Describes the current status of a mailbox export job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMailboxExportJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_mailbox_export_job::builders::DescribeMailboxExportJobInputBuilder,
+}
 impl DescribeMailboxExportJobFluentBuilder  {
     /// Creates a new `DescribeMailboxExportJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_mailbox_export_job::DescribeMailboxExportJob, aws_http::retry::AwsResponseRetryClassifier,>,

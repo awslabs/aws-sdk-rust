@@ -9,16 +9,17 @@ pub use crate::operation::configure_access_point::_configure_access_point_input:
 /// <p> Use this action to specify the geographic position of the hardware. You must provide Certified Professional Installer (CPI) credentials in the request so that we can obtain spectrum grants. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html">Radio units</a> in the <i>Amazon Web Services Private 5G User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfigureAccessPointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::configure_access_point::builders::ConfigureAccessPointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::configure_access_point::builders::ConfigureAccessPointInputBuilder,
+}
 impl ConfigureAccessPointFluentBuilder  {
     /// Creates a new `ConfigureAccessPoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::configure_access_point::ConfigureAccessPoint, aws_http::retry::AwsResponseRetryClassifier,>,

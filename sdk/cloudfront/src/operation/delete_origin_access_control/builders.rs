@@ -9,16 +9,17 @@ pub use crate::operation::delete_origin_access_control::_delete_origin_access_co
 /// <p>You cannot delete an origin access control if it's in use. First, update all distributions to remove the origin access control from all origins, then delete the origin access control.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteOriginAccessControlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_origin_access_control::builders::DeleteOriginAccessControlInputBuilder,
+}
 impl DeleteOriginAccessControlFluentBuilder  {
     /// Creates a new `DeleteOriginAccessControl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_origin_access_control::DeleteOriginAccessControl, aws_http::retry::AwsResponseRetryClassifier,>,

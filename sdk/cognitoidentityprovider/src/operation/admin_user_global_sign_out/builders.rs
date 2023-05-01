@@ -9,16 +9,17 @@ pub use crate::operation::admin_user_global_sign_out::_admin_user_global_sign_ou
 /// <p>Calling this action requires developer credentials.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AdminUserGlobalSignOutFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::admin_user_global_sign_out::builders::AdminUserGlobalSignOutInputBuilder,
+}
 impl AdminUserGlobalSignOutFluentBuilder  {
     /// Creates a new `AdminUserGlobalSignOut`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOut, aws_http::retry::AwsResponseRetryClassifier,>,

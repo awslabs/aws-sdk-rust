@@ -8,16 +8,17 @@ pub use crate::operation::start_backup_job::_start_backup_job_input::StartBackup
 /// <p>Starts an on-demand backup job for the specified resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartBackupJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_backup_job::builders::StartBackupJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_backup_job::builders::StartBackupJobInputBuilder,
+}
 impl StartBackupJobFluentBuilder  {
     /// Creates a new `StartBackupJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_backup_job::StartBackupJob, aws_http::retry::AwsResponseRetryClassifier,>,

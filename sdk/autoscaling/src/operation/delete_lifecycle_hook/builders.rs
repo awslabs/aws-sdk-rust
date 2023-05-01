@@ -9,16 +9,17 @@ pub use crate::operation::delete_lifecycle_hook::_delete_lifecycle_hook_input::D
 /// <p>If there are any outstanding lifecycle actions, they are completed first (<code>ABANDON</code> for launching instances, <code>CONTINUE</code> for terminating instances).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLifecycleHookFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookInputBuilder,
+}
 impl DeleteLifecycleHookFluentBuilder  {
     /// Creates a new `DeleteLifecycleHook`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_lifecycle_hook::DeleteLifecycleHook, aws_http::retry::AwsResponseRetryClassifier,>,

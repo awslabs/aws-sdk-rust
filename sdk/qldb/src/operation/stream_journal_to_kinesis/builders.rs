@@ -8,16 +8,17 @@ pub use crate::operation::stream_journal_to_kinesis::_stream_journal_to_kinesis_
 /// <p>Creates a journal stream for a given Amazon QLDB ledger. The stream captures every document revision that is committed to the ledger's journal and delivers the data to a specified Amazon Kinesis Data Streams resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StreamJournalToKinesisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stream_journal_to_kinesis::builders::StreamJournalToKinesisInputBuilder,
+}
 impl StreamJournalToKinesisFluentBuilder  {
     /// Creates a new `StreamJournalToKinesis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stream_journal_to_kinesis::StreamJournalToKinesis, aws_http::retry::AwsResponseRetryClassifier,>,

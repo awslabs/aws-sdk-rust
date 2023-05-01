@@ -8,16 +8,17 @@ pub use crate::operation::modify_verified_access_endpoint::_modify_verified_acce
 /// <p>Modifies the configuration of the specified Amazon Web Services Verified Access endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVerifiedAccessEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_verified_access_endpoint::builders::ModifyVerifiedAccessEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_verified_access_endpoint::builders::ModifyVerifiedAccessEndpointInputBuilder,
+}
 impl ModifyVerifiedAccessEndpointFluentBuilder  {
     /// Creates a new `ModifyVerifiedAccessEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_verified_access_endpoint::ModifyVerifiedAccessEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

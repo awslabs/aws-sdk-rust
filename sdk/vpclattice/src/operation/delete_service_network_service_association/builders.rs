@@ -8,16 +8,17 @@ pub use crate::operation::delete_service_network_service_association::_delete_se
 /// <p>Deletes the association between a specified service and the specific service network. This request will fail if an association is still in progress.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteServiceNetworkServiceAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_service_network_service_association::builders::DeleteServiceNetworkServiceAssociationInputBuilder,
+}
 impl DeleteServiceNetworkServiceAssociationFluentBuilder  {
     /// Creates a new `DeleteServiceNetworkServiceAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_service_network_service_association::DeleteServiceNetworkServiceAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

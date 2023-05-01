@@ -8,16 +8,17 @@ pub use crate::operation::describe_public_ipv4_pools::_describe_public_ipv4_pool
 /// <p>Describes the specified IPv4 address pools.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePublicIpv4PoolsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_public_ipv4_pools::builders::DescribePublicIpv4PoolsInputBuilder,
+}
 impl DescribePublicIpv4PoolsFluentBuilder  {
     /// Creates a new `DescribePublicIpv4Pools`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_public_ipv4_pools::DescribePublicIpv4Pools, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribePublicIpv4PoolsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator {
-                            crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator {
+                                crate::operation::describe_public_ipv4_pools::paginator::DescribePublicIpv4PoolsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `PoolIds`.
     ///
     /// To override the contents of this collection use [`set_pool_ids`](Self::set_pool_ids).

@@ -13,16 +13,17 @@ pub use crate::operation::update_destination::_update_destination_input::UpdateD
 /// <p>Kinesis Data Firehose uses <code>CurrentDeliveryStreamVersionId</code> to avoid race conditions and conflicting merges. This is a required field, and the service updates the configuration only if the existing configuration has a version ID that matches. After the update is applied successfully, the version ID is updated, and can be retrieved using <code>DescribeDeliveryStream</code>. Use the new version ID to set <code>CurrentDeliveryStreamVersionId</code> in the next call.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_destination::builders::UpdateDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_destination::builders::UpdateDestinationInputBuilder,
+}
 impl UpdateDestinationFluentBuilder  {
     /// Creates a new `UpdateDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_destination::UpdateDestination, aws_http::retry::AwsResponseRetryClassifier,>,

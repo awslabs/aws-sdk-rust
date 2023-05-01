@@ -19,16 +19,17 @@ pub use crate::operation::calculate_route_matrix::_calculate_route_matrix_input:
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CalculateRouteMatrixFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::calculate_route_matrix::builders::CalculateRouteMatrixInputBuilder,
+}
 impl CalculateRouteMatrixFluentBuilder  {
     /// Creates a new `CalculateRouteMatrix`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::calculate_route_matrix::CalculateRouteMatrix, aws_http::retry::AwsResponseRetryClassifier,>,

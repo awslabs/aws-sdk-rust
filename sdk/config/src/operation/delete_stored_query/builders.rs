@@ -8,16 +8,17 @@ pub use crate::operation::delete_stored_query::_delete_stored_query_input::Delet
 /// <p>Deletes the stored query for a single Amazon Web Services account and a single Amazon Web Services Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteStoredQueryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_stored_query::builders::DeleteStoredQueryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_stored_query::builders::DeleteStoredQueryInputBuilder,
+}
 impl DeleteStoredQueryFluentBuilder  {
     /// Creates a new `DeleteStoredQuery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_stored_query::DeleteStoredQuery, aws_http::retry::AwsResponseRetryClassifier,>,

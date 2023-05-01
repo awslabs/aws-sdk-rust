@@ -8,16 +8,17 @@ pub use crate::operation::update_template_active_version::_update_template_activ
 /// <p>Changes the status of a specific version of a message template to <i>active</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTemplateActiveVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_template_active_version::builders::UpdateTemplateActiveVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_template_active_version::builders::UpdateTemplateActiveVersionInputBuilder,
+}
 impl UpdateTemplateActiveVersionFluentBuilder  {
     /// Creates a new `UpdateTemplateActiveVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_template_active_version::UpdateTemplateActiveVersion, aws_http::retry::AwsResponseRetryClassifier,>,

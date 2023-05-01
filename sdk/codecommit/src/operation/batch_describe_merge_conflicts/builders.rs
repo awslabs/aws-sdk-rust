@@ -8,16 +8,17 @@ pub use crate::operation::batch_describe_merge_conflicts::_batch_describe_merge_
 /// <p>Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the squash or three-way merge strategy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDescribeMergeConflictsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_describe_merge_conflicts::builders::BatchDescribeMergeConflictsInputBuilder,
+}
 impl BatchDescribeMergeConflictsFluentBuilder  {
     /// Creates a new `BatchDescribeMergeConflicts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflicts, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::describe_company_network_configuration::_describe_comp
 #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCompanyNetworkConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_company_network_configuration::builders::DescribeCompanyNetworkConfigurationInputBuilder,
+}
 impl DescribeCompanyNetworkConfigurationFluentBuilder  {
     /// Creates a new `DescribeCompanyNetworkConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_company_network_configuration::DescribeCompanyNetworkConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

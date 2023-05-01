@@ -8,16 +8,17 @@ pub use crate::operation::describe_evaluation_form::_describe_evaluation_form_in
 /// <p>Describes an evaluation form in the specified Amazon Connect instance. If the version property is not provided, the latest version of the evaluation form is described.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEvaluationFormFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_evaluation_form::builders::DescribeEvaluationFormInputBuilder,
+}
 impl DescribeEvaluationFormFluentBuilder  {
     /// Creates a new `DescribeEvaluationForm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_evaluation_form::DescribeEvaluationForm, aws_http::retry::AwsResponseRetryClassifier,>,

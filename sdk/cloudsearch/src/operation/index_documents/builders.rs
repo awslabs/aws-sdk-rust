@@ -8,16 +8,17 @@ pub use crate::operation::index_documents::_index_documents_input::IndexDocument
 /// <p>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <code>OptionStatus</code> is <code>RequiresIndexDocuments</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct IndexDocumentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::index_documents::builders::IndexDocumentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::index_documents::builders::IndexDocumentsInputBuilder,
+}
 impl IndexDocumentsFluentBuilder  {
     /// Creates a new `IndexDocuments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::index_documents::IndexDocuments, aws_http::retry::AwsResponseRetryClassifier,>,

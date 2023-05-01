@@ -8,16 +8,17 @@ pub use crate::operation::failover_global_replication_group::_failover_global_re
 /// <p>Used to failover the primary region to a secondary region. The secondary region will become primary, and all other clusters will become secondary.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct FailoverGlobalReplicationGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::failover_global_replication_group::builders::FailoverGlobalReplicationGroupInputBuilder,
+}
 impl FailoverGlobalReplicationGroupFluentBuilder  {
     /// Creates a new `FailoverGlobalReplicationGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroup, aws_http::retry::AwsResponseRetryClassifier,>,

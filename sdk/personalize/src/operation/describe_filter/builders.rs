@@ -8,16 +8,17 @@ pub use crate::operation::describe_filter::_describe_filter_input::DescribeFilte
 /// <p>Describes a filter's properties.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFilterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_filter::builders::DescribeFilterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_filter::builders::DescribeFilterInputBuilder,
+}
 impl DescribeFilterFluentBuilder  {
     /// Creates a new `DescribeFilter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_filter::DescribeFilter, aws_http::retry::AwsResponseRetryClassifier,>,

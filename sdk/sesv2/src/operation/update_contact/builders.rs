@@ -8,16 +8,17 @@ pub use crate::operation::update_contact::_update_contact_input::UpdateContactIn
 /// <p>Updates a contact's preferences for a list. It is not necessary to specify all existing topic preferences in the TopicPreferences object, just the ones that need updating.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_contact::builders::UpdateContactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_contact::builders::UpdateContactInputBuilder,
+}
 impl UpdateContactFluentBuilder  {
     /// Creates a new `UpdateContact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_contact::UpdateContact, aws_http::retry::AwsResponseRetryClassifier,>,

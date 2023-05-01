@@ -8,16 +8,17 @@ pub use crate::operation::deregister_transit_gateway::_deregister_transit_gatewa
 /// <p>Deregisters a transit gateway from your global network. This action does not delete your transit gateway, or modify any of its attachments. This action removes any customer gateway associations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterTransitGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_transit_gateway::builders::DeregisterTransitGatewayInputBuilder,
+}
 impl DeregisterTransitGatewayFluentBuilder  {
     /// Creates a new `DeregisterTransitGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_transit_gateway::DeregisterTransitGateway, aws_http::retry::AwsResponseRetryClassifier,>,

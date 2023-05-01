@@ -11,16 +11,17 @@ pub use crate::operation::search_things::_search_things_input::SearchThingsInput
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchThingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_things::builders::SearchThingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_things::builders::SearchThingsInputBuilder,
+}
 impl SearchThingsFluentBuilder  {
     /// Creates a new `SearchThings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_things::SearchThings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl SearchThingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_things::paginator::SearchThingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_things::paginator::SearchThingsPaginator {
-                            crate::operation::search_things::paginator::SearchThingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_things::paginator::SearchThingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_things::paginator::SearchThingsPaginator {
+                                crate::operation::search_things::paginator::SearchThingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the entity to which the things are associated.</p> 
     /// <p>The IDs should be in the following format.</p> 
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>

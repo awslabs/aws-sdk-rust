@@ -9,16 +9,17 @@ pub use crate::operation::confirm_transit_virtual_interface::_confirm_transit_vi
 /// <p> After the owner of the transit virtual interface makes this call, the specified transit virtual interface is created and made available to handle traffic.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfirmTransitVirtualInterfaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::confirm_transit_virtual_interface::builders::ConfirmTransitVirtualInterfaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::confirm_transit_virtual_interface::builders::ConfirmTransitVirtualInterfaceInputBuilder,
+}
 impl ConfirmTransitVirtualInterfaceFluentBuilder  {
     /// Creates a new `ConfirmTransitVirtualInterface`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterface, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::put_logging_options::_put_logging_options_input::PutLo
 /// <p>If you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to take effect. Also, if you change the policy attached to the role you specified in the <code>roleArn</code> field (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutLoggingOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_logging_options::builders::PutLoggingOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_logging_options::builders::PutLoggingOptionsInputBuilder,
+}
 impl PutLoggingOptionsFluentBuilder  {
     /// Creates a new `PutLoggingOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_logging_options::PutLoggingOptions, aws_http::retry::AwsResponseRetryClassifier,>,

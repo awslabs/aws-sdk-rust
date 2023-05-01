@@ -8,16 +8,17 @@ pub use crate::operation::delete_refresh_schedule::_delete_refresh_schedule_inpu
 /// <p>Deletes a refresh schedule from a dataset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRefreshScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleInputBuilder,
+}
 impl DeleteRefreshScheduleFluentBuilder  {
     /// Creates a new `DeleteRefreshSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_refresh_schedule::DeleteRefreshSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

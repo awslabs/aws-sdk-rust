@@ -9,16 +9,17 @@ pub use crate::operation::start_edge_configuration_update::_start_edge_configura
 /// <p>If this API is invoked for the first time, a new edge configuration will be created for the stream, and the sync status will be set to <code>SYNCING</code>. You will have to wait for the sync status to reach a terminal state such as: <code>IN_SYNC</code>, or <code>SYNC_FAILED</code>, before using this API again. If you invoke this API during the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity of the stream’s edge configuration and the Edge Agent will be retried for 15 minutes. After 15 minutes, the status will transition into the <code>SYNC_FAILED</code> state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartEdgeConfigurationUpdateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_edge_configuration_update::builders::StartEdgeConfigurationUpdateInputBuilder,
+}
 impl StartEdgeConfigurationUpdateFluentBuilder  {
     /// Creates a new `StartEdgeConfigurationUpdate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdate, aws_http::retry::AwsResponseRetryClassifier,>,

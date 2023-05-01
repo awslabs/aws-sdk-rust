@@ -9,16 +9,17 @@ pub use crate::operation::list_environment_account_connections::_list_environmen
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsInputBuilder,
+}
 impl ListEnvironmentAccountConnectionsFluentBuilder  {
     /// Creates a new `ListEnvironmentAccountConnections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnections, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListEnvironmentAccountConnectionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_environment_account_connections::paginator::ListEnvironmentAccountConnectionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_environment_account_connections::paginator::ListEnvironmentAccountConnectionsPaginator {
-                            crate::operation::list_environment_account_connections::paginator::ListEnvironmentAccountConnectionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_environment_account_connections::paginator::ListEnvironmentAccountConnectionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_environment_account_connections::paginator::ListEnvironmentAccountConnectionsPaginator {
+                                crate::operation::list_environment_account_connections::paginator::ListEnvironmentAccountConnectionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
     pub fn requested_by(mut self, input: crate::types::EnvironmentAccountConnectionRequesterAccountType) -> Self {
         self.inner = self.inner.requested_by(input);

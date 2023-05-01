@@ -10,16 +10,17 @@ pub use crate::operation::delete_origin_request_policy::_delete_origin_request_p
 /// <p>To delete an origin request policy, you must provide the policy's identifier and version. To get the identifier, you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteOriginRequestPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_origin_request_policy::builders::DeleteOriginRequestPolicyInputBuilder,
+}
 impl DeleteOriginRequestPolicyFluentBuilder  {
     /// Creates a new `DeleteOriginRequestPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_origin_request_policy::DeleteOriginRequestPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::update_column_statistics_for_table::_update_column_sta
 /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>UpdateTable</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateColumnStatisticsForTableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_column_statistics_for_table::builders::UpdateColumnStatisticsForTableInputBuilder,
+}
 impl UpdateColumnStatisticsForTableFluentBuilder  {
     /// Creates a new `UpdateColumnStatisticsForTable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTable, aws_http::retry::AwsResponseRetryClassifier,>,

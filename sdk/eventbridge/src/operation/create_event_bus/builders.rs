@@ -8,16 +8,17 @@ pub use crate::operation::create_event_bus::_create_event_bus_input::CreateEvent
 /// <p>Creates a new event bus within your account. This can be a custom event bus which you can use to receive events from your custom applications and services, or it can be a partner event bus which can be matched to a partner event source.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEventBusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_event_bus::builders::CreateEventBusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_event_bus::builders::CreateEventBusInputBuilder,
+}
 impl CreateEventBusFluentBuilder  {
     /// Creates a new `CreateEventBus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_event_bus::CreateEventBus, aws_http::retry::AwsResponseRetryClassifier,>,

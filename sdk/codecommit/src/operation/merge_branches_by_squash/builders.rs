@@ -8,16 +8,17 @@ pub use crate::operation::merge_branches_by_squash::_merge_branches_by_squash_in
 /// <p>Merges two branches using the squash merge strategy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct MergeBranchesBySquashFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::merge_branches_by_squash::builders::MergeBranchesBySquashInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::merge_branches_by_squash::builders::MergeBranchesBySquashInputBuilder,
+}
 impl MergeBranchesBySquashFluentBuilder  {
     /// Creates a new `MergeBranchesBySquash`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::merge_branches_by_squash::MergeBranchesBySquash, aws_http::retry::AwsResponseRetryClassifier,>,

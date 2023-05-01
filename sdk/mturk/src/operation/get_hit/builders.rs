@@ -8,16 +8,17 @@ pub use crate::operation::get_hit::_get_hit_input::GetHitInputBuilder;
 /// <p> The <code>GetHIT</code> operation retrieves the details of the specified HIT. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetHITFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_hit::builders::GetHitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_hit::builders::GetHitInputBuilder,
+}
 impl GetHITFluentBuilder  {
     /// Creates a new `GetHIT`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_hit::GetHIT, aws_http::retry::AwsResponseRetryClassifier,>,

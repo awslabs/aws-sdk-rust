@@ -10,16 +10,17 @@ pub use crate::operation::get_load_balancer_tls_certificates::_get_load_balancer
 /// <p>You can have a maximum of 2 certificates associated with a Lightsail load balancer. One is active and the other is inactive.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLoadBalancerTlsCertificatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_load_balancer_tls_certificates::builders::GetLoadBalancerTlsCertificatesInputBuilder,
+}
 impl GetLoadBalancerTlsCertificatesFluentBuilder  {
     /// Creates a new `GetLoadBalancerTlsCertificates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_load_balancer_tls_certificates::GetLoadBalancerTlsCertificates, aws_http::retry::AwsResponseRetryClassifier,>,

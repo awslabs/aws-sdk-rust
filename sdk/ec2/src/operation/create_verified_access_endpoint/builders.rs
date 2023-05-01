@@ -8,16 +8,17 @@ pub use crate::operation::create_verified_access_endpoint::_create_verified_acce
 /// <p>An Amazon Web Services Verified Access endpoint is where you define your application along with an optional endpoint-level access policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVerifiedAccessEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_verified_access_endpoint::builders::CreateVerifiedAccessEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_verified_access_endpoint::builders::CreateVerifiedAccessEndpointInputBuilder,
+}
 impl CreateVerifiedAccessEndpointFluentBuilder  {
     /// Creates a new `CreateVerifiedAccessEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

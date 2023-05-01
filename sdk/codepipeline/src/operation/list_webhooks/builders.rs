@@ -8,16 +8,17 @@ pub use crate::operation::list_webhooks::_list_webhooks_input::ListWebhooksInput
 /// <p>Gets a listing of all the webhooks in this AWS Region for this account. The output lists all webhooks and includes the webhook URL and ARN and the configuration for each webhook.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWebhooksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_webhooks::builders::ListWebhooksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_webhooks::builders::ListWebhooksInputBuilder,
+}
 impl ListWebhooksFluentBuilder  {
     /// Creates a new `ListWebhooks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_webhooks::ListWebhooks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWebhooksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_webhooks::paginator::ListWebhooksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_webhooks::paginator::ListWebhooksPaginator {
-                            crate::operation::list_webhooks::paginator::ListWebhooksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_webhooks::paginator::ListWebhooksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_webhooks::paginator::ListWebhooksPaginator {
+                                crate::operation::list_webhooks::paginator::ListWebhooksPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The token that was returned from the previous ListWebhooks call, which can be used to return the next set of webhooks in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

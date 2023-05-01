@@ -16,16 +16,17 @@ pub use crate::operation::create_function::_create_function_input::CreateFunctio
 /// <p>To invoke your function directly, use <code>Invoke</code>. To invoke your function in response to events in other Amazon Web Services, create an event source mapping (<code>CreateEventSourceMapping</code>), or configure a function trigger in the other service. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Lambda functions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFunctionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_function::builders::CreateFunctionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_function::builders::CreateFunctionInputBuilder,
+}
 impl CreateFunctionFluentBuilder  {
     /// Creates a new `CreateFunction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_function::CreateFunction, aws_http::retry::AwsResponseRetryClassifier,>,

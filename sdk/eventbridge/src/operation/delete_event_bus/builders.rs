@@ -8,16 +8,17 @@ pub use crate::operation::delete_event_bus::_delete_event_bus_input::DeleteEvent
 /// <p>Deletes the specified custom event bus or partner event bus. All rules associated with this event bus need to be deleted. You can't delete your account's default event bus.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEventBusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_event_bus::builders::DeleteEventBusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_event_bus::builders::DeleteEventBusInputBuilder,
+}
 impl DeleteEventBusFluentBuilder  {
     /// Creates a new `DeleteEventBus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_event_bus::DeleteEventBus, aws_http::retry::AwsResponseRetryClassifier,>,

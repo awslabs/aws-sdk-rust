@@ -8,16 +8,17 @@ pub use crate::operation::create_media_live_connector_pipeline::_create_media_li
 /// <p>Creates a media live connector pipeline in an Amazon Chime SDK meeting.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMediaLiveConnectorPipelineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineInputBuilder,
+}
 impl CreateMediaLiveConnectorPipelineFluentBuilder  {
     /// Creates a new `CreateMediaLiveConnectorPipeline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipeline, aws_http::retry::AwsResponseRetryClassifier,>,

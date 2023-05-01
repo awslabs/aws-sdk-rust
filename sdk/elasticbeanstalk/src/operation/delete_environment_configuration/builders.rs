@@ -9,16 +9,17 @@ pub use crate::operation::delete_environment_configuration::_delete_environment_
 /// <p>Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <code>DescribeConfigurationSettings</code> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEnvironmentConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_environment_configuration::builders::DeleteEnvironmentConfigurationInputBuilder,
+}
 impl DeleteEnvironmentConfigurationFluentBuilder  {
     /// Creates a new `DeleteEnvironmentConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_environment_configuration::DeleteEnvironmentConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

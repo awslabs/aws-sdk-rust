@@ -8,16 +8,17 @@ pub use crate::operation::list_verified_email_addresses::_list_verified_email_ad
 /// <p>Deprecated. Use the <code>ListIdentities</code> operation to list the email addresses and domains associated with your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVerifiedEmailAddressesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_verified_email_addresses::builders::ListVerifiedEmailAddressesInputBuilder,
+}
 impl ListVerifiedEmailAddressesFluentBuilder  {
     /// Creates a new `ListVerifiedEmailAddresses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_verified_email_addresses::ListVerifiedEmailAddresses, aws_http::retry::AwsResponseRetryClassifier,>,

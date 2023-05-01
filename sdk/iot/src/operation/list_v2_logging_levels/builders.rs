@@ -9,16 +9,17 @@ pub use crate::operation::list_v2_logging_levels::_list_v2_logging_levels_input:
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListV2LoggingLevels</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListV2LoggingLevelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_v2_logging_levels::builders::ListV2LoggingLevelsInputBuilder,
+}
 impl ListV2LoggingLevelsFluentBuilder  {
     /// Creates a new `ListV2LoggingLevels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_v2_logging_levels::ListV2LoggingLevels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListV2LoggingLevelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator {
-                            crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator {
+                                crate::operation::list_v2_logging_levels::paginator::ListV2LoggingLevelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
     pub fn target_type(mut self, input: crate::types::LogTargetType) -> Self {
         self.inner = self.inner.target_type(input);

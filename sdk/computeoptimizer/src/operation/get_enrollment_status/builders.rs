@@ -9,16 +9,17 @@ pub use crate::operation::get_enrollment_status::_get_enrollment_status_input::G
 /// <p>If the account is the management account of an organization, this action also confirms the enrollment status of member accounts of the organization. Use the <code>GetEnrollmentStatusesForOrganization</code> action to get detailed information about the enrollment status of member accounts of an organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEnrollmentStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_enrollment_status::builders::GetEnrollmentStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_enrollment_status::builders::GetEnrollmentStatusInputBuilder,
+}
 impl GetEnrollmentStatusFluentBuilder  {
     /// Creates a new `GetEnrollmentStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_enrollment_status::GetEnrollmentStatus, aws_http::retry::AwsResponseRetryClassifier,>,

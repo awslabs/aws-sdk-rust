@@ -8,16 +8,17 @@ pub use crate::operation::list_custom_routing_port_mappings_by_destination::_lis
 /// <p>List the port mappings for a specific EC2 instance (destination) in a VPC subnet endpoint. The response is the mappings for one destination IP address. This is useful when your subnet endpoint has mappings that span multiple custom routing accelerators in your account, or for scenarios where you only want to list the port mappings for a specific destination instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCustomRoutingPortMappingsByDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_custom_routing_port_mappings_by_destination::builders::ListCustomRoutingPortMappingsByDestinationInputBuilder,
+}
 impl ListCustomRoutingPortMappingsByDestinationFluentBuilder  {
     /// Creates a new `ListCustomRoutingPortMappingsByDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestination, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCustomRoutingPortMappingsByDestinationFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_custom_routing_port_mappings_by_destination::paginator::ListCustomRoutingPortMappingsByDestinationPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_custom_routing_port_mappings_by_destination::paginator::ListCustomRoutingPortMappingsByDestinationPaginator {
-                            crate::operation::list_custom_routing_port_mappings_by_destination::paginator::ListCustomRoutingPortMappingsByDestinationPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_custom_routing_port_mappings_by_destination::paginator::ListCustomRoutingPortMappingsByDestinationPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_custom_routing_port_mappings_by_destination::paginator::ListCustomRoutingPortMappingsByDestinationPaginator {
+                                crate::operation::list_custom_routing_port_mappings_by_destination::paginator::ListCustomRoutingPortMappingsByDestinationPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
     pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.endpoint_id(input.into());

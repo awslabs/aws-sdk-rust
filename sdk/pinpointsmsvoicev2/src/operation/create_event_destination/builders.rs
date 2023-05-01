@@ -10,16 +10,17 @@ pub use crate::operation::create_event_destination::_create_event_destination_in
 /// <p>Each configuration set can contain between 0 and 5 event destinations. Each event destination can contain a reference to a single destination, such as a CloudWatch or Kinesis Data Firehose destination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEventDestinationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_event_destination::builders::CreateEventDestinationInputBuilder,
+}
 impl CreateEventDestinationFluentBuilder  {
     /// Creates a new `CreateEventDestination`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_event_destination::CreateEventDestination, aws_http::retry::AwsResponseRetryClassifier,>,

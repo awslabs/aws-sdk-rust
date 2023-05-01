@@ -8,16 +8,17 @@ pub use crate::operation::get_insights::_get_insights_input::GetInsightsInputBui
 /// <p>Lists and describes insights for the specified insight ARNs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInsightsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_insights::builders::GetInsightsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_insights::builders::GetInsightsInputBuilder,
+}
 impl GetInsightsFluentBuilder  {
     /// Creates a new `GetInsights`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_insights::GetInsights, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetInsightsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_insights::paginator::GetInsightsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_insights::paginator::GetInsightsPaginator {
-                            crate::operation::get_insights::paginator::GetInsightsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_insights::paginator::GetInsightsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_insights::paginator::GetInsightsPaginator {
+                                crate::operation::get_insights::paginator::GetInsightsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `InsightArns`.
     ///
     /// To override the contents of this collection use [`set_insight_arns`](Self::set_insight_arns).

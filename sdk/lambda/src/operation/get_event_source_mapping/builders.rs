@@ -8,16 +8,17 @@ pub use crate::operation::get_event_source_mapping::_get_event_source_mapping_in
 /// <p>Returns details about an event source mapping. You can get the identifier of a mapping from the output of <code>ListEventSourceMappings</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventSourceMappingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_event_source_mapping::builders::GetEventSourceMappingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_event_source_mapping::builders::GetEventSourceMappingInputBuilder,
+}
 impl GetEventSourceMappingFluentBuilder  {
     /// Creates a new `GetEventSourceMapping`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_event_source_mapping::GetEventSourceMapping, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_backup_plan::_get_backup_plan_input::GetBackupPlan
 /// <p>Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>. The details are the body of a backup plan in JSON format, in addition to plan metadata.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBackupPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_backup_plan::builders::GetBackupPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_backup_plan::builders::GetBackupPlanInputBuilder,
+}
 impl GetBackupPlanFluentBuilder  {
     /// Creates a new `GetBackupPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_backup_plan::GetBackupPlan, aws_http::retry::AwsResponseRetryClassifier,>,

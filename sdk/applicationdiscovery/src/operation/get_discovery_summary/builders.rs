@@ -9,16 +9,17 @@ pub use crate::operation::get_discovery_summary::_get_discovery_summary_input::G
 /// <p>This API operation takes no request parameters and is called as is at the command prompt as shown in the example.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDiscoverySummaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_discovery_summary::builders::GetDiscoverySummaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_discovery_summary::builders::GetDiscoverySummaryInputBuilder,
+}
 impl GetDiscoverySummaryFluentBuilder  {
     /// Creates a new `GetDiscoverySummary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_discovery_summary::GetDiscoverySummary, aws_http::retry::AwsResponseRetryClassifier,>,

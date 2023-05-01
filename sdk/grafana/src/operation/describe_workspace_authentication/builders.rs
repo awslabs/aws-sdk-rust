@@ -8,16 +8,17 @@ pub use crate::operation::describe_workspace_authentication::_describe_workspace
 /// <p>Displays information about the authentication methods used in one Amazon Managed Grafana workspace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeWorkspaceAuthenticationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_workspace_authentication::builders::DescribeWorkspaceAuthenticationInputBuilder,
+}
 impl DescribeWorkspaceAuthenticationFluentBuilder  {
     /// Creates a new `DescribeWorkspaceAuthentication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_workspace_authentication::DescribeWorkspaceAuthentication, aws_http::retry::AwsResponseRetryClassifier,>,

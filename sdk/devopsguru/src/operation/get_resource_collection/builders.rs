@@ -8,16 +8,17 @@ pub use crate::operation::get_resource_collection::_get_resource_collection_inpu
 /// <p> Returns lists Amazon Web Services resources that are of the specified resource collection type. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourceCollectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_resource_collection::builders::GetResourceCollectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_resource_collection::builders::GetResourceCollectionInputBuilder,
+}
 impl GetResourceCollectionFluentBuilder  {
     /// Creates a new `GetResourceCollection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_resource_collection::GetResourceCollection, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetResourceCollectionFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator {
-                            crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator {
+                                crate::operation::get_resource_collection::paginator::GetResourceCollectionPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The type of Amazon Web Services resource collections to return. The one valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection_type(mut self, input: crate::types::ResourceCollectionType) -> Self {
         self.inner = self.inner.resource_collection_type(input);

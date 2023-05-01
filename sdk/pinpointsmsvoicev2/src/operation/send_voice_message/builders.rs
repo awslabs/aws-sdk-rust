@@ -8,16 +8,17 @@ pub use crate::operation::send_voice_message::_send_voice_message_input::SendVoi
 /// <p>Allows you to send a request that sends a text message through Amazon Pinpoint. This operation uses <a href="http://aws.amazon.com/polly/">Amazon Polly</a> to convert a text script into a voice message.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendVoiceMessageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder,
+}
 impl SendVoiceMessageFluentBuilder  {
     /// Creates a new `SendVoiceMessage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_voice_message::SendVoiceMessage, aws_http::retry::AwsResponseRetryClassifier,>,

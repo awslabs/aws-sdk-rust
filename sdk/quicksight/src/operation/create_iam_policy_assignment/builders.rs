@@ -8,16 +8,17 @@ pub use crate::operation::create_iam_policy_assignment::_create_iam_policy_assig
 /// <p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To avoid overwriting rules in other namespaces, use assignment names that are unique.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIAMPolicyAssignmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_iam_policy_assignment::builders::CreateIamPolicyAssignmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_iam_policy_assignment::builders::CreateIamPolicyAssignmentInputBuilder,
+}
 impl CreateIAMPolicyAssignmentFluentBuilder  {
     /// Creates a new `CreateIAMPolicyAssignment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_iam_policy_assignment::CreateIAMPolicyAssignment, aws_http::retry::AwsResponseRetryClassifier,>,

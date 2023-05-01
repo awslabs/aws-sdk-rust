@@ -8,16 +8,17 @@ pub use crate::operation::list_device_definition_versions::_list_device_definiti
 /// Lists the versions of a device definition.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeviceDefinitionVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_device_definition_versions::builders::ListDeviceDefinitionVersionsInputBuilder,
+}
 impl ListDeviceDefinitionVersionsFluentBuilder  {
     /// Creates a new `ListDeviceDefinitionVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_device_definition_versions::ListDeviceDefinitionVersions, aws_http::retry::AwsResponseRetryClassifier,>,

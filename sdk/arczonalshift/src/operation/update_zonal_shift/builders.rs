@@ -8,16 +8,17 @@ pub use crate::operation::update_zonal_shift::_update_zonal_shift_input::UpdateZ
 /// <p>Update an active zonal shift in Amazon Route 53 Application Recovery Controller in your AWS account. You can update a zonal shift to set a new expiration, or edit or replace the comment for the zonal shift. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateZonalShiftFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_zonal_shift::builders::UpdateZonalShiftInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_zonal_shift::builders::UpdateZonalShiftInputBuilder,
+}
 impl UpdateZonalShiftFluentBuilder  {
     /// Creates a new `UpdateZonalShift`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_zonal_shift::UpdateZonalShift, aws_http::retry::AwsResponseRetryClassifier,>,

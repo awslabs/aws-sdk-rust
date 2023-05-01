@@ -9,16 +9,17 @@ pub use crate::operation::delete_detector_version::_delete_detector_version_inpu
 /// <p>When you delete a detector version, Amazon Fraud Detector permanently deletes the detector and the data is no longer stored in Amazon Fraud Detector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDetectorVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_detector_version::builders::DeleteDetectorVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_detector_version::builders::DeleteDetectorVersionInputBuilder,
+}
 impl DeleteDetectorVersionFluentBuilder  {
     /// Creates a new `DeleteDetectorVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_detector_version::DeleteDetectorVersion, aws_http::retry::AwsResponseRetryClassifier,>,

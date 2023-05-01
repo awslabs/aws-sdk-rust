@@ -10,16 +10,17 @@ pub use crate::operation::put_channel_membership_preferences::_put_channel_membe
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutChannelMembershipPreferencesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_channel_membership_preferences::builders::PutChannelMembershipPreferencesInputBuilder,
+}
 impl PutChannelMembershipPreferencesFluentBuilder  {
     /// Creates a new `PutChannelMembershipPreferences`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferences, aws_http::retry::AwsResponseRetryClassifier,>,

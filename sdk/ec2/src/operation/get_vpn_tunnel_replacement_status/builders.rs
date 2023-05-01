@@ -8,16 +8,17 @@ pub use crate::operation::get_vpn_tunnel_replacement_status::_get_vpn_tunnel_rep
 /// <p>Get details of available tunnel endpoint maintenance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVpnTunnelReplacementStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_vpn_tunnel_replacement_status::builders::GetVpnTunnelReplacementStatusInputBuilder,
+}
 impl GetVpnTunnelReplacementStatusFluentBuilder  {
     /// Creates a new `GetVpnTunnelReplacementStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatus, aws_http::retry::AwsResponseRetryClassifier,>,

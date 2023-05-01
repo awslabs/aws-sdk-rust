@@ -8,16 +8,17 @@ pub use crate::operation::delete_resource_policy_statement::_delete_resource_pol
 /// <p>Deletes a policy statement from a resource policy. If you delete the last statement from a policy, the policy is deleted. If you specify a statement ID that doesn't exist in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex returns an exception.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteResourcePolicyStatementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_resource_policy_statement::builders::DeleteResourcePolicyStatementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_resource_policy_statement::builders::DeleteResourcePolicyStatementInputBuilder,
+}
 impl DeleteResourcePolicyStatementFluentBuilder  {
     /// Creates a new `DeleteResourcePolicyStatement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatement, aws_http::retry::AwsResponseRetryClassifier,>,

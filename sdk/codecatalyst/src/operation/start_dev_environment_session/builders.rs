@@ -8,16 +8,17 @@ pub use crate::operation::start_dev_environment_session::_start_dev_environment_
 /// <p>Starts a session for a specified Dev Environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDevEnvironmentSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder,
+}
 impl StartDevEnvironmentSessionFluentBuilder  {
     /// Creates a new `StartDevEnvironmentSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_dev_environment_session::StartDevEnvironmentSession, aws_http::retry::AwsResponseRetryClassifier,>,

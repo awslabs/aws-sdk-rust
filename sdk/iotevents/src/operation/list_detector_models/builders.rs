@@ -8,16 +8,17 @@ pub use crate::operation::list_detector_models::_list_detector_models_input::Lis
 /// <p>Lists the detector models you have created. Only the metadata associated with each detector model is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDetectorModelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_detector_models::builders::ListDetectorModelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_detector_models::builders::ListDetectorModelsInputBuilder,
+}
 impl ListDetectorModelsFluentBuilder  {
     /// Creates a new `ListDetectorModels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_detector_models::ListDetectorModels, aws_http::retry::AwsResponseRetryClassifier,>,

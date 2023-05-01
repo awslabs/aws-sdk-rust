@@ -9,16 +9,17 @@ pub use crate::operation::unshare_application::_unshare_application_input::Unsha
 /// <p>This operation can be called only from the organization's master account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UnshareApplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::unshare_application::builders::UnshareApplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::unshare_application::builders::UnshareApplicationInputBuilder,
+}
 impl UnshareApplicationFluentBuilder  {
     /// Creates a new `UnshareApplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::unshare_application::UnshareApplication, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::start_failback_launch::_start_failback_launch_input::S
 /// <p>Initiates a Job for launching the machine that is being failed back to from the specified Recovery Instance. This will run conversion on the failback client and will reboot your machine, thus completing the failback process.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartFailbackLaunchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_failback_launch::builders::StartFailbackLaunchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_failback_launch::builders::StartFailbackLaunchInputBuilder,
+}
 impl StartFailbackLaunchFluentBuilder  {
     /// Creates a new `StartFailbackLaunch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_failback_launch::StartFailbackLaunch, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_object::_create_object_input::CreateObjectInput
 /// <p>Creates an object in a <code>Directory</code>. Additionally attaches the object to a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a collection of <code>Facet</code> attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateObjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_object::builders::CreateObjectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_object::builders::CreateObjectInputBuilder,
+}
 impl CreateObjectFluentBuilder  {
     /// Creates a new `CreateObject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_object::CreateObject, aws_http::retry::AwsResponseRetryClassifier,>,

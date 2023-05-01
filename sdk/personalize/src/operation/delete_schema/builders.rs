@@ -8,16 +8,17 @@ pub use crate::operation::delete_schema::_delete_schema_input::DeleteSchemaInput
 /// <p>Deletes a schema. Before deleting a schema, you must delete all datasets referencing the schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSchemaFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_schema::builders::DeleteSchemaInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_schema::builders::DeleteSchemaInputBuilder,
+}
 impl DeleteSchemaFluentBuilder  {
     /// Creates a new `DeleteSchema`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_schema::DeleteSchema, aws_http::retry::AwsResponseRetryClassifier,>,

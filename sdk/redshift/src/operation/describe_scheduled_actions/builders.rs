@@ -8,16 +8,17 @@ pub use crate::operation::describe_scheduled_actions::_describe_scheduled_action
 /// <p>Describes properties of scheduled actions. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeScheduledActionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_scheduled_actions::builders::DescribeScheduledActionsInputBuilder,
+}
 impl DescribeScheduledActionsFluentBuilder  {
     /// Creates a new `DescribeScheduledActions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_scheduled_actions::DescribeScheduledActions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeScheduledActionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator {
-                            crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator {
+                                crate::operation::describe_scheduled_actions::paginator::DescribeScheduledActionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the scheduled action to retrieve. </p>
     pub fn scheduled_action_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_name(input.into());

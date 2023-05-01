@@ -17,16 +17,17 @@ pub use crate::operation::create_members::_create_members_input::CreateMembersIn
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMembersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_members::builders::CreateMembersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_members::builders::CreateMembersInputBuilder,
+}
 impl CreateMembersFluentBuilder  {
     /// Creates a new `CreateMembers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_members::CreateMembers, aws_http::retry::AwsResponseRetryClassifier,>,

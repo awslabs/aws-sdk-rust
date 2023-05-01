@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_transit_gateway_connect_peer::_disassocia
 /// <p>Disassociates a transit gateway Connect peer from a device and link.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateTransitGatewayConnectPeerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_transit_gateway_connect_peer::builders::DisassociateTransitGatewayConnectPeerInputBuilder,
+}
 impl DisassociateTransitGatewayConnectPeerFluentBuilder  {
     /// Creates a new `DisassociateTransitGatewayConnectPeer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_transit_gateway_connect_peer::DisassociateTransitGatewayConnectPeer, aws_http::retry::AwsResponseRetryClassifier,>,

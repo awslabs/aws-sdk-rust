@@ -8,16 +8,17 @@ pub use crate::operation::put_verification_state_on_violation::_put_verification
 /// <p>Set a verification state and provide a description of that verification state on a violation (detect alarm).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutVerificationStateOnViolationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_verification_state_on_violation::builders::PutVerificationStateOnViolationInputBuilder,
+}
 impl PutVerificationStateOnViolationFluentBuilder  {
     /// Creates a new `PutVerificationStateOnViolation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_verification_state_on_violation::PutVerificationStateOnViolation, aws_http::retry::AwsResponseRetryClassifier,>,

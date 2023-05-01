@@ -8,16 +8,17 @@ pub use crate::operation::list_email_identities::_list_email_identities_input::L
 /// <p>Returns a list of all of the email identities that are associated with your Amazon Pinpoint account. An identity can be either an email address or a domain. This operation returns identities that are verified as well as those that aren't.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEmailIdentitiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_email_identities::builders::ListEmailIdentitiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_email_identities::builders::ListEmailIdentitiesInputBuilder,
+}
 impl ListEmailIdentitiesFluentBuilder  {
     /// Creates a new `ListEmailIdentities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_email_identities::ListEmailIdentities, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEmailIdentitiesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_email_identities::paginator::ListEmailIdentitiesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_email_identities::paginator::ListEmailIdentitiesPaginator {
-                            crate::operation::list_email_identities::paginator::ListEmailIdentitiesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_email_identities::paginator::ListEmailIdentitiesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_email_identities::paginator::ListEmailIdentitiesPaginator {
+                                crate::operation::list_email_identities::paginator::ListEmailIdentitiesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token returned from a previous call to <code>ListEmailIdentities</code> to indicate the position in the list of identities.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

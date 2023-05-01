@@ -8,16 +8,17 @@ pub use crate::operation::update_dashboard_published_version::_update_dashboard_
 /// <p>Updates the published version of a dashboard.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDashboardPublishedVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_dashboard_published_version::builders::UpdateDashboardPublishedVersionInputBuilder,
+}
 impl UpdateDashboardPublishedVersionFluentBuilder  {
     /// Creates a new `UpdateDashboardPublishedVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_dashboard_published_version::UpdateDashboardPublishedVersion, aws_http::retry::AwsResponseRetryClassifier,>,

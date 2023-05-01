@@ -8,16 +8,17 @@ pub use crate::operation::get_workflow_step_execution::_get_workflow_step_execut
 /// <p>Get the runtime information that was logged for a specific runtime instance of the workflow step.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetWorkflowStepExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionInputBuilder,
+}
 impl GetWorkflowStepExecutionFluentBuilder  {
     /// Creates a new `GetWorkflowStepExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_workflow_step_execution::GetWorkflowStepExecution, aws_http::retry::AwsResponseRetryClassifier,>,

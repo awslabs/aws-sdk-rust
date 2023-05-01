@@ -10,16 +10,17 @@ pub use crate::operation::list_journal_kinesis_streams_for_ledger::_list_journal
 /// <p>This action returns a maximum of <code>MaxResults</code> items. It is paginated so that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListJournalKinesisStreamsForLedgerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_journal_kinesis_streams_for_ledger::builders::ListJournalKinesisStreamsForLedgerInputBuilder,
+}
 impl ListJournalKinesisStreamsForLedgerFluentBuilder  {
     /// Creates a new `ListJournalKinesisStreamsForLedger`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_journal_kinesis_streams_for_ledger::ListJournalKinesisStreamsForLedger, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListJournalKinesisStreamsForLedgerFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator {
-                            crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator {
+                                crate::operation::list_journal_kinesis_streams_for_ledger::paginator::ListJournalKinesisStreamsForLedgerPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the ledger.</p>
     pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ledger_name(input.into());

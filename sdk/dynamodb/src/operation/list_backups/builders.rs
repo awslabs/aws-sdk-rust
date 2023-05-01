@@ -10,16 +10,17 @@ pub use crate::operation::list_backups::_list_backups_input::ListBackupsInputBui
 /// <p>You can call <code>ListBackups</code> a maximum of five times per second.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBackupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_backups::builders::ListBackupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_backups::builders::ListBackupsInputBuilder,
+}
 impl ListBackupsFluentBuilder  {
     /// Creates a new `ListBackups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_backups::ListBackups, aws_http::retry::AwsResponseRetryClassifier,>,

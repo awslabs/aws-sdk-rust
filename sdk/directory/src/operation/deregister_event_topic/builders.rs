@@ -8,16 +8,17 @@ pub use crate::operation::deregister_event_topic::_deregister_event_topic_input:
 /// <p>Removes the specified directory as a publisher to the specified Amazon SNS topic.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterEventTopicFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_event_topic::builders::DeregisterEventTopicInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_event_topic::builders::DeregisterEventTopicInputBuilder,
+}
 impl DeregisterEventTopicFluentBuilder  {
     /// Creates a new `DeregisterEventTopic`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_event_topic::DeregisterEventTopic, aws_http::retry::AwsResponseRetryClassifier,>,

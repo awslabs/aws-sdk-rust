@@ -8,16 +8,17 @@ pub use crate::operation::get_provisioned_concurrency_config::_get_provisioned_c
 /// <p>Retrieves the provisioned concurrency configuration for a function's alias or version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetProvisionedConcurrencyConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_provisioned_concurrency_config::builders::GetProvisionedConcurrencyConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_provisioned_concurrency_config::builders::GetProvisionedConcurrencyConfigInputBuilder,
+}
 impl GetProvisionedConcurrencyConfigFluentBuilder  {
     /// Creates a new `GetProvisionedConcurrencyConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_provisioned_concurrency_config::GetProvisionedConcurrencyConfig, aws_http::retry::AwsResponseRetryClassifier,>,

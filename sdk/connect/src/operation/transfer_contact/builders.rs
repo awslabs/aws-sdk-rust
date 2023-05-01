@@ -16,16 +16,17 @@ pub use crate::operation::transfer_contact::_transfer_contact_input::TransferCon
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TransferContactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::transfer_contact::builders::TransferContactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::transfer_contact::builders::TransferContactInputBuilder,
+}
 impl TransferContactFluentBuilder  {
     /// Creates a new `TransferContact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::transfer_contact::TransferContact, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::stop_processing_job::_stop_processing_job_input::StopP
 /// <p>Stops a processing job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopProcessingJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_processing_job::builders::StopProcessingJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_processing_job::builders::StopProcessingJobInputBuilder,
+}
 impl StopProcessingJobFluentBuilder  {
     /// Creates a new `StopProcessingJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_processing_job::StopProcessingJob, aws_http::retry::AwsResponseRetryClassifier,>,

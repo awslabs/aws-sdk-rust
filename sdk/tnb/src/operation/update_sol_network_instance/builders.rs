@@ -9,16 +9,17 @@ pub use crate::operation::update_sol_network_instance::_update_sol_network_insta
 /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSolNetworkInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_sol_network_instance::builders::UpdateSolNetworkInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_sol_network_instance::builders::UpdateSolNetworkInstanceInputBuilder,
+}
 impl UpdateSolNetworkInstanceFluentBuilder  {
     /// Creates a new `UpdateSolNetworkInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_sol_network_instance::UpdateSolNetworkInstance, aws_http::retry::AwsResponseRetryClassifier,>,

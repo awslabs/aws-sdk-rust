@@ -8,16 +8,17 @@ pub use crate::operation::get_finding::_get_finding_input::GetFindingInputBuilde
 /// <p>Retrieves information about the specified finding.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFindingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_finding::builders::GetFindingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_finding::builders::GetFindingInputBuilder,
+}
 impl GetFindingFluentBuilder  {
     /// Creates a new `GetFinding`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_finding::GetFinding, aws_http::retry::AwsResponseRetryClassifier,>,

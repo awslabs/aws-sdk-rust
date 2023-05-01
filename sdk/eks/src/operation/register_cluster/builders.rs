@@ -12,16 +12,17 @@ pub use crate::operation::register_cluster::_register_cluster_input::RegisterClu
 /// <p>After the Manifest is updated and applied, then the connected cluster is visible to the Amazon EKS control plane. If the Manifest is not applied within three days, then the connected cluster will no longer be visible and must be deregistered. See <code>DeregisterCluster</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_cluster::builders::RegisterClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_cluster::builders::RegisterClusterInputBuilder,
+}
 impl RegisterClusterFluentBuilder  {
     /// Creates a new `RegisterCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_cluster::RegisterCluster, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::set_tags_for_resource::_set_tags_for_resource_input::S
 /// <p>Sets tags (key and value pairs) to the assessment template that is specified by the ARN of the assessment template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetTagsForResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_tags_for_resource::builders::SetTagsForResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_tags_for_resource::builders::SetTagsForResourceInputBuilder,
+}
 impl SetTagsForResourceFluentBuilder  {
     /// Creates a new `SetTagsForResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_tags_for_resource::SetTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,

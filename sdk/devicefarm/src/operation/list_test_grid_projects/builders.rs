@@ -8,16 +8,17 @@ pub use crate::operation::list_test_grid_projects::_list_test_grid_projects_inpu
 /// <p>Gets a list of all Selenium testing projects in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTestGridProjectsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_test_grid_projects::builders::ListTestGridProjectsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_test_grid_projects::builders::ListTestGridProjectsInputBuilder,
+}
 impl ListTestGridProjectsFluentBuilder  {
     /// Creates a new `ListTestGridProjects`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_test_grid_projects::ListTestGridProjects, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTestGridProjectsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator {
-                            crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator {
+                                crate::operation::list_test_grid_projects::paginator::ListTestGridProjectsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Return no more than this number of results.</p>
     pub fn max_result(mut self, input: i32) -> Self {
         self.inner = self.inner.max_result(input);

@@ -9,16 +9,17 @@ pub use crate::operation::list_identity_pools::_list_identity_pools_input::ListI
 /// <p>You must use AWS Developer credentials to call this API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIdentityPoolsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_identity_pools::builders::ListIdentityPoolsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_identity_pools::builders::ListIdentityPoolsInputBuilder,
+}
 impl ListIdentityPoolsFluentBuilder  {
     /// Creates a new `ListIdentityPools`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_identity_pools::ListIdentityPools, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListIdentityPoolsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_identity_pools::paginator::ListIdentityPoolsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_identity_pools::paginator::ListIdentityPoolsPaginator {
-                            crate::operation::list_identity_pools::paginator::ListIdentityPoolsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_identity_pools::paginator::ListIdentityPoolsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_identity_pools::paginator::ListIdentityPoolsPaginator {
+                                crate::operation::list_identity_pools::paginator::ListIdentityPoolsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of identities to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

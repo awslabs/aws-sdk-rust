@@ -14,16 +14,17 @@ pub use crate::operation::get_face_search::_get_face_search_input::GetFaceSearch
 /// <p>By default, the <code>Persons</code> array is sorted by the time, in milliseconds from the start of the video, persons are matched. You can also sort by persons by specifying <code>INDEX</code> for the <code>SORTBY</code> input parameter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFaceSearchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_face_search::builders::GetFaceSearchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_face_search::builders::GetFaceSearchInputBuilder,
+}
 impl GetFaceSearchFluentBuilder  {
     /// Creates a new `GetFaceSearch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_face_search::GetFaceSearch, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -54,11 +55,11 @@ impl GetFaceSearchFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_face_search::paginator::GetFaceSearchPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_face_search::paginator::GetFaceSearchPaginator {
-                            crate::operation::get_face_search::paginator::GetFaceSearchPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_face_search::paginator::GetFaceSearchPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_face_search::paginator::GetFaceSearchPaginator {
+                                crate::operation::get_face_search::paginator::GetFaceSearchPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The job identifer for the search request. You get the job identifier from an initial call to <code>StartFaceSearch</code>.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());

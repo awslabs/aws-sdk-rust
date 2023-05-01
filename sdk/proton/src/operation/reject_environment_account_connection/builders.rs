@@ -11,16 +11,17 @@ pub use crate::operation::reject_environment_account_connection::_reject_environ
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RejectEnvironmentAccountConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reject_environment_account_connection::builders::RejectEnvironmentAccountConnectionInputBuilder,
+}
 impl RejectEnvironmentAccountConnectionFluentBuilder  {
     /// Creates a new `RejectEnvironmentAccountConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnection, aws_http::retry::AwsResponseRetryClassifier,>,

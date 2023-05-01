@@ -8,16 +8,17 @@ pub use crate::operation::get_application_component_strategies::_get_application
 /// <p> Retrieves a list of all the recommended strategies and tools for an application component running on a server. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetApplicationComponentStrategiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesInputBuilder,
+}
 impl GetApplicationComponentStrategiesFluentBuilder  {
     /// Creates a new `GetApplicationComponentStrategies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_application_component_strategies::GetApplicationComponentStrategies, aws_http::retry::AwsResponseRetryClassifier,>,

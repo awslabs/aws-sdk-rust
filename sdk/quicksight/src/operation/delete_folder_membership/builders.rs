@@ -8,16 +8,17 @@ pub use crate::operation::delete_folder_membership::_delete_folder_membership_in
 /// <p>Removes an asset, such as a dashboard, analysis, or dataset, from a folder.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFolderMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_folder_membership::builders::DeleteFolderMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_folder_membership::builders::DeleteFolderMembershipInputBuilder,
+}
 impl DeleteFolderMembershipFluentBuilder  {
     /// Creates a new `DeleteFolderMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_folder_membership::DeleteFolderMembership, aws_http::retry::AwsResponseRetryClassifier,>,

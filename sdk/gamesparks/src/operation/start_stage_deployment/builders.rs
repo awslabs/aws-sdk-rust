@@ -10,16 +10,17 @@ pub use crate::operation::start_stage_deployment::_start_stage_deployment_input:
 /// <p> If there are any players connected to the previous game runtime, then both runtimes persist. Existing connections to the previous runtime are maintained. When players disconnect and reconnect, they connect to the new runtime. After there are no connections to the previous game runtime, it is deleted. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartStageDeploymentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_stage_deployment::builders::StartStageDeploymentInputBuilder,
+}
 impl StartStageDeploymentFluentBuilder  {
     /// Creates a new `StartStageDeployment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_stage_deployment::StartStageDeployment, aws_http::retry::AwsResponseRetryClassifier,>,

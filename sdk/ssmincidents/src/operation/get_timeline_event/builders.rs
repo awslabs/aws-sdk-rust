@@ -8,16 +8,17 @@ pub use crate::operation::get_timeline_event::_get_timeline_event_input::GetTime
 /// <p>Retrieves a timeline event based on its ID and incident record.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTimelineEventFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_timeline_event::builders::GetTimelineEventInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_timeline_event::builders::GetTimelineEventInputBuilder,
+}
 impl GetTimelineEventFluentBuilder  {
     /// Creates a new `GetTimelineEvent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_timeline_event::GetTimelineEvent, aws_http::retry::AwsResponseRetryClassifier,>,

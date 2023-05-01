@@ -8,16 +8,17 @@ pub use crate::operation::create_pipe::_create_pipe_input::CreatePipeInputBuilde
 /// <p>Create a pipe. Amazon EventBridge Pipes connect event sources to targets and reduces the need for specialized knowledge and integration code.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePipeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_pipe::builders::CreatePipeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_pipe::builders::CreatePipeInputBuilder,
+}
 impl CreatePipeFluentBuilder  {
     /// Creates a new `CreatePipe`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_pipe::CreatePipe, aws_http::retry::AwsResponseRetryClassifier,>,

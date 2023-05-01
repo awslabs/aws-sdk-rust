@@ -8,16 +8,17 @@ pub use crate::operation::get_lineage_group_policy::_get_lineage_group_policy_in
 /// <p>The resource policy for the lineage group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLineageGroupPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyInputBuilder,
+}
 impl GetLineageGroupPolicyFluentBuilder  {
     /// Creates a new `GetLineageGroupPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_lineage_group_policy::GetLineageGroupPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

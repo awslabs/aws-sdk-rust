@@ -8,16 +8,17 @@ pub use crate::operation::describe_transit_gateways::_describe_transit_gateways_
 /// <p>Describes one or more transit gateways. By default, all transit gateways are described. Alternatively, you can filter the results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTransitGatewaysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_transit_gateways::builders::DescribeTransitGatewaysInputBuilder,
+}
 impl DescribeTransitGatewaysFluentBuilder  {
     /// Creates a new `DescribeTransitGateways`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_transit_gateways::DescribeTransitGateways, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeTransitGatewaysFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_transit_gateways::paginator::DescribeTransitGatewaysPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_transit_gateways::paginator::DescribeTransitGatewaysPaginator {
-                            crate::operation::describe_transit_gateways::paginator::DescribeTransitGatewaysPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_transit_gateways::paginator::DescribeTransitGatewaysPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_transit_gateways::paginator::DescribeTransitGatewaysPaginator {
+                                crate::operation::describe_transit_gateways::paginator::DescribeTransitGatewaysPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TransitGatewayIds`.
     ///
     /// To override the contents of this collection use [`set_transit_gateway_ids`](Self::set_transit_gateway_ids).

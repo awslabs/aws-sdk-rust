@@ -8,16 +8,17 @@ pub use crate::operation::describe_schedule::_describe_schedule_input::DescribeS
 /// Get a channel schedule
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_schedule::builders::DescribeScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_schedule::builders::DescribeScheduleInputBuilder,
+}
 impl DescribeScheduleFluentBuilder  {
     /// Creates a new `DescribeSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_schedule::DescribeSchedule, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeScheduleFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_schedule::paginator::DescribeSchedulePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_schedule::paginator::DescribeSchedulePaginator {
-                            crate::operation::describe_schedule::paginator::DescribeSchedulePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_schedule::paginator::DescribeSchedulePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_schedule::paginator::DescribeSchedulePaginator {
+                                crate::operation::describe_schedule::paginator::DescribeSchedulePaginator::new(self.handle, self.inner)
+                            }
     /// Id of the channel whose schedule is being updated.
     pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.channel_id(input.into());

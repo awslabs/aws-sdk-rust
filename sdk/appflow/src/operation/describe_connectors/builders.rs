@@ -8,16 +8,17 @@ pub use crate::operation::describe_connectors::_describe_connectors_input::Descr
 /// <p> Describes the connectors vended by Amazon AppFlow for specified connector types. If you don't specify a connector type, this operation describes all connectors vended by Amazon AppFlow. If there are more connectors than can be returned in one page, the response contains a <code>nextToken</code> object, which can be be passed in to the next call to the <code>DescribeConnectors</code> API operation to retrieve the next page. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConnectorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_connectors::builders::DescribeConnectorsInputBuilder,
+}
 impl DescribeConnectorsFluentBuilder  {
     /// Creates a new `DescribeConnectors`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_connectors::DescribeConnectors, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeConnectorsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator {
-                            crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator {
+                                crate::operation::describe_connectors::paginator::DescribeConnectorsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `connectorTypes`.
     ///
     /// To override the contents of this collection use [`set_connector_types`](Self::set_connector_types).

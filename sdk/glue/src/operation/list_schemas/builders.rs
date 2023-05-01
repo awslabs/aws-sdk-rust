@@ -9,16 +9,17 @@ pub use crate::operation::list_schemas::_list_schemas_input::ListSchemasInputBui
 /// <p>When the <code>RegistryId</code> is not provided, all the schemas across registries will be part of the API response.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSchemasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_schemas::builders::ListSchemasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_schemas::builders::ListSchemasInputBuilder,
+}
 impl ListSchemasFluentBuilder  {
     /// Creates a new `ListSchemas`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_schemas::ListSchemas, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListSchemasFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_schemas::paginator::ListSchemasPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_schemas::paginator::ListSchemasPaginator {
-                            crate::operation::list_schemas::paginator::ListSchemasPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_schemas::paginator::ListSchemasPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_schemas::paginator::ListSchemasPaginator {
+                                crate::operation::list_schemas::paginator::ListSchemasPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
     pub fn registry_id(mut self, input: crate::types::RegistryId) -> Self {
         self.inner = self.inner.registry_id(input);

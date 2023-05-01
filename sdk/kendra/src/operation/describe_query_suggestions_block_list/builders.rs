@@ -10,16 +10,17 @@ pub use crate::operation::describe_query_suggestions_block_list::_describe_query
 /// <p> <code>DescribeQuerySuggestionsBlockList</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeQuerySuggestionsBlockListFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListInputBuilder,
+}
 impl DescribeQuerySuggestionsBlockListFluentBuilder  {
     /// Creates a new `DescribeQuerySuggestionsBlockList`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockList, aws_http::retry::AwsResponseRetryClassifier,>,

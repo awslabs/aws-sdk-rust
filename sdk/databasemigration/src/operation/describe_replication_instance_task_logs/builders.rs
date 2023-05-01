@@ -8,16 +8,17 @@ pub use crate::operation::describe_replication_instance_task_logs::_describe_rep
 /// <p>Returns information about the task logs for the specified task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReplicationInstanceTaskLogsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_replication_instance_task_logs::builders::DescribeReplicationInstanceTaskLogsInputBuilder,
+}
 impl DescribeReplicationInstanceTaskLogsFluentBuilder  {
     /// Creates a new `DescribeReplicationInstanceTaskLogs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_replication_instance_task_logs::DescribeReplicationInstanceTaskLogs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeReplicationInstanceTaskLogsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_instance_task_logs::paginator::DescribeReplicationInstanceTaskLogsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_replication_instance_task_logs::paginator::DescribeReplicationInstanceTaskLogsPaginator {
-                            crate::operation::describe_replication_instance_task_logs::paginator::DescribeReplicationInstanceTaskLogsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_instance_task_logs::paginator::DescribeReplicationInstanceTaskLogsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_replication_instance_task_logs::paginator::DescribeReplicationInstanceTaskLogsPaginator {
+                                crate::operation::describe_replication_instance_task_logs::paginator::DescribeReplicationInstanceTaskLogsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.replication_instance_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::list_uploads::_list_uploads_input::ListUploadsInputBui
 /// <p>Gets information about uploads, given an AWS Device Farm project ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListUploadsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_uploads::builders::ListUploadsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_uploads::builders::ListUploadsInputBuilder,
+}
 impl ListUploadsFluentBuilder  {
     /// Creates a new `ListUploads`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_uploads::ListUploads, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListUploadsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_uploads::paginator::ListUploadsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_uploads::paginator::ListUploadsPaginator {
-                            crate::operation::list_uploads::paginator::ListUploadsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_uploads::paginator::ListUploadsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_uploads::paginator::ListUploadsPaginator {
+                                crate::operation::list_uploads::paginator::ListUploadsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());

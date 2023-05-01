@@ -9,16 +9,17 @@ pub use crate::operation::list_phone_numbers_v2::_list_phone_numbers_v2_input::L
 /// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPhoneNumbersV2FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_phone_numbers_v2::builders::ListPhoneNumbersV2InputBuilder,
+}
 impl ListPhoneNumbersV2FluentBuilder  {
     /// Creates a new `ListPhoneNumbersV2`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListPhoneNumbersV2FluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator {
-                            crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator {
+                                crate::operation::list_phone_numbers_v2::paginator::ListPhoneNumbersV2Paginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution groups that phone numbers are claimed to. If <code>TargetArn</code> input is not provided, this API lists numbers claimed to all the Amazon Connect instances belonging to your account in the same Amazon Web Services Region as the request.</p>
     pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.target_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::merge_branches_by_fast_forward::_merge_branches_by_fas
 /// <p>Merges two branches using the fast-forward merge strategy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct MergeBranchesByFastForwardFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::merge_branches_by_fast_forward::builders::MergeBranchesByFastForwardInputBuilder,
+}
 impl MergeBranchesByFastForwardFluentBuilder  {
     /// Creates a new `MergeBranchesByFastForward`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForward, aws_http::retry::AwsResponseRetryClassifier,>,

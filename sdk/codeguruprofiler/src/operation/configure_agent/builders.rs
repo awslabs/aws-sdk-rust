@@ -8,16 +8,17 @@ pub use crate::operation::configure_agent::_configure_agent_input::ConfigureAgen
 /// <p> Used by profiler agents to report their current state and to receive remote configuration updates. For example, <code>ConfigureAgent</code> can be used to tell an agent whether to profile or not and for how long to return profiling data. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfigureAgentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::configure_agent::builders::ConfigureAgentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::configure_agent::builders::ConfigureAgentInputBuilder,
+}
 impl ConfigureAgentFluentBuilder  {
     /// Creates a new `ConfigureAgent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::configure_agent::ConfigureAgent, aws_http::retry::AwsResponseRetryClassifier,>,

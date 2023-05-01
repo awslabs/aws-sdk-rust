@@ -8,16 +8,17 @@ pub use crate::operation::start_configuration_session::_start_configuration_sess
 /// <p>Starts a configuration session used to retrieve a deployed configuration. For more information about this API action and to view example CLI commands that show how to use it with the <code>GetLatestConfiguration</code> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving the configuration</a> in the <i>AppConfig User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartConfigurationSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder,
+}
 impl StartConfigurationSessionFluentBuilder  {
     /// Creates a new `StartConfigurationSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_configuration_session::StartConfigurationSession, aws_http::retry::AwsResponseRetryClassifier,>,

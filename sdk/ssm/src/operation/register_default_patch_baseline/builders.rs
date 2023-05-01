@@ -9,16 +9,17 @@ pub use crate::operation::register_default_patch_baseline::_register_default_pat
 /// <p>To reset the Amazon Web Services-predefined patch baseline as the default, specify the full patch baseline Amazon Resource Name (ARN) as the baseline ID value. For example, for CentOS, specify <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code> instead of <code>pb-0574b43a65ea646ed</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterDefaultPatchBaselineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineInputBuilder,
+}
 impl RegisterDefaultPatchBaselineFluentBuilder  {
     /// Creates a new `RegisterDefaultPatchBaseline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaseline, aws_http::retry::AwsResponseRetryClassifier,>,

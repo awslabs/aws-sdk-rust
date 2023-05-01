@@ -8,16 +8,17 @@ pub use crate::operation::get_assessment_report_url::_get_assessment_report_url_
 /// <p> Returns the URL of an assessment report in Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssessmentReportUrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_assessment_report_url::builders::GetAssessmentReportUrlInputBuilder,
+}
 impl GetAssessmentReportUrlFluentBuilder  {
     /// Creates a new `GetAssessmentReportUrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_assessment_report_url::GetAssessmentReportUrl, aws_http::retry::AwsResponseRetryClassifier,>,

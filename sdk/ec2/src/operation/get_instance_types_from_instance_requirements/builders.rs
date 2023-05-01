@@ -10,16 +10,17 @@ pub use crate::operation::get_instance_types_from_instance_requirements::_get_in
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html#spotfleet-get-instance-types-from-instance-requirements">Preview instance types with specified attributes</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot placement score</a> in the <i>Amazon EC2 User Guide</i>, and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInstanceTypesFromInstanceRequirementsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_instance_types_from_instance_requirements::builders::GetInstanceTypesFromInstanceRequirementsInputBuilder,
+}
 impl GetInstanceTypesFromInstanceRequirementsFluentBuilder  {
     /// Creates a new `GetInstanceTypesFromInstanceRequirements`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirements, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl GetInstanceTypesFromInstanceRequirementsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator {
-                            crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator {
+                                crate::operation::get_instance_types_from_instance_requirements::paginator::GetInstanceTypesFromInstanceRequirementsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

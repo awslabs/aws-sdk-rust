@@ -10,16 +10,17 @@ pub use crate::operation::delete_cache_policy::_delete_cache_policy_input::Delet
 /// <p>To delete a cache policy, you must provide the policy's identifier and version. To get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCachePolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_cache_policy::builders::DeleteCachePolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_cache_policy::builders::DeleteCachePolicyInputBuilder,
+}
 impl DeleteCachePolicyFluentBuilder  {
     /// Creates a new `DeleteCachePolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_cache_policy::DeleteCachePolicy, aws_http::retry::AwsResponseRetryClassifier,>,

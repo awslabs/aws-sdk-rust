@@ -11,16 +11,17 @@ pub use crate::operation::delete_health_check::_delete_health_check_input::Delet
 /// <p>If you're using Cloud Map and you configured Cloud Map to create a Route 53 health check when you register an instance, you can't use the Route 53 <code>DeleteHealthCheck</code> command to delete the health check. The health check is deleted automatically when you deregister the instance; there can be a delay of several hours before the health check is deleted from Route 53. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteHealthCheckFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_health_check::builders::DeleteHealthCheckInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_health_check::builders::DeleteHealthCheckInputBuilder,
+}
 impl DeleteHealthCheckFluentBuilder  {
     /// Creates a new `DeleteHealthCheck`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_health_check::DeleteHealthCheck, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::describe_document_versions::_describe_document_version
 /// <p>By default, only active versions are returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDocumentVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_document_versions::builders::DescribeDocumentVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_document_versions::builders::DescribeDocumentVersionsInputBuilder,
+}
 impl DescribeDocumentVersionsFluentBuilder  {
     /// Creates a new `DescribeDocumentVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_document_versions::DescribeDocumentVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeDocumentVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator {
-                            crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator {
+                                crate::operation::describe_document_versions::paginator::DescribeDocumentVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());

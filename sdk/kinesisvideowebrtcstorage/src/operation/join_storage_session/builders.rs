@@ -13,16 +13,17 @@ pub use crate::operation::join_storage_session::_join_storage_session_input::Joi
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct JoinStorageSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::join_storage_session::builders::JoinStorageSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::join_storage_session::builders::JoinStorageSessionInputBuilder,
+}
 impl JoinStorageSessionFluentBuilder  {
     /// Creates a new `JoinStorageSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::join_storage_session::JoinStorageSession, aws_http::retry::AwsResponseRetryClassifier,>,

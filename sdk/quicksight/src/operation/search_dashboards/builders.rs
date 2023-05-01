@@ -10,16 +10,17 @@ pub use crate::operation::search_dashboards::_search_dashboards_input::SearchDas
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchDashboardsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_dashboards::builders::SearchDashboardsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_dashboards::builders::SearchDashboardsInputBuilder,
+}
 impl SearchDashboardsFluentBuilder  {
     /// Creates a new `SearchDashboards`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_dashboards::SearchDashboards, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl SearchDashboardsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_dashboards::paginator::SearchDashboardsPaginator {
-                            crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_dashboards::paginator::SearchDashboardsPaginator {
+                                crate::operation::search_dashboards::paginator::SearchDashboardsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. </p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());

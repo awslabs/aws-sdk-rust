@@ -8,16 +8,17 @@ pub use crate::operation::list_batch_segment_jobs::_list_batch_segment_jobs_inpu
 /// <p>Gets a list of the batch segment jobs that have been performed off of a solution version that you specify.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBatchSegmentJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsInputBuilder,
+}
 impl ListBatchSegmentJobsFluentBuilder  {
     /// Creates a new `ListBatchSegmentJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_batch_segment_jobs::ListBatchSegmentJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBatchSegmentJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_batch_segment_jobs::paginator::ListBatchSegmentJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_batch_segment_jobs::paginator::ListBatchSegmentJobsPaginator {
-                            crate::operation::list_batch_segment_jobs::paginator::ListBatchSegmentJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_batch_segment_jobs::paginator::ListBatchSegmentJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_batch_segment_jobs::paginator::ListBatchSegmentJobsPaginator {
+                                crate::operation::list_batch_segment_jobs::paginator::ListBatchSegmentJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
     pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.solution_version_arn(input.into());

@@ -10,16 +10,17 @@ pub use crate::operation::list_control_domain_insights::_list_control_domain_ins
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListControlDomainInsightsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_control_domain_insights::builders::ListControlDomainInsightsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_control_domain_insights::builders::ListControlDomainInsightsInputBuilder,
+}
 impl ListControlDomainInsightsFluentBuilder  {
     /// Creates a new `ListControlDomainInsights`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_control_domain_insights::ListControlDomainInsights, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListControlDomainInsightsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator {
-                            crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator {
+                                crate::operation::list_control_domain_insights::paginator::ListControlDomainInsightsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

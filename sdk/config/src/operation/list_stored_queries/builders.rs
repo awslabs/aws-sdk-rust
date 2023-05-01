@@ -8,16 +8,17 @@ pub use crate::operation::list_stored_queries::_list_stored_queries_input::ListS
 /// <p>Lists the stored queries for a single Amazon Web Services account and a single Amazon Web Services Region. The default is 100. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStoredQueriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_stored_queries::builders::ListStoredQueriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_stored_queries::builders::ListStoredQueriesInputBuilder,
+}
 impl ListStoredQueriesFluentBuilder  {
     /// Creates a new `ListStoredQueries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_stored_queries::ListStoredQueries, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListStoredQueriesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_stored_queries::paginator::ListStoredQueriesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_stored_queries::paginator::ListStoredQueriesPaginator {
-                            crate::operation::list_stored_queries::paginator::ListStoredQueriesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_stored_queries::paginator::ListStoredQueriesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_stored_queries::paginator::ListStoredQueriesPaginator {
+                                crate::operation::list_stored_queries::paginator::ListStoredQueriesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

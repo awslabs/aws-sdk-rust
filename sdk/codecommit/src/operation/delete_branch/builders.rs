@@ -8,16 +8,17 @@ pub use crate::operation::delete_branch::_delete_branch_input::DeleteBranchInput
 /// <p>Deletes a branch from a repository, unless that branch is the default branch for the repository. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBranchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_branch::builders::DeleteBranchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_branch::builders::DeleteBranchInputBuilder,
+}
 impl DeleteBranchFluentBuilder  {
     /// Creates a new `DeleteBranch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_branch::DeleteBranch, aws_http::retry::AwsResponseRetryClassifier,>,

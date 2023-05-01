@@ -8,16 +8,17 @@ pub use crate::operation::query_lineage::_query_lineage_input::QueryLineageInput
 /// <p>Use this action to inspect your lineage and discover relationships between entities. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html"> Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct QueryLineageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::query_lineage::builders::QueryLineageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::query_lineage::builders::QueryLineageInputBuilder,
+}
 impl QueryLineageFluentBuilder  {
     /// Creates a new `QueryLineage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::query_lineage::QueryLineage, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl QueryLineageFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::query_lineage::paginator::QueryLineagePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::query_lineage::paginator::QueryLineagePaginator {
-                            crate::operation::query_lineage::paginator::QueryLineagePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::query_lineage::paginator::QueryLineagePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::query_lineage::paginator::QueryLineagePaginator {
+                                crate::operation::query_lineage::paginator::QueryLineagePaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `StartArns`.
     ///
     /// To override the contents of this collection use [`set_start_arns`](Self::set_start_arns).

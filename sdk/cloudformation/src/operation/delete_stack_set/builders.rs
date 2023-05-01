@@ -8,16 +8,17 @@ pub use crate::operation::delete_stack_set::_delete_stack_set_input::DeleteStack
 /// <p>Deletes a stack set. Before you can delete a stack set, all its member stack instances must be deleted. For more information about how to complete this, see <code>DeleteStackInstances</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteStackSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_stack_set::builders::DeleteStackSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_stack_set::builders::DeleteStackSetInputBuilder,
+}
 impl DeleteStackSetFluentBuilder  {
     /// Creates a new `DeleteStackSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_stack_set::DeleteStackSet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -12,16 +12,17 @@ pub use crate::operation::delete_state_machine::_delete_state_machine_input::Del
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteStateMachineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_state_machine::builders::DeleteStateMachineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_state_machine::builders::DeleteStateMachineInputBuilder,
+}
 impl DeleteStateMachineFluentBuilder  {
     /// Creates a new `DeleteStateMachine`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_state_machine::DeleteStateMachine, aws_http::retry::AwsResponseRetryClassifier,>,

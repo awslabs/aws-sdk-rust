@@ -8,16 +8,17 @@ pub use crate::operation::put_email_monitoring_configuration::_put_email_monitor
 /// <p>Creates or updates the email monitoring configuration for a specified organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutEmailMonitoringConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_email_monitoring_configuration::builders::PutEmailMonitoringConfigurationInputBuilder,
+}
 impl PutEmailMonitoringConfigurationFluentBuilder  {
     /// Creates a new `PutEmailMonitoringConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

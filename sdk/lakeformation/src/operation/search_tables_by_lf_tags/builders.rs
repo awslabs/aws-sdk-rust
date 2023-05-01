@@ -8,16 +8,17 @@ pub use crate::operation::search_tables_by_lf_tags::_search_tables_by_lf_tags_in
 /// <p>This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s. This will be used by admins who want to grant user permissions on certain LF-tags. Before making a grant, the admin can use <code>SearchTablesByLFTags</code> to find all resources where the given <code>LFTag</code>s are valid to verify whether the returned resources can be shared.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchTablesByLFTagsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_tables_by_lf_tags::builders::SearchTablesByLfTagsInputBuilder,
+}
 impl SearchTablesByLFTagsFluentBuilder  {
     /// Creates a new `SearchTablesByLFTags`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_tables_by_lf_tags::SearchTablesByLFTags, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchTablesByLFTagsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator {
-                            crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator {
+                                crate::operation::search_tables_by_lf_tags::paginator::SearchTablesByLfTagsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A continuation token, if this is not the first call to retrieve this list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::start_on_demand_app_replication::_start_on_demand_app_
 /// <p>Starts an on-demand replication run for the specified application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartOnDemandAppReplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationInputBuilder,
+}
 impl StartOnDemandAppReplicationFluentBuilder  {
     /// Creates a new `StartOnDemandAppReplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_on_demand_app_replication::StartOnDemandAppReplication, aws_http::retry::AwsResponseRetryClassifier,>,

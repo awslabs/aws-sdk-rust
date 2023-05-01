@@ -10,16 +10,17 @@ pub use crate::operation::describe_keywords::_describe_keywords_input::DescribeK
 /// <p>If you specify a keyword that isn't valid, an Error is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeKeywordsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder,
+}
 impl DescribeKeywordsFluentBuilder  {
     /// Creates a new `DescribeKeywords`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_keywords::DescribeKeywords, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeKeywordsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator {
-                            crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator {
+                                crate::operation::describe_keywords::paginator::DescribeKeywordsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
     pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.origination_identity(input.into());

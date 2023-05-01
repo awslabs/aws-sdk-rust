@@ -10,16 +10,17 @@ pub use crate::operation::update_cluster_version::_update_cluster_version_input:
 /// <p>If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes versions must match the cluster’s Kubernetes version in order to update the cluster to a new Kubernetes version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateClusterVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_cluster_version::builders::UpdateClusterVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_cluster_version::builders::UpdateClusterVersionInputBuilder,
+}
 impl UpdateClusterVersionFluentBuilder  {
     /// Creates a new `UpdateClusterVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_cluster_version::UpdateClusterVersion, aws_http::retry::AwsResponseRetryClassifier,>,

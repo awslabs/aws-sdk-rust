@@ -8,16 +8,17 @@ pub use crate::operation::start_associations_once::_start_associations_once_inpu
 /// <p>Runs an association immediately and only one time. This operation can be helpful when troubleshooting associations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartAssociationsOnceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_associations_once::builders::StartAssociationsOnceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_associations_once::builders::StartAssociationsOnceInputBuilder,
+}
 impl StartAssociationsOnceFluentBuilder  {
     /// Creates a new `StartAssociationsOnce`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_associations_once::StartAssociationsOnce, aws_http::retry::AwsResponseRetryClassifier,>,

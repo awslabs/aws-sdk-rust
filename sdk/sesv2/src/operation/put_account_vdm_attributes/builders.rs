@@ -9,16 +9,17 @@ pub use crate::operation::put_account_vdm_attributes::_put_account_vdm_attribute
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAccountVdmAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_account_vdm_attributes::builders::PutAccountVdmAttributesInputBuilder,
+}
 impl PutAccountVdmAttributesFluentBuilder  {
     /// Creates a new `PutAccountVdmAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_account_vdm_attributes::PutAccountVdmAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

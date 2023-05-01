@@ -8,16 +8,17 @@ pub use crate::operation::batch_delete_scheduled_action::_batch_delete_scheduled
 /// <p>Deletes one or more scheduled actions for the specified Auto Scaling group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteScheduledActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_scheduled_action::builders::BatchDeleteScheduledActionInputBuilder,
+}
 impl BatchDeleteScheduledActionFluentBuilder  {
     /// Creates a new `BatchDeleteScheduledAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_scheduled_action::BatchDeleteScheduledAction, aws_http::retry::AwsResponseRetryClassifier,>,

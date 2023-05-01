@@ -8,16 +8,17 @@ pub use crate::operation::delete_notification_channel::_delete_notification_chan
 /// <p>Deletes an Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS) topic that is used to record Firewall Manager SNS logs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNotificationChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_notification_channel::builders::DeleteNotificationChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_notification_channel::builders::DeleteNotificationChannelInputBuilder,
+}
 impl DeleteNotificationChannelFluentBuilder  {
     /// Creates a new `DeleteNotificationChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_notification_channel::DeleteNotificationChannel, aws_http::retry::AwsResponseRetryClassifier,>,

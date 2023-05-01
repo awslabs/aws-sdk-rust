@@ -8,16 +8,17 @@ pub use crate::operation::cancel_data_quality_rule_recommendation_run::_cancel_d
 /// <p>Cancels the specified recommendation run that was being used to generate rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelDataQualityRuleRecommendationRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunInputBuilder,
+}
 impl CancelDataQualityRuleRecommendationRunFluentBuilder  {
     /// Creates a new `CancelDataQualityRuleRecommendationRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRun, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_service_action_from_provisioning_artifact
 /// <p>Disassociates the specified self-service action association from the specified provisioning artifact.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateServiceActionFromProvisioningArtifactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_service_action_from_provisioning_artifact::builders::DisassociateServiceActionFromProvisioningArtifactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_service_action_from_provisioning_artifact::builders::DisassociateServiceActionFromProvisioningArtifactInputBuilder,
+}
 impl DisassociateServiceActionFromProvisioningArtifactFluentBuilder  {
     /// Creates a new `DisassociateServiceActionFromProvisioningArtifact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifact, aws_http::retry::AwsResponseRetryClassifier,>,

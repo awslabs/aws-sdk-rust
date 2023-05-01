@@ -8,16 +8,17 @@ pub use crate::operation::update_action_type::_update_action_type_input::UpdateA
 /// <p>Updates an action type that was created with any supported integration model, where the action type is to be used by customers of the action type provider. Use a JSON file with the action definition and <code>UpdateActionType</code> to provide the full structure.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateActionTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_action_type::builders::UpdateActionTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_action_type::builders::UpdateActionTypeInputBuilder,
+}
 impl UpdateActionTypeFluentBuilder  {
     /// Creates a new `UpdateActionType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_action_type::UpdateActionType, aws_http::retry::AwsResponseRetryClassifier,>,

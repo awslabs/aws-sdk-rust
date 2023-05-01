@@ -8,16 +8,17 @@ pub use crate::operation::list_extensible_source_servers::_list_extensible_sourc
 /// <p>Returns a list of source servers on a staging account that are extensible, which means that: a. The source server is not already extended into this Account. b. The source server on the Account we’re reading from is not an extension of another source server. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListExtensibleSourceServersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersInputBuilder,
+}
 impl ListExtensibleSourceServersFluentBuilder  {
     /// Creates a new `ListExtensibleSourceServers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_extensible_source_servers::ListExtensibleSourceServers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListExtensibleSourceServersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_extensible_source_servers::paginator::ListExtensibleSourceServersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_extensible_source_servers::paginator::ListExtensibleSourceServersPaginator {
-                            crate::operation::list_extensible_source_servers::paginator::ListExtensibleSourceServersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_extensible_source_servers::paginator::ListExtensibleSourceServersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_extensible_source_servers::paginator::ListExtensibleSourceServersPaginator {
+                                crate::operation::list_extensible_source_servers::paginator::ListExtensibleSourceServersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
     pub fn staging_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.staging_account_id(input.into());

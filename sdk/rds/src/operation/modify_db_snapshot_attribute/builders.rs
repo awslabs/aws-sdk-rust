@@ -13,16 +13,17 @@ pub use crate::operation::modify_db_snapshot_attribute::_modify_db_snapshot_attr
 /// <p>To view which Amazon Web Services accounts have access to copy or restore a manual DB snapshot, or whether a manual DB snapshot public or private, use the <code>DescribeDBSnapshotAttributes</code> API operation. The accounts are returned as values for the <code>restore</code> attribute.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDBSnapshotAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_db_snapshot_attribute::builders::ModifyDbSnapshotAttributeInputBuilder,
+}
 impl ModifyDBSnapshotAttributeFluentBuilder  {
     /// Creates a new `ModifyDBSnapshotAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_db_snapshot_attribute::ModifyDBSnapshotAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

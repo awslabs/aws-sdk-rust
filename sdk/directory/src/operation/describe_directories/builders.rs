@@ -11,16 +11,17 @@ pub use crate::operation::describe_directories::_describe_directories_input::Des
 /// <p>You can also specify a maximum number of return results with the <code>Limit</code> parameter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDirectoriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_directories::builders::DescribeDirectoriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_directories::builders::DescribeDirectoriesInputBuilder,
+}
 impl DescribeDirectoriesFluentBuilder  {
     /// Creates a new `DescribeDirectories`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_directories::DescribeDirectories, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl DescribeDirectoriesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator {
-                            crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator {
+                                crate::operation::describe_directories::paginator::DescribeDirectoriesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `DirectoryIds`.
     ///
     /// To override the contents of this collection use [`set_directory_ids`](Self::set_directory_ids).

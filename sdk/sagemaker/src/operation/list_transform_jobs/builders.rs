@@ -8,16 +8,17 @@ pub use crate::operation::list_transform_jobs::_list_transform_jobs_input::ListT
 /// <p>Lists transform jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTransformJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_transform_jobs::builders::ListTransformJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_transform_jobs::builders::ListTransformJobsInputBuilder,
+}
 impl ListTransformJobsFluentBuilder  {
     /// Creates a new `ListTransformJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_transform_jobs::ListTransformJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTransformJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator {
-                            crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator {
+                                crate::operation::list_transform_jobs::paginator::ListTransformJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter that returns only transform jobs created after the specified time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);

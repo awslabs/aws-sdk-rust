@@ -8,16 +8,17 @@ pub use crate::operation::describe_addresses::_describe_addresses_input::Describ
 /// <p>Returns a specified number of <code>ADDRESS</code> objects. Calling this API in one of the US regions will return addresses from the list of all addresses associated with this account in all US regions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAddressesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_addresses::builders::DescribeAddressesInputBuilder,
+}
 impl DescribeAddressesFluentBuilder  {
     /// Creates a new `DescribeAddresses`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_addresses::DescribeAddresses, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeAddressesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_addresses::paginator::DescribeAddressesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_addresses::paginator::DescribeAddressesPaginator {
-                            crate::operation::describe_addresses::paginator::DescribeAddressesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_addresses::paginator::DescribeAddressesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_addresses::paginator::DescribeAddressesPaginator {
+                                crate::operation::describe_addresses::paginator::DescribeAddressesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The number of <code>ADDRESS</code> objects to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

@@ -8,16 +8,17 @@ pub use crate::operation::delete_language_model::_delete_language_model_input::D
 /// <p>Deletes a custom language model. To use this operation, specify the name of the language model you want to delete using <code>ModelName</code>. custom language model names are case sensitive.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLanguageModelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_language_model::builders::DeleteLanguageModelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_language_model::builders::DeleteLanguageModelInputBuilder,
+}
 impl DeleteLanguageModelFluentBuilder  {
     /// Creates a new `DeleteLanguageModel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_language_model::DeleteLanguageModel, aws_http::retry::AwsResponseRetryClassifier,>,

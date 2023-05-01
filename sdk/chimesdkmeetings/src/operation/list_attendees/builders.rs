@@ -8,16 +8,17 @@ pub use crate::operation::list_attendees::_list_attendees_input::ListAttendeesIn
 /// <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAttendeesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_attendees::builders::ListAttendeesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_attendees::builders::ListAttendeesInputBuilder,
+}
 impl ListAttendeesFluentBuilder  {
     /// Creates a new `ListAttendees`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_attendees::ListAttendees, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAttendeesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_attendees::paginator::ListAttendeesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_attendees::paginator::ListAttendeesPaginator {
-                            crate::operation::list_attendees::paginator::ListAttendeesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_attendees::paginator::ListAttendeesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_attendees::paginator::ListAttendeesPaginator {
+                                crate::operation::list_attendees::paginator::ListAttendeesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.meeting_id(input.into());

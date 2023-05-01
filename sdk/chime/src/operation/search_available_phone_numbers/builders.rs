@@ -8,16 +8,17 @@ pub use crate::operation::search_available_phone_numbers::_search_available_phon
 /// <p>Searches for phone numbers that can be ordered. For US numbers, provide at least one of the following search filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you provide <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only support the <code>PhoneNumberType</code> filter, which you must use.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchAvailablePhoneNumbersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersInputBuilder,
+}
 impl SearchAvailablePhoneNumbersFluentBuilder  {
     /// Creates a new `SearchAvailablePhoneNumbers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchAvailablePhoneNumbersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator {
-                            crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator {
+                                crate::operation::search_available_phone_numbers::paginator::SearchAvailablePhoneNumbersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The area code used to filter results. Only applies to the US.</p>
     pub fn area_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.area_code(input.into());

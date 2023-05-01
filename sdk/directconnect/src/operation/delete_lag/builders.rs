@@ -8,16 +8,17 @@ pub use crate::operation::delete_lag::_delete_lag_input::DeleteLagInputBuilder;
 /// <p>Deletes the specified link aggregation group (LAG). You cannot delete a LAG if it has active virtual interfaces or hosted connections.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLagFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_lag::builders::DeleteLagInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_lag::builders::DeleteLagInputBuilder,
+}
 impl DeleteLagFluentBuilder  {
     /// Creates a new `DeleteLag`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_lag::DeleteLag, aws_http::retry::AwsResponseRetryClassifier,>,

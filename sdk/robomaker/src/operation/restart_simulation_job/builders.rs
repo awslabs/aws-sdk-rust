@@ -8,16 +8,17 @@ pub use crate::operation::restart_simulation_job::_restart_simulation_job_input:
 /// <p>Restarts a running simulation job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestartSimulationJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restart_simulation_job::builders::RestartSimulationJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restart_simulation_job::builders::RestartSimulationJobInputBuilder,
+}
 impl RestartSimulationJobFluentBuilder  {
     /// Creates a new `RestartSimulationJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restart_simulation_job::RestartSimulationJob, aws_http::retry::AwsResponseRetryClassifier,>,

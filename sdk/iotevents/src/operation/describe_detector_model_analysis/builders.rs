@@ -10,16 +10,17 @@ pub use crate::operation::describe_detector_model_analysis::_describe_detector_m
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDetectorModelAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisInputBuilder,
+}
 impl DescribeDetectorModelAnalysisFluentBuilder  {
     /// Creates a new `DescribeDetectorModelAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

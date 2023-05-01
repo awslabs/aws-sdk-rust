@@ -8,16 +8,17 @@ pub use crate::operation::list_features::_list_features_input::ListFeaturesInput
 /// <p>Returns configuration details about all the features in the specified project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFeaturesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_features::builders::ListFeaturesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_features::builders::ListFeaturesInputBuilder,
+}
 impl ListFeaturesFluentBuilder  {
     /// Creates a new `ListFeatures`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_features::ListFeatures, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFeaturesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_features::paginator::ListFeaturesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_features::paginator::ListFeaturesPaginator {
-                            crate::operation::list_features::paginator::ListFeaturesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_features::paginator::ListFeaturesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_features::paginator::ListFeaturesPaginator {
+                                crate::operation::list_features::paginator::ListFeaturesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name or ARN of the project to return the feature list from.</p>
     pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());

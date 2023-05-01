@@ -10,16 +10,17 @@ pub use crate::operation::batch_delete_rum_metric_definitions::_batch_delete_rum
 /// <p>The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code> operation is 200.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteRumMetricDefinitionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder,
+}
 impl BatchDeleteRumMetricDefinitionsFluentBuilder  {
     /// Creates a new `BatchDeleteRumMetricDefinitions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,

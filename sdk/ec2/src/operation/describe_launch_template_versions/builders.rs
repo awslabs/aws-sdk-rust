@@ -8,16 +8,17 @@ pub use crate::operation::describe_launch_template_versions::_describe_launch_te
 /// <p>Describes one or more versions of a specified launch template. You can describe all versions, individual versions, or a range of versions. You can also describe all the latest versions or all the default versions of all the launch templates in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLaunchTemplateVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsInputBuilder,
+}
 impl DescribeLaunchTemplateVersionsFluentBuilder  {
     /// Creates a new `DescribeLaunchTemplateVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeLaunchTemplateVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_launch_template_versions::paginator::DescribeLaunchTemplateVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_launch_template_versions::paginator::DescribeLaunchTemplateVersionsPaginator {
-                            crate::operation::describe_launch_template_versions::paginator::DescribeLaunchTemplateVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_launch_template_versions::paginator::DescribeLaunchTemplateVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_launch_template_versions::paginator::DescribeLaunchTemplateVersionsPaginator {
+                                crate::operation::describe_launch_template_versions::paginator::DescribeLaunchTemplateVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

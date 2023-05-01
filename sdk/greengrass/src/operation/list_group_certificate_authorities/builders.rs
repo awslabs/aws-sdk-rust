@@ -8,16 +8,17 @@ pub use crate::operation::list_group_certificate_authorities::_list_group_certif
 /// Retrieves the current CAs for a group.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGroupCertificateAuthoritiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_group_certificate_authorities::builders::ListGroupCertificateAuthoritiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_group_certificate_authorities::builders::ListGroupCertificateAuthoritiesInputBuilder,
+}
 impl ListGroupCertificateAuthoritiesFluentBuilder  {
     /// Creates a new `ListGroupCertificateAuthorities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_group_certificate_authorities::ListGroupCertificateAuthorities, aws_http::retry::AwsResponseRetryClassifier,>,

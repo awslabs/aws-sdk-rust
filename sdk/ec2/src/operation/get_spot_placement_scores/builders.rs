@@ -10,16 +10,17 @@ pub use crate::operation::get_spot_placement_scores::_get_spot_placement_scores_
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot placement score</a> in the Amazon EC2 User Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSpotPlacementScoresFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_spot_placement_scores::builders::GetSpotPlacementScoresInputBuilder,
+}
 impl GetSpotPlacementScoresFluentBuilder  {
     /// Creates a new `GetSpotPlacementScores`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_spot_placement_scores::GetSpotPlacementScores, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl GetSpotPlacementScoresFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator {
-                            crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator {
+                                crate::operation::get_spot_placement_scores::paginator::GetSpotPlacementScoresPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `InstanceTypes`.
     ///
     /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).

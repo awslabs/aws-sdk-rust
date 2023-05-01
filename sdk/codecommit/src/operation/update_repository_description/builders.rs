@@ -10,16 +10,17 @@ pub use crate::operation::update_repository_description::_update_repository_desc
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRepositoryDescriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_repository_description::builders::UpdateRepositoryDescriptionInputBuilder,
+}
 impl UpdateRepositoryDescriptionFluentBuilder  {
     /// Creates a new `UpdateRepositoryDescription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_repository_description::UpdateRepositoryDescription, aws_http::retry::AwsResponseRetryClassifier,>,

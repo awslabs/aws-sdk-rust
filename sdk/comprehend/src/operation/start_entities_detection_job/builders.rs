@@ -9,16 +9,17 @@ pub use crate::operation::start_entities_detection_job::_start_entities_detectio
 /// <p>This API can be used for either standard entity detection or custom entity recognition. In order to be used for custom entity recognition, the optional <code>EntityRecognizerArn</code> must be used in order to provide access to the recognizer being used to detect the custom entity.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartEntitiesDetectionJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_entities_detection_job::builders::StartEntitiesDetectionJobInputBuilder,
+}
 impl StartEntitiesDetectionJobFluentBuilder  {
     /// Creates a new `StartEntitiesDetectionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_entities_detection_job::StartEntitiesDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,

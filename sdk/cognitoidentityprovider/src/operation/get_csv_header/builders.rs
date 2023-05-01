@@ -8,16 +8,17 @@ pub use crate::operation::get_csv_header::_get_csv_header_input::GetCsvHeaderInp
 /// <p>Gets the header information for the comma-separated value (CSV) file to be used as input for the user import job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCSVHeaderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_csv_header::builders::GetCsvHeaderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_csv_header::builders::GetCsvHeaderInputBuilder,
+}
 impl GetCSVHeaderFluentBuilder  {
     /// Creates a new `GetCSVHeader`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_csv_header::GetCSVHeader, aws_http::retry::AwsResponseRetryClassifier,>,

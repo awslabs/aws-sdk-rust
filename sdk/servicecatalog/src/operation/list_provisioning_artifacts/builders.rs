@@ -8,16 +8,17 @@ pub use crate::operation::list_provisioning_artifacts::_list_provisioning_artifa
 /// <p>Lists all provisioning artifacts (also known as versions) for the specified product.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProvisioningArtifactsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_provisioning_artifacts::builders::ListProvisioningArtifactsInputBuilder,
+}
 impl ListProvisioningArtifactsFluentBuilder  {
     /// Creates a new `ListProvisioningArtifacts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_provisioning_artifacts::ListProvisioningArtifacts, aws_http::retry::AwsResponseRetryClassifier,>,

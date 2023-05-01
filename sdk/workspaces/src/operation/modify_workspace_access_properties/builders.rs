@@ -8,16 +8,17 @@ pub use crate::operation::modify_workspace_access_properties::_modify_workspace_
 /// <p>Specifies which devices and operating systems users can use to access their WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access"> Control Device Access</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyWorkspaceAccessPropertiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_workspace_access_properties::builders::ModifyWorkspaceAccessPropertiesInputBuilder,
+}
 impl ModifyWorkspaceAccessPropertiesFluentBuilder  {
     /// Creates a new `ModifyWorkspaceAccessProperties`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_workspace_access_properties::ModifyWorkspaceAccessProperties, aws_http::retry::AwsResponseRetryClassifier,>,

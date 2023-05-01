@@ -8,16 +8,17 @@ pub use crate::operation::deregister_on_premises_instance::_deregister_on_premis
 /// <p>Deregisters an on-premises instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterOnPremisesInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_on_premises_instance::builders::DeregisterOnPremisesInstanceInputBuilder,
+}
 impl DeregisterOnPremisesInstanceFluentBuilder  {
     /// Creates a new `DeregisterOnPremisesInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_on_premises_instance::DeregisterOnPremisesInstance, aws_http::retry::AwsResponseRetryClassifier,>,

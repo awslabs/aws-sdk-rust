@@ -8,16 +8,17 @@ pub use crate::operation::disable_insight_rules::_disable_insight_rules_input::D
 /// <p>Disables the specified Contributor Insights rules. When rules are disabled, they do not analyze log groups and do not incur costs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableInsightRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_insight_rules::builders::DisableInsightRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_insight_rules::builders::DisableInsightRulesInputBuilder,
+}
 impl DisableInsightRulesFluentBuilder  {
     /// Creates a new `DisableInsightRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_insight_rules::DisableInsightRules, aws_http::retry::AwsResponseRetryClassifier,>,

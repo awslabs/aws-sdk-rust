@@ -8,16 +8,17 @@ pub use crate::operation::transfer_input_device::_transfer_input_device_input::T
 /// Start an input device transfer to another AWS account. After you make the request, the other account must accept or reject the transfer.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TransferInputDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::transfer_input_device::builders::TransferInputDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::transfer_input_device::builders::TransferInputDeviceInputBuilder,
+}
 impl TransferInputDeviceFluentBuilder  {
     /// Creates a new `TransferInputDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::transfer_input_device::TransferInputDevice, aws_http::retry::AwsResponseRetryClassifier,>,

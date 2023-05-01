@@ -8,16 +8,17 @@ pub use crate::operation::revoke_ip_rules::_revoke_ip_rules_input::RevokeIpRules
 /// <p>Removes one or more rules from the specified IP access control group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RevokeIpRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::revoke_ip_rules::builders::RevokeIpRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::revoke_ip_rules::builders::RevokeIpRulesInputBuilder,
+}
 impl RevokeIpRulesFluentBuilder  {
     /// Creates a new `RevokeIpRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::revoke_ip_rules::RevokeIpRules, aws_http::retry::AwsResponseRetryClassifier,>,

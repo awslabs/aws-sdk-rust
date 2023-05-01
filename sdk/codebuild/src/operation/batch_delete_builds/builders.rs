@@ -8,16 +8,17 @@ pub use crate::operation::batch_delete_builds::_batch_delete_builds_input::Batch
 /// <p>Deletes one or more builds.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteBuildsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_builds::builders::BatchDeleteBuildsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_builds::builders::BatchDeleteBuildsInputBuilder,
+}
 impl BatchDeleteBuildsFluentBuilder  {
     /// Creates a new `BatchDeleteBuilds`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_builds::BatchDeleteBuilds, aws_http::retry::AwsResponseRetryClassifier,>,

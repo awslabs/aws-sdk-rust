@@ -8,16 +8,17 @@ pub use crate::operation::rebalance_slots_in_global_replication_group::_rebalanc
 /// <p>Redistribute slots to ensure uniform distribution across existing shards in the cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RebalanceSlotsInGlobalReplicationGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::rebalance_slots_in_global_replication_group::builders::RebalanceSlotsInGlobalReplicationGroupInputBuilder,
+}
 impl RebalanceSlotsInGlobalReplicationGroupFluentBuilder  {
     /// Creates a new `RebalanceSlotsInGlobalReplicationGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroup, aws_http::retry::AwsResponseRetryClassifier,>,

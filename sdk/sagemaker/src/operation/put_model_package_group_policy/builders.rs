@@ -8,16 +8,17 @@ pub use crate::operation::put_model_package_group_policy::_put_model_package_gro
 /// <p>Adds a resouce policy to control access to a model group. For information about resoure policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies</a> in the <i>Amazon Web Services Identity and Access Management User Guide.</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutModelPackageGroupPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_model_package_group_policy::builders::PutModelPackageGroupPolicyInputBuilder,
+}
 impl PutModelPackageGroupPolicyFluentBuilder  {
     /// Creates a new `PutModelPackageGroupPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_model_package_group_policy::PutModelPackageGroupPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

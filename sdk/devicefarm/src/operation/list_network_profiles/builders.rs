@@ -8,16 +8,17 @@ pub use crate::operation::list_network_profiles::_list_network_profiles_input::L
 /// <p>Returns the list of available network profiles.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNetworkProfilesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_network_profiles::builders::ListNetworkProfilesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_network_profiles::builders::ListNetworkProfilesInputBuilder,
+}
 impl ListNetworkProfilesFluentBuilder  {
     /// Creates a new `ListNetworkProfiles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_network_profiles::ListNetworkProfiles, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::search_data_sources::_search_data_sources_input::Searc
 /// <p>Use the <code>SearchDataSources</code> operation to search for data sources that belong to an account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchDataSourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_data_sources::builders::SearchDataSourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_data_sources::builders::SearchDataSourcesInputBuilder,
+}
 impl SearchDataSourcesFluentBuilder  {
     /// Creates a new `SearchDataSources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_data_sources::SearchDataSources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchDataSourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_data_sources::paginator::SearchDataSourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_data_sources::paginator::SearchDataSourcesPaginator {
-                            crate::operation::search_data_sources::paginator::SearchDataSourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_data_sources::paginator::SearchDataSourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_data_sources::paginator::SearchDataSourcesPaginator {
+                                crate::operation::search_data_sources::paginator::SearchDataSourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());

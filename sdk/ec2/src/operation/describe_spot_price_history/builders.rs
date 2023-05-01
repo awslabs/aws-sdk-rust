@@ -9,16 +9,17 @@ pub use crate::operation::describe_spot_price_history::_describe_spot_price_hist
 /// <p>When you specify a start and end time, the operation returns the prices of the instance types within that time range. It also returns the last price change before the start time, which is the effective price as of the start time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSpotPriceHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_spot_price_history::builders::DescribeSpotPriceHistoryInputBuilder,
+}
 impl DescribeSpotPriceHistoryFluentBuilder  {
     /// Creates a new `DescribeSpotPriceHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_spot_price_history::DescribeSpotPriceHistory, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeSpotPriceHistoryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator {
-                            crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator {
+                                crate::operation::describe_spot_price_history::paginator::DescribeSpotPriceHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

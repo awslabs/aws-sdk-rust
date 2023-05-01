@@ -9,16 +9,17 @@ pub use crate::operation::associate_website_certificate_authority::_associate_we
 #[deprecated(note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateWebsiteCertificateAuthorityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_website_certificate_authority::builders::AssociateWebsiteCertificateAuthorityInputBuilder,
+}
 impl AssociateWebsiteCertificateAuthorityFluentBuilder  {
     /// Creates a new `AssociateWebsiteCertificateAuthority`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_website_certificate_authority::AssociateWebsiteCertificateAuthority, aws_http::retry::AwsResponseRetryClassifier,>,

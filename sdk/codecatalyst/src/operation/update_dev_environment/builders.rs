@@ -8,16 +8,17 @@ pub use crate::operation::update_dev_environment::_update_dev_environment_input:
 /// <p>Changes one or more values for a Dev Environment. Updating certain values of the Dev Environment will cause a restart.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDevEnvironmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_dev_environment::builders::UpdateDevEnvironmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_dev_environment::builders::UpdateDevEnvironmentInputBuilder,
+}
 impl UpdateDevEnvironmentFluentBuilder  {
     /// Creates a new `UpdateDevEnvironment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_dev_environment::UpdateDevEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,

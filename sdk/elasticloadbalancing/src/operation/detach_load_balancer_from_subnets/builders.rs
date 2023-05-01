@@ -9,16 +9,17 @@ pub use crate::operation::detach_load_balancer_from_subnets::_detach_load_balanc
 /// <p>After a subnet is removed, all EC2 instances registered with the load balancer in the removed subnet go into the <code>OutOfService</code> state. Then, the load balancer balances the traffic among the remaining routable subnets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachLoadBalancerFromSubnetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detach_load_balancer_from_subnets::builders::DetachLoadBalancerFromSubnetsInputBuilder,
+}
 impl DetachLoadBalancerFromSubnetsFluentBuilder  {
     /// Creates a new `DetachLoadBalancerFromSubnets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detach_load_balancer_from_subnets::DetachLoadBalancerFromSubnets, aws_http::retry::AwsResponseRetryClassifier,>,

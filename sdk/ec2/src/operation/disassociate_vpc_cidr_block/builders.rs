@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_vpc_cidr_block::_disassociate_vpc_cidr_bl
 /// <p>You cannot disassociate the CIDR block with which you originally created the VPC (the primary CIDR block).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateVpcCidrBlockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_vpc_cidr_block::builders::DisassociateVpcCidrBlockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_vpc_cidr_block::builders::DisassociateVpcCidrBlockInputBuilder,
+}
 impl DisassociateVpcCidrBlockFluentBuilder  {
     /// Creates a new `DisassociateVpcCidrBlock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlock, aws_http::retry::AwsResponseRetryClassifier,>,

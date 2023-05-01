@@ -8,16 +8,17 @@ pub use crate::operation::put_parameter::_put_parameter_input::PutParameterInput
 /// <p>Add a parameter to the system.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutParameterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_parameter::builders::PutParameterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_parameter::builders::PutParameterInputBuilder,
+}
 impl PutParameterFluentBuilder  {
     /// Creates a new `PutParameter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_parameter::PutParameter, aws_http::retry::AwsResponseRetryClassifier,>,

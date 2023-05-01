@@ -10,16 +10,17 @@ pub use crate::operation::describe_alarm_history::_describe_alarm_history_input:
 /// <p>To use this operation and return information about a composite alarm, you must be signed on with the <code>cloudwatch:DescribeAlarmHistory</code> permission that is scoped to <code>*</code>. You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAlarmHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_alarm_history::builders::DescribeAlarmHistoryInputBuilder,
+}
 impl DescribeAlarmHistoryFluentBuilder  {
     /// Creates a new `DescribeAlarmHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_alarm_history::DescribeAlarmHistory, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeAlarmHistoryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator {
-                            crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator {
+                                crate::operation::describe_alarm_history::paginator::DescribeAlarmHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the alarm.</p>
     pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.alarm_name(input.into());

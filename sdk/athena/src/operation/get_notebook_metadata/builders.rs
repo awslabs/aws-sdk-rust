@@ -8,16 +8,17 @@ pub use crate::operation::get_notebook_metadata::_get_notebook_metadata_input::G
 /// <p>Retrieves notebook metadata for the specified notebook ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetNotebookMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_notebook_metadata::builders::GetNotebookMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_notebook_metadata::builders::GetNotebookMetadataInputBuilder,
+}
 impl GetNotebookMetadataFluentBuilder  {
     /// Creates a new `GetNotebookMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_notebook_metadata::GetNotebookMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

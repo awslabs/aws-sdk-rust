@@ -13,16 +13,17 @@ pub use crate::operation::associate_principal_with_portfolio::_associate_princip
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociatePrincipalWithPortfolioFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_principal_with_portfolio::builders::AssociatePrincipalWithPortfolioInputBuilder,
+}
 impl AssociatePrincipalWithPortfolioFluentBuilder  {
     /// Creates a new `AssociatePrincipalWithPortfolio`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_principal_with_portfolio::AssociatePrincipalWithPortfolio, aws_http::retry::AwsResponseRetryClassifier,>,

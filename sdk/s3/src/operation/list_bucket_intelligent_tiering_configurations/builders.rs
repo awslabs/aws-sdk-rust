@@ -17,16 +17,17 @@ pub use crate::operation::list_bucket_intelligent_tiering_configurations::_list_
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBucketIntelligentTieringConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_bucket_intelligent_tiering_configurations::builders::ListBucketIntelligentTieringConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_bucket_intelligent_tiering_configurations::builders::ListBucketIntelligentTieringConfigurationsInputBuilder,
+}
 impl ListBucketIntelligentTieringConfigurationsFluentBuilder  {
     /// Creates a new `ListBucketIntelligentTieringConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,

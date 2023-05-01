@@ -8,16 +8,17 @@ pub use crate::operation::list_custom_data_identifiers::_list_custom_data_identi
 /// <p>Retrieves a subset of information about all the custom data identifiers for an account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCustomDataIdentifiersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_custom_data_identifiers::builders::ListCustomDataIdentifiersInputBuilder,
+}
 impl ListCustomDataIdentifiersFluentBuilder  {
     /// Creates a new `ListCustomDataIdentifiers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCustomDataIdentifiersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_custom_data_identifiers::paginator::ListCustomDataIdentifiersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_custom_data_identifiers::paginator::ListCustomDataIdentifiersPaginator {
-                            crate::operation::list_custom_data_identifiers::paginator::ListCustomDataIdentifiersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_custom_data_identifiers::paginator::ListCustomDataIdentifiersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_custom_data_identifiers::paginator::ListCustomDataIdentifiersPaginator {
+                                crate::operation::list_custom_data_identifiers::paginator::ListCustomDataIdentifiersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of items to include in each page of the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

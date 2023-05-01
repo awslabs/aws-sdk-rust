@@ -9,16 +9,17 @@ pub use crate::operation::notify_resource_deployment_status_change::_notify_reso
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct NotifyResourceDeploymentStatusChangeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder,
+}
 impl NotifyResourceDeploymentStatusChangeFluentBuilder  {
     /// Creates a new `NotifyResourceDeploymentStatusChange`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChange, aws_http::retry::AwsResponseRetryClassifier,>,

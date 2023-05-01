@@ -10,16 +10,17 @@ pub use crate::operation::lookup_developer_identity::_lookup_developer_identity_
 /// <p>You must use AWS Developer credentials to call this API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct LookupDeveloperIdentityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder,
+}
 impl LookupDeveloperIdentityFluentBuilder  {
     /// Creates a new `LookupDeveloperIdentity`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::lookup_developer_identity::LookupDeveloperIdentity, aws_http::retry::AwsResponseRetryClassifier,>,

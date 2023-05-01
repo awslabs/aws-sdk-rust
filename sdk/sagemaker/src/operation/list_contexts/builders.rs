@@ -8,16 +8,17 @@ pub use crate::operation::list_contexts::_list_contexts_input::ListContextsInput
 /// <p>Lists the contexts in your account and their properties.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListContextsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_contexts::builders::ListContextsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_contexts::builders::ListContextsInputBuilder,
+}
 impl ListContextsFluentBuilder  {
     /// Creates a new `ListContexts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_contexts::ListContexts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListContextsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_contexts::paginator::ListContextsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_contexts::paginator::ListContextsPaginator {
-                            crate::operation::list_contexts::paginator::ListContextsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_contexts::paginator::ListContextsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_contexts::paginator::ListContextsPaginator {
+                                crate::operation::list_contexts::paginator::ListContextsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A filter that returns only contexts with the specified source URI.</p>
     pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source_uri(input.into());

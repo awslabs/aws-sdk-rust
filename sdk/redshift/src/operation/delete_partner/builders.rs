@@ -8,16 +8,17 @@ pub use crate::operation::delete_partner::_delete_partner_input::DeletePartnerIn
 /// <p>Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted at the partner's website.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePartnerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_partner::builders::DeletePartnerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_partner::builders::DeletePartnerInputBuilder,
+}
 impl DeletePartnerFluentBuilder  {
     /// Creates a new `DeletePartner`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_partner::DeletePartner, aws_http::retry::AwsResponseRetryClassifier,>,

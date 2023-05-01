@@ -8,16 +8,17 @@ pub use crate::operation::get_service_instance::_get_service_instance_input::Get
 /// <p>Get detailed data for a service instance. A service instance is an instantiation of service template and it runs in a specific environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetServiceInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_service_instance::builders::GetServiceInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_service_instance::builders::GetServiceInstanceInputBuilder,
+}
 impl GetServiceInstanceFluentBuilder  {
     /// Creates a new `GetServiceInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_service_instance::GetServiceInstance, aws_http::retry::AwsResponseRetryClassifier,>,

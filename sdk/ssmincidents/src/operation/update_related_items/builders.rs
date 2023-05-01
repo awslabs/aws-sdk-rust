@@ -8,16 +8,17 @@ pub use crate::operation::update_related_items::_update_related_items_input::Upd
 /// <p>Add or remove related items from the related items tab of an incident record.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRelatedItemsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_related_items::builders::UpdateRelatedItemsInputBuilder,
+}
 impl UpdateRelatedItemsFluentBuilder  {
     /// Creates a new `UpdateRelatedItems`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_related_items::UpdateRelatedItems, aws_http::retry::AwsResponseRetryClassifier,>,

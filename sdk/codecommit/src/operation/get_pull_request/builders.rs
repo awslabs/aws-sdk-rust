@@ -8,16 +8,17 @@ pub use crate::operation::get_pull_request::_get_pull_request_input::GetPullRequ
 /// <p>Gets information about a pull request in a specified repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPullRequestFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_pull_request::builders::GetPullRequestInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_pull_request::builders::GetPullRequestInputBuilder,
+}
 impl GetPullRequestFluentBuilder  {
     /// Creates a new `GetPullRequest`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_pull_request::GetPullRequest, aws_http::retry::AwsResponseRetryClassifier,>,

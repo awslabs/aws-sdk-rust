@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_rum_metric_definitions::_batch_get_rum_metri
 /// <p>Retrieves the list of metrics and dimensions that a RUM app monitor is sending to a single destination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetRumMetricDefinitionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder,
+}
 impl BatchGetRumMetricDefinitionsFluentBuilder  {
     /// Creates a new `BatchGetRumMetricDefinitions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl BatchGetRumMetricDefinitionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::batch_get_rum_metric_definitions::paginator::BatchGetRumMetricDefinitionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::batch_get_rum_metric_definitions::paginator::BatchGetRumMetricDefinitionsPaginator {
-                            crate::operation::batch_get_rum_metric_definitions::paginator::BatchGetRumMetricDefinitionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::batch_get_rum_metric_definitions::paginator::BatchGetRumMetricDefinitionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::batch_get_rum_metric_definitions::paginator::BatchGetRumMetricDefinitionsPaginator {
+                                crate::operation::batch_get_rum_metric_definitions::paginator::BatchGetRumMetricDefinitionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
     pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_monitor_name(input.into());

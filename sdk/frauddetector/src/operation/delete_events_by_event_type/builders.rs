@@ -8,16 +8,17 @@ pub use crate::operation::delete_events_by_event_type::_delete_events_by_event_t
 /// <p>Deletes all events of a particular event type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEventsByEventTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeInputBuilder,
+}
 impl DeleteEventsByEventTypeFluentBuilder  {
     /// Creates a new `DeleteEventsByEventType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_events_by_event_type::DeleteEventsByEventType, aws_http::retry::AwsResponseRetryClassifier,>,

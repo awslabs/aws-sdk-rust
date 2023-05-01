@@ -8,16 +8,17 @@ pub use crate::operation::global_sign_out::_global_sign_out_input::GlobalSignOut
 /// <p>Signs out users from all devices. It also invalidates all refresh tokens that Amazon Cognito has issued to a user. A user can still use a hosted UI cookie to retrieve new tokens for the duration of the 1-hour cookie validity period.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GlobalSignOutFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::global_sign_out::builders::GlobalSignOutInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::global_sign_out::builders::GlobalSignOutInputBuilder,
+}
 impl GlobalSignOutFluentBuilder  {
     /// Creates a new `GlobalSignOut`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::global_sign_out::GlobalSignOut, aws_http::retry::AwsResponseRetryClassifier,>,

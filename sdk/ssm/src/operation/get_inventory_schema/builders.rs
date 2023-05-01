@@ -8,16 +8,17 @@ pub use crate::operation::get_inventory_schema::_get_inventory_schema_input::Get
 /// <p>Return a list of inventory type names for the account, or return a list of attribute names for a specific Inventory item type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInventorySchemaFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_inventory_schema::builders::GetInventorySchemaInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_inventory_schema::builders::GetInventorySchemaInputBuilder,
+}
 impl GetInventorySchemaFluentBuilder  {
     /// Creates a new `GetInventorySchema`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_inventory_schema::GetInventorySchema, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetInventorySchemaFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_inventory_schema::paginator::GetInventorySchemaPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_inventory_schema::paginator::GetInventorySchemaPaginator {
-                            crate::operation::get_inventory_schema::paginator::GetInventorySchemaPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_inventory_schema::paginator::GetInventorySchemaPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_inventory_schema::paginator::GetInventorySchemaPaginator {
+                                crate::operation::get_inventory_schema::paginator::GetInventorySchemaPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of inventory item to return.</p>
     pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.type_name(input.into());

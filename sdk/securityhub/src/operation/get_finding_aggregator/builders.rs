@@ -8,16 +8,17 @@ pub use crate::operation::get_finding_aggregator::_get_finding_aggregator_input:
 /// <p>Returns the current finding aggregation configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFindingAggregatorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_finding_aggregator::builders::GetFindingAggregatorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_finding_aggregator::builders::GetFindingAggregatorInputBuilder,
+}
 impl GetFindingAggregatorFluentBuilder  {
     /// Creates a new `GetFindingAggregator`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_finding_aggregator::GetFindingAggregator, aws_http::retry::AwsResponseRetryClassifier,>,

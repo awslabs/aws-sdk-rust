@@ -8,16 +8,17 @@ pub use crate::operation::update_endpoint_group::_update_endpoint_group_input::U
 /// <p>Update an endpoint group. A resource must be valid and active when you add it as an endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEndpointGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder,
+}
 impl UpdateEndpointGroupFluentBuilder  {
     /// Creates a new `UpdateEndpointGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_endpoint_group::UpdateEndpointGroup, aws_http::retry::AwsResponseRetryClassifier,>,

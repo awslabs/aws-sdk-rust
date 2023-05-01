@@ -8,16 +8,17 @@ pub use crate::operation::get_endpoint_attributes::_get_endpoint_attributes_inpu
 /// <p>Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM (Firebase Cloud Messaging) and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEndpointAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_endpoint_attributes::builders::GetEndpointAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_endpoint_attributes::builders::GetEndpointAttributesInputBuilder,
+}
 impl GetEndpointAttributesFluentBuilder  {
     /// Creates a new `GetEndpointAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_endpoint_attributes::GetEndpointAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

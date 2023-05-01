@@ -8,16 +8,17 @@ pub use crate::operation::create_signal_catalog::_create_signal_catalog_input::C
 /// <p> Creates a collection of standardized signals that can be reused to create vehicle models.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSignalCatalogFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_signal_catalog::builders::CreateSignalCatalogInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_signal_catalog::builders::CreateSignalCatalogInputBuilder,
+}
 impl CreateSignalCatalogFluentBuilder  {
     /// Creates a new `CreateSignalCatalog`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_signal_catalog::CreateSignalCatalog, aws_http::retry::AwsResponseRetryClassifier,>,

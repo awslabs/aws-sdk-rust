@@ -8,16 +8,17 @@ pub use crate::operation::list_data_ingestion_jobs::_list_data_ingestion_jobs_in
 /// <p>Provides a list of all data ingestion jobs, including dataset name and ARN, S3 location of the input data, status, and so on. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDataIngestionJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_data_ingestion_jobs::builders::ListDataIngestionJobsInputBuilder,
+}
 impl ListDataIngestionJobsFluentBuilder  {
     /// Creates a new `ListDataIngestionJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_data_ingestion_jobs::ListDataIngestionJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDataIngestionJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator {
-                            crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator {
+                                crate::operation::list_data_ingestion_jobs::paginator::ListDataIngestionJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the dataset being used for the data ingestion job. </p>
     pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());

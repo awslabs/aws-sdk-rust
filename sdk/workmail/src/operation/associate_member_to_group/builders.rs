@@ -8,16 +8,17 @@ pub use crate::operation::associate_member_to_group::_associate_member_to_group_
 /// <p>Adds a member (user or group) to the group's set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateMemberToGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_member_to_group::builders::AssociateMemberToGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_member_to_group::builders::AssociateMemberToGroupInputBuilder,
+}
 impl AssociateMemberToGroupFluentBuilder  {
     /// Creates a new `AssociateMemberToGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_member_to_group::AssociateMemberToGroup, aws_http::retry::AwsResponseRetryClassifier,>,

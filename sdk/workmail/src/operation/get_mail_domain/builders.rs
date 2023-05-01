@@ -8,16 +8,17 @@ pub use crate::operation::get_mail_domain::_get_mail_domain_input::GetMailDomain
 /// <p>Gets details for a mail domain, including domain records required to configure your domain with recommended security.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMailDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_mail_domain::builders::GetMailDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_mail_domain::builders::GetMailDomainInputBuilder,
+}
 impl GetMailDomainFluentBuilder  {
     /// Creates a new `GetMailDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_mail_domain::GetMailDomain, aws_http::retry::AwsResponseRetryClassifier,>,

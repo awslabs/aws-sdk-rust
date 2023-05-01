@@ -10,16 +10,17 @@ pub use crate::operation::failover_db_cluster::_failover_db_cluster_input::Failo
 /// <p>Amazon Neptune will automatically fail over to a Read Replica, if one exists, when the primary instance fails. You can force a failover when you want to simulate a failure of a primary instance for testing. Because each instance in a DB cluster has its own endpoint address, you will need to clean up and re-establish any existing connections that use those endpoint addresses when the failover is complete.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct FailoverDBClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder,
+}
 impl FailoverDBClusterFluentBuilder  {
     /// Creates a new `FailoverDBCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::failover_db_cluster::FailoverDBCluster, aws_http::retry::AwsResponseRetryClassifier,>,

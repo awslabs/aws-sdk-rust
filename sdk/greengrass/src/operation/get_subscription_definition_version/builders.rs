@@ -8,16 +8,17 @@ pub use crate::operation::get_subscription_definition_version::_get_subscription
 /// Retrieves information about a subscription definition version.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSubscriptionDefinitionVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_subscription_definition_version::builders::GetSubscriptionDefinitionVersionInputBuilder,
+}
 impl GetSubscriptionDefinitionVersionFluentBuilder  {
     /// Creates a new `GetSubscriptionDefinitionVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersion, aws_http::retry::AwsResponseRetryClassifier,>,

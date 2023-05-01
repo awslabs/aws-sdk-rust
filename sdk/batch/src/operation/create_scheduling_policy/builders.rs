@@ -8,16 +8,17 @@ pub use crate::operation::create_scheduling_policy::_create_scheduling_policy_in
 /// <p>Creates an Batch scheduling policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSchedulingPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_scheduling_policy::builders::CreateSchedulingPolicyInputBuilder,
+}
 impl CreateSchedulingPolicyFluentBuilder  {
     /// Creates a new `CreateSchedulingPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_scheduling_policy::CreateSchedulingPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

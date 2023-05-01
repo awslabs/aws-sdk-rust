@@ -10,16 +10,17 @@ pub use crate::operation::delete_load_balancer::_delete_load_balancer_input::Del
 /// <p>Deleting a load balancer does not affect its registered targets. For example, your EC2 instances continue to run and are still registered to their target groups. If you no longer need these EC2 instances, you can stop or terminate them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLoadBalancerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_load_balancer::builders::DeleteLoadBalancerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_load_balancer::builders::DeleteLoadBalancerInputBuilder,
+}
 impl DeleteLoadBalancerFluentBuilder  {
     /// Creates a new `DeleteLoadBalancer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_load_balancer::DeleteLoadBalancer, aws_http::retry::AwsResponseRetryClassifier,>,

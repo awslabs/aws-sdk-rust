@@ -9,16 +9,17 @@ pub use crate::operation::describe_tasks::_describe_tasks_input::DescribeTasksIn
 /// <p>Currently, stopped tasks appear in the returned results for at least one hour.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_tasks::builders::DescribeTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_tasks::builders::DescribeTasksInputBuilder,
+}
 impl DescribeTasksFluentBuilder  {
     /// Creates a new `DescribeTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_tasks::DescribeTasks, aws_http::retry::AwsResponseRetryClassifier,>,

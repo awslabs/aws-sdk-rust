@@ -8,16 +8,17 @@ pub use crate::operation::delete_cors_configuration::_delete_cors_configuration_
 /// <p>Deletes a CORS configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCorsConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_cors_configuration::builders::DeleteCorsConfigurationInputBuilder,
+}
 impl DeleteCorsConfigurationFluentBuilder  {
     /// Creates a new `DeleteCorsConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_cors_configuration::DeleteCorsConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

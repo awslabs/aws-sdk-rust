@@ -8,16 +8,17 @@ pub use crate::operation::describe_vpc_peering_connections::_describe_vpc_peerin
 /// <p>Describes one or more of your VPC peering connections.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder,
+}
 impl DescribeVpcPeeringConnectionsFluentBuilder  {
     /// Creates a new `DescribeVpcPeeringConnections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnections, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeVpcPeeringConnectionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator {
-                            crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator {
+                                crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

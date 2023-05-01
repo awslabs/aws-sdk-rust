@@ -9,16 +9,17 @@ pub use crate::operation::get_snowball_usage::_get_snowball_usage_input::GetSnow
 /// <p>The default service limit for the number of Snow devices that you can have at one time is 1. If you want to increase your service limit, contact Amazon Web Services Support.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSnowballUsageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_snowball_usage::builders::GetSnowballUsageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_snowball_usage::builders::GetSnowballUsageInputBuilder,
+}
 impl GetSnowballUsageFluentBuilder  {
     /// Creates a new `GetSnowballUsage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_snowball_usage::GetSnowballUsage, aws_http::retry::AwsResponseRetryClassifier,>,

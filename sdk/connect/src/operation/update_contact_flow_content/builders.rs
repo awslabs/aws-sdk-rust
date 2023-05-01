@@ -9,16 +9,17 @@ pub use crate::operation::update_contact_flow_content::_update_contact_flow_cont
 /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContactFlowContentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_contact_flow_content::builders::UpdateContactFlowContentInputBuilder,
+}
 impl UpdateContactFlowContentFluentBuilder  {
     /// Creates a new `UpdateContactFlowContent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_contact_flow_content::UpdateContactFlowContent, aws_http::retry::AwsResponseRetryClassifier,>,

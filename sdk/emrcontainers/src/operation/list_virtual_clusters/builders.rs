@@ -8,16 +8,17 @@ pub use crate::operation::list_virtual_clusters::_list_virtual_clusters_input::L
 /// <p>Lists information about the specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVirtualClustersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_virtual_clusters::builders::ListVirtualClustersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_virtual_clusters::builders::ListVirtualClustersInputBuilder,
+}
 impl ListVirtualClustersFluentBuilder  {
     /// Creates a new `ListVirtualClusters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_virtual_clusters::ListVirtualClusters, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListVirtualClustersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_clusters::paginator::ListVirtualClustersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_virtual_clusters::paginator::ListVirtualClustersPaginator {
-                            crate::operation::list_virtual_clusters::paginator::ListVirtualClustersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_clusters::paginator::ListVirtualClustersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_virtual_clusters::paginator::ListVirtualClustersPaginator {
+                                crate::operation::list_virtual_clusters::paginator::ListVirtualClustersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The container provider ID of the virtual cluster.</p>
     pub fn container_provider_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.container_provider_id(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::list_deployments::_list_deployments_input::ListDeploym
 /// <p>Retrieves a paginated list of deployments.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeploymentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_deployments::builders::ListDeploymentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_deployments::builders::ListDeploymentsInputBuilder,
+}
 impl ListDeploymentsFluentBuilder  {
     /// Creates a new `ListDeployments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_deployments::ListDeployments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDeploymentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_deployments::paginator::ListDeploymentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
-                            crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_deployments::paginator::ListDeploymentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_deployments::paginator::ListDeploymentsPaginator {
+                                crate::operation::list_deployments::paginator::ListDeploymentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.target_arn(input.into());

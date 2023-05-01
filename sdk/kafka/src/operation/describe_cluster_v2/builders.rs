@@ -8,16 +8,17 @@ pub use crate::operation::describe_cluster_v2::_describe_cluster_v2_input::Descr
 /// <p>Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified in the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClusterV2FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cluster_v2::builders::DescribeClusterV2InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cluster_v2::builders::DescribeClusterV2InputBuilder,
+}
 impl DescribeClusterV2FluentBuilder  {
     /// Creates a new `DescribeClusterV2`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cluster_v2::DescribeClusterV2, aws_http::retry::AwsResponseRetryClassifier,>,

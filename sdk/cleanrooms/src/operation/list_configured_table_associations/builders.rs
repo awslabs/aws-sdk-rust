@@ -8,16 +8,17 @@ pub use crate::operation::list_configured_table_associations::_list_configured_t
 /// <p>Lists configured table associations for a membership.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListConfiguredTableAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsInputBuilder,
+}
 impl ListConfiguredTableAssociationsFluentBuilder  {
     /// Creates a new `ListConfiguredTableAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_configured_table_associations::ListConfiguredTableAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListConfiguredTableAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_configured_table_associations::paginator::ListConfiguredTableAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_configured_table_associations::paginator::ListConfiguredTableAssociationsPaginator {
-                            crate::operation::list_configured_table_associations::paginator::ListConfiguredTableAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_configured_table_associations::paginator::ListConfiguredTableAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_configured_table_associations::paginator::ListConfiguredTableAssociationsPaginator {
+                                crate::operation::list_configured_table_associations::paginator::ListConfiguredTableAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
     pub fn membership_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.membership_identifier(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::describe_bot::_describe_bot_input::DescribeBotInputBui
 /// <p>Provides metadata information about a bot. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_bot::builders::DescribeBotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_bot::builders::DescribeBotInputBuilder,
+}
 impl DescribeBotFluentBuilder  {
     /// Creates a new `DescribeBot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_bot::DescribeBot, aws_http::retry::AwsResponseRetryClassifier,>,

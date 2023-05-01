@@ -8,16 +8,17 @@ pub use crate::operation::get_compliance_details_by_resource::_get_compliance_de
 /// <p>Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config rules were used to evaluate the resource, when each rule was last invoked, and whether the resource complies with each rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetComplianceDetailsByResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_compliance_details_by_resource::builders::GetComplianceDetailsByResourceInputBuilder,
+}
 impl GetComplianceDetailsByResourceFluentBuilder  {
     /// Creates a new `GetComplianceDetailsByResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResource, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetComplianceDetailsByResourceFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator {
-                            crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator {
+                                crate::operation::get_compliance_details_by_resource::paginator::GetComplianceDetailsByResourcePaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of the Amazon Web Services resource for which you want compliance information.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());

@@ -36,16 +36,17 @@ pub use crate::operation::assume_role_with_saml::_assume_role_with_saml_input::A
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssumeRoleWithSAMLFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::assume_role_with_saml::builders::AssumeRoleWithSamlInputBuilder,
+}
 impl AssumeRoleWithSAMLFluentBuilder  {
     /// Creates a new `AssumeRoleWithSAML`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::assume_role_with_saml::AssumeRoleWithSAML, aws_http::retry::AwsResponseRetryClassifier,>,

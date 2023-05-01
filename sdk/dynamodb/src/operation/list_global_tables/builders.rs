@@ -10,16 +10,17 @@ pub use crate::operation::list_global_tables::_list_global_tables_input::ListGlo
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGlobalTablesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_global_tables::builders::ListGlobalTablesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_global_tables::builders::ListGlobalTablesInputBuilder,
+}
 impl ListGlobalTablesFluentBuilder  {
     /// Creates a new `ListGlobalTables`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_global_tables::ListGlobalTables, aws_http::retry::AwsResponseRetryClassifier,>,

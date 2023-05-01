@@ -8,16 +8,17 @@ pub use crate::operation::list_registries::_list_registries_input::ListRegistrie
 /// <p>List the registries.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRegistriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_registries::builders::ListRegistriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_registries::builders::ListRegistriesInputBuilder,
+}
 impl ListRegistriesFluentBuilder  {
     /// Creates a new `ListRegistries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_registries::ListRegistries, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRegistriesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_registries::paginator::ListRegistriesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_registries::paginator::ListRegistriesPaginator {
-                            crate::operation::list_registries::paginator::ListRegistriesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_registries::paginator::ListRegistriesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_registries::paginator::ListRegistriesPaginator {
+                                crate::operation::list_registries::paginator::ListRegistriesPaginator::new(self.handle, self.inner)
+                            }
     #[allow(missing_docs)] // documentation missing in model
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);

@@ -8,16 +8,17 @@ pub use crate::operation::describe_cache_security_groups::_describe_cache_securi
 /// <p>Returns a list of cache security group descriptions. If a cache security group name is specified, the list contains only the description of that group. This applicable only when you have ElastiCache in Classic setup </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCacheSecurityGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_cache_security_groups::builders::DescribeCacheSecurityGroupsInputBuilder,
+}
 impl DescribeCacheSecurityGroupsFluentBuilder  {
     /// Creates a new `DescribeCacheSecurityGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeCacheSecurityGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_security_groups::paginator::DescribeCacheSecurityGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_cache_security_groups::paginator::DescribeCacheSecurityGroupsPaginator {
-                            crate::operation::describe_cache_security_groups::paginator::DescribeCacheSecurityGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cache_security_groups::paginator::DescribeCacheSecurityGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_cache_security_groups::paginator::DescribeCacheSecurityGroupsPaginator {
+                                crate::operation::describe_cache_security_groups::paginator::DescribeCacheSecurityGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the cache security group to return details for.</p>
     pub fn cache_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cache_security_group_name(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::describe_environment_managed_action_history::_describe
 /// <p>Lists an environment's completed and failed managed actions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_environment_managed_action_history::builders::DescribeEnvironmentManagedActionHistoryInputBuilder,
+}
 impl DescribeEnvironmentManagedActionHistoryFluentBuilder  {
     /// Creates a new `DescribeEnvironmentManagedActionHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_environment_managed_action_history::DescribeEnvironmentManagedActionHistory, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeEnvironmentManagedActionHistoryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_environment_managed_action_history::paginator::DescribeEnvironmentManagedActionHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_environment_managed_action_history::paginator::DescribeEnvironmentManagedActionHistoryPaginator {
-                            crate::operation::describe_environment_managed_action_history::paginator::DescribeEnvironmentManagedActionHistoryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_environment_managed_action_history::paginator::DescribeEnvironmentManagedActionHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_environment_managed_action_history::paginator::DescribeEnvironmentManagedActionHistoryPaginator {
+                                crate::operation::describe_environment_managed_action_history::paginator::DescribeEnvironmentManagedActionHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The environment ID of the target environment.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());

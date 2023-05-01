@@ -8,16 +8,17 @@ pub use crate::operation::list_presets::_list_presets_input::ListPresetsInputBui
 /// Retrieve a JSON array of up to twenty of your presets. This will return the presets themselves, not just a list of them. To retrieve the next twenty presets, use the nextToken string returned with the array.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPresetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_presets::builders::ListPresetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_presets::builders::ListPresetsInputBuilder,
+}
 impl ListPresetsFluentBuilder  {
     /// Creates a new `ListPresets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_presets::ListPresets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPresetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_presets::paginator::ListPresetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_presets::paginator::ListPresetsPaginator {
-                            crate::operation::list_presets::paginator::ListPresetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_presets::paginator::ListPresetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_presets::paginator::ListPresetsPaginator {
+                                crate::operation::list_presets::paginator::ListPresetsPaginator::new(self.handle, self.inner)
+                            }
     /// Optionally, specify a preset category to limit responses to only presets from that category.
     pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.category(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::read_preset::_read_preset_input::ReadPresetInputBuilde
 /// <p>The ReadPreset operation gets detailed information about a preset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReadPresetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::read_preset::builders::ReadPresetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::read_preset::builders::ReadPresetInputBuilder,
+}
 impl ReadPresetFluentBuilder  {
     /// Creates a new `ReadPreset`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::read_preset::ReadPreset, aws_http::retry::AwsResponseRetryClassifier,>,

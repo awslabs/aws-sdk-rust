@@ -10,16 +10,17 @@ pub use crate::operation::start_vpc_endpoint_service_private_dns_verification::_
 /// <p>Before the service provider runs this command, they must add a record to the DNS server.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartVpcEndpointServicePrivateDnsVerificationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_vpc_endpoint_service_private_dns_verification::builders::StartVpcEndpointServicePrivateDnsVerificationInputBuilder,
+}
 impl StartVpcEndpointServicePrivateDnsVerificationFluentBuilder  {
     /// Creates a new `StartVpcEndpointServicePrivateDnsVerification`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerification, aws_http::retry::AwsResponseRetryClassifier,>,

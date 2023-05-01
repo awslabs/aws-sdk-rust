@@ -8,16 +8,17 @@ pub use crate::operation::get_associated_enclave_certificate_iam_roles::_get_ass
 /// <p>Returns the IAM roles that are associated with the specified ACM (ACM) certificate. It also returns the name of the Amazon S3 bucket and the Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored, and the ARN of the KMS key that's used to encrypt the private key.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssociatedEnclaveCertificateIamRolesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_associated_enclave_certificate_iam_roles::builders::GetAssociatedEnclaveCertificateIamRolesInputBuilder,
+}
 impl GetAssociatedEnclaveCertificateIamRolesFluentBuilder  {
     /// Creates a new `GetAssociatedEnclaveCertificateIamRoles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRoles, aws_http::retry::AwsResponseRetryClassifier,>,

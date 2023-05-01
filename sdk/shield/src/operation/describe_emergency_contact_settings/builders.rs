@@ -8,16 +8,17 @@ pub use crate::operation::describe_emergency_contact_settings::_describe_emergen
 /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEmergencyContactSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_emergency_contact_settings::builders::DescribeEmergencyContactSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_emergency_contact_settings::builders::DescribeEmergencyContactSettingsInputBuilder,
+}
 impl DescribeEmergencyContactSettingsFluentBuilder  {
     /// Creates a new `DescribeEmergencyContactSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettings, aws_http::retry::AwsResponseRetryClassifier,>,

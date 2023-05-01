@@ -8,16 +8,17 @@ pub use crate::operation::provision_permission_set::_provision_permission_set_in
 /// <p>The process by which a specified permission set is provisioned to the specified target.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ProvisionPermissionSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::provision_permission_set::builders::ProvisionPermissionSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::provision_permission_set::builders::ProvisionPermissionSetInputBuilder,
+}
 impl ProvisionPermissionSetFluentBuilder  {
     /// Creates a new `ProvisionPermissionSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::provision_permission_set::ProvisionPermissionSet, aws_http::retry::AwsResponseRetryClassifier,>,

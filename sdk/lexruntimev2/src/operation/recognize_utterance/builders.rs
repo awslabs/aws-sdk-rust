@@ -29,16 +29,17 @@ pub use crate::operation::recognize_utterance::_recognize_utterance_input::Recog
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion message</a>.</p>
 #[derive(std::fmt::Debug)]
 pub struct RecognizeUtteranceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::recognize_utterance::builders::RecognizeUtteranceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::recognize_utterance::builders::RecognizeUtteranceInputBuilder,
+}
 impl RecognizeUtteranceFluentBuilder  {
     /// Creates a new `RecognizeUtterance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::recognize_utterance::RecognizeUtterance, aws_http::retry::AwsResponseRetryClassifier,>,

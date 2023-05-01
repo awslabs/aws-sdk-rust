@@ -9,16 +9,17 @@ pub use crate::operation::get_configuration_set_event_destinations::_get_configu
 /// <p> <i>Events</i> include message sends, deliveries, opens, clicks, bounces, and complaints. <i>Event destinations</i> are places that you can send information about these events to. For example, you can send event data to Amazon SNS to receive notifications when you receive bounces or complaints, or you can use Amazon Kinesis Data Firehose to stream data to Amazon S3 for long-term storage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetConfigurationSetEventDestinationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsInputBuilder,
+}
 impl GetConfigurationSetEventDestinationsFluentBuilder  {
     /// Creates a new `GetConfigurationSetEventDestinations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinations, aws_http::retry::AwsResponseRetryClassifier,>,

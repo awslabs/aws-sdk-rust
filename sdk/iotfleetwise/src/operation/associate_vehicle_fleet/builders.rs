@@ -8,16 +8,17 @@ pub use crate::operation::associate_vehicle_fleet::_associate_vehicle_fleet_inpu
 /// <p> Adds, or associates, a vehicle with a fleet. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateVehicleFleetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_vehicle_fleet::builders::AssociateVehicleFleetInputBuilder,
+}
 impl AssociateVehicleFleetFluentBuilder  {
     /// Creates a new `AssociateVehicleFleet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_vehicle_fleet::AssociateVehicleFleet, aws_http::retry::AwsResponseRetryClassifier,>,

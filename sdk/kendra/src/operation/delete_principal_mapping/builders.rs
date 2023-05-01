@@ -11,16 +11,17 @@ pub use crate::operation::delete_principal_mapping::_delete_principal_mapping_in
 /// <p> <code>DeletePrincipalMapping</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePrincipalMappingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_principal_mapping::builders::DeletePrincipalMappingInputBuilder,
+}
 impl DeletePrincipalMappingFluentBuilder  {
     /// Creates a new `DeletePrincipalMapping`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_principal_mapping::DeletePrincipalMapping, aws_http::retry::AwsResponseRetryClassifier,>,

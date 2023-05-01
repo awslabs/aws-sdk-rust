@@ -8,16 +8,17 @@ pub use crate::operation::describe_network_insights_access_scopes::_describe_net
 /// <p>Describes the specified Network Access Scopes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNetworkInsightsAccessScopesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_network_insights_access_scopes::builders::DescribeNetworkInsightsAccessScopesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_network_insights_access_scopes::builders::DescribeNetworkInsightsAccessScopesInputBuilder,
+}
 impl DescribeNetworkInsightsAccessScopesFluentBuilder  {
     /// Creates a new `DescribeNetworkInsightsAccessScopes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_network_insights_access_scopes::DescribeNetworkInsightsAccessScopes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeNetworkInsightsAccessScopesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_network_insights_access_scopes::paginator::DescribeNetworkInsightsAccessScopesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_network_insights_access_scopes::paginator::DescribeNetworkInsightsAccessScopesPaginator {
-                            crate::operation::describe_network_insights_access_scopes::paginator::DescribeNetworkInsightsAccessScopesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_network_insights_access_scopes::paginator::DescribeNetworkInsightsAccessScopesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_network_insights_access_scopes::paginator::DescribeNetworkInsightsAccessScopesPaginator {
+                                crate::operation::describe_network_insights_access_scopes::paginator::DescribeNetworkInsightsAccessScopesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `NetworkInsightsAccessScopeIds`.
     ///
     /// To override the contents of this collection use [`set_network_insights_access_scope_ids`](Self::set_network_insights_access_scope_ids).

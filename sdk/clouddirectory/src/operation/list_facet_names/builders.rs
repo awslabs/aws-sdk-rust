@@ -8,16 +8,17 @@ pub use crate::operation::list_facet_names::_list_facet_names_input::ListFacetNa
 /// <p>Retrieves the names of facets that exist in a schema.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFacetNamesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_facet_names::builders::ListFacetNamesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_facet_names::builders::ListFacetNamesInputBuilder,
+}
 impl ListFacetNamesFluentBuilder  {
     /// Creates a new `ListFacetNames`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_facet_names::ListFacetNames, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFacetNamesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_facet_names::paginator::ListFacetNamesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_facet_names::paginator::ListFacetNamesPaginator {
-                            crate::operation::list_facet_names::paginator::ListFacetNamesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_facet_names::paginator::ListFacetNamesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_facet_names::paginator::ListFacetNamesPaginator {
+                                crate::operation::list_facet_names::paginator::ListFacetNamesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) to retrieve facet names from.</p>
     pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.schema_arn(input.into());

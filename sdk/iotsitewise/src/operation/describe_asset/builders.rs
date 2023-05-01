@@ -8,16 +8,17 @@ pub use crate::operation::describe_asset::_describe_asset_input::DescribeAssetIn
 /// <p>Retrieves information about an asset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_asset::builders::DescribeAssetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_asset::builders::DescribeAssetInputBuilder,
+}
 impl DescribeAssetFluentBuilder  {
     /// Creates a new `DescribeAsset`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_asset::DescribeAsset, aws_http::retry::AwsResponseRetryClassifier,>,

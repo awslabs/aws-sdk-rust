@@ -8,16 +8,17 @@ pub use crate::operation::deregister_wireless_device::_deregister_wireless_devic
 /// <p>Deregister a wireless device from AWS IoT Wireless.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterWirelessDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceInputBuilder,
+}
 impl DeregisterWirelessDeviceFluentBuilder  {
     /// Creates a new `DeregisterWirelessDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_wireless_device::DeregisterWirelessDevice, aws_http::retry::AwsResponseRetryClassifier,>,

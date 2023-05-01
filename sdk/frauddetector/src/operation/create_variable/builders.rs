@@ -8,16 +8,17 @@ pub use crate::operation::create_variable::_create_variable_input::CreateVariabl
 /// <p>Creates a variable.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVariableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_variable::builders::CreateVariableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_variable::builders::CreateVariableInputBuilder,
+}
 impl CreateVariableFluentBuilder  {
     /// Creates a new `CreateVariable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_variable::CreateVariable, aws_http::retry::AwsResponseRetryClassifier,>,

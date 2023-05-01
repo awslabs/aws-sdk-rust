@@ -8,16 +8,17 @@ pub use crate::operation::execute_provisioned_product_plan::_execute_provisioned
 /// <p>Provisions or modifies a product based on the resource changes for the specified plan.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExecuteProvisionedProductPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::execute_provisioned_product_plan::builders::ExecuteProvisionedProductPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::execute_provisioned_product_plan::builders::ExecuteProvisionedProductPlanInputBuilder,
+}
 impl ExecuteProvisionedProductPlanFluentBuilder  {
     /// Creates a new `ExecuteProvisionedProductPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlan, aws_http::retry::AwsResponseRetryClassifier,>,

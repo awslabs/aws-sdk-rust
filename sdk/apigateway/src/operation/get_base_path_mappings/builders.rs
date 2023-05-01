@@ -8,16 +8,17 @@ pub use crate::operation::get_base_path_mappings::_get_base_path_mappings_input:
 /// <p>Represents a collection of BasePathMapping resources.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBasePathMappingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_base_path_mappings::builders::GetBasePathMappingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_base_path_mappings::builders::GetBasePathMappingsInputBuilder,
+}
 impl GetBasePathMappingsFluentBuilder  {
     /// Creates a new `GetBasePathMappings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_base_path_mappings::GetBasePathMappings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetBasePathMappingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator {
-                            crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator {
+                                crate::operation::get_base_path_mappings::paginator::GetBasePathMappingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The domain name of a BasePathMapping resource.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());

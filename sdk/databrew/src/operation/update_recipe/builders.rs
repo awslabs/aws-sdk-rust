@@ -8,16 +8,17 @@ pub use crate::operation::update_recipe::_update_recipe_input::UpdateRecipeInput
 /// <p>Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRecipeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_recipe::builders::UpdateRecipeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_recipe::builders::UpdateRecipeInputBuilder,
+}
 impl UpdateRecipeFluentBuilder  {
     /// Creates a new `UpdateRecipe`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_recipe::UpdateRecipe, aws_http::retry::AwsResponseRetryClassifier,>,

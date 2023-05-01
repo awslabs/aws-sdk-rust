@@ -9,16 +9,17 @@ pub use crate::operation::describe_schemas::_describe_schemas_input::DescribeSch
 /// <p></p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSchemasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_schemas::builders::DescribeSchemasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_schemas::builders::DescribeSchemasInputBuilder,
+}
 impl DescribeSchemasFluentBuilder  {
     /// Creates a new `DescribeSchemas`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_schemas::DescribeSchemas, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeSchemasFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_schemas::paginator::DescribeSchemasPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_schemas::paginator::DescribeSchemasPaginator {
-                            crate::operation::describe_schemas::paginator::DescribeSchemasPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_schemas::paginator::DescribeSchemasPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_schemas::paginator::DescribeSchemasPaginator {
+                                crate::operation::describe_schemas::paginator::DescribeSchemasPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.endpoint_arn(input.into());

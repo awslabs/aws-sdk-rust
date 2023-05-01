@@ -8,16 +8,17 @@ pub use crate::operation::import_api::_import_api_input::ImportApiInputBuilder;
 /// <p>Imports an API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportApiFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_api::builders::ImportApiInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_api::builders::ImportApiInputBuilder,
+}
 impl ImportApiFluentBuilder  {
     /// Creates a new `ImportApi`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_api::ImportApi, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_source_servers::_describe_source_servers_inpu
 /// <p>Retrieves all SourceServers or multiple SourceServers by ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSourceServersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder,
+}
 impl DescribeSourceServersFluentBuilder  {
     /// Creates a new `DescribeSourceServers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_source_servers::DescribeSourceServers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeSourceServersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator {
-                            crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator {
+                                crate::operation::describe_source_servers::paginator::DescribeSourceServersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Request to filter Source Servers list.</p>
     pub fn filters(mut self, input: crate::types::DescribeSourceServersRequestFilters) -> Self {
         self.inner = self.inner.filters(input);

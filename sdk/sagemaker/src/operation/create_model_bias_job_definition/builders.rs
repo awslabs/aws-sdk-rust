@@ -8,16 +8,17 @@ pub use crate::operation::create_model_bias_job_definition::_create_model_bias_j
 /// <p>Creates the definition for a model bias job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateModelBiasJobDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_model_bias_job_definition::builders::CreateModelBiasJobDefinitionInputBuilder,
+}
 impl CreateModelBiasJobDefinitionFluentBuilder  {
     /// Creates a new `CreateModelBiasJobDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

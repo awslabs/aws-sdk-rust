@@ -9,16 +9,17 @@ pub use crate::operation::list_platform_branches::_list_platform_branches_input:
 /// <p>For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS Elastic Beanstalk Platforms Glossary</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPlatformBranchesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_platform_branches::builders::ListPlatformBranchesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_platform_branches::builders::ListPlatformBranchesInputBuilder,
+}
 impl ListPlatformBranchesFluentBuilder  {
     /// Creates a new `ListPlatformBranches`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_platform_branches::ListPlatformBranches, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListPlatformBranchesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator {
-                            crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator {
+                                crate::operation::list_platform_branches::paginator::ListPlatformBranchesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).

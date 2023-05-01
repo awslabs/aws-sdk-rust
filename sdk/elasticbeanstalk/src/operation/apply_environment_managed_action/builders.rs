@@ -8,16 +8,17 @@ pub use crate::operation::apply_environment_managed_action::_apply_environment_m
 /// <p>Applies a scheduled managed action immediately. A managed action can be applied only if its status is <code>Scheduled</code>. Get the status and action ID of a managed action with <code>DescribeEnvironmentManagedActions</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ApplyEnvironmentManagedActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::apply_environment_managed_action::builders::ApplyEnvironmentManagedActionInputBuilder,
+}
 impl ApplyEnvironmentManagedActionFluentBuilder  {
     /// Creates a new `ApplyEnvironmentManagedAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedAction, aws_http::retry::AwsResponseRetryClassifier,>,

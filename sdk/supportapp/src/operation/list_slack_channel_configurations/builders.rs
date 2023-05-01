@@ -8,16 +8,17 @@ pub use crate::operation::list_slack_channel_configurations::_list_slack_channel
 /// <p>Lists the Slack channel configurations for an Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSlackChannelConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_slack_channel_configurations::builders::ListSlackChannelConfigurationsInputBuilder,
+}
 impl ListSlackChannelConfigurationsFluentBuilder  {
     /// Creates a new `ListSlackChannelConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_slack_channel_configurations::ListSlackChannelConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSlackChannelConfigurationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_slack_channel_configurations::paginator::ListSlackChannelConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_slack_channel_configurations::paginator::ListSlackChannelConfigurationsPaginator {
-                            crate::operation::list_slack_channel_configurations::paginator::ListSlackChannelConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_slack_channel_configurations::paginator::ListSlackChannelConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_slack_channel_configurations::paginator::ListSlackChannelConfigurationsPaginator {
+                                crate::operation::list_slack_channel_configurations::paginator::ListSlackChannelConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If the results of a search are large, the API only returns a portion of the results and includes a <code>nextToken</code> pagination token in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When the API returns the last set of results, the response doesn't include a pagination token value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

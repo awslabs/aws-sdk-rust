@@ -10,16 +10,17 @@ pub use crate::operation::get_saml_provider::_get_saml_provider_input::GetSamlPr
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSAMLProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_saml_provider::builders::GetSamlProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_saml_provider::builders::GetSamlProviderInputBuilder,
+}
 impl GetSAMLProviderFluentBuilder  {
     /// Creates a new `GetSAMLProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_saml_provider::GetSAMLProvider, aws_http::retry::AwsResponseRetryClassifier,>,

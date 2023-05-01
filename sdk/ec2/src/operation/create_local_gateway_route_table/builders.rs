@@ -8,16 +8,17 @@ pub use crate::operation::create_local_gateway_route_table::_create_local_gatewa
 /// <p> Creates a local gateway route table. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLocalGatewayRouteTableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableInputBuilder,
+}
 impl CreateLocalGatewayRouteTableFluentBuilder  {
     /// Creates a new `CreateLocalGatewayRouteTable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTable, aws_http::retry::AwsResponseRetryClassifier,>,

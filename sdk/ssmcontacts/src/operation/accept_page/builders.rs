@@ -8,16 +8,17 @@ pub use crate::operation::accept_page::_accept_page_input::AcceptPageInputBuilde
 /// <p>Used to acknowledge an engagement to a contact channel during an incident.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptPageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_page::builders::AcceptPageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_page::builders::AcceptPageInputBuilder,
+}
 impl AcceptPageFluentBuilder  {
     /// Creates a new `AcceptPage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_page::AcceptPage, aws_http::retry::AwsResponseRetryClassifier,>,

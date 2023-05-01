@@ -8,16 +8,17 @@ pub use crate::operation::update_custom_routing_listener::_update_custom_routing
 /// <p>Update a listener for a custom routing accelerator. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCustomRoutingListenerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_custom_routing_listener::builders::UpdateCustomRoutingListenerInputBuilder,
+}
 impl UpdateCustomRoutingListenerFluentBuilder  {
     /// Creates a new `UpdateCustomRoutingListener`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_custom_routing_listener::UpdateCustomRoutingListener, aws_http::retry::AwsResponseRetryClassifier,>,

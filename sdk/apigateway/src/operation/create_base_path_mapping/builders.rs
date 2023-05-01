@@ -8,16 +8,17 @@ pub use crate::operation::create_base_path_mapping::_create_base_path_mapping_in
 /// <p>Creates a new BasePathMapping resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBasePathMappingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_base_path_mapping::builders::CreateBasePathMappingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_base_path_mapping::builders::CreateBasePathMappingInputBuilder,
+}
 impl CreateBasePathMappingFluentBuilder  {
     /// Creates a new `CreateBasePathMapping`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_base_path_mapping::CreateBasePathMapping, aws_http::retry::AwsResponseRetryClassifier,>,

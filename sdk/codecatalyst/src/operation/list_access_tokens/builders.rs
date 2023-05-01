@@ -8,16 +8,17 @@ pub use crate::operation::list_access_tokens::_list_access_tokens_input::ListAcc
 /// <p>Lists all personal access tokens (PATs) associated with the user who calls the API. You can only list PATs associated with your Amazon Web Services Builder ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccessTokensFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_access_tokens::builders::ListAccessTokensInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_access_tokens::builders::ListAccessTokensInputBuilder,
+}
 impl ListAccessTokensFluentBuilder  {
     /// Creates a new `ListAccessTokens`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_access_tokens::ListAccessTokens, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAccessTokensFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_access_tokens::paginator::ListAccessTokensPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_access_tokens::paginator::ListAccessTokensPaginator {
-                            crate::operation::list_access_tokens::paginator::ListAccessTokensPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_access_tokens::paginator::ListAccessTokensPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_access_tokens::paginator::ListAccessTokensPaginator {
+                                crate::operation::list_access_tokens::paginator::ListAccessTokensPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

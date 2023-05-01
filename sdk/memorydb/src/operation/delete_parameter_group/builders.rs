@@ -8,16 +8,17 @@ pub use crate::operation::delete_parameter_group::_delete_parameter_group_input:
 /// <p>Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any clusters. You cannot delete the default parameter groups in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteParameterGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_parameter_group::builders::DeleteParameterGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_parameter_group::builders::DeleteParameterGroupInputBuilder,
+}
 impl DeleteParameterGroupFluentBuilder  {
     /// Creates a new `DeleteParameterGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_parameter_group::DeleteParameterGroup, aws_http::retry::AwsResponseRetryClassifier,>,

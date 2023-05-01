@@ -8,16 +8,17 @@ pub use crate::operation::accept_resource_share_invitation::_accept_resource_sha
 /// <p>Accepts an invitation to a resource share from another Amazon Web Services account. After you accept the invitation, the resources included in the resource share are available to interact with in the relevant Amazon Web Services Management Consoles and tools.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptResourceShareInvitationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_resource_share_invitation::builders::AcceptResourceShareInvitationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_resource_share_invitation::builders::AcceptResourceShareInvitationInputBuilder,
+}
 impl AcceptResourceShareInvitationFluentBuilder  {
     /// Creates a new `AcceptResourceShareInvitation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitation, aws_http::retry::AwsResponseRetryClassifier,>,

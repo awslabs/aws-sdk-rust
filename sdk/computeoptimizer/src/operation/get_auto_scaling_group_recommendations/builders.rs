@@ -9,16 +9,17 @@ pub use crate::operation::get_auto_scaling_group_recommendations::_get_auto_scal
 /// <p>Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAutoScalingGroupRecommendationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_auto_scaling_group_recommendations::builders::GetAutoScalingGroupRecommendationsInputBuilder,
+}
 impl GetAutoScalingGroupRecommendationsFluentBuilder  {
     /// Creates a new `GetAutoScalingGroupRecommendations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_auto_scaling_group_recommendations::GetAutoScalingGroupRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,

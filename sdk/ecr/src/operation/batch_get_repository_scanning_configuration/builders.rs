@@ -8,16 +8,17 @@ pub use crate::operation::batch_get_repository_scanning_configuration::_batch_ge
 /// <p>Gets the scanning configuration for one or more repositories.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetRepositoryScanningConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_get_repository_scanning_configuration::builders::BatchGetRepositoryScanningConfigurationInputBuilder,
+}
 impl BatchGetRepositoryScanningConfigurationFluentBuilder  {
     /// Creates a new `BatchGetRepositoryScanningConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_repository_scanning_configuration::BatchGetRepositoryScanningConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

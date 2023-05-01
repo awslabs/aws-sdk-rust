@@ -9,16 +9,17 @@ pub use crate::operation::put_domain_permissions_policy::_put_domain_permissions
 /// <p> When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the domain is ignored when evaluting permissions. This ensures that the owner of a domain cannot lock themselves out of the domain, which would prevent them from being able to update the resource policy. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutDomainPermissionsPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_domain_permissions_policy::builders::PutDomainPermissionsPolicyInputBuilder,
+}
 impl PutDomainPermissionsPolicyFluentBuilder  {
     /// Creates a new `PutDomainPermissionsPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

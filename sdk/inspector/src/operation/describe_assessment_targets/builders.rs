@@ -8,16 +8,17 @@ pub use crate::operation::describe_assessment_targets::_describe_assessment_targ
 /// <p>Describes the assessment targets that are specified by the ARNs of the assessment targets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssessmentTargetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_assessment_targets::builders::DescribeAssessmentTargetsInputBuilder,
+}
 impl DescribeAssessmentTargetsFluentBuilder  {
     /// Creates a new `DescribeAssessmentTargets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_assessment_targets::DescribeAssessmentTargets, aws_http::retry::AwsResponseRetryClassifier,>,

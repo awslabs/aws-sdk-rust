@@ -8,16 +8,17 @@ pub use crate::operation::deactivate_device_identifier::_deactivate_device_ident
 /// <p>Deactivates the specified device identifier.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeactivateDeviceIdentifierFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deactivate_device_identifier::builders::DeactivateDeviceIdentifierInputBuilder,
+}
 impl DeactivateDeviceIdentifierFluentBuilder  {
     /// Creates a new `DeactivateDeviceIdentifier`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deactivate_device_identifier::DeactivateDeviceIdentifier, aws_http::retry::AwsResponseRetryClassifier,>,

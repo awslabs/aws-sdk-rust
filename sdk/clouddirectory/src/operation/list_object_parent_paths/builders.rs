@@ -9,16 +9,17 @@ pub use crate::operation::list_object_parent_paths::_list_object_parent_paths_in
 /// <p>Use this API to evaluate all parents for an object. The call returns all objects from the root of the directory up to the requested object. The API returns the number of paths based on user-defined <code>MaxResults</code>, in case there are multiple paths to the parent. The order of the paths and nodes returned is consistent among multiple API calls unless the objects are deleted or moved. Paths not leading to the directory root are ignored from the target object.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListObjectParentPathsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_object_parent_paths::builders::ListObjectParentPathsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_object_parent_paths::builders::ListObjectParentPathsInputBuilder,
+}
 impl ListObjectParentPathsFluentBuilder  {
     /// Creates a new `ListObjectParentPaths`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_object_parent_paths::ListObjectParentPaths, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListObjectParentPathsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator {
-                            crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator {
+                                crate::operation::list_object_parent_paths::paginator::ListObjectParentPathsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the directory to which the parent path applies.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());

@@ -9,16 +9,17 @@ pub use crate::operation::create_slot_type::_create_slot_type_input::CreateSlotT
 /// <p> To create a custom slot type, specify a name for the slot type and a set of enumeration values, the values that a slot of this type can assume. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSlotTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_slot_type::builders::CreateSlotTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_slot_type::builders::CreateSlotTypeInputBuilder,
+}
 impl CreateSlotTypeFluentBuilder  {
     /// Creates a new `CreateSlotType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_slot_type::CreateSlotType, aws_http::retry::AwsResponseRetryClassifier,>,

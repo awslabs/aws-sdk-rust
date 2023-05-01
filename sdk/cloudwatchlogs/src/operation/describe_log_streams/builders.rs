@@ -11,16 +11,17 @@ pub use crate::operation::describe_log_streams::_describe_log_streams_input::Des
 /// <p>If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch cross-account observability</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLogStreamsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_log_streams::builders::DescribeLogStreamsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_log_streams::builders::DescribeLogStreamsInputBuilder,
+}
 impl DescribeLogStreamsFluentBuilder  {
     /// Creates a new `DescribeLogStreams`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_log_streams::DescribeLogStreams, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl DescribeLogStreamsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator {
-                            crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator {
+                                crate::operation::describe_log_streams::paginator::DescribeLogStreamsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the log group.</p> <note> 
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p> 
     /// </note>

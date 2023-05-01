@@ -8,16 +8,17 @@ pub use crate::operation::get_recommender_configuration::_get_recommender_config
 /// <p>Retrieves information about an Amazon Pinpoint configuration for a recommender model.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRecommenderConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_recommender_configuration::builders::GetRecommenderConfigurationInputBuilder,
+}
 impl GetRecommenderConfigurationFluentBuilder  {
     /// Creates a new `GetRecommenderConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_recommender_configuration::GetRecommenderConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_job_runs::_list_job_runs_input::ListJobRunsInputB
 /// <p>Lists all of the previous runs of a particular DataBrew job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListJobRunsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_job_runs::builders::ListJobRunsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_job_runs::builders::ListJobRunsInputBuilder,
+}
 impl ListJobRunsFluentBuilder  {
     /// Creates a new `ListJobRuns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_job_runs::ListJobRuns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListJobRunsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_job_runs::paginator::ListJobRunsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_job_runs::paginator::ListJobRunsPaginator {
-                            crate::operation::list_job_runs::paginator::ListJobRunsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_job_runs::paginator::ListJobRunsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_job_runs::paginator::ListJobRunsPaginator {
+                                crate::operation::list_job_runs::paginator::ListJobRunsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the job.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

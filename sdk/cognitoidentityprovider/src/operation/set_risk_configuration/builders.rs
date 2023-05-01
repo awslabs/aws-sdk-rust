@@ -9,16 +9,17 @@ pub use crate::operation::set_risk_configuration::_set_risk_configuration_input:
 /// <p>To activate Amazon Cognito advanced security features, update the user pool to include the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetRiskConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_risk_configuration::builders::SetRiskConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_risk_configuration::builders::SetRiskConfigurationInputBuilder,
+}
 impl SetRiskConfigurationFluentBuilder  {
     /// Creates a new `SetRiskConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_risk_configuration::SetRiskConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

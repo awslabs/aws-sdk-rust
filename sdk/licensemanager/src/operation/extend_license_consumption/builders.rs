@@ -8,16 +8,17 @@ pub use crate::operation::extend_license_consumption::_extend_license_consumptio
 /// <p>Extends the expiration date for license consumption.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ExtendLicenseConsumptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::extend_license_consumption::builders::ExtendLicenseConsumptionInputBuilder,
+}
 impl ExtendLicenseConsumptionFluentBuilder  {
     /// Creates a new `ExtendLicenseConsumption`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::extend_license_consumption::ExtendLicenseConsumption, aws_http::retry::AwsResponseRetryClassifier,>,

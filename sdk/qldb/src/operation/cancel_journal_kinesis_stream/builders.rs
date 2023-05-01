@@ -9,16 +9,17 @@ pub use crate::operation::cancel_journal_kinesis_stream::_cancel_journal_kinesis
 /// <p>You can't restart a stream after you cancel it. Canceled QLDB stream resources are subject to a 7-day retention period, so they are automatically deleted after this limit expires.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelJournalKinesisStreamFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder,
+}
 impl CancelJournalKinesisStreamFluentBuilder  {
     /// Creates a new `CancelJournalKinesisStream`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStream, aws_http::retry::AwsResponseRetryClassifier,>,

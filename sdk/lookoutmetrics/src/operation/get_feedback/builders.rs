@@ -8,16 +8,17 @@ pub use crate::operation::get_feedback::_get_feedback_input::GetFeedbackInputBui
 /// <p>Get feedback for an anomaly group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFeedbackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_feedback::builders::GetFeedbackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_feedback::builders::GetFeedbackInputBuilder,
+}
 impl GetFeedbackFluentBuilder  {
     /// Creates a new `GetFeedback`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_feedback::GetFeedback, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetFeedbackFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_feedback::paginator::GetFeedbackPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_feedback::paginator::GetFeedbackPaginator {
-                            crate::operation::get_feedback::paginator::GetFeedbackPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_feedback::paginator::GetFeedbackPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_feedback::paginator::GetFeedbackPaginator {
+                                crate::operation::get_feedback::paginator::GetFeedbackPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());

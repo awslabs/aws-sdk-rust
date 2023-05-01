@@ -8,16 +8,17 @@ pub use crate::operation::put_rest_api::_put_rest_api_input::PutRestApiInputBuil
 /// <p>A feature of the API Gateway control service for updating an existing API with an input of external API definitions. The update can take the form of merging the supplied definition into the existing API or overwriting the existing API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutRestApiFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_rest_api::builders::PutRestApiInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_rest_api::builders::PutRestApiInputBuilder,
+}
 impl PutRestApiFluentBuilder  {
     /// Creates a new `PutRestApi`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_rest_api::PutRestApi, aws_http::retry::AwsResponseRetryClassifier,>,

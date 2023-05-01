@@ -8,16 +8,17 @@ pub use crate::operation::list_build_batches::_list_build_batches_input::ListBui
 /// <p>Retrieves the identifiers of your build batches in the current region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBuildBatchesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_build_batches::builders::ListBuildBatchesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_build_batches::builders::ListBuildBatchesInputBuilder,
+}
 impl ListBuildBatchesFluentBuilder  {
     /// Creates a new `ListBuildBatches`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_build_batches::ListBuildBatches, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBuildBatchesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator {
-                            crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator {
+                                crate::operation::list_build_batches::paginator::ListBuildBatchesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
     pub fn filter(mut self, input: crate::types::BuildBatchFilter) -> Self {
         self.inner = self.inner.filter(input);

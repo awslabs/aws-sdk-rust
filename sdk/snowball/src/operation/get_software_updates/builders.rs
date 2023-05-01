@@ -8,16 +8,17 @@ pub use crate::operation::get_software_updates::_get_software_updates_input::Get
 /// <p>Returns an Amazon S3 presigned URL for an update file associated with a specified <code>JobId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSoftwareUpdatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_software_updates::builders::GetSoftwareUpdatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_software_updates::builders::GetSoftwareUpdatesInputBuilder,
+}
 impl GetSoftwareUpdatesFluentBuilder  {
     /// Creates a new `GetSoftwareUpdates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_software_updates::GetSoftwareUpdates, aws_http::retry::AwsResponseRetryClassifier,>,

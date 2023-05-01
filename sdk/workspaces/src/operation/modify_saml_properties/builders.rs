@@ -8,16 +8,17 @@ pub use crate::operation::modify_saml_properties::_modify_saml_properties_input:
 /// <p>Modifies multiple properties related to SAML 2.0 authentication, including the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifySamlPropertiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_saml_properties::builders::ModifySamlPropertiesInputBuilder,
+}
 impl ModifySamlPropertiesFluentBuilder  {
     /// Creates a new `ModifySamlProperties`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_saml_properties::ModifySamlProperties, aws_http::retry::AwsResponseRetryClassifier,>,

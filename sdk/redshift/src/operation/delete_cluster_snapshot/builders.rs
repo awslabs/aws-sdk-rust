@@ -9,16 +9,17 @@ pub use crate::operation::delete_cluster_snapshot::_delete_cluster_snapshot_inpu
 /// <p>Unlike automated snapshots, manual snapshots are retained even after you delete your cluster. Amazon Redshift does not delete your manual snapshots. You must delete manual snapshot explicitly to avoid getting charged. If other accounts are authorized to access the snapshot, you must revoke all of the authorizations before you can delete the snapshot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteClusterSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_cluster_snapshot::builders::DeleteClusterSnapshotInputBuilder,
+}
 impl DeleteClusterSnapshotFluentBuilder  {
     /// Creates a new `DeleteClusterSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_cluster_snapshot::DeleteClusterSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

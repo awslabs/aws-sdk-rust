@@ -8,16 +8,17 @@ pub use crate::operation::authorize_client_vpn_ingress::_authorize_client_vpn_in
 /// <p>Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization rules act as firewall rules that grant access to networks. You must configure ingress authorization rules to enable clients to access resources in Amazon Web Services or on-premises networks.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeClientVpnIngressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::authorize_client_vpn_ingress::builders::AuthorizeClientVpnIngressInputBuilder,
+}
 impl AuthorizeClientVpnIngressFluentBuilder  {
     /// Creates a new `AuthorizeClientVpnIngress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngress, aws_http::retry::AwsResponseRetryClassifier,>,

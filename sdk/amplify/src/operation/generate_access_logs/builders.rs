@@ -8,16 +8,17 @@ pub use crate::operation::generate_access_logs::_generate_access_logs_input::Gen
 /// <p> Returns the website access logs for a specific time range using a presigned URL. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GenerateAccessLogsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::generate_access_logs::builders::GenerateAccessLogsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::generate_access_logs::builders::GenerateAccessLogsInputBuilder,
+}
 impl GenerateAccessLogsFluentBuilder  {
     /// Creates a new `GenerateAccessLogs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::generate_access_logs::GenerateAccessLogs, aws_http::retry::AwsResponseRetryClassifier,>,

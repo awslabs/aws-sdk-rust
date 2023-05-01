@@ -13,16 +13,17 @@ pub use crate::operation::create_container_service_registry_login::_create_conta
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateContainerServiceRegistryLoginFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_container_service_registry_login::builders::CreateContainerServiceRegistryLoginInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_container_service_registry_login::builders::CreateContainerServiceRegistryLoginInputBuilder,
+}
 impl CreateContainerServiceRegistryLoginFluentBuilder  {
     /// Creates a new `CreateContainerServiceRegistryLogin`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLogin, aws_http::retry::AwsResponseRetryClassifier,>,

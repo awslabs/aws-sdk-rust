@@ -8,16 +8,17 @@ pub use crate::operation::stop_auto_ml_job::_stop_auto_ml_job_input::StopAutoMlJ
 /// <p>A method for forcing a running job to shut down.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopAutoMLJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_auto_ml_job::builders::StopAutoMlJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_auto_ml_job::builders::StopAutoMlJobInputBuilder,
+}
 impl StopAutoMLJobFluentBuilder  {
     /// Creates a new `StopAutoMLJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_auto_ml_job::StopAutoMLJob, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_device_pool::_get_device_pool_input::GetDevicePool
 /// <p>Gets information about a device pool.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDevicePoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_device_pool::builders::GetDevicePoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_device_pool::builders::GetDevicePoolInputBuilder,
+}
 impl GetDevicePoolFluentBuilder  {
     /// Creates a new `GetDevicePool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_device_pool::GetDevicePool, aws_http::retry::AwsResponseRetryClassifier,>,

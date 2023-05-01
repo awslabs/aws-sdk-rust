@@ -9,16 +9,17 @@ pub use crate::operation::delete_query_logging_config::_delete_query_logging_con
 /// <p>For more information about DNS query logs, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateQueryLoggingConfig.html">CreateQueryLoggingConfig</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteQueryLoggingConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_query_logging_config::builders::DeleteQueryLoggingConfigInputBuilder,
+}
 impl DeleteQueryLoggingConfigFluentBuilder  {
     /// Creates a new `DeleteQueryLoggingConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_query_logging_config::DeleteQueryLoggingConfig, aws_http::retry::AwsResponseRetryClassifier,>,

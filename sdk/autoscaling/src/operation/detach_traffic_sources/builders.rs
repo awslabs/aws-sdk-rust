@@ -9,16 +9,17 @@ pub use crate::operation::detach_traffic_sources::_detach_traffic_sources_input:
 /// <p>When you detach a taffic, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the traffic source using the <code>DescribeTrafficSources</code> API call. The instances continue to run.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachTrafficSourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detach_traffic_sources::builders::DetachTrafficSourcesInputBuilder,
+}
 impl DetachTrafficSourcesFluentBuilder  {
     /// Creates a new `DetachTrafficSources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detach_traffic_sources::DetachTrafficSources, aws_http::retry::AwsResponseRetryClassifier,>,

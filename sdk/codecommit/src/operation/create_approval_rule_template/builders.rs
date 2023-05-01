@@ -8,16 +8,17 @@ pub use crate::operation::create_approval_rule_template::_create_approval_rule_t
 /// <p>Creates a template for approval rules that can then be associated with one or more repositories in your AWS account. When you associate a template with a repository, AWS CodeCommit creates an approval rule that matches the conditions of the template for all pull requests that meet the conditions of the template. For more information, see <code>AssociateApprovalRuleTemplateWithRepository</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateApprovalRuleTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_approval_rule_template::builders::CreateApprovalRuleTemplateInputBuilder,
+}
 impl CreateApprovalRuleTemplateFluentBuilder  {
     /// Creates a new `CreateApprovalRuleTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_approval_rule_template::CreateApprovalRuleTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

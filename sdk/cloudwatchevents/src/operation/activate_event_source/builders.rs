@@ -8,16 +8,17 @@ pub use crate::operation::activate_event_source::_activate_event_source_input::A
 /// <p>Activates a partner event source that has been deactivated. Once activated, your matching event bus will start receiving events from the event source.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ActivateEventSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder,
+}
 impl ActivateEventSourceFluentBuilder  {
     /// Creates a new `ActivateEventSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::activate_event_source::ActivateEventSource, aws_http::retry::AwsResponseRetryClassifier,>,

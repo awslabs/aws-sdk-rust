@@ -8,16 +8,17 @@ pub use crate::operation::list_anomalous_log_groups::_list_anomalous_log_groups_
 /// <p> Returns the list of log groups that contain log anomalies. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAnomalousLogGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsInputBuilder,
+}
 impl ListAnomalousLogGroupsFluentBuilder  {
     /// Creates a new `ListAnomalousLogGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_anomalous_log_groups::ListAnomalousLogGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAnomalousLogGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_anomalous_log_groups::paginator::ListAnomalousLogGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_anomalous_log_groups::paginator::ListAnomalousLogGroupsPaginator {
-                            crate::operation::list_anomalous_log_groups::paginator::ListAnomalousLogGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_anomalous_log_groups::paginator::ListAnomalousLogGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_anomalous_log_groups::paginator::ListAnomalousLogGroupsPaginator {
+                                crate::operation::list_anomalous_log_groups::paginator::ListAnomalousLogGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The ID of the insight containing the log groups. </p>
     pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.insight_id(input.into());

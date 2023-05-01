@@ -8,16 +8,17 @@ pub use crate::operation::delete_evaluation_results::_delete_evaluation_results_
 /// <p>Deletes the evaluation results for the specified Config rule. You can specify one Config rule per request. After you delete the evaluation results, you can call the <code>StartConfigRulesEvaluation</code> API to start evaluating your Amazon Web Services resources against the rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEvaluationResultsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_evaluation_results::builders::DeleteEvaluationResultsInputBuilder,
+}
 impl DeleteEvaluationResultsFluentBuilder  {
     /// Creates a new `DeleteEvaluationResults`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_evaluation_results::DeleteEvaluationResults, aws_http::retry::AwsResponseRetryClassifier,>,

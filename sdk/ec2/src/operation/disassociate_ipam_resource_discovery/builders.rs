@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_ipam_resource_discovery::_disassociate_ip
 /// <p>Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is an IPAM component that enables IPAM to manage and monitor resources that belong to the owning account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateIpamResourceDiscoveryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryInputBuilder,
+}
 impl DisassociateIpamResourceDiscoveryFluentBuilder  {
     /// Creates a new `DisassociateIpamResourceDiscovery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscovery, aws_http::retry::AwsResponseRetryClassifier,>,

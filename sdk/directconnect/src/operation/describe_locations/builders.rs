@@ -8,16 +8,17 @@ pub use crate::operation::describe_locations::_describe_locations_input::Describ
 /// <p>Lists the Direct Connect locations in the current Amazon Web Services Region. These are the locations that can be selected when calling <code>CreateConnection</code> or <code>CreateInterconnect</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLocationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_locations::builders::DescribeLocationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_locations::builders::DescribeLocationsInputBuilder,
+}
 impl DescribeLocationsFluentBuilder  {
     /// Creates a new `DescribeLocations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_locations::DescribeLocations, aws_http::retry::AwsResponseRetryClassifier,>,

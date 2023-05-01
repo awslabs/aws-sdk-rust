@@ -8,16 +8,17 @@ pub use crate::operation::describe_sessions::_describe_sessions_input::DescribeS
 /// <p>Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSessionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_sessions::builders::DescribeSessionsInputBuilder,
+}
 impl DescribeSessionsFluentBuilder  {
     /// Creates a new `DescribeSessions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_sessions::DescribeSessions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeSessionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_sessions::paginator::DescribeSessionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_sessions::paginator::DescribeSessionsPaginator {
-                            crate::operation::describe_sessions::paginator::DescribeSessionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_sessions::paginator::DescribeSessionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_sessions::paginator::DescribeSessionsPaginator {
+                                crate::operation::describe_sessions::paginator::DescribeSessionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The session status to retrieve a list of sessions for. For example, "Active".</p>
     pub fn state(mut self, input: crate::types::SessionState) -> Self {
         self.inner = self.inner.state(input);

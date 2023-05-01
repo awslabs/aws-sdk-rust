@@ -8,16 +8,17 @@ pub use crate::operation::stop_crawler_schedule::_stop_crawler_schedule_input::S
 /// <p>Sets the schedule state of the specified crawler to <code>NOT_SCHEDULED</code>, but does not stop the crawler if it is already running.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopCrawlerScheduleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_crawler_schedule::builders::StopCrawlerScheduleInputBuilder,
+}
 impl StopCrawlerScheduleFluentBuilder  {
     /// Creates a new `StopCrawlerSchedule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_crawler_schedule::StopCrawlerSchedule, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::search_local_gateway_routes::_search_local_gateway_rou
 /// <p>Searches for routes in the specified local gateway route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchLocalGatewayRoutesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_local_gateway_routes::builders::SearchLocalGatewayRoutesInputBuilder,
+}
 impl SearchLocalGatewayRoutesFluentBuilder  {
     /// Creates a new `SearchLocalGatewayRoutes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchLocalGatewayRoutesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_local_gateway_routes::paginator::SearchLocalGatewayRoutesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_local_gateway_routes::paginator::SearchLocalGatewayRoutesPaginator {
-                            crate::operation::search_local_gateway_routes::paginator::SearchLocalGatewayRoutesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_local_gateway_routes::paginator::SearchLocalGatewayRoutesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_local_gateway_routes::paginator::SearchLocalGatewayRoutesPaginator {
+                                crate::operation::search_local_gateway_routes::paginator::SearchLocalGatewayRoutesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.local_gateway_route_table_id(input.into());

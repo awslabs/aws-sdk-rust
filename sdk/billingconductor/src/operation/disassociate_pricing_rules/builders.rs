@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_pricing_rules::_disassociate_pricing_rule
 /// <p> Disassociates a list of pricing rules from a pricing plan. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociatePricingRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder,
+}
 impl DisassociatePricingRulesFluentBuilder  {
     /// Creates a new `DisassociatePricingRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_pricing_rules::DisassociatePricingRules, aws_http::retry::AwsResponseRetryClassifier,>,

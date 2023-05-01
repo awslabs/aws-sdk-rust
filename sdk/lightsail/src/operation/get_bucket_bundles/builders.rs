@@ -10,16 +10,17 @@ pub use crate::operation::get_bucket_bundles::_get_bucket_bundles_input::GetBuck
 /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to update the bundle for a bucket.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBucketBundlesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_bucket_bundles::builders::GetBucketBundlesInputBuilder,
+}
 impl GetBucketBundlesFluentBuilder  {
     /// Creates a new `GetBucketBundles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_bucket_bundles::GetBucketBundles, aws_http::retry::AwsResponseRetryClassifier,>,

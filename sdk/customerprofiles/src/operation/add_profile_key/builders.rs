@@ -9,16 +9,17 @@ pub use crate::operation::add_profile_key::_add_profile_key_input::AddProfileKey
 /// <p>A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddProfileKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_profile_key::builders::AddProfileKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_profile_key::builders::AddProfileKeyInputBuilder,
+}
 impl AddProfileKeyFluentBuilder  {
     /// Creates a new `AddProfileKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_profile_key::AddProfileKey, aws_http::retry::AwsResponseRetryClassifier,>,

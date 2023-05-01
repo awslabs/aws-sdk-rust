@@ -8,16 +8,17 @@ pub use crate::operation::create_egress_only_internet_gateway::_create_egress_on
 /// <p>[IPv6 only] Creates an egress-only internet gateway for your VPC. An egress-only internet gateway is used to enable outbound communication over IPv6 from instances in your VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6 connection with your instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEgressOnlyInternetGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_egress_only_internet_gateway::builders::CreateEgressOnlyInternetGatewayInputBuilder,
+}
 impl CreateEgressOnlyInternetGatewayFluentBuilder  {
     /// Creates a new `CreateEgressOnlyInternetGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGateway, aws_http::retry::AwsResponseRetryClassifier,>,

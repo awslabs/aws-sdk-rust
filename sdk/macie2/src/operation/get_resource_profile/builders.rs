@@ -8,16 +8,17 @@ pub use crate::operation::get_resource_profile::_get_resource_profile_input::Get
 /// <p>Retrieves (queries) sensitive data discovery statistics and the sensitivity score for an S3 bucket.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourceProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_resource_profile::builders::GetResourceProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_resource_profile::builders::GetResourceProfileInputBuilder,
+}
 impl GetResourceProfileFluentBuilder  {
     /// Creates a new `GetResourceProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_resource_profile::GetResourceProfile, aws_http::retry::AwsResponseRetryClassifier,>,

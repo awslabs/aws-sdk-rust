@@ -14,16 +14,17 @@ pub use crate::operation::enable_all_features::_enable_all_features_input::Enabl
 /// <p>This operation can be called only from the organization's management account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableAllFeaturesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_all_features::builders::EnableAllFeaturesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_all_features::builders::EnableAllFeaturesInputBuilder,
+}
 impl EnableAllFeaturesFluentBuilder  {
     /// Creates a new `EnableAllFeatures`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_all_features::EnableAllFeatures, aws_http::retry::AwsResponseRetryClassifier,>,

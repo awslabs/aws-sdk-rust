@@ -16,16 +16,17 @@ pub use crate::operation::enable_health_service_access_for_organization::_enable
 /// <p>If you don't have the required support plan, you can instead use the Health console to enable the organizational view feature. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating Health events</a> in the <i>Health User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableHealthServiceAccessForOrganizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_health_service_access_for_organization::builders::EnableHealthServiceAccessForOrganizationInputBuilder,
+}
 impl EnableHealthServiceAccessForOrganizationFluentBuilder  {
     /// Creates a new `EnableHealthServiceAccessForOrganization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganization, aws_http::retry::AwsResponseRetryClassifier,>,

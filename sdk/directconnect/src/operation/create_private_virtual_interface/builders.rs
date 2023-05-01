@@ -9,16 +9,17 @@ pub use crate::operation::create_private_virtual_interface::_create_private_virt
 /// <p>Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <code>DescribeConnections</code>. To check whether your virtual interface supports jumbo frames, call <code>DescribeVirtualInterfaces</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePrivateVirtualInterfaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_private_virtual_interface::builders::CreatePrivateVirtualInterfaceInputBuilder,
+}
 impl CreatePrivateVirtualInterfaceFluentBuilder  {
     /// Creates a new `CreatePrivateVirtualInterface`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterface, aws_http::retry::AwsResponseRetryClassifier,>,

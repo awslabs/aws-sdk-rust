@@ -8,16 +8,17 @@ pub use crate::operation::delete_pull_request_approval_rule::_delete_pull_reques
 /// <p>Deletes an approval rule from a specified pull request. Approval rules can be deleted from a pull request only if the pull request is open, and if the approval rule was created specifically for a pull request and not generated from an approval rule template associated with the repository where the pull request was created. You cannot delete an approval rule from a merged or closed pull request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePullRequestApprovalRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_pull_request_approval_rule::builders::DeletePullRequestApprovalRuleInputBuilder,
+}
 impl DeletePullRequestApprovalRuleFluentBuilder  {
     /// Creates a new `DeletePullRequestApprovalRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRule, aws_http::retry::AwsResponseRetryClassifier,>,

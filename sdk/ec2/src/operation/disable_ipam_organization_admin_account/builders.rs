@@ -8,16 +8,17 @@ pub use crate::operation::disable_ipam_organization_admin_account::_disable_ipam
 /// <p>Disable the IPAM account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableIpamOrganizationAdminAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_ipam_organization_admin_account::builders::DisableIpamOrganizationAdminAccountInputBuilder,
+}
 impl DisableIpamOrganizationAdminAccountFluentBuilder  {
     /// Creates a new `DisableIpamOrganizationAdminAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccount, aws_http::retry::AwsResponseRetryClassifier,>,

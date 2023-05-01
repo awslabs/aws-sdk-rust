@@ -8,16 +8,17 @@ pub use crate::operation::describe_certificate_authority_audit_report::_describe
 /// <p>Lists information about a specific audit report created by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a> action. Audit information is created every time the certificate authority (CA) private key is used. The private key is used when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_IssueCertificate.html">IssueCertificate</a> action or the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a> action. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCertificateAuthorityAuditReportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_certificate_authority_audit_report::builders::DescribeCertificateAuthorityAuditReportInputBuilder,
+}
 impl DescribeCertificateAuthorityAuditReportFluentBuilder  {
     /// Creates a new `DescribeCertificateAuthorityAuditReport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReport, aws_http::retry::AwsResponseRetryClassifier,>,

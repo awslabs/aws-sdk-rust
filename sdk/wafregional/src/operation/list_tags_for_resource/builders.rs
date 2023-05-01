@@ -13,16 +13,17 @@ pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_input:
 /// <p>Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder,
+}
 impl ListTagsForResourceFluentBuilder  {
     /// Creates a new `ListTagsForResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tags_for_resource::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,

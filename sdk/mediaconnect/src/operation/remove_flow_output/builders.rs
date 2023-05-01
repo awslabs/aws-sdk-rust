@@ -8,16 +8,17 @@ pub use crate::operation::remove_flow_output::_remove_flow_output_input::RemoveF
 /// Removes an output from an existing flow. This request can be made only on an output that does not have an entitlement associated with it. If the output has an entitlement, you must revoke the entitlement instead. When an entitlement is revoked from a flow, the service automatically removes the associated output.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveFlowOutputFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_flow_output::builders::RemoveFlowOutputInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_flow_output::builders::RemoveFlowOutputInputBuilder,
+}
 impl RemoveFlowOutputFluentBuilder  {
     /// Creates a new `RemoveFlowOutput`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_flow_output::RemoveFlowOutput, aws_http::retry::AwsResponseRetryClassifier,>,

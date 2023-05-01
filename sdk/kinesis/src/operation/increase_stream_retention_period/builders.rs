@@ -11,16 +11,17 @@ pub use crate::operation::increase_stream_retention_period::_increase_stream_ret
 /// <p>If you choose a longer stream retention period, this operation increases the time period during which records that have not yet expired are accessible. However, it does not make previous, expired data (older than the stream's previous retention period) accessible after the operation has been called. For example, if a stream's retention period is set to 24 hours and is increased to 168 hours, any data that is older than 24 hours remains inaccessible to consumer applications.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct IncreaseStreamRetentionPeriodFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::increase_stream_retention_period::builders::IncreaseStreamRetentionPeriodInputBuilder,
+}
 impl IncreaseStreamRetentionPeriodFluentBuilder  {
     /// Creates a new `IncreaseStreamRetentionPeriod`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriod, aws_http::retry::AwsResponseRetryClassifier,>,

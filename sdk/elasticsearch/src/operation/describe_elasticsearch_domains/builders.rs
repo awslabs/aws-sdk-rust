@@ -8,16 +8,17 @@ pub use crate::operation::describe_elasticsearch_domains::_describe_elasticsearc
 /// <p>Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeElasticsearchDomainsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_elasticsearch_domains::builders::DescribeElasticsearchDomainsInputBuilder,
+}
 impl DescribeElasticsearchDomainsFluentBuilder  {
     /// Creates a new `DescribeElasticsearchDomains`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomains, aws_http::retry::AwsResponseRetryClassifier,>,

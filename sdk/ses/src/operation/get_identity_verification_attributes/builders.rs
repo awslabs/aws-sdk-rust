@@ -11,16 +11,17 @@ pub use crate::operation::get_identity_verification_attributes::_get_identity_ve
 /// <p>This operation is throttled at one request per second and can only get verification attributes for up to 100 identities at a time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIdentityVerificationAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_identity_verification_attributes::builders::GetIdentityVerificationAttributesInputBuilder,
+}
 impl GetIdentityVerificationAttributesFluentBuilder  {
     /// Creates a new `GetIdentityVerificationAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

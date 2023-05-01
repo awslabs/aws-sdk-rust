@@ -10,16 +10,17 @@ pub use crate::operation::update_site_address::_update_site_address_input::Updat
 /// <p>You can update the operating address before you place an order at the site, or after all Outposts that belong to the site have been deactivated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSiteAddressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_site_address::builders::UpdateSiteAddressInputBuilder,
+}
 impl UpdateSiteAddressFluentBuilder  {
     /// Creates a new `UpdateSiteAddress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_site_address::UpdateSiteAddress, aws_http::retry::AwsResponseRetryClassifier,>,

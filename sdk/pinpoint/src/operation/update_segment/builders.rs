@@ -8,16 +8,17 @@ pub use crate::operation::update_segment::_update_segment_input::UpdateSegmentIn
 /// <p>Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSegmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_segment::builders::UpdateSegmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_segment::builders::UpdateSegmentInputBuilder,
+}
 impl UpdateSegmentFluentBuilder  {
     /// Creates a new `UpdateSegment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_segment::UpdateSegment, aws_http::retry::AwsResponseRetryClassifier,>,

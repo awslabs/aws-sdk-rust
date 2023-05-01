@@ -8,16 +8,17 @@ pub use crate::operation::describe_custom_routing_endpoint_group::_describe_cust
 /// <p>Describe an endpoint group for a custom routing accelerator. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCustomRoutingEndpointGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_custom_routing_endpoint_group::builders::DescribeCustomRoutingEndpointGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_custom_routing_endpoint_group::builders::DescribeCustomRoutingEndpointGroupInputBuilder,
+}
 impl DescribeCustomRoutingEndpointGroupFluentBuilder  {
     /// Creates a new `DescribeCustomRoutingEndpointGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroup, aws_http::retry::AwsResponseRetryClassifier,>,

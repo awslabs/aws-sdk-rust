@@ -8,16 +8,17 @@ pub use crate::operation::remove_layer_version_permission::_remove_layer_version
 /// <p>Removes a statement from the permissions policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. For more information, see <code>AddLayerVersionPermission</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveLayerVersionPermissionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_layer_version_permission::builders::RemoveLayerVersionPermissionInputBuilder,
+}
 impl RemoveLayerVersionPermissionFluentBuilder  {
     /// Creates a new `RemoveLayerVersionPermission`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_layer_version_permission::RemoveLayerVersionPermission, aws_http::retry::AwsResponseRetryClassifier,>,

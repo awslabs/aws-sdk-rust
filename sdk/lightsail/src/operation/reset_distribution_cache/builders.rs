@@ -9,16 +9,17 @@ pub use crate::operation::reset_distribution_cache::_reset_distribution_cache_in
 /// <p>After resetting the cache, the next time a content request is made, your distribution pulls, serves, and caches it from the origin.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetDistributionCacheFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_distribution_cache::builders::ResetDistributionCacheInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_distribution_cache::builders::ResetDistributionCacheInputBuilder,
+}
 impl ResetDistributionCacheFluentBuilder  {
     /// Creates a new `ResetDistributionCache`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_distribution_cache::ResetDistributionCache, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_allow_list::_delete_allow_list_input::DeleteAll
 /// <p>Deletes an allow list.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAllowListFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_allow_list::builders::DeleteAllowListInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_allow_list::builders::DeleteAllowListInputBuilder,
+}
 impl DeleteAllowListFluentBuilder  {
     /// Creates a new `DeleteAllowList`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_allow_list::DeleteAllowList, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::create_snapshot_copy_grant::_create_snapshot_copy_gran
 /// <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSnapshotCopyGrantFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_snapshot_copy_grant::builders::CreateSnapshotCopyGrantInputBuilder,
+}
 impl CreateSnapshotCopyGrantFluentBuilder  {
     /// Creates a new `CreateSnapshotCopyGrant`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrant, aws_http::retry::AwsResponseRetryClassifier,>,

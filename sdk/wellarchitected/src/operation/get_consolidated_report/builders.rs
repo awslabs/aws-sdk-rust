@@ -9,16 +9,17 @@ pub use crate::operation::get_consolidated_report::_get_consolidated_report_inpu
 /// <p>You can optionally choose to include workloads that have been shared with you.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetConsolidatedReportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder,
+}
 impl GetConsolidatedReportFluentBuilder  {
     /// Creates a new `GetConsolidatedReport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_consolidated_report::GetConsolidatedReport, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetConsolidatedReportFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator {
-                            crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator {
+                                crate::operation::get_consolidated_report::paginator::GetConsolidatedReportPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The format of the consolidated report.</p> 
     /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
     pub fn format(mut self, input: crate::types::ReportFormat) -> Self {

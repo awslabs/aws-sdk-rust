@@ -8,16 +8,17 @@ pub use crate::operation::update_document_metadata::_update_document_metadata_in
 /// <p>Updates information related to approval reviews for a specific version of a change template in Change Manager.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDocumentMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_document_metadata::builders::UpdateDocumentMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_document_metadata::builders::UpdateDocumentMetadataInputBuilder,
+}
 impl UpdateDocumentMetadataFluentBuilder  {
     /// Creates a new `UpdateDocumentMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_document_metadata::UpdateDocumentMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

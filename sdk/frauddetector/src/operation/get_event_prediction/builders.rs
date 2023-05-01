@@ -8,16 +8,17 @@ pub use crate::operation::get_event_prediction::_get_event_prediction_input::Get
 /// <p>Evaluates an event against a detector version. If a version ID is not provided, the detector’s (<code>ACTIVE</code>) version is used.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventPredictionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_event_prediction::builders::GetEventPredictionInputBuilder,
+}
 impl GetEventPredictionFluentBuilder  {
     /// Creates a new `GetEventPrediction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_event_prediction::GetEventPrediction, aws_http::retry::AwsResponseRetryClassifier,>,

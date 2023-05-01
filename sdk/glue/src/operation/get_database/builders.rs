@@ -8,16 +8,17 @@ pub use crate::operation::get_database::_get_database_input::GetDatabaseInputBui
 /// <p>Retrieves the definition of a specified database.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDatabaseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_database::builders::GetDatabaseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_database::builders::GetDatabaseInputBuilder,
+}
 impl GetDatabaseFluentBuilder  {
     /// Creates a new `GetDatabase`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_database::GetDatabase, aws_http::retry::AwsResponseRetryClassifier,>,

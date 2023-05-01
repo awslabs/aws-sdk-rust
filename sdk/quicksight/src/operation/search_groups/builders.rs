@@ -8,16 +8,17 @@ pub use crate::operation::search_groups::_search_groups_input::SearchGroupsInput
 /// <p>Use the <code>SearchGroups</code> operation to search groups in a specified Amazon QuickSight namespace using the supplied filters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_groups::builders::SearchGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_groups::builders::SearchGroupsInputBuilder,
+}
 impl SearchGroupsFluentBuilder  {
     /// Creates a new `SearchGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_groups::SearchGroups, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::get_configuration_set::_get_configuration_set_input::G
 /// <p>In Amazon Pinpoint, <i>configuration sets</i> are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetConfigurationSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_configuration_set::builders::GetConfigurationSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_configuration_set::builders::GetConfigurationSetInputBuilder,
+}
 impl GetConfigurationSetFluentBuilder  {
     /// Creates a new `GetConfigurationSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_configuration_set::GetConfigurationSet, aws_http::retry::AwsResponseRetryClassifier,>,

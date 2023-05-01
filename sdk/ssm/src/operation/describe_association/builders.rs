@@ -8,16 +8,17 @@ pub use crate::operation::describe_association::_describe_association_input::Des
 /// <p>Describes the association for the specified target or managed node. If you created the association by using the <code>Targets</code> parameter, then you must retrieve the association by using the association ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_association::builders::DescribeAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_association::builders::DescribeAssociationInputBuilder,
+}
 impl DescribeAssociationFluentBuilder  {
     /// Creates a new `DescribeAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_association::DescribeAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

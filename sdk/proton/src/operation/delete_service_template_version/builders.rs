@@ -9,16 +9,17 @@ pub use crate::operation::delete_service_template_version::_delete_service_templ
 /// <p>Delete a minor version of a service template if it's not the <code>Recommended</code> version. Delete a <code>Recommended</code> minor version of the service template if no other minor versions of the service template exist. A minor version of a service template is a version that's backwards compatible.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteServiceTemplateVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder,
+}
 impl DeleteServiceTemplateVersionFluentBuilder  {
     /// Creates a new `DeleteServiceTemplateVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_service_template_version::DeleteServiceTemplateVersion, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_cluster::_update_cluster_input::UpdateClusterIn
 /// <p>Modifies a Elastic DocumentDB cluster. This includes updating admin-username/password, upgrading API version setting up a backup window and maintenance window</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_cluster::builders::UpdateClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_cluster::builders::UpdateClusterInputBuilder,
+}
 impl UpdateClusterFluentBuilder  {
     /// Creates a new `UpdateCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_cluster::UpdateCluster, aws_http::retry::AwsResponseRetryClassifier,>,

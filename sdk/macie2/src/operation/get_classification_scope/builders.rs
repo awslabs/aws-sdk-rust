@@ -8,16 +8,17 @@ pub use crate::operation::get_classification_scope::_get_classification_scope_in
 /// <p>Retrieves the classification scope settings for an account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetClassificationScopeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_classification_scope::builders::GetClassificationScopeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_classification_scope::builders::GetClassificationScopeInputBuilder,
+}
 impl GetClassificationScopeFluentBuilder  {
     /// Creates a new `GetClassificationScope`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_classification_scope::GetClassificationScope, aws_http::retry::AwsResponseRetryClassifier,>,

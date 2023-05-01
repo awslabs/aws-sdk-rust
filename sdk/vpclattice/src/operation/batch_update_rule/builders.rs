@@ -8,16 +8,17 @@ pub use crate::operation::batch_update_rule::_batch_update_rule_input::BatchUpda
 /// <p>Updates the listener rules in a batch. You can use this operation to change the priority of listener rules. This can be useful when bulk updating or swapping rule priority. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchUpdateRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_update_rule::builders::BatchUpdateRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_update_rule::builders::BatchUpdateRuleInputBuilder,
+}
 impl BatchUpdateRuleFluentBuilder  {
     /// Creates a new `BatchUpdateRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_update_rule::BatchUpdateRule, aws_http::retry::AwsResponseRetryClassifier,>,

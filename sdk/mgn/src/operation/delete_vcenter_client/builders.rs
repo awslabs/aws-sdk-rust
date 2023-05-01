@@ -8,16 +8,17 @@ pub use crate::operation::delete_vcenter_client::_delete_vcenter_client_input::D
 /// <p>Deletes a given vCenter client by ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVcenterClientFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder,
+}
 impl DeleteVcenterClientFluentBuilder  {
     /// Creates a new `DeleteVcenterClient`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vcenter_client::DeleteVcenterClient, aws_http::retry::AwsResponseRetryClassifier,>,

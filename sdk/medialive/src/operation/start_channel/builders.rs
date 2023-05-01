@@ -8,16 +8,17 @@ pub use crate::operation::start_channel::_start_channel_input::StartChannelInput
 /// Starts an existing channel
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_channel::builders::StartChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_channel::builders::StartChannelInputBuilder,
+}
 impl StartChannelFluentBuilder  {
     /// Creates a new `StartChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_channel::StartChannel, aws_http::retry::AwsResponseRetryClassifier,>,

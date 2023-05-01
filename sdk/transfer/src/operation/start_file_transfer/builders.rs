@@ -8,16 +8,17 @@ pub use crate::operation::start_file_transfer::_start_file_transfer_input::Start
 /// <p>Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file paths for where to send the files. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartFileTransferFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_file_transfer::builders::StartFileTransferInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_file_transfer::builders::StartFileTransferInputBuilder,
+}
 impl StartFileTransferFluentBuilder  {
     /// Creates a new `StartFileTransfer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_file_transfer::StartFileTransfer, aws_http::retry::AwsResponseRetryClassifier,>,

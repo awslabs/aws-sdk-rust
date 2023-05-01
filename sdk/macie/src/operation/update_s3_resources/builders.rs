@@ -8,16 +8,17 @@ pub use crate::operation::update_s3_resources::_update_s3_resources_input::Updat
 /// <p>(Discontinued) Updates the classification types for the specified S3 resources. If <code>memberAccountId</code> isn't specified, the action updates the classification types of the S3 resources associated with Amazon Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action updates the classification types of the S3 resources associated with Macie Classic for the specified member account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateS3ResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_s3_resources::builders::UpdateS3ResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_s3_resources::builders::UpdateS3ResourcesInputBuilder,
+}
 impl UpdateS3ResourcesFluentBuilder  {
     /// Creates a new `UpdateS3Resources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_s3_resources::UpdateS3Resources, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::associate_wireless_device_with_thing::_associate_wirel
 /// <p>Associates a wireless device with a thing.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateWirelessDeviceWithThingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_wireless_device_with_thing::builders::AssociateWirelessDeviceWithThingInputBuilder,
+}
 impl AssociateWirelessDeviceWithThingFluentBuilder  {
     /// Creates a new `AssociateWirelessDeviceWithThing`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_wireless_device_with_thing::AssociateWirelessDeviceWithThing, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::get_archive_rule::_get_archive_rule_input::GetArchiveR
 /// <p>To learn about filter keys that you can use to create an archive rule, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetArchiveRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_archive_rule::builders::GetArchiveRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_archive_rule::builders::GetArchiveRuleInputBuilder,
+}
 impl GetArchiveRuleFluentBuilder  {
     /// Creates a new `GetArchiveRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_archive_rule::GetArchiveRule, aws_http::retry::AwsResponseRetryClassifier,>,

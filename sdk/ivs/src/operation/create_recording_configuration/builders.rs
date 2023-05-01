@@ -10,16 +10,17 @@ pub use crate::operation::create_recording_configuration::_create_recording_conf
 /// <p> <b>Workaround:</b> Ensure that your S3 bucket is in the same region as the recording configuration. If you create a recording configuration in a different region as your S3 bucket, delete that recording configuration and create a new one with an S3 bucket from the correct region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRecordingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_recording_configuration::builders::CreateRecordingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_recording_configuration::builders::CreateRecordingConfigurationInputBuilder,
+}
 impl CreateRecordingConfigurationFluentBuilder  {
     /// Creates a new `CreateRecordingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_recording_configuration::CreateRecordingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

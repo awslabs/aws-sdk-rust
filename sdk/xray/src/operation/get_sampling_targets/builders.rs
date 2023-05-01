@@ -8,16 +8,17 @@ pub use crate::operation::get_sampling_targets::_get_sampling_targets_input::Get
 /// <p>Requests a sampling quota for rules that the service is using to sample requests. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSamplingTargetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_sampling_targets::builders::GetSamplingTargetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_sampling_targets::builders::GetSamplingTargetsInputBuilder,
+}
 impl GetSamplingTargetsFluentBuilder  {
     /// Creates a new `GetSamplingTargets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_sampling_targets::GetSamplingTargets, aws_http::retry::AwsResponseRetryClassifier,>,

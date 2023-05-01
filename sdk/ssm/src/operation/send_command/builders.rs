@@ -8,16 +8,17 @@ pub use crate::operation::send_command::_send_command_input::SendCommandInputBui
 /// <p>Runs commands on one or more managed nodes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendCommandFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_command::builders::SendCommandInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_command::builders::SendCommandInputBuilder,
+}
 impl SendCommandFluentBuilder  {
     /// Creates a new `SendCommand`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_command::SendCommand, aws_http::retry::AwsResponseRetryClassifier,>,

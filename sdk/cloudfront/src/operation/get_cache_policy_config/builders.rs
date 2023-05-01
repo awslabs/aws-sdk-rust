@@ -9,16 +9,17 @@ pub use crate::operation::get_cache_policy_config::_get_cache_policy_config_inpu
 /// <p>To get a cache policy configuration, you must provide the policy's identifier. If the cache policy is attached to a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCachePolicyConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_cache_policy_config::builders::GetCachePolicyConfigInputBuilder,
+}
 impl GetCachePolicyConfigFluentBuilder  {
     /// Creates a new `GetCachePolicyConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_cache_policy_config::GetCachePolicyConfig, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_stage::_delete_stage_input::DeleteStageInputBui
 /// <p>Deletes a stage from a game, along with the associated game runtime.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteStageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_stage::builders::DeleteStageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_stage::builders::DeleteStageInputBuilder,
+}
 impl DeleteStageFluentBuilder  {
     /// Creates a new `DeleteStage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_stage::DeleteStage, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::abort_environment_update::_abort_environment_update_in
 /// <p>Cancels in-progress environment configuration update or application version deployment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AbortEnvironmentUpdateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::abort_environment_update::builders::AbortEnvironmentUpdateInputBuilder,
+}
 impl AbortEnvironmentUpdateFluentBuilder  {
     /// Creates a new `AbortEnvironmentUpdate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::abort_environment_update::AbortEnvironmentUpdate, aws_http::retry::AwsResponseRetryClassifier,>,

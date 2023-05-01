@@ -8,16 +8,17 @@ pub use crate::operation::update_in_app_template::_update_in_app_template_input:
 /// <p>Updates an existing message template for messages sent through the in-app message channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateInAppTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_in_app_template::builders::UpdateInAppTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_in_app_template::builders::UpdateInAppTemplateInputBuilder,
+}
 impl UpdateInAppTemplateFluentBuilder  {
     /// Creates a new `UpdateInAppTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_in_app_template::UpdateInAppTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

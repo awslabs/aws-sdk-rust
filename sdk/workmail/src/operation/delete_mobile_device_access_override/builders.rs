@@ -10,16 +10,17 @@ pub use crate::operation::delete_mobile_device_access_override::_delete_mobile_d
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMobileDeviceAccessOverrideFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideInputBuilder,
+}
 impl DeleteMobileDeviceAccessOverrideFluentBuilder  {
     /// Creates a new `DeleteMobileDeviceAccessOverride`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverride, aws_http::retry::AwsResponseRetryClassifier,>,

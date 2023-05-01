@@ -8,16 +8,17 @@ pub use crate::operation::delete_hsm_client_certificate::_delete_hsm_client_cert
 /// <p>Deletes the specified HSM client certificate.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteHsmClientCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_hsm_client_certificate::builders::DeleteHsmClientCertificateInputBuilder,
+}
 impl DeleteHsmClientCertificateFluentBuilder  {
     /// Creates a new `DeleteHsmClientCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

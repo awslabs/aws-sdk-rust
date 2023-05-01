@@ -9,16 +9,17 @@ pub use crate::operation::get_trust_anchor::_get_trust_anchor_input::GetTrustAnc
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:GetTrustAnchor</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTrustAnchorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_trust_anchor::builders::GetTrustAnchorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_trust_anchor::builders::GetTrustAnchorInputBuilder,
+}
 impl GetTrustAnchorFluentBuilder  {
     /// Creates a new `GetTrustAnchor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_trust_anchor::GetTrustAnchor, aws_http::retry::AwsResponseRetryClassifier,>,

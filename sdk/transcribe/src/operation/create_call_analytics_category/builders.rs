@@ -13,16 +13,17 @@ pub use crate::operation::create_call_analytics_category::_create_call_analytics
 /// <p>To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for post-call transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for real-time transcriptions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCallAnalyticsCategoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder,
+}
 impl CreateCallAnalyticsCategoryFluentBuilder  {
     /// Creates a new `CreateCallAnalyticsCategory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategory, aws_http::retry::AwsResponseRetryClassifier,>,

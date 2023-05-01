@@ -9,16 +9,17 @@ pub use crate::operation::describe_directory_configs::_describe_directory_config
 /// <p>Although the response syntax in this topic includes the account password, this password is not returned in the actual response.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDirectoryConfigsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_directory_configs::builders::DescribeDirectoryConfigsInputBuilder,
+}
 impl DescribeDirectoryConfigsFluentBuilder  {
     /// Creates a new `DescribeDirectoryConfigs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_directory_configs::DescribeDirectoryConfigs, aws_http::retry::AwsResponseRetryClassifier,>,

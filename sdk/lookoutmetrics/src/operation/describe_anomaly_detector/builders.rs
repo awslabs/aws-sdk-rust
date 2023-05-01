@@ -9,16 +9,17 @@ pub use crate::operation::describe_anomaly_detector::_describe_anomaly_detector_
 /// <p>Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource immediately after creating or modifying it, use retries to allow time for the write operation to complete.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_anomaly_detector::builders::DescribeAnomalyDetectorInputBuilder,
+}
 impl DescribeAnomalyDetectorFluentBuilder  {
     /// Creates a new `DescribeAnomalyDetector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_anomaly_detector::DescribeAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,

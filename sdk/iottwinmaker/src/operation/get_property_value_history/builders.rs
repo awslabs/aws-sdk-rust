@@ -9,16 +9,17 @@ pub use crate::operation::get_property_value_history::_get_property_value_histor
 /// <p>You must specify a value for <code>workspaceId</code>. For entity-specific queries, specify values for <code>componentName</code> and <code>entityId</code>. For cross-entity quries, specify a value for <code>componentTypeId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPropertyValueHistoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder,
+}
 impl GetPropertyValueHistoryFluentBuilder  {
     /// Creates a new `GetPropertyValueHistory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_property_value_history::GetPropertyValueHistory, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetPropertyValueHistoryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator {
-                            crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator {
+                                crate::operation::get_property_value_history::paginator::GetPropertyValueHistoryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the workspace.</p>
     pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workspace_id(input.into());

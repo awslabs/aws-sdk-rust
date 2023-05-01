@@ -8,16 +8,17 @@ pub use crate::operation::list_waves::_list_waves_input::ListWavesInputBuilder;
 /// <p>Retrieves all waves or multiple waves by ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWavesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_waves::builders::ListWavesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_waves::builders::ListWavesInputBuilder,
+}
 impl ListWavesFluentBuilder  {
     /// Creates a new `ListWaves`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_waves::ListWaves, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWavesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_waves::paginator::ListWavesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_waves::paginator::ListWavesPaginator {
-                            crate::operation::list_waves::paginator::ListWavesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_waves::paginator::ListWavesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_waves::paginator::ListWavesPaginator {
+                                crate::operation::list_waves::paginator::ListWavesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Waves list filters.</p>
     pub fn filters(mut self, input: crate::types::ListWavesRequestFilters) -> Self {
         self.inner = self.inner.filters(input);

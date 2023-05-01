@@ -8,16 +8,17 @@ pub use crate::operation::list_policy_generations::_list_policy_generations_inpu
 /// <p>Lists all of the policy generations requested in the last seven days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPolicyGenerationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_policy_generations::builders::ListPolicyGenerationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_policy_generations::builders::ListPolicyGenerationsInputBuilder,
+}
 impl ListPolicyGenerationsFluentBuilder  {
     /// Creates a new `ListPolicyGenerations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_policy_generations::ListPolicyGenerations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPolicyGenerationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_policy_generations::paginator::ListPolicyGenerationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_policy_generations::paginator::ListPolicyGenerationsPaginator {
-                            crate::operation::list_policy_generations::paginator::ListPolicyGenerationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_policy_generations::paginator::ListPolicyGenerationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_policy_generations::paginator::ListPolicyGenerationsPaginator {
+                                crate::operation::list_policy_generations::paginator::ListPolicyGenerationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the IAM entity (user or role) for which you are generating a policy. Use this with <code>ListGeneratedPolicies</code> to filter the results to only include results for a specific principal.</p>
     pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.principal_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::delete_report_group::_delete_report_group_input::Delet
 /// <p>Deletes a report group. Before you delete a report group, you must delete its reports. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteReportGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_report_group::builders::DeleteReportGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_report_group::builders::DeleteReportGroupInputBuilder,
+}
 impl DeleteReportGroupFluentBuilder  {
     /// Creates a new `DeleteReportGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_report_group::DeleteReportGroup, aws_http::retry::AwsResponseRetryClassifier,>,

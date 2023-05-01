@@ -14,16 +14,17 @@ pub use crate::operation::delete_vpc_ingress_connection::_delete_vpc_ingress_con
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpcIngressConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionInputBuilder,
+}
 impl DeleteVpcIngressConnectionFluentBuilder  {
     /// Creates a new `DeleteVpcIngressConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnection, aws_http::retry::AwsResponseRetryClassifier,>,

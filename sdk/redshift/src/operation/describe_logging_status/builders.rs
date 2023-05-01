@@ -8,16 +8,17 @@ pub use crate::operation::describe_logging_status::_describe_logging_status_inpu
 /// <p>Describes whether information, such as queries and connection attempts, is being logged for the specified Amazon Redshift cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLoggingStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_logging_status::builders::DescribeLoggingStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_logging_status::builders::DescribeLoggingStatusInputBuilder,
+}
 impl DescribeLoggingStatusFluentBuilder  {
     /// Creates a new `DescribeLoggingStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_logging_status::DescribeLoggingStatus, aws_http::retry::AwsResponseRetryClassifier,>,

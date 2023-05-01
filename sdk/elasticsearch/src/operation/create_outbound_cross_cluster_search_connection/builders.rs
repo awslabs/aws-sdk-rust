@@ -8,16 +8,17 @@ pub use crate::operation::create_outbound_cross_cluster_search_connection::_crea
 /// <p>Creates a new cross-cluster search connection from a source domain to a destination domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateOutboundCrossClusterSearchConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_outbound_cross_cluster_search_connection::builders::CreateOutboundCrossClusterSearchConnectionInputBuilder,
+}
 impl CreateOutboundCrossClusterSearchConnectionFluentBuilder  {
     /// Creates a new `CreateOutboundCrossClusterSearchConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnection, aws_http::retry::AwsResponseRetryClassifier,>,

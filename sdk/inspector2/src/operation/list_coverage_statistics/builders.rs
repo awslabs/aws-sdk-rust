@@ -8,16 +8,17 @@ pub use crate::operation::list_coverage_statistics::_list_coverage_statistics_in
 /// <p>Lists Amazon Inspector coverage statistics for your environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCoverageStatisticsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder,
+}
 impl ListCoverageStatisticsFluentBuilder  {
     /// Creates a new `ListCoverageStatistics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_coverage_statistics::ListCoverageStatistics, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCoverageStatisticsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator {
-                            crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator {
+                                crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
         self.inner = self.inner.filter_criteria(input);

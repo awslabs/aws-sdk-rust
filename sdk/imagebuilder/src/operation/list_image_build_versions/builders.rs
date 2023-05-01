@@ -8,16 +8,17 @@ pub use crate::operation::list_image_build_versions::_list_image_build_versions_
 /// <p>Returns a list of image build versions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListImageBuildVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_image_build_versions::builders::ListImageBuildVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_image_build_versions::builders::ListImageBuildVersionsInputBuilder,
+}
 impl ListImageBuildVersionsFluentBuilder  {
     /// Creates a new `ListImageBuildVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_image_build_versions::ListImageBuildVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListImageBuildVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_image_build_versions::paginator::ListImageBuildVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_image_build_versions::paginator::ListImageBuildVersionsPaginator {
-                            crate::operation::list_image_build_versions::paginator::ListImageBuildVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_image_build_versions::paginator::ListImageBuildVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_image_build_versions::paginator::ListImageBuildVersionsPaginator {
+                                crate::operation::list_image_build_versions::paginator::ListImageBuildVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
     pub fn image_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.image_version_arn(input.into());

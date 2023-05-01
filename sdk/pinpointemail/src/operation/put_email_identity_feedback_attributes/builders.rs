@@ -10,16 +10,17 @@ pub use crate::operation::put_email_identity_feedback_attributes::_put_email_ide
 /// <p>When you disable feedback forwarding, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutEmailIdentityFeedbackAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_email_identity_feedback_attributes::builders::PutEmailIdentityFeedbackAttributesInputBuilder,
+}
 impl PutEmailIdentityFeedbackAttributesFluentBuilder  {
     /// Creates a new `PutEmailIdentityFeedbackAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_email_identity_feedback_attributes::PutEmailIdentityFeedbackAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

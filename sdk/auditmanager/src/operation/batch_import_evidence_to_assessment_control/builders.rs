@@ -16,16 +16,17 @@ pub use crate::operation::batch_import_evidence_to_assessment_control::_batch_im
 /// <p>For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchImportEvidenceToAssessmentControlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_import_evidence_to_assessment_control::builders::BatchImportEvidenceToAssessmentControlInputBuilder,
+}
 impl BatchImportEvidenceToAssessmentControlFluentBuilder  {
     /// Creates a new `BatchImportEvidenceToAssessmentControl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControl, aws_http::retry::AwsResponseRetryClassifier,>,

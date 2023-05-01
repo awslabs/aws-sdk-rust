@@ -8,16 +8,17 @@ pub use crate::operation::get_model::_get_model_input::GetModelInputBuilder;
 /// <p>Describes an existing model defined for a RestApi resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetModelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_model::builders::GetModelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_model::builders::GetModelInputBuilder,
+}
 impl GetModelFluentBuilder  {
     /// Creates a new `GetModel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_model::GetModel, aws_http::retry::AwsResponseRetryClassifier,>,

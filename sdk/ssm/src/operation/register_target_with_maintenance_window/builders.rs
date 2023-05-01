@@ -8,16 +8,17 @@ pub use crate::operation::register_target_with_maintenance_window::_register_tar
 /// <p>Registers a target with a maintenance window.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterTargetWithMaintenanceWindowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_target_with_maintenance_window::builders::RegisterTargetWithMaintenanceWindowInputBuilder,
+}
 impl RegisterTargetWithMaintenanceWindowFluentBuilder  {
     /// Creates a new `RegisterTargetWithMaintenanceWindow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindow, aws_http::retry::AwsResponseRetryClassifier,>,

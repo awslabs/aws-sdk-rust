@@ -8,16 +8,17 @@ pub use crate::operation::list_association_versions::_list_association_versions_
 /// <p>Retrieves all versions of an association for a specific association ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssociationVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_association_versions::builders::ListAssociationVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_association_versions::builders::ListAssociationVersionsInputBuilder,
+}
 impl ListAssociationVersionsFluentBuilder  {
     /// Creates a new `ListAssociationVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_association_versions::ListAssociationVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAssociationVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_association_versions::paginator::ListAssociationVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_association_versions::paginator::ListAssociationVersionsPaginator {
-                            crate::operation::list_association_versions::paginator::ListAssociationVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_association_versions::paginator::ListAssociationVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_association_versions::paginator::ListAssociationVersionsPaginator {
+                                crate::operation::list_association_versions::paginator::ListAssociationVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The association ID for which you want to view all versions.</p>
     pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.association_id(input.into());

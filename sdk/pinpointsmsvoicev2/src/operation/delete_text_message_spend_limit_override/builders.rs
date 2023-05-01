@@ -8,16 +8,17 @@ pub use crate::operation::delete_text_message_spend_limit_override::_delete_text
 /// <p>Deletes an account-level monthly spending limit override for sending text messages. Deleting a spend limit override will set the <code>EnforcedLimit</code> to equal the <code>MaxLimit</code>, which is controlled by Amazon Web Services. For more information on spend limits (quotas) see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/quotas.html">Amazon Pinpoint quotas </a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTextMessageSpendLimitOverrideFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_text_message_spend_limit_override::builders::DeleteTextMessageSpendLimitOverrideInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_text_message_spend_limit_override::builders::DeleteTextMessageSpendLimitOverrideInputBuilder,
+}
 impl DeleteTextMessageSpendLimitOverrideFluentBuilder  {
     /// Creates a new `DeleteTextMessageSpendLimitOverride`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_text_message_spend_limit_override::DeleteTextMessageSpendLimitOverride, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_import_file_task::_get_import_file_task_input::Get
 /// <p> Retrieves the details about a specific import task. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetImportFileTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_import_file_task::builders::GetImportFileTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_import_file_task::builders::GetImportFileTaskInputBuilder,
+}
 impl GetImportFileTaskFluentBuilder  {
     /// Creates a new `GetImportFileTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_import_file_task::GetImportFileTask, aws_http::retry::AwsResponseRetryClassifier,>,

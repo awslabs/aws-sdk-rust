@@ -8,16 +8,17 @@ pub use crate::operation::list_tag_options::_list_tag_options_input::ListTagOpti
 /// <p>Lists the specified TagOptions or all TagOptions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tag_options::builders::ListTagOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tag_options::builders::ListTagOptionsInputBuilder,
+}
 impl ListTagOptionsFluentBuilder  {
     /// Creates a new `ListTagOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tag_options::ListTagOptions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTagOptionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_tag_options::paginator::ListTagOptionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_tag_options::paginator::ListTagOptionsPaginator {
-                            crate::operation::list_tag_options::paginator::ListTagOptionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_tag_options::paginator::ListTagOptionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_tag_options::paginator::ListTagOptionsPaginator {
+                                crate::operation::list_tag_options::paginator::ListTagOptionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
     pub fn filters(mut self, input: crate::types::ListTagOptionsFilters) -> Self {
         self.inner = self.inner.filters(input);

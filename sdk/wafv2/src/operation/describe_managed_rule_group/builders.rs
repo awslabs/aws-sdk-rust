@@ -8,16 +8,17 @@ pub use crate::operation::describe_managed_rule_group::_describe_managed_rule_gr
 /// <p>Provides high-level information for a managed rule group, including descriptions of the rules. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeManagedRuleGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_managed_rule_group::builders::DescribeManagedRuleGroupInputBuilder,
+}
 impl DescribeManagedRuleGroupFluentBuilder  {
     /// Creates a new `DescribeManagedRuleGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_managed_rule_group::DescribeManagedRuleGroup, aws_http::retry::AwsResponseRetryClassifier,>,

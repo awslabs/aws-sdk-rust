@@ -8,16 +8,17 @@ pub use crate::operation::accept_reserved_instances_exchange_quote::_accept_rese
 /// <p>Accepts the Convertible Reserved Instance exchange quote described in the <code>GetReservedInstancesExchangeQuote</code> call.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptReservedInstancesExchangeQuoteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_reserved_instances_exchange_quote::builders::AcceptReservedInstancesExchangeQuoteInputBuilder,
+}
 impl AcceptReservedInstancesExchangeQuoteFluentBuilder  {
     /// Creates a new `AcceptReservedInstancesExchangeQuote`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_reserved_instances_exchange_quote::AcceptReservedInstancesExchangeQuote, aws_http::retry::AwsResponseRetryClassifier,>,

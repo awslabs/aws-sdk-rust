@@ -24,16 +24,17 @@ pub use crate::operation::sign::_sign_input::SignInputBuilder;
 /// <p> <b>Related operations</b>: <code>Verify</code> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SignFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::sign::builders::SignInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::sign::builders::SignInputBuilder,
+}
 impl SignFluentBuilder  {
     /// Creates a new `Sign`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::sign::Sign, aws_http::retry::AwsResponseRetryClassifier,>,

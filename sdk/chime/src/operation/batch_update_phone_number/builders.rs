@@ -10,16 +10,17 @@ pub use crate::operation::batch_update_phone_number::_batch_update_phone_number_
 /// <p>Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names must be complete before you can request another update.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchUpdatePhoneNumberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_update_phone_number::builders::BatchUpdatePhoneNumberInputBuilder,
+}
 impl BatchUpdatePhoneNumberFluentBuilder  {
     /// Creates a new `BatchUpdatePhoneNumber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_update_phone_number::BatchUpdatePhoneNumber, aws_http::retry::AwsResponseRetryClassifier,>,

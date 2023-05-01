@@ -10,16 +10,17 @@ pub use crate::operation::complete_vault_lock::_complete_vault_lock_input::Compl
 /// <p>If an invalid lock ID is passed in the request when the vault lock is in the <code>Locked</code> state, the operation returns an <code>AccessDeniedException</code> error. If an invalid lock ID is passed in the request when the vault lock is in the <code>InProgress</code> state, the operation throws an <code>InvalidParameter</code> error.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CompleteVaultLockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::complete_vault_lock::builders::CompleteVaultLockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::complete_vault_lock::builders::CompleteVaultLockInputBuilder,
+}
 impl CompleteVaultLockFluentBuilder  {
     /// Creates a new `CompleteVaultLock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::complete_vault_lock::CompleteVaultLock, aws_http::retry::AwsResponseRetryClassifier,>,

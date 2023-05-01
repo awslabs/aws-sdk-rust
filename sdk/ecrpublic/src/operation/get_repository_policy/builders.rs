@@ -8,16 +8,17 @@ pub use crate::operation::get_repository_policy::_get_repository_policy_input::G
 /// <p>Retrieves the repository policy for the specified repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRepositoryPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_repository_policy::builders::GetRepositoryPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_repository_policy::builders::GetRepositoryPolicyInputBuilder,
+}
 impl GetRepositoryPolicyFluentBuilder  {
     /// Creates a new `GetRepositoryPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_repository_policy::GetRepositoryPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

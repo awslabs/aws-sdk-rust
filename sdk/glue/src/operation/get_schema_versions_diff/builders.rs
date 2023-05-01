@@ -9,16 +9,17 @@ pub use crate::operation::get_schema_versions_diff::_get_schema_versions_diff_in
 /// <p>This API allows you to compare two schema versions between two schema definitions under the same schema.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSchemaVersionsDiffFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffInputBuilder,
+}
 impl GetSchemaVersionsDiffFluentBuilder  {
     /// Creates a new `GetSchemaVersionsDiff`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_schema_versions_diff::GetSchemaVersionsDiff, aws_http::retry::AwsResponseRetryClassifier,>,

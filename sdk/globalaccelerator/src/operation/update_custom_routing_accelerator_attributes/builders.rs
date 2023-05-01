@@ -8,16 +8,17 @@ pub use crate::operation::update_custom_routing_accelerator_attributes::_update_
 /// <p>Update the attributes for a custom routing accelerator. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCustomRoutingAcceleratorAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_custom_routing_accelerator_attributes::builders::UpdateCustomRoutingAcceleratorAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_custom_routing_accelerator_attributes::builders::UpdateCustomRoutingAcceleratorAttributesInputBuilder,
+}
 impl UpdateCustomRoutingAcceleratorAttributesFluentBuilder  {
     /// Creates a new `UpdateCustomRoutingAcceleratorAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

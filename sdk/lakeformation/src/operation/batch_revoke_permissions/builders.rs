@@ -8,16 +8,17 @@ pub use crate::operation::batch_revoke_permissions::_batch_revoke_permissions_in
 /// <p>Batch operation to revoke permissions from the principal.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchRevokePermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_revoke_permissions::builders::BatchRevokePermissionsInputBuilder,
+}
 impl BatchRevokePermissionsFluentBuilder  {
     /// Creates a new `BatchRevokePermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_revoke_permissions::BatchRevokePermissions, aws_http::retry::AwsResponseRetryClassifier,>,

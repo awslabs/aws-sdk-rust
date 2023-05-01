@@ -8,16 +8,17 @@ pub use crate::operation::unshare_directory::_unshare_directory_input::UnshareDi
 /// <p>Stops the directory sharing between the directory owner and consumer accounts. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UnshareDirectoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder,
+}
 impl UnshareDirectoryFluentBuilder  {
     /// Creates a new `UnshareDirectory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::unshare_directory::UnshareDirectory, aws_http::retry::AwsResponseRetryClassifier,>,

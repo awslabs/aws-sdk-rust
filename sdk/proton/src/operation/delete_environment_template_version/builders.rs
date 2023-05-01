@@ -9,16 +9,17 @@ pub use crate::operation::delete_environment_template_version::_delete_environme
 /// <p>Delete a minor version of an environment template if it <i>isn't</i> the <code>Recommended</code> version. Delete a <code>Recommended</code> minor version of the environment template if no other minor versions of the environment template exist. A minor version of an environment template is a version that's backward compatible.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEnvironmentTemplateVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder,
+}
 impl DeleteEnvironmentTemplateVersionFluentBuilder  {
     /// Creates a new `DeleteEnvironmentTemplateVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersion, aws_http::retry::AwsResponseRetryClassifier,>,

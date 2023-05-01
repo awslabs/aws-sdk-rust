@@ -8,16 +8,17 @@ pub use crate::operation::delete_file_share::_delete_file_share_input::DeleteFil
 /// <p>Deletes a file share from an S3 File Gateway. This operation is only supported for S3 File Gateways.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFileShareFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_file_share::builders::DeleteFileShareInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_file_share::builders::DeleteFileShareInputBuilder,
+}
 impl DeleteFileShareFluentBuilder  {
     /// Creates a new `DeleteFileShare`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_file_share::DeleteFileShare, aws_http::retry::AwsResponseRetryClassifier,>,

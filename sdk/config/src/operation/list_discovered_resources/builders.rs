@@ -11,16 +11,17 @@ pub use crate::operation::list_discovered_resources::_list_discovered_resources_
 /// <p>The response is paginated. By default, Config lists 100 resource identifiers on each page. You can customize this number with the <code>limit</code> parameter. The response includes a <code>nextToken</code> string. To get the next page of results, run the request again and specify the string for the <code>nextToken</code> parameter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDiscoveredResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder,
+}
 impl ListDiscoveredResourcesFluentBuilder  {
     /// Creates a new `ListDiscoveredResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_discovered_resources::ListDiscoveredResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListDiscoveredResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator {
-                            crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator {
+                                crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The type of resources that you want Config to list in the response.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);

@@ -8,16 +8,17 @@ pub use crate::operation::delete_metric_policy::_delete_metric_policy_input::Del
 /// <p>Deletes the metric policy that is associated with the specified container. If there is no metric policy associated with the container, MediaStore doesn't send metrics to CloudWatch.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMetricPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_metric_policy::builders::DeleteMetricPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_metric_policy::builders::DeleteMetricPolicyInputBuilder,
+}
 impl DeleteMetricPolicyFluentBuilder  {
     /// Creates a new `DeleteMetricPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_metric_policy::DeleteMetricPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

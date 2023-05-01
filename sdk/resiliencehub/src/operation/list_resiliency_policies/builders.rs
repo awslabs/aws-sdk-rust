@@ -8,16 +8,17 @@ pub use crate::operation::list_resiliency_policies::_list_resiliency_policies_in
 /// <p>Lists the resiliency policies for the Resilience Hub applications.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResiliencyPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resiliency_policies::builders::ListResiliencyPoliciesInputBuilder,
+}
 impl ListResiliencyPoliciesFluentBuilder  {
     /// Creates a new `ListResiliencyPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resiliency_policies::ListResiliencyPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListResiliencyPoliciesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resiliency_policies::paginator::ListResiliencyPoliciesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resiliency_policies::paginator::ListResiliencyPoliciesPaginator {
-                            crate::operation::list_resiliency_policies::paginator::ListResiliencyPoliciesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resiliency_policies::paginator::ListResiliencyPoliciesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_resiliency_policies::paginator::ListResiliencyPoliciesPaginator {
+                                crate::operation::list_resiliency_policies::paginator::ListResiliencyPoliciesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the policy</p>
     pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());

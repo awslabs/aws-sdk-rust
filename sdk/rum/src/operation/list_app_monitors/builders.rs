@@ -8,16 +8,17 @@ pub use crate::operation::list_app_monitors::_list_app_monitors_input::ListAppMo
 /// <p>Returns a list of the Amazon CloudWatch RUM app monitors in the account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAppMonitorsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_app_monitors::builders::ListAppMonitorsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_app_monitors::builders::ListAppMonitorsInputBuilder,
+}
 impl ListAppMonitorsFluentBuilder  {
     /// Creates a new `ListAppMonitors`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_app_monitors::ListAppMonitors, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAppMonitorsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_app_monitors::paginator::ListAppMonitorsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_app_monitors::paginator::ListAppMonitorsPaginator {
-                            crate::operation::list_app_monitors::paginator::ListAppMonitorsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_app_monitors::paginator::ListAppMonitorsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_app_monitors::paginator::ListAppMonitorsPaginator {
+                                crate::operation::list_app_monitors::paginator::ListAppMonitorsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

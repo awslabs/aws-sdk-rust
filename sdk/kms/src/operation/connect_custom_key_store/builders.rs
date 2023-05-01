@@ -32,16 +32,17 @@ pub use crate::operation::connect_custom_key_store::_connect_custom_key_store_in
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConnectCustomKeyStoreFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::connect_custom_key_store::builders::ConnectCustomKeyStoreInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::connect_custom_key_store::builders::ConnectCustomKeyStoreInputBuilder,
+}
 impl ConnectCustomKeyStoreFluentBuilder  {
     /// Creates a new `ConnectCustomKeyStore`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::connect_custom_key_store::ConnectCustomKeyStore, aws_http::retry::AwsResponseRetryClassifier,>,

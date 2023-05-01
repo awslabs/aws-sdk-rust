@@ -8,16 +8,17 @@ pub use crate::operation::update_connector::_update_connector_input::UpdateConne
 /// <p>Updates some of the parameters for an existing connector. Provide the <code>ConnectorId</code> for the connector that you want to update, along with the new values for the parameters to update.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateConnectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_connector::builders::UpdateConnectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_connector::builders::UpdateConnectorInputBuilder,
+}
 impl UpdateConnectorFluentBuilder  {
     /// Creates a new `UpdateConnector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_connector::UpdateConnector, aws_http::retry::AwsResponseRetryClassifier,>,

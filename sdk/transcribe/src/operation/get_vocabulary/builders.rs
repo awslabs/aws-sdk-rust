@@ -10,16 +10,17 @@ pub use crate::operation::get_vocabulary::_get_vocabulary_input::GetVocabularyIn
 /// <p>To get a list of your custom vocabularies, use the operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVocabularyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_vocabulary::builders::GetVocabularyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_vocabulary::builders::GetVocabularyInputBuilder,
+}
 impl GetVocabularyFluentBuilder  {
     /// Creates a new `GetVocabulary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_vocabulary::GetVocabulary, aws_http::retry::AwsResponseRetryClassifier,>,

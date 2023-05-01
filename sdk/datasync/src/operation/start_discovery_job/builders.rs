@@ -8,16 +8,17 @@ pub use crate::operation::start_discovery_job::_start_discovery_job_input::Start
 /// <p>Runs a DataSync discovery job on your on-premises storage system. If you haven't added the storage system to DataSync Discovery yet, do this first by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_AddStorageSystem.html">AddStorageSystem</a> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDiscoveryJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_discovery_job::builders::StartDiscoveryJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_discovery_job::builders::StartDiscoveryJobInputBuilder,
+}
 impl StartDiscoveryJobFluentBuilder  {
     /// Creates a new `StartDiscoveryJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_discovery_job::StartDiscoveryJob, aws_http::retry::AwsResponseRetryClassifier,>,

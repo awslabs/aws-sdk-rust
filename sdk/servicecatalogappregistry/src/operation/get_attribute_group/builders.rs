@@ -8,16 +8,17 @@ pub use crate::operation::get_attribute_group::_get_attribute_group_input::GetAt
 /// <p> Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or name. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAttributeGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_attribute_group::builders::GetAttributeGroupInputBuilder,
+}
 impl GetAttributeGroupFluentBuilder  {
     /// Creates a new `GetAttributeGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_attribute_group::GetAttributeGroup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::reset_image_attribute::_reset_image_attribute_input::R
 /// <p>Resets an attribute of an AMI to its default value.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetImageAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_image_attribute::builders::ResetImageAttributeInputBuilder,
+}
 impl ResetImageAttributeFluentBuilder  {
     /// Creates a new `ResetImageAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_image_attribute::ResetImageAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

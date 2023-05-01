@@ -11,16 +11,17 @@ pub use crate::operation::list_position_configurations::_list_position_configura
 #[deprecated(note = "This operation is no longer supported.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPositionConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_position_configurations::builders::ListPositionConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_position_configurations::builders::ListPositionConfigurationsInputBuilder,
+}
 impl ListPositionConfigurationsFluentBuilder  {
     /// Creates a new `ListPositionConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_position_configurations::ListPositionConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListPositionConfigurationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_position_configurations::paginator::ListPositionConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_position_configurations::paginator::ListPositionConfigurationsPaginator {
-                            crate::operation::list_position_configurations::paginator::ListPositionConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_position_configurations::paginator::ListPositionConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_position_configurations::paginator::ListPositionConfigurationsPaginator {
+                                crate::operation::list_position_configurations::paginator::ListPositionConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Resource type for which position configurations are listed.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
         self.inner = self.inner.resource_type(input);

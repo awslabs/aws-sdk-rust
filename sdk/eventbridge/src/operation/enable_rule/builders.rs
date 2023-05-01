@@ -9,16 +9,17 @@ pub use crate::operation::enable_rule::_enable_rule_input::EnableRuleInputBuilde
 /// <p>When you enable a rule, incoming events might not immediately start matching to a newly enabled rule. Allow a short period of time for changes to take effect.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_rule::builders::EnableRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_rule::builders::EnableRuleInputBuilder,
+}
 impl EnableRuleFluentBuilder  {
     /// Creates a new `EnableRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_rule::EnableRule, aws_http::retry::AwsResponseRetryClassifier,>,

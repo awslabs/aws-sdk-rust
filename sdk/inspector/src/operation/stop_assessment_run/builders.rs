@@ -8,16 +8,17 @@ pub use crate::operation::stop_assessment_run::_stop_assessment_run_input::StopA
 /// <p>Stops the assessment run that is specified by the ARN of the assessment run.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopAssessmentRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_assessment_run::builders::StopAssessmentRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_assessment_run::builders::StopAssessmentRunInputBuilder,
+}
 impl StopAssessmentRunFluentBuilder  {
     /// Creates a new `StopAssessmentRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_assessment_run::StopAssessmentRun, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_virtual_gateways::_list_virtual_gateways_input::L
 /// <p>Returns a list of existing virtual gateways in a service mesh.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVirtualGatewaysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_virtual_gateways::builders::ListVirtualGatewaysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_virtual_gateways::builders::ListVirtualGatewaysInputBuilder,
+}
 impl ListVirtualGatewaysFluentBuilder  {
     /// Creates a new `ListVirtualGateways`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_virtual_gateways::ListVirtualGateways, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListVirtualGatewaysFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator {
-                            crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator {
+                                crate::operation::list_virtual_gateways::paginator::ListVirtualGatewaysPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the service mesh to list virtual gateways in.</p>
     pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.mesh_name(input.into());

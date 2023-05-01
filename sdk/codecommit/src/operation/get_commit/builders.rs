@@ -8,16 +8,17 @@ pub use crate::operation::get_commit::_get_commit_input::GetCommitInputBuilder;
 /// <p>Returns information about a commit, including commit message and committer information.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCommitFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_commit::builders::GetCommitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_commit::builders::GetCommitInputBuilder,
+}
 impl GetCommitFluentBuilder  {
     /// Creates a new `GetCommit`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_commit::GetCommit, aws_http::retry::AwsResponseRetryClassifier,>,

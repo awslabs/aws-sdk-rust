@@ -8,16 +8,17 @@ pub use crate::operation::get_email_channel::_get_email_channel_input::GetEmailC
 /// <p>Retrieves information about the status and settings of the email channel for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEmailChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_email_channel::builders::GetEmailChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_email_channel::builders::GetEmailChannelInputBuilder,
+}
 impl GetEmailChannelFluentBuilder  {
     /// Creates a new `GetEmailChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_email_channel::GetEmailChannel, aws_http::retry::AwsResponseRetryClassifier,>,

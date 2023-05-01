@@ -8,16 +8,17 @@ pub use crate::operation::view_billing::_view_billing_input::ViewBillingInputBui
 /// <p>Returns all the domain-related billing records for the current Amazon Web Services account for a specified period</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ViewBillingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::view_billing::builders::ViewBillingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::view_billing::builders::ViewBillingInputBuilder,
+}
 impl ViewBillingFluentBuilder  {
     /// Creates a new `ViewBilling`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::view_billing::ViewBilling, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ViewBillingFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::view_billing::paginator::ViewBillingPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::view_billing::paginator::ViewBillingPaginator {
-                            crate::operation::view_billing::paginator::ViewBillingPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::view_billing::paginator::ViewBillingPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::view_billing::paginator::ViewBillingPaginator {
+                                crate::operation::view_billing::paginator::ViewBillingPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn start(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start(input);

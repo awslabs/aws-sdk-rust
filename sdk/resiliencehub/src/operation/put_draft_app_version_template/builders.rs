@@ -8,16 +8,17 @@ pub use crate::operation::put_draft_app_version_template::_put_draft_app_version
 /// <p>Adds or updates the app template for an Resilience Hub application draft version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutDraftAppVersionTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_draft_app_version_template::builders::PutDraftAppVersionTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_draft_app_version_template::builders::PutDraftAppVersionTemplateInputBuilder,
+}
 impl PutDraftAppVersionTemplateFluentBuilder  {
     /// Creates a new `PutDraftAppVersionTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

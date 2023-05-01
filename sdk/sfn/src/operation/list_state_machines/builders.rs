@@ -11,16 +11,17 @@ pub use crate::operation::list_state_machines::_list_state_machines_input::ListS
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStateMachinesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_state_machines::builders::ListStateMachinesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_state_machines::builders::ListStateMachinesInputBuilder,
+}
 impl ListStateMachinesFluentBuilder  {
     /// Creates a new `ListStateMachines`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_state_machines::ListStateMachines, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl ListStateMachinesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_state_machines::paginator::ListStateMachinesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_state_machines::paginator::ListStateMachinesPaginator {
-                            crate::operation::list_state_machines::paginator::ListStateMachinesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_state_machines::paginator::ListStateMachinesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_state_machines::paginator::ListStateMachinesPaginator {
+                                crate::operation::list_state_machines::paginator::ListStateMachinesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results. The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p> 
     /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
     pub fn max_results(mut self, input: i32) -> Self {

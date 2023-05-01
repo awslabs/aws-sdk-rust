@@ -8,16 +8,17 @@ pub use crate::operation::describe_instance_access_control_attribute_configurati
 /// <p>Returns the list of IAM Identity Center identity store attributes that have been configured to work with attributes-based access control (ABAC) for the specified IAM Identity Center instance. This will not return attributes configured and sent by an external identity provider. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstanceAccessControlAttributeConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_instance_access_control_attribute_configuration::builders::DescribeInstanceAccessControlAttributeConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_instance_access_control_attribute_configuration::builders::DescribeInstanceAccessControlAttributeConfigurationInputBuilder,
+}
 impl DescribeInstanceAccessControlAttributeConfigurationFluentBuilder  {
     /// Creates a new `DescribeInstanceAccessControlAttributeConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

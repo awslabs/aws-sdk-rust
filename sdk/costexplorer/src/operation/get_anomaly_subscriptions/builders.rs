@@ -8,16 +8,17 @@ pub use crate::operation::get_anomaly_subscriptions::_get_anomaly_subscriptions_
 /// <p>Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAnomalySubscriptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_anomaly_subscriptions::builders::GetAnomalySubscriptionsInputBuilder,
+}
 impl GetAnomalySubscriptionsFluentBuilder  {
     /// Creates a new `GetAnomalySubscriptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptions, aws_http::retry::AwsResponseRetryClassifier,>,

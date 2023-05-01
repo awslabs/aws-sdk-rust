@@ -8,16 +8,17 @@ pub use crate::operation::evaluate_pull_request_approval_rules::_evaluate_pull_r
 /// <p>Evaluates whether a pull request has met all the conditions specified in its associated approval rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EvaluatePullRequestApprovalRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::evaluate_pull_request_approval_rules::builders::EvaluatePullRequestApprovalRulesInputBuilder,
+}
 impl EvaluatePullRequestApprovalRulesFluentBuilder  {
     /// Creates a new `EvaluatePullRequestApprovalRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRules, aws_http::retry::AwsResponseRetryClassifier,>,

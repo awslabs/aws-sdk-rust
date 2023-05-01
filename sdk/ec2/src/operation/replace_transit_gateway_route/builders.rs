@@ -8,16 +8,17 @@ pub use crate::operation::replace_transit_gateway_route::_replace_transit_gatewa
 /// <p>Replaces the specified route in the specified transit gateway route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReplaceTransitGatewayRouteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::replace_transit_gateway_route::builders::ReplaceTransitGatewayRouteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::replace_transit_gateway_route::builders::ReplaceTransitGatewayRouteInputBuilder,
+}
 impl ReplaceTransitGatewayRouteFluentBuilder  {
     /// Creates a new `ReplaceTransitGatewayRoute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::replace_transit_gateway_route::ReplaceTransitGatewayRoute, aws_http::retry::AwsResponseRetryClassifier,>,

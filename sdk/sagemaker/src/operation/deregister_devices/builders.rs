@@ -8,16 +8,17 @@ pub use crate::operation::deregister_devices::_deregister_devices_input::Deregis
 /// <p>Deregisters the specified devices. After you deregister a device, you will need to re-register the devices.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterDevicesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_devices::builders::DeregisterDevicesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_devices::builders::DeregisterDevicesInputBuilder,
+}
 impl DeregisterDevicesFluentBuilder  {
     /// Creates a new `DeregisterDevices`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_devices::DeregisterDevices, aws_http::retry::AwsResponseRetryClassifier,>,

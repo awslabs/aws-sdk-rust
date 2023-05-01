@@ -8,16 +8,17 @@ pub use crate::operation::update_quick_connect_name::_update_quick_connect_name_
 /// <p>Updates the name and description of a quick connect. The request accepts the following data in JSON format. At least <code>Name</code> or <code>Description</code> must be provided.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateQuickConnectNameFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_quick_connect_name::builders::UpdateQuickConnectNameInputBuilder,
+}
 impl UpdateQuickConnectNameFluentBuilder  {
     /// Creates a new `UpdateQuickConnectName`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_quick_connect_name::UpdateQuickConnectName, aws_http::retry::AwsResponseRetryClassifier,>,

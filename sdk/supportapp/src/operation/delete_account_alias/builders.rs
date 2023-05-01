@@ -8,16 +8,17 @@ pub use crate::operation::delete_account_alias::_delete_account_alias_input::Del
 /// <p>Deletes an alias for an Amazon Web Services account ID. The alias appears in the Amazon Web Services Support App page of the Amazon Web Services Support Center. The alias also appears in Slack messages from the Amazon Web Services Support App.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAccountAliasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_account_alias::builders::DeleteAccountAliasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_account_alias::builders::DeleteAccountAliasInputBuilder,
+}
 impl DeleteAccountAliasFluentBuilder  {
     /// Creates a new `DeleteAccountAlias`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_account_alias::DeleteAccountAlias, aws_http::retry::AwsResponseRetryClassifier,>,

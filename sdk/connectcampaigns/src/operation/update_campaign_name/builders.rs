@@ -8,16 +8,17 @@ pub use crate::operation::update_campaign_name::_update_campaign_name_input::Upd
 /// Updates the name of a campaign. This API is idempotent.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCampaignNameFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_campaign_name::builders::UpdateCampaignNameInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_campaign_name::builders::UpdateCampaignNameInputBuilder,
+}
 impl UpdateCampaignNameFluentBuilder  {
     /// Creates a new `UpdateCampaignName`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_campaign_name::UpdateCampaignName, aws_http::retry::AwsResponseRetryClassifier,>,

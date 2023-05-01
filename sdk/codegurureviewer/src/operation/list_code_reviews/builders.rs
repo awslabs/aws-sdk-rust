@@ -8,16 +8,17 @@ pub use crate::operation::list_code_reviews::_list_code_reviews_input::ListCodeR
 /// <p>Lists all the code reviews that the customer has created in the past 90 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCodeReviewsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_code_reviews::builders::ListCodeReviewsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_code_reviews::builders::ListCodeReviewsInputBuilder,
+}
 impl ListCodeReviewsFluentBuilder  {
     /// Creates a new `ListCodeReviews`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_code_reviews::ListCodeReviews, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListCodeReviewsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator {
-                            crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator {
+                                crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `ProviderTypes`.
     ///
     /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).

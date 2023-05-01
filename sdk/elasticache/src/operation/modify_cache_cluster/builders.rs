@@ -8,16 +8,17 @@ pub use crate::operation::modify_cache_cluster::_modify_cache_cluster_input::Mod
 /// <p>Modifies the settings for a cluster. You can use this operation to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyCacheClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_cache_cluster::builders::ModifyCacheClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_cache_cluster::builders::ModifyCacheClusterInputBuilder,
+}
 impl ModifyCacheClusterFluentBuilder  {
     /// Creates a new `ModifyCacheCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_cache_cluster::ModifyCacheCluster, aws_http::retry::AwsResponseRetryClassifier,>,

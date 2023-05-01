@@ -10,16 +10,17 @@ pub use crate::operation::delete_custom_verification_email_template::_delete_cus
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCustomVerificationEmailTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_custom_verification_email_template::builders::DeleteCustomVerificationEmailTemplateInputBuilder,
+}
 impl DeleteCustomVerificationEmailTemplateFluentBuilder  {
     /// Creates a new `DeleteCustomVerificationEmailTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

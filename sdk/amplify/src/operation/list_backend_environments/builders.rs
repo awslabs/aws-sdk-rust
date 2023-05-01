@@ -8,16 +8,17 @@ pub use crate::operation::list_backend_environments::_list_backend_environments_
 /// <p> Lists the backend environments for an Amplify app. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBackendEnvironmentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_backend_environments::builders::ListBackendEnvironmentsInputBuilder,
+}
 impl ListBackendEnvironmentsFluentBuilder  {
     /// Creates a new `ListBackendEnvironments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_backend_environments::ListBackendEnvironments, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::associate_virtual_interface::_associate_virtual_interf
 /// <p>To reassociate a virtual interface to a new connection or LAG, the requester must own either the virtual interface itself or the connection to which the virtual interface is currently associated. Additionally, the requester must own the connection or LAG for the association.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateVirtualInterfaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_virtual_interface::builders::AssociateVirtualInterfaceInputBuilder,
+}
 impl AssociateVirtualInterfaceFluentBuilder  {
     /// Creates a new `AssociateVirtualInterface`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_virtual_interface::AssociateVirtualInterface, aws_http::retry::AwsResponseRetryClassifier,>,

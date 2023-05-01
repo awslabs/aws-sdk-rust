@@ -11,16 +11,17 @@ pub use crate::operation::disable_organization_admin_account::_disable_organizat
 /// <p>To remove the delegated administrator account in Organizations, use the Organizations API. Removing the delegated administrator account also removes the Detective administrator account in all Regions, except for Regions where the Detective administrator account is the organization management account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableOrganizationAdminAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_organization_admin_account::builders::DisableOrganizationAdminAccountInputBuilder,
+}
 impl DisableOrganizationAdminAccountFluentBuilder  {
     /// Creates a new `DisableOrganizationAdminAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_organization_admin_account::DisableOrganizationAdminAccount, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_virtual_machines::_list_virtual_machines_input::L
 /// <p>Lists your virtual machines.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVirtualMachinesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_virtual_machines::builders::ListVirtualMachinesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_virtual_machines::builders::ListVirtualMachinesInputBuilder,
+}
 impl ListVirtualMachinesFluentBuilder  {
     /// Creates a new `ListVirtualMachines`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_virtual_machines::ListVirtualMachines, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListVirtualMachinesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_machines::paginator::ListVirtualMachinesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_virtual_machines::paginator::ListVirtualMachinesPaginator {
-                            crate::operation::list_virtual_machines::paginator::ListVirtualMachinesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_virtual_machines::paginator::ListVirtualMachinesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_virtual_machines::paginator::ListVirtualMachinesPaginator {
+                                crate::operation::list_virtual_machines::paginator::ListVirtualMachinesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.</p>
     pub fn hypervisor_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hypervisor_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::create_resource_group::_create_resource_group_input::C
 /// <p>Creates a resource group using the specified set of tags (key and value pairs) that are used to select the EC2 instances to be included in an Amazon Inspector assessment target. The created resource group is then used to create an Amazon Inspector assessment target. For more information, see <code>CreateAssessmentTarget</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateResourceGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_resource_group::builders::CreateResourceGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_resource_group::builders::CreateResourceGroupInputBuilder,
+}
 impl CreateResourceGroupFluentBuilder  {
     /// Creates a new `CreateResourceGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_resource_group::CreateResourceGroup, aws_http::retry::AwsResponseRetryClassifier,>,

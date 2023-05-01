@@ -9,16 +9,17 @@ pub use crate::operation::delete_firewall_manager_rule_groups::_delete_firewall_
 /// <p>You can only use this if <code>ManagedByFirewallManager</code> is false in the specified <code>WebACL</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFirewallManagerRuleGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsInputBuilder,
+}
 impl DeleteFirewallManagerRuleGroupsFluentBuilder  {
     /// Creates a new `DeleteFirewallManagerRuleGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroups, aws_http::retry::AwsResponseRetryClassifier,>,

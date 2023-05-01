@@ -9,16 +9,17 @@ pub use crate::operation::get_host_reservation_purchase_preview::_get_host_reser
 /// <p>This is a preview of the <code>PurchaseHostReservation</code> action and does not result in the offering being purchased.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetHostReservationPurchasePreviewFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_host_reservation_purchase_preview::builders::GetHostReservationPurchasePreviewInputBuilder,
+}
 impl GetHostReservationPurchasePreviewFluentBuilder  {
     /// Creates a new `GetHostReservationPurchasePreview`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreview, aws_http::retry::AwsResponseRetryClassifier,>,

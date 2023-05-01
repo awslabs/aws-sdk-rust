@@ -8,16 +8,17 @@ pub use crate::operation::update_replication_configuration::_update_replication_
 /// <p>Allows you to update multiple ReplicationConfigurations by Source Server ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateReplicationConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_replication_configuration::builders::UpdateReplicationConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_replication_configuration::builders::UpdateReplicationConfigurationInputBuilder,
+}
 impl UpdateReplicationConfigurationFluentBuilder  {
     /// Creates a new `UpdateReplicationConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_replication_configuration::UpdateReplicationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

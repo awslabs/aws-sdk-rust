@@ -21,16 +21,17 @@ pub use crate::operation::describe_instances::_describe_instances_input::Describ
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_instances::builders::DescribeInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_instances::builders::DescribeInstancesInputBuilder,
+}
 impl DescribeInstancesFluentBuilder  {
     /// Creates a new `DescribeInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_instances::DescribeInstances, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -61,11 +62,11 @@ impl DescribeInstancesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_instances::paginator::DescribeInstancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_instances::paginator::DescribeInstancesPaginator {
-                            crate::operation::describe_instances::paginator::DescribeInstancesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_instances::paginator::DescribeInstancesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_instances::paginator::DescribeInstancesPaginator {
+                                crate::operation::describe_instances::paginator::DescribeInstancesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());

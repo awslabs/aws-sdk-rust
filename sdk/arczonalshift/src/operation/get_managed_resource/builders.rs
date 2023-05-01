@@ -9,16 +9,17 @@ pub use crate::operation::get_managed_resource::_get_managed_resource_input::Get
 /// <p>At this time, you can only start a zonal shift for Network Load Balancers and Application Load Balancers with cross-zone load balancing turned off.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetManagedResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_managed_resource::builders::GetManagedResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_managed_resource::builders::GetManagedResourceInputBuilder,
+}
 impl GetManagedResourceFluentBuilder  {
     /// Creates a new `GetManagedResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_managed_resource::GetManagedResource, aws_http::retry::AwsResponseRetryClassifier,>,

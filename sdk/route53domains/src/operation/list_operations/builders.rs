@@ -9,16 +9,17 @@ pub use crate::operation::list_operations::_list_operations_input::ListOperation
 /// <p>This command runs only in the us-east-1 Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListOperationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_operations::builders::ListOperationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_operations::builders::ListOperationsInputBuilder,
+}
 impl ListOperationsFluentBuilder  {
     /// Creates a new `ListOperations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_operations::ListOperations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListOperationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_operations::paginator::ListOperationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_operations::paginator::ListOperationsPaginator {
-                            crate::operation::list_operations::paginator::ListOperationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_operations::paginator::ListOperationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_operations::paginator::ListOperationsPaginator {
+                                crate::operation::list_operations::paginator::ListOperationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
     pub fn submitted_since(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.submitted_since(input);

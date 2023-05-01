@@ -8,16 +8,17 @@ pub use crate::operation::stop_inference_recommendations_job::_stop_inference_re
 /// <p>Stops an Inference Recommender job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopInferenceRecommendationsJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobInputBuilder,
+}
 impl StopInferenceRecommendationsJobFluentBuilder  {
     /// Creates a new `StopInferenceRecommendationsJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJob, aws_http::retry::AwsResponseRetryClassifier,>,

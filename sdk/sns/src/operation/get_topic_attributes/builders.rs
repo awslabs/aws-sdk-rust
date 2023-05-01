@@ -8,16 +8,17 @@ pub use crate::operation::get_topic_attributes::_get_topic_attributes_input::Get
 /// <p>Returns all of the properties of a topic. Topic properties returned might differ based on the authorization of the user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTopicAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_topic_attributes::builders::GetTopicAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_topic_attributes::builders::GetTopicAttributesInputBuilder,
+}
 impl GetTopicAttributesFluentBuilder  {
     /// Creates a new `GetTopicAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_topic_attributes::GetTopicAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

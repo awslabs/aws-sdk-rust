@@ -8,16 +8,17 @@ pub use crate::operation::modify_verified_access_instance_logging_configuration:
 /// <p>Modifies the logging configuration for the specified Amazon Web Services Verified Access instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVerifiedAccessInstanceLoggingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder,
+}
 impl ModifyVerifiedAccessInstanceLoggingConfigurationFluentBuilder  {
     /// Creates a new `ModifyVerifiedAccessInstanceLoggingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

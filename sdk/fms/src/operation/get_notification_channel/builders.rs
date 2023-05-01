@@ -8,16 +8,17 @@ pub use crate::operation::get_notification_channel::_get_notification_channel_in
 /// <p>Information about the Amazon Simple Notification Service (SNS) topic that is used to record Firewall Manager SNS logs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetNotificationChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_notification_channel::builders::GetNotificationChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_notification_channel::builders::GetNotificationChannelInputBuilder,
+}
 impl GetNotificationChannelFluentBuilder  {
     /// Creates a new `GetNotificationChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_notification_channel::GetNotificationChannel, aws_http::retry::AwsResponseRetryClassifier,>,

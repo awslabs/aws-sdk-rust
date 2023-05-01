@@ -12,16 +12,17 @@ pub use crate::operation::update_nodegroup_version::_update_nodegroup_version_in
 /// <p>When a node in a managed node group is terminated due to a scaling action or update, the pods in that node are drained first. Amazon EKS attempts to drain the nodes gracefully and will fail if it is unable to do so. You can <code>force</code> the update if Amazon EKS is unable to drain the nodes as a result of a pod disruption budget issue.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateNodegroupVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_nodegroup_version::builders::UpdateNodegroupVersionInputBuilder,
+}
 impl UpdateNodegroupVersionFluentBuilder  {
     /// Creates a new `UpdateNodegroupVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_nodegroup_version::UpdateNodegroupVersion, aws_http::retry::AwsResponseRetryClassifier,>,

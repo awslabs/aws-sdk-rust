@@ -8,16 +8,17 @@ pub use crate::operation::start_app_replication::_start_app_replication_input::S
 /// <p>Starts replicating the specified application by creating replication jobs for each server in the application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartAppReplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_app_replication::builders::StartAppReplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_app_replication::builders::StartAppReplicationInputBuilder,
+}
 impl StartAppReplicationFluentBuilder  {
     /// Creates a new `StartAppReplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_app_replication::StartAppReplication, aws_http::retry::AwsResponseRetryClassifier,>,

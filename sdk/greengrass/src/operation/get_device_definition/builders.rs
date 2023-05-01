@@ -8,16 +8,17 @@ pub use crate::operation::get_device_definition::_get_device_definition_input::G
 /// Retrieves information about a device definition.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDeviceDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_device_definition::builders::GetDeviceDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_device_definition::builders::GetDeviceDefinitionInputBuilder,
+}
 impl GetDeviceDefinitionFluentBuilder  {
     /// Creates a new `GetDeviceDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_device_definition::GetDeviceDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

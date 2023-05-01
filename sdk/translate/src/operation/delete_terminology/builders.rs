@@ -8,16 +8,17 @@ pub use crate::operation::delete_terminology::_delete_terminology_input::DeleteT
 /// <p>A synchronous action that deletes a custom terminology.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTerminologyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_terminology::builders::DeleteTerminologyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_terminology::builders::DeleteTerminologyInputBuilder,
+}
 impl DeleteTerminologyFluentBuilder  {
     /// Creates a new `DeleteTerminology`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_terminology::DeleteTerminology, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_eula_acceptances::_list_eula_acceptances_input::L
 /// <p>List EULA acceptances.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEulaAcceptancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_eula_acceptances::builders::ListEulaAcceptancesInputBuilder,
+}
 impl ListEulaAcceptancesFluentBuilder  {
     /// Creates a new `ListEulaAcceptances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_eula_acceptances::ListEulaAcceptances, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEulaAcceptancesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator {
-                            crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator {
+                                crate::operation::list_eula_acceptances::paginator::ListEulaAcceptancesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `eulaIds`.
     ///
     /// To override the contents of this collection use [`set_eula_ids`](Self::set_eula_ids).

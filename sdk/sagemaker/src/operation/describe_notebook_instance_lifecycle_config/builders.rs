@@ -9,16 +9,17 @@ pub use crate::operation::describe_notebook_instance_lifecycle_config::_describe
 /// <p>For information about notebook instance lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional) Customize a Notebook Instance</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNotebookInstanceLifecycleConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_notebook_instance_lifecycle_config::builders::DescribeNotebookInstanceLifecycleConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_notebook_instance_lifecycle_config::builders::DescribeNotebookInstanceLifecycleConfigInputBuilder,
+}
 impl DescribeNotebookInstanceLifecycleConfigFluentBuilder  {
     /// Creates a new `DescribeNotebookInstanceLifecycleConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_notebook_instance_lifecycle_config::DescribeNotebookInstanceLifecycleConfig, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::delete_outcome::_delete_outcome_input::DeleteOutcomeIn
 /// <p>When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome and the data is no longer stored in Amazon Fraud Detector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteOutcomeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_outcome::builders::DeleteOutcomeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_outcome::builders::DeleteOutcomeInputBuilder,
+}
 impl DeleteOutcomeFluentBuilder  {
     /// Creates a new `DeleteOutcome`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_outcome::DeleteOutcome, aws_http::retry::AwsResponseRetryClassifier,>,

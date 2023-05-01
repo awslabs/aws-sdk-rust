@@ -9,16 +9,17 @@ pub use crate::operation::delete_provisioning_template::_delete_provisioning_tem
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplate</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteProvisioningTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_provisioning_template::builders::DeleteProvisioningTemplateInputBuilder,
+}
 impl DeleteProvisioningTemplateFluentBuilder  {
     /// Creates a new `DeleteProvisioningTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_provisioning_template::DeleteProvisioningTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_studios::_list_studios_input::ListStudiosInputBui
 /// <p>Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account. The list includes details such as ID, Studio Access URL, and creation time for each Studio.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStudiosFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_studios::builders::ListStudiosInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_studios::builders::ListStudiosInputBuilder,
+}
 impl ListStudiosFluentBuilder  {
     /// Creates a new `ListStudios`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_studios::ListStudios, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListStudiosFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_studios::paginator::ListStudiosPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_studios::paginator::ListStudiosPaginator {
-                            crate::operation::list_studios::paginator::ListStudiosPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_studios::paginator::ListStudiosPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_studios::paginator::ListStudiosPaginator {
+                                crate::operation::list_studios::paginator::ListStudiosPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The pagination token that indicates the set of results to retrieve.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());

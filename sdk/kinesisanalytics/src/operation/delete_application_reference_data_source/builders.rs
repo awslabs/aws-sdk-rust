@@ -13,16 +13,17 @@ pub use crate::operation::delete_application_reference_data_source::_delete_appl
 /// <p>This operation requires permissions to perform the <code>kinesisanalytics.DeleteApplicationReferenceDataSource</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteApplicationReferenceDataSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_application_reference_data_source::builders::DeleteApplicationReferenceDataSourceInputBuilder,
+}
 impl DeleteApplicationReferenceDataSourceFluentBuilder  {
     /// Creates a new `DeleteApplicationReferenceDataSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_application_reference_data_source::DeleteApplicationReferenceDataSource, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::cancel_import_task::_cancel_import_task_input::CancelI
 /// <p>Cancels an in-process import virtual machine or import snapshot task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelImportTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_import_task::builders::CancelImportTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_import_task::builders::CancelImportTaskInputBuilder,
+}
 impl CancelImportTaskFluentBuilder  {
     /// Creates a new `CancelImportTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_import_task::CancelImportTask, aws_http::retry::AwsResponseRetryClassifier,>,

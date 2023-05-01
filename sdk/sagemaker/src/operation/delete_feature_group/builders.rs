@@ -9,16 +9,17 @@ pub use crate::operation::delete_feature_group::_delete_feature_group_input::Del
 /// <p>Data written into the <code>OfflineStore</code> will not be deleted. The Amazon Web Services Glue database and tables that are automatically created for your <code>OfflineStore</code> are not deleted. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFeatureGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_feature_group::builders::DeleteFeatureGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_feature_group::builders::DeleteFeatureGroupInputBuilder,
+}
 impl DeleteFeatureGroupFluentBuilder  {
     /// Creates a new `DeleteFeatureGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_feature_group::DeleteFeatureGroup, aws_http::retry::AwsResponseRetryClassifier,>,

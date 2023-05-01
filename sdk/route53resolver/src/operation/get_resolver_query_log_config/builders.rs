@@ -8,16 +8,17 @@ pub use crate::operation::get_resolver_query_log_config::_get_resolver_query_log
 /// <p>Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_resolver_query_log_config::builders::GetResolverQueryLogConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_resolver_query_log_config::builders::GetResolverQueryLogConfigInputBuilder,
+}
 impl GetResolverQueryLogConfigFluentBuilder  {
     /// Creates a new `GetResolverQueryLogConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfig, aws_http::retry::AwsResponseRetryClassifier,>,

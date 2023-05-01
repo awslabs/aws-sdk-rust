@@ -8,16 +8,17 @@ pub use crate::operation::delete_backup_selection::_delete_backup_selection_inpu
 /// <p>Deletes the resource selection associated with a backup plan that is specified by the <code>SelectionId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBackupSelectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_backup_selection::builders::DeleteBackupSelectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_backup_selection::builders::DeleteBackupSelectionInputBuilder,
+}
 impl DeleteBackupSelectionFluentBuilder  {
     /// Creates a new `DeleteBackupSelection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_backup_selection::DeleteBackupSelection, aws_http::retry::AwsResponseRetryClassifier,>,

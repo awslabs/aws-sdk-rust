@@ -8,16 +8,17 @@ pub use crate::operation::disable_user::_disable_user_input::DisableUserInputBui
 /// <p>Denies access to the FinSpace web application and API for the specified user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_user::builders::DisableUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_user::builders::DisableUserInputBuilder,
+}
 impl DisableUserFluentBuilder  {
     /// Creates a new `DisableUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_user::DisableUser, aws_http::retry::AwsResponseRetryClassifier,>,

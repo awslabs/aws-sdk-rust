@@ -12,16 +12,17 @@ pub use crate::operation::create_data_source_from_s3::_create_data_source_from_s
 /// <p>After the <code>DataSource</code> has been created, it's ready to use in evaluations and batch predictions. If you plan to use the <code>DataSource</code> to train an <code>MLModel</code>, the <code>DataSource</code> also needs a recipe. A recipe describes how each input variable will be used in training an <code>MLModel</code>. Will the variable be included or excluded from training? Will the variable be manipulated; for example, will it be combined with another variable or will it be split apart into word combinations? The recipe provides answers to these questions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDataSourceFromS3FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_data_source_from_s3::builders::CreateDataSourceFromS3InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_data_source_from_s3::builders::CreateDataSourceFromS3InputBuilder,
+}
 impl CreateDataSourceFromS3FluentBuilder  {
     /// Creates a new `CreateDataSourceFromS3`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_data_source_from_s3::CreateDataSourceFromS3, aws_http::retry::AwsResponseRetryClassifier,>,

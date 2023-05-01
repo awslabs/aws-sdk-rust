@@ -8,16 +8,17 @@ pub use crate::operation::update_protected_query::_update_protected_query_input:
 /// <p>Updates the processing of a currently running query.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProtectedQueryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_protected_query::builders::UpdateProtectedQueryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_protected_query::builders::UpdateProtectedQueryInputBuilder,
+}
 impl UpdateProtectedQueryFluentBuilder  {
     /// Creates a new `UpdateProtectedQuery`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_protected_query::UpdateProtectedQuery, aws_http::retry::AwsResponseRetryClassifier,>,

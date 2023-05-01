@@ -8,16 +8,17 @@ pub use crate::operation::describe_load_balancers::_describe_load_balancers_inpu
 /// <p>Describes the specified load balancers or all of your load balancers.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLoadBalancersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_load_balancers::builders::DescribeLoadBalancersInputBuilder,
+}
 impl DescribeLoadBalancersFluentBuilder  {
     /// Creates a new `DescribeLoadBalancers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_load_balancers::DescribeLoadBalancers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeLoadBalancersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_load_balancers::paginator::DescribeLoadBalancersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_load_balancers::paginator::DescribeLoadBalancersPaginator {
-                            crate::operation::describe_load_balancers::paginator::DescribeLoadBalancersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_load_balancers::paginator::DescribeLoadBalancersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_load_balancers::paginator::DescribeLoadBalancersPaginator {
+                                crate::operation::describe_load_balancers::paginator::DescribeLoadBalancersPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `LoadBalancerArns`.
     ///
     /// To override the contents of this collection use [`set_load_balancer_arns`](Self::set_load_balancer_arns).

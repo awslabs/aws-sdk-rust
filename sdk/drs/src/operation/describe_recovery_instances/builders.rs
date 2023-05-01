@@ -8,16 +8,17 @@ pub use crate::operation::describe_recovery_instances::_describe_recovery_instan
 /// <p>Lists all Recovery Instances or multiple Recovery Instances by ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRecoveryInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_recovery_instances::builders::DescribeRecoveryInstancesInputBuilder,
+}
 impl DescribeRecoveryInstancesFluentBuilder  {
     /// Creates a new `DescribeRecoveryInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_recovery_instances::DescribeRecoveryInstances, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeRecoveryInstancesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_recovery_instances::paginator::DescribeRecoveryInstancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_recovery_instances::paginator::DescribeRecoveryInstancesPaginator {
-                            crate::operation::describe_recovery_instances::paginator::DescribeRecoveryInstancesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_recovery_instances::paginator::DescribeRecoveryInstancesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_recovery_instances::paginator::DescribeRecoveryInstancesPaginator {
+                                crate::operation::describe_recovery_instances::paginator::DescribeRecoveryInstancesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A set of filters by which to return Recovery Instances.</p>
     pub fn filters(mut self, input: crate::types::DescribeRecoveryInstancesRequestFilters) -> Self {
         self.inner = self.inner.filters(input);

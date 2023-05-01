@@ -8,16 +8,17 @@ pub use crate::operation::delete_service_action::_delete_service_action_input::D
 /// <p>Deletes a self-service action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteServiceActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_service_action::builders::DeleteServiceActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_service_action::builders::DeleteServiceActionInputBuilder,
+}
 impl DeleteServiceActionFluentBuilder  {
     /// Creates a new `DeleteServiceAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_service_action::DeleteServiceAction, aws_http::retry::AwsResponseRetryClassifier,>,

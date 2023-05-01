@@ -8,16 +8,17 @@ pub use crate::operation::stop_edge_packaging_job::_stop_edge_packaging_job_inpu
 /// <p>Request to stop an edge packaging job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopEdgePackagingJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobInputBuilder,
+}
 impl StopEdgePackagingJobFluentBuilder  {
     /// Creates a new `StopEdgePackagingJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_edge_packaging_job::StopEdgePackagingJob, aws_http::retry::AwsResponseRetryClassifier,>,

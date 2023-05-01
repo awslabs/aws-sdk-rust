@@ -8,16 +8,17 @@ pub use crate::operation::start_icd10_cm_inference_job::_start_icd10_cm_inferenc
 /// <p>Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology. Use the <code>DescribeICD10CMInferenceJob</code> operation to track the status of a job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartICD10CMInferenceJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_icd10_cm_inference_job::builders::StartIcd10CmInferenceJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_icd10_cm_inference_job::builders::StartIcd10CmInferenceJobInputBuilder,
+}
 impl StartICD10CMInferenceJobFluentBuilder  {
     /// Creates a new `StartICD10CMInferenceJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,

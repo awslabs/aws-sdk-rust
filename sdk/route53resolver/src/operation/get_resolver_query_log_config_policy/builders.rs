@@ -8,16 +8,17 @@ pub use crate::operation::get_resolver_query_log_config_policy::_get_resolver_qu
 /// <p>Gets information about a query logging policy. A query logging policy specifies the Resolver query logging operations and resources that you want to allow another Amazon Web Services account to be able to use.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyInputBuilder,
+}
 impl GetResolverQueryLogConfigPolicyFluentBuilder  {
     /// Creates a new `GetResolverQueryLogConfigPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

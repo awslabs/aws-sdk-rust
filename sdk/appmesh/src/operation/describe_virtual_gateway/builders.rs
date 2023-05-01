@@ -8,16 +8,17 @@ pub use crate::operation::describe_virtual_gateway::_describe_virtual_gateway_in
 /// <p>Describes an existing virtual gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVirtualGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_virtual_gateway::builders::DescribeVirtualGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_virtual_gateway::builders::DescribeVirtualGatewayInputBuilder,
+}
 impl DescribeVirtualGatewayFluentBuilder  {
     /// Creates a new `DescribeVirtualGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_virtual_gateway::DescribeVirtualGateway, aws_http::retry::AwsResponseRetryClassifier,>,

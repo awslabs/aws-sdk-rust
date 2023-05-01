@@ -18,16 +18,17 @@ pub use crate::operation::list_policies_granting_service_access::_list_policies_
 /// <p>Policies that are attached to users and roles as permissions boundaries are not returned. To view which managed policy is currently used to set the permissions boundary for a user or role, use the <code>GetUser</code> or <code>GetRole</code> operations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPoliciesGrantingServiceAccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_policies_granting_service_access::builders::ListPoliciesGrantingServiceAccessInputBuilder,
+}
 impl ListPoliciesGrantingServiceAccessFluentBuilder  {
     /// Creates a new `ListPoliciesGrantingServiceAccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccess, aws_http::retry::AwsResponseRetryClassifier,>,

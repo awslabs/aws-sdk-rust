@@ -8,16 +8,17 @@ pub use crate::operation::describe_replication_configuration_templates::_describ
 /// <p>Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationTemplatesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_replication_configuration_templates::builders::DescribeReplicationConfigurationTemplatesInputBuilder,
+}
 impl DescribeReplicationConfigurationTemplatesFluentBuilder  {
     /// Creates a new `DescribeReplicationConfigurationTemplates`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeReplicationConfigurationTemplatesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_configuration_templates::paginator::DescribeReplicationConfigurationTemplatesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_replication_configuration_templates::paginator::DescribeReplicationConfigurationTemplatesPaginator {
-                            crate::operation::describe_replication_configuration_templates::paginator::DescribeReplicationConfigurationTemplatesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_replication_configuration_templates::paginator::DescribeReplicationConfigurationTemplatesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_replication_configuration_templates::paginator::DescribeReplicationConfigurationTemplatesPaginator {
+                                crate::operation::describe_replication_configuration_templates::paginator::DescribeReplicationConfigurationTemplatesPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `replicationConfigurationTemplateIDs`.
     ///
     /// To override the contents of this collection use [`set_replication_configuration_template_i_ds`](Self::set_replication_configuration_template_i_ds).

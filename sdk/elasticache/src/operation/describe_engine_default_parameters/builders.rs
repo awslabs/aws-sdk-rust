@@ -8,16 +8,17 @@ pub use crate::operation::describe_engine_default_parameters::_describe_engine_d
 /// <p>Returns the default engine and system parameter information for the specified cache engine.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEngineDefaultParametersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_engine_default_parameters::builders::DescribeEngineDefaultParametersInputBuilder,
+}
 impl DescribeEngineDefaultParametersFluentBuilder  {
     /// Creates a new `DescribeEngineDefaultParameters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_engine_default_parameters::DescribeEngineDefaultParameters, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeEngineDefaultParametersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_engine_default_parameters::paginator::DescribeEngineDefaultParametersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_engine_default_parameters::paginator::DescribeEngineDefaultParametersPaginator {
-                            crate::operation::describe_engine_default_parameters::paginator::DescribeEngineDefaultParametersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_engine_default_parameters::paginator::DescribeEngineDefaultParametersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_engine_default_parameters::paginator::DescribeEngineDefaultParametersPaginator {
+                                crate::operation::describe_engine_default_parameters::paginator::DescribeEngineDefaultParametersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the cache parameter group family.</p> 
     /// <p>Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code> </p>
     pub fn cache_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {

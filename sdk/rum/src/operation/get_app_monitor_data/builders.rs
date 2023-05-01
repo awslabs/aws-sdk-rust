@@ -8,16 +8,17 @@ pub use crate::operation::get_app_monitor_data::_get_app_monitor_data_input::Get
 /// <p>Retrieves the raw performance events that RUM has collected from your web application, so that you can do your own processing or analysis of this data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAppMonitorDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder,
+}
 impl GetAppMonitorDataFluentBuilder  {
     /// Creates a new `GetAppMonitorData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_app_monitor_data::GetAppMonitorData, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetAppMonitorDataFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator {
-                            crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator {
+                                crate::operation::get_app_monitor_data::paginator::GetAppMonitorDataPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

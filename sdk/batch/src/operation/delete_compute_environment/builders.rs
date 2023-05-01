@@ -9,16 +9,17 @@ pub use crate::operation::delete_compute_environment::_delete_compute_environmen
 /// <p>Before you can delete a compute environment, you must set its state to <code>DISABLED</code> with the <code>UpdateComputeEnvironment</code> API operation and disassociate it from any job queues with the <code>UpdateJobQueue</code> API operation. Compute environments that use Fargate resources must terminate all active jobs on that compute environment before deleting the compute environment. If this isn't done, the compute environment enters an invalid state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteComputeEnvironmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_compute_environment::builders::DeleteComputeEnvironmentInputBuilder,
+}
 impl DeleteComputeEnvironmentFluentBuilder  {
     /// Creates a new `DeleteComputeEnvironment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_compute_environment::DeleteComputeEnvironment, aws_http::retry::AwsResponseRetryClassifier,>,

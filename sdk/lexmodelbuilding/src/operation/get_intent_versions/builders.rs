@@ -11,16 +11,17 @@ pub use crate::operation::get_intent_versions::_get_intent_versions_input::GetIn
 /// <p>This operation requires permissions for the <code>lex:GetIntentVersions</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIntentVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_intent_versions::builders::GetIntentVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_intent_versions::builders::GetIntentVersionsInputBuilder,
+}
 impl GetIntentVersionsFluentBuilder  {
     /// Creates a new `GetIntentVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_intent_versions::GetIntentVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl GetIntentVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator {
-                            crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator {
+                                crate::operation::get_intent_versions::paginator::GetIntentVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the intent for which versions should be returned.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

@@ -9,16 +9,17 @@ pub use crate::operation::apply_security_groups_to_load_balancer::_apply_securit
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ApplySecurityGroupsToLoadBalancerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::apply_security_groups_to_load_balancer::builders::ApplySecurityGroupsToLoadBalancerInputBuilder,
+}
 impl ApplySecurityGroupsToLoadBalancerFluentBuilder  {
     /// Creates a new `ApplySecurityGroupsToLoadBalancer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::apply_security_groups_to_load_balancer::ApplySecurityGroupsToLoadBalancer, aws_http::retry::AwsResponseRetryClassifier,>,

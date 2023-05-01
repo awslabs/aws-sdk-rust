@@ -8,16 +8,17 @@ pub use crate::operation::get_work_unit_results::_get_work_unit_results_input::G
 /// <p>Returns the work units resulting from the query. Work units can be executed in any order and in parallel. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetWorkUnitResultsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_work_unit_results::builders::GetWorkUnitResultsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_work_unit_results::builders::GetWorkUnitResultsInputBuilder,
+}
 impl GetWorkUnitResultsFluentBuilder  {
     /// Creates a new `GetWorkUnitResults`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_work_unit_results::GetWorkUnitResults, aws_http::retry::AwsResponseRetryClassifier,>,

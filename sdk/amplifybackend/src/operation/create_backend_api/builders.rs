@@ -8,16 +8,17 @@ pub use crate::operation::create_backend_api::_create_backend_api_input::CreateB
 /// <p>Creates a new backend API resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBackendAPIFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_backend_api::builders::CreateBackendApiInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_backend_api::builders::CreateBackendApiInputBuilder,
+}
 impl CreateBackendAPIFluentBuilder  {
     /// Creates a new `CreateBackendAPI`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_backend_api::CreateBackendAPI, aws_http::retry::AwsResponseRetryClassifier,>,

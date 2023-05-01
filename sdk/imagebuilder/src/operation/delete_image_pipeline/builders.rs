@@ -8,16 +8,17 @@ pub use crate::operation::delete_image_pipeline::_delete_image_pipeline_input::D
 /// <p>Deletes an image pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteImagePipelineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_image_pipeline::builders::DeleteImagePipelineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_image_pipeline::builders::DeleteImagePipelineInputBuilder,
+}
 impl DeleteImagePipelineFluentBuilder  {
     /// Creates a new `DeleteImagePipeline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_image_pipeline::DeleteImagePipeline, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_maintenance_window_execution_tasks::_describe
 /// <p>For a given maintenance window execution, lists the tasks that were run.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_maintenance_window_execution_tasks::builders::DescribeMaintenanceWindowExecutionTasksInputBuilder,
+}
 impl DescribeMaintenanceWindowExecutionTasksFluentBuilder  {
     /// Creates a new `DescribeMaintenanceWindowExecutionTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_execution_tasks::DescribeMaintenanceWindowExecutionTasks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeMaintenanceWindowExecutionTasksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_execution_tasks::paginator::DescribeMaintenanceWindowExecutionTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_execution_tasks::paginator::DescribeMaintenanceWindowExecutionTasksPaginator {
-                            crate::operation::describe_maintenance_window_execution_tasks::paginator::DescribeMaintenanceWindowExecutionTasksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_execution_tasks::paginator::DescribeMaintenanceWindowExecutionTasksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_execution_tasks::paginator::DescribeMaintenanceWindowExecutionTasksPaginator {
+                                crate::operation::describe_maintenance_window_execution_tasks::paginator::DescribeMaintenanceWindowExecutionTasksPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the maintenance window execution whose task executions should be retrieved.</p>
     pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.window_execution_id(input.into());

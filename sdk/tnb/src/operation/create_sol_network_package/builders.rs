@@ -11,16 +11,17 @@ pub use crate::operation::create_sol_network_package::_create_sol_network_packag
 /// <p>This request creates an empty network package container with an ID. Once you create a network package, you can upload the network package content using <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolNetworkPackageContent.html">PutSolNetworkPackageContent</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSolNetworkPackageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageInputBuilder,
+}
 impl CreateSolNetworkPackageFluentBuilder  {
     /// Creates a new `CreateSolNetworkPackage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_sol_network_package::CreateSolNetworkPackage, aws_http::retry::AwsResponseRetryClassifier,>,

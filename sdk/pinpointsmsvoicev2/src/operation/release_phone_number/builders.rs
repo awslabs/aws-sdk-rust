@@ -9,16 +9,17 @@ pub use crate::operation::release_phone_number::_release_phone_number_input::Rel
 /// <p>If the origination phone number has deletion protection enabled or is associated with a pool, an Error is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReleasePhoneNumberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::release_phone_number::builders::ReleasePhoneNumberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::release_phone_number::builders::ReleasePhoneNumberInputBuilder,
+}
 impl ReleasePhoneNumberFluentBuilder  {
     /// Creates a new `ReleasePhoneNumber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::release_phone_number::ReleasePhoneNumber, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_server_details::_get_server_details_input::GetServ
 /// <p> Retrieves detailed information about a specified server. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetServerDetailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_server_details::builders::GetServerDetailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_server_details::builders::GetServerDetailsInputBuilder,
+}
 impl GetServerDetailsFluentBuilder  {
     /// Creates a new `GetServerDetails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_server_details::GetServerDetails, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetServerDetailsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_server_details::paginator::GetServerDetailsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_server_details::paginator::GetServerDetailsPaginator {
-                            crate::operation::get_server_details::paginator::GetServerDetailsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_server_details::paginator::GetServerDetailsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_server_details::paginator::GetServerDetailsPaginator {
+                                crate::operation::get_server_details::paginator::GetServerDetailsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The ID of the server. </p>
     pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());

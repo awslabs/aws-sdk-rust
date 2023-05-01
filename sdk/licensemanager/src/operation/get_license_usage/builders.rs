@@ -8,16 +8,17 @@ pub use crate::operation::get_license_usage::_get_license_usage_input::GetLicens
 /// <p>Gets detailed information about the usage of the specified license.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLicenseUsageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_license_usage::builders::GetLicenseUsageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_license_usage::builders::GetLicenseUsageInputBuilder,
+}
 impl GetLicenseUsageFluentBuilder  {
     /// Creates a new `GetLicenseUsage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_license_usage::GetLicenseUsage, aws_http::retry::AwsResponseRetryClassifier,>,

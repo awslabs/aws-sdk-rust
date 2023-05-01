@@ -9,16 +9,17 @@ pub use crate::operation::replace_network_acl_association::_replace_network_acl_
 /// <p>This is an idempotent operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReplaceNetworkAclAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::replace_network_acl_association::builders::ReplaceNetworkAclAssociationInputBuilder,
+}
 impl ReplaceNetworkAclAssociationFluentBuilder  {
     /// Creates a new `ReplaceNetworkAclAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

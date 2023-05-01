@@ -8,16 +8,17 @@ pub use crate::operation::reset_network_interface_attribute::_reset_network_inte
 /// <p>Resets a network interface attribute. You can specify only one attribute at a time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetNetworkInterfaceAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_network_interface_attribute::builders::ResetNetworkInterfaceAttributeInputBuilder,
+}
 impl ResetNetworkInterfaceAttributeFluentBuilder  {
     /// Creates a new `ResetNetworkInterfaceAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

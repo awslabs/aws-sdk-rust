@@ -8,16 +8,17 @@ pub use crate::operation::describe_connections::_describe_connections_input::Des
 /// <p>Displays the specified connection or all connections in this Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConnectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_connections::builders::DescribeConnectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_connections::builders::DescribeConnectionsInputBuilder,
+}
 impl DescribeConnectionsFluentBuilder  {
     /// Creates a new `DescribeConnections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_connections::DescribeConnections, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_algorithm::_create_algorithm_input::CreateAlgor
 /// <p>Create a machine learning algorithm that you can use in SageMaker and list in the Amazon Web Services Marketplace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAlgorithmFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_algorithm::builders::CreateAlgorithmInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_algorithm::builders::CreateAlgorithmInputBuilder,
+}
 impl CreateAlgorithmFluentBuilder  {
     /// Creates a new `CreateAlgorithm`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_algorithm::CreateAlgorithm, aws_http::retry::AwsResponseRetryClassifier,>,

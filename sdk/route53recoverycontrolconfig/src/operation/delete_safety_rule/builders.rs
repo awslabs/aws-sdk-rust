@@ -8,16 +8,17 @@ pub use crate::operation::delete_safety_rule::_delete_safety_rule_input::DeleteS
 /// <p>Deletes a safety rule.</p>/&gt;
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSafetyRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_safety_rule::builders::DeleteSafetyRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_safety_rule::builders::DeleteSafetyRuleInputBuilder,
+}
 impl DeleteSafetyRuleFluentBuilder  {
     /// Creates a new `DeleteSafetyRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_safety_rule::DeleteSafetyRule, aws_http::retry::AwsResponseRetryClassifier,>,

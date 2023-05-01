@@ -8,16 +8,17 @@ pub use crate::operation::deactivate_user::_deactivate_user_input::DeactivateUse
 /// <p>Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeactivateUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deactivate_user::builders::DeactivateUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deactivate_user::builders::DeactivateUserInputBuilder,
+}
 impl DeactivateUserFluentBuilder  {
     /// Creates a new `DeactivateUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deactivate_user::DeactivateUser, aws_http::retry::AwsResponseRetryClassifier,>,

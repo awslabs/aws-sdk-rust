@@ -8,16 +8,17 @@ pub use crate::operation::list_icd10_cm_inference_jobs::_list_icd10_cm_inference
 /// <p>Gets a list of InferICD10CM jobs that you have submitted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListICD10CMInferenceJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_icd10_cm_inference_jobs::builders::ListIcd10CmInferenceJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_icd10_cm_inference_jobs::builders::ListIcd10CmInferenceJobsInputBuilder,
+}
 impl ListICD10CMInferenceJobsFluentBuilder  {
     /// Creates a new `ListICD10CMInferenceJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobs, aws_http::retry::AwsResponseRetryClassifier,>,

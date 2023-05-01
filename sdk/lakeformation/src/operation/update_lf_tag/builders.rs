@@ -8,16 +8,17 @@ pub use crate::operation::update_lf_tag::_update_lf_tag_input::UpdateLfTagInputB
 /// <p>Updates the list of possible values for the specified LF-tag key. If the LF-tag does not exist, the operation throws an EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any value in the delete key values is attached to a resource, then API errors out with a 400 Exception - "Update not allowed". Untag the attribute before deleting the LF-tag key's value. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLFTagFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_lf_tag::builders::UpdateLfTagInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_lf_tag::builders::UpdateLfTagInputBuilder,
+}
 impl UpdateLFTagFluentBuilder  {
     /// Creates a new `UpdateLFTag`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_lf_tag::UpdateLFTag, aws_http::retry::AwsResponseRetryClassifier,>,

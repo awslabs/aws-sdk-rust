@@ -8,16 +8,17 @@ pub use crate::operation::cancel_schema_extension::_cancel_schema_extension_inpu
 /// <p>Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema extension has started replicating to all domain controllers, the task can no longer be canceled. A schema extension can be canceled during any of the following states; <code>Initializing</code>, <code>CreatingSnapshot</code>, and <code>UpdatingSchema</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelSchemaExtensionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionInputBuilder,
+}
 impl CancelSchemaExtensionFluentBuilder  {
     /// Creates a new `CancelSchemaExtension`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_schema_extension::CancelSchemaExtension, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::assume_decorated_role_with_saml::_assume_decorated_rol
 /// <p> This decorated role is expected to access data in Amazon S3 by getting temporary access from Lake Formation which is authorized via the virtual API <code>GetDataAccess</code>. Therefore, all SAML roles that can be assumed via <code>AssumeDecoratedRoleWithSAML</code> must at a minimum include <code>lakeformation:GetDataAccess</code> in their role policies. A typical IAM policy attached to such a role would look as follows: </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssumeDecoratedRoleWithSAMLFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::assume_decorated_role_with_saml::builders::AssumeDecoratedRoleWithSamlInputBuilder,
+}
 impl AssumeDecoratedRoleWithSAMLFluentBuilder  {
     /// Creates a new `AssumeDecoratedRoleWithSAML`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAML, aws_http::retry::AwsResponseRetryClassifier,>,

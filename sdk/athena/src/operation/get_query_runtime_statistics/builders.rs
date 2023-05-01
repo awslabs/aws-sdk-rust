@@ -8,16 +8,17 @@ pub use crate::operation::get_query_runtime_statistics::_get_query_runtime_stati
 /// <p>Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. Query execution runtime statistics are returned only when <code>QueryExecutionStatus$State</code> is in a SUCCEEDED or FAILED state. Stage-level input and output row count and data size statistics are not shown when a query has row-level filters defined in Lake Formation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetQueryRuntimeStatisticsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsInputBuilder,
+}
 impl GetQueryRuntimeStatisticsFluentBuilder  {
     /// Creates a new `GetQueryRuntimeStatistics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatistics, aws_http::retry::AwsResponseRetryClassifier,>,

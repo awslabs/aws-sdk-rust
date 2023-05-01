@@ -13,16 +13,17 @@ pub use crate::operation::cancel_key_deletion::_cancel_key_deletion_input::Cance
 /// <p> <b>Related operations</b>: <code>ScheduleKeyDeletion</code> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelKeyDeletionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_key_deletion::builders::CancelKeyDeletionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_key_deletion::builders::CancelKeyDeletionInputBuilder,
+}
 impl CancelKeyDeletionFluentBuilder  {
     /// Creates a new `CancelKeyDeletion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_key_deletion::CancelKeyDeletion, aws_http::retry::AwsResponseRetryClassifier,>,

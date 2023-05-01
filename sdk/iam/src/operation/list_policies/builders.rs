@@ -13,16 +13,17 @@ pub use crate::operation::list_policies::_list_policies_input::ListPoliciesInput
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPoliciesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_policies::builders::ListPoliciesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_policies::builders::ListPoliciesInputBuilder,
+}
 impl ListPoliciesFluentBuilder  {
     /// Creates a new `ListPolicies`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_policies::ListPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -53,11 +54,11 @@ impl ListPoliciesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_policies::paginator::ListPoliciesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_policies::paginator::ListPoliciesPaginator {
-                            crate::operation::list_policies::paginator::ListPoliciesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_policies::paginator::ListPoliciesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_policies::paginator::ListPoliciesPaginator {
+                                crate::operation::list_policies::paginator::ListPoliciesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The scope to use for filtering the results.</p> 
     /// <p>To list only Amazon Web Services managed policies, set <code>Scope</code> to <code>AWS</code>. To list only the customer managed policies in your Amazon Web Services account, set <code>Scope</code> to <code>Local</code>.</p> 
     /// <p>This parameter is optional. If it is not included, or if it is set to <code>All</code>, all policies are returned.</p>

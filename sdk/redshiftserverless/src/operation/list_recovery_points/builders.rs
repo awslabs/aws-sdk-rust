@@ -8,16 +8,17 @@ pub use crate::operation::list_recovery_points::_list_recovery_points_input::Lis
 /// <p>Returns an array of recovery points.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRecoveryPointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_recovery_points::builders::ListRecoveryPointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_recovery_points::builders::ListRecoveryPointsInputBuilder,
+}
 impl ListRecoveryPointsFluentBuilder  {
     /// Creates a new `ListRecoveryPoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_recovery_points::ListRecoveryPoints, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRecoveryPointsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_recovery_points::paginator::ListRecoveryPointsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_recovery_points::paginator::ListRecoveryPointsPaginator {
-                            crate::operation::list_recovery_points::paginator::ListRecoveryPointsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_recovery_points::paginator::ListRecoveryPointsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_recovery_points::paginator::ListRecoveryPointsPaginator {
+                                crate::operation::list_recovery_points::paginator::ListRecoveryPointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

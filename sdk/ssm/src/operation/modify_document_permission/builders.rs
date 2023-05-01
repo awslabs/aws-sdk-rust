@@ -8,16 +8,17 @@ pub use crate::operation::modify_document_permission::_modify_document_permissio
 /// <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a document privately, you must specify the Amazon Web Services user IDs for those people who can use the document. If you share a document publicly, you must specify <i>All</i> as the account ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDocumentPermissionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder,
+}
 impl ModifyDocumentPermissionFluentBuilder  {
     /// Creates a new `ModifyDocumentPermission`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_document_permission::ModifyDocumentPermission, aws_http::retry::AwsResponseRetryClassifier,>,

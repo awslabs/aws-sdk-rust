@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_subnet_cidr_block::_disassociate_subnet_c
 /// <p>Disassociates a CIDR block from a subnet. Currently, you can disassociate an IPv6 CIDR block only. You must detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate it. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateSubnetCidrBlockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_subnet_cidr_block::builders::DisassociateSubnetCidrBlockInputBuilder,
+}
 impl DisassociateSubnetCidrBlockFluentBuilder  {
     /// Creates a new `DisassociateSubnetCidrBlock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlock, aws_http::retry::AwsResponseRetryClassifier,>,

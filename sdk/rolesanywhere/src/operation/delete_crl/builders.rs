@@ -9,16 +9,17 @@ pub use crate::operation::delete_crl::_delete_crl_input::DeleteCrlInputBuilder;
 /// <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteCrl</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCrlFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_crl::builders::DeleteCrlInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_crl::builders::DeleteCrlInputBuilder,
+}
 impl DeleteCrlFluentBuilder  {
     /// Creates a new `DeleteCrl`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_crl::DeleteCrl, aws_http::retry::AwsResponseRetryClassifier,>,

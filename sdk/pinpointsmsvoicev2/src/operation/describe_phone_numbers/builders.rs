@@ -10,16 +10,17 @@ pub use crate::operation::describe_phone_numbers::_describe_phone_numbers_input:
 /// <p>If you specify a phone number ID that isn't valid, an Error is returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePhoneNumbersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_phone_numbers::builders::DescribePhoneNumbersInputBuilder,
+}
 impl DescribePhoneNumbersFluentBuilder  {
     /// Creates a new `DescribePhoneNumbers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_phone_numbers::DescribePhoneNumbers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribePhoneNumbersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator {
-                            crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator {
+                                crate::operation::describe_phone_numbers::paginator::DescribePhoneNumbersPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `PhoneNumberIds`.
     ///
     /// To override the contents of this collection use [`set_phone_number_ids`](Self::set_phone_number_ids).

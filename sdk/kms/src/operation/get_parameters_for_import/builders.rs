@@ -19,16 +19,17 @@ pub use crate::operation::get_parameters_for_import::_get_parameters_for_import_
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetParametersForImportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_parameters_for_import::builders::GetParametersForImportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_parameters_for_import::builders::GetParametersForImportInputBuilder,
+}
 impl GetParametersForImportFluentBuilder  {
     /// Creates a new `GetParametersForImport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_parameters_for_import::GetParametersForImport, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_health_service_status_for_organization::_desc
 /// <p>This operation provides status information on enabling or disabling Health to work with your organization. To call this operation, you must sign in as an IAM user, assume an IAM role, or sign in as the root user (not recommended) in the organization's management account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeHealthServiceStatusForOrganizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationInputBuilder,
+}
 impl DescribeHealthServiceStatusForOrganizationFluentBuilder  {
     /// Creates a new `DescribeHealthServiceStatusForOrganization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganization, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_pending_job_executions::_get_pending_job_execution
 /// <p>Gets the list of all jobs for a thing that are not in a terminal status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPendingJobExecutionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_pending_job_executions::builders::GetPendingJobExecutionsInputBuilder,
+}
 impl GetPendingJobExecutionsFluentBuilder  {
     /// Creates a new `GetPendingJobExecutions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_pending_job_executions::GetPendingJobExecutions, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_patch_groups::_describe_patch_groups_input::D
 /// <p>Lists all patch groups that have been registered with patch baselines.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePatchGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_patch_groups::builders::DescribePatchGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_patch_groups::builders::DescribePatchGroupsInputBuilder,
+}
 impl DescribePatchGroupsFluentBuilder  {
     /// Creates a new `DescribePatchGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_patch_groups::DescribePatchGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribePatchGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator {
-                            crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator {
+                                crate::operation::describe_patch_groups::paginator::DescribePatchGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of patch groups to return (per page).</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

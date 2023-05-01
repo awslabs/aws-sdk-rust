@@ -8,16 +8,17 @@ pub use crate::operation::describe_vcenter_clients::_describe_vcenter_clients_in
 /// <p>Returns a list of the installed vCenter clients.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVcenterClientsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_vcenter_clients::builders::DescribeVcenterClientsInputBuilder,
+}
 impl DescribeVcenterClientsFluentBuilder  {
     /// Creates a new `DescribeVcenterClients`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_vcenter_clients::DescribeVcenterClients, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeVcenterClientsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator {
-                            crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator {
+                                crate::operation::describe_vcenter_clients::paginator::DescribeVcenterClientsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

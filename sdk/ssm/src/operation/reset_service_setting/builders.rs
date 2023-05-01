@@ -10,16 +10,17 @@ pub use crate::operation::reset_service_setting::_reset_service_setting_input::R
 /// <p>Reset the service setting for the account to the default value as provisioned by the Amazon Web Services service team. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetServiceSettingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_service_setting::builders::ResetServiceSettingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_service_setting::builders::ResetServiceSettingInputBuilder,
+}
 impl ResetServiceSettingFluentBuilder  {
     /// Creates a new `ResetServiceSetting`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_service_setting::ResetServiceSetting, aws_http::retry::AwsResponseRetryClassifier,>,

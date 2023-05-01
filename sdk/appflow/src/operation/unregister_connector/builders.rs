@@ -8,16 +8,17 @@ pub use crate::operation::unregister_connector::_unregister_connector_input::Unr
 /// <p>Unregisters the custom connector registered in your account that matches the connector label provided in the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UnregisterConnectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::unregister_connector::builders::UnregisterConnectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::unregister_connector::builders::UnregisterConnectorInputBuilder,
+}
 impl UnregisterConnectorFluentBuilder  {
     /// Creates a new `UnregisterConnector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::unregister_connector::UnregisterConnector, aws_http::retry::AwsResponseRetryClassifier,>,

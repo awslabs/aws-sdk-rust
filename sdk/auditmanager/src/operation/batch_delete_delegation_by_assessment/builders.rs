@@ -8,16 +8,17 @@ pub use crate::operation::batch_delete_delegation_by_assessment::_batch_delete_d
 /// <p> Deletes a batch of delegations for an assessment in Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeleteDelegationByAssessmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_delegation_by_assessment::builders::BatchDeleteDelegationByAssessmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_delegation_by_assessment::builders::BatchDeleteDelegationByAssessmentInputBuilder,
+}
 impl BatchDeleteDelegationByAssessmentFluentBuilder  {
     /// Creates a new `BatchDeleteDelegationByAssessment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_delegation_by_assessment::BatchDeleteDelegationByAssessment, aws_http::retry::AwsResponseRetryClassifier,>,

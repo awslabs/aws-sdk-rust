@@ -8,16 +8,17 @@ pub use crate::operation::update_maintenance_start_time::_update_maintenance_sta
 /// <p>Updates a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time is the time in your gateway's time zone.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMaintenanceStartTimeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_maintenance_start_time::builders::UpdateMaintenanceStartTimeInputBuilder,
+}
 impl UpdateMaintenanceStartTimeFluentBuilder  {
     /// Creates a new `UpdateMaintenanceStartTime`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_maintenance_start_time::UpdateMaintenanceStartTime, aws_http::retry::AwsResponseRetryClassifier,>,

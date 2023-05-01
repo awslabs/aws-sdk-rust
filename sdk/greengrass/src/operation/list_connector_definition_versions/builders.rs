@@ -8,16 +8,17 @@ pub use crate::operation::list_connector_definition_versions::_list_connector_de
 /// Lists the versions of a connector definition, which are containers for connectors. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListConnectorDefinitionVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_connector_definition_versions::builders::ListConnectorDefinitionVersionsInputBuilder,
+}
 impl ListConnectorDefinitionVersionsFluentBuilder  {
     /// Creates a new `ListConnectorDefinitionVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersions, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_account_assignment_deletion_status::_describe
 /// <p>Describes the status of the assignment deletion request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccountAssignmentDeletionStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_account_assignment_deletion_status::builders::DescribeAccountAssignmentDeletionStatusInputBuilder,
+}
 impl DescribeAccountAssignmentDeletionStatusFluentBuilder  {
     /// Creates a new `DescribeAccountAssignmentDeletionStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_account_assignment_deletion_status::DescribeAccountAssignmentDeletionStatus, aws_http::retry::AwsResponseRetryClassifier,>,

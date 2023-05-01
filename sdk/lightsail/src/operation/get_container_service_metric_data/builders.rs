@@ -9,16 +9,17 @@ pub use crate::operation::get_container_service_metric_data::_get_container_serv
 /// <p>Metrics report the utilization of your resources. Monitor and collect metric data regularly to maintain the reliability, availability, and performance of your resources.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetContainerServiceMetricDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_container_service_metric_data::builders::GetContainerServiceMetricDataInputBuilder,
+}
 impl GetContainerServiceMetricDataFluentBuilder  {
     /// Creates a new `GetContainerServiceMetricData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_container_service_metric_data::GetContainerServiceMetricData, aws_http::retry::AwsResponseRetryClassifier,>,

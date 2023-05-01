@@ -8,16 +8,17 @@ pub use crate::operation::describe_traffic_mirror_targets::_describe_traffic_mir
 /// <p>Information about one or more Traffic Mirror targets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTrafficMirrorTargetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsInputBuilder,
+}
 impl DescribeTrafficMirrorTargetsFluentBuilder  {
     /// Creates a new `DescribeTrafficMirrorTargets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeTrafficMirrorTargetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator {
-                            crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator {
+                                crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TrafficMirrorTargetIds`.
     ///
     /// To override the contents of this collection use [`set_traffic_mirror_target_ids`](Self::set_traffic_mirror_target_ids).

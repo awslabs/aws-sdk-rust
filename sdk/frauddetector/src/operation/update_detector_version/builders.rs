@@ -8,16 +8,17 @@ pub use crate::operation::update_detector_version::_update_detector_version_inpu
 /// <p> Updates a detector version. The detector version attributes that you can update include models, external model endpoints, rules, rule execution mode, and description. You can only update a <code>DRAFT</code> detector version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDetectorVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_detector_version::builders::UpdateDetectorVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_detector_version::builders::UpdateDetectorVersionInputBuilder,
+}
 impl UpdateDetectorVersionFluentBuilder  {
     /// Creates a new `UpdateDetectorVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_detector_version::UpdateDetectorVersion, aws_http::retry::AwsResponseRetryClassifier,>,

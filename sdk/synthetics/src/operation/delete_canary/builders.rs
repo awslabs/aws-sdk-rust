@@ -17,16 +17,17 @@ pub use crate::operation::delete_canary::_delete_canary_input::DeleteCanaryInput
 /// <p>Before you delete a canary, you might want to use <code>GetCanary</code> to display the information about this canary. Make note of the information returned by this operation so that you can delete these resources after you delete the canary.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCanaryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_canary::builders::DeleteCanaryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_canary::builders::DeleteCanaryInputBuilder,
+}
 impl DeleteCanaryFluentBuilder  {
     /// Creates a new `DeleteCanary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_canary::DeleteCanary, aws_http::retry::AwsResponseRetryClassifier,>,

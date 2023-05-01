@@ -8,16 +8,17 @@ pub use crate::operation::associate_data_share_consumer::_associate_data_share_c
 /// <p>From a datashare consumer account, associates a datashare with the account (AssociateEntireAccount) or the specified namespace (ConsumerArn). If you make this association, the consumer can consume the datashare.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateDataShareConsumerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_data_share_consumer::builders::AssociateDataShareConsumerInputBuilder,
+}
 impl AssociateDataShareConsumerFluentBuilder  {
     /// Creates a new `AssociateDataShareConsumer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_data_share_consumer::AssociateDataShareConsumer, aws_http::retry::AwsResponseRetryClassifier,>,

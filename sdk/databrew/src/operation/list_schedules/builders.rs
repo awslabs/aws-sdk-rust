@@ -8,16 +8,17 @@ pub use crate::operation::list_schedules::_list_schedules_input::ListSchedulesIn
 /// <p>Lists the DataBrew schedules that are defined.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSchedulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_schedules::builders::ListSchedulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_schedules::builders::ListSchedulesInputBuilder,
+}
 impl ListSchedulesFluentBuilder  {
     /// Creates a new `ListSchedules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_schedules::ListSchedules, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSchedulesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_schedules::paginator::ListSchedulesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_schedules::paginator::ListSchedulesPaginator {
-                            crate::operation::list_schedules::paginator::ListSchedulesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_schedules::paginator::ListSchedulesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_schedules::paginator::ListSchedulesPaginator {
+                                crate::operation::list_schedules::paginator::ListSchedulesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the job that these schedules apply to.</p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());

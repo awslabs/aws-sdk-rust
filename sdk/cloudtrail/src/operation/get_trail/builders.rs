@@ -8,16 +8,17 @@ pub use crate::operation::get_trail::_get_trail_input::GetTrailInputBuilder;
 /// <p>Returns settings information for a specified trail.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetTrailFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_trail::builders::GetTrailInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_trail::builders::GetTrailInputBuilder,
+}
 impl GetTrailFluentBuilder  {
     /// Creates a new `GetTrail`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_trail::GetTrail, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_tags_for_project::_list_tags_for_project_input::L
 /// <p>Gets the tags for a project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForProjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tags_for_project::builders::ListTagsForProjectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tags_for_project::builders::ListTagsForProjectInputBuilder,
+}
 impl ListTagsForProjectFluentBuilder  {
     /// Creates a new `ListTagsForProject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tags_for_project::ListTagsForProject, aws_http::retry::AwsResponseRetryClassifier,>,

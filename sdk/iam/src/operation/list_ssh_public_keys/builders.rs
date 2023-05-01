@@ -10,16 +10,17 @@ pub use crate::operation::list_ssh_public_keys::_list_ssh_public_keys_input::Lis
 /// <p>Although each user is limited to a small number of keys, you can still paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSSHPublicKeysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_ssh_public_keys::builders::ListSshPublicKeysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_ssh_public_keys::builders::ListSshPublicKeysInputBuilder,
+}
 impl ListSSHPublicKeysFluentBuilder  {
     /// Creates a new `ListSSHPublicKeys`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_ssh_public_keys::ListSSHPublicKeys, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl ListSSHPublicKeysFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator {
-                            crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator {
+                                crate::operation::list_ssh_public_keys::paginator::ListSshPublicKeysPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the IAM user to list SSH public keys for. If none is specified, the <code>UserName</code> field is determined implicitly based on the Amazon Web Services access key used to sign the request.</p> 
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {

@@ -8,16 +8,17 @@ pub use crate::operation::get_mobile_device_access_effect::_get_mobile_device_ac
 /// <p>Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access rules for the WorkMail organization for a particular user's attributes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMobileDeviceAccessEffectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_mobile_device_access_effect::builders::GetMobileDeviceAccessEffectInputBuilder,
+}
 impl GetMobileDeviceAccessEffectFluentBuilder  {
     /// Creates a new `GetMobileDeviceAccessEffect`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffect, aws_http::retry::AwsResponseRetryClassifier,>,

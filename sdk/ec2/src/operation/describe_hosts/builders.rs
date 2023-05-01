@@ -9,16 +9,17 @@ pub use crate::operation::describe_hosts::_describe_hosts_input::DescribeHostsIn
 /// <p>The results describe only the Dedicated Hosts in the Region you're currently using. All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that have recently been released are listed with the state <code>released</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeHostsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_hosts::builders::DescribeHostsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_hosts::builders::DescribeHostsInputBuilder,
+}
 impl DescribeHostsFluentBuilder  {
     /// Creates a new `DescribeHosts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_hosts::DescribeHosts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeHostsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_hosts::paginator::DescribeHostsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_hosts::paginator::DescribeHostsPaginator {
-                            crate::operation::describe_hosts::paginator::DescribeHostsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_hosts::paginator::DescribeHostsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_hosts::paginator::DescribeHostsPaginator {
+                                crate::operation::describe_hosts::paginator::DescribeHostsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `Filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).

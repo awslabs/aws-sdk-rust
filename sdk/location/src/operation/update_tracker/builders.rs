@@ -8,16 +8,17 @@ pub use crate::operation::update_tracker::_update_tracker_input::UpdateTrackerIn
 /// <p>Updates the specified properties of a given tracker resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTrackerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_tracker::builders::UpdateTrackerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_tracker::builders::UpdateTrackerInputBuilder,
+}
 impl UpdateTrackerFluentBuilder  {
     /// Creates a new `UpdateTracker`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_tracker::UpdateTracker, aws_http::retry::AwsResponseRetryClassifier,>,

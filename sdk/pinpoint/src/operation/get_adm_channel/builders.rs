@@ -8,16 +8,17 @@ pub use crate::operation::get_adm_channel::_get_adm_channel_input::GetAdmChannel
 /// <p>Retrieves information about the status and settings of the ADM channel for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAdmChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_adm_channel::builders::GetAdmChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_adm_channel::builders::GetAdmChannelInputBuilder,
+}
 impl GetAdmChannelFluentBuilder  {
     /// Creates a new `GetAdmChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_adm_channel::GetAdmChannel, aws_http::retry::AwsResponseRetryClassifier,>,

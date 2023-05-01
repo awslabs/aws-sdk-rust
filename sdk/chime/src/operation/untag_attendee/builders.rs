@@ -8,16 +8,17 @@ pub use crate::operation::untag_attendee::_untag_attendee_input::UntagAttendeeIn
 /// <p>Untags the specified tags from the specified Amazon Chime SDK attendee.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UntagAttendeeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::untag_attendee::builders::UntagAttendeeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::untag_attendee::builders::UntagAttendeeInputBuilder,
+}
 impl UntagAttendeeFluentBuilder  {
     /// Creates a new `UntagAttendee`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::untag_attendee::UntagAttendee, aws_http::retry::AwsResponseRetryClassifier,>,

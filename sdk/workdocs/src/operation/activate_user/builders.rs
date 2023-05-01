@@ -8,16 +8,17 @@ pub use crate::operation::activate_user::_activate_user_input::ActivateUserInput
 /// <p>Activates the specified user. Only active users can access Amazon WorkDocs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ActivateUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::activate_user::builders::ActivateUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::activate_user::builders::ActivateUserInputBuilder,
+}
 impl ActivateUserFluentBuilder  {
     /// Creates a new `ActivateUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::activate_user::ActivateUser, aws_http::retry::AwsResponseRetryClassifier,>,

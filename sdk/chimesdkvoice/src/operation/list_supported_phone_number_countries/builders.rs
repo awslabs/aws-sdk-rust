@@ -8,16 +8,17 @@ pub use crate::operation::list_supported_phone_number_countries::_list_supported
 /// <p>Lists the countries that you can order phone numbers from.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSupportedPhoneNumberCountriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_supported_phone_number_countries::builders::ListSupportedPhoneNumberCountriesInputBuilder,
+}
 impl ListSupportedPhoneNumberCountriesFluentBuilder  {
     /// Creates a new `ListSupportedPhoneNumberCountries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_supported_phone_number_countries::ListSupportedPhoneNumberCountries, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_repository::_describe_repository_input::Descr
 /// <p> Returns a <code>RepositoryDescription</code> object that contains detailed information about the requested repository. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRepositoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_repository::builders::DescribeRepositoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_repository::builders::DescribeRepositoryInputBuilder,
+}
 impl DescribeRepositoryFluentBuilder  {
     /// Creates a new `DescribeRepository`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_repository::DescribeRepository, aws_http::retry::AwsResponseRetryClassifier,>,

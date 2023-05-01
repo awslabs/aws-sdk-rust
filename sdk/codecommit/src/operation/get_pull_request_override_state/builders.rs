@@ -8,16 +8,17 @@ pub use crate::operation::get_pull_request_override_state::_get_pull_request_ove
 /// <p>Returns information about whether approval rules have been set aside (overridden) for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPullRequestOverrideStateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder,
+}
 impl GetPullRequestOverrideStateFluentBuilder  {
     /// Creates a new `GetPullRequestOverrideState`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_pull_request_override_state::GetPullRequestOverrideState, aws_http::retry::AwsResponseRetryClassifier,>,

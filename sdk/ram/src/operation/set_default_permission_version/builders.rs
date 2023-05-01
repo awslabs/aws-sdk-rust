@@ -8,16 +8,17 @@ pub use crate::operation::set_default_permission_version::_set_default_permissio
 /// <p>Designates the specified version number as the default version for the specified customer managed permission. New resource shares automatically use this new default permission. Existing resource shares continue to use their original permission version, but you can use <code>ReplacePermissionAssociations</code> to update them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetDefaultPermissionVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder,
+}
 impl SetDefaultPermissionVersionFluentBuilder  {
     /// Creates a new `SetDefaultPermissionVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_default_permission_version::SetDefaultPermissionVersion, aws_http::retry::AwsResponseRetryClassifier,>,

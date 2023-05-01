@@ -8,16 +8,17 @@ pub use crate::operation::start_notebook_execution::_start_notebook_execution_in
 /// <p>Starts a notebook execution.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartNotebookExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_notebook_execution::builders::StartNotebookExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_notebook_execution::builders::StartNotebookExecutionInputBuilder,
+}
 impl StartNotebookExecutionFluentBuilder  {
     /// Creates a new `StartNotebookExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_notebook_execution::StartNotebookExecution, aws_http::retry::AwsResponseRetryClassifier,>,

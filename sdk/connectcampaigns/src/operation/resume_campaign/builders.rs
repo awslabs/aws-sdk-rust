@@ -8,16 +8,17 @@ pub use crate::operation::resume_campaign::_resume_campaign_input::ResumeCampaig
 /// Stops a campaign for the specified Amazon Connect account.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResumeCampaignFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::resume_campaign::builders::ResumeCampaignInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::resume_campaign::builders::ResumeCampaignInputBuilder,
+}
 impl ResumeCampaignFluentBuilder  {
     /// Creates a new `ResumeCampaign`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::resume_campaign::ResumeCampaign, aws_http::retry::AwsResponseRetryClassifier,>,

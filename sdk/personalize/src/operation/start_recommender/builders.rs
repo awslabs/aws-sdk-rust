@@ -8,16 +8,17 @@ pub use crate::operation::start_recommender::_start_recommender_input::StartReco
 /// <p>Starts a recommender that is INACTIVE. Starting a recommender does not create any new models, but resumes billing and automatic retraining for the recommender.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartRecommenderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_recommender::builders::StartRecommenderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_recommender::builders::StartRecommenderInputBuilder,
+}
 impl StartRecommenderFluentBuilder  {
     /// Creates a new `StartRecommender`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_recommender::StartRecommender, aws_http::retry::AwsResponseRetryClassifier,>,

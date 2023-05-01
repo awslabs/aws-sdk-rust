@@ -8,16 +8,17 @@ pub use crate::operation::send_test_event_notification::_send_test_event_notific
 /// <p> The <code>SendTestEventNotification</code> operation causes Amazon Mechanical Turk to send a notification message as if a HIT event occurred, according to the provided notification specification. This allows you to test notifications without setting up notifications for a real HIT type and trying to trigger them using the website. When you call this operation, the service attempts to send the test notification immediately. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendTestEventNotificationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_test_event_notification::builders::SendTestEventNotificationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_test_event_notification::builders::SendTestEventNotificationInputBuilder,
+}
 impl SendTestEventNotificationFluentBuilder  {
     /// Creates a new `SendTestEventNotification`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_test_event_notification::SendTestEventNotification, aws_http::retry::AwsResponseRetryClassifier,>,

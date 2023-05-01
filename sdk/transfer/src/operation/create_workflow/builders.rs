@@ -8,16 +8,17 @@ pub use crate::operation::create_workflow::_create_workflow_input::CreateWorkflo
 /// <p> Allows you to create a workflow with specified steps and step details the workflow invokes after file transfer completes. After creating a workflow, you can associate the workflow created with any transfer servers by specifying the <code>workflow-details</code> field in <code>CreateServer</code> and <code>UpdateServer</code> operations. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWorkflowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_workflow::builders::CreateWorkflowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_workflow::builders::CreateWorkflowInputBuilder,
+}
 impl CreateWorkflowFluentBuilder  {
     /// Creates a new `CreateWorkflow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_workflow::CreateWorkflow, aws_http::retry::AwsResponseRetryClassifier,>,

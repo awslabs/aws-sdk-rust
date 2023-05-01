@@ -8,16 +8,17 @@ pub use crate::operation::update_channel::_update_channel_input::UpdateChannelIn
 /// <p>Updates a channel specified by a required channel ARN or UUID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_channel::builders::UpdateChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_channel::builders::UpdateChannelInputBuilder,
+}
 impl UpdateChannelFluentBuilder  {
     /// Creates a new `UpdateChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_channel::UpdateChannel, aws_http::retry::AwsResponseRetryClassifier,>,

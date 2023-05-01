@@ -8,16 +8,17 @@ pub use crate::operation::list_subscription_definitions::_list_subscription_defi
 /// Retrieves a list of subscription definitions.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSubscriptionDefinitionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_subscription_definitions::builders::ListSubscriptionDefinitionsInputBuilder,
+}
 impl ListSubscriptionDefinitionsFluentBuilder  {
     /// Creates a new `ListSubscriptionDefinitions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_subscription_definitions::ListSubscriptionDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,

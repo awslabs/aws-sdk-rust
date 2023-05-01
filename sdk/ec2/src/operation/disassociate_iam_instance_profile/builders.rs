@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_iam_instance_profile::_disassociate_iam_i
 /// <p>Use <code>DescribeIamInstanceProfileAssociations</code> to get the association ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateIamInstanceProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileInputBuilder,
+}
 impl DisassociateIamInstanceProfileFluentBuilder  {
     /// Creates a new `DisassociateIamInstanceProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfile, aws_http::retry::AwsResponseRetryClassifier,>,

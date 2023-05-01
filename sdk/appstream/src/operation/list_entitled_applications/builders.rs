@@ -8,16 +8,17 @@ pub use crate::operation::list_entitled_applications::_list_entitled_application
 /// <p>Retrieves a list of entitled applications.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEntitledApplicationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_entitled_applications::builders::ListEntitledApplicationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_entitled_applications::builders::ListEntitledApplicationsInputBuilder,
+}
 impl ListEntitledApplicationsFluentBuilder  {
     /// Creates a new `ListEntitledApplications`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_entitled_applications::ListEntitledApplications, aws_http::retry::AwsResponseRetryClassifier,>,

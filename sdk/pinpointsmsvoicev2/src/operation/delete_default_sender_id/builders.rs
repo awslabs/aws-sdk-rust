@@ -9,16 +9,17 @@ pub use crate::operation::delete_default_sender_id::_delete_default_sender_id_in
 /// <p>A default sender ID is the identity that appears on recipients' devices when they receive SMS messages. Support for sender ID capabilities varies by country or region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDefaultSenderIdFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_default_sender_id::builders::DeleteDefaultSenderIdInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_default_sender_id::builders::DeleteDefaultSenderIdInputBuilder,
+}
 impl DeleteDefaultSenderIdFluentBuilder  {
     /// Creates a new `DeleteDefaultSenderId`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_default_sender_id::DeleteDefaultSenderId, aws_http::retry::AwsResponseRetryClassifier,>,

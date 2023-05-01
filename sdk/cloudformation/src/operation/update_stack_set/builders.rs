@@ -9,16 +9,17 @@ pub use crate::operation::update_stack_set::_update_stack_set_input::UpdateStack
 /// <p>Even if the stack set operation created by updating the stack set fails (completely or partially, below or above a specified failure tolerance), the stack set is updated with your changes. Subsequent <code>CreateStackInstances</code> calls on the specified stack set use the updated stack set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateStackSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_stack_set::builders::UpdateStackSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_stack_set::builders::UpdateStackSetInputBuilder,
+}
 impl UpdateStackSetFluentBuilder  {
     /// Creates a new `UpdateStackSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_stack_set::UpdateStackSet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_subnet_groups::_describe_subnet_groups_input:
 /// <p>Returns a list of subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSubnetGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_subnet_groups::builders::DescribeSubnetGroupsInputBuilder,
+}
 impl DescribeSubnetGroupsFluentBuilder  {
     /// Creates a new `DescribeSubnetGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_subnet_groups::DescribeSubnetGroups, aws_http::retry::AwsResponseRetryClassifier,>,

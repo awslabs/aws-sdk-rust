@@ -8,16 +8,17 @@ pub use crate::operation::remove_lf_tags_from_resource::_remove_lf_tags_from_res
 /// <p>Removes an LF-tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code> to specify column input.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveLFTagsFromResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_lf_tags_from_resource::builders::RemoveLfTagsFromResourceInputBuilder,
+}
 impl RemoveLFTagsFromResourceFluentBuilder  {
     /// Creates a new `RemoveLFTagsFromResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_lf_tags_from_resource::RemoveLFTagsFromResource, aws_http::retry::AwsResponseRetryClassifier,>,

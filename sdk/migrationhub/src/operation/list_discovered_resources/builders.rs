@@ -8,16 +8,17 @@ pub use crate::operation::list_discovered_resources::_list_discovered_resources_
 /// <p>Lists discovered resources associated with the given <code>MigrationTask</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDiscoveredResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_discovered_resources::builders::ListDiscoveredResourcesInputBuilder,
+}
 impl ListDiscoveredResourcesFluentBuilder  {
     /// Creates a new `ListDiscoveredResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_discovered_resources::ListDiscoveredResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDiscoveredResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator {
-                            crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator {
+                                crate::operation::list_discovered_resources::paginator::ListDiscoveredResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the ProgressUpdateStream.</p>
     pub fn progress_update_stream(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.progress_update_stream(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::create_cross_account_authorization::_create_cross_acco
 /// <p>Creates a cross-account readiness authorization. This lets you authorize another account to work with Route 53 Application Recovery Controller, for example, to check the readiness status of resources in a separate account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCrossAccountAuthorizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_cross_account_authorization::builders::CreateCrossAccountAuthorizationInputBuilder,
+}
 impl CreateCrossAccountAuthorizationFluentBuilder  {
     /// Creates a new `CreateCrossAccountAuthorization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_cross_account_authorization::CreateCrossAccountAuthorization, aws_http::retry::AwsResponseRetryClassifier,>,

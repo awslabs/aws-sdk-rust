@@ -8,16 +8,17 @@ pub use crate::operation::describe_return_shipping_label::_describe_return_shipp
 /// <p>Information on the shipping label of a Snow device that is being returned to Amazon Web Services.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReturnShippingLabelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_return_shipping_label::builders::DescribeReturnShippingLabelInputBuilder,
+}
 impl DescribeReturnShippingLabelFluentBuilder  {
     /// Creates a new `DescribeReturnShippingLabel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_return_shipping_label::DescribeReturnShippingLabel, aws_http::retry::AwsResponseRetryClassifier,>,

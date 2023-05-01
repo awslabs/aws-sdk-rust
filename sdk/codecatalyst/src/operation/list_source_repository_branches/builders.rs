@@ -8,16 +8,17 @@ pub use crate::operation::list_source_repository_branches::_list_source_reposito
 /// <p>Retrieves a list of branches in a specified source repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSourceRepositoryBranchesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_source_repository_branches::builders::ListSourceRepositoryBranchesInputBuilder,
+}
 impl ListSourceRepositoryBranchesFluentBuilder  {
     /// Creates a new `ListSourceRepositoryBranches`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_source_repository_branches::ListSourceRepositoryBranches, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSourceRepositoryBranchesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_source_repository_branches::paginator::ListSourceRepositoryBranchesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_source_repository_branches::paginator::ListSourceRepositoryBranchesPaginator {
-                            crate::operation::list_source_repository_branches::paginator::ListSourceRepositoryBranchesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_source_repository_branches::paginator::ListSourceRepositoryBranchesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_source_repository_branches::paginator::ListSourceRepositoryBranchesPaginator {
+                                crate::operation::list_source_repository_branches::paginator::ListSourceRepositoryBranchesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.space_name(input.into());

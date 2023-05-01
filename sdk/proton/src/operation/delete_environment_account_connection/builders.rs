@@ -10,16 +10,17 @@ pub use crate::operation::delete_environment_account_connection::_delete_environ
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment account connections</a> in the <i>Proton User guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEnvironmentAccountConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_environment_account_connection::builders::DeleteEnvironmentAccountConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_environment_account_connection::builders::DeleteEnvironmentAccountConnectionInputBuilder,
+}
 impl DeleteEnvironmentAccountConnectionFluentBuilder  {
     /// Creates a new `DeleteEnvironmentAccountConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnection, aws_http::retry::AwsResponseRetryClassifier,>,

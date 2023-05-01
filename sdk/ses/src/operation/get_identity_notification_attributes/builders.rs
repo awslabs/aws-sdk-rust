@@ -10,16 +10,17 @@ pub use crate::operation::get_identity_notification_attributes::_get_identity_no
 /// <p>For more information about using notifications with Amazon SES, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_identity_notification_attributes::builders::GetIdentityNotificationAttributesInputBuilder,
+}
 impl GetIdentityNotificationAttributesFluentBuilder  {
     /// Creates a new `GetIdentityNotificationAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

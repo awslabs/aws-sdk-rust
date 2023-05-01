@@ -30,16 +30,17 @@ pub use crate::operation::describe_identity_pool_usage::_describe_identity_pool_
 /// </examples>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeIdentityPoolUsageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_identity_pool_usage::builders::DescribeIdentityPoolUsageInputBuilder,
+}
 impl DescribeIdentityPoolUsageFluentBuilder  {
     /// Creates a new `DescribeIdentityPoolUsage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsage, aws_http::retry::AwsResponseRetryClassifier,>,

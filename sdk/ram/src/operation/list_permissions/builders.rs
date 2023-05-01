@@ -8,16 +8,17 @@ pub use crate::operation::list_permissions::_list_permissions_input::ListPermiss
 /// <p>Retrieves a list of available RAM permissions that you can use for the supported resource types. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_permissions::builders::ListPermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_permissions::builders::ListPermissionsInputBuilder,
+}
 impl ListPermissionsFluentBuilder  {
     /// Creates a new `ListPermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_permissions::ListPermissions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPermissionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_permissions::paginator::ListPermissionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_permissions::paginator::ListPermissionsPaginator {
-                            crate::operation::list_permissions::paginator::ListPermissionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_permissions::paginator::ListPermissionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_permissions::paginator::ListPermissionsPaginator {
+                                crate::operation::list_permissions::paginator::ListPermissionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies that you want to list only those permissions that apply to the specified resource type. This parameter is not case sensitive.</p> 
     /// <p>For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can use the <code>ListResourceTypes</code> operation to get the specific string required.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {

@@ -8,16 +8,17 @@ pub use crate::operation::delete_topic::_delete_topic_input::DeleteTopicInputBui
 /// <p>Deletes a topic and all its subscriptions. Deleting a topic might prevent some messages previously sent to the topic from being delivered to subscribers. This action is idempotent, so deleting a topic that does not exist does not result in an error.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTopicFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_topic::builders::DeleteTopicInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_topic::builders::DeleteTopicInputBuilder,
+}
 impl DeleteTopicFluentBuilder  {
     /// Creates a new `DeleteTopic`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_topic::DeleteTopic, aws_http::retry::AwsResponseRetryClassifier,>,

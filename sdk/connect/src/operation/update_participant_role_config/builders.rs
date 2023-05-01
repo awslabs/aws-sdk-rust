@@ -15,16 +15,17 @@ pub use crate::operation::update_participant_role_config::_update_participant_ro
 /// <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateParticipantRoleConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigInputBuilder,
+}
 impl UpdateParticipantRoleConfigFluentBuilder  {
     /// Creates a new `UpdateParticipantRoleConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_participant_role_config::UpdateParticipantRoleConfig, aws_http::retry::AwsResponseRetryClassifier,>,

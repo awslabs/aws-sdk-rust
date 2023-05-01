@@ -8,16 +8,17 @@ pub use crate::operation::delete_container_recipe::_delete_container_recipe_inpu
 /// <p>Deletes a container recipe.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteContainerRecipeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_container_recipe::builders::DeleteContainerRecipeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_container_recipe::builders::DeleteContainerRecipeInputBuilder,
+}
 impl DeleteContainerRecipeFluentBuilder  {
     /// Creates a new `DeleteContainerRecipe`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_container_recipe::DeleteContainerRecipe, aws_http::retry::AwsResponseRetryClassifier,>,

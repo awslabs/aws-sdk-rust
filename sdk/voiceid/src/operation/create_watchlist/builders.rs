@@ -8,16 +8,17 @@ pub use crate::operation::create_watchlist::_create_watchlist_input::CreateWatch
 /// <p>Creates a watchlist that fraudsters can be a part of.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWatchlistFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_watchlist::builders::CreateWatchlistInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_watchlist::builders::CreateWatchlistInputBuilder,
+}
 impl CreateWatchlistFluentBuilder  {
     /// Creates a new `CreateWatchlist`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_watchlist::CreateWatchlist, aws_http::retry::AwsResponseRetryClassifier,>,

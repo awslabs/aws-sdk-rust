@@ -8,16 +8,17 @@ pub use crate::operation::describe_home_region_controls::_describe_home_region_c
 /// <p>This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code> fields.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeHomeRegionControlsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_home_region_controls::builders::DescribeHomeRegionControlsInputBuilder,
+}
 impl DescribeHomeRegionControlsFluentBuilder  {
     /// Creates a new `DescribeHomeRegionControls`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_home_region_controls::DescribeHomeRegionControls, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeHomeRegionControlsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_home_region_controls::paginator::DescribeHomeRegionControlsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_home_region_controls::paginator::DescribeHomeRegionControlsPaginator {
-                            crate::operation::describe_home_region_controls::paginator::DescribeHomeRegionControlsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_home_region_controls::paginator::DescribeHomeRegionControlsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_home_region_controls::paginator::DescribeHomeRegionControlsPaginator {
+                                crate::operation::describe_home_region_controls::paginator::DescribeHomeRegionControlsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>
     pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.control_id(input.into());

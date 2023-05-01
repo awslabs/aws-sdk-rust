@@ -8,16 +8,17 @@ pub use crate::operation::list_dashboard_versions::_list_dashboard_versions_inpu
 /// <p>Lists all the versions of the dashboards in the Amazon QuickSight subscription.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDashboardVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_dashboard_versions::builders::ListDashboardVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_dashboard_versions::builders::ListDashboardVersionsInputBuilder,
+}
 impl ListDashboardVersionsFluentBuilder  {
     /// Creates a new `ListDashboardVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_dashboard_versions::ListDashboardVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDashboardVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator {
-                            crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator {
+                                crate::operation::list_dashboard_versions::paginator::ListDashboardVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());

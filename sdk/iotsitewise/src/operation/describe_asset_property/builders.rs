@@ -11,16 +11,17 @@ pub use crate::operation::describe_asset_property::_describe_asset_property_inpu
 /// <p>This operation doesn't return the value of the asset property. To get the value of an asset property, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssetPropertyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_asset_property::builders::DescribeAssetPropertyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_asset_property::builders::DescribeAssetPropertyInputBuilder,
+}
 impl DescribeAssetPropertyFluentBuilder  {
     /// Creates a new `DescribeAssetProperty`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_asset_property::DescribeAssetProperty, aws_http::retry::AwsResponseRetryClassifier,>,

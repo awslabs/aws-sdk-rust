@@ -8,16 +8,17 @@ pub use crate::operation::get_role_credentials::_get_role_credentials_input::Get
 /// <p>Returns the STS short-term credentials for a given role name that is assigned to the user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRoleCredentialsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_role_credentials::builders::GetRoleCredentialsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_role_credentials::builders::GetRoleCredentialsInputBuilder,
+}
 impl GetRoleCredentialsFluentBuilder  {
     /// Creates a new `GetRoleCredentials`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_role_credentials::GetRoleCredentials, aws_http::retry::AwsResponseRetryClassifier,>,

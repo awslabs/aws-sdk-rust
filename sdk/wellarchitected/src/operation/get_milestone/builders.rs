@@ -8,16 +8,17 @@ pub use crate::operation::get_milestone::_get_milestone_input::GetMilestoneInput
 /// <p>Get a milestone for an existing workload.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMilestoneFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_milestone::builders::GetMilestoneInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_milestone::builders::GetMilestoneInputBuilder,
+}
 impl GetMilestoneFluentBuilder  {
     /// Creates a new `GetMilestone`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_milestone::GetMilestone, aws_http::retry::AwsResponseRetryClassifier,>,

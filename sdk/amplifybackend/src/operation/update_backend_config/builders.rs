@@ -8,16 +8,17 @@ pub use crate::operation::update_backend_config::_update_backend_config_input::U
 /// <p>Updates the AWS resources required to access the Amplify Admin UI.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBackendConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_backend_config::builders::UpdateBackendConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_backend_config::builders::UpdateBackendConfigInputBuilder,
+}
 impl UpdateBackendConfigFluentBuilder  {
     /// Creates a new `UpdateBackendConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_backend_config::UpdateBackendConfig, aws_http::retry::AwsResponseRetryClassifier,>,

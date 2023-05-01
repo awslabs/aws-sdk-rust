@@ -12,16 +12,17 @@ pub use crate::operation::list_rate_based_rules::_list_rate_based_rules_input::L
 /// <p>Returns an array of <code>RuleSummary</code> objects.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRateBasedRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_rate_based_rules::builders::ListRateBasedRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_rate_based_rules::builders::ListRateBasedRulesInputBuilder,
+}
 impl ListRateBasedRulesFluentBuilder  {
     /// Creates a new `ListRateBasedRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_rate_based_rules::ListRateBasedRules, aws_http::retry::AwsResponseRetryClassifier,>,

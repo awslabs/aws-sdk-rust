@@ -8,16 +8,17 @@ pub use crate::operation::get_snapshots::_get_snapshots_input::GetSnapshotsInput
 /// <p>Retrieves search metrics data. The data provides a snapshot of how your users interact with your search application and how effective the application is.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSnapshotsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_snapshots::builders::GetSnapshotsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_snapshots::builders::GetSnapshotsInputBuilder,
+}
 impl GetSnapshotsFluentBuilder  {
     /// Creates a new `GetSnapshots`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_snapshots::GetSnapshots, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetSnapshotsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_snapshots::paginator::GetSnapshotsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_snapshots::paginator::GetSnapshotsPaginator {
-                            crate::operation::get_snapshots::paginator::GetSnapshotsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_snapshots::paginator::GetSnapshotsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_snapshots::paginator::GetSnapshotsPaginator {
+                                crate::operation::get_snapshots::paginator::GetSnapshotsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the index to get search metrics data.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());

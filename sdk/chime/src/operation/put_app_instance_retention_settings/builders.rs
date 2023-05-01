@@ -8,16 +8,17 @@ pub use crate::operation::put_app_instance_retention_settings::_put_app_instance
 /// <p>Sets the amount of time in days that a given <code>AppInstance</code> retains data.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAppInstanceRetentionSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_app_instance_retention_settings::builders::PutAppInstanceRetentionSettingsInputBuilder,
+}
 impl PutAppInstanceRetentionSettingsFluentBuilder  {
     /// Creates a new `PutAppInstanceRetentionSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_app_instance_retention_settings::PutAppInstanceRetentionSettings, aws_http::retry::AwsResponseRetryClassifier,>,

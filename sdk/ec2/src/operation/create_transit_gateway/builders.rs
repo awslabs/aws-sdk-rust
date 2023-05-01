@@ -12,16 +12,17 @@ pub use crate::operation::create_transit_gateway::_create_transit_gateway_input:
 /// <p>When you create a transit gateway, we create a default transit gateway route table and use it as the default association route table and the default propagation route table. You can use <code>CreateTransitGatewayRouteTable</code> to create additional transit gateway route tables. If you disable automatic route propagation, we do not create a default transit gateway route table. You can use <code>EnableTransitGatewayRouteTablePropagation</code> to propagate routes from a resource attachment to a transit gateway route table. If you disable automatic associations, you can use <code>AssociateTransitGatewayRouteTable</code> to associate a resource attachment with a transit gateway route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTransitGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_transit_gateway::builders::CreateTransitGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_transit_gateway::builders::CreateTransitGatewayInputBuilder,
+}
 impl CreateTransitGatewayFluentBuilder  {
     /// Creates a new `CreateTransitGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_transit_gateway::CreateTransitGateway, aws_http::retry::AwsResponseRetryClassifier,>,

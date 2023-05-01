@@ -8,16 +8,17 @@ pub use crate::operation::create_pull_through_cache_rule::_create_pull_through_c
 /// <p>Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an external public registry in your Amazon ECR private registry.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePullThroughCacheRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_pull_through_cache_rule::builders::CreatePullThroughCacheRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_pull_through_cache_rule::builders::CreatePullThroughCacheRuleInputBuilder,
+}
 impl CreatePullThroughCacheRuleFluentBuilder  {
     /// Creates a new `CreatePullThroughCacheRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRule, aws_http::retry::AwsResponseRetryClassifier,>,

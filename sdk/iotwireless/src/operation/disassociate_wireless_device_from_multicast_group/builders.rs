@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_wireless_device_from_multicast_group::_di
 /// <p>Disassociates a wireless device from a multicast group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateWirelessDeviceFromMulticastGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_wireless_device_from_multicast_group::builders::DisassociateWirelessDeviceFromMulticastGroupInputBuilder,
+}
 impl DisassociateWirelessDeviceFromMulticastGroupFluentBuilder  {
     /// Creates a new `DisassociateWirelessDeviceFromMulticastGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroup, aws_http::retry::AwsResponseRetryClassifier,>,

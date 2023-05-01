@@ -8,16 +8,17 @@ pub use crate::operation::describe_location_fsx_windows::_describe_location_fsx_
 /// <p>Returns metadata about an Amazon FSx for Windows File Server location, such as information about its path.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLocationFsxWindowsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsInputBuilder,
+}
 impl DescribeLocationFsxWindowsFluentBuilder  {
     /// Creates a new `DescribeLocationFsxWindows`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindows, aws_http::retry::AwsResponseRetryClassifier,>,

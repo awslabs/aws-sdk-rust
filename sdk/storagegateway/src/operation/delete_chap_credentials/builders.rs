@@ -8,16 +8,17 @@ pub use crate::operation::delete_chap_credentials::_delete_chap_credentials_inpu
 /// <p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target and initiator pair. This operation is supported in volume and tape gateway types.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChapCredentialsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsInputBuilder,
+}
 impl DeleteChapCredentialsFluentBuilder  {
     /// Creates a new `DeleteChapCredentials`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_chap_credentials::DeleteChapCredentials, aws_http::retry::AwsResponseRetryClassifier,>,

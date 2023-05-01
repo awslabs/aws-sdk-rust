@@ -8,16 +8,17 @@ pub use crate::operation::get_ecs_service_recommendation_projected_metrics::_get
 /// <p> Returns the projected metrics of Amazon ECS service recommendations. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetECSServiceRecommendationProjectedMetricsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_ecs_service_recommendation_projected_metrics::builders::GetEcsServiceRecommendationProjectedMetricsInputBuilder,
+}
 impl GetECSServiceRecommendationProjectedMetricsFluentBuilder  {
     /// Creates a new `GetECSServiceRecommendationProjectedMetrics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_ecs_service_recommendation_projected_metrics::GetECSServiceRecommendationProjectedMetrics, aws_http::retry::AwsResponseRetryClassifier,>,

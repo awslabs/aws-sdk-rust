@@ -8,16 +8,17 @@ pub use crate::operation::describe_trails::_describe_trails_input::DescribeTrail
 /// <p>Retrieves settings for one or more trails associated with the current region for your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTrailsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_trails::builders::DescribeTrailsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_trails::builders::DescribeTrailsInputBuilder,
+}
 impl DescribeTrailsFluentBuilder  {
     /// Creates a new `DescribeTrails`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_trails::DescribeTrails, aws_http::retry::AwsResponseRetryClassifier,>,

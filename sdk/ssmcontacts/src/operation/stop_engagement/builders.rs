@@ -8,16 +8,17 @@ pub use crate::operation::stop_engagement::_stop_engagement_input::StopEngagemen
 /// <p>Stops an engagement before it finishes the final stage of the escalation plan or engagement plan. Further contacts aren't engaged.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopEngagementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_engagement::builders::StopEngagementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_engagement::builders::StopEngagementInputBuilder,
+}
 impl StopEngagementFluentBuilder  {
     /// Creates a new `StopEngagement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_engagement::StopEngagement, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_medical_vocabulary::_delete_medical_vocabulary_
 /// <p>Deletes a custom medical vocabulary. To use this operation, specify the name of the custom vocabulary you want to delete using <code>VocabularyName</code>. Custom vocabulary names are case sensitive.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMedicalVocabularyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_medical_vocabulary::builders::DeleteMedicalVocabularyInputBuilder,
+}
 impl DeleteMedicalVocabularyFluentBuilder  {
     /// Creates a new `DeleteMedicalVocabulary`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_medical_vocabulary::DeleteMedicalVocabulary, aws_http::retry::AwsResponseRetryClassifier,>,

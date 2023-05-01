@@ -8,16 +8,17 @@ pub use crate::operation::start_notebook_instance::_start_notebook_instance_inpu
 /// <p>Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume. After configuring the notebook instance, SageMaker sets the notebook instance status to <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to your Jupyter notebook. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartNotebookInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_notebook_instance::builders::StartNotebookInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_notebook_instance::builders::StartNotebookInstanceInputBuilder,
+}
 impl StartNotebookInstanceFluentBuilder  {
     /// Creates a new `StartNotebookInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_notebook_instance::StartNotebookInstance, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_web_login_token::_create_web_login_token_input:
 /// <p>Creates a web login token for the Airflow Web UI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-web.html">Creating an Apache Airflow web login token</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWebLoginTokenFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_web_login_token::builders::CreateWebLoginTokenInputBuilder,
+}
 impl CreateWebLoginTokenFluentBuilder  {
     /// Creates a new `CreateWebLoginToken`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_web_login_token::CreateWebLoginToken, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::modify_replication_group_shard_configuration::_modify_
 /// <p>Modifies a replication group's shards (node groups) by allowing you to add shards, remove shards, or rebalance the keyspaces among existing shards.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyReplicationGroupShardConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_replication_group_shard_configuration::builders::ModifyReplicationGroupShardConfigurationInputBuilder,
+}
 impl ModifyReplicationGroupShardConfigurationFluentBuilder  {
     /// Creates a new `ModifyReplicationGroupShardConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

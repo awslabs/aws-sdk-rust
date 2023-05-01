@@ -8,16 +8,17 @@ pub use crate::operation::create_permission::_create_permission_input::CreatePer
 /// <p>Creates a customer managed permission for a specified resource type that you can attach to resource shares. It is created in the Amazon Web Services Region in which you call the operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePermissionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_permission::builders::CreatePermissionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_permission::builders::CreatePermissionInputBuilder,
+}
 impl CreatePermissionFluentBuilder  {
     /// Creates a new `CreatePermission`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_permission::CreatePermission, aws_http::retry::AwsResponseRetryClassifier,>,

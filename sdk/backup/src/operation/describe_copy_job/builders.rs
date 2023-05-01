@@ -8,16 +8,17 @@ pub use crate::operation::describe_copy_job::_describe_copy_job_input::DescribeC
 /// <p>Returns metadata associated with creating a copy of a resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCopyJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_copy_job::builders::DescribeCopyJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_copy_job::builders::DescribeCopyJobInputBuilder,
+}
 impl DescribeCopyJobFluentBuilder  {
     /// Creates a new `DescribeCopyJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_copy_job::DescribeCopyJob, aws_http::retry::AwsResponseRetryClassifier,>,

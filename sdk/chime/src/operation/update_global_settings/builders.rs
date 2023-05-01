@@ -8,16 +8,17 @@ pub use crate::operation::update_global_settings::_update_global_settings_input:
 /// <p>Updates global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon Chime Voice Connector settings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGlobalSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_global_settings::builders::UpdateGlobalSettingsInputBuilder,
+}
 impl UpdateGlobalSettingsFluentBuilder  {
     /// Creates a new `UpdateGlobalSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_global_settings::UpdateGlobalSettings, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::update_domain_nameservers::_update_domain_nameservers_
 /// <p>If successful, this operation returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDomainNameserversFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_domain_nameservers::builders::UpdateDomainNameserversInputBuilder,
+}
 impl UpdateDomainNameserversFluentBuilder  {
     /// Creates a new `UpdateDomainNameservers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_domain_nameservers::UpdateDomainNameservers, aws_http::retry::AwsResponseRetryClassifier,>,

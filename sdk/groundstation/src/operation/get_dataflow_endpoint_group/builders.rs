@@ -8,16 +8,17 @@ pub use crate::operation::get_dataflow_endpoint_group::_get_dataflow_endpoint_gr
 /// <p>Returns the dataflow endpoint group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDataflowEndpointGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_dataflow_endpoint_group::builders::GetDataflowEndpointGroupInputBuilder,
+}
 impl GetDataflowEndpointGroupFluentBuilder  {
     /// Creates a new `GetDataflowEndpointGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroup, aws_http::retry::AwsResponseRetryClassifier,>,

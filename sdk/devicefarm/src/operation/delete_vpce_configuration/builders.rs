@@ -8,16 +8,17 @@ pub use crate::operation::delete_vpce_configuration::_delete_vpce_configuration_
 /// <p>Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVPCEConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vpce_configuration::builders::DeleteVpceConfigurationInputBuilder,
+}
 impl DeleteVPCEConfigurationFluentBuilder  {
     /// Creates a new `DeleteVPCEConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vpce_configuration::DeleteVPCEConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

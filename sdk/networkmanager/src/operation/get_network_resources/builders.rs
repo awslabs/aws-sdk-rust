@@ -9,16 +9,17 @@ pub use crate::operation::get_network_resources::_get_network_resources_input::G
 /// <p>The results include information from the corresponding Describe call for the resource, minus any sensitive information such as pre-shared keys.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetNetworkResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_network_resources::builders::GetNetworkResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_network_resources::builders::GetNetworkResourcesInputBuilder,
+}
 impl GetNetworkResourcesFluentBuilder  {
     /// Creates a new `GetNetworkResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_network_resources::GetNetworkResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetNetworkResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator {
-                            crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator {
+                                crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());

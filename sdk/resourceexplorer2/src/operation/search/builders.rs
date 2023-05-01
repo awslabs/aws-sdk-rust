@@ -11,16 +11,17 @@ pub use crate::operation::search::_search_input::SearchInputBuilder;
 /// <p>If your search results are empty, or are missing results that you think should be there, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/troubleshooting_search.html">Troubleshooting Resource Explorer search</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search::builders::SearchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search::builders::SearchInputBuilder,
+}
 impl SearchFluentBuilder  {
     /// Creates a new `Search`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search::Search, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl SearchFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search::paginator::SearchPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search::paginator::SearchPaginator {
-                            crate::operation::search::paginator::SearchPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search::paginator::SearchPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search::paginator::SearchPaginator {
+                                crate::operation::search::paginator::SearchPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A string that includes keywords and filters that specify the resources that you want to include in the results.</p> 
     /// <p>For the complete syntax supported by the <code>QueryString</code> parameter, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query syntax reference for Resource Explorer</a>.</p> 
     /// <p>The search is completely case insensitive. You can specify an empty string to return all results up to the limit of 1,000 total results.</p> <note> 

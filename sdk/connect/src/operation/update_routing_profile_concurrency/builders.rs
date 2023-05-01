@@ -8,16 +8,17 @@ pub use crate::operation::update_routing_profile_concurrency::_update_routing_pr
 /// <p>Updates the channels that agents can handle in the Contact Control Panel (CCP) for a routing profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRoutingProfileConcurrencyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_routing_profile_concurrency::builders::UpdateRoutingProfileConcurrencyInputBuilder,
+}
 impl UpdateRoutingProfileConcurrencyFluentBuilder  {
     /// Creates a new `UpdateRoutingProfileConcurrency`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_routing_profile_concurrency::UpdateRoutingProfileConcurrency, aws_http::retry::AwsResponseRetryClassifier,>,

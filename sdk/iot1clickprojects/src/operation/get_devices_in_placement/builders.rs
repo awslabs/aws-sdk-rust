@@ -8,16 +8,17 @@ pub use crate::operation::get_devices_in_placement::_get_devices_in_placement_in
 /// <p>Returns an object enumerating the devices in a placement.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDevicesInPlacementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_devices_in_placement::builders::GetDevicesInPlacementInputBuilder,
+}
 impl GetDevicesInPlacementFluentBuilder  {
     /// Creates a new `GetDevicesInPlacement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_devices_in_placement::GetDevicesInPlacement, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_queued_messages::_delete_queued_messages_input:
 /// <p>Remove queued messages from the downlink queue.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteQueuedMessagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_queued_messages::builders::DeleteQueuedMessagesInputBuilder,
+}
 impl DeleteQueuedMessagesFluentBuilder  {
     /// Creates a new `DeleteQueuedMessages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_queued_messages::DeleteQueuedMessages, aws_http::retry::AwsResponseRetryClassifier,>,

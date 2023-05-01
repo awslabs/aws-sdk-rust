@@ -8,16 +8,17 @@ pub use crate::operation::list_device_events::_list_device_events_input::ListDev
 /// <p>Lists the device event history, including device connection status, for up to 30 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeviceEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder,
+}
 impl ListDeviceEventsFluentBuilder  {
     /// Creates a new `ListDeviceEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_device_events::ListDeviceEvents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDeviceEventsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_device_events::paginator::ListDeviceEventsPaginator {
-                            crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_device_events::paginator::ListDeviceEventsPaginator {
+                                crate::operation::list_device_events::paginator::ListDeviceEventsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of a device.</p>
     pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.device_arn(input.into());

@@ -9,16 +9,17 @@ pub use crate::operation::associate_approved_origin::_associate_approved_origin_
 /// <p>Associates an approved origin to an Amazon Connect instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateApprovedOriginFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_approved_origin::builders::AssociateApprovedOriginInputBuilder,
+}
 impl AssociateApprovedOriginFluentBuilder  {
     /// Creates a new `AssociateApprovedOrigin`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_approved_origin::AssociateApprovedOrigin, aws_http::retry::AwsResponseRetryClassifier,>,

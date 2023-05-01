@@ -8,16 +8,17 @@ pub use crate::operation::delete_sip_media_application::_delete_sip_media_applic
 /// <p>Deletes a SIP media application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSipMediaApplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_sip_media_application::builders::DeleteSipMediaApplicationInputBuilder,
+}
 impl DeleteSipMediaApplicationFluentBuilder  {
     /// Creates a new `DeleteSipMediaApplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_sip_media_application::DeleteSipMediaApplication, aws_http::retry::AwsResponseRetryClassifier,>,

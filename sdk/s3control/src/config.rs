@@ -100,7 +100,7 @@ impl Config {
                     }
 }
 /// Builder for creating a `Config`.
-#[derive(Default)]pub struct Builder {
+#[derive(Clone, Debug, Default)]pub struct Builder {
     make_token: Option<crate::idempotency_token::IdempotencyTokenProvider>,
     use_arn_region: std::option::Option<bool>,
     endpoint_resolver: Option<std::sync::Arc<dyn aws_smithy_http::endpoint::ResolveEndpoint<crate::endpoint::Params>>>,

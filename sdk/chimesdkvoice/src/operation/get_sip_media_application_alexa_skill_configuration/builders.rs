@@ -8,16 +8,17 @@ pub use crate::operation::get_sip_media_application_alexa_skill_configuration::_
 /// <p>Gets the Alexa Skill configuration for the SIP media application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSipMediaApplicationAlexaSkillConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_sip_media_application_alexa_skill_configuration::builders::GetSipMediaApplicationAlexaSkillConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_sip_media_application_alexa_skill_configuration::builders::GetSipMediaApplicationAlexaSkillConfigurationInputBuilder,
+}
 impl GetSipMediaApplicationAlexaSkillConfigurationFluentBuilder  {
     /// Creates a new `GetSipMediaApplicationAlexaSkillConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

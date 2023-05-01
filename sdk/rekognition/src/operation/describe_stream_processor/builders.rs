@@ -8,16 +8,17 @@ pub use crate::operation::describe_stream_processor::_describe_stream_processor_
 /// <p>Provides information about a stream processor created by <code>CreateStreamProcessor</code>. You can get information about the input and output streams, the input parameters for the face recognition being performed, and the current status of the stream processor.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStreamProcessorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_stream_processor::builders::DescribeStreamProcessorInputBuilder,
+}
 impl DescribeStreamProcessorFluentBuilder  {
     /// Creates a new `DescribeStreamProcessor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_stream_processor::DescribeStreamProcessor, aws_http::retry::AwsResponseRetryClassifier,>,

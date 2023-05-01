@@ -8,16 +8,17 @@ pub use crate::operation::describe_log_pattern::_describe_log_pattern_input::Des
 /// <p>Describe a specific log pattern from a <code>LogPatternSet</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLogPatternFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_log_pattern::builders::DescribeLogPatternInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_log_pattern::builders::DescribeLogPatternInputBuilder,
+}
 impl DescribeLogPatternFluentBuilder  {
     /// Creates a new `DescribeLogPattern`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_log_pattern::DescribeLogPattern, aws_http::retry::AwsResponseRetryClassifier,>,

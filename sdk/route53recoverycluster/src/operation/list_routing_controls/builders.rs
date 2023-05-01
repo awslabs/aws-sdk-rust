@@ -16,16 +16,17 @@ pub use crate::operation::list_routing_controls::_list_routing_controls_input::L
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRoutingControlsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_routing_controls::builders::ListRoutingControlsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_routing_controls::builders::ListRoutingControlsInputBuilder,
+}
 impl ListRoutingControlsFluentBuilder  {
     /// Creates a new `ListRoutingControls`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_routing_controls::ListRoutingControls, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -56,11 +57,11 @@ impl ListRoutingControlsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator {
-                            crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator {
+                                crate::operation::list_routing_controls::paginator::ListRoutingControlsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the control panel of the routing controls to list.</p>
     pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.control_panel_arn(input.into());

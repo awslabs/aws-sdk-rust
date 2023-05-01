@@ -8,16 +8,17 @@ pub use crate::operation::list_recovery_groups::_list_recovery_groups_input::Lis
 /// <p>Lists the recovery groups in an account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRecoveryGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_recovery_groups::builders::ListRecoveryGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_recovery_groups::builders::ListRecoveryGroupsInputBuilder,
+}
 impl ListRecoveryGroupsFluentBuilder  {
     /// Creates a new `ListRecoveryGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_recovery_groups::ListRecoveryGroups, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRecoveryGroupsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_recovery_groups::paginator::ListRecoveryGroupsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_recovery_groups::paginator::ListRecoveryGroupsPaginator {
-                            crate::operation::list_recovery_groups::paginator::ListRecoveryGroupsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_recovery_groups::paginator::ListRecoveryGroupsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_recovery_groups::paginator::ListRecoveryGroupsPaginator {
+                                crate::operation::list_recovery_groups::paginator::ListRecoveryGroupsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

@@ -8,16 +8,17 @@ pub use crate::operation::stop_events_detection_job::_stop_events_detection_job_
 /// <p>Stops an events detection job in progress.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopEventsDetectionJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_events_detection_job::builders::StopEventsDetectionJobInputBuilder,
+}
 impl StopEventsDetectionJobFluentBuilder  {
     /// Creates a new `StopEventsDetectionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_events_detection_job::StopEventsDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,

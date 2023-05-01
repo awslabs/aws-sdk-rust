@@ -15,16 +15,17 @@ pub use crate::operation::shutdown_gateway::_shutdown_gateway_input::ShutdownGat
 /// <p>If do not intend to use the gateway again, you must delete the gateway (using <code>DeleteGateway</code>) to no longer pay software charges associated with the gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ShutdownGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::shutdown_gateway::builders::ShutdownGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::shutdown_gateway::builders::ShutdownGatewayInputBuilder,
+}
 impl ShutdownGatewayFluentBuilder  {
     /// Creates a new `ShutdownGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::shutdown_gateway::ShutdownGateway, aws_http::retry::AwsResponseRetryClassifier,>,

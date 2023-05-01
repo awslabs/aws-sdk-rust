@@ -8,16 +8,17 @@ pub use crate::operation::list_mail_domains::_list_mail_domains_input::ListMailD
 /// <p>Lists the mail domains in a given WorkMail organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMailDomainsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_mail_domains::builders::ListMailDomainsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_mail_domains::builders::ListMailDomainsInputBuilder,
+}
 impl ListMailDomainsFluentBuilder  {
     /// Creates a new `ListMailDomains`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_mail_domains::ListMailDomains, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListMailDomainsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_mail_domains::paginator::ListMailDomainsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_mail_domains::paginator::ListMailDomainsPaginator {
-                            crate::operation::list_mail_domains::paginator::ListMailDomainsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_mail_domains::paginator::ListMailDomainsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_mail_domains::paginator::ListMailDomainsPaginator {
+                                crate::operation::list_mail_domains::paginator::ListMailDomainsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The WorkMail organization for which to list domains.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());

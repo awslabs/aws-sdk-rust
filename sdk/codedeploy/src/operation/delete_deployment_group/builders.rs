@@ -8,16 +8,17 @@ pub use crate::operation::delete_deployment_group::_delete_deployment_group_inpu
 /// <p>Deletes a deployment group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDeploymentGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_deployment_group::builders::DeleteDeploymentGroupInputBuilder,
+}
 impl DeleteDeploymentGroupFluentBuilder  {
     /// Creates a new `DeleteDeploymentGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_deployment_group::DeleteDeploymentGroup, aws_http::retry::AwsResponseRetryClassifier,>,

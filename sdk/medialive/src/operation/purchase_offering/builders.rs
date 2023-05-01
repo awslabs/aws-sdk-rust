@@ -8,16 +8,17 @@ pub use crate::operation::purchase_offering::_purchase_offering_input::PurchaseO
 /// Purchase an offering and create a reservation.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PurchaseOfferingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder,
+}
 impl PurchaseOfferingFluentBuilder  {
     /// Creates a new `PurchaseOffering`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::purchase_offering::PurchaseOffering, aws_http::retry::AwsResponseRetryClassifier,>,

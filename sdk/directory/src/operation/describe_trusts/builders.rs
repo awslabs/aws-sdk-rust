@@ -9,16 +9,17 @@ pub use crate::operation::describe_trusts::_describe_trusts_input::DescribeTrust
 /// <p>If no input parameters are provided, such as DirectoryId or TrustIds, this request describes all the trust relationships belonging to the account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTrustsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_trusts::builders::DescribeTrustsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_trusts::builders::DescribeTrustsInputBuilder,
+}
 impl DescribeTrustsFluentBuilder  {
     /// Creates a new `DescribeTrusts`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_trusts::DescribeTrusts, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeTrustsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_trusts::paginator::DescribeTrustsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_trusts::paginator::DescribeTrustsPaginator {
-                            crate::operation::describe_trusts::paginator::DescribeTrustsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_trusts::paginator::DescribeTrustsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_trusts::paginator::DescribeTrustsPaginator {
+                                crate::operation::describe_trusts::paginator::DescribeTrustsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust relationship.</p>
     pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());

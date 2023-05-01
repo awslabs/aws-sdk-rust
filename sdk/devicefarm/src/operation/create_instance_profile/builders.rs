@@ -8,16 +8,17 @@ pub use crate::operation::create_instance_profile::_create_instance_profile_inpu
 /// <p>Creates a profile that can be applied to one or more private fleet device instances.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateInstanceProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_instance_profile::builders::CreateInstanceProfileInputBuilder,
+}
 impl CreateInstanceProfileFluentBuilder  {
     /// Creates a new `CreateInstanceProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_instance_profile::CreateInstanceProfile, aws_http::retry::AwsResponseRetryClassifier,>,

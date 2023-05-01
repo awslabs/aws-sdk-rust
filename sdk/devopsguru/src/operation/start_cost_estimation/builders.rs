@@ -8,16 +8,17 @@ pub use crate::operation::start_cost_estimation::_start_cost_estimation_input::S
 /// <p>Starts the creation of an estimate of the monthly cost to analyze your Amazon Web Services resources.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartCostEstimationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_cost_estimation::builders::StartCostEstimationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_cost_estimation::builders::StartCostEstimationInputBuilder,
+}
 impl StartCostEstimationFluentBuilder  {
     /// Creates a new `StartCostEstimation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_cost_estimation::StartCostEstimation, aws_http::retry::AwsResponseRetryClassifier,>,

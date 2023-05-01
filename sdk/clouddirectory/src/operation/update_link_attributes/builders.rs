@@ -8,16 +8,17 @@ pub use crate::operation::update_link_attributes::_update_link_attributes_input:
 /// <p>Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLinkAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_link_attributes::builders::UpdateLinkAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_link_attributes::builders::UpdateLinkAttributesInputBuilder,
+}
 impl UpdateLinkAttributesFluentBuilder  {
     /// Creates a new `UpdateLinkAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_link_attributes::UpdateLinkAttributes, aws_http::retry::AwsResponseRetryClassifier,>,

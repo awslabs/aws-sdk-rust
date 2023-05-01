@@ -8,16 +8,17 @@ pub use crate::operation::modify_target_group::_modify_target_group_input::Modif
 /// <p>Modifies the health checks used when evaluating the health state of the targets in the specified target group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyTargetGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder,
+}
 impl ModifyTargetGroupFluentBuilder  {
     /// Creates a new `ModifyTargetGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_target_group::ModifyTargetGroup, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::retry_stage_execution::_retry_stage_execution_input::R
 /// <p>Resumes the pipeline execution by retrying the last failed actions in a stage. You can retry a stage immediately if any of the actions in the stage fail. When you retry, all actions that are still in progress continue working, and failed actions are triggered again.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RetryStageExecutionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::retry_stage_execution::builders::RetryStageExecutionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::retry_stage_execution::builders::RetryStageExecutionInputBuilder,
+}
 impl RetryStageExecutionFluentBuilder  {
     /// Creates a new `RetryStageExecution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::retry_stage_execution::RetryStageExecution, aws_http::retry::AwsResponseRetryClassifier,>,

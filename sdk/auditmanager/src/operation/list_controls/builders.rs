@@ -8,16 +8,17 @@ pub use crate::operation::list_controls::_list_controls_input::ListControlsInput
 /// <p> Returns a list of controls from Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListControlsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_controls::builders::ListControlsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_controls::builders::ListControlsInputBuilder,
+}
 impl ListControlsFluentBuilder  {
     /// Creates a new `ListControls`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_controls::ListControls, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListControlsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_controls::paginator::ListControlsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_controls::paginator::ListControlsPaginator {
-                            crate::operation::list_controls::paginator::ListControlsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_controls::paginator::ListControlsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_controls::paginator::ListControlsPaginator {
+                                crate::operation::list_controls::paginator::ListControlsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The type of control, such as a standard control or a custom control. </p>
     pub fn control_type(mut self, input: crate::types::ControlType) -> Self {
         self.inner = self.inner.control_type(input);

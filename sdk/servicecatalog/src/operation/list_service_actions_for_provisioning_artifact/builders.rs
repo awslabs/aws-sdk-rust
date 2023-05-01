@@ -8,16 +8,17 @@ pub use crate::operation::list_service_actions_for_provisioning_artifact::_list_
 /// <p>Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning Artifact ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListServiceActionsForProvisioningArtifactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactInputBuilder,
+}
 impl ListServiceActionsForProvisioningArtifactFluentBuilder  {
     /// Creates a new `ListServiceActionsForProvisioningArtifact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifact, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListServiceActionsForProvisioningArtifactFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_service_actions_for_provisioning_artifact::paginator::ListServiceActionsForProvisioningArtifactPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_service_actions_for_provisioning_artifact::paginator::ListServiceActionsForProvisioningArtifactPaginator {
-                            crate::operation::list_service_actions_for_provisioning_artifact::paginator::ListServiceActionsForProvisioningArtifactPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_service_actions_for_provisioning_artifact::paginator::ListServiceActionsForProvisioningArtifactPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_service_actions_for_provisioning_artifact::paginator::ListServiceActionsForProvisioningArtifactPaginator {
+                                crate::operation::list_service_actions_for_provisioning_artifact::paginator::ListServiceActionsForProvisioningArtifactPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.product_id(input.into());

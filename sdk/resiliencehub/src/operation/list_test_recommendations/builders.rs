@@ -8,16 +8,17 @@ pub use crate::operation::list_test_recommendations::_list_test_recommendations_
 /// <p>Lists the test recommendations for the Resilience Hub application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTestRecommendationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_test_recommendations::builders::ListTestRecommendationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_test_recommendations::builders::ListTestRecommendationsInputBuilder,
+}
 impl ListTestRecommendationsFluentBuilder  {
     /// Creates a new `ListTestRecommendations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_test_recommendations::ListTestRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTestRecommendationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_test_recommendations::paginator::ListTestRecommendationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_test_recommendations::paginator::ListTestRecommendationsPaginator {
-                            crate::operation::list_test_recommendations::paginator::ListTestRecommendationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_test_recommendations::paginator::ListTestRecommendationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_test_recommendations::paginator::ListTestRecommendationsPaginator {
+                                crate::operation::list_test_recommendations::paginator::ListTestRecommendationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

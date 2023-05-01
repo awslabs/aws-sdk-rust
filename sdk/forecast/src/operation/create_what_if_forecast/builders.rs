@@ -8,16 +8,17 @@ pub use crate::operation::create_what_if_forecast::_create_what_if_forecast_inpu
 /// <p>A what-if forecast is a forecast that is created from a modified version of the baseline forecast. Each what-if forecast incorporates either a replacement dataset or a set of transformations to the original dataset. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWhatIfForecastFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_what_if_forecast::builders::CreateWhatIfForecastInputBuilder,
+}
 impl CreateWhatIfForecastFluentBuilder  {
     /// Creates a new `CreateWhatIfForecast`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_what_if_forecast::CreateWhatIfForecast, aws_http::retry::AwsResponseRetryClassifier,>,

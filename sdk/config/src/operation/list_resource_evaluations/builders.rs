@@ -8,16 +8,17 @@ pub use crate::operation::list_resource_evaluations::_list_resource_evaluations_
 /// <p>Returns a list of proactive resource evaluations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourceEvaluationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resource_evaluations::builders::ListResourceEvaluationsInputBuilder,
+}
 impl ListResourceEvaluationsFluentBuilder  {
     /// Creates a new `ListResourceEvaluations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resource_evaluations::ListResourceEvaluations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListResourceEvaluationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resource_evaluations::paginator::ListResourceEvaluationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resource_evaluations::paginator::ListResourceEvaluationsPaginator {
-                            crate::operation::list_resource_evaluations::paginator::ListResourceEvaluationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resource_evaluations::paginator::ListResourceEvaluationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_resource_evaluations::paginator::ListResourceEvaluationsPaginator {
+                                crate::operation::list_resource_evaluations::paginator::ListResourceEvaluationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Returns a <code>ResourceEvaluationFilters</code> object.</p>
     pub fn filters(mut self, input: crate::types::ResourceEvaluationFilters) -> Self {
         self.inner = self.inner.filters(input);

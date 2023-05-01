@@ -9,16 +9,17 @@ pub use crate::operation::delete_members::_delete_members_input::DeleteMembersIn
 /// <p>Can be used to delete member accounts that belong to an organization as well as member accounts that were invited manually.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteMembersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_members::builders::DeleteMembersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_members::builders::DeleteMembersInputBuilder,
+}
 impl DeleteMembersFluentBuilder  {
     /// Creates a new `DeleteMembers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_members::DeleteMembers, aws_http::retry::AwsResponseRetryClassifier,>,

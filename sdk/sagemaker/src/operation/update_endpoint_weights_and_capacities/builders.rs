@@ -8,16 +8,17 @@ pub use crate::operation::update_endpoint_weights_and_capacities::_update_endpoi
 /// <p>Updates variant weight of one or more variants associated with an existing endpoint, or capacity of one variant associated with an existing endpoint. When it receives the request, SageMaker sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a> API. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEndpointWeightsAndCapacitiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_endpoint_weights_and_capacities::builders::UpdateEndpointWeightsAndCapacitiesInputBuilder,
+}
 impl UpdateEndpointWeightsAndCapacitiesFluentBuilder  {
     /// Creates a new `UpdateEndpointWeightsAndCapacities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacities, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::describe_event_topics::_describe_event_topics_input::D
 /// <p>If no input parameters are provided, such as DirectoryId or TopicName, this request describes all of the associations in the account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEventTopicsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_event_topics::builders::DescribeEventTopicsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_event_topics::builders::DescribeEventTopicsInputBuilder,
+}
 impl DescribeEventTopicsFluentBuilder  {
     /// Creates a new `DescribeEventTopics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_event_topics::DescribeEventTopics, aws_http::retry::AwsResponseRetryClassifier,>,

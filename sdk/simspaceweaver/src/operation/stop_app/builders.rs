@@ -8,16 +8,17 @@ pub use crate::operation::stop_app::_stop_app_input::StopAppInputBuilder;
 /// <p>Stops the given custom app and shuts down all of its allocated compute resources.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopAppFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_app::builders::StopAppInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_app::builders::StopAppInputBuilder,
+}
 impl StopAppFluentBuilder  {
     /// Creates a new `StopApp`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_app::StopApp, aws_http::retry::AwsResponseRetryClassifier,>,

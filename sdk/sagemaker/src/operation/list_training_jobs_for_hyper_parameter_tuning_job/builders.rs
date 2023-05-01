@@ -8,16 +8,17 @@ pub use crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::_li
 /// <p>Gets a list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> objects that describe the training jobs that a hyperparameter tuning job launched.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrainingJobsForHyperParameterTuningJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::builders::ListTrainingJobsForHyperParameterTuningJobInputBuilder,
+}
 impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder  {
     /// Creates a new `ListTrainingJobsForHyperParameterTuningJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJob, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTrainingJobsForHyperParameterTuningJobFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator {
-                            crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator {
+                                crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::paginator::ListTrainingJobsForHyperParameterTuningJobPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the tuning job whose training jobs you want to list.</p>
     pub fn hyper_parameter_tuning_job_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hyper_parameter_tuning_job_name(input.into());

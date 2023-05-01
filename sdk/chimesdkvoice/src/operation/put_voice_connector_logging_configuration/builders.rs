@@ -8,16 +8,17 @@ pub use crate::operation::put_voice_connector_logging_configuration::_put_voice_
 /// <p>Updates a Voice Connector's logging configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutVoiceConnectorLoggingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_voice_connector_logging_configuration::builders::PutVoiceConnectorLoggingConfigurationInputBuilder,
+}
 impl PutVoiceConnectorLoggingConfigurationFluentBuilder  {
     /// Creates a new `PutVoiceConnectorLoggingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_voice_connector_logging_configuration::PutVoiceConnectorLoggingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

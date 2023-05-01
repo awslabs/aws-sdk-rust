@@ -8,16 +8,17 @@ pub use crate::operation::start_read_set_activation_job::_start_read_set_activat
 /// <p>Activates an archived read set. To reduce storage charges, Amazon Omics archives unused read sets after 30 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartReadSetActivationJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_read_set_activation_job::builders::StartReadSetActivationJobInputBuilder,
+}
 impl StartReadSetActivationJobFluentBuilder  {
     /// Creates a new `StartReadSetActivationJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_read_set_activation_job::StartReadSetActivationJob, aws_http::retry::AwsResponseRetryClassifier,>,

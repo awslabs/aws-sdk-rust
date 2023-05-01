@@ -8,16 +8,17 @@ pub use crate::operation::list_tables::_list_tables_input::ListTablesInputBuilde
 /// <p>Returns an array of table names associated with the current account and endpoint. The output from <code>ListTables</code> is paginated, with each page returning a maximum of 100 table names.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTablesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tables::builders::ListTablesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tables::builders::ListTablesInputBuilder,
+}
 impl ListTablesFluentBuilder  {
     /// Creates a new `ListTables`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tables::ListTables, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTablesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_tables::paginator::ListTablesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_tables::paginator::ListTablesPaginator {
-                            crate::operation::list_tables::paginator::ListTablesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_tables::paginator::ListTablesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_tables::paginator::ListTablesPaginator {
+                                crate::operation::list_tables::paginator::ListTablesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</p>
     pub fn exclusive_start_table_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.exclusive_start_table_name(input.into());

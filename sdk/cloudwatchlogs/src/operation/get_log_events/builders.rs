@@ -11,16 +11,17 @@ pub use crate::operation::get_log_events::_get_log_events_input::GetLogEventsInp
 /// <p>You can specify the log group to search by using either <code>logGroupIdentifier</code> or <code>logGroupName</code>. You must include one of these two parameters, but you can't include both. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLogEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_log_events::builders::GetLogEventsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_log_events::builders::GetLogEventsInputBuilder,
+}
 impl GetLogEventsFluentBuilder  {
     /// Creates a new `GetLogEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_log_events::GetLogEvents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl GetLogEventsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_log_events::paginator::GetLogEventsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_log_events::paginator::GetLogEventsPaginator {
-                            crate::operation::get_log_events::paginator::GetLogEventsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_log_events::paginator::GetLogEventsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_log_events::paginator::GetLogEventsPaginator {
+                                crate::operation::get_log_events::paginator::GetLogEventsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the log group.</p> <note> 
     /// <p> You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p> 
     /// </note>

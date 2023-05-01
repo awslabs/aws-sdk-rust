@@ -10,16 +10,17 @@ pub use crate::operation::update_certificate_authority::_update_certificate_auth
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateCertificateAuthorityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_certificate_authority::builders::UpdateCertificateAuthorityInputBuilder,
+}
 impl UpdateCertificateAuthorityFluentBuilder  {
     /// Creates a new `UpdateCertificateAuthority`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_certificate_authority::UpdateCertificateAuthority, aws_http::retry::AwsResponseRetryClassifier,>,

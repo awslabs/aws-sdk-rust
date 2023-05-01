@@ -8,16 +8,17 @@ pub use crate::operation::confirm_device::_confirm_device_input::ConfirmDeviceIn
 /// <p>Confirms tracking of the device. This API call is the call that begins device tracking.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfirmDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::confirm_device::builders::ConfirmDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::confirm_device::builders::ConfirmDeviceInputBuilder,
+}
 impl ConfirmDeviceFluentBuilder  {
     /// Creates a new `ConfirmDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::confirm_device::ConfirmDevice, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::set_principal_tag_attribute_map::_set_principal_tag_at
 /// <p>You can use this operation to use default (username and clientID) attribute or custom attribute mappings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetPrincipalTagAttributeMapFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_principal_tag_attribute_map::builders::SetPrincipalTagAttributeMapInputBuilder,
+}
 impl SetPrincipalTagAttributeMapFluentBuilder  {
     /// Creates a new `SetPrincipalTagAttributeMap`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMap, aws_http::retry::AwsResponseRetryClassifier,>,

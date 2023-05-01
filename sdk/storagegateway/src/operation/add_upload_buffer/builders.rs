@@ -9,16 +9,17 @@ pub use crate::operation::add_upload_buffer::_add_upload_buffer_input::AddUpload
 /// <p>In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and one or more disk IDs that you want to configure as upload buffer.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddUploadBufferFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_upload_buffer::builders::AddUploadBufferInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_upload_buffer::builders::AddUploadBufferInputBuilder,
+}
 impl AddUploadBufferFluentBuilder  {
     /// Creates a new `AddUploadBuffer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_upload_buffer::AddUploadBuffer, aws_http::retry::AwsResponseRetryClassifier,>,

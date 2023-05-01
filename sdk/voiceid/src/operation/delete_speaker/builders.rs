@@ -8,16 +8,17 @@ pub use crate::operation::delete_speaker::_delete_speaker_input::DeleteSpeakerIn
 /// <p>Deletes the specified speaker from Voice ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSpeakerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_speaker::builders::DeleteSpeakerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_speaker::builders::DeleteSpeakerInputBuilder,
+}
 impl DeleteSpeakerFluentBuilder  {
     /// Creates a new `DeleteSpeaker`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_speaker::DeleteSpeaker, aws_http::retry::AwsResponseRetryClassifier,>,

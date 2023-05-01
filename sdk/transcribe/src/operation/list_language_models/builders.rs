@@ -9,16 +9,17 @@ pub use crate::operation::list_language_models::_list_language_models_input::Lis
 /// <p>To get detailed information about a specific custom language model, use the operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLanguageModelsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_language_models::builders::ListLanguageModelsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_language_models::builders::ListLanguageModelsInputBuilder,
+}
 impl ListLanguageModelsFluentBuilder  {
     /// Creates a new `ListLanguageModels`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_language_models::ListLanguageModels, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListLanguageModelsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_language_models::paginator::ListLanguageModelsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_language_models::paginator::ListLanguageModelsPaginator {
-                            crate::operation::list_language_models::paginator::ListLanguageModelsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_language_models::paginator::ListLanguageModelsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_language_models::paginator::ListLanguageModelsPaginator {
+                                crate::operation::list_language_models::paginator::ListLanguageModelsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Returns only custom language models with the specified status. Language models are ordered by creation date, with the newest model first. If you don't include <code>StatusEquals</code>, all custom language models are returned.</p>
     pub fn status_equals(mut self, input: crate::types::ModelStatus) -> Self {
         self.inner = self.inner.status_equals(input);

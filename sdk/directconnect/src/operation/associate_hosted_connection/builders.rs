@@ -10,16 +10,17 @@ pub use crate::operation::associate_hosted_connection::_associate_hosted_connect
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateHostedConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_hosted_connection::builders::AssociateHostedConnectionInputBuilder,
+}
 impl AssociateHostedConnectionFluentBuilder  {
     /// Creates a new `AssociateHostedConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_hosted_connection::AssociateHostedConnection, aws_http::retry::AwsResponseRetryClassifier,>,

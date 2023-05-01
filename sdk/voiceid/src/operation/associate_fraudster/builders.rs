@@ -8,16 +8,17 @@ pub use crate::operation::associate_fraudster::_associate_fraudster_input::Assoc
 /// <p>Associates the fraudsters with the watchlist specified in the same domain. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateFraudsterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_fraudster::builders::AssociateFraudsterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_fraudster::builders::AssociateFraudsterInputBuilder,
+}
 impl AssociateFraudsterFluentBuilder  {
     /// Creates a new `AssociateFraudster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_fraudster::AssociateFraudster, aws_http::retry::AwsResponseRetryClassifier,>,

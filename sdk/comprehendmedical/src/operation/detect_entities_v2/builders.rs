@@ -10,16 +10,17 @@ pub use crate::operation::detect_entities_v2::_detect_entities_v2_input::DetectE
 /// <p>The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code> entities as attributes instead of types. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectEntitiesV2FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_entities_v2::builders::DetectEntitiesV2InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_entities_v2::builders::DetectEntitiesV2InputBuilder,
+}
 impl DetectEntitiesV2FluentBuilder  {
     /// Creates a new `DetectEntitiesV2`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_entities_v2::DetectEntitiesV2, aws_http::retry::AwsResponseRetryClassifier,>,

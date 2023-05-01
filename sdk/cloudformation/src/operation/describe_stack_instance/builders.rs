@@ -9,16 +9,17 @@ pub use crate::operation::describe_stack_instance::_describe_stack_instance_inpu
 /// <p>For a list of stack instances that are associated with a specific stack set, use <code>ListStackInstances</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeStackInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_stack_instance::builders::DescribeStackInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_stack_instance::builders::DescribeStackInstanceInputBuilder,
+}
 impl DescribeStackInstanceFluentBuilder  {
     /// Creates a new `DescribeStackInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_stack_instance::DescribeStackInstance, aws_http::retry::AwsResponseRetryClassifier,>,

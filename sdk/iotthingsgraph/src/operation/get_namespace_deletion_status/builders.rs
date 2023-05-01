@@ -9,16 +9,17 @@ pub use crate::operation::get_namespace_deletion_status::_get_namespace_deletion
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetNamespaceDeletionStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_namespace_deletion_status::builders::GetNamespaceDeletionStatusInputBuilder,
+}
 impl GetNamespaceDeletionStatusFluentBuilder  {
     /// Creates a new `GetNamespaceDeletionStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatus, aws_http::retry::AwsResponseRetryClassifier,>,

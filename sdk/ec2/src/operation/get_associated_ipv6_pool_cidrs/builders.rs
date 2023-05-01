@@ -8,16 +8,17 @@ pub use crate::operation::get_associated_ipv6_pool_cidrs::_get_associated_ipv6_p
 /// <p>Gets information about the IPv6 CIDR block associations for a specified IPv6 address pool.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssociatedIpv6PoolCidrsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder,
+}
 impl GetAssociatedIpv6PoolCidrsFluentBuilder  {
     /// Creates a new `GetAssociatedIpv6PoolCidrs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetAssociatedIpv6PoolCidrsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_associated_ipv6_pool_cidrs::paginator::GetAssociatedIpv6PoolCidrsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_associated_ipv6_pool_cidrs::paginator::GetAssociatedIpv6PoolCidrsPaginator {
-                            crate::operation::get_associated_ipv6_pool_cidrs::paginator::GetAssociatedIpv6PoolCidrsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_associated_ipv6_pool_cidrs::paginator::GetAssociatedIpv6PoolCidrsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_associated_ipv6_pool_cidrs::paginator::GetAssociatedIpv6PoolCidrsPaginator {
+                                crate::operation::get_associated_ipv6_pool_cidrs::paginator::GetAssociatedIpv6PoolCidrsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the IPv6 address pool.</p>
     pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());

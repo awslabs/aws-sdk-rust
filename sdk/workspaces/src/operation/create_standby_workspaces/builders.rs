@@ -8,16 +8,17 @@ pub use crate::operation::create_standby_workspaces::_create_standby_workspaces_
 /// <p>Creates a standby WorkSpace in a secondary Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStandbyWorkspacesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_standby_workspaces::builders::CreateStandbyWorkspacesInputBuilder,
+}
 impl CreateStandbyWorkspacesFluentBuilder  {
     /// Creates a new `CreateStandbyWorkspaces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_standby_workspaces::CreateStandbyWorkspaces, aws_http::retry::AwsResponseRetryClassifier,>,

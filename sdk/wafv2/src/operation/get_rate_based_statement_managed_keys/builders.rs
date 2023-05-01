@@ -10,16 +10,17 @@ pub use crate::operation::get_rate_based_statement_managed_keys::_get_rate_based
 /// <p>WAF monitors web requests and manages keys independently for each unique combination of web ACL, optional rule group, and rate-based rule. For example, if you define a rate-based rule inside a rule group, and then use the rule group in a web ACL, WAF monitors web requests and manages keys for that web ACL, rule group reference statement, and rate-based rule instance. If you use the same rule group in a second web ACL, WAF monitors web requests and manages keys for this second usage completely independent of your first. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRateBasedStatementManagedKeysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_rate_based_statement_managed_keys::builders::GetRateBasedStatementManagedKeysInputBuilder,
+}
 impl GetRateBasedStatementManagedKeysFluentBuilder  {
     /// Creates a new `GetRateBasedStatementManagedKeys`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeys, aws_http::retry::AwsResponseRetryClassifier,>,

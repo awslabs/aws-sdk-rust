@@ -8,16 +8,17 @@ pub use crate::operation::describe_addresses_attribute::_describe_addresses_attr
 /// <p>Describes the attributes of the specified Elastic IP addresses. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using reverse DNS for email applications</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAddressesAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_addresses_attribute::builders::DescribeAddressesAttributeInputBuilder,
+}
 impl DescribeAddressesAttributeFluentBuilder  {
     /// Creates a new `DescribeAddressesAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_addresses_attribute::DescribeAddressesAttribute, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeAddressesAttributeFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_addresses_attribute::paginator::DescribeAddressesAttributePaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_addresses_attribute::paginator::DescribeAddressesAttributePaginator {
-                            crate::operation::describe_addresses_attribute::paginator::DescribeAddressesAttributePaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_addresses_attribute::paginator::DescribeAddressesAttributePaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_addresses_attribute::paginator::DescribeAddressesAttributePaginator {
+                                crate::operation::describe_addresses_attribute::paginator::DescribeAddressesAttributePaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `AllocationIds`.
     ///
     /// To override the contents of this collection use [`set_allocation_ids`](Self::set_allocation_ids).

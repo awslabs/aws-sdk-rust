@@ -9,16 +9,17 @@ pub use crate::operation::disassociate_custom_domain::_disassociate_custom_domai
 /// <p>Certificates tracking domain validity are associated with a custom domain and are stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide">AWS Certificate Manager (ACM)</a>. These certificates aren't deleted as part of this action. App Runner delays certificate deletion for 30 days after a domain is disassociated from your service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateCustomDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_custom_domain::builders::DisassociateCustomDomainInputBuilder,
+}
 impl DisassociateCustomDomainFluentBuilder  {
     /// Creates a new `DisassociateCustomDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_custom_domain::DisassociateCustomDomain, aws_http::retry::AwsResponseRetryClassifier,>,

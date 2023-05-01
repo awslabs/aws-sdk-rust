@@ -8,16 +8,17 @@ pub use crate::operation::disable_aws_network_performance_metric_subscription::_
 /// <p>Disables Infrastructure Performance metric subscriptions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_aws_network_performance_metric_subscription::builders::DisableAwsNetworkPerformanceMetricSubscriptionInputBuilder,
+}
 impl DisableAwsNetworkPerformanceMetricSubscriptionFluentBuilder  {
     /// Creates a new `DisableAwsNetworkPerformanceMetricSubscription`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscription, aws_http::retry::AwsResponseRetryClassifier,>,

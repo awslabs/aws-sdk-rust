@@ -8,16 +8,17 @@ pub use crate::operation::enable_domain_transfer_lock::_enable_domain_transfer_l
 /// <p>This operation sets the transfer lock on the domain (specifically the <code>clientTransferProhibited</code> status) to prevent domain transfers. Successful submission returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant will be notified by email.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableDomainTransferLockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_domain_transfer_lock::builders::EnableDomainTransferLockInputBuilder,
+}
 impl EnableDomainTransferLockFluentBuilder  {
     /// Creates a new `EnableDomainTransferLock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_domain_transfer_lock::EnableDomainTransferLock, aws_http::retry::AwsResponseRetryClassifier,>,

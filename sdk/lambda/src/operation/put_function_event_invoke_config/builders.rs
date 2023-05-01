@@ -10,16 +10,17 @@ pub use crate::operation::put_function_event_invoke_config::_put_function_event_
 /// <p>To send an invocation record to a queue, topic, function, or event bus, specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>. You can configure separate destinations for successful invocations (on-success) and events that fail all processing attempts (on-failure). You can configure destinations in addition to or instead of a dead-letter queue.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutFunctionEventInvokeConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_function_event_invoke_config::builders::PutFunctionEventInvokeConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_function_event_invoke_config::builders::PutFunctionEventInvokeConfigInputBuilder,
+}
 impl PutFunctionEventInvokeConfigFluentBuilder  {
     /// Creates a new `PutFunctionEventInvokeConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfig, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::list_unique_problems::_list_unique_problems_input::Lis
 /// <p>Unique problems are defined as a single instance of an error across a run, job, or suite. For example, if a call in your application consistently raises an exception (<code>OutOfBoundsException in MyActivity.java:386</code>), <code>ListUniqueProblems</code> returns a single entry instead of many individual entries for that exception.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListUniqueProblemsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_unique_problems::builders::ListUniqueProblemsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_unique_problems::builders::ListUniqueProblemsInputBuilder,
+}
 impl ListUniqueProblemsFluentBuilder  {
     /// Creates a new `ListUniqueProblems`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_unique_problems::ListUniqueProblems, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListUniqueProblemsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_unique_problems::paginator::ListUniqueProblemsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_unique_problems::paginator::ListUniqueProblemsPaginator {
-                            crate::operation::list_unique_problems::paginator::ListUniqueProblemsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_unique_problems::paginator::ListUniqueProblemsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_unique_problems::paginator::ListUniqueProblemsPaginator {
+                                crate::operation::list_unique_problems::paginator::ListUniqueProblemsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique problems' ARNs.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());

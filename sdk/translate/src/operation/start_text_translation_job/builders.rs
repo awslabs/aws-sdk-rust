@@ -9,16 +9,17 @@ pub use crate::operation::start_text_translation_job::_start_text_translation_jo
 /// <p>Batch translation jobs can be described with the <code>DescribeTextTranslationJob</code> operation, listed with the <code>ListTextTranslationJobs</code> operation, and stopped with the <code>StopTextTranslationJob</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartTextTranslationJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_text_translation_job::builders::StartTextTranslationJobInputBuilder,
+}
 impl StartTextTranslationJobFluentBuilder  {
     /// Creates a new `StartTextTranslationJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_text_translation_job::StartTextTranslationJob, aws_http::retry::AwsResponseRetryClassifier,>,

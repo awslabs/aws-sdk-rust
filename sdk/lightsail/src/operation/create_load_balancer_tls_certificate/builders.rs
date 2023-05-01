@@ -10,16 +10,17 @@ pub use crate::operation::create_load_balancer_tls_certificate::_create_load_bal
 /// <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource tags applied to the resource identified by <code>load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLoadBalancerTlsCertificateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_load_balancer_tls_certificate::builders::CreateLoadBalancerTlsCertificateInputBuilder,
+}
 impl CreateLoadBalancerTlsCertificateFluentBuilder  {
     /// Creates a new `CreateLoadBalancerTlsCertificate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_load_balancer_tls_certificate::CreateLoadBalancerTlsCertificate, aws_http::retry::AwsResponseRetryClassifier,>,

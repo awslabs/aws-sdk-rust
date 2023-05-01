@@ -8,16 +8,17 @@ pub use crate::operation::search_quantum_tasks::_search_quantum_tasks_input::Sea
 /// <p>Searches for tasks that match the specified filter values.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchQuantumTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_quantum_tasks::builders::SearchQuantumTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_quantum_tasks::builders::SearchQuantumTasksInputBuilder,
+}
 impl SearchQuantumTasksFluentBuilder  {
     /// Creates a new `SearchQuantumTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_quantum_tasks::SearchQuantumTasks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchQuantumTasksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator {
-                            crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator {
+                                crate::operation::search_quantum_tasks::paginator::SearchQuantumTasksPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

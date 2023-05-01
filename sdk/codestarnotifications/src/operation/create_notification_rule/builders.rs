@@ -8,16 +8,17 @@ pub use crate::operation::create_notification_rule::_create_notification_rule_in
 /// <p>Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as Chatbot topics or Chatbot clients configured for Slack) where you want to receive them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNotificationRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_notification_rule::builders::CreateNotificationRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_notification_rule::builders::CreateNotificationRuleInputBuilder,
+}
 impl CreateNotificationRuleFluentBuilder  {
     /// Creates a new `CreateNotificationRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_notification_rule::CreateNotificationRule, aws_http::retry::AwsResponseRetryClassifier,>,

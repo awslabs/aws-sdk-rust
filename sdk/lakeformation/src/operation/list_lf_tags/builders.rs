@@ -8,16 +8,17 @@ pub use crate::operation::list_lf_tags::_list_lf_tags_input::ListLfTagsInputBuil
 /// <p>Lists LF-tags that the requester has permission to view. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLFTagsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_lf_tags::builders::ListLfTagsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_lf_tags::builders::ListLfTagsInputBuilder,
+}
 impl ListLFTagsFluentBuilder  {
     /// Creates a new `ListLFTags`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_lf_tags::ListLFTags, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListLFTagsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_lf_tags::paginator::ListLfTagsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_lf_tags::paginator::ListLfTagsPaginator {
-                            crate::operation::list_lf_tags::paginator::ListLfTagsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_lf_tags::paginator::ListLfTagsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_lf_tags::paginator::ListLfTagsPaginator {
+                                crate::operation::list_lf_tags::paginator::ListLfTagsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());

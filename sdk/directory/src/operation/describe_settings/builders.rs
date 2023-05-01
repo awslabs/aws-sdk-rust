@@ -8,16 +8,17 @@ pub use crate::operation::describe_settings::_describe_settings_input::DescribeS
 /// <p>Retrieves information about the configurable settings for the specified directory.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSettingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_settings::builders::DescribeSettingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_settings::builders::DescribeSettingsInputBuilder,
+}
 impl DescribeSettingsFluentBuilder  {
     /// Creates a new `DescribeSettings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_settings::DescribeSettings, aws_http::retry::AwsResponseRetryClassifier,>,

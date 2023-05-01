@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_resource_share_permission::_disassociate_
 /// <p>Removes a managed permission from a resource share. Permission changes take effect immediately. You can remove a managed permission from a resource share only if there are currently no resources of the relevant resource type currently attached to the resource share.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateResourceSharePermissionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_resource_share_permission::builders::DisassociateResourceSharePermissionInputBuilder,
+}
 impl DisassociateResourceSharePermissionFluentBuilder  {
     /// Creates a new `DisassociateResourceSharePermission`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermission, aws_http::retry::AwsResponseRetryClassifier,>,

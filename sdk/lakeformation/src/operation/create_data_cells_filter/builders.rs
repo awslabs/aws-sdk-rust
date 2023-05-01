@@ -8,16 +8,17 @@ pub use crate::operation::create_data_cells_filter::_create_data_cells_filter_in
 /// <p>Creates a data cell filter to allow one to grant access to certain columns on certain rows.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDataCellsFilterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_data_cells_filter::builders::CreateDataCellsFilterInputBuilder,
+}
 impl CreateDataCellsFilterFluentBuilder  {
     /// Creates a new `CreateDataCellsFilter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_data_cells_filter::CreateDataCellsFilter, aws_http::retry::AwsResponseRetryClassifier,>,

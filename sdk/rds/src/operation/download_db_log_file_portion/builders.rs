@@ -9,16 +9,17 @@ pub use crate::operation::download_db_log_file_portion::_download_db_log_file_po
 /// <p>This command doesn't apply to RDS Custom.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DownloadDBLogFilePortionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionInputBuilder,
+}
 impl DownloadDBLogFilePortionFluentBuilder  {
     /// Creates a new `DownloadDBLogFilePortion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::download_db_log_file_portion::DownloadDBLogFilePortion, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DownloadDBLogFilePortionFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::download_db_log_file_portion::paginator::DownloadDbLogFilePortionPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::download_db_log_file_portion::paginator::DownloadDbLogFilePortionPaginator {
-                            crate::operation::download_db_log_file_portion::paginator::DownloadDbLogFilePortionPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::download_db_log_file_portion::paginator::DownloadDbLogFilePortionPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::download_db_log_file_portion::paginator::DownloadDbLogFilePortionPaginator {
+                                crate::operation::download_db_log_file_portion::paginator::DownloadDbLogFilePortionPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p> 
     /// <p>Constraints:</p> 
     /// <ul> 

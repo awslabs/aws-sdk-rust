@@ -11,16 +11,17 @@ pub use crate::operation::submit_attachment_state_changes::_submit_attachment_st
 /// <p>Sent to acknowledge that an attachment changed states.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SubmitAttachmentStateChangesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::submit_attachment_state_changes::builders::SubmitAttachmentStateChangesInputBuilder,
+}
 impl SubmitAttachmentStateChangesFluentBuilder  {
     /// Creates a new `SubmitAttachmentStateChanges`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChanges, aws_http::retry::AwsResponseRetryClassifier,>,

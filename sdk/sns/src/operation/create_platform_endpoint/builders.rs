@@ -9,16 +9,17 @@ pub use crate::operation::create_platform_endpoint::_create_platform_endpoint_in
 /// <p>When using <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided: ChannelId and UserId. The token field must also contain the ChannelId. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint for Baidu</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePlatformEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointInputBuilder,
+}
 impl CreatePlatformEndpointFluentBuilder  {
     /// Creates a new `CreatePlatformEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_platform_endpoint::CreatePlatformEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

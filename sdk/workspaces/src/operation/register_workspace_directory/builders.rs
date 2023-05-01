@@ -8,16 +8,17 @@ pub use crate::operation::register_workspace_directory::_register_workspace_dire
 /// <p>Registers the specified directory. This operation is asynchronous and returns before the WorkSpace directory is registered. If this is the first time you are registering a directory, you will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role"> Creating the workspaces_DefaultRole Role</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterWorkspaceDirectoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_workspace_directory::builders::RegisterWorkspaceDirectoryInputBuilder,
+}
 impl RegisterWorkspaceDirectoryFluentBuilder  {
     /// Creates a new `RegisterWorkspaceDirectory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_workspace_directory::RegisterWorkspaceDirectory, aws_http::retry::AwsResponseRetryClassifier,>,

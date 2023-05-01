@@ -8,16 +8,17 @@ pub use crate::operation::list_threat_intel_sets::_list_threat_intel_sets_input:
 /// <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the ThreatIntelSets associated with the administrator account are returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListThreatIntelSetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_threat_intel_sets::builders::ListThreatIntelSetsInputBuilder,
+}
 impl ListThreatIntelSetsFluentBuilder  {
     /// Creates a new `ListThreatIntelSets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_threat_intel_sets::ListThreatIntelSets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListThreatIntelSetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_threat_intel_sets::paginator::ListThreatIntelSetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_threat_intel_sets::paginator::ListThreatIntelSetsPaginator {
-                            crate::operation::list_threat_intel_sets::paginator::ListThreatIntelSetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_threat_intel_sets::paginator::ListThreatIntelSetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_threat_intel_sets::paginator::ListThreatIntelSetsPaginator {
+                                crate::operation::list_threat_intel_sets::paginator::ListThreatIntelSetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());

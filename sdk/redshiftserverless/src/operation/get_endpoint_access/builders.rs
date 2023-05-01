@@ -8,16 +8,17 @@ pub use crate::operation::get_endpoint_access::_get_endpoint_access_input::GetEn
 /// <p>Returns information, such as the name, about a VPC endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEndpointAccessFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_endpoint_access::builders::GetEndpointAccessInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_endpoint_access::builders::GetEndpointAccessInputBuilder,
+}
 impl GetEndpointAccessFluentBuilder  {
     /// Creates a new `GetEndpointAccess`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_endpoint_access::GetEndpointAccess, aws_http::retry::AwsResponseRetryClassifier,>,

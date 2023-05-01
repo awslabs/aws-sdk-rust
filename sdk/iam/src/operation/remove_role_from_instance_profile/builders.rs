@@ -11,16 +11,17 @@ pub use crate::operation::remove_role_from_instance_profile::_remove_role_from_i
 /// <p> For more information about IAM roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with roles</a>. For more information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About instance profiles</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveRoleFromInstanceProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileInputBuilder,
+}
 impl RemoveRoleFromInstanceProfileFluentBuilder  {
     /// Creates a new `RemoveRoleFromInstanceProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfile, aws_http::retry::AwsResponseRetryClassifier,>,

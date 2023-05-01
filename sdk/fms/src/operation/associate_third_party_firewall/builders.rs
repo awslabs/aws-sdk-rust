@@ -8,16 +8,17 @@ pub use crate::operation::associate_third_party_firewall::_associate_third_party
 /// <p>Sets the Firewall Manager policy administrator as a tenant administrator of a third-party firewall service. A tenant is an instance of the third-party firewall service that's associated with your Amazon Web Services customer account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateThirdPartyFirewallFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_third_party_firewall::builders::AssociateThirdPartyFirewallInputBuilder,
+}
 impl AssociateThirdPartyFirewallFluentBuilder  {
     /// Creates a new `AssociateThirdPartyFirewall`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewall, aws_http::retry::AwsResponseRetryClassifier,>,

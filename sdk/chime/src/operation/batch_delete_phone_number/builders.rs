@@ -9,16 +9,17 @@ pub use crate::operation::batch_delete_phone_number::_batch_delete_phone_number_
 /// <p> Phone numbers remain in the <b>Deletion queue</b> for 7 days before they are deleted permanently. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDeletePhoneNumberFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberInputBuilder,
+}
 impl BatchDeletePhoneNumberFluentBuilder  {
     /// Creates a new `BatchDeletePhoneNumber`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_delete_phone_number::BatchDeletePhoneNumber, aws_http::retry::AwsResponseRetryClassifier,>,

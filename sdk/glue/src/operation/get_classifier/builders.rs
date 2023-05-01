@@ -8,16 +8,17 @@ pub use crate::operation::get_classifier::_get_classifier_input::GetClassifierIn
 /// <p>Retrieve a classifier by name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetClassifierFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_classifier::builders::GetClassifierInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_classifier::builders::GetClassifierInputBuilder,
+}
 impl GetClassifierFluentBuilder  {
     /// Creates a new `GetClassifier`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_classifier::GetClassifier, aws_http::retry::AwsResponseRetryClassifier,>,

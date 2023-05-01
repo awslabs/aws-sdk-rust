@@ -9,16 +9,17 @@ pub use crate::operation::get_findings::_get_findings_input::GetFindingsInputBui
 /// <p>If finding aggregation is enabled, then when you call <code>GetFindings</code> from the aggregation Region, the results include all of the matching findings from both the aggregation Region and the linked Regions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFindingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_findings::builders::GetFindingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_findings::builders::GetFindingsInputBuilder,
+}
 impl GetFindingsFluentBuilder  {
     /// Creates a new `GetFindings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_findings::GetFindings, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetFindingsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_findings::paginator::GetFindingsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_findings::paginator::GetFindingsPaginator {
-                            crate::operation::get_findings::paginator::GetFindingsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_findings::paginator::GetFindingsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_findings::paginator::GetFindingsPaginator {
+                                crate::operation::get_findings::paginator::GetFindingsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The finding attributes used to define a condition to filter the returned findings.</p> 
     /// <p>You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.</p> 
     /// <p>Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based on its workflow status, use <code>WorkflowStatus</code>.</p>

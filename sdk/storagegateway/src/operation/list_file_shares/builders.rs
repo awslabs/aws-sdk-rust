@@ -8,16 +8,17 @@ pub use crate::operation::list_file_shares::_list_file_shares_input::ListFileSha
 /// <p>Gets a list of the file shares for a specific S3 File Gateway, or the list of file shares that belong to the calling user account. This operation is only supported for S3 File Gateways.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFileSharesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_file_shares::builders::ListFileSharesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_file_shares::builders::ListFileSharesInputBuilder,
+}
 impl ListFileSharesFluentBuilder  {
     /// Creates a new `ListFileShares`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_file_shares::ListFileShares, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListFileSharesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_file_shares::paginator::ListFileSharesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_file_shares::paginator::ListFileSharesPaginator {
-                            crate::operation::list_file_shares::paginator::ListFileSharesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_file_shares::paginator::ListFileSharesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_file_shares::paginator::ListFileSharesPaginator {
+                                crate::operation::list_file_shares::paginator::ListFileSharesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the gateway whose file shares you want to list. If this field is not present, all file shares under your account are listed.</p>
     pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.gateway_arn(input.into());

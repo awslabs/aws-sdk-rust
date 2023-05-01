@@ -8,16 +8,17 @@ pub use crate::operation::get_coverage_statistics::_get_coverage_statistics_inpu
 /// <p>Retrieves aggregated statistics for your account. If you are a GuardDuty administrator, you can retrieve the statistics for all the resources associated with the active member accounts in your organization who have enabled EKS Runtime Monitoring and have the GuardDuty agent running on their EKS nodes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCoverageStatisticsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_coverage_statistics::builders::GetCoverageStatisticsInputBuilder,
+}
 impl GetCoverageStatisticsFluentBuilder  {
     /// Creates a new `GetCoverageStatistics`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_coverage_statistics::GetCoverageStatistics, aws_http::retry::AwsResponseRetryClassifier,>,

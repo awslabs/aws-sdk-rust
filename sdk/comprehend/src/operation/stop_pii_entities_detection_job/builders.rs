@@ -8,16 +8,17 @@ pub use crate::operation::stop_pii_entities_detection_job::_stop_pii_entities_de
 /// <p>Stops a PII entities detection job in progress.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopPiiEntitiesDetectionJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_pii_entities_detection_job::builders::StopPiiEntitiesDetectionJobInputBuilder,
+}
 impl StopPiiEntitiesDetectionJobFluentBuilder  {
     /// Creates a new `StopPiiEntitiesDetectionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,

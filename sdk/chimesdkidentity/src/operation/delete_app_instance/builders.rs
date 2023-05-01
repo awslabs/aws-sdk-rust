@@ -8,16 +8,17 @@ pub use crate::operation::delete_app_instance::_delete_app_instance_input::Delet
 /// <p>Deletes an <code>AppInstance</code> and all associated data asynchronously.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAppInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_app_instance::builders::DeleteAppInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_app_instance::builders::DeleteAppInstanceInputBuilder,
+}
 impl DeleteAppInstanceFluentBuilder  {
     /// Creates a new `DeleteAppInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_app_instance::DeleteAppInstance, aws_http::retry::AwsResponseRetryClassifier,>,

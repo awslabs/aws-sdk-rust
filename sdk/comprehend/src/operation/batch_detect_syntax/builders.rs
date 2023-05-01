@@ -8,16 +8,17 @@ pub use crate::operation::batch_detect_syntax::_batch_detect_syntax_input::Batch
 /// <p>Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDetectSyntaxFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_detect_syntax::builders::BatchDetectSyntaxInputBuilder,
+}
 impl BatchDetectSyntaxFluentBuilder  {
     /// Creates a new `BatchDetectSyntax`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_detect_syntax::BatchDetectSyntax, aws_http::retry::AwsResponseRetryClassifier,>,

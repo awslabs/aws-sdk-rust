@@ -8,16 +8,17 @@ pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_input:
 /// <p>Retrieve a list of the tags (keys and values) that are associated with a specified resource. A&nbsp;<i>tag</i>&nbsp;is a label that you optionally define and associate with a resource in Amazon Pinpoint. Each tag consists of a required&nbsp;<i>tag key</i>&nbsp;and an optional associated&nbsp;<i>tag value</i>. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder,
+}
 impl ListTagsForResourceFluentBuilder  {
     /// Creates a new `ListTagsForResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tags_for_resource::ListTagsForResource, aws_http::retry::AwsResponseRetryClassifier,>,

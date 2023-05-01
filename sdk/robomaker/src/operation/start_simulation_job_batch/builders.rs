@@ -8,16 +8,17 @@ pub use crate::operation::start_simulation_job_batch::_start_simulation_job_batc
 /// <p>Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code> objects. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartSimulationJobBatchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_simulation_job_batch::builders::StartSimulationJobBatchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_simulation_job_batch::builders::StartSimulationJobBatchInputBuilder,
+}
 impl StartSimulationJobBatchFluentBuilder  {
     /// Creates a new `StartSimulationJobBatch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_simulation_job_batch::StartSimulationJobBatch, aws_http::retry::AwsResponseRetryClassifier,>,

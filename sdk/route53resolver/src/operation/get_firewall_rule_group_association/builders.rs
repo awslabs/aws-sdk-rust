@@ -8,16 +8,17 @@ pub use crate::operation::get_firewall_rule_group_association::_get_firewall_rul
 /// <p>Retrieves a firewall rule group association, which enables DNS filtering for a VPC with one rule group. A VPC can have more than one firewall rule group association, and a rule group can be associated with more than one VPC.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFirewallRuleGroupAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_firewall_rule_group_association::builders::GetFirewallRuleGroupAssociationInputBuilder,
+}
 impl GetFirewallRuleGroupAssociationFluentBuilder  {
     /// Creates a new `GetFirewallRuleGroupAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

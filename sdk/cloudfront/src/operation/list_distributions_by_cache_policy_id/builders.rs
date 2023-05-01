@@ -9,16 +9,17 @@ pub use crate::operation::list_distributions_by_cache_policy_id::_list_distribut
 /// <p>You can optionally specify the maximum number of items to receive in the response. If the total number of items in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current response as the <code>Marker</code> value in the subsequent request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDistributionsByCachePolicyIdFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_distributions_by_cache_policy_id::builders::ListDistributionsByCachePolicyIdInputBuilder,
+}
 impl ListDistributionsByCachePolicyIdFluentBuilder  {
     /// Creates a new `ListDistributionsByCachePolicyId`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyId, aws_http::retry::AwsResponseRetryClassifier,>,

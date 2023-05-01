@@ -8,16 +8,17 @@ pub use crate::operation::delete_network_insights_access_scope::_delete_network_
 /// <p>Deletes the specified Network Access Scope.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteNetworkInsightsAccessScopeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_network_insights_access_scope::builders::DeleteNetworkInsightsAccessScopeInputBuilder,
+}
 impl DeleteNetworkInsightsAccessScopeFluentBuilder  {
     /// Creates a new `DeleteNetworkInsightsAccessScope`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_network_insights_access_scope::DeleteNetworkInsightsAccessScope, aws_http::retry::AwsResponseRetryClassifier,>,

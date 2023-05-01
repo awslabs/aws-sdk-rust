@@ -8,16 +8,17 @@ pub use crate::operation::reboot_input_device::_reboot_input_device_input::Reboo
 /// Send a reboot command to the specified input device. The device will begin rebooting within a few seconds of sending the command. When the reboot is complete, the device’s connection status will change to connected.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RebootInputDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reboot_input_device::builders::RebootInputDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reboot_input_device::builders::RebootInputDeviceInputBuilder,
+}
 impl RebootInputDeviceFluentBuilder  {
     /// Creates a new `RebootInputDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reboot_input_device::RebootInputDevice, aws_http::retry::AwsResponseRetryClassifier,>,

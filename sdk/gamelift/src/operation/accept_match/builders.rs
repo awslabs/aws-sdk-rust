@@ -14,16 +14,17 @@ pub use crate::operation::accept_match::_accept_match_input::AcceptMatchInputBui
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html"> FlexMatch events</a> (reference)</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptMatchFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_match::builders::AcceptMatchInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_match::builders::AcceptMatchInputBuilder,
+}
 impl AcceptMatchFluentBuilder  {
     /// Creates a new `AcceptMatch`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_match::AcceptMatch, aws_http::retry::AwsResponseRetryClassifier,>,

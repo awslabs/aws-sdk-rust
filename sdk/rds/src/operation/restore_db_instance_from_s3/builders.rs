@@ -9,16 +9,17 @@ pub use crate::operation::restore_db_instance_from_s3::_restore_db_instance_from
 /// <p>This command doesn't apply to RDS Custom.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreDBInstanceFromS3FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_db_instance_from_s3::builders::RestoreDbInstanceFromS3InputBuilder,
+}
 impl RestoreDBInstanceFromS3FluentBuilder  {
     /// Creates a new `RestoreDBInstanceFromS3`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3, aws_http::retry::AwsResponseRetryClassifier,>,

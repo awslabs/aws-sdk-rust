@@ -8,16 +8,17 @@ pub use crate::operation::notify_provision_product_engine_workflow_result::_noti
 /// <p> Notifies the result of the provisioning engine execution. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct NotifyProvisionProductEngineWorkflowResultFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultInputBuilder,
+}
 impl NotifyProvisionProductEngineWorkflowResultFluentBuilder  {
     /// Creates a new `NotifyProvisionProductEngineWorkflowResult`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResult, aws_http::retry::AwsResponseRetryClassifier,>,

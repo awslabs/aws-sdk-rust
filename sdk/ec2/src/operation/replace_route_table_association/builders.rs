@@ -9,16 +9,17 @@ pub use crate::operation::replace_route_table_association::_replace_route_table_
 /// <p>You can also use this operation to change which table is the main route table in the VPC. Specify the main route table's association ID and the route table ID of the new main route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReplaceRouteTableAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::replace_route_table_association::builders::ReplaceRouteTableAssociationInputBuilder,
+}
 impl ReplaceRouteTableAssociationFluentBuilder  {
     /// Creates a new `ReplaceRouteTableAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::replace_route_table_association::ReplaceRouteTableAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

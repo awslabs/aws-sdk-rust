@@ -8,16 +8,17 @@ pub use crate::operation::reject_vpc_peering_connection::_reject_vpc_peering_con
 /// <p>Rejects a VPC peering connection request. The VPC peering connection must be in the <code>pending-acceptance</code> state. Use the <code>DescribeVpcPeeringConnections</code> request to view your outstanding VPC peering connection requests. To delete an active VPC peering connection, or to delete a VPC peering connection request that you initiated, use <code>DeleteVpcPeeringConnection</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RejectVpcPeeringConnectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reject_vpc_peering_connection::builders::RejectVpcPeeringConnectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reject_vpc_peering_connection::builders::RejectVpcPeeringConnectionInputBuilder,
+}
 impl RejectVpcPeeringConnectionFluentBuilder  {
     /// Creates a new `RejectVpcPeeringConnection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reject_vpc_peering_connection::RejectVpcPeeringConnection, aws_http::retry::AwsResponseRetryClassifier,>,

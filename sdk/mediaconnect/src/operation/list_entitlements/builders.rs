@@ -8,16 +8,17 @@ pub use crate::operation::list_entitlements::_list_entitlements_input::ListEntit
 /// Displays a list of all entitlements that have been granted to this account. This request returns 20 results per page.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEntitlementsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_entitlements::builders::ListEntitlementsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_entitlements::builders::ListEntitlementsInputBuilder,
+}
 impl ListEntitlementsFluentBuilder  {
     /// Creates a new `ListEntitlements`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_entitlements::ListEntitlements, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEntitlementsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_entitlements::paginator::ListEntitlementsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_entitlements::paginator::ListEntitlementsPaginator {
-                            crate::operation::list_entitlements::paginator::ListEntitlementsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_entitlements::paginator::ListEntitlementsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_entitlements::paginator::ListEntitlementsPaginator {
+                                crate::operation::list_entitlements::paginator::ListEntitlementsPaginator::new(self.handle, self.inner)
+                            }
     /// The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

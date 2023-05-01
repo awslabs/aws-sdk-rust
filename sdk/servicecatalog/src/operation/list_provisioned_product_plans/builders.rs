@@ -8,16 +8,17 @@ pub use crate::operation::list_provisioned_product_plans::_list_provisioned_prod
 /// <p>Lists the plans for the specified provisioned product or all plans to which the user has access.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProvisionedProductPlansFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_provisioned_product_plans::builders::ListProvisionedProductPlansInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_provisioned_product_plans::builders::ListProvisionedProductPlansInputBuilder,
+}
 impl ListProvisionedProductPlansFluentBuilder  {
     /// Creates a new `ListProvisionedProductPlans`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_provisioned_product_plans::ListProvisionedProductPlans, aws_http::retry::AwsResponseRetryClassifier,>,

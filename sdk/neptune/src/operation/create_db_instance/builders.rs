@@ -8,16 +8,17 @@ pub use crate::operation::create_db_instance::_create_db_instance_input::CreateD
 /// <p>Creates a new DB instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDBInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_db_instance::builders::CreateDbInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_db_instance::builders::CreateDbInstanceInputBuilder,
+}
 impl CreateDBInstanceFluentBuilder  {
     /// Creates a new `CreateDBInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_db_instance::CreateDBInstance, aws_http::retry::AwsResponseRetryClassifier,>,

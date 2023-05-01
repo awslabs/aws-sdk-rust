@@ -8,16 +8,17 @@ pub use crate::operation::list_event_trackers::_list_event_trackers_input::ListE
 /// <p>Returns the list of event trackers associated with the account. The response provides the properties for each event tracker, including the Amazon Resource Name (ARN) and tracking ID. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEventTrackersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_event_trackers::builders::ListEventTrackersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_event_trackers::builders::ListEventTrackersInputBuilder,
+}
 impl ListEventTrackersFluentBuilder  {
     /// Creates a new `ListEventTrackers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_event_trackers::ListEventTrackers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEventTrackersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator {
-                            crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator {
+                                crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of a dataset group used to filter the response.</p>
     pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());

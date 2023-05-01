@@ -9,16 +9,17 @@ pub use crate::operation::create_code_repository::_create_code_repository_input:
 /// <p>The repository can be hosted either in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">Amazon Web Services CodeCommit</a> or in any other Git repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCodeRepositoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_code_repository::builders::CreateCodeRepositoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_code_repository::builders::CreateCodeRepositoryInputBuilder,
+}
 impl CreateCodeRepositoryFluentBuilder  {
     /// Creates a new `CreateCodeRepository`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_code_repository::CreateCodeRepository, aws_http::retry::AwsResponseRetryClassifier,>,

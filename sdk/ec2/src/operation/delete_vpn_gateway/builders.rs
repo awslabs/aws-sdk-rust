@@ -8,16 +8,17 @@ pub use crate::operation::delete_vpn_gateway::_delete_vpn_gateway_input::DeleteV
 /// <p>Deletes the specified virtual private gateway. You must first detach the virtual private gateway from the VPC. Note that you don't need to delete the virtual private gateway if you plan to delete and recreate the VPN connection between your VPC and your network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVpnGatewayFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vpn_gateway::builders::DeleteVpnGatewayInputBuilder,
+}
 impl DeleteVpnGatewayFluentBuilder  {
     /// Creates a new `DeleteVpnGateway`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vpn_gateway::DeleteVpnGateway, aws_http::retry::AwsResponseRetryClassifier,>,

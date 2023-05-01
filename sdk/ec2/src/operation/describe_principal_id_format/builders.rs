@@ -10,16 +10,17 @@ pub use crate::operation::describe_principal_id_format::_describe_principal_id_f
 /// <p>The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePrincipalIdFormatFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder,
+}
 impl DescribePrincipalIdFormatFluentBuilder  {
     /// Creates a new `DescribePrincipalIdFormat`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_principal_id_format::DescribePrincipalIdFormat, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribePrincipalIdFormatFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_principal_id_format::paginator::DescribePrincipalIdFormatPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_principal_id_format::paginator::DescribePrincipalIdFormatPaginator {
-                            crate::operation::describe_principal_id_format::paginator::DescribePrincipalIdFormatPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_principal_id_format::paginator::DescribePrincipalIdFormatPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_principal_id_format::paginator::DescribePrincipalIdFormatPaginator {
+                                crate::operation::describe_principal_id_format::paginator::DescribePrincipalIdFormatPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);

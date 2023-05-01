@@ -11,16 +11,17 @@ pub use crate::operation::update_position::_update_position_input::UpdatePositio
 #[deprecated(note = "This operation is no longer supported.")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePositionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_position::builders::UpdatePositionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_position::builders::UpdatePositionInputBuilder,
+}
 impl UpdatePositionFluentBuilder  {
     /// Creates a new `UpdatePosition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_position::UpdatePosition, aws_http::retry::AwsResponseRetryClassifier,>,

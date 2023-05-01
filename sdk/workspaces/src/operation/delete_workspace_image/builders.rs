@@ -8,16 +8,17 @@ pub use crate::operation::delete_workspace_image::_delete_workspace_image_input:
 /// <p>Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image and unshare the image if it is shared with other accounts. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteWorkspaceImageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_workspace_image::builders::DeleteWorkspaceImageInputBuilder,
+}
 impl DeleteWorkspaceImageFluentBuilder  {
     /// Creates a new `DeleteWorkspaceImage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_workspace_image::DeleteWorkspaceImage, aws_http::retry::AwsResponseRetryClassifier,>,

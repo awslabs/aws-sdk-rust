@@ -8,16 +8,17 @@ pub use crate::operation::put_comment_reaction::_put_comment_reaction_input::Put
 /// <p>Adds or updates a reaction to a specified comment for the user whose identity is used to make the request. You can only add or update a reaction for yourself. You cannot add, modify, or delete a reaction for another user.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutCommentReactionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder,
+}
 impl PutCommentReactionFluentBuilder  {
     /// Creates a new `PutCommentReaction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_comment_reaction::PutCommentReaction, aws_http::retry::AwsResponseRetryClassifier,>,

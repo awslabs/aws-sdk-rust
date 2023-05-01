@@ -9,16 +9,17 @@ pub use crate::operation::list_tags::_list_tags_input::ListTagsInputBuilder;
 /// <p>This is a paginated operation, which means that each response might contain only a subset of all the tags. When the response contains only a subset of tags, it includes a <code>NextToken</code> value. Use this value in a subsequent <code>ListTags</code> request to get more tags. When you receive a response with no <code>NextToken</code> (or an empty or null value), that means there are no more tags to get.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_tags::builders::ListTagsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_tags::builders::ListTagsInputBuilder,
+}
 impl ListTagsFluentBuilder  {
     /// Creates a new `ListTags`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_tags::ListTags, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListTagsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_tags::paginator::ListTagsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_tags::paginator::ListTagsPaginator {
-                            crate::operation::list_tags::paginator::ListTagsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_tags::paginator::ListTagsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_tags::paginator::ListTagsPaginator {
+                                crate::operation::list_tags::paginator::ListTagsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());

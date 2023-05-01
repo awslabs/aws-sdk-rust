@@ -9,16 +9,17 @@ pub use crate::operation::stop_hyper_parameter_tuning_job::_stop_hyper_parameter
 /// <p>All model artifacts output from the training jobs are stored in Amazon Simple Storage Service (Amazon S3). All data that the training jobs write to Amazon CloudWatch Logs are still available in CloudWatch. After the tuning job moves to the <code>Stopped</code> state, it releases all reserved resources for the tuning job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopHyperParameterTuningJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_hyper_parameter_tuning_job::builders::StopHyperParameterTuningJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_hyper_parameter_tuning_job::builders::StopHyperParameterTuningJobInputBuilder,
+}
 impl StopHyperParameterTuningJobFluentBuilder  {
     /// Creates a new `StopHyperParameterTuningJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJob, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_app_instance_bot::_create_app_instance_bot_inpu
 /// <p>Creates a bot under an Amazon Chime <code>AppInstance</code>. The request consists of a unique <code>Configuration</code> and <code>Name</code> for that bot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAppInstanceBotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotInputBuilder,
+}
 impl CreateAppInstanceBotFluentBuilder  {
     /// Creates a new `CreateAppInstanceBot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_app_instance_bot::CreateAppInstanceBot, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_pricing_rules_associated_to_pricing_plan::_list_p
 /// <p> Lists the pricing rules that are associated with a pricing plan. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPricingRulesAssociatedToPricingPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanInputBuilder,
+}
 impl ListPricingRulesAssociatedToPricingPlanFluentBuilder  {
     /// Creates a new `ListPricingRulesAssociatedToPricingPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlan, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListPricingRulesAssociatedToPricingPlanFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator {
-                            crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator {
+                                crate::operation::list_pricing_rules_associated_to_pricing_plan::paginator::ListPricingRulesAssociatedToPricingPlanPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The billing period for which the pricing rule associations are to be listed. </p>
     pub fn billing_period(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());

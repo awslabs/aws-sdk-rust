@@ -8,16 +8,17 @@ pub use crate::operation::list_development_schema_arns::_list_development_schema
 /// <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDevelopmentSchemaArnsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_development_schema_arns::builders::ListDevelopmentSchemaArnsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_development_schema_arns::builders::ListDevelopmentSchemaArnsInputBuilder,
+}
 impl ListDevelopmentSchemaArnsFluentBuilder  {
     /// Creates a new `ListDevelopmentSchemaArns`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_development_schema_arns::ListDevelopmentSchemaArns, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDevelopmentSchemaArnsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_development_schema_arns::paginator::ListDevelopmentSchemaArnsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_development_schema_arns::paginator::ListDevelopmentSchemaArnsPaginator {
-                            crate::operation::list_development_schema_arns::paginator::ListDevelopmentSchemaArnsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_development_schema_arns::paginator::ListDevelopmentSchemaArnsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_development_schema_arns::paginator::ListDevelopmentSchemaArnsPaginator {
+                                crate::operation::list_development_schema_arns::paginator::ListDevelopmentSchemaArnsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

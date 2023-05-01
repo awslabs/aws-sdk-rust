@@ -11,16 +11,17 @@ pub use crate::operation::add_application_output::_add_application_output_input:
 /// <p> Any configuration update, including adding a streaming source using this operation, results in a new version of the application. You can use the <code>DescribeApplication</code> operation to find the current application version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddApplicationOutputFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_application_output::builders::AddApplicationOutputInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_application_output::builders::AddApplicationOutputInputBuilder,
+}
 impl AddApplicationOutputFluentBuilder  {
     /// Creates a new `AddApplicationOutput`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_application_output::AddApplicationOutput, aws_http::retry::AwsResponseRetryClassifier,>,

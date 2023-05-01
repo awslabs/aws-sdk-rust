@@ -10,16 +10,17 @@ pub use crate::operation::abort_vault_lock::_abort_vault_lock_input::AbortVaultL
 /// <p>This operation is idempotent. You can successfully invoke this operation multiple times, if the vault lock is in the <code>InProgress</code> state or if there is no policy associated with the vault.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AbortVaultLockFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::abort_vault_lock::builders::AbortVaultLockInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::abort_vault_lock::builders::AbortVaultLockInputBuilder,
+}
 impl AbortVaultLockFluentBuilder  {
     /// Creates a new `AbortVaultLock`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::abort_vault_lock::AbortVaultLock, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::delete_objects_on_cancel::_delete_objects_on_cancel_in
 /// <p> The Glue ETL library function <code>write_dynamic_frame.from_catalog()</code> includes an option to automatically call <code>DeleteObjectsOnCancel</code> before writes. For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/transactions-data-operations.html#rolling-back-writes">Rolling Back Amazon S3 Writes</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteObjectsOnCancelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_objects_on_cancel::builders::DeleteObjectsOnCancelInputBuilder,
+}
 impl DeleteObjectsOnCancelFluentBuilder  {
     /// Creates a new `DeleteObjectsOnCancel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancel, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::put_anomaly_detector::_put_anomaly_detector_input::Put
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch Anomaly Detection</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAnomalyDetectorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorInputBuilder,
+}
 impl PutAnomalyDetectorFluentBuilder  {
     /// Creates a new `PutAnomalyDetector`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_anomaly_detector::PutAnomalyDetector, aws_http::retry::AwsResponseRetryClassifier,>,

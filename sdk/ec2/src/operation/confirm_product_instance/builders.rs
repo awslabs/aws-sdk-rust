@@ -8,16 +8,17 @@ pub use crate::operation::confirm_product_instance::_confirm_product_instance_in
 /// <p>Determines whether a product code is associated with an instance. This action can only be used by the owner of the product code. It is useful when a product code owner must verify whether another user's instance is eligible for support.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConfirmProductInstanceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::confirm_product_instance::builders::ConfirmProductInstanceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::confirm_product_instance::builders::ConfirmProductInstanceInputBuilder,
+}
 impl ConfirmProductInstanceFluentBuilder  {
     /// Creates a new `ConfirmProductInstance`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::confirm_product_instance::ConfirmProductInstance, aws_http::retry::AwsResponseRetryClassifier,>,

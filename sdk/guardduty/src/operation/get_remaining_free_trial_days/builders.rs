@@ -8,16 +8,17 @@ pub use crate::operation::get_remaining_free_trial_days::_get_remaining_free_tri
 /// <p>Provides the number of days left for each data source used in the free trial period.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetRemainingFreeTrialDaysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder,
+}
 impl GetRemainingFreeTrialDaysFluentBuilder  {
     /// Creates a new `GetRemainingFreeTrialDays`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDays, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_inference_experiments::_list_inference_experiment
 /// <p>Returns the list of all inference experiments.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInferenceExperimentsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_inference_experiments::builders::ListInferenceExperimentsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_inference_experiments::builders::ListInferenceExperimentsInputBuilder,
+}
 impl ListInferenceExperimentsFluentBuilder  {
     /// Creates a new `ListInferenceExperiments`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_inference_experiments::ListInferenceExperiments, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListInferenceExperimentsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_inference_experiments::paginator::ListInferenceExperimentsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_inference_experiments::paginator::ListInferenceExperimentsPaginator {
-                            crate::operation::list_inference_experiments::paginator::ListInferenceExperimentsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_inference_experiments::paginator::ListInferenceExperimentsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_inference_experiments::paginator::ListInferenceExperimentsPaginator {
+                                crate::operation::list_inference_experiments::paginator::ListInferenceExperimentsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Selects inference experiments whose names contain this name.</p>
     pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());

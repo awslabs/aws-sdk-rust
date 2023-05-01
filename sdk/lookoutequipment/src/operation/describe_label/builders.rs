@@ -8,16 +8,17 @@ pub use crate::operation::describe_label::_describe_label_input::DescribeLabelIn
 /// <p> Returns the name of the label. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeLabelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_label::builders::DescribeLabelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_label::builders::DescribeLabelInputBuilder,
+}
 impl DescribeLabelFluentBuilder  {
     /// Creates a new `DescribeLabel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_label::DescribeLabel, aws_http::retry::AwsResponseRetryClassifier,>,

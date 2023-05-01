@@ -8,16 +8,17 @@ pub use crate::operation::describe_events::_describe_events_input::DescribeEvent
 /// <p>Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14 days. Events specific to a particular DB instance, DB security group, database snapshot, or DB parameter group can be obtained by providing the name as a parameter. By default, the past hour of events are returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEventsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_events::builders::DescribeEventsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_events::builders::DescribeEventsInputBuilder,
+}
 impl DescribeEventsFluentBuilder  {
     /// Creates a new `DescribeEvents`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_events::DescribeEvents, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeEventsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_events::paginator::DescribeEventsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_events::paginator::DescribeEventsPaginator {
-                            crate::operation::describe_events::paginator::DescribeEventsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_events::paginator::DescribeEventsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_events::paginator::DescribeEventsPaginator {
+                                crate::operation::describe_events::paginator::DescribeEventsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p> 
     /// <p>Constraints:</p> 
     /// <ul> 

@@ -8,16 +8,17 @@ pub use crate::operation::delete_transit_gateway_route::_delete_transit_gateway_
 /// <p>Deletes the specified route from the specified transit gateway route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTransitGatewayRouteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_transit_gateway_route::builders::DeleteTransitGatewayRouteInputBuilder,
+}
 impl DeleteTransitGatewayRouteFluentBuilder  {
     /// Creates a new `DeleteTransitGatewayRoute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRoute, aws_http::retry::AwsResponseRetryClassifier,>,

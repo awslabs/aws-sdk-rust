@@ -8,16 +8,17 @@ pub use crate::operation::stop_app_replication::_stop_app_replication_input::Sto
 /// <p>Stops replicating the specified application by deleting the replication job for each server in the application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopAppReplicationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_app_replication::builders::StopAppReplicationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_app_replication::builders::StopAppReplicationInputBuilder,
+}
 impl StopAppReplicationFluentBuilder  {
     /// Creates a new `StopAppReplication`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_app_replication::StopAppReplication, aws_http::retry::AwsResponseRetryClassifier,>,

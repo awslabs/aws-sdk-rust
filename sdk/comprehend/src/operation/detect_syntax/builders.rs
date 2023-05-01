@@ -8,16 +8,17 @@ pub use crate::operation::detect_syntax::_detect_syntax_input::DetectSyntaxInput
 /// <p>Inspects text for syntax and the part of speech of words in the document. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetectSyntaxFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detect_syntax::builders::DetectSyntaxInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detect_syntax::builders::DetectSyntaxInputBuilder,
+}
 impl DetectSyntaxFluentBuilder  {
     /// Creates a new `DetectSyntax`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detect_syntax::DetectSyntax, aws_http::retry::AwsResponseRetryClassifier,>,

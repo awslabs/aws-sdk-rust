@@ -8,16 +8,17 @@ pub use crate::operation::describe_processing_job::_describe_processing_job_inpu
 /// <p>Returns a description of a processing job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeProcessingJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder,
+}
 impl DescribeProcessingJobFluentBuilder  {
     /// Creates a new `DescribeProcessingJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_processing_job::DescribeProcessingJob, aws_http::retry::AwsResponseRetryClassifier,>,

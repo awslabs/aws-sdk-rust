@@ -9,16 +9,17 @@ pub use crate::operation::describe_collection::_describe_collection_input::Descr
 /// <p>For more information, see Describing a Collection in the Amazon Rekognition Developer Guide.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCollectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_collection::builders::DescribeCollectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_collection::builders::DescribeCollectionInputBuilder,
+}
 impl DescribeCollectionFluentBuilder  {
     /// Creates a new `DescribeCollection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_collection::DescribeCollection, aws_http::retry::AwsResponseRetryClassifier,>,

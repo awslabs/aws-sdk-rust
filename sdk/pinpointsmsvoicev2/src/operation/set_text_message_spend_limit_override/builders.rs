@@ -8,16 +8,17 @@ pub use crate::operation::set_text_message_spend_limit_override::_set_text_messa
 /// <p>Sets an account level monthly spend limit override for sending text messages. The requested spend limit must be less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetTextMessageSpendLimitOverrideFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideInputBuilder,
+}
 impl SetTextMessageSpendLimitOverrideFluentBuilder  {
     /// Creates a new `SetTextMessageSpendLimitOverride`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverride, aws_http::retry::AwsResponseRetryClassifier,>,

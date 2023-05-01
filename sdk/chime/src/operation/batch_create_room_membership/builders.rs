@@ -8,16 +8,17 @@ pub use crate::operation::batch_create_room_membership::_batch_create_room_membe
 /// <p>Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The member role designates whether the member is a chat room administrator or a general chat room member.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchCreateRoomMembershipFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_create_room_membership::builders::BatchCreateRoomMembershipInputBuilder,
+}
 impl BatchCreateRoomMembershipFluentBuilder  {
     /// Creates a new `BatchCreateRoomMembership`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_create_room_membership::BatchCreateRoomMembership, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -14,16 +14,17 @@ pub use crate::operation::get_interpolated_asset_property_values::_get_interpola
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInterpolatedAssetPropertyValuesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_interpolated_asset_property_values::builders::GetInterpolatedAssetPropertyValuesInputBuilder,
+}
 impl GetInterpolatedAssetPropertyValuesFluentBuilder  {
     /// Creates a new `GetInterpolatedAssetPropertyValues`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValues, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -54,11 +55,11 @@ impl GetInterpolatedAssetPropertyValuesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_interpolated_asset_property_values::paginator::GetInterpolatedAssetPropertyValuesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_interpolated_asset_property_values::paginator::GetInterpolatedAssetPropertyValuesPaginator {
-                            crate::operation::get_interpolated_asset_property_values::paginator::GetInterpolatedAssetPropertyValuesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_interpolated_asset_property_values::paginator::GetInterpolatedAssetPropertyValuesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_interpolated_asset_property_values::paginator::GetInterpolatedAssetPropertyValuesPaginator {
+                                crate::operation::get_interpolated_asset_property_values::paginator::GetInterpolatedAssetPropertyValuesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the asset.</p>
     pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.asset_id(input.into());

@@ -11,16 +11,17 @@ pub use crate::operation::create_transit_virtual_interface::_create_transit_virt
 /// <p>A jumbo MTU value must be either 1500 or 8500. No other values will be accepted. Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <code>DescribeConnections</code>. To check whether your virtual interface supports jumbo frames, call <code>DescribeVirtualInterfaces</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTransitVirtualInterfaceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceInputBuilder,
+}
 impl CreateTransitVirtualInterfaceFluentBuilder  {
     /// Creates a new `CreateTransitVirtualInterface`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterface, aws_http::retry::AwsResponseRetryClassifier,>,

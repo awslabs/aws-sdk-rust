@@ -8,16 +8,17 @@ pub use crate::operation::start_monitoring_members::_start_monitoring_members_in
 /// <p>Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of accounts that you stopped monitoring with the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html">StopMonitoringMembers</a> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartMonitoringMembersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_monitoring_members::builders::StartMonitoringMembersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_monitoring_members::builders::StartMonitoringMembersInputBuilder,
+}
 impl StartMonitoringMembersFluentBuilder  {
     /// Creates a new `StartMonitoringMembers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_monitoring_members::StartMonitoringMembers, aws_http::retry::AwsResponseRetryClassifier,>,

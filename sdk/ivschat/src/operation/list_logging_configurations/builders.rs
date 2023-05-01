@@ -8,16 +8,17 @@ pub use crate::operation::list_logging_configurations::_list_logging_configurati
 /// <p>Gets summary information about all your logging configurations in the AWS region where the API request is processed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLoggingConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder,
+}
 impl ListLoggingConfigurationsFluentBuilder  {
     /// Creates a new `ListLoggingConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_logging_configurations::ListLoggingConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListLoggingConfigurationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_logging_configurations::paginator::ListLoggingConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_logging_configurations::paginator::ListLoggingConfigurationsPaginator {
-                            crate::operation::list_logging_configurations::paginator::ListLoggingConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_logging_configurations::paginator::ListLoggingConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_logging_configurations::paginator::ListLoggingConfigurationsPaginator {
+                                crate::operation::list_logging_configurations::paginator::ListLoggingConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The first logging configurations to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

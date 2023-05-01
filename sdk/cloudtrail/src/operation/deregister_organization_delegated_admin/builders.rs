@@ -8,16 +8,17 @@ pub use crate::operation::deregister_organization_delegated_admin::_deregister_o
 /// <p>Removes CloudTrail delegated administrator permissions from a member account in an organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterOrganizationDelegatedAdminFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_organization_delegated_admin::builders::DeregisterOrganizationDelegatedAdminInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_organization_delegated_admin::builders::DeregisterOrganizationDelegatedAdminInputBuilder,
+}
 impl DeregisterOrganizationDelegatedAdminFluentBuilder  {
     /// Creates a new `DeregisterOrganizationDelegatedAdmin`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdmin, aws_http::retry::AwsResponseRetryClassifier,>,

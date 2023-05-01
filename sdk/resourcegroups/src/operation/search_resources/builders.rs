@@ -16,16 +16,17 @@ pub use crate::operation::search_resources::_search_resources_input::SearchResou
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_resources::builders::SearchResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_resources::builders::SearchResourcesInputBuilder,
+}
 impl SearchResourcesFluentBuilder  {
     /// Creates a new `SearchResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_resources::SearchResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -56,11 +57,11 @@ impl SearchResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_resources::paginator::SearchResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_resources::paginator::SearchResourcesPaginator {
-                            crate::operation::search_resources::paginator::SearchResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_resources::paginator::SearchResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_resources::paginator::SearchResourcesPaginator {
+                                crate::operation::search_resources::paginator::SearchResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.inner = self.inner.resource_query(input);

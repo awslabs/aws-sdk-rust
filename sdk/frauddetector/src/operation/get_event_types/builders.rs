@@ -8,16 +8,17 @@ pub use crate::operation::get_event_types::_get_event_types_input::GetEventTypes
 /// <p>Gets all event types or a specific event type if name is provided. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetEventTypesResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetEventTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_event_types::builders::GetEventTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_event_types::builders::GetEventTypesInputBuilder,
+}
 impl GetEventTypesFluentBuilder  {
     /// Creates a new `GetEventTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_event_types::GetEventTypes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetEventTypesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_event_types::paginator::GetEventTypesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_event_types::paginator::GetEventTypesPaginator {
-                            crate::operation::get_event_types::paginator::GetEventTypesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_event_types::paginator::GetEventTypesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_event_types::paginator::GetEventTypesPaginator {
+                                crate::operation::get_event_types::paginator::GetEventTypesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

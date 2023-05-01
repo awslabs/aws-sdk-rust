@@ -8,16 +8,17 @@ pub use crate::operation::list_brokers::_list_brokers_input::ListBrokersInputBui
 /// <p>Returns a list of all brokers.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBrokersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_brokers::builders::ListBrokersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_brokers::builders::ListBrokersInputBuilder,
+}
 impl ListBrokersFluentBuilder  {
     /// Creates a new `ListBrokers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_brokers::ListBrokers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBrokersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_brokers::paginator::ListBrokersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_brokers::paginator::ListBrokersPaginator {
-                            crate::operation::list_brokers::paginator::ListBrokersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_brokers::paginator::ListBrokersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_brokers::paginator::ListBrokersPaginator {
+                                crate::operation::list_brokers::paginator::ListBrokersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

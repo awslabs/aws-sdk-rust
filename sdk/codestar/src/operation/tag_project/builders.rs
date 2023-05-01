@@ -8,16 +8,17 @@ pub use crate::operation::tag_project::_tag_project_input::TagProjectInputBuilde
 /// <p>Adds tags to a project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TagProjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::tag_project::builders::TagProjectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::tag_project::builders::TagProjectInputBuilder,
+}
 impl TagProjectFluentBuilder  {
     /// Creates a new `TagProject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::tag_project::TagProject, aws_http::retry::AwsResponseRetryClassifier,>,

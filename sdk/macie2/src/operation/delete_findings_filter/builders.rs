@@ -8,16 +8,17 @@ pub use crate::operation::delete_findings_filter::_delete_findings_filter_input:
 /// <p>Deletes a findings filter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFindingsFilterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_findings_filter::builders::DeleteFindingsFilterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_findings_filter::builders::DeleteFindingsFilterInputBuilder,
+}
 impl DeleteFindingsFilterFluentBuilder  {
     /// Creates a new `DeleteFindingsFilter`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_findings_filter::DeleteFindingsFilter, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::associate_skill_with_skill_group::_associate_skill_wit
 /// <p>Associates a skill with a skill group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateSkillWithSkillGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_skill_with_skill_group::builders::AssociateSkillWithSkillGroupInputBuilder,
+}
 impl AssociateSkillWithSkillGroupFluentBuilder  {
     /// Creates a new `AssociateSkillWithSkillGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_skill_with_skill_group::AssociateSkillWithSkillGroup, aws_http::retry::AwsResponseRetryClassifier,>,

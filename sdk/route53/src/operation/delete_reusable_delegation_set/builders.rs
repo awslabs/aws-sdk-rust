@@ -11,16 +11,17 @@ pub use crate::operation::delete_reusable_delegation_set::_delete_reusable_deleg
 /// <p>To verify that the reusable delegation set is not associated with any hosted zones, submit a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetReusableDelegationSet.html">GetReusableDelegationSet</a> request and specify the ID of the reusable delegation set that you want to delete.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteReusableDelegationSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_reusable_delegation_set::builders::DeleteReusableDelegationSetInputBuilder,
+}
 impl DeleteReusableDelegationSetFluentBuilder  {
     /// Creates a new `DeleteReusableDelegationSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSet, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -18,16 +18,17 @@ pub use crate::operation::attach_traffic_sources::_attach_traffic_sources_input:
 /// <p>After the operation completes, use the <code>DescribeTrafficSources</code> API to return details about the state of the attachments between traffic sources and your Auto Scaling group. To detach a traffic source from the Auto Scaling group, call the <code>DetachTrafficSources</code> API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AttachTrafficSourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesInputBuilder,
+}
 impl AttachTrafficSourcesFluentBuilder  {
     /// Creates a new `AttachTrafficSources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_traffic_sources::AttachTrafficSources, aws_http::retry::AwsResponseRetryClassifier,>,

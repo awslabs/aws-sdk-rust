@@ -8,16 +8,17 @@ pub use crate::operation::describe_dry_run_progress::_describe_dry_run_progress_
 /// <p>Describes the progress of a pre-update dry run analysis on an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#dryrun">Determining whether a change will cause a blue/green deployment</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDryRunProgressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_dry_run_progress::builders::DescribeDryRunProgressInputBuilder,
+}
 impl DescribeDryRunProgressFluentBuilder  {
     /// Creates a new `DescribeDryRunProgress`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_dry_run_progress::DescribeDryRunProgress, aws_http::retry::AwsResponseRetryClassifier,>,

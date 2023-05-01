@@ -8,16 +8,17 @@ pub use crate::operation::describe_valid_db_instance_modifications::_describe_va
 /// <p>You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications you can make to your DB instance. You can use this information when you call <code>ModifyDBInstance</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeValidDBInstanceModificationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_valid_db_instance_modifications::builders::DescribeValidDbInstanceModificationsInputBuilder,
+}
 impl DescribeValidDBInstanceModificationsFluentBuilder  {
     /// Creates a new `DescribeValidDBInstanceModifications`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_valid_db_instance_modifications::DescribeValidDBInstanceModifications, aws_http::retry::AwsResponseRetryClassifier,>,

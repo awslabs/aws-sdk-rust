@@ -9,16 +9,17 @@ pub use crate::operation::create_service_linked_role::_create_service_linked_rol
 /// <p>To attach a policy to this service-linked role, you must make the request using the Amazon Web Services service that depends on this role.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateServiceLinkedRoleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_service_linked_role::builders::CreateServiceLinkedRoleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_service_linked_role::builders::CreateServiceLinkedRoleInputBuilder,
+}
 impl CreateServiceLinkedRoleFluentBuilder  {
     /// Creates a new `CreateServiceLinkedRole`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_service_linked_role::CreateServiceLinkedRole, aws_http::retry::AwsResponseRetryClassifier,>,

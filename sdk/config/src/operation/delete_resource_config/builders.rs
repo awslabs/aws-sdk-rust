@@ -8,16 +8,17 @@ pub use crate::operation::delete_resource_config::_delete_resource_config_input:
 /// <p>Records the configuration state for a custom resource that has been deleted. This API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve the ConfigurationItems recorded for this resource in your Config History. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteResourceConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_resource_config::builders::DeleteResourceConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_resource_config::builders::DeleteResourceConfigInputBuilder,
+}
 impl DeleteResourceConfigFluentBuilder  {
     /// Creates a new `DeleteResourceConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_resource_config::DeleteResourceConfig, aws_http::retry::AwsResponseRetryClassifier,>,

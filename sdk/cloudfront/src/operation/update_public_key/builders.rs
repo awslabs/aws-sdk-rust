@@ -8,16 +8,17 @@ pub use crate::operation::update_public_key::_update_public_key_input::UpdatePub
 /// <p>Update public key information. Note that the only value you can change is the comment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePublicKeyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_public_key::builders::UpdatePublicKeyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_public_key::builders::UpdatePublicKeyInputBuilder,
+}
 impl UpdatePublicKeyFluentBuilder  {
     /// Creates a new `UpdatePublicKey`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_public_key::UpdatePublicKey, aws_http::retry::AwsResponseRetryClassifier,>,

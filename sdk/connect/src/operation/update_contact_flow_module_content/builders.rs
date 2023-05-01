@@ -8,16 +8,17 @@ pub use crate::operation::update_contact_flow_module_content::_update_contact_fl
 /// <p>Updates specified flow module for the specified Amazon Connect instance. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContactFlowModuleContentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentInputBuilder,
+}
 impl UpdateContactFlowModuleContentFluentBuilder  {
     /// Creates a new `UpdateContactFlowModuleContent`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContent, aws_http::retry::AwsResponseRetryClassifier,>,

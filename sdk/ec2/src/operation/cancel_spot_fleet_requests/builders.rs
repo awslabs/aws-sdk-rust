@@ -10,16 +10,17 @@ pub use crate::operation::cancel_spot_fleet_requests::_cancel_spot_fleet_request
 /// <p>You must also specify whether a canceled Spot Fleet request should terminate its instances. If you choose to terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you terminate them manually.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelSpotFleetRequestsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_spot_fleet_requests::builders::CancelSpotFleetRequestsInputBuilder,
+}
 impl CancelSpotFleetRequestsFluentBuilder  {
     /// Creates a new `CancelSpotFleetRequests`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_spot_fleet_requests::CancelSpotFleetRequests, aws_http::retry::AwsResponseRetryClassifier,>,

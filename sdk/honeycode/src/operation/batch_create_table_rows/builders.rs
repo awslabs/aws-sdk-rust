@@ -9,16 +9,17 @@ pub use crate::operation::batch_create_table_rows::_batch_create_table_rows_inpu
 /// <p> If a column is not explicitly set in a specific row, then the column level formula specified in the table will be applied to the new row. If there is no column level formula but the last row of the table has a formula, then that formula will be copied down to the new row. If there is no column level formula and no formula in the last row of the table, then that column will be left blank for the new rows. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchCreateTableRowsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_create_table_rows::builders::BatchCreateTableRowsInputBuilder,
+}
 impl BatchCreateTableRowsFluentBuilder  {
     /// Creates a new `BatchCreateTableRows`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_create_table_rows::BatchCreateTableRows, aws_http::retry::AwsResponseRetryClassifier,>,

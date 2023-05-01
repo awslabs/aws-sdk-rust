@@ -8,16 +8,17 @@ pub use crate::operation::list_resources::_list_resources_input::ListResourcesIn
 /// <p>Lists the resources that you added to a resource share or the resources that are shared with you.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_resources::builders::ListResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_resources::builders::ListResourcesInputBuilder,
+}
 impl ListResourcesFluentBuilder  {
     /// Creates a new `ListResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_resources::ListResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_resources::paginator::ListResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_resources::paginator::ListResourcesPaginator {
-                            crate::operation::list_resources::paginator::ListResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_resources::paginator::ListResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_resources::paginator::ListResourcesPaginator {
+                                crate::operation::list_resources::paginator::ListResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies that you want to list only the resource shares that match the following:</p> 
     /// <ul> 
     /// <li> <p> <b> <code>SELF</code> </b> – resources that your account shares with other accounts</p> </li> 

@@ -8,16 +8,17 @@ pub use crate::operation::batch_disassociate_resource::_batch_disassociate_resou
 /// <p>Disassociates resources from a Firewall Manager resource set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchDisassociateResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_disassociate_resource::builders::BatchDisassociateResourceInputBuilder,
+}
 impl BatchDisassociateResourceFluentBuilder  {
     /// Creates a new `BatchDisassociateResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_disassociate_resource::BatchDisassociateResource, aws_http::retry::AwsResponseRetryClassifier,>,

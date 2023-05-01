@@ -8,16 +8,17 @@ pub use crate::operation::get_voice_channel::_get_voice_channel_input::GetVoiceC
 /// <p>Retrieves information about the status and settings of the voice channel for an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetVoiceChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_voice_channel::builders::GetVoiceChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_voice_channel::builders::GetVoiceChannelInputBuilder,
+}
 impl GetVoiceChannelFluentBuilder  {
     /// Creates a new `GetVoiceChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_voice_channel::GetVoiceChannel, aws_http::retry::AwsResponseRetryClassifier,>,

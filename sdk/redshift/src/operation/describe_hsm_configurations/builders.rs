@@ -10,16 +10,17 @@ pub use crate::operation::describe_hsm_configurations::_describe_hsm_configurati
 /// <p>If both tag keys and values are omitted from the request, HSM connections are returned regardless of whether they have tag keys or values associated with them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeHsmConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_hsm_configurations::builders::DescribeHsmConfigurationsInputBuilder,
+}
 impl DescribeHsmConfigurationsFluentBuilder  {
     /// Creates a new `DescribeHsmConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_hsm_configurations::DescribeHsmConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeHsmConfigurationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_hsm_configurations::paginator::DescribeHsmConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_hsm_configurations::paginator::DescribeHsmConfigurationsPaginator {
-                            crate::operation::describe_hsm_configurations::paginator::DescribeHsmConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_hsm_configurations::paginator::DescribeHsmConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_hsm_configurations::paginator::DescribeHsmConfigurationsPaginator {
+                                crate::operation::describe_hsm_configurations::paginator::DescribeHsmConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no identifier is specified, information is returned for all HSM configurations owned by your Amazon Web Services account.</p>
     pub fn hsm_configuration_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hsm_configuration_identifier(input.into());

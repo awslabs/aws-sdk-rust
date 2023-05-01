@@ -10,16 +10,17 @@ pub use crate::operation::delete_place_index::_delete_place_index_input::DeleteP
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePlaceIndexFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_place_index::builders::DeletePlaceIndexInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_place_index::builders::DeletePlaceIndexInputBuilder,
+}
 impl DeletePlaceIndexFluentBuilder  {
     /// Creates a new `DeletePlaceIndex`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_place_index::DeletePlaceIndex, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::associate_role_to_group::_associate_role_to_group_inpu
 /// Associates a role with a group. Your Greengrass core will use the role to access AWS cloud services. The role's permissions should allow Greengrass core Lambda functions to perform actions against the cloud.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateRoleToGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::associate_role_to_group::builders::AssociateRoleToGroupInputBuilder,
+}
 impl AssociateRoleToGroupFluentBuilder  {
     /// Creates a new `AssociateRoleToGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::associate_role_to_group::AssociateRoleToGroup, aws_http::retry::AwsResponseRetryClassifier,>,

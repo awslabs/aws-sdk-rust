@@ -8,16 +8,17 @@ pub use crate::operation::describe_aggregation_authorizations::_describe_aggrega
 /// <p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAggregationAuthorizationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_aggregation_authorizations::builders::DescribeAggregationAuthorizationsInputBuilder,
+}
 impl DescribeAggregationAuthorizationsFluentBuilder  {
     /// Creates a new `DescribeAggregationAuthorizations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_aggregation_authorizations::DescribeAggregationAuthorizations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeAggregationAuthorizationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_aggregation_authorizations::paginator::DescribeAggregationAuthorizationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_aggregation_authorizations::paginator::DescribeAggregationAuthorizationsPaginator {
-                            crate::operation::describe_aggregation_authorizations::paginator::DescribeAggregationAuthorizationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_aggregation_authorizations::paginator::DescribeAggregationAuthorizationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_aggregation_authorizations::paginator::DescribeAggregationAuthorizationsPaginator {
+                                crate::operation::describe_aggregation_authorizations::paginator::DescribeAggregationAuthorizationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of AggregationAuthorizations returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);

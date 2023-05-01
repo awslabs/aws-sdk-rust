@@ -8,16 +8,17 @@ pub use crate::operation::create_cidr_collection::_create_cidr_collection_input:
 /// <p>Creates a CIDR collection in the current Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCidrCollectionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_cidr_collection::builders::CreateCidrCollectionInputBuilder,
+}
 impl CreateCidrCollectionFluentBuilder  {
     /// Creates a new `CreateCidrCollection`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_cidr_collection::CreateCidrCollection, aws_http::retry::AwsResponseRetryClassifier,>,

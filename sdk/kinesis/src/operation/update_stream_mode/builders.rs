@@ -8,16 +8,17 @@ pub use crate::operation::update_stream_mode::_update_stream_mode_input::UpdateS
 /// <p> Updates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data stream. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateStreamModeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_stream_mode::builders::UpdateStreamModeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_stream_mode::builders::UpdateStreamModeInputBuilder,
+}
 impl UpdateStreamModeFluentBuilder  {
     /// Creates a new `UpdateStreamMode`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_stream_mode::UpdateStreamMode, aws_http::retry::AwsResponseRetryClassifier,>,

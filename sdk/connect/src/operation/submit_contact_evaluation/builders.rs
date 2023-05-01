@@ -9,16 +9,17 @@ pub use crate::operation::submit_contact_evaluation::_submit_contact_evaluation_
 /// <p>If a contact evaluation is already in submitted state, this operation will trigger a resubmission.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SubmitContactEvaluationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationInputBuilder,
+}
 impl SubmitContactEvaluationFluentBuilder  {
     /// Creates a new `SubmitContactEvaluation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::submit_contact_evaluation::SubmitContactEvaluation, aws_http::retry::AwsResponseRetryClassifier,>,

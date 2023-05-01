@@ -8,16 +8,17 @@ pub use crate::operation::list_layer_versions::_list_layer_versions_input::ListL
 /// <p>Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only versions that indicate that they're compatible with that runtime. Specify a compatible architecture to include only layer versions that are compatible with that architecture.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLayerVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_layer_versions::builders::ListLayerVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_layer_versions::builders::ListLayerVersionsInputBuilder,
+}
 impl ListLayerVersionsFluentBuilder  {
     /// Creates a new `ListLayerVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_layer_versions::ListLayerVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListLayerVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator {
-                            crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator {
+                                crate::operation::list_layer_versions::paginator::ListLayerVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>A runtime identifier. For example, <code>go1.x</code>.</p>
     pub fn compatible_runtime(mut self, input: crate::types::Runtime) -> Self {
         self.inner = self.inner.compatible_runtime(input);

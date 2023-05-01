@@ -11,16 +11,17 @@ pub use crate::operation::add_working_storage::_add_working_storage_input::AddWo
 /// <p>In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add working storage, and one or more disk IDs that you want to configure as working storage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddWorkingStorageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_working_storage::builders::AddWorkingStorageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_working_storage::builders::AddWorkingStorageInputBuilder,
+}
 impl AddWorkingStorageFluentBuilder  {
     /// Creates a new `AddWorkingStorage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_working_storage::AddWorkingStorage, aws_http::retry::AwsResponseRetryClassifier,>,

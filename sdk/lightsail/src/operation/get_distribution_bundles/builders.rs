@@ -9,16 +9,17 @@ pub use crate::operation::get_distribution_bundles::_get_distribution_bundles_in
 /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of your distribution.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDistributionBundlesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_distribution_bundles::builders::GetDistributionBundlesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_distribution_bundles::builders::GetDistributionBundlesInputBuilder,
+}
 impl GetDistributionBundlesFluentBuilder  {
     /// Creates a new `GetDistributionBundles`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_distribution_bundles::GetDistributionBundles, aws_http::retry::AwsResponseRetryClassifier,>,

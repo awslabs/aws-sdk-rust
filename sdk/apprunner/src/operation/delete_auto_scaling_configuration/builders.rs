@@ -8,16 +8,17 @@ pub use crate::operation::delete_auto_scaling_configuration::_delete_auto_scalin
 /// <p>Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest active revision. You can't delete a configuration that's used by one or more App Runner services.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAutoScalingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_auto_scaling_configuration::builders::DeleteAutoScalingConfigurationInputBuilder,
+}
 impl DeleteAutoScalingConfigurationFluentBuilder  {
     /// Creates a new `DeleteAutoScalingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

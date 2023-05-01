@@ -8,16 +8,17 @@ pub use crate::operation::update_watchlist::_update_watchlist_input::UpdateWatch
 /// <p>Updates the specified watchlist. Every domain has a default watchlist which cannot be updated. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWatchlistFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_watchlist::builders::UpdateWatchlistInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_watchlist::builders::UpdateWatchlistInputBuilder,
+}
 impl UpdateWatchlistFluentBuilder  {
     /// Creates a new `UpdateWatchlist`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_watchlist::UpdateWatchlist, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_recommender::_delete_recommender_input::DeleteR
 /// <p>Deactivates and removes a recommender. A deleted recommender can no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRecommenderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_recommender::builders::DeleteRecommenderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_recommender::builders::DeleteRecommenderInputBuilder,
+}
 impl DeleteRecommenderFluentBuilder  {
     /// Creates a new `DeleteRecommender`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_recommender::DeleteRecommender, aws_http::retry::AwsResponseRetryClassifier,>,

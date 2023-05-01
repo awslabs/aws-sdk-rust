@@ -9,16 +9,17 @@ pub use crate::operation::update_assessment_target::_update_assessment_target_in
 /// <p>If resourceGroupArn is not specified, all EC2 instances in the current AWS account and region are included in the assessment target.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAssessmentTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_assessment_target::builders::UpdateAssessmentTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_assessment_target::builders::UpdateAssessmentTargetInputBuilder,
+}
 impl UpdateAssessmentTargetFluentBuilder  {
     /// Creates a new `UpdateAssessmentTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_assessment_target::UpdateAssessmentTarget, aws_http::retry::AwsResponseRetryClassifier,>,

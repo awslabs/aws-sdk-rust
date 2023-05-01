@@ -8,16 +8,17 @@ pub use crate::operation::start_db_cluster::_start_db_cluster_input::StartDbClus
 /// <p>Starts an Amazon Neptune DB cluster that was stopped using the Amazon console, the Amazon CLI stop-db-cluster command, or the StopDBCluster API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDBClusterFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_db_cluster::builders::StartDbClusterInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_db_cluster::builders::StartDbClusterInputBuilder,
+}
 impl StartDBClusterFluentBuilder  {
     /// Creates a new `StartDBCluster`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_db_cluster::StartDBCluster, aws_http::retry::AwsResponseRetryClassifier,>,

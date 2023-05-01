@@ -8,16 +8,17 @@ pub use crate::operation::list_harvest_jobs::_list_harvest_jobs_input::ListHarve
 /// Returns a collection of HarvestJob records.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListHarvestJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_harvest_jobs::builders::ListHarvestJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_harvest_jobs::builders::ListHarvestJobsInputBuilder,
+}
 impl ListHarvestJobsFluentBuilder  {
     /// Creates a new `ListHarvestJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_harvest_jobs::ListHarvestJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListHarvestJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator {
-                            crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator {
+                                crate::operation::list_harvest_jobs::paginator::ListHarvestJobsPaginator::new(self.handle, self.inner)
+                            }
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
     pub fn include_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.include_channel_id(input.into());

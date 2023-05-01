@@ -8,16 +8,17 @@ pub use crate::operation::register_event_topic::_register_event_topic_input::Reg
 /// <p>Associates a directory with an Amazon SNS topic. This establishes the directory as a publisher to the specified Amazon SNS topic. You can then receive email or text (SMS) messages when the status of your directory changes. You get notified if your directory goes from an Active status to an Impaired or Inoperable status. You also receive a notification when the directory returns to an Active status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterEventTopicFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_event_topic::builders::RegisterEventTopicInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_event_topic::builders::RegisterEventTopicInputBuilder,
+}
 impl RegisterEventTopicFluentBuilder  {
     /// Creates a new `RegisterEventTopic`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_event_topic::RegisterEventTopic, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::accept_vpc_endpoint_connections::_accept_vpc_endpoint_
 /// <p>Accepts connection requests to your VPC endpoint service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptVpcEndpointConnectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_vpc_endpoint_connections::builders::AcceptVpcEndpointConnectionsInputBuilder,
+}
 impl AcceptVpcEndpointConnectionsFluentBuilder  {
     /// Creates a new `AcceptVpcEndpointConnections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnections, aws_http::retry::AwsResponseRetryClassifier,>,

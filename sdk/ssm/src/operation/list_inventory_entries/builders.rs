@@ -8,16 +8,17 @@ pub use crate::operation::list_inventory_entries::_list_inventory_entries_input:
 /// <p>A list of inventory items returned by the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInventoryEntriesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_inventory_entries::builders::ListInventoryEntriesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_inventory_entries::builders::ListInventoryEntriesInputBuilder,
+}
 impl ListInventoryEntriesFluentBuilder  {
     /// Creates a new `ListInventoryEntries`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_inventory_entries::ListInventoryEntries, aws_http::retry::AwsResponseRetryClassifier,>,

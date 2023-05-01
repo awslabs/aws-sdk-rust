@@ -8,16 +8,17 @@ pub use crate::operation::update_mobile_device_access_rule::_update_mobile_devic
 /// <p>Updates a mobile device access rule for the specified WorkMail organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMobileDeviceAccessRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_mobile_device_access_rule::builders::UpdateMobileDeviceAccessRuleInputBuilder,
+}
 impl UpdateMobileDeviceAccessRuleFluentBuilder  {
     /// Creates a new `UpdateMobileDeviceAccessRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRule, aws_http::retry::AwsResponseRetryClassifier,>,

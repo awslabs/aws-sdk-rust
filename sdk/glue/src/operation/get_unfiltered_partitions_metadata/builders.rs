@@ -9,16 +9,17 @@ pub use crate::operation::get_unfiltered_partitions_metadata::_get_unfiltered_pa
 /// <p>For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartitions</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUnfilteredPartitionsMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder,
+}
 impl GetUnfilteredPartitionsMetadataFluentBuilder  {
     /// Creates a new `GetUnfilteredPartitionsMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadata, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator {
-                            crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator {
+                                crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());

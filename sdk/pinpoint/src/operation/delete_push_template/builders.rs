@@ -8,16 +8,17 @@ pub use crate::operation::delete_push_template::_delete_push_template_input::Del
 /// <p>Deletes a message template for messages that were sent through a push notification channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePushTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_push_template::builders::DeletePushTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_push_template::builders::DeletePushTemplateInputBuilder,
+}
 impl DeletePushTemplateFluentBuilder  {
     /// Creates a new `DeletePushTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_push_template::DeletePushTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

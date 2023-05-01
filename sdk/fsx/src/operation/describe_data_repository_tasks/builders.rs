@@ -9,16 +9,17 @@ pub use crate::operation::describe_data_repository_tasks::_describe_data_reposit
 /// <p>When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code> parameter to limit the number of tasks returned in a response. If more tasks remain, a <code>NextToken</code> value is returned in the response. In this case, send a later request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code> from the last response.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDataRepositoryTasksFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_data_repository_tasks::builders::DescribeDataRepositoryTasksInputBuilder,
+}
 impl DescribeDataRepositoryTasksFluentBuilder  {
     /// Creates a new `DescribeDataRepositoryTasks`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasks, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl DescribeDataRepositoryTasksFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_data_repository_tasks::paginator::DescribeDataRepositoryTasksPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_data_repository_tasks::paginator::DescribeDataRepositoryTasksPaginator {
-                            crate::operation::describe_data_repository_tasks::paginator::DescribeDataRepositoryTasksPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_data_repository_tasks::paginator::DescribeDataRepositoryTasksPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_data_repository_tasks::paginator::DescribeDataRepositoryTasksPaginator {
+                                crate::operation::describe_data_repository_tasks::paginator::DescribeDataRepositoryTasksPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `TaskIds`.
     ///
     /// To override the contents of this collection use [`set_task_ids`](Self::set_task_ids).

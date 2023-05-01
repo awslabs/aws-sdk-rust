@@ -8,16 +8,17 @@ pub use crate::operation::get_permission::_get_permission_input::GetPermissionIn
 /// <p>Retrieves the contents of a managed permission in JSON format.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPermissionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_permission::builders::GetPermissionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_permission::builders::GetPermissionInputBuilder,
+}
 impl GetPermissionFluentBuilder  {
     /// Creates a new `GetPermission`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_permission::GetPermission, aws_http::retry::AwsResponseRetryClassifier,>,

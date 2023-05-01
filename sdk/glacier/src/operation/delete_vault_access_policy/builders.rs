@@ -9,16 +9,17 @@ pub use crate::operation::delete_vault_access_policy::_delete_vault_access_polic
 /// <p>This operation is idempotent. You can invoke delete multiple times, even if there is no policy associated with the vault. For more information about vault access policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVaultAccessPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_vault_access_policy::builders::DeleteVaultAccessPolicyInputBuilder,
+}
 impl DeleteVaultAccessPolicyFluentBuilder  {
     /// Creates a new `DeleteVaultAccessPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

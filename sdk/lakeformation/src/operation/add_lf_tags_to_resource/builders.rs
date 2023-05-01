@@ -8,16 +8,17 @@ pub use crate::operation::add_lf_tags_to_resource::_add_lf_tags_to_resource_inpu
 /// <p>Attaches one or more LF-tags to an existing resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddLFTagsToResourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder,
+}
 impl AddLFTagsToResourceFluentBuilder  {
     /// Creates a new `AddLFTagsToResource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_lf_tags_to_resource::AddLFTagsToResource, aws_http::retry::AwsResponseRetryClassifier,>,

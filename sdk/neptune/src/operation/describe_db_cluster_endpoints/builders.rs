@@ -10,16 +10,17 @@ pub use crate::operation::describe_db_cluster_endpoints::_describe_db_cluster_en
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBClusterEndpointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder,
+}
 impl DescribeDBClusterEndpointsFluentBuilder  {
     /// Creates a new `DescribeDBClusterEndpoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_cluster_endpoints::DescribeDBClusterEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeDBClusterEndpointsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_endpoints::paginator::DescribeDbClusterEndpointsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_cluster_endpoints::paginator::DescribeDbClusterEndpointsPaginator {
-                            crate::operation::describe_db_cluster_endpoints::paginator::DescribeDbClusterEndpointsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_cluster_endpoints::paginator::DescribeDbClusterEndpointsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_cluster_endpoints::paginator::DescribeDbClusterEndpointsPaginator {
+                                crate::operation::describe_db_cluster_endpoints::paginator::DescribeDbClusterEndpointsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());

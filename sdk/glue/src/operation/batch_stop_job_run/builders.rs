@@ -8,16 +8,17 @@ pub use crate::operation::batch_stop_job_run::_batch_stop_job_run_input::BatchSt
 /// <p>Stops one or more job runs for a specified job definition.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchStopJobRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_stop_job_run::builders::BatchStopJobRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_stop_job_run::builders::BatchStopJobRunInputBuilder,
+}
 impl BatchStopJobRunFluentBuilder  {
     /// Creates a new `BatchStopJobRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_stop_job_run::BatchStopJobRun, aws_http::retry::AwsResponseRetryClassifier,>,

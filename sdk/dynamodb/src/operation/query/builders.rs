@@ -18,16 +18,17 @@ pub use crate::operation::query::_query_input::QueryInputBuilder;
 /// <p>You can query a table, a local secondary index, or a global secondary index. For a query on a table or on a local secondary index, you can set the <code>ConsistentRead</code> parameter to <code>true</code> and obtain a strongly consistent result. Global secondary indexes support eventually consistent reads only, so do not specify <code>ConsistentRead</code> when querying a global secondary index.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct QueryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::query::builders::QueryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::query::builders::QueryInputBuilder,
+}
 impl QueryFluentBuilder  {
     /// Creates a new `Query`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::query::Query, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -58,11 +59,11 @@ impl QueryFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::query::paginator::QueryPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::query::paginator::QueryPaginator {
-                            crate::operation::query::paginator::QueryPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::query::paginator::QueryPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::query::paginator::QueryPaginator {
+                                crate::operation::query::paginator::QueryPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the table containing the requested items.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());

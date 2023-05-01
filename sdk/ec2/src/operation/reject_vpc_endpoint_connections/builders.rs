@@ -8,16 +8,17 @@ pub use crate::operation::reject_vpc_endpoint_connections::_reject_vpc_endpoint_
 /// <p>Rejects VPC endpoint connection requests to your VPC endpoint service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RejectVpcEndpointConnectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsInputBuilder,
+}
 impl RejectVpcEndpointConnectionsFluentBuilder  {
     /// Creates a new `RejectVpcEndpointConnections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnections, aws_http::retry::AwsResponseRetryClassifier,>,

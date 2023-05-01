@@ -8,16 +8,17 @@ pub use crate::operation::describe_profiling_group::_describe_profiling_group_in
 /// <p> Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeProfilingGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_profiling_group::builders::DescribeProfilingGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_profiling_group::builders::DescribeProfilingGroupInputBuilder,
+}
 impl DescribeProfilingGroupFluentBuilder  {
     /// Creates a new `DescribeProfilingGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_profiling_group::DescribeProfilingGroup, aws_http::retry::AwsResponseRetryClassifier,>,

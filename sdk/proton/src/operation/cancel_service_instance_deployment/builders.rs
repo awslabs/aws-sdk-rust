@@ -14,16 +14,17 @@ pub use crate::operation::cancel_service_instance_deployment::_cancel_service_in
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelServiceInstanceDeploymentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_service_instance_deployment::builders::CancelServiceInstanceDeploymentInputBuilder,
+}
 impl CancelServiceInstanceDeploymentFluentBuilder  {
     /// Creates a new `CancelServiceInstanceDeployment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeployment, aws_http::retry::AwsResponseRetryClassifier,>,

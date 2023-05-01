@@ -11,16 +11,17 @@ pub use crate::operation::stop_sentiment_detection_job::_stop_sentiment_detectio
 /// <p>When a job is stopped, any documents already processed are written to the output location.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopSentimentDetectionJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobInputBuilder,
+}
 impl StopSentimentDetectionJobFluentBuilder  {
     /// Creates a new `StopSentimentDetectionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJob, aws_http::retry::AwsResponseRetryClassifier,>,

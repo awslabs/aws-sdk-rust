@@ -8,16 +8,17 @@ pub use crate::operation::list_builds_for_project::_list_builds_for_project_inpu
 /// <p>Gets a list of build identifiers for the specified build project, with each build identifier representing a single build.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBuildsForProjectFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder,
+}
 impl ListBuildsForProjectFluentBuilder  {
     /// Creates a new `ListBuildsForProject`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_builds_for_project::ListBuildsForProject, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBuildsForProjectFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator {
-                            crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator {
+                                crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the CodeBuild project.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());

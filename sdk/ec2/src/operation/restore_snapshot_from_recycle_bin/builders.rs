@@ -8,16 +8,17 @@ pub use crate::operation::restore_snapshot_from_recycle_bin::_restore_snapshot_f
 /// <p>Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreSnapshotFromRecycleBinFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::restore_snapshot_from_recycle_bin::builders::RestoreSnapshotFromRecycleBinInputBuilder,
+}
 impl RestoreSnapshotFromRecycleBinFluentBuilder  {
     /// Creates a new `RestoreSnapshotFromRecycleBin`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBin, aws_http::retry::AwsResponseRetryClassifier,>,

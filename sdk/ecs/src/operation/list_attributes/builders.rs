@@ -8,16 +8,17 @@ pub use crate::operation::list_attributes::_list_attributes_input::ListAttribute
 /// <p>Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a target type and cluster, <code>ListAttributes</code> returns a list of attribute objects, one for each attribute on each resource. You can filter the list of results to a single attribute name to only return results that have that name. You can also filter the results by attribute name and value. You can do this, for example, to see which container instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>). </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAttributesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_attributes::builders::ListAttributesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_attributes::builders::ListAttributesInputBuilder,
+}
 impl ListAttributesFluentBuilder  {
     /// Creates a new `ListAttributes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_attributes::ListAttributes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAttributesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_attributes::paginator::ListAttributesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_attributes::paginator::ListAttributesPaginator {
-                            crate::operation::list_attributes::paginator::ListAttributesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_attributes::paginator::ListAttributesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_attributes::paginator::ListAttributesPaginator {
+                                crate::operation::list_attributes::paginator::ListAttributesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to list attributes. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::delete_voice_profile::_delete_voice_profile_input::Del
 /// <p>Deletes a voice profile, including its voice print and enrollment data. WARNING: This action is not reversible.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVoiceProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_voice_profile::builders::DeleteVoiceProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_voice_profile::builders::DeleteVoiceProfileInputBuilder,
+}
 impl DeleteVoiceProfileFluentBuilder  {
     /// Creates a new `DeleteVoiceProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_voice_profile::DeleteVoiceProfile, aws_http::retry::AwsResponseRetryClassifier,>,

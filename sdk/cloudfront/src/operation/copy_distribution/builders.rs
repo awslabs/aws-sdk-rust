@@ -9,16 +9,17 @@ pub use crate::operation::copy_distribution::_copy_distribution_input::CopyDistr
 /// <p>After you create a staging distribution, you can use <code>UpdateDistribution</code> to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally move traffic to the staging distribution.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CopyDistributionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::copy_distribution::builders::CopyDistributionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::copy_distribution::builders::CopyDistributionInputBuilder,
+}
 impl CopyDistributionFluentBuilder  {
     /// Creates a new `CopyDistribution`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::copy_distribution::CopyDistribution, aws_http::retry::AwsResponseRetryClassifier,>,

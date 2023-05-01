@@ -8,16 +8,17 @@ pub use crate::operation::refresh_schemas::_refresh_schemas_input::RefreshSchema
 /// <p>Populates the schema for the specified endpoint. This is an asynchronous operation and can take several minutes. You can check the status of this operation by calling the DescribeRefreshSchemasStatus operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RefreshSchemasFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::refresh_schemas::builders::RefreshSchemasInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::refresh_schemas::builders::RefreshSchemasInputBuilder,
+}
 impl RefreshSchemasFluentBuilder  {
     /// Creates a new `RefreshSchemas`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::refresh_schemas::RefreshSchemas, aws_http::retry::AwsResponseRetryClassifier,>,

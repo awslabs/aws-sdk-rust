@@ -9,16 +9,17 @@ pub use crate::operation::select_resource_config::_select_resource_config_input:
 /// <p>For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <b>Query Components</b> </a> section in the <i>Config Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SelectResourceConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::select_resource_config::builders::SelectResourceConfigInputBuilder,
+}
 impl SelectResourceConfigFluentBuilder  {
     /// Creates a new `SelectResourceConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::select_resource_config::SelectResourceConfig, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl SelectResourceConfigFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::select_resource_config::paginator::SelectResourceConfigPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::select_resource_config::paginator::SelectResourceConfigPaginator {
-                            crate::operation::select_resource_config::paginator::SelectResourceConfigPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::select_resource_config::paginator::SelectResourceConfigPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::select_resource_config::paginator::SelectResourceConfigPaginator {
+                                crate::operation::select_resource_config::paginator::SelectResourceConfigPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The SQL query <code>SELECT</code> command.</p>
     pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.expression(input.into());

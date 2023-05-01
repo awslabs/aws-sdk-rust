@@ -8,16 +8,17 @@ pub use crate::operation::modify_launch_template::_modify_launch_template_input:
 /// <p>Modifies a launch template. You can specify which version of the launch template to set as the default version. When launching an instance, the default version applies when a launch template version is not specified.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyLaunchTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_launch_template::builders::ModifyLaunchTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_launch_template::builders::ModifyLaunchTemplateInputBuilder,
+}
 impl ModifyLaunchTemplateFluentBuilder  {
     /// Creates a new `ModifyLaunchTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_launch_template::ModifyLaunchTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

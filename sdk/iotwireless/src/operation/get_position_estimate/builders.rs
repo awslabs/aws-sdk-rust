@@ -8,16 +8,17 @@ pub use crate::operation::get_position_estimate::_get_position_estimate_input::G
 /// <p>Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using solvers that are provided by third-party vendors.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPositionEstimateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder,
+}
 impl GetPositionEstimateFluentBuilder  {
     /// Creates a new `GetPositionEstimate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_position_estimate::GetPositionEstimate, aws_http::retry::AwsResponseRetryClassifier,>,

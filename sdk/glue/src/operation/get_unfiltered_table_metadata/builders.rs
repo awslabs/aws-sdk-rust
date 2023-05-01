@@ -9,16 +9,17 @@ pub use crate::operation::get_unfiltered_table_metadata::_get_unfiltered_table_m
 /// <p>For IAM authorization, the public IAM action associated with this API is <code>glue:GetTable</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUnfilteredTableMetadataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_unfiltered_table_metadata::builders::GetUnfilteredTableMetadataInputBuilder,
+}
 impl GetUnfilteredTableMetadataFluentBuilder  {
     /// Creates a new `GetUnfilteredTableMetadata`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_unfiltered_table_metadata::GetUnfilteredTableMetadata, aws_http::retry::AwsResponseRetryClassifier,>,

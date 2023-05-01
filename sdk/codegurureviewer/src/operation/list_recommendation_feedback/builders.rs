@@ -8,16 +8,17 @@ pub use crate::operation::list_recommendation_feedback::_list_recommendation_fee
 /// <p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">RecommendationFeedbackSummary</a> objects that contain customer recommendation feedback for all CodeGuru Reviewer users.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRecommendationFeedbackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_recommendation_feedback::builders::ListRecommendationFeedbackInputBuilder,
+}
 impl ListRecommendationFeedbackFluentBuilder  {
     /// Creates a new `ListRecommendationFeedback`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_recommendation_feedback::ListRecommendationFeedback, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListRecommendationFeedbackFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_recommendation_feedback::paginator::ListRecommendationFeedbackPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_recommendation_feedback::paginator::ListRecommendationFeedbackPaginator {
-                            crate::operation::list_recommendation_feedback::paginator::ListRecommendationFeedbackPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_recommendation_feedback::paginator::ListRecommendationFeedbackPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_recommendation_feedback::paginator::ListRecommendationFeedbackPaginator {
+                                crate::operation::list_recommendation_feedback::paginator::ListRecommendationFeedbackPaginator::new(self.handle, self.inner)
+                            }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

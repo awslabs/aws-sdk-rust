@@ -9,16 +9,17 @@ pub use crate::operation::delete_provisioning_artifact::_delete_provisioning_art
 /// <p>You cannot delete a provisioning artifact associated with a product that was shared with you. You cannot delete the last provisioning artifact for a product, because a product must have at least one provisioning artifact.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteProvisioningArtifactFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_provisioning_artifact::builders::DeleteProvisioningArtifactInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_provisioning_artifact::builders::DeleteProvisioningArtifactInputBuilder,
+}
 impl DeleteProvisioningArtifactFluentBuilder  {
     /// Creates a new `DeleteProvisioningArtifact`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifact, aws_http::retry::AwsResponseRetryClassifier,>,

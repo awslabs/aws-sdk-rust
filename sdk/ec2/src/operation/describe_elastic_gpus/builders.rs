@@ -8,16 +8,17 @@ pub use crate::operation::describe_elastic_gpus::_describe_elastic_gpus_input::D
 /// <p>Describes the Elastic Graphics accelerator associated with your instances. For more information about Elastic Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon Elastic Graphics</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeElasticGpusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_elastic_gpus::builders::DescribeElasticGpusInputBuilder,
+}
 impl DescribeElasticGpusFluentBuilder  {
     /// Creates a new `DescribeElasticGpus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_elastic_gpus::DescribeElasticGpus, aws_http::retry::AwsResponseRetryClassifier,>,

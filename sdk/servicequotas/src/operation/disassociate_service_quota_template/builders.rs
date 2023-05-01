@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_service_quota_template::_disassociate_ser
 /// <p>Disables your quota request template. After a template is disabled, the quota increase requests in the template are not applied to new accounts in your organization. Disabling a quota request template does not apply its quota increase requests.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateServiceQuotaTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_service_quota_template::builders::DisassociateServiceQuotaTemplateInputBuilder,
+}
 impl DisassociateServiceQuotaTemplateFluentBuilder  {
     /// Creates a new `DisassociateServiceQuotaTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_service_quota_template::DisassociateServiceQuotaTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

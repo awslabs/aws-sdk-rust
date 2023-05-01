@@ -8,16 +8,17 @@ pub use crate::operation::reset_cache_parameter_group::_reset_cache_parameter_gr
 /// <p>Modifies the parameters of a cache parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the <code>ResetAllParameters</code> and <code>CacheParameterGroupName</code> parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetCacheParameterGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupInputBuilder,
+}
 impl ResetCacheParameterGroupFluentBuilder  {
     /// Creates a new `ResetCacheParameterGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reset_cache_parameter_group::ResetCacheParameterGroup, aws_http::retry::AwsResponseRetryClassifier,>,

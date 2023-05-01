@@ -8,16 +8,17 @@ pub use crate::operation::update_room::_update_room_input::UpdateRoomInputBuilde
 /// <p>Updates a room’s configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRoomFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_room::builders::UpdateRoomInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_room::builders::UpdateRoomInputBuilder,
+}
 impl UpdateRoomFluentBuilder  {
     /// Creates a new `UpdateRoom`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_room::UpdateRoom, aws_http::retry::AwsResponseRetryClassifier,>,

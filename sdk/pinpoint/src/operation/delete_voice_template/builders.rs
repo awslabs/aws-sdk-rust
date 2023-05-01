@@ -8,16 +8,17 @@ pub use crate::operation::delete_voice_template::_delete_voice_template_input::D
 /// <p>Deletes a message template for messages that were sent through the voice channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVoiceTemplateFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_voice_template::builders::DeleteVoiceTemplateInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_voice_template::builders::DeleteVoiceTemplateInputBuilder,
+}
 impl DeleteVoiceTemplateFluentBuilder  {
     /// Creates a new `DeleteVoiceTemplate`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_voice_template::DeleteVoiceTemplate, aws_http::retry::AwsResponseRetryClassifier,>,

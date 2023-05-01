@@ -8,16 +8,17 @@ pub use crate::operation::get_cloud_front_origin_access_identity_config::_get_cl
 /// <p>Get the configuration information about an origin access identity.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_cloud_front_origin_access_identity_config::builders::GetCloudFrontOriginAccessIdentityConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_cloud_front_origin_access_identity_config::builders::GetCloudFrontOriginAccessIdentityConfigInputBuilder,
+}
 impl GetCloudFrontOriginAccessIdentityConfigFluentBuilder  {
     /// Creates a new `GetCloudFrontOriginAccessIdentityConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfig, aws_http::retry::AwsResponseRetryClassifier,>,

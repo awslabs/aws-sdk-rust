@@ -8,16 +8,17 @@ pub use crate::operation::delete_sink::_delete_sink_input::DeleteSinkInputBuilde
 /// <p>Deletes a sink. You must delete all links to a sink before you can delete that sink.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSinkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_sink::builders::DeleteSinkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_sink::builders::DeleteSinkInputBuilder,
+}
 impl DeleteSinkFluentBuilder  {
     /// Creates a new `DeleteSink`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_sink::DeleteSink, aws_http::retry::AwsResponseRetryClassifier,>,

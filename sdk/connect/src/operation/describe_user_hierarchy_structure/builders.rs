@@ -8,16 +8,17 @@ pub use crate::operation::describe_user_hierarchy_structure::_describe_user_hier
 /// <p>Describes the hierarchy structure of the specified Amazon Connect instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUserHierarchyStructureFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_user_hierarchy_structure::builders::DescribeUserHierarchyStructureInputBuilder,
+}
 impl DescribeUserHierarchyStructureFluentBuilder  {
     /// Creates a new `DescribeUserHierarchyStructure`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_user_hierarchy_structure::DescribeUserHierarchyStructure, aws_http::retry::AwsResponseRetryClassifier,>,

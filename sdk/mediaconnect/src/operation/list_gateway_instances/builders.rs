@@ -8,16 +8,17 @@ pub use crate::operation::list_gateway_instances::_list_gateway_instances_input:
 /// Displays a list of instances associated with the AWS account. This request returns a paginated result. You can use the filterArn property to display only the instances associated with the selected Gateway Amazon Resource Name (ARN).
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGatewayInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_gateway_instances::builders::ListGatewayInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_gateway_instances::builders::ListGatewayInstancesInputBuilder,
+}
 impl ListGatewayInstancesFluentBuilder  {
     /// Creates a new `ListGatewayInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_gateway_instances::ListGatewayInstances, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListGatewayInstancesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator {
-                            crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator {
+                                crate::operation::list_gateway_instances::paginator::ListGatewayInstancesPaginator::new(self.handle, self.inner)
+                            }
     /// Filter the list results to display only the instances associated with the selected Gateway Amazon Resource Name (ARN).
     pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.filter_arn(input.into());

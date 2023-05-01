@@ -8,16 +8,17 @@ pub use crate::operation::remove_attributes_from_findings::_remove_attributes_fr
 /// <p>Removes entire attributes (key and value pairs) from the findings that are specified by the ARNs of the findings where an attribute with the specified key exists.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveAttributesFromFindingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsInputBuilder,
+}
 impl RemoveAttributesFromFindingsFluentBuilder  {
     /// Creates a new `RemoveAttributesFromFindings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindings, aws_http::retry::AwsResponseRetryClassifier,>,

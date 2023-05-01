@@ -8,16 +8,17 @@ pub use crate::operation::test_invoke_method::_test_invoke_method_input::TestInv
 /// <p>Simulate the invocation of a Method in your RestApi with headers, parameters, and an incoming request body.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TestInvokeMethodFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::test_invoke_method::builders::TestInvokeMethodInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::test_invoke_method::builders::TestInvokeMethodInputBuilder,
+}
 impl TestInvokeMethodFluentBuilder  {
     /// Creates a new `TestInvokeMethod`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::test_invoke_method::TestInvokeMethod, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::cancel_resize::_cancel_resize_input::CancelResizeInput
 /// <p>Cancels a resize operation for a cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelResizeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_resize::builders::CancelResizeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_resize::builders::CancelResizeInputBuilder,
+}
 impl CancelResizeFluentBuilder  {
     /// Creates a new `CancelResize`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_resize::CancelResize, aws_http::retry::AwsResponseRetryClassifier,>,

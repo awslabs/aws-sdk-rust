@@ -8,16 +8,17 @@ pub use crate::operation::create_custom_line_item::_create_custom_line_item_inpu
 /// <p> Creates a custom line item that can be used to create a one-time fixed charge that can be applied to a single billing group for the current or previous billing period. The one-time fixed charge is either a fee or discount. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCustomLineItemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder,
+}
 impl CreateCustomLineItemFluentBuilder  {
     /// Creates a new `CreateCustomLineItem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_custom_line_item::CreateCustomLineItem, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -16,16 +16,17 @@ pub use crate::operation::start_lending_analysis::_start_lending_analysis_input:
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartLendingAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_lending_analysis::builders::StartLendingAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_lending_analysis::builders::StartLendingAnalysisInputBuilder,
+}
 impl StartLendingAnalysisFluentBuilder  {
     /// Creates a new `StartLendingAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_lending_analysis::StartLendingAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

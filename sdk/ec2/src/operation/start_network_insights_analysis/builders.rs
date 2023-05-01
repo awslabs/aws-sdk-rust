@@ -8,16 +8,17 @@ pub use crate::operation::start_network_insights_analysis::_start_network_insigh
 /// <p>Starts analyzing the specified path. If the path is reachable, the operation returns the shortest feasible path.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartNetworkInsightsAnalysisFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_network_insights_analysis::builders::StartNetworkInsightsAnalysisInputBuilder,
+}
 impl StartNetworkInsightsAnalysisFluentBuilder  {
     /// Creates a new `StartNetworkInsightsAnalysis`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysis, aws_http::retry::AwsResponseRetryClassifier,>,

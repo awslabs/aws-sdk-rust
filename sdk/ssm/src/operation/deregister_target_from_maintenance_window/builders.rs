@@ -8,16 +8,17 @@ pub use crate::operation::deregister_target_from_maintenance_window::_deregister
 /// <p>Removes a target from a maintenance window.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterTargetFromMaintenanceWindowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowInputBuilder,
+}
 impl DeregisterTargetFromMaintenanceWindowFluentBuilder  {
     /// Creates a new `DeregisterTargetFromMaintenanceWindow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindow, aws_http::retry::AwsResponseRetryClassifier,>,

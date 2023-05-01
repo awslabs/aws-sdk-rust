@@ -8,16 +8,17 @@ pub use crate::operation::start_trigger::_start_trigger_input::StartTriggerInput
 /// <p>Starts an existing trigger. See <a href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering Jobs</a> for information about how different types of trigger are started.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartTriggerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_trigger::builders::StartTriggerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_trigger::builders::StartTriggerInputBuilder,
+}
 impl StartTriggerFluentBuilder  {
     /// Creates a new `StartTrigger`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_trigger::StartTrigger, aws_http::retry::AwsResponseRetryClassifier,>,

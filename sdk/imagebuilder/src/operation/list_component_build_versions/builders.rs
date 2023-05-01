@@ -22,16 +22,17 @@ pub use crate::operation::list_component_build_versions::_list_component_build_v
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListComponentBuildVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_component_build_versions::builders::ListComponentBuildVersionsInputBuilder,
+}
 impl ListComponentBuildVersionsFluentBuilder  {
     /// Creates a new `ListComponentBuildVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_component_build_versions::ListComponentBuildVersions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -62,11 +63,11 @@ impl ListComponentBuildVersionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator {
-                            crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator {
+                                crate::operation::list_component_build_versions::paginator::ListComponentBuildVersionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The component version Amazon Resource Name (ARN) whose versions you want to list.</p>
     pub fn component_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.component_version_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::describe_organization_resource_collection_health::_des
 /// <p>Provides an overview of your system's health. If additional member accounts are part of your organization, you can filter those accounts using the <code>AccountIds</code> field.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOrganizationResourceCollectionHealthFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_organization_resource_collection_health::builders::DescribeOrganizationResourceCollectionHealthInputBuilder,
+}
 impl DescribeOrganizationResourceCollectionHealthFluentBuilder  {
     /// Creates a new `DescribeOrganizationResourceCollectionHealth`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealth, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeOrganizationResourceCollectionHealthFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator {
-                            crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator {
+                                crate::operation::describe_organization_resource_collection_health::paginator::DescribeOrganizationResourceCollectionHealthPaginator::new(self.handle, self.inner)
+                            }
     /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn organization_resource_collection_type(mut self, input: crate::types::OrganizationResourceCollectionType) -> Self {
         self.inner = self.inner.organization_resource_collection_type(input);

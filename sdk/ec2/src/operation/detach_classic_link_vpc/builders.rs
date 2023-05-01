@@ -11,16 +11,17 @@ pub use crate::operation::detach_classic_link_vpc::_detach_classic_link_vpc_inpu
 /// <p>Unlinks (detaches) a linked EC2-Classic instance from a VPC. After the instance has been unlinked, the VPC security groups are no longer associated with it. An instance is automatically unlinked from a VPC when it's stopped.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachClassicLinkVpcFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::detach_classic_link_vpc::builders::DetachClassicLinkVpcInputBuilder,
+}
 impl DetachClassicLinkVpcFluentBuilder  {
     /// Creates a new `DetachClassicLinkVpc`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::detach_classic_link_vpc::DetachClassicLinkVpc, aws_http::retry::AwsResponseRetryClassifier,>,

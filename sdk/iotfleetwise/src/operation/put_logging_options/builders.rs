@@ -8,16 +8,17 @@ pub use crate::operation::put_logging_options::_put_logging_options_input::PutLo
 /// <p>Creates or updates the logging option.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutLoggingOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_logging_options::builders::PutLoggingOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_logging_options::builders::PutLoggingOptionsInputBuilder,
+}
 impl PutLoggingOptionsFluentBuilder  {
     /// Creates a new `PutLoggingOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_logging_options::PutLoggingOptions, aws_http::retry::AwsResponseRetryClassifier,>,

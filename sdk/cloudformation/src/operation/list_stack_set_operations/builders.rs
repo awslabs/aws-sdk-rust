@@ -8,16 +8,17 @@ pub use crate::operation::list_stack_set_operations::_list_stack_set_operations_
 /// <p>Returns summary information about operations performed on a stack set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStackSetOperationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_stack_set_operations::builders::ListStackSetOperationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_stack_set_operations::builders::ListStackSetOperationsInputBuilder,
+}
 impl ListStackSetOperationsFluentBuilder  {
     /// Creates a new `ListStackSetOperations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_stack_set_operations::ListStackSetOperations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListStackSetOperationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator {
-                            crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator {
+                                crate::operation::list_stack_set_operations::paginator::ListStackSetOperationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name or unique ID of the stack set that you want to get operation summaries for.</p>
     pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stack_set_name(input.into());

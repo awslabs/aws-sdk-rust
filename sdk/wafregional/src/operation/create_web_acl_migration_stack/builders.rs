@@ -9,16 +9,17 @@ pub use crate::operation::create_web_acl_migration_stack::_create_web_acl_migrat
 /// <p>This is part of a larger migration procedure for web ACLs from AWS WAF Classic to the latest version of AWS WAF. For the full procedure, including caveats and manual steps to complete the migration and switch over to the new web ACL, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-migrating-from-classic.html">Migrating your AWS WAF Classic resources to AWS WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWebACLMigrationStackFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackInputBuilder,
+}
 impl CreateWebACLMigrationStackFluentBuilder  {
     /// Creates a new `CreateWebACLMigrationStack`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStack, aws_http::retry::AwsResponseRetryClassifier,>,

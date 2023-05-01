@@ -11,16 +11,17 @@ pub use crate::operation::get_metric_data_v2::_get_metric_data_v2_input::GetMetr
 /// <p>This API is not available in the Amazon Web Services GovCloud (US) Regions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetMetricDataV2FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_metric_data_v2::builders::GetMetricDataV2InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_metric_data_v2::builders::GetMetricDataV2InputBuilder,
+}
 impl GetMetricDataV2FluentBuilder  {
     /// Creates a new `GetMetricDataV2`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_metric_data_v2::GetMetricDataV2, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -51,11 +52,11 @@ impl GetMetricDataV2FluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator {
-                            crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator {
+                                crate::operation::get_metric_data_v2::paginator::GetMetricDataV2Paginator::new(self.handle, self.inner)
+                            }
     /// <p>The Amazon Resource Name (ARN) of the resource. This includes the <code>instanceId</code> an Amazon Connect instance.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());

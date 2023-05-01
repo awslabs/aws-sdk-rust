@@ -8,16 +8,17 @@ pub use crate::operation::send_data_to_wireless_device::_send_data_to_wireless_d
 /// <p>Sends a decrypted application data frame to a device.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendDataToWirelessDeviceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_data_to_wireless_device::builders::SendDataToWirelessDeviceInputBuilder,
+}
 impl SendDataToWirelessDeviceFluentBuilder  {
     /// Creates a new `SendDataToWirelessDevice`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_data_to_wireless_device::SendDataToWirelessDevice, aws_http::retry::AwsResponseRetryClassifier,>,

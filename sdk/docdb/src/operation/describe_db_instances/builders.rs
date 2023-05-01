@@ -8,16 +8,17 @@ pub use crate::operation::describe_db_instances::_describe_db_instances_input::D
 /// <p>Returns information about provisioned Amazon DocumentDB instances. This API supports pagination.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDBInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_db_instances::builders::DescribeDbInstancesInputBuilder,
+}
 impl DescribeDBInstancesFluentBuilder  {
     /// Creates a new `DescribeDBInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_db_instances::DescribeDBInstances, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeDBInstancesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator {
-                            crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator {
+                                crate::operation::describe_db_instances::paginator::DescribeDbInstancesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The user-provided instance identifier. If this parameter is specified, information from only the specific instance is returned. This parameter isn't case sensitive.</p> 
     /// <p>Constraints:</p> 
     /// <ul> 

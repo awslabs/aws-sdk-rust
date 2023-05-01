@@ -10,16 +10,17 @@ pub use crate::operation::update_bandwidth_rate_limit::_update_bandwidth_rate_li
 /// <p>To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBandwidthRateLimitFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_bandwidth_rate_limit::builders::UpdateBandwidthRateLimitInputBuilder,
+}
 impl UpdateBandwidthRateLimitFluentBuilder  {
     /// Creates a new `UpdateBandwidthRateLimit`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimit, aws_http::retry::AwsResponseRetryClassifier,>,

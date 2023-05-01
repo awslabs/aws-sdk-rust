@@ -8,16 +8,17 @@ pub use crate::operation::update_assessment_framework::_update_assessment_framew
 /// <p> Updates a custom framework in Audit Manager. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder,
+}
 impl UpdateAssessmentFrameworkFluentBuilder  {
     /// Creates a new `UpdateAssessmentFramework`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_assessment_framework::UpdateAssessmentFramework, aws_http::retry::AwsResponseRetryClassifier,>,

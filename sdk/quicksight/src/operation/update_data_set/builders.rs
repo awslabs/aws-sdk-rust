@@ -8,16 +8,17 @@ pub use crate::operation::update_data_set::_update_data_set_input::UpdateDataSet
 /// <p>Updates a dataset. This operation doesn't support datasets that include uploaded files as a source. Partial updates are not supported by this operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDataSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_data_set::builders::UpdateDataSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_data_set::builders::UpdateDataSetInputBuilder,
+}
 impl UpdateDataSetFluentBuilder  {
     /// Creates a new `UpdateDataSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_data_set::UpdateDataSet, aws_http::retry::AwsResponseRetryClassifier,>,

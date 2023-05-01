@@ -8,16 +8,17 @@ pub use crate::operation::describe_user_pool_client::_describe_user_pool_client_
 /// <p>Client method for returning the configuration information and metadata of the specified user pool app client.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeUserPoolClientFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_user_pool_client::builders::DescribeUserPoolClientInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_user_pool_client::builders::DescribeUserPoolClientInputBuilder,
+}
 impl DescribeUserPoolClientFluentBuilder  {
     /// Creates a new `DescribeUserPoolClient`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_user_pool_client::DescribeUserPoolClient, aws_http::retry::AwsResponseRetryClassifier,>,

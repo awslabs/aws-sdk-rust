@@ -11,16 +11,17 @@ pub use crate::operation::create_traffic_mirror_session::_create_traffic_mirror_
 /// <p>By default, no traffic is mirrored. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a> to create filter rules that specify the traffic to mirror.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTrafficMirrorSessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_traffic_mirror_session::builders::CreateTrafficMirrorSessionInputBuilder,
+}
 impl CreateTrafficMirrorSessionFluentBuilder  {
     /// Creates a new `CreateTrafficMirrorSession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_traffic_mirror_session::CreateTrafficMirrorSession, aws_http::retry::AwsResponseRetryClassifier,>,

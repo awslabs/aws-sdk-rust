@@ -8,16 +8,17 @@ pub use crate::operation::delete_sms_channel::_delete_sms_channel_input::DeleteS
 /// <p>Disables the SMS channel for an application and deletes any existing settings for the channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSmsChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_sms_channel::builders::DeleteSmsChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_sms_channel::builders::DeleteSmsChannelInputBuilder,
+}
 impl DeleteSmsChannelFluentBuilder  {
     /// Creates a new `DeleteSmsChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_sms_channel::DeleteSmsChannel, aws_http::retry::AwsResponseRetryClassifier,>,

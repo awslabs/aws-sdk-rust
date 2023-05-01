@@ -8,16 +8,17 @@ pub use crate::operation::create_sample_findings::_create_sample_findings_input:
 /// <p>Creates sample findings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSampleFindingsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder,
+}
 impl CreateSampleFindingsFluentBuilder  {
     /// Creates a new `CreateSampleFindings`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_sample_findings::CreateSampleFindings, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::disassociate_principal_from_portfolio::_disassociate_p
 /// <p>For portfolios that have been shared with principal name sharing enabled: after disassociating a principal, share recipient accounts will no longer be able to provision products in this portfolio using a role matching the name of the associated principal. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociatePrincipalFromPortfolioFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_principal_from_portfolio::builders::DisassociatePrincipalFromPortfolioInputBuilder,
+}
 impl DisassociatePrincipalFromPortfolioFluentBuilder  {
     /// Creates a new `DisassociatePrincipalFromPortfolio`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolio, aws_http::retry::AwsResponseRetryClassifier,>,

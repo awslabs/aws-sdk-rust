@@ -8,16 +8,17 @@ pub use crate::operation::describe_engine_default_cluster_parameters::_describe_
 /// <p>Returns the default engine and system parameter information for the cluster database engine.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEngineDefaultClusterParametersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_engine_default_cluster_parameters::builders::DescribeEngineDefaultClusterParametersInputBuilder,
+}
 impl DescribeEngineDefaultClusterParametersFluentBuilder  {
     /// Creates a new `DescribeEngineDefaultClusterParameters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParameters, aws_http::retry::AwsResponseRetryClassifier,>,

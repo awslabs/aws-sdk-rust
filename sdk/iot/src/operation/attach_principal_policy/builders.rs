@@ -11,16 +11,17 @@ pub use crate::operation::attach_principal_policy::_attach_principal_policy_inpu
 #[deprecated]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AttachPrincipalPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::attach_principal_policy::builders::AttachPrincipalPolicyInputBuilder,
+}
 impl AttachPrincipalPolicyFluentBuilder  {
     /// Creates a new `AttachPrincipalPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::attach_principal_policy::AttachPrincipalPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

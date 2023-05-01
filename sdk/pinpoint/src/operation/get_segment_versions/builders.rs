@@ -8,16 +8,17 @@ pub use crate::operation::get_segment_versions::_get_segment_versions_input::Get
 /// <p>Retrieves information about the configuration, dimension, and other settings for all the versions of a specific segment that's associated with an application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSegmentVersionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_segment_versions::builders::GetSegmentVersionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_segment_versions::builders::GetSegmentVersionsInputBuilder,
+}
 impl GetSegmentVersionsFluentBuilder  {
     /// Creates a new `GetSegmentVersions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_segment_versions::GetSegmentVersions, aws_http::retry::AwsResponseRetryClassifier,>,

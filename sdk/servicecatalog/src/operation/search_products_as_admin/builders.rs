@@ -8,16 +8,17 @@ pub use crate::operation::search_products_as_admin::_search_products_as_admin_in
 /// <p>Gets information about the products for the specified portfolio or all products.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchProductsAsAdminFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::search_products_as_admin::builders::SearchProductsAsAdminInputBuilder,
+}
 impl SearchProductsAsAdminFluentBuilder  {
     /// Creates a new `SearchProductsAsAdmin`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::search_products_as_admin::SearchProductsAsAdmin, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl SearchProductsAsAdminFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator {
-                            crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator {
+                                crate::operation::search_products_as_admin::paginator::SearchProductsAsAdminPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The language code.</p> 
     /// <ul> 
     /// <li> <p> <code>jp</code> - Japanese</p> </li> 

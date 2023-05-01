@@ -8,16 +8,17 @@ pub use crate::operation::describe_export::_describe_export_input::DescribeExpor
 /// <p>Describes an existing table export.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeExportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_export::builders::DescribeExportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_export::builders::DescribeExportInputBuilder,
+}
 impl DescribeExportFluentBuilder  {
     /// Creates a new `DescribeExport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_export::DescribeExport, aws_http::retry::AwsResponseRetryClassifier,>,

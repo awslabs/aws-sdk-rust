@@ -8,16 +8,17 @@ pub use crate::operation::remove_source_server_action::_remove_source_server_act
 /// <p>Remove source server post migration custom action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveSourceServerActionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder,
+}
 impl RemoveSourceServerActionFluentBuilder  {
     /// Creates a new `RemoveSourceServerAction`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_source_server_action::RemoveSourceServerAction, aws_http::retry::AwsResponseRetryClassifier,>,

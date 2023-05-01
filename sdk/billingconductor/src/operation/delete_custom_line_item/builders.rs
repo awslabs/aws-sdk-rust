@@ -8,16 +8,17 @@ pub use crate::operation::delete_custom_line_item::_delete_custom_line_item_inpu
 /// <p> Deletes the custom line item identified by the given ARN in the current, or previous billing period. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCustomLineItemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemInputBuilder,
+}
 impl DeleteCustomLineItemFluentBuilder  {
     /// Creates a new `DeleteCustomLineItem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_custom_line_item::DeleteCustomLineItem, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_phone_number_order::_create_phone_number_order_
 /// <p>Creates an order for phone numbers to be provisioned. For numbers outside the U.S., you must use the Amazon Chime SDK SIP media application dial-in product type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePhoneNumberOrderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_phone_number_order::builders::CreatePhoneNumberOrderInputBuilder,
+}
 impl CreatePhoneNumberOrderFluentBuilder  {
     /// Creates a new `CreatePhoneNumberOrder`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_phone_number_order::CreatePhoneNumberOrder, aws_http::retry::AwsResponseRetryClassifier,>,

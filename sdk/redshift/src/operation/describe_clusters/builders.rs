@@ -10,16 +10,17 @@ pub use crate::operation::describe_clusters::_describe_clusters_input::DescribeC
 /// <p>If both tag keys and values are omitted from the request, clusters are returned regardless of whether they have tag keys or values associated with them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClustersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_clusters::builders::DescribeClustersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_clusters::builders::DescribeClustersInputBuilder,
+}
 impl DescribeClustersFluentBuilder  {
     /// Creates a new `DescribeClusters`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_clusters::DescribeClusters, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -50,11 +51,11 @@ impl DescribeClustersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_clusters::paginator::DescribeClustersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_clusters::paginator::DescribeClustersPaginator {
-                            crate::operation::describe_clusters::paginator::DescribeClustersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_clusters::paginator::DescribeClustersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_clusters::paginator::DescribeClustersPaginator {
+                                crate::operation::describe_clusters::paginator::DescribeClustersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The unique identifier of a cluster whose properties you are requesting. This parameter is case sensitive.</p> 
     /// <p>The default is that all clusters defined for an account are returned.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {

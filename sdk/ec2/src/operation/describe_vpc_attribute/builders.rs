@@ -8,16 +8,17 @@ pub use crate::operation::describe_vpc_attribute::_describe_vpc_attribute_input:
 /// <p>Describes the specified attribute of the specified VPC. You can specify only one attribute at a time.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVpcAttributeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_vpc_attribute::builders::DescribeVpcAttributeInputBuilder,
+}
 impl DescribeVpcAttributeFluentBuilder  {
     /// Creates a new `DescribeVpcAttribute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_vpc_attribute::DescribeVpcAttribute, aws_http::retry::AwsResponseRetryClassifier,>,

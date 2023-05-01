@@ -8,16 +8,17 @@ pub use crate::operation::list_bot_aliases::_list_bot_aliases_input::ListBotAlia
 /// <p>Gets a list of aliases for the specified bot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBotAliasesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_bot_aliases::builders::ListBotAliasesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_bot_aliases::builders::ListBotAliasesInputBuilder,
+}
 impl ListBotAliasesFluentBuilder  {
     /// Creates a new `ListBotAliases`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_bot_aliases::ListBotAliases, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListBotAliasesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator {
-                            crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator {
+                                crate::operation::list_bot_aliases::paginator::ListBotAliasesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The identifier of the bot to list aliases for.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());

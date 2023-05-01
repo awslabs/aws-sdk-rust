@@ -19,16 +19,17 @@ pub use crate::operation::delete_byte_match_set::_delete_byte_match_set_input::D
 /// </ol>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteByteMatchSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_byte_match_set::builders::DeleteByteMatchSetInputBuilder,
+}
 impl DeleteByteMatchSetFluentBuilder  {
     /// Creates a new `DeleteByteMatchSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_byte_match_set::DeleteByteMatchSet, aws_http::retry::AwsResponseRetryClassifier,>,

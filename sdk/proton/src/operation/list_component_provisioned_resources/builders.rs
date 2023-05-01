@@ -9,16 +9,17 @@ pub use crate::operation::list_component_provisioned_resources::_list_component_
 /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListComponentProvisionedResourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_component_provisioned_resources::builders::ListComponentProvisionedResourcesInputBuilder,
+}
 impl ListComponentProvisionedResourcesFluentBuilder  {
     /// Creates a new `ListComponentProvisionedResources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_component_provisioned_resources::ListComponentProvisionedResources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListComponentProvisionedResourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_component_provisioned_resources::paginator::ListComponentProvisionedResourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_component_provisioned_resources::paginator::ListComponentProvisionedResourcesPaginator {
-                            crate::operation::list_component_provisioned_resources::paginator::ListComponentProvisionedResourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_component_provisioned_resources::paginator::ListComponentProvisionedResourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_component_provisioned_resources::paginator::ListComponentProvisionedResourcesPaginator {
+                                crate::operation::list_component_provisioned_resources::paginator::ListComponentProvisionedResourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the component whose provisioned resources you want.</p>
     pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.component_name(input.into());

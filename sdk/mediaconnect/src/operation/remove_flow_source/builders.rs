@@ -8,16 +8,17 @@ pub use crate::operation::remove_flow_source::_remove_flow_source_input::RemoveF
 /// Removes a source from an existing flow. This request can be made only if there is more than one source on the flow.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveFlowSourceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::remove_flow_source::builders::RemoveFlowSourceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::remove_flow_source::builders::RemoveFlowSourceInputBuilder,
+}
 impl RemoveFlowSourceFluentBuilder  {
     /// Creates a new `RemoveFlowSource`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::remove_flow_source::RemoveFlowSource, aws_http::retry::AwsResponseRetryClassifier,>,

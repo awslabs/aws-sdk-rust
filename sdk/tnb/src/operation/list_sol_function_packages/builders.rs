@@ -9,16 +9,17 @@ pub use crate::operation::list_sol_function_packages::_list_sol_function_package
 /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSolFunctionPackagesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_sol_function_packages::builders::ListSolFunctionPackagesInputBuilder,
+}
 impl ListSolFunctionPackagesFluentBuilder  {
     /// Creates a new `ListSolFunctionPackages`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_sol_function_packages::ListSolFunctionPackages, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListSolFunctionPackagesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_sol_function_packages::paginator::ListSolFunctionPackagesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_sol_function_packages::paginator::ListSolFunctionPackagesPaginator {
-                            crate::operation::list_sol_function_packages::paginator::ListSolFunctionPackagesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_sol_function_packages::paginator::ListSolFunctionPackagesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_sol_function_packages::paginator::ListSolFunctionPackagesPaginator {
+                                crate::operation::list_sol_function_packages::paginator::ListSolFunctionPackagesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

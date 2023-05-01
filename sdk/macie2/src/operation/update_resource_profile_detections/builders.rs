@@ -8,16 +8,17 @@ pub use crate::operation::update_resource_profile_detections::_update_resource_p
 /// <p>Updates the sensitivity scoring settings for an S3 bucket.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResourceProfileDetectionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_resource_profile_detections::builders::UpdateResourceProfileDetectionsInputBuilder,
+}
 impl UpdateResourceProfileDetectionsFluentBuilder  {
     /// Creates a new `UpdateResourceProfileDetections`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_resource_profile_detections::UpdateResourceProfileDetections, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::accept_transit_gateway_vpc_attachment::_accept_transit
 /// <p>The VPC attachment must be in the <code>pendingAcceptance</code> state. Use <code>DescribeTransitGatewayVpcAttachments</code> to view your pending VPC attachment requests. Use <code>RejectTransitGatewayVpcAttachment</code> to reject a VPC attachment request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptTransitGatewayVpcAttachmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::accept_transit_gateway_vpc_attachment::builders::AcceptTransitGatewayVpcAttachmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::accept_transit_gateway_vpc_attachment::builders::AcceptTransitGatewayVpcAttachmentInputBuilder,
+}
 impl AcceptTransitGatewayVpcAttachmentFluentBuilder  {
     /// Creates a new `AcceptTransitGatewayVpcAttachment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::accept_transit_gateway_vpc_attachment::AcceptTransitGatewayVpcAttachment, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_inputs::_list_inputs_input::ListInputsInputBuilde
 /// Produces list of inputs that have been created
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListInputsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_inputs::builders::ListInputsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_inputs::builders::ListInputsInputBuilder,
+}
 impl ListInputsFluentBuilder  {
     /// Creates a new `ListInputs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_inputs::ListInputs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListInputsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_inputs::paginator::ListInputsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_inputs::paginator::ListInputsPaginator {
-                            crate::operation::list_inputs::paginator::ListInputsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_inputs::paginator::ListInputsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_inputs::paginator::ListInputsPaginator {
+                                crate::operation::list_inputs::paginator::ListInputsPaginator::new(self.handle, self.inner)
+                            }
     /// Placeholder documentation for MaxResults
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

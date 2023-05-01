@@ -8,16 +8,17 @@ pub use crate::operation::delete_task::_delete_task_input::DeleteTaskInputBuilde
 /// <p>Deletes an DataSync task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_task::builders::DeleteTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_task::builders::DeleteTaskInputBuilder,
+}
 impl DeleteTaskFluentBuilder  {
     /// Creates a new `DeleteTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_task::DeleteTask, aws_http::retry::AwsResponseRetryClassifier,>,

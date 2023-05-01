@@ -8,16 +8,17 @@ pub use crate::operation::list_environment_vpcs::_list_environment_vpcs_input::L
 /// <p>Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual private clouds (VPCs) that are part of the environment. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEnvironmentVpcsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_environment_vpcs::builders::ListEnvironmentVpcsInputBuilder,
+}
 impl ListEnvironmentVpcsFluentBuilder  {
     /// Creates a new `ListEnvironmentVpcs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_environment_vpcs::ListEnvironmentVpcs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListEnvironmentVpcsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator {
-                            crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator {
+                                crate::operation::list_environment_vpcs::paginator::ListEnvironmentVpcsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the environment. </p>
     pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.environment_identifier(input.into());

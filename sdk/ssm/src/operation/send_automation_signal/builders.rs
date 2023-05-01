@@ -8,16 +8,17 @@ pub use crate::operation::send_automation_signal::_send_automation_signal_input:
 /// <p>Sends a signal to an Automation execution to change the current behavior or status of the execution. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendAutomationSignalFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::send_automation_signal::builders::SendAutomationSignalInputBuilder,
+}
 impl SendAutomationSignalFluentBuilder  {
     /// Creates a new `SendAutomationSignal`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::send_automation_signal::SendAutomationSignal, aws_http::retry::AwsResponseRetryClassifier,>,

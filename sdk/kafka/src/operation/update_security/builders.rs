@@ -8,16 +8,17 @@ pub use crate::operation::update_security::_update_security_input::UpdateSecurit
 /// <p>Updates the security settings for the cluster. You can use this operation to specify encryption and authentication on existing clusters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSecurityFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_security::builders::UpdateSecurityInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_security::builders::UpdateSecurityInputBuilder,
+}
 impl UpdateSecurityFluentBuilder  {
     /// Creates a new `UpdateSecurity`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_security::UpdateSecurity, aws_http::retry::AwsResponseRetryClassifier,>,

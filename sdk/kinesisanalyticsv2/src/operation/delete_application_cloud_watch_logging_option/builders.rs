@@ -8,16 +8,17 @@ pub use crate::operation::delete_application_cloud_watch_logging_option::_delete
 /// <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics application. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteApplicationCloudWatchLoggingOptionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_application_cloud_watch_logging_option::builders::DeleteApplicationCloudWatchLoggingOptionInputBuilder,
+}
 impl DeleteApplicationCloudWatchLoggingOptionFluentBuilder  {
     /// Creates a new `DeleteApplicationCloudWatchLoggingOption`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOption, aws_http::retry::AwsResponseRetryClassifier,>,

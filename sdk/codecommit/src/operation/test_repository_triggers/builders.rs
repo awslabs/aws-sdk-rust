@@ -8,16 +8,17 @@ pub use crate::operation::test_repository_triggers::_test_repository_triggers_in
 /// <p>Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test sends data from the last commit. If no data is available, sample data is generated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TestRepositoryTriggersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::test_repository_triggers::builders::TestRepositoryTriggersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::test_repository_triggers::builders::TestRepositoryTriggersInputBuilder,
+}
 impl TestRepositoryTriggersFluentBuilder  {
     /// Creates a new `TestRepositoryTriggers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::test_repository_triggers::TestRepositoryTriggers, aws_http::retry::AwsResponseRetryClassifier,>,

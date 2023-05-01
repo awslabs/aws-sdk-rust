@@ -9,16 +9,17 @@ pub use crate::operation::create_transit_gateway_multicast_domain::_create_trans
 /// <p>The transit gateway must be in the available state before you create a domain. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html">DescribeTransitGateways</a> to see the state of transit gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTransitGatewayMulticastDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_transit_gateway_multicast_domain::builders::CreateTransitGatewayMulticastDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_transit_gateway_multicast_domain::builders::CreateTransitGatewayMulticastDomainInputBuilder,
+}
 impl CreateTransitGatewayMulticastDomainFluentBuilder  {
     /// Creates a new `CreateTransitGatewayMulticastDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_transit_gateway_multicast_domain::CreateTransitGatewayMulticastDomain, aws_http::retry::AwsResponseRetryClassifier,>,

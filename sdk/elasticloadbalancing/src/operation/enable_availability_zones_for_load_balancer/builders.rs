@@ -10,16 +10,17 @@ pub use crate::operation::enable_availability_zones_for_load_balancer::_enable_a
 /// <p>The load balancer evenly distributes requests across all its registered Availability Zones that contain instances. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableAvailabilityZonesForLoadBalancerFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_availability_zones_for_load_balancer::builders::EnableAvailabilityZonesForLoadBalancerInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_availability_zones_for_load_balancer::builders::EnableAvailabilityZonesForLoadBalancerInputBuilder,
+}
 impl EnableAvailabilityZonesForLoadBalancerFluentBuilder  {
     /// Creates a new `EnableAvailabilityZonesForLoadBalancer`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancer, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_notification_configurations::_describe_notifi
 /// <p>Gets information about the Amazon SNS notifications that are configured for one or more Auto Scaling groups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNotificationConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_notification_configurations::builders::DescribeNotificationConfigurationsInputBuilder,
+}
 impl DescribeNotificationConfigurationsFluentBuilder  {
     /// Creates a new `DescribeNotificationConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_notification_configurations::DescribeNotificationConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeNotificationConfigurationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator {
-                            crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator {
+                                crate::operation::describe_notification_configurations::paginator::DescribeNotificationConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `AutoScalingGroupNames`.
     ///
     /// To override the contents of this collection use [`set_auto_scaling_group_names`](Self::set_auto_scaling_group_names).

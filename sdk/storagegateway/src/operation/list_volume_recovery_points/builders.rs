@@ -9,16 +9,17 @@ pub use crate::operation::list_volume_recovery_points::_list_volume_recovery_poi
 /// <p>Each cache volume has one recovery point. A volume recovery point is a point in time at which all data of the volume is consistent and from which you can create a snapshot or clone a new cached volume from a source volume. To create a snapshot from a volume recovery point use the <code>CreateSnapshotFromVolumeRecoveryPoint</code> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVolumeRecoveryPointsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_volume_recovery_points::builders::ListVolumeRecoveryPointsInputBuilder,
+}
 impl ListVolumeRecoveryPointsFluentBuilder  {
     /// Creates a new `ListVolumeRecoveryPoints`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_volume_recovery_points::ListVolumeRecoveryPoints, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_profile_permissions::_list_profile_permissions_in
 /// <p>Lists the cross-account permissions associated with a signing profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProfilePermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_profile_permissions::builders::ListProfilePermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_profile_permissions::builders::ListProfilePermissionsInputBuilder,
+}
 impl ListProfilePermissionsFluentBuilder  {
     /// Creates a new `ListProfilePermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_profile_permissions::ListProfilePermissions, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -23,16 +23,17 @@ pub use crate::operation::deregister_organization_admin_account::_deregister_org
 /// <p>At this time, Audit Manager doesn't provide an option to delete evidence for a specific delegated administrator. Instead, when your management account deregisters Audit Manager, we perform a cleanup for the current delegated administrator account at the time of deregistration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeregisterOrganizationAdminAccountFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deregister_organization_admin_account::builders::DeregisterOrganizationAdminAccountInputBuilder,
+}
 impl DeregisterOrganizationAdminAccountFluentBuilder  {
     /// Creates a new `DeregisterOrganizationAdminAccount`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccount, aws_http::retry::AwsResponseRetryClassifier,>,

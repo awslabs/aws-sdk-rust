@@ -8,16 +8,17 @@ pub use crate::operation::update_mesh::_update_mesh_input::UpdateMeshInputBuilde
 /// <p>Updates an existing service mesh.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMeshFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_mesh::builders::UpdateMeshInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_mesh::builders::UpdateMeshInputBuilder,
+}
 impl UpdateMeshFluentBuilder  {
     /// Creates a new `UpdateMesh`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_mesh::UpdateMesh, aws_http::retry::AwsResponseRetryClassifier,>,

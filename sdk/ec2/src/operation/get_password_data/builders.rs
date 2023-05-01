@@ -12,16 +12,17 @@ pub use crate::operation::get_password_data::_get_password_data_input::GetPasswo
 /// <p>When you launch an instance, password generation and encryption may take a few minutes. If you try to retrieve the password before it's available, the output returns an empty string. We recommend that you wait up to 15 minutes after launching an instance before trying to retrieve the generated password.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPasswordDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_password_data::builders::GetPasswordDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_password_data::builders::GetPasswordDataInputBuilder,
+}
 impl GetPasswordDataFluentBuilder  {
     /// Creates a new `GetPasswordData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_password_data::GetPasswordData, aws_http::retry::AwsResponseRetryClassifier,>,

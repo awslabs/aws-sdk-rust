@@ -8,16 +8,17 @@ pub use crate::operation::update_service_network_vpc_association::_update_servic
 /// <p>Updates the service network and VPC association. If you add a security group to the service network and VPC association, the association must continue to always have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and recreate it without security groups.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServiceNetworkVpcAssociationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_service_network_vpc_association::builders::UpdateServiceNetworkVpcAssociationInputBuilder,
+}
 impl UpdateServiceNetworkVpcAssociationFluentBuilder  {
     /// Creates a new `UpdateServiceNetworkVpcAssociation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociation, aws_http::retry::AwsResponseRetryClassifier,>,

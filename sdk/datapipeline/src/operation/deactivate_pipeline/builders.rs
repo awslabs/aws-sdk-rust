@@ -9,16 +9,17 @@ pub use crate::operation::deactivate_pipeline::_deactivate_pipeline_input::Deact
 /// <p>To resume a deactivated pipeline, use <code>ActivatePipeline</code>. By default, the pipeline resumes from the last completed execution. Optionally, you can specify the date and time to resume the pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeactivatePipelineFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::deactivate_pipeline::builders::DeactivatePipelineInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::deactivate_pipeline::builders::DeactivatePipelineInputBuilder,
+}
 impl DeactivatePipelineFluentBuilder  {
     /// Creates a new `DeactivatePipeline`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::deactivate_pipeline::DeactivatePipeline, aws_http::retry::AwsResponseRetryClassifier,>,

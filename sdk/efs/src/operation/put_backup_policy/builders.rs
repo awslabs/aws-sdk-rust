@@ -8,16 +8,17 @@ pub use crate::operation::put_backup_policy::_put_backup_policy_input::PutBackup
 /// <p>Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutBackupPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_backup_policy::builders::PutBackupPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_backup_policy::builders::PutBackupPolicyInputBuilder,
+}
 impl PutBackupPolicyFluentBuilder  {
     /// Creates a new `PutBackupPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_backup_policy::PutBackupPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

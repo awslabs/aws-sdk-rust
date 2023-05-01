@@ -10,16 +10,17 @@ pub use crate::operation::enable_sharing_with_aws_organization::_enable_sharing_
 /// <p></p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableSharingWithAwsOrganizationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::enable_sharing_with_aws_organization::builders::EnableSharingWithAwsOrganizationInputBuilder,
+}
 impl EnableSharingWithAwsOrganizationFluentBuilder  {
     /// Creates a new `EnableSharingWithAwsOrganization`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganization, aws_http::retry::AwsResponseRetryClassifier,>,

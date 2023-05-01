@@ -8,16 +8,17 @@ pub use crate::operation::contains_pii_entities::_contains_pii_entities_input::C
 /// <p>Analyzes input text for the presence of personally identifiable information (PII) and returns the labels of identified PII entity types such as name, address, bank account number, or phone number.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ContainsPiiEntitiesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesInputBuilder,
+}
 impl ContainsPiiEntitiesFluentBuilder  {
     /// Creates a new `ContainsPiiEntities`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::contains_pii_entities::ContainsPiiEntities, aws_http::retry::AwsResponseRetryClassifier,>,

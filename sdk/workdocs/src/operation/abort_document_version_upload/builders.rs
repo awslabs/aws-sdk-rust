@@ -8,16 +8,17 @@ pub use crate::operation::abort_document_version_upload::_abort_document_version
 /// <p>Aborts the upload of the specified document version that was previously initiated by <code>InitiateDocumentVersionUpload</code>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AbortDocumentVersionUploadFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::abort_document_version_upload::builders::AbortDocumentVersionUploadInputBuilder,
+}
 impl AbortDocumentVersionUploadFluentBuilder  {
     /// Creates a new `AbortDocumentVersionUpload`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::abort_document_version_upload::AbortDocumentVersionUpload, aws_http::retry::AwsResponseRetryClassifier,>,

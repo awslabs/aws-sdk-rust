@@ -8,16 +8,17 @@ pub use crate::operation::cancel_batch_prediction_job::_cancel_batch_prediction_
 /// <p>Cancels the specified batch prediction job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelBatchPredictionJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_batch_prediction_job::builders::CancelBatchPredictionJobInputBuilder,
+}
 impl CancelBatchPredictionJobFluentBuilder  {
     /// Creates a new `CancelBatchPredictionJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJob, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::delete_open_id_connect_provider::_delete_open_id_conne
 /// <p>This operation is idempotent; it does not fail or return an error if you call the operation for a provider that does not exist.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteOpenIDConnectProviderFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_open_id_connect_provider::builders::DeleteOpenIdConnectProviderInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_open_id_connect_provider::builders::DeleteOpenIdConnectProviderInputBuilder,
+}
 impl DeleteOpenIDConnectProviderFluentBuilder  {
     /// Creates a new `DeleteOpenIDConnectProvider`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProvider, aws_http::retry::AwsResponseRetryClassifier,>,

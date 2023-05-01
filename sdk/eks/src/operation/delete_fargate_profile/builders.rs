@@ -10,16 +10,17 @@ pub use crate::operation::delete_fargate_profile::_delete_fargate_profile_input:
 /// <p>Only one Fargate profile in a cluster can be in the <code>DELETING</code> status at a time. You must wait for a Fargate profile to finish deleting before you can delete any other profiles in that cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteFargateProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_fargate_profile::builders::DeleteFargateProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_fargate_profile::builders::DeleteFargateProfileInputBuilder,
+}
 impl DeleteFargateProfileFluentBuilder  {
     /// Creates a new `DeleteFargateProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_fargate_profile::DeleteFargateProfile, aws_http::retry::AwsResponseRetryClassifier,>,

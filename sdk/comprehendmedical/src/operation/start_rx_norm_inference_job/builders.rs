@@ -8,16 +8,17 @@ pub use crate::operation::start_rx_norm_inference_job::_start_rx_norm_inference_
 /// <p>Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology. Use the <code>DescribeRxNormInferenceJob</code> operation to track the status of a job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartRxNormInferenceJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_rx_norm_inference_job::builders::StartRxNormInferenceJobInputBuilder,
+}
 impl StartRxNormInferenceJobFluentBuilder  {
     /// Creates a new `StartRxNormInferenceJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,

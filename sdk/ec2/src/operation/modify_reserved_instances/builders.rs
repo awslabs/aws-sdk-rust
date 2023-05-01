@@ -11,16 +11,17 @@ pub use crate::operation::modify_reserved_instances::_modify_reserved_instances_
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyReservedInstancesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_reserved_instances::builders::ModifyReservedInstancesInputBuilder,
+}
 impl ModifyReservedInstancesFluentBuilder  {
     /// Creates a new `ModifyReservedInstances`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_reserved_instances::ModifyReservedInstances, aws_http::retry::AwsResponseRetryClassifier,>,

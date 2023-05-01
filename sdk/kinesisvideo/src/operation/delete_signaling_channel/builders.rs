@@ -8,16 +8,17 @@ pub use crate::operation::delete_signaling_channel::_delete_signaling_channel_in
 /// <p>Deletes a specified signaling channel. <code>DeleteSignalingChannel</code> is an asynchronous operation. If you don't specify the channel's current version, the most recent version is deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSignalingChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_signaling_channel::builders::DeleteSignalingChannelInputBuilder,
+}
 impl DeleteSignalingChannelFluentBuilder  {
     /// Creates a new `DeleteSignalingChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_signaling_channel::DeleteSignalingChannel, aws_http::retry::AwsResponseRetryClassifier,>,

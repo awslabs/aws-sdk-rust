@@ -10,16 +10,17 @@ pub use crate::operation::reject_assignment::_reject_assignment_input::RejectAss
 /// <p> Only the Requester who created the HIT can reject an assignment for the HIT. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RejectAssignmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::reject_assignment::builders::RejectAssignmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::reject_assignment::builders::RejectAssignmentInputBuilder,
+}
 impl RejectAssignmentFluentBuilder  {
     /// Creates a new `RejectAssignment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::reject_assignment::RejectAssignment, aws_http::retry::AwsResponseRetryClassifier,>,

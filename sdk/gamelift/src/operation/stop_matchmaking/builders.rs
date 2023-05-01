@@ -13,16 +13,17 @@ pub use crate::operation::stop_matchmaking::_stop_matchmaking_input::StopMatchma
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-client.html"> Add FlexMatch to a game client</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopMatchmakingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_matchmaking::builders::StopMatchmakingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_matchmaking::builders::StopMatchmakingInputBuilder,
+}
 impl StopMatchmakingFluentBuilder  {
     /// Creates a new `StopMatchmaking`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_matchmaking::StopMatchmaking, aws_http::retry::AwsResponseRetryClassifier,>,

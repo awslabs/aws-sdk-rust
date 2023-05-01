@@ -9,16 +9,17 @@ pub use crate::operation::update_distribution_with_staging_config::_update_distr
 /// <p>You can use this operation in a continuous deployment workflow after you have tested configuration changes on the staging distribution. After using a continuous deployment policy to move a portion of your domain name's traffic to the staging distribution and verifying that it works as intended, you can use this operation to copy the staging distribution's configuration to the primary distribution. This action will disable the continuous deployment policy and move your domain's traffic back to the primary distribution.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDistributionWithStagingConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_distribution_with_staging_config::builders::UpdateDistributionWithStagingConfigInputBuilder,
+}
 impl UpdateDistributionWithStagingConfigFluentBuilder  {
     /// Creates a new `UpdateDistributionWithStagingConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfig, aws_http::retry::AwsResponseRetryClassifier,>,

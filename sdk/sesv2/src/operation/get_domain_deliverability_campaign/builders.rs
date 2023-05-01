@@ -8,16 +8,17 @@ pub use crate::operation::get_domain_deliverability_campaign::_get_domain_delive
 /// <p>Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDomainDeliverabilityCampaignFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_domain_deliverability_campaign::builders::GetDomainDeliverabilityCampaignInputBuilder,
+}
 impl GetDomainDeliverabilityCampaignFluentBuilder  {
     /// Creates a new `GetDomainDeliverabilityCampaign`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaign, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::delete_delivery_channel::_delete_delivery_channel_inpu
 /// <p>Before you can delete the delivery channel, you must stop the configuration recorder by using the <code>StopConfigurationRecorder</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDeliveryChannelFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelInputBuilder,
+}
 impl DeleteDeliveryChannelFluentBuilder  {
     /// Creates a new `DeleteDeliveryChannel`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_delivery_channel::DeleteDeliveryChannel, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::describe_handshake::_describe_handshake_input::Describ
 /// <p>This operation can be called from any account in the organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeHandshakeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_handshake::builders::DescribeHandshakeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_handshake::builders::DescribeHandshakeInputBuilder,
+}
 impl DescribeHandshakeFluentBuilder  {
     /// Creates a new `DescribeHandshake`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_handshake::DescribeHandshake, aws_http::retry::AwsResponseRetryClassifier,>,

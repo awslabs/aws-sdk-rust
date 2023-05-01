@@ -8,16 +8,17 @@ pub use crate::operation::update_workgroup::_update_workgroup_input::UpdateWorkg
 /// <p>Updates a workgroup with the specified configuration settings. You can't update multiple parameters in one request. For example, you can update <code>baseCapacity</code> or <code>port</code> in a single request, but you can't update both in the same request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateWorkgroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_workgroup::builders::UpdateWorkgroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_workgroup::builders::UpdateWorkgroupInputBuilder,
+}
 impl UpdateWorkgroupFluentBuilder  {
     /// Creates a new `UpdateWorkgroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_workgroup::UpdateWorkgroup, aws_http::retry::AwsResponseRetryClassifier,>,

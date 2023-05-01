@@ -8,16 +8,17 @@ pub use crate::operation::describe_index::_describe_index_input::DescribeIndexIn
 /// <p>Gets information about an existing Amazon Kendra index.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeIndexFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_index::builders::DescribeIndexInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_index::builders::DescribeIndexInputBuilder,
+}
 impl DescribeIndexFluentBuilder  {
     /// Creates a new `DescribeIndex`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_index::DescribeIndex, aws_http::retry::AwsResponseRetryClassifier,>,

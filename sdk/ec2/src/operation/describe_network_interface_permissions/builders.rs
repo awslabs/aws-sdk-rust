@@ -8,16 +8,17 @@ pub use crate::operation::describe_network_interface_permissions::_describe_netw
 /// <p>Describes the permissions for your network interfaces. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeNetworkInterfacePermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_network_interface_permissions::builders::DescribeNetworkInterfacePermissionsInputBuilder,
+}
 impl DescribeNetworkInterfacePermissionsFluentBuilder  {
     /// Creates a new `DescribeNetworkInterfacePermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_network_interface_permissions::DescribeNetworkInterfacePermissions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl DescribeNetworkInterfacePermissionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator {
-                            crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator {
+                                crate::operation::describe_network_interface_permissions::paginator::DescribeNetworkInterfacePermissionsPaginator::new(self.handle, self.inner)
+                            }
     /// Appends an item to `NetworkInterfacePermissionIds`.
     ///
     /// To override the contents of this collection use [`set_network_interface_permission_ids`](Self::set_network_interface_permission_ids).

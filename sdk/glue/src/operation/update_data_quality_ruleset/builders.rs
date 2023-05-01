@@ -8,16 +8,17 @@ pub use crate::operation::update_data_quality_ruleset::_update_data_quality_rule
 /// <p>Updates the specified data quality ruleset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDataQualityRulesetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_data_quality_ruleset::builders::UpdateDataQualityRulesetInputBuilder,
+}
 impl UpdateDataQualityRulesetFluentBuilder  {
     /// Creates a new `UpdateDataQualityRuleset`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_data_quality_ruleset::UpdateDataQualityRuleset, aws_http::retry::AwsResponseRetryClassifier,>,

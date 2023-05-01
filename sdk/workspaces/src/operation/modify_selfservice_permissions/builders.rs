@@ -8,16 +8,17 @@ pub use crate::operation::modify_selfservice_permissions::_modify_selfservice_pe
 /// <p>Modifies the self-service WorkSpace management capabilities for your users. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifySelfservicePermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_selfservice_permissions::builders::ModifySelfservicePermissionsInputBuilder,
+}
 impl ModifySelfservicePermissionsFluentBuilder  {
     /// Creates a new `ModifySelfservicePermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_selfservice_permissions::ModifySelfservicePermissions, aws_http::retry::AwsResponseRetryClassifier,>,

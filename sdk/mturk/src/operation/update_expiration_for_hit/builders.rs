@@ -8,16 +8,17 @@ pub use crate::operation::update_expiration_for_hit::_update_expiration_for_hit_
 /// <p> The <code>UpdateExpirationForHIT</code> operation allows you update the expiration time of a HIT. If you update it to a time in the past, the HIT will be immediately expired. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateExpirationForHITFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_expiration_for_hit::builders::UpdateExpirationForHitInputBuilder,
+}
 impl UpdateExpirationForHITFluentBuilder  {
     /// Creates a new `UpdateExpirationForHIT`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_expiration_for_hit::UpdateExpirationForHIT, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::delete_column_statistics_for_table::_delete_column_sta
 /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>DeleteTable</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteColumnStatisticsForTableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_column_statistics_for_table::builders::DeleteColumnStatisticsForTableInputBuilder,
+}
 impl DeleteColumnStatisticsForTableFluentBuilder  {
     /// Creates a new `DeleteColumnStatisticsForTable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTable, aws_http::retry::AwsResponseRetryClassifier,>,

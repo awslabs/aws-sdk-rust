@@ -8,16 +8,17 @@ pub use crate::operation::delete_profile_object_type::_delete_profile_object_typ
 /// <p>Removes a ProfileObjectType from a specific domain as well as removes all the ProfileObjects of that type. It also disables integrations from this specific ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that were populated from this ProfileObjectType.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteProfileObjectTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeInputBuilder,
+}
 impl DeleteProfileObjectTypeFluentBuilder  {
     /// Creates a new `DeleteProfileObjectType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_profile_object_type::DeleteProfileObjectType, aws_http::retry::AwsResponseRetryClassifier,>,

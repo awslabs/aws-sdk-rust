@@ -8,16 +8,17 @@ pub use crate::operation::put_code_binding::_put_code_binding_input::PutCodeBind
 /// <p>Put code binding URI</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutCodeBindingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_code_binding::builders::PutCodeBindingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_code_binding::builders::PutCodeBindingInputBuilder,
+}
 impl PutCodeBindingFluentBuilder  {
     /// Creates a new `PutCodeBinding`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_code_binding::PutCodeBinding, aws_http::retry::AwsResponseRetryClassifier,>,

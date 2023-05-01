@@ -14,16 +14,17 @@ pub use crate::operation::add_application_input::_add_application_input_input::A
 /// <p>This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationInput</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddApplicationInputFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::add_application_input::builders::AddApplicationInputInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::add_application_input::builders::AddApplicationInputInputBuilder,
+}
 impl AddApplicationInputFluentBuilder  {
     /// Creates a new `AddApplicationInput`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::add_application_input::AddApplicationInput, aws_http::retry::AwsResponseRetryClassifier,>,

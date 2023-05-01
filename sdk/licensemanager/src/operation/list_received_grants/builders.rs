@@ -8,16 +8,17 @@ pub use crate::operation::list_received_grants::_list_received_grants_input::Lis
 /// <p>Lists grants that are received. Received grants are grants created while specifying the recipient as this Amazon Web Services account, your organization, or an organizational unit (OU) to which this member account belongs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReceivedGrantsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_received_grants::builders::ListReceivedGrantsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_received_grants::builders::ListReceivedGrantsInputBuilder,
+}
 impl ListReceivedGrantsFluentBuilder  {
     /// Creates a new `ListReceivedGrants`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_received_grants::ListReceivedGrants, aws_http::retry::AwsResponseRetryClassifier,>,

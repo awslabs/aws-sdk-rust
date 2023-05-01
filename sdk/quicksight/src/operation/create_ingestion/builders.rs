@@ -9,16 +9,17 @@ pub use crate::operation::create_ingestion::_create_ingestion_input::CreateInges
 /// <p>Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the Amazon Web Services Knowledge Center. Tags are visible on the tagged dataset, but not on the ingestion resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIngestionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_ingestion::builders::CreateIngestionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_ingestion::builders::CreateIngestionInputBuilder,
+}
 impl CreateIngestionFluentBuilder  {
     /// Creates a new `CreateIngestion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_ingestion::CreateIngestion, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_workflow_steps::_get_workflow_steps_input::GetWork
 /// <p>Get granular list of steps in workflow.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetWorkflowStepsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_workflow_steps::builders::GetWorkflowStepsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_workflow_steps::builders::GetWorkflowStepsInputBuilder,
+}
 impl GetWorkflowStepsFluentBuilder  {
     /// Creates a new `GetWorkflowSteps`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_workflow_steps::GetWorkflowSteps, aws_http::retry::AwsResponseRetryClassifier,>,

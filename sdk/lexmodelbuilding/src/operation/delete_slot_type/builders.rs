@@ -12,16 +12,17 @@ pub use crate::operation::delete_slot_type::_delete_slot_type_input::DeleteSlotT
 /// <p>This operation requires permission for the <code>lex:DeleteSlotType</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSlotTypeFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_slot_type::builders::DeleteSlotTypeInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_slot_type::builders::DeleteSlotTypeInputBuilder,
+}
 impl DeleteSlotTypeFluentBuilder  {
     /// Creates a new `DeleteSlotType`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_slot_type::DeleteSlotType, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::describe_data_set_permissions::_describe_data_set_perm
 /// <p>The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDataSetPermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_data_set_permissions::builders::DescribeDataSetPermissionsInputBuilder,
+}
 impl DescribeDataSetPermissionsFluentBuilder  {
     /// Creates a new `DescribeDataSetPermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_data_set_permissions::DescribeDataSetPermissions, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::get_organization_config_rule_detailed_status::_get_org
 /// <p>Returns detailed status for each member account within an organization for a given organization Config rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOrganizationConfigRuleDetailedStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_organization_config_rule_detailed_status::builders::GetOrganizationConfigRuleDetailedStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_organization_config_rule_detailed_status::builders::GetOrganizationConfigRuleDetailedStatusInputBuilder,
+}
 impl GetOrganizationConfigRuleDetailedStatusFluentBuilder  {
     /// Creates a new `GetOrganizationConfigRuleDetailedStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatus, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl GetOrganizationConfigRuleDetailedStatusFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::get_organization_config_rule_detailed_status::paginator::GetOrganizationConfigRuleDetailedStatusPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::get_organization_config_rule_detailed_status::paginator::GetOrganizationConfigRuleDetailedStatusPaginator {
-                            crate::operation::get_organization_config_rule_detailed_status::paginator::GetOrganizationConfigRuleDetailedStatusPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::get_organization_config_rule_detailed_status::paginator::GetOrganizationConfigRuleDetailedStatusPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::get_organization_config_rule_detailed_status::paginator::GetOrganizationConfigRuleDetailedStatusPaginator {
+                                crate::operation::get_organization_config_rule_detailed_status::paginator::GetOrganizationConfigRuleDetailedStatusPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of your organization Config rule for which you want status details for member accounts.</p>
     pub fn organization_config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.organization_config_rule_name(input.into());

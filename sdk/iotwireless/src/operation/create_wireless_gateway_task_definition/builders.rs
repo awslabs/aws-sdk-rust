@@ -8,16 +8,17 @@ pub use crate::operation::create_wireless_gateway_task_definition::_create_wirel
 /// <p>Creates a gateway task definition.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWirelessGatewayTaskDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_wireless_gateway_task_definition::builders::CreateWirelessGatewayTaskDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_wireless_gateway_task_definition::builders::CreateWirelessGatewayTaskDefinitionInputBuilder,
+}
 impl CreateWirelessGatewayTaskDefinitionFluentBuilder  {
     /// Creates a new `CreateWirelessGatewayTaskDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

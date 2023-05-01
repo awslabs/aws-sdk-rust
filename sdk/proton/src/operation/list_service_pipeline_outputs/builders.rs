@@ -8,16 +8,17 @@ pub use crate::operation::list_service_pipeline_outputs::_list_service_pipeline_
 /// <p>Get a list of service pipeline Infrastructure as Code (IaC) outputs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListServicePipelineOutputsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_service_pipeline_outputs::builders::ListServicePipelineOutputsInputBuilder,
+}
 impl ListServicePipelineOutputsFluentBuilder  {
     /// Creates a new `ListServicePipelineOutputs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListServicePipelineOutputsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_service_pipeline_outputs::paginator::ListServicePipelineOutputsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_service_pipeline_outputs::paginator::ListServicePipelineOutputsPaginator {
-                            crate::operation::list_service_pipeline_outputs::paginator::ListServicePipelineOutputsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_service_pipeline_outputs::paginator::ListServicePipelineOutputsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_service_pipeline_outputs::paginator::ListServicePipelineOutputsPaginator {
+                                crate::operation::list_service_pipeline_outputs::paginator::ListServicePipelineOutputsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the service whose pipeline's outputs you want.</p>
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());

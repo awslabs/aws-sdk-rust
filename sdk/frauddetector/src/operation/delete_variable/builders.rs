@@ -11,16 +11,17 @@ pub use crate::operation::delete_variable::_delete_variable_input::DeleteVariabl
 /// <p>When you delete a variable, Amazon Fraud Detector permanently deletes that variable and the data is no longer stored in Amazon Fraud Detector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVariableFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_variable::builders::DeleteVariableInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_variable::builders::DeleteVariableInputBuilder,
+}
 impl DeleteVariableFluentBuilder  {
     /// Creates a new `DeleteVariable`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_variable::DeleteVariable, aws_http::retry::AwsResponseRetryClassifier,>,

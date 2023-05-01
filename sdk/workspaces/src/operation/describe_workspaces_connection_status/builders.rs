@@ -8,16 +8,17 @@ pub use crate::operation::describe_workspaces_connection_status::_describe_works
 /// <p>Describes the connection status of the specified WorkSpaces.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeWorkspacesConnectionStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_workspaces_connection_status::builders::DescribeWorkspacesConnectionStatusInputBuilder,
+}
 impl DescribeWorkspacesConnectionStatusFluentBuilder  {
     /// Creates a new `DescribeWorkspacesConnectionStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatus, aws_http::retry::AwsResponseRetryClassifier,>,

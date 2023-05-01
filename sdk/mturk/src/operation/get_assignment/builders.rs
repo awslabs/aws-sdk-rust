@@ -8,16 +8,17 @@ pub use crate::operation::get_assignment::_get_assignment_input::GetAssignmentIn
 /// <p> The <code>GetAssignment</code> operation retrieves the details of the specified Assignment. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssignmentFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_assignment::builders::GetAssignmentInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_assignment::builders::GetAssignmentInputBuilder,
+}
 impl GetAssignmentFluentBuilder  {
     /// Creates a new `GetAssignment`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_assignment::GetAssignment, aws_http::retry::AwsResponseRetryClassifier,>,

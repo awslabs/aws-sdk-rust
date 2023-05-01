@@ -14,16 +14,17 @@ pub use crate::operation::list_secrets::_list_secrets_input::ListSecretsInputBui
 /// <p> <b>Required permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSecretsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_secrets::builders::ListSecretsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_secrets::builders::ListSecretsInputBuilder,
+}
 impl ListSecretsFluentBuilder  {
     /// Creates a new `ListSecrets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_secrets::ListSecrets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -54,11 +55,11 @@ impl ListSecretsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_secrets::paginator::ListSecretsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_secrets::paginator::ListSecretsPaginator {
-                            crate::operation::list_secrets::paginator::ListSecretsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_secrets::paginator::ListSecretsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_secrets::paginator::ListSecretsPaginator {
+                                crate::operation::list_secrets::paginator::ListSecretsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't included.</p>
     pub fn include_planned_deletion(mut self, input: bool) -> Self {
         self.inner = self.inner.include_planned_deletion(input);

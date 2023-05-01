@@ -8,16 +8,17 @@ pub use crate::operation::import_key_pair::_import_key_pair_input::ImportKeyPair
 /// <p>Imports a public SSH key from a specific key pair.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportKeyPairFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder,
+}
 impl ImportKeyPairFluentBuilder  {
     /// Creates a new `ImportKeyPair`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_key_pair::ImportKeyPair, aws_http::retry::AwsResponseRetryClassifier,>,

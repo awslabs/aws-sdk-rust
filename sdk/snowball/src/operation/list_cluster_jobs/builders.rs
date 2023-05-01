@@ -8,16 +8,17 @@ pub use crate::operation::list_cluster_jobs::_list_cluster_jobs_input::ListClust
 /// <p>Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code> object is for a job in the specified cluster and contains a job's state, a job's ID, and other information.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListClusterJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_cluster_jobs::builders::ListClusterJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_cluster_jobs::builders::ListClusterJobsInputBuilder,
+}
 impl ListClusterJobsFluentBuilder  {
     /// Creates a new `ListClusterJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_cluster_jobs::ListClusterJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListClusterJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_cluster_jobs::paginator::ListClusterJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_cluster_jobs::paginator::ListClusterJobsPaginator {
-                            crate::operation::list_cluster_jobs::paginator::ListClusterJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_cluster_jobs::paginator::ListClusterJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_cluster_jobs::paginator::ListClusterJobsPaginator {
+                                crate::operation::list_cluster_jobs::paginator::ListClusterJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());

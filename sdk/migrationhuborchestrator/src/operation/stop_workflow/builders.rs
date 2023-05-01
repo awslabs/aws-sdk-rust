@@ -8,16 +8,17 @@ pub use crate::operation::stop_workflow::_stop_workflow_input::StopWorkflowInput
 /// <p>Stop an ongoing migration workflow.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopWorkflowFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::stop_workflow::builders::StopWorkflowInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::stop_workflow::builders::StopWorkflowInputBuilder,
+}
 impl StopWorkflowFluentBuilder  {
     /// Creates a new `StopWorkflow`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::stop_workflow::StopWorkflow, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -9,16 +9,17 @@ pub use crate::operation::import_vm_image::_import_vm_image_input::ImportVmImage
 /// <p>You can reference the task ID from the VM import to pull in the AMI that the import created as the base image for your Image Builder recipe.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportVmImageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_vm_image::builders::ImportVmImageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_vm_image::builders::ImportVmImageInputBuilder,
+}
 impl ImportVmImageFluentBuilder  {
     /// Creates a new `ImportVmImage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_vm_image::ImportVmImage, aws_http::retry::AwsResponseRetryClassifier,>,

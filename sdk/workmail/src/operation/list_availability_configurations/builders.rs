@@ -8,16 +8,17 @@ pub use crate::operation::list_availability_configurations::_list_availability_c
 /// <p>List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAvailabilityConfigurationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_availability_configurations::builders::ListAvailabilityConfigurationsInputBuilder,
+}
 impl ListAvailabilityConfigurationsFluentBuilder  {
     /// Creates a new `ListAvailabilityConfigurations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_availability_configurations::ListAvailabilityConfigurations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAvailabilityConfigurationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_availability_configurations::paginator::ListAvailabilityConfigurationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_availability_configurations::paginator::ListAvailabilityConfigurationsPaginator {
-                            crate::operation::list_availability_configurations::paginator::ListAvailabilityConfigurationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_availability_configurations::paginator::ListAvailabilityConfigurationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_availability_configurations::paginator::ListAvailabilityConfigurationsPaginator {
+                                crate::operation::list_availability_configurations::paginator::ListAvailabilityConfigurationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());

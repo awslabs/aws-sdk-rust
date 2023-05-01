@@ -8,16 +8,17 @@ pub use crate::operation::delete_git_hub_account_token::_delete_git_hub_account_
 /// <p>Deletes a GitHub account connection.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteGitHubAccountTokenFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_git_hub_account_token::builders::DeleteGitHubAccountTokenInputBuilder,
+}
 impl DeleteGitHubAccountTokenFluentBuilder  {
     /// Creates a new `DeleteGitHubAccountToken`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_git_hub_account_token::DeleteGitHubAccountToken, aws_http::retry::AwsResponseRetryClassifier,>,

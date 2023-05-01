@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_identity_provider_config::_disassociate_i
 /// <p>Disassociates an identity provider configuration from a cluster. If you disassociate an identity provider from your cluster, users included in the provider can no longer access the cluster. However, you can still access the cluster with Amazon Web Services IAM users.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateIdentityProviderConfigFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_identity_provider_config::builders::DisassociateIdentityProviderConfigInputBuilder,
+}
 impl DisassociateIdentityProviderConfigFluentBuilder  {
     /// Creates a new `DisassociateIdentityProviderConfig`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_identity_provider_config::DisassociateIdentityProviderConfig, aws_http::retry::AwsResponseRetryClassifier,>,

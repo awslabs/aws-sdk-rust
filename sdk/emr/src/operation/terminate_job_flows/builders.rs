@@ -9,16 +9,17 @@ pub use crate::operation::terminate_job_flows::_terminate_job_flows_input::Termi
 /// <p>The maximum number of clusters allowed is 10. The call to <code>TerminateJobFlows</code> is asynchronous. Depending on the configuration of the cluster, it may take up to 1-5 minutes for the cluster to completely terminate and release allocated resources, such as Amazon EC2 instances.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TerminateJobFlowsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::terminate_job_flows::builders::TerminateJobFlowsInputBuilder,
+}
 impl TerminateJobFlowsFluentBuilder  {
     /// Creates a new `TerminateJobFlows`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::terminate_job_flows::TerminateJobFlows, aws_http::retry::AwsResponseRetryClassifier,>,

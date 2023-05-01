@@ -8,16 +8,17 @@ pub use crate::operation::list_change_sets::_list_change_sets_input::ListChangeS
 /// <p>Returns the ID and status of each active change set for a stack. For example, CloudFormation lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListChangeSetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_change_sets::builders::ListChangeSetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_change_sets::builders::ListChangeSetsInputBuilder,
+}
 impl ListChangeSetsFluentBuilder  {
     /// Creates a new `ListChangeSets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_change_sets::ListChangeSets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListChangeSetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_change_sets::paginator::ListChangeSetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_change_sets::paginator::ListChangeSetsPaginator {
-                            crate::operation::list_change_sets::paginator::ListChangeSetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_change_sets::paginator::ListChangeSetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_change_sets::paginator::ListChangeSetsPaginator {
+                                crate::operation::list_change_sets::paginator::ListChangeSetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
     pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());

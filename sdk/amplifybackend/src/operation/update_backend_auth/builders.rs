@@ -8,16 +8,17 @@ pub use crate::operation::update_backend_auth::_update_backend_auth_input::Updat
 /// <p>Updates an existing backend authentication resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBackendAuthFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_backend_auth::builders::UpdateBackendAuthInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_backend_auth::builders::UpdateBackendAuthInputBuilder,
+}
 impl UpdateBackendAuthFluentBuilder  {
     /// Creates a new `UpdateBackendAuth`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_backend_auth::UpdateBackendAuth, aws_http::retry::AwsResponseRetryClassifier,>,

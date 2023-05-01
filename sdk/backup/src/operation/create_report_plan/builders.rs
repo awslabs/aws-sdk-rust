@@ -9,16 +9,17 @@ pub use crate::operation::create_report_plan::_create_report_plan_input::CreateR
 /// <p>If you call <code>CreateReportPlan</code> with a plan that already exists, you receive an <code>AlreadyExistsException</code> exception.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateReportPlanFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_report_plan::builders::CreateReportPlanInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_report_plan::builders::CreateReportPlanInputBuilder,
+}
 impl CreateReportPlanFluentBuilder  {
     /// Creates a new `CreateReportPlan`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_report_plan::CreateReportPlan, aws_http::retry::AwsResponseRetryClassifier,>,

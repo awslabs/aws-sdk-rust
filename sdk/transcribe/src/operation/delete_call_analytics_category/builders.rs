@@ -8,16 +8,17 @@ pub use crate::operation::delete_call_analytics_category::_delete_call_analytics
 /// <p>Deletes a Call Analytics category. To use this operation, specify the name of the category you want to delete using <code>CategoryName</code>. Category names are case sensitive.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCallAnalyticsCategoryFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_call_analytics_category::builders::DeleteCallAnalyticsCategoryInputBuilder,
+}
 impl DeleteCallAnalyticsCategoryFluentBuilder  {
     /// Creates a new `DeleteCallAnalyticsCategory`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategory, aws_http::retry::AwsResponseRetryClassifier,>,

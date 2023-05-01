@@ -8,16 +8,17 @@ pub use crate::operation::describe_auto_scaling_configuration::_describe_auto_sc
 /// <p>Return a full description of an App Runner automatic scaling configuration resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAutoScalingConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationInputBuilder,
+}
 impl DescribeAutoScalingConfigurationFluentBuilder  {
     /// Creates a new `DescribeAutoScalingConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

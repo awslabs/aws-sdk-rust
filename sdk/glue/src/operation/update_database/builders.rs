@@ -8,16 +8,17 @@ pub use crate::operation::update_database::_update_database_input::UpdateDatabas
 /// <p>Updates an existing database definition in a Data Catalog.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDatabaseFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_database::builders::UpdateDatabaseInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_database::builders::UpdateDatabaseInputBuilder,
+}
 impl UpdateDatabaseFluentBuilder  {
     /// Creates a new `UpdateDatabase`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_database::UpdateDatabase, aws_http::retry::AwsResponseRetryClassifier,>,

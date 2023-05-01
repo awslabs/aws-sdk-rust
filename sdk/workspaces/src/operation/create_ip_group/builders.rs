@@ -10,16 +10,17 @@ pub use crate::operation::create_ip_group::_create_ip_group_input::CreateIpGroup
 /// <p>There is a default IP access control group associated with your directory. If you don't associate an IP access control group with your directory, the default group is used. The default group includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for your directory.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIpGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_ip_group::builders::CreateIpGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_ip_group::builders::CreateIpGroupInputBuilder,
+}
 impl CreateIpGroupFluentBuilder  {
     /// Creates a new `CreateIpGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_ip_group::CreateIpGroup, aws_http::retry::AwsResponseRetryClassifier,>,

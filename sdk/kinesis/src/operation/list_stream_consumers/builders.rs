@@ -9,16 +9,17 @@ pub use crate::operation::list_stream_consumers::_list_stream_consumers_input::L
 /// <p>This operation has a limit of 5 transactions per second per stream.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListStreamConsumersFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_stream_consumers::builders::ListStreamConsumersInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_stream_consumers::builders::ListStreamConsumersInputBuilder,
+}
 impl ListStreamConsumersFluentBuilder  {
     /// Creates a new `ListStreamConsumers`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_stream_consumers::ListStreamConsumers, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListStreamConsumersFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator {
-                            crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator {
+                                crate::operation::list_stream_consumers::paginator::ListStreamConsumersPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ARN of the Kinesis data stream for which you want to list the registered consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());

@@ -9,16 +9,17 @@ pub use crate::operation::provision_public_ipv4_pool_cidr::_provision_public_ipv
 /// <p>For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ProvisionPublicIpv4PoolCidrFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder,
+}
 impl ProvisionPublicIpv4PoolCidrFluentBuilder  {
     /// Creates a new `ProvisionPublicIpv4PoolCidr`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidr, aws_http::retry::AwsResponseRetryClassifier,>,

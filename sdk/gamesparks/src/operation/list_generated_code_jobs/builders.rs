@@ -8,16 +8,17 @@ pub use crate::operation::list_generated_code_jobs::_list_generated_code_jobs_in
 /// <p>Gets a paginated list of code generation jobs for a snapshot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGeneratedCodeJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_generated_code_jobs::builders::ListGeneratedCodeJobsInputBuilder,
+}
 impl ListGeneratedCodeJobsFluentBuilder  {
     /// Creates a new `ListGeneratedCodeJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_generated_code_jobs::ListGeneratedCodeJobs, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListGeneratedCodeJobsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator {
-                            crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator {
+                                crate::operation::list_generated_code_jobs::paginator::ListGeneratedCodeJobsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The name of the game.</p>
     pub fn game_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.game_name(input.into());

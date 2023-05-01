@@ -8,16 +8,17 @@ pub use crate::operation::delete_traffic_mirror_filter_rule::_delete_traffic_mir
 /// <p>Deletes the specified Traffic Mirror rule.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTrafficMirrorFilterRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_traffic_mirror_filter_rule::builders::DeleteTrafficMirrorFilterRuleInputBuilder,
+}
 impl DeleteTrafficMirrorFilterRuleFluentBuilder  {
     /// Creates a new `DeleteTrafficMirrorFilterRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRule, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -29,16 +29,17 @@ pub use crate::operation::create_predictor::_create_predictor_input::CreatePredi
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePredictorFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_predictor::builders::CreatePredictorInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_predictor::builders::CreatePredictorInputBuilder,
+}
 impl CreatePredictorFluentBuilder  {
     /// Creates a new `CreatePredictor`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_predictor::CreatePredictor, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_dashboard_permissions::_update_dashboard_permis
 /// <p>Updates read and write permissions on a dashboard.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDashboardPermissionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_dashboard_permissions::builders::UpdateDashboardPermissionsInputBuilder,
+}
 impl UpdateDashboardPermissionsFluentBuilder  {
     /// Creates a new `UpdateDashboardPermissions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_dashboard_permissions::UpdateDashboardPermissions, aws_http::retry::AwsResponseRetryClassifier,>,

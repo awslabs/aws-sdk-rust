@@ -8,16 +8,17 @@ pub use crate::operation::list_types::_list_types_input::ListTypesInputBuilder;
 /// <p>Lists the types for a given API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTypesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_types::builders::ListTypesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_types::builders::ListTypesInputBuilder,
+}
 impl ListTypesFluentBuilder  {
     /// Creates a new `ListTypes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_types::ListTypes, aws_http::retry::AwsResponseRetryClassifier,>,

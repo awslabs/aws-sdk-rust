@@ -8,16 +8,17 @@ pub use crate::operation::describe_fhir_datastore::_describe_fhir_datastore_inpu
 /// <p>Gets the properties associated with the FHIR Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFHIRDatastoreFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_fhir_datastore::builders::DescribeFhirDatastoreInputBuilder,
+}
 impl DescribeFHIRDatastoreFluentBuilder  {
     /// Creates a new `DescribeFHIRDatastore`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fhir_datastore::DescribeFHIRDatastore, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::create_device_definition_version::_create_device_defin
 /// Creates a version of a device definition that has already been defined.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDeviceDefinitionVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionInputBuilder,
+}
 impl CreateDeviceDefinitionVersionFluentBuilder  {
     /// Creates a new `CreateDeviceDefinitionVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_device_definition_version::CreateDeviceDefinitionVersion, aws_http::retry::AwsResponseRetryClassifier,>,

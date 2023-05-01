@@ -12,16 +12,17 @@ pub use crate::operation::create_auto_ml_job_v2::_create_auto_ml_job_v2_input::C
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAutoMLJobV2FluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_auto_ml_job_v2::builders::CreateAutoMlJobV2InputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_auto_ml_job_v2::builders::CreateAutoMlJobV2InputBuilder,
+}
 impl CreateAutoMLJobV2FluentBuilder  {
     /// Creates a new `CreateAutoMLJobV2`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_auto_ml_job_v2::CreateAutoMLJobV2, aws_http::retry::AwsResponseRetryClassifier,>,

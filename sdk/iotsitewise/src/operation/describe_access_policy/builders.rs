@@ -8,16 +8,17 @@ pub use crate::operation::describe_access_policy::_describe_access_policy_input:
 /// <p>Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or project.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAccessPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_access_policy::builders::DescribeAccessPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_access_policy::builders::DescribeAccessPolicyInputBuilder,
+}
 impl DescribeAccessPolicyFluentBuilder  {
     /// Creates a new `DescribeAccessPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_access_policy::DescribeAccessPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

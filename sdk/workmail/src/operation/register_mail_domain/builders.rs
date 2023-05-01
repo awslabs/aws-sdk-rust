@@ -8,16 +8,17 @@ pub use crate::operation::register_mail_domain::_register_mail_domain_input::Reg
 /// <p>Registers a new domain in WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the specified domain for sending your users' emails.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterMailDomainFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_mail_domain::builders::RegisterMailDomainInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_mail_domain::builders::RegisterMailDomainInputBuilder,
+}
 impl RegisterMailDomainFluentBuilder  {
     /// Creates a new `RegisterMailDomain`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_mail_domain::RegisterMailDomain, aws_http::retry::AwsResponseRetryClassifier,>,

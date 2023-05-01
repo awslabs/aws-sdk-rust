@@ -8,16 +8,17 @@ pub use crate::operation::get_campaign_version::_get_campaign_version_input::Get
 /// <p>Retrieves information about the status, configuration, and other settings for a specific version of a campaign.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCampaignVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_campaign_version::builders::GetCampaignVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_campaign_version::builders::GetCampaignVersionInputBuilder,
+}
 impl GetCampaignVersionFluentBuilder  {
     /// Creates a new `GetCampaignVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_campaign_version::GetCampaignVersion, aws_http::retry::AwsResponseRetryClassifier,>,

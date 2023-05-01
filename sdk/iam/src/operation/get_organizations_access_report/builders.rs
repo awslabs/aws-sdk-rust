@@ -12,16 +12,17 @@ pub use crate::operation::get_organizations_access_report::_get_organizations_ac
 /// <p>By default, the list is sorted by service namespace.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOrganizationsAccessReportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_organizations_access_report::builders::GetOrganizationsAccessReportInputBuilder,
+}
 impl GetOrganizationsAccessReportFluentBuilder  {
     /// Creates a new `GetOrganizationsAccessReport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_organizations_access_report::GetOrganizationsAccessReport, aws_http::retry::AwsResponseRetryClassifier,>,

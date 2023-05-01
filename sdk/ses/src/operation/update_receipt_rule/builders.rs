@@ -10,16 +10,17 @@ pub use crate::operation::update_receipt_rule::_update_receipt_rule_input::Updat
 /// <p>You can execute this operation no more than once per second.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateReceiptRuleFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_receipt_rule::builders::UpdateReceiptRuleInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_receipt_rule::builders::UpdateReceiptRuleInputBuilder,
+}
 impl UpdateReceiptRuleFluentBuilder  {
     /// Creates a new `UpdateReceiptRule`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_receipt_rule::UpdateReceiptRule, aws_http::retry::AwsResponseRetryClassifier,>,

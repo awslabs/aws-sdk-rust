@@ -8,16 +8,17 @@ pub use crate::operation::query_table_rows::_query_table_rows_input::QueryTableR
 /// <p> The QueryTableRows API allows you to use a filter formula to query for specific rows in a table. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct QueryTableRowsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::query_table_rows::builders::QueryTableRowsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::query_table_rows::builders::QueryTableRowsInputBuilder,
+}
 impl QueryTableRowsFluentBuilder  {
     /// Creates a new `QueryTableRows`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::query_table_rows::QueryTableRows, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl QueryTableRowsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::query_table_rows::paginator::QueryTableRowsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::query_table_rows::paginator::QueryTableRowsPaginator {
-                            crate::operation::query_table_rows::paginator::QueryTableRowsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::query_table_rows::paginator::QueryTableRowsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::query_table_rows::paginator::QueryTableRowsPaginator {
+                                crate::operation::query_table_rows::paginator::QueryTableRowsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The ID of the workbook whose table rows are being queried.</p> 
     /// <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
     pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {

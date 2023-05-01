@@ -8,16 +8,17 @@ pub use crate::operation::list_device_fleets::_list_device_fleets_input::ListDev
 /// <p>Returns a list of devices in the fleet.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDeviceFleetsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_device_fleets::builders::ListDeviceFleetsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_device_fleets::builders::ListDeviceFleetsInputBuilder,
+}
 impl ListDeviceFleetsFluentBuilder  {
     /// Creates a new `ListDeviceFleets`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_device_fleets::ListDeviceFleets, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListDeviceFleetsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator {
-                            crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator {
+                                crate::operation::list_device_fleets::paginator::ListDeviceFleetsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The response from the last list when returning a list large enough to need tokening.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

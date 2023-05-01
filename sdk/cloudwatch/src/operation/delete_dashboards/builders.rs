@@ -8,16 +8,17 @@ pub use crate::operation::delete_dashboards::_delete_dashboards_input::DeleteDas
 /// <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete. If there is an error during this call, no dashboards are deleted.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDashboardsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_dashboards::builders::DeleteDashboardsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_dashboards::builders::DeleteDashboardsInputBuilder,
+}
 impl DeleteDashboardsFluentBuilder  {
     /// Creates a new `DeleteDashboards`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_dashboards::DeleteDashboards, aws_http::retry::AwsResponseRetryClassifier,>,

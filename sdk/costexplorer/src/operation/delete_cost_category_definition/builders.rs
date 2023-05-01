@@ -8,16 +8,17 @@ pub use crate::operation::delete_cost_category_definition::_delete_cost_category
 /// <p>Deletes a Cost Category. Expenses from this month going forward will no longer be categorized with this Cost Category.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCostCategoryDefinitionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionInputBuilder,
+}
 impl DeleteCostCategoryDefinitionFluentBuilder  {
     /// Creates a new `DeleteCostCategoryDefinition`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinition, aws_http::retry::AwsResponseRetryClassifier,>,

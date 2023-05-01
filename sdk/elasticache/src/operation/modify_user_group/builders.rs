@@ -8,16 +8,17 @@ pub use crate::operation::modify_user_group::_modify_user_group_input::ModifyUse
 /// <p>Changes the list of users that belong to the user group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyUserGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::modify_user_group::builders::ModifyUserGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::modify_user_group::builders::ModifyUserGroupInputBuilder,
+}
 impl ModifyUserGroupFluentBuilder  {
     /// Creates a new `ModifyUserGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_user_group::ModifyUserGroup, aws_http::retry::AwsResponseRetryClassifier,>,

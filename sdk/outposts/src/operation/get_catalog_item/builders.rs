@@ -8,16 +8,17 @@ pub use crate::operation::get_catalog_item::_get_catalog_item_input::GetCatalogI
 /// <p>Gets information about the specified catalog item.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCatalogItemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_catalog_item::builders::GetCatalogItemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_catalog_item::builders::GetCatalogItemInputBuilder,
+}
 impl GetCatalogItemFluentBuilder  {
     /// Creates a new `GetCatalogItem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_catalog_item::GetCatalogItem, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::authorize_data_share::_authorize_data_share_input::Aut
 /// <p>From a data producer account, authorizes the sharing of a datashare with one or more consumer accounts or managing entities. To authorize a datashare for a data consumer, the producer account must have the correct access permissions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeDataShareFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::authorize_data_share::builders::AuthorizeDataShareInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::authorize_data_share::builders::AuthorizeDataShareInputBuilder,
+}
 impl AuthorizeDataShareFluentBuilder  {
     /// Creates a new `AuthorizeDataShare`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::authorize_data_share::AuthorizeDataShare, aws_http::retry::AwsResponseRetryClassifier,>,

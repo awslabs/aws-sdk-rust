@@ -8,16 +8,17 @@ pub use crate::operation::update_parallel_data::_update_parallel_data_input::Upd
 /// <p>Updates a previously created parallel data resource by importing a new input file from Amazon S3.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateParallelDataFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_parallel_data::builders::UpdateParallelDataInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_parallel_data::builders::UpdateParallelDataInputBuilder,
+}
 impl UpdateParallelDataFluentBuilder  {
     /// Creates a new `UpdateParallelData`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_parallel_data::UpdateParallelData, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::describe_contributor_insights::_describe_contributor_i
 /// <p>Returns information about contributor insights for a given table or global secondary index.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeContributorInsightsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_contributor_insights::builders::DescribeContributorInsightsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_contributor_insights::builders::DescribeContributorInsightsInputBuilder,
+}
 impl DescribeContributorInsightsFluentBuilder  {
     /// Creates a new `DescribeContributorInsights`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_contributor_insights::DescribeContributorInsights, aws_http::retry::AwsResponseRetryClassifier,>,

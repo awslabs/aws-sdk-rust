@@ -8,16 +8,17 @@ pub use crate::operation::list_live_sources::_list_live_sources_input::ListLiveS
 /// <p>Lists the live sources contained in a source location. A source represents a piece of content.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListLiveSourcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_live_sources::builders::ListLiveSourcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_live_sources::builders::ListLiveSourcesInputBuilder,
+}
 impl ListLiveSourcesFluentBuilder  {
     /// Creates a new `ListLiveSources`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_live_sources::ListLiveSources, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListLiveSourcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_live_sources::paginator::ListLiveSourcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_live_sources::paginator::ListLiveSourcesPaginator {
-                            crate::operation::list_live_sources::paginator::ListLiveSourcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_live_sources::paginator::ListLiveSourcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_live_sources::paginator::ListLiveSourcesPaginator {
+                                crate::operation::list_live_sources::paginator::ListLiveSourcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The maximum number of live sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> live sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

@@ -8,16 +8,17 @@ pub use crate::operation::delete_client_vpn_endpoint::_delete_client_vpn_endpoin
 /// <p>Deletes the specified Client VPN endpoint. You must disassociate all target networks before you can delete a Client VPN endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteClientVpnEndpointFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_client_vpn_endpoint::builders::DeleteClientVpnEndpointInputBuilder,
+}
 impl DeleteClientVpnEndpointFluentBuilder  {
     /// Creates a new `DeleteClientVpnEndpoint`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,

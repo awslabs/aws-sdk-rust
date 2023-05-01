@@ -16,16 +16,17 @@ pub use crate::operation::register_scalable_target::_register_scalable_target_in
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterScalableTargetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::register_scalable_target::builders::RegisterScalableTargetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::register_scalable_target::builders::RegisterScalableTargetInputBuilder,
+}
 impl RegisterScalableTargetFluentBuilder  {
     /// Creates a new `RegisterScalableTarget`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::register_scalable_target::RegisterScalableTarget, aws_http::retry::AwsResponseRetryClassifier,>,

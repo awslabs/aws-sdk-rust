@@ -8,16 +8,17 @@ pub use crate::operation::list_meeting_tags::_list_meeting_tags_input::ListMeeti
 /// <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMeetingTagsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_meeting_tags::builders::ListMeetingTagsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_meeting_tags::builders::ListMeetingTagsInputBuilder,
+}
 impl ListMeetingTagsFluentBuilder  {
     /// Creates a new `ListMeetingTags`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_meeting_tags::ListMeetingTags, aws_http::retry::AwsResponseRetryClassifier,>,

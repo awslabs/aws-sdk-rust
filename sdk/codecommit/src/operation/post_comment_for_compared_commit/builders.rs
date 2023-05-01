@@ -8,16 +8,17 @@ pub use crate::operation::post_comment_for_compared_commit::_post_comment_for_co
 /// <p>Posts a comment on the comparison between two commits.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PostCommentForComparedCommitFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::post_comment_for_compared_commit::builders::PostCommentForComparedCommitInputBuilder,
+}
 impl PostCommentForComparedCommitFluentBuilder  {
     /// Creates a new `PostCommentForComparedCommit`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommit, aws_http::retry::AwsResponseRetryClassifier,>,

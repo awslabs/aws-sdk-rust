@@ -20,16 +20,17 @@ pub use crate::operation::start_game_session_placement::_start_game_session_plac
 /// <p>To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a> and check the request's status. If the status is <code>FULFILLED</code>, a new game session has been created and a game session ARN and Region are referenced. If the placement request times out, you can resubmit the request or retry it with a different queue. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartGameSessionPlacementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_game_session_placement::builders::StartGameSessionPlacementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_game_session_placement::builders::StartGameSessionPlacementInputBuilder,
+}
 impl StartGameSessionPlacementFluentBuilder  {
     /// Creates a new `StartGameSessionPlacement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_game_session_placement::StartGameSessionPlacement, aws_http::retry::AwsResponseRetryClassifier,>,

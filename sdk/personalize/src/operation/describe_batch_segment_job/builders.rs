@@ -8,16 +8,17 @@ pub use crate::operation::describe_batch_segment_job::_describe_batch_segment_jo
 /// <p>Gets the properties of a batch segment job including name, Amazon Resource Name (ARN), status, input and output configurations, and the ARN of the solution version used to generate segments.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeBatchSegmentJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobInputBuilder,
+}
 impl DescribeBatchSegmentJobFluentBuilder  {
     /// Creates a new `DescribeBatchSegmentJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_batch_segment_job::DescribeBatchSegmentJob, aws_http::retry::AwsResponseRetryClassifier,>,

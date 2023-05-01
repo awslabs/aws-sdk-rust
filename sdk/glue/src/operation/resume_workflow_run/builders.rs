@@ -8,16 +8,17 @@ pub use crate::operation::resume_workflow_run::_resume_workflow_run_input::Resum
 /// <p>Restarts selected nodes of a previous partially completed workflow run and resumes the workflow run. The selected nodes and all nodes that are downstream from the selected nodes are run.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResumeWorkflowRunFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::resume_workflow_run::builders::ResumeWorkflowRunInputBuilder,
+}
 impl ResumeWorkflowRunFluentBuilder  {
     /// Creates a new `ResumeWorkflowRun`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::resume_workflow_run::ResumeWorkflowRun, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::update_radius::_update_radius_input::UpdateRadiusInput
 /// <p>Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector or Microsoft AD directory.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRadiusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_radius::builders::UpdateRadiusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_radius::builders::UpdateRadiusInputBuilder,
+}
 impl UpdateRadiusFluentBuilder  {
     /// Creates a new `UpdateRadius`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_radius::UpdateRadius, aws_http::retry::AwsResponseRetryClassifier,>,

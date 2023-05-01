@@ -25,16 +25,17 @@ pub use crate::operation::create_training_job::_create_training_job_input::Creat
 /// <p> For more information about SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTrainingJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_training_job::builders::CreateTrainingJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_training_job::builders::CreateTrainingJobInputBuilder,
+}
 impl CreateTrainingJobFluentBuilder  {
     /// Creates a new `CreateTrainingJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_training_job::CreateTrainingJob, aws_http::retry::AwsResponseRetryClassifier,>,

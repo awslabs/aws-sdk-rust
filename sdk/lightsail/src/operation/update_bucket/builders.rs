@@ -9,16 +9,17 @@ pub use crate::operation::update_bucket::_update_bucket_input::UpdateBucketInput
 /// <p>Use this action to update the configuration of an existing bucket, such as versioning, public accessibility, and the Amazon Web Services accounts that can access the bucket.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBucketFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_bucket::builders::UpdateBucketInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_bucket::builders::UpdateBucketInputBuilder,
+}
 impl UpdateBucketFluentBuilder  {
     /// Creates a new `UpdateBucket`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_bucket::UpdateBucket, aws_http::retry::AwsResponseRetryClassifier,>,

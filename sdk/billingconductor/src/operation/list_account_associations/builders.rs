@@ -8,16 +8,17 @@ pub use crate::operation::list_account_associations::_list_account_associations_
 /// <p> This is a paginated call to list linked accounts that are linked to the payer account for the specified time period. If no information is provided, the current billing period is used. The response will optionally include the billing group that's associated with the linked account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAccountAssociationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_account_associations::builders::ListAccountAssociationsInputBuilder,
+}
 impl ListAccountAssociationsFluentBuilder  {
     /// Creates a new `ListAccountAssociations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_account_associations::ListAccountAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListAccountAssociationsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator {
-                            crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator {
+                                crate::operation::list_account_associations::paginator::ListAccountAssociationsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The preferred billing period to get account associations. </p>
     pub fn billing_period(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.billing_period(input.into());

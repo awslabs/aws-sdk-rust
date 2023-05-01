@@ -9,16 +9,17 @@ pub use crate::operation::get_command_invocation::_get_command_invocation_input:
 /// <p> <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command execution status on a specific managed node, use <code>ListCommandInvocations</code>. To get the command execution status across managed nodes, use <code>ListCommands</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetCommandInvocationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_command_invocation::builders::GetCommandInvocationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_command_invocation::builders::GetCommandInvocationInputBuilder,
+}
 impl GetCommandInvocationFluentBuilder  {
     /// Creates a new `GetCommandInvocation`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_command_invocation::GetCommandInvocation, aws_http::retry::AwsResponseRetryClassifier,>,

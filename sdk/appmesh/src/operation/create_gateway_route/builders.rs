@@ -10,16 +10,17 @@ pub use crate::operation::create_gateway_route::_create_gateway_route_input::Cre
 /// <p>For more information about gateway routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway routes</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGatewayRouteFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder,
+}
 impl CreateGatewayRouteFluentBuilder  {
     /// Creates a new `CreateGatewayRoute`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_gateway_route::CreateGatewayRoute, aws_http::retry::AwsResponseRetryClassifier,>,

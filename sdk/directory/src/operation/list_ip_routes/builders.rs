@@ -8,16 +8,17 @@ pub use crate::operation::list_ip_routes::_list_ip_routes_input::ListIpRoutesInp
 /// <p>Lists the address blocks that you have added to a directory.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIpRoutesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_ip_routes::builders::ListIpRoutesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_ip_routes::builders::ListIpRoutesInputBuilder,
+}
 impl ListIpRoutesFluentBuilder  {
     /// Creates a new `ListIpRoutes`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_ip_routes::ListIpRoutes, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListIpRoutesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator {
-                            crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator {
+                                crate::operation::list_ip_routes::paginator::ListIpRoutesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
     pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());

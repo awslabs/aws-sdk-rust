@@ -8,16 +8,17 @@ pub use crate::operation::disassociate_ops_item_related_item::_disassociate_ops_
 /// <p>Deletes the association between an OpsItem and a related item. For example, this API operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of Amazon Web Services Systems Manager.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateOpsItemRelatedItemFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disassociate_ops_item_related_item::builders::DisassociateOpsItemRelatedItemInputBuilder,
+}
 impl DisassociateOpsItemRelatedItemFluentBuilder  {
     /// Creates a new `DisassociateOpsItemRelatedItem`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItem, aws_http::retry::AwsResponseRetryClassifier,>,

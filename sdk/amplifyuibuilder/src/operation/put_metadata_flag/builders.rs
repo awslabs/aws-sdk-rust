@@ -8,16 +8,17 @@ pub use crate::operation::put_metadata_flag::_put_metadata_flag_input::PutMetada
 /// <p>Stores the metadata information about a feature on a form.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutMetadataFlagFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_metadata_flag::builders::PutMetadataFlagInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_metadata_flag::builders::PutMetadataFlagInputBuilder,
+}
 impl PutMetadataFlagFluentBuilder  {
     /// Creates a new `PutMetadataFlag`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_metadata_flag::PutMetadataFlag, aws_http::retry::AwsResponseRetryClassifier,>,

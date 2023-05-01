@@ -8,16 +8,17 @@ pub use crate::operation::set_smb_guest_password::_set_smb_guest_password_input:
 /// <p>Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code> user is the user when the authentication method for the file share is set to <code>GuestAccess</code>. This operation only supported for S3 File Gateways</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SetSMBGuestPasswordFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::set_smb_guest_password::builders::SetSmbGuestPasswordInputBuilder,
+}
 impl SetSMBGuestPasswordFluentBuilder  {
     /// Creates a new `SetSMBGuestPassword`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::set_smb_guest_password::SetSMBGuestPassword, aws_http::retry::AwsResponseRetryClassifier,>,

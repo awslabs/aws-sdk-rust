@@ -8,16 +8,17 @@ pub use crate::operation::get_proxy_session::_get_proxy_session_input::GetProxyS
 /// <p>Retrieves the specified proxy session details for the specified Amazon Chime SDK Voice Connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetProxySessionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_proxy_session::builders::GetProxySessionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_proxy_session::builders::GetProxySessionInputBuilder,
+}
 impl GetProxySessionFluentBuilder  {
     /// Creates a new `GetProxySession`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_proxy_session::GetProxySession, aws_http::retry::AwsResponseRetryClassifier,>,

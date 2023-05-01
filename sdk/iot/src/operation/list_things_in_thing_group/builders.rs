@@ -9,16 +9,17 @@ pub use crate::operation::list_things_in_thing_group::_list_things_in_thing_grou
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInThingGroup</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListThingsInThingGroupFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_things_in_thing_group::builders::ListThingsInThingGroupInputBuilder,
+}
 impl ListThingsInThingGroupFluentBuilder  {
     /// Creates a new `ListThingsInThingGroup`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_things_in_thing_group::ListThingsInThingGroup, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -49,11 +50,11 @@ impl ListThingsInThingGroupFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_things_in_thing_group::paginator::ListThingsInThingGroupPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_things_in_thing_group::paginator::ListThingsInThingGroupPaginator {
-                            crate::operation::list_things_in_thing_group::paginator::ListThingsInThingGroupPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_things_in_thing_group::paginator::ListThingsInThingGroupPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_things_in_thing_group::paginator::ListThingsInThingGroupPaginator {
+                                crate::operation::list_things_in_thing_group::paginator::ListThingsInThingGroupPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The thing group name.</p>
     pub fn thing_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.thing_group_name(input.into());

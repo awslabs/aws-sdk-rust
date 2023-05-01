@@ -8,16 +8,17 @@ pub use crate::operation::update_replication_set::_update_replication_set_input:
 /// <p>Add or delete Regions from your replication set.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateReplicationSetFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_replication_set::builders::UpdateReplicationSetInputBuilder,
+}
 impl UpdateReplicationSetFluentBuilder  {
     /// Creates a new `UpdateReplicationSet`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_replication_set::UpdateReplicationSet, aws_http::retry::AwsResponseRetryClassifier,>,

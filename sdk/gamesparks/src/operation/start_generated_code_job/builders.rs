@@ -8,16 +8,17 @@ pub use crate::operation::start_generated_code_job::_start_generated_code_job_in
 /// <p> Starts an asynchronous process that generates client code for system-defined and custom messages. The resulting code is collected as a .zip file and uploaded to a pre-signed Amazon S3 URL. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartGeneratedCodeJobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder,
+}
 impl StartGeneratedCodeJobFluentBuilder  {
     /// Creates a new `StartGeneratedCodeJob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_generated_code_job::StartGeneratedCodeJob, aws_http::retry::AwsResponseRetryClassifier,>,

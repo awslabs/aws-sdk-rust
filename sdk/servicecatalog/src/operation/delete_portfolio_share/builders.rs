@@ -9,16 +9,17 @@ pub use crate::operation::delete_portfolio_share::_delete_portfolio_share_input:
 /// <p>Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePortfolioShareFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_portfolio_share::builders::DeletePortfolioShareInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_portfolio_share::builders::DeletePortfolioShareInputBuilder,
+}
 impl DeletePortfolioShareFluentBuilder  {
     /// Creates a new `DeletePortfolioShare`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_portfolio_share::DeletePortfolioShare, aws_http::retry::AwsResponseRetryClassifier,>,

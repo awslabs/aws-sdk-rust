@@ -11,16 +11,17 @@ pub use crate::operation::start_studio_sso_configuration_repair::_start_studio_s
 /// <p>After the IAM Identity Center application is repaired, you must use the Amazon Nimble Studio console to add administrators and users to your studio.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartStudioSSOConfigurationRepairFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder,
+}
 impl StartStudioSSOConfigurationRepairFluentBuilder  {
     /// Creates a new `StartStudioSSOConfigurationRepair`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepair, aws_http::retry::AwsResponseRetryClassifier,>,

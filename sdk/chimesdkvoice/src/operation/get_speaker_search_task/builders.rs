@@ -8,16 +8,17 @@ pub use crate::operation::get_speaker_search_task::_get_speaker_search_task_inpu
 /// <p>Retrieves the details of the specified speaker search task.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetSpeakerSearchTaskFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_speaker_search_task::builders::GetSpeakerSearchTaskInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_speaker_search_task::builders::GetSpeakerSearchTaskInputBuilder,
+}
 impl GetSpeakerSearchTaskFluentBuilder  {
     /// Creates a new `GetSpeakerSearchTask`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_speaker_search_task::GetSpeakerSearchTask, aws_http::retry::AwsResponseRetryClassifier,>,

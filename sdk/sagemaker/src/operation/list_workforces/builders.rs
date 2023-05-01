@@ -8,16 +8,17 @@ pub use crate::operation::list_workforces::_list_workforces_input::ListWorkforce
 /// <p>Use this operation to list all private and vendor workforces in an Amazon Web Services Region. Note that you can only have one private workforce per Amazon Web Services Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWorkforcesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_workforces::builders::ListWorkforcesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_workforces::builders::ListWorkforcesInputBuilder,
+}
 impl ListWorkforcesFluentBuilder  {
     /// Creates a new `ListWorkforces`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_workforces::ListWorkforces, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWorkforcesFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_workforces::paginator::ListWorkforcesPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_workforces::paginator::ListWorkforcesPaginator {
-                            crate::operation::list_workforces::paginator::ListWorkforcesPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_workforces::paginator::ListWorkforcesPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_workforces::paginator::ListWorkforcesPaginator {
+                                crate::operation::list_workforces::paginator::ListWorkforcesPaginator::new(self.handle, self.inner)
+                            }
     /// <p>Sort workforces using the workforce name or creation date.</p>
     pub fn sort_by(mut self, input: crate::types::ListWorkforcesSortByOptions) -> Self {
         self.inner = self.inner.sort_by(input);

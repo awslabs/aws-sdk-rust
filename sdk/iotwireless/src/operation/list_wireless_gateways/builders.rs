@@ -8,16 +8,17 @@ pub use crate::operation::list_wireless_gateways::_list_wireless_gateways_input:
 /// <p>Lists the wireless gateways registered to your AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWirelessGatewaysFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_wireless_gateways::builders::ListWirelessGatewaysInputBuilder,
+}
 impl ListWirelessGatewaysFluentBuilder  {
     /// Creates a new `ListWirelessGateways`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_wireless_gateways::ListWirelessGateways, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListWirelessGatewaysFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator {
-                            crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator {
+                                crate::operation::list_wireless_gateways::paginator::ListWirelessGatewaysPaginator::new(self.handle, self.inner)
+                            }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

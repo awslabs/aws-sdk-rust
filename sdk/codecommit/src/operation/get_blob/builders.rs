@@ -8,16 +8,17 @@ pub use crate::operation::get_blob::_get_blob_input::GetBlobInputBuilder;
 /// <p>Returns the base-64 encoded content of an individual blob in a repository.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetBlobFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_blob::builders::GetBlobInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_blob::builders::GetBlobInputBuilder,
+}
 impl GetBlobFluentBuilder  {
     /// Creates a new `GetBlob`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_blob::GetBlob, aws_http::retry::AwsResponseRetryClassifier,>,

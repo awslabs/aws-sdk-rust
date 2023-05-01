@@ -8,16 +8,17 @@ pub use crate::operation::batch_put_field_options::_batch_put_field_options_inpu
 /// <p>Creates and updates a set of field options for a single select field in a Cases domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchPutFieldOptionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::batch_put_field_options::builders::BatchPutFieldOptionsInputBuilder,
+}
 impl BatchPutFieldOptionsFluentBuilder  {
     /// Creates a new `BatchPutFieldOptions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_put_field_options::BatchPutFieldOptions, aws_http::retry::AwsResponseRetryClassifier,>,

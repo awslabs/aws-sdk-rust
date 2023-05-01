@@ -8,16 +8,17 @@ pub use crate::operation::list_security_control_definitions::_list_security_cont
 /// <p> Lists all of the security controls that apply to a specified standard. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSecurityControlDefinitionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsInputBuilder,
+}
 impl ListSecurityControlDefinitionsFluentBuilder  {
     /// Creates a new `ListSecurityControlDefinitions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_security_control_definitions::ListSecurityControlDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListSecurityControlDefinitionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_security_control_definitions::paginator::ListSecurityControlDefinitionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_security_control_definitions::paginator::ListSecurityControlDefinitionsPaginator {
-                            crate::operation::list_security_control_definitions::paginator::ListSecurityControlDefinitionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_security_control_definitions::paginator::ListSecurityControlDefinitionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_security_control_definitions::paginator::ListSecurityControlDefinitionsPaginator {
+                                crate::operation::list_security_control_definitions::paginator::ListSecurityControlDefinitionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p> The Amazon Resource Name (ARN) of the standard that you want to view controls for. </p>
     pub fn standards_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.standards_arn(input.into());

@@ -8,16 +8,17 @@ pub use crate::operation::cancel_legal_hold::_cancel_legal_hold_input::CancelLeg
 /// <p>This action removes the specified legal hold on a recovery point. This action can only be performed by a user with sufficient permissions.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelLegalHoldFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::cancel_legal_hold::builders::CancelLegalHoldInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::cancel_legal_hold::builders::CancelLegalHoldInputBuilder,
+}
 impl CancelLegalHoldFluentBuilder  {
     /// Creates a new `CancelLegalHold`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::cancel_legal_hold::CancelLegalHold, aws_http::retry::AwsResponseRetryClassifier,>,

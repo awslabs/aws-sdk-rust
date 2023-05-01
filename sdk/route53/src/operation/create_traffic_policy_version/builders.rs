@@ -8,16 +8,17 @@ pub use crate::operation::create_traffic_policy_version::_create_traffic_policy_
 /// <p>Creates a new version of an existing traffic policy. When you create a new version of a traffic policy, you specify the ID of the traffic policy that you want to update and a JSON-formatted document that describes the new version. You use traffic policies to create multiple DNS resource record sets for one domain name (such as example.com) or one subdomain name (such as www.example.com). You can create a maximum of 1000 versions of a traffic policy. If you reach the limit and need to create another version, you'll need to start a new traffic policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTrafficPolicyVersionFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::create_traffic_policy_version::builders::CreateTrafficPolicyVersionInputBuilder,
+}
 impl CreateTrafficPolicyVersionFluentBuilder  {
     /// Creates a new `CreateTrafficPolicyVersion`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersion, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -10,16 +10,17 @@ pub use crate::operation::describe_game_session_placement::_describe_game_sessio
 /// <p>This operation is not designed to be continually called to track game session status. This practice can cause you to exceed your API limit, which results in errors. Instead, you must configure configure an Amazon Simple Notification Service (SNS) topic to receive notifications from FlexMatch or queues. Continuously polling with <code>DescribeGameSessionPlacement</code> should only be used for games in development with low game session usage. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeGameSessionPlacementFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_game_session_placement::builders::DescribeGameSessionPlacementInputBuilder,
+}
 impl DescribeGameSessionPlacementFluentBuilder  {
     /// Creates a new `DescribeGameSessionPlacement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_game_session_placement::DescribeGameSessionPlacement, aws_http::retry::AwsResponseRetryClassifier,>,

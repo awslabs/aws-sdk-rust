@@ -10,16 +10,17 @@ pub use crate::operation::copy_db_cluster_snapshot::_copy_db_cluster_snapshot_in
 /// <p>To cancel the copy operation after it is in progress, delete the target cluster snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in the <i>copying</i> status.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CopyDBClusterSnapshotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::copy_db_cluster_snapshot::builders::CopyDbClusterSnapshotInputBuilder,
+}
 impl CopyDBClusterSnapshotFluentBuilder  {
     /// Creates a new `CopyDBClusterSnapshot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,

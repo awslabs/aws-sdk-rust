@@ -8,16 +8,17 @@ pub use crate::operation::validate_e911_address::_validate_e911_address_input::V
 /// <p>Validates an address to be used for 911 calls made with Amazon Chime Voice Connectors. You can use validated addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps ensure that addresses are routed to the appropriate Public Safety Answering Point.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ValidateE911AddressFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::validate_e911_address::builders::ValidateE911AddressInputBuilder,
+}
 impl ValidateE911AddressFluentBuilder  {
     /// Creates a new `ValidateE911Address`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::validate_e911_address::ValidateE911Address, aws_http::retry::AwsResponseRetryClassifier,>,

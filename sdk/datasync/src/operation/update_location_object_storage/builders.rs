@@ -8,16 +8,17 @@ pub use crate::operation::update_location_object_storage::_update_location_objec
 /// <p>Updates some parameters of an existing object storage location that DataSync accesses for a transfer. For information about creating a self-managed object storage location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLocationObjectStorageFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder,
+}
 impl UpdateLocationObjectStorageFluentBuilder  {
     /// Creates a new `UpdateLocationObjectStorage`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_location_object_storage::UpdateLocationObjectStorage, aws_http::retry::AwsResponseRetryClassifier,>,

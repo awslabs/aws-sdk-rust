@@ -16,16 +16,17 @@ pub use crate::operation::admin_create_user::_admin_create_user_input::AdminCrea
 /// <p> <code>AdminCreateUser</code> requires developer credentials.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AdminCreateUserFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::admin_create_user::builders::AdminCreateUserInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::admin_create_user::builders::AdminCreateUserInputBuilder,
+}
 impl AdminCreateUserFluentBuilder  {
     /// Creates a new `AdminCreateUser`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::admin_create_user::AdminCreateUser, aws_http::retry::AwsResponseRetryClassifier,>,

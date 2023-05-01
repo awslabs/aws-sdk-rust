@@ -8,16 +8,17 @@ pub use crate::operation::put_core_network_policy::_put_core_network_policy_inpu
 /// <p>Creates a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and the submitted policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutCoreNetworkPolicyFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::put_core_network_policy::builders::PutCoreNetworkPolicyInputBuilder,
+}
 impl PutCoreNetworkPolicyFluentBuilder  {
     /// Creates a new `PutCoreNetworkPolicy`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::put_core_network_policy::PutCoreNetworkPolicy, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::delete_base_path_mapping::_delete_base_path_mapping_in
 /// <p>Deletes the BasePathMapping resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteBasePathMappingFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_base_path_mapping::builders::DeleteBasePathMappingInputBuilder,
+}
 impl DeleteBasePathMappingFluentBuilder  {
     /// Creates a new `DeleteBasePathMapping`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_base_path_mapping::DeleteBasePathMapping, aws_http::retry::AwsResponseRetryClassifier,>,

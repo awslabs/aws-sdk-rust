@@ -9,16 +9,17 @@ pub use crate::operation::report_instance_status::_report_instance_status_input:
 /// <p>Use of this action does not change the value returned by <code>DescribeInstanceStatus</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReportInstanceStatusFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::report_instance_status::builders::ReportInstanceStatusInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::report_instance_status::builders::ReportInstanceStatusInputBuilder,
+}
 impl ReportInstanceStatusFluentBuilder  {
     /// Creates a new `ReportInstanceStatus`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::report_instance_status::ReportInstanceStatus, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::list_groups::_list_groups_input::ListGroupsInputBuilde
 /// <p>Lists all user groups in Amazon QuickSight. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGroupsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_groups::builders::ListGroupsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_groups::builders::ListGroupsInputBuilder,
+}
 impl ListGroupsFluentBuilder  {
     /// Creates a new `ListGroups`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_groups::ListGroups, aws_http::retry::AwsResponseRetryClassifier,>,

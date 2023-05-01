@@ -8,16 +8,17 @@ pub use crate::operation::update_user_profile::_update_user_profile_input::Updat
 /// <p>Updates a user's profile in AWS CodeStar. The user profile is not project-specific. Information in the user profile is displayed wherever the user's information appears to other users in AWS CodeStar. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateUserProfileFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder,
+}
 impl UpdateUserProfileFluentBuilder  {
     /// Creates a new `UpdateUserProfile`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_user_profile::UpdateUserProfile, aws_http::retry::AwsResponseRetryClassifier,>,

@@ -8,16 +8,17 @@ pub use crate::operation::initialize_service::_initialize_service_input::Initial
 /// <p>Initialize Application Migration Service.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InitializeServiceFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::initialize_service::builders::InitializeServiceInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::initialize_service::builders::InitializeServiceInputBuilder,
+}
 impl InitializeServiceFluentBuilder  {
     /// Creates a new `InitializeService`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::initialize_service::InitializeService, aws_http::retry::AwsResponseRetryClassifier,>,

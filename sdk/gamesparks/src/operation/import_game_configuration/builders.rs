@@ -9,16 +9,17 @@ pub use crate::operation::import_game_configuration::_import_game_configuration_
 /// <p> This operation replaces the current configuration of the game with the provided input. This is not a reversible operation. If you want to preserve the previous configuration, use <code>CreateSnapshot</code> to make a new snapshot before importing. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportGameConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::import_game_configuration::builders::ImportGameConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::import_game_configuration::builders::ImportGameConfigurationInputBuilder,
+}
 impl ImportGameConfigurationFluentBuilder  {
     /// Creates a new `ImportGameConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::import_game_configuration::ImportGameConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

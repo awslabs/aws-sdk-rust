@@ -8,16 +8,17 @@ pub use crate::operation::describe_rules::_describe_rules_input::DescribeRulesIn
 /// <p>Describes the specified rules or the rules for the specified listener. You must specify either a listener or one or more rules.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRulesFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::describe_rules::builders::DescribeRulesInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::describe_rules::builders::DescribeRulesInputBuilder,
+}
 impl DescribeRulesFluentBuilder  {
     /// Creates a new `DescribeRules`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_rules::DescribeRules, aws_http::retry::AwsResponseRetryClassifier,>,

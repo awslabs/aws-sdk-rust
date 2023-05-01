@@ -9,16 +9,17 @@ pub use crate::operation::list_associations_for_license_configuration::_list_ass
 /// <p>Resource associations need not consume licenses from a license configuration. For example, an AMI or a stopped instance might not consume a license (depending on the license rules).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssociationsForLicenseConfigurationFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_associations_for_license_configuration::builders::ListAssociationsForLicenseConfigurationInputBuilder,
+}
 impl ListAssociationsForLicenseConfigurationFluentBuilder  {
     /// Creates a new `ListAssociationsForLicenseConfiguration`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_associations_for_license_configuration::ListAssociationsForLicenseConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,

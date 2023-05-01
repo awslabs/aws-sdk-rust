@@ -8,16 +8,17 @@ pub use crate::operation::delete_tape_pool::_delete_tape_pool_input::DeleteTapeP
 /// <p>Delete a custom tape pool. A custom tape pool can only be deleted if there are no tapes in the pool and if there are no automatic tape creation policies that reference the custom tape pool.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTapePoolFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_tape_pool::builders::DeleteTapePoolInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_tape_pool::builders::DeleteTapePoolInputBuilder,
+}
 impl DeleteTapePoolFluentBuilder  {
     /// Creates a new `DeleteTapePool`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_tape_pool::DeleteTapePool, aws_http::retry::AwsResponseRetryClassifier,>,

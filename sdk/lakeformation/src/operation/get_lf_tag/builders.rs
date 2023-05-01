@@ -8,16 +8,17 @@ pub use crate::operation::get_lf_tag::_get_lf_tag_input::GetLfTagInputBuilder;
 /// <p>Returns an LF-tag definition.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetLFTagFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::get_lf_tag::builders::GetLfTagInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::get_lf_tag::builders::GetLfTagInputBuilder,
+}
 impl GetLFTagFluentBuilder  {
     /// Creates a new `GetLFTag`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_lf_tag::GetLFTag, aws_http::retry::AwsResponseRetryClassifier,>,

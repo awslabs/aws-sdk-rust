@@ -10,16 +10,17 @@ pub use crate::operation::disable_vpc_classic_link::_disable_vpc_classic_link_in
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisableVpcClassicLinkFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::disable_vpc_classic_link::builders::DisableVpcClassicLinkInputBuilder,
+}
 impl DisableVpcClassicLinkFluentBuilder  {
     /// Creates a new `DisableVpcClassicLink`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disable_vpc_classic_link::DisableVpcClassicLink, aws_http::retry::AwsResponseRetryClassifier,>,

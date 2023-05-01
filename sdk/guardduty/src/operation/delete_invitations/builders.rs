@@ -8,16 +8,17 @@ pub use crate::operation::delete_invitations::_delete_invitations_input::DeleteI
 /// <p>Deletes invitations sent to the current member account by Amazon Web Services accounts specified by their account IDs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInvitationsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::delete_invitations::builders::DeleteInvitationsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::delete_invitations::builders::DeleteInvitationsInputBuilder,
+}
 impl DeleteInvitationsFluentBuilder  {
     /// Creates a new `DeleteInvitations`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_invitations::DeleteInvitations, aws_http::retry::AwsResponseRetryClassifier,>,

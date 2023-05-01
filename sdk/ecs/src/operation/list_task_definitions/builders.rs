@@ -8,16 +8,17 @@ pub use crate::operation::list_task_definitions::_list_task_definitions_input::L
 /// <p>Returns a list of task definitions that are registered to your account. You can filter the results by family name with the <code>familyPrefix</code> parameter or by status with the <code>status</code> parameter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTaskDefinitionsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_task_definitions::builders::ListTaskDefinitionsInputBuilder
-            }
+    handle: std::sync::Arc<crate::client::Handle>,
+                    inner: crate::operation::list_task_definitions::builders::ListTaskDefinitionsInputBuilder,
+}
 impl ListTaskDefinitionsFluentBuilder  {
     /// Creates a new `ListTaskDefinitions`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle, inner: Default::default(),
+        }
+    }
+    /// Consume this builder, creating a customizable operation that can be modified before being
                     /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_task_definitions::ListTaskDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,
@@ -48,11 +49,11 @@ impl ListTaskDefinitionsFluentBuilder  {
                         self.handle.client.call(op).await
                     }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_task_definitions::paginator::ListTaskDefinitionsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_task_definitions::paginator::ListTaskDefinitionsPaginator {
-                            crate::operation::list_task_definitions::paginator::ListTaskDefinitionsPaginator::new(self.handle, self.inner)
-                        }
+                            ///
+                            /// Paginators are used by calling [`send().await`](crate::operation::list_task_definitions::paginator::ListTaskDefinitionsPaginator::send) which returns a `Stream`.
+                            pub fn into_paginator(self) -> crate::operation::list_task_definitions::paginator::ListTaskDefinitionsPaginator {
+                                crate::operation::list_task_definitions::paginator::ListTaskDefinitionsPaginator::new(self.handle, self.inner)
+                            }
     /// <p>The full family name to filter the <code>ListTaskDefinitions</code> results with. Specifying a <code>familyPrefix</code> limits the listed task definitions to task definition revisions that belong to that family.</p>
     pub fn family_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.family_prefix(input.into());
