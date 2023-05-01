@@ -3,7 +3,7 @@
 /// <p>A property that allows a node to repel a set of pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Taint {
+pub struct Taint  {
     /// <p>The key of the taint.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Taint {
 }
 impl Taint {
     /// <p>The key of the taint.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> std::option::Option<& str> {
         self.key.as_deref()
     }
     /// <p>The value of the taint.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
     /// <p>The effect of the taint.</p>
-    pub fn effect(&self) -> std::option::Option<&crate::types::TaintEffect> {
+    pub fn effect(&self) -> std::option::Option<& crate::types::TaintEffect> {
         self.effect.as_ref()
     }
 }
@@ -51,8 +51,7 @@ impl TaintBuilder {
     }
     /// <p>The key of the taint.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input;
-        self
+        self.key = input; self
     }
     /// <p>The value of the taint.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl TaintBuilder {
     }
     /// <p>The value of the taint.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// <p>The effect of the taint.</p>
     pub fn effect(mut self, input: crate::types::TaintEffect) -> Self {
@@ -71,15 +69,18 @@ impl TaintBuilder {
     }
     /// <p>The effect of the taint.</p>
     pub fn set_effect(mut self, input: std::option::Option<crate::types::TaintEffect>) -> Self {
-        self.effect = input;
-        self
+        self.effect = input; self
     }
     /// Consumes the builder and constructs a [`Taint`](crate::types::Taint).
     pub fn build(self) -> crate::types::Taint {
         crate::types::Taint {
-            key: self.key,
-            value: self.value,
-            effect: self.effect,
+            key: self.key
+            ,
+            value: self.value
+            ,
+            effect: self.effect
+            ,
         }
     }
 }
+

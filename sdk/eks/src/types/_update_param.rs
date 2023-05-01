@@ -3,7 +3,7 @@
 /// <p>An object representing the details of an update request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateParam {
+pub struct UpdateParam  {
     /// <p>The keys associated with an update request.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::UpdateParamType>,
@@ -13,11 +13,11 @@ pub struct UpdateParam {
 }
 impl UpdateParam {
     /// <p>The keys associated with an update request.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::UpdateParamType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::UpdateParamType> {
         self.r#type.as_ref()
     }
     /// <p>The value of the keys submitted as part of an update request.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> std::option::Option<& str> {
         self.value.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl UpdateParamBuilder {
     }
     /// <p>The keys associated with an update request.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::UpdateParamType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// <p>The value of the keys submitted as part of an update request.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -53,14 +52,16 @@ impl UpdateParamBuilder {
     }
     /// <p>The value of the keys submitted as part of an update request.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input;
-        self
+        self.value = input; self
     }
     /// Consumes the builder and constructs a [`UpdateParam`](crate::types::UpdateParam).
     pub fn build(self) -> crate::types::UpdateParam {
         crate::types::UpdateParam {
-            r#type: self.r#type,
-            value: self.value,
+            r#type: self.r#type
+            ,
+            value: self.value
+            ,
         }
     }
 }
+

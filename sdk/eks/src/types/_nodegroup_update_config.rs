@@ -3,7 +3,7 @@
 /// <p>The node group update configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodegroupUpdateConfig {
+pub struct NodegroupUpdateConfig  {
     /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
     #[doc(hidden)]
     pub max_unavailable: std::option::Option<i32>,
@@ -43,8 +43,7 @@ impl NodegroupUpdateConfigBuilder {
     }
     /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>
     pub fn set_max_unavailable(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_unavailable = input;
-        self
+        self.max_unavailable = input; self
     }
     /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub fn max_unavailable_percentage(mut self, input: i32) -> Self {
@@ -53,14 +52,16 @@ impl NodegroupUpdateConfigBuilder {
     }
     /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
     pub fn set_max_unavailable_percentage(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_unavailable_percentage = input;
-        self
+        self.max_unavailable_percentage = input; self
     }
     /// Consumes the builder and constructs a [`NodegroupUpdateConfig`](crate::types::NodegroupUpdateConfig).
     pub fn build(self) -> crate::types::NodegroupUpdateConfig {
         crate::types::NodegroupUpdateConfig {
-            max_unavailable: self.max_unavailable,
-            max_unavailable_percentage: self.max_unavailable_percentage,
+            max_unavailable: self.max_unavailable
+            ,
+            max_unavailable_percentage: self.max_unavailable_percentage
+            ,
         }
     }
 }
+

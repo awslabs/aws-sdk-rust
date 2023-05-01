@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReportPlanOutput {
+pub struct DescribeReportPlanOutput  {
     /// <p>Returns details about the report plan that is specified by its name. These details include the report plan's Amazon Resource Name (ARN), description, settings, delivery channel, deployment status, creation time, and last attempted and successful run times.</p>
     #[doc(hidden)]
     pub report_plan: std::option::Option<crate::types::ReportPlan>,
@@ -10,19 +10,18 @@ pub struct DescribeReportPlanOutput {
 }
 impl DescribeReportPlanOutput {
     /// <p>Returns details about the report plan that is specified by its name. These details include the report plan's Amazon Resource Name (ARN), description, settings, delivery channel, deployment status, creation time, and last attempted and successful run times.</p>
-    pub fn report_plan(&self) -> std::option::Option<&crate::types::ReportPlan> {
+    pub fn report_plan(&self) -> std::option::Option<& crate::types::ReportPlan> {
         self.report_plan.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeReportPlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DescribeReportPlanOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReportPlanOutput`](crate::operation::describe_report_plan::DescribeReportPlanOutput).
-    pub fn builder(
-    ) -> crate::operation::describe_report_plan::builders::DescribeReportPlanOutputBuilder {
+    pub fn builder() -> crate::operation::describe_report_plan::builders::DescribeReportPlanOutputBuilder {
         crate::operation::describe_report_plan::builders::DescribeReportPlanOutputBuilder::default()
     }
 }
@@ -42,23 +41,24 @@ impl DescribeReportPlanOutputBuilder {
     }
     /// <p>Returns details about the report plan that is specified by its name. These details include the report plan's Amazon Resource Name (ARN), description, settings, delivery channel, deployment status, creation time, and last attempted and successful run times.</p>
     pub fn set_report_plan(mut self, input: std::option::Option<crate::types::ReportPlan>) -> Self {
-        self.report_plan = input;
-        self
+        self.report_plan = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DescribeReportPlanOutput`](crate::operation::describe_report_plan::DescribeReportPlanOutput).
     pub fn build(self) -> crate::operation::describe_report_plan::DescribeReportPlanOutput {
         crate::operation::describe_report_plan::DescribeReportPlanOutput {
-            report_plan: self.report_plan,
+            report_plan: self.report_plan
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

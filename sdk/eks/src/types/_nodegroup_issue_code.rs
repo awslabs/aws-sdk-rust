@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let nodegroupissuecode = unimplemented!();
 /// match nodegroupissuecode {
@@ -47,22 +47,14 @@
 /// Specifically, when `nodegroupissuecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NodegroupIssueCode::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum NodegroupIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -103,108 +95,75 @@ pub enum NodegroupIssueCode {
     #[allow(missing_docs)] // documentation missing in model
     NodeCreationFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for NodegroupIssueCode {
-    fn from(s: &str) -> Self {
-        match s {
-            "AccessDenied" => NodegroupIssueCode::AccessDenied,
-            "AsgInstanceLaunchFailures" => NodegroupIssueCode::AsgInstanceLaunchFailures,
-            "AutoScalingGroupInvalidConfiguration" => {
-                NodegroupIssueCode::AutoScalingGroupInvalidConfiguration
+                fn from(s: &str) -> Self {
+                    match s {
+                        "AccessDenied" => NodegroupIssueCode::AccessDenied,
+"AsgInstanceLaunchFailures" => NodegroupIssueCode::AsgInstanceLaunchFailures,
+"AutoScalingGroupInvalidConfiguration" => NodegroupIssueCode::AutoScalingGroupInvalidConfiguration,
+"AutoScalingGroupNotFound" => NodegroupIssueCode::AutoScalingGroupNotFound,
+"ClusterUnreachable" => NodegroupIssueCode::ClusterUnreachable,
+"Ec2LaunchTemplateNotFound" => NodegroupIssueCode::Ec2LaunchTemplateNotFound,
+"Ec2LaunchTemplateVersionMismatch" => NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch,
+"Ec2SecurityGroupDeletionFailure" => NodegroupIssueCode::Ec2SecurityGroupDeletionFailure,
+"Ec2SecurityGroupNotFound" => NodegroupIssueCode::Ec2SecurityGroupNotFound,
+"Ec2SubnetInvalidConfiguration" => NodegroupIssueCode::Ec2SubnetInvalidConfiguration,
+"Ec2SubnetMissingIpv6Assignment" => NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment,
+"Ec2SubnetNotFound" => NodegroupIssueCode::Ec2SubnetNotFound,
+"IamInstanceProfileNotFound" => NodegroupIssueCode::IamInstanceProfileNotFound,
+"IamLimitExceeded" => NodegroupIssueCode::IamLimitExceeded,
+"IamNodeRoleNotFound" => NodegroupIssueCode::IamNodeRoleNotFound,
+"InstanceLimitExceeded" => NodegroupIssueCode::InstanceLimitExceeded,
+"InsufficientFreeAddresses" => NodegroupIssueCode::InsufficientFreeAddresses,
+"InternalFailure" => NodegroupIssueCode::InternalFailure,
+"NodeCreationFailure" => NodegroupIssueCode::NodeCreationFailure,
+other => NodegroupIssueCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-            "AutoScalingGroupNotFound" => NodegroupIssueCode::AutoScalingGroupNotFound,
-            "ClusterUnreachable" => NodegroupIssueCode::ClusterUnreachable,
-            "Ec2LaunchTemplateNotFound" => NodegroupIssueCode::Ec2LaunchTemplateNotFound,
-            "Ec2LaunchTemplateVersionMismatch" => {
-                NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch
-            }
-            "Ec2SecurityGroupDeletionFailure" => {
-                NodegroupIssueCode::Ec2SecurityGroupDeletionFailure
-            }
-            "Ec2SecurityGroupNotFound" => NodegroupIssueCode::Ec2SecurityGroupNotFound,
-            "Ec2SubnetInvalidConfiguration" => NodegroupIssueCode::Ec2SubnetInvalidConfiguration,
-            "Ec2SubnetMissingIpv6Assignment" => NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment,
-            "Ec2SubnetNotFound" => NodegroupIssueCode::Ec2SubnetNotFound,
-            "IamInstanceProfileNotFound" => NodegroupIssueCode::IamInstanceProfileNotFound,
-            "IamLimitExceeded" => NodegroupIssueCode::IamLimitExceeded,
-            "IamNodeRoleNotFound" => NodegroupIssueCode::IamNodeRoleNotFound,
-            "InstanceLimitExceeded" => NodegroupIssueCode::InstanceLimitExceeded,
-            "InsufficientFreeAddresses" => NodegroupIssueCode::InsufficientFreeAddresses,
-            "InternalFailure" => NodegroupIssueCode::InternalFailure,
-            "NodeCreationFailure" => NodegroupIssueCode::NodeCreationFailure,
-            other => NodegroupIssueCode::Unknown(crate::primitives::UnknownVariantValue(
-                other.to_owned(),
-            )),
-        }
-    }
-}
 impl std::str::FromStr for NodegroupIssueCode {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NodegroupIssueCode::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(NodegroupIssueCode::from(s))
+                }
+            }
 impl NodegroupIssueCode {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            NodegroupIssueCode::AccessDenied => "AccessDenied",
-            NodegroupIssueCode::AsgInstanceLaunchFailures => "AsgInstanceLaunchFailures",
-            NodegroupIssueCode::AutoScalingGroupInvalidConfiguration => {
-                "AutoScalingGroupInvalidConfiguration"
-            }
-            NodegroupIssueCode::AutoScalingGroupNotFound => "AutoScalingGroupNotFound",
-            NodegroupIssueCode::ClusterUnreachable => "ClusterUnreachable",
-            NodegroupIssueCode::Ec2LaunchTemplateNotFound => "Ec2LaunchTemplateNotFound",
-            NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => {
-                "Ec2LaunchTemplateVersionMismatch"
-            }
-            NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => {
-                "Ec2SecurityGroupDeletionFailure"
-            }
-            NodegroupIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
-            NodegroupIssueCode::Ec2SubnetInvalidConfiguration => "Ec2SubnetInvalidConfiguration",
-            NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment => "Ec2SubnetMissingIpv6Assignment",
-            NodegroupIssueCode::Ec2SubnetNotFound => "Ec2SubnetNotFound",
-            NodegroupIssueCode::IamInstanceProfileNotFound => "IamInstanceProfileNotFound",
-            NodegroupIssueCode::IamLimitExceeded => "IamLimitExceeded",
-            NodegroupIssueCode::IamNodeRoleNotFound => "IamNodeRoleNotFound",
-            NodegroupIssueCode::InstanceLimitExceeded => "InstanceLimitExceeded",
-            NodegroupIssueCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
-            NodegroupIssueCode::InternalFailure => "InternalFailure",
-            NodegroupIssueCode::NodeCreationFailure => "NodeCreationFailure",
-            NodegroupIssueCode::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &[
-            "AccessDenied",
-            "AsgInstanceLaunchFailures",
-            "AutoScalingGroupInvalidConfiguration",
-            "AutoScalingGroupNotFound",
-            "ClusterUnreachable",
-            "Ec2LaunchTemplateNotFound",
-            "Ec2LaunchTemplateVersionMismatch",
-            "Ec2SecurityGroupDeletionFailure",
-            "Ec2SecurityGroupNotFound",
-            "Ec2SubnetInvalidConfiguration",
-            "Ec2SubnetMissingIpv6Assignment",
-            "Ec2SubnetNotFound",
-            "IamInstanceProfileNotFound",
-            "IamLimitExceeded",
-            "IamNodeRoleNotFound",
-            "InstanceLimitExceeded",
-            "InsufficientFreeAddresses",
-            "InternalFailure",
-            "NodeCreationFailure",
-        ]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    NodegroupIssueCode::AccessDenied => "AccessDenied",
+    NodegroupIssueCode::AsgInstanceLaunchFailures => "AsgInstanceLaunchFailures",
+    NodegroupIssueCode::AutoScalingGroupInvalidConfiguration => "AutoScalingGroupInvalidConfiguration",
+    NodegroupIssueCode::AutoScalingGroupNotFound => "AutoScalingGroupNotFound",
+    NodegroupIssueCode::ClusterUnreachable => "ClusterUnreachable",
+    NodegroupIssueCode::Ec2LaunchTemplateNotFound => "Ec2LaunchTemplateNotFound",
+    NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch => "Ec2LaunchTemplateVersionMismatch",
+    NodegroupIssueCode::Ec2SecurityGroupDeletionFailure => "Ec2SecurityGroupDeletionFailure",
+    NodegroupIssueCode::Ec2SecurityGroupNotFound => "Ec2SecurityGroupNotFound",
+    NodegroupIssueCode::Ec2SubnetInvalidConfiguration => "Ec2SubnetInvalidConfiguration",
+    NodegroupIssueCode::Ec2SubnetMissingIpv6Assignment => "Ec2SubnetMissingIpv6Assignment",
+    NodegroupIssueCode::Ec2SubnetNotFound => "Ec2SubnetNotFound",
+    NodegroupIssueCode::IamInstanceProfileNotFound => "IamInstanceProfileNotFound",
+    NodegroupIssueCode::IamLimitExceeded => "IamLimitExceeded",
+    NodegroupIssueCode::IamNodeRoleNotFound => "IamNodeRoleNotFound",
+    NodegroupIssueCode::InstanceLimitExceeded => "InstanceLimitExceeded",
+    NodegroupIssueCode::InsufficientFreeAddresses => "InsufficientFreeAddresses",
+    NodegroupIssueCode::InternalFailure => "InternalFailure",
+    NodegroupIssueCode::NodeCreationFailure => "NodeCreationFailure",
+    NodegroupIssueCode::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["AccessDenied", "AsgInstanceLaunchFailures", "AutoScalingGroupInvalidConfiguration", "AutoScalingGroupNotFound", "ClusterUnreachable", "Ec2LaunchTemplateNotFound", "Ec2LaunchTemplateVersionMismatch", "Ec2SecurityGroupDeletionFailure", "Ec2SecurityGroupNotFound", "Ec2SubnetInvalidConfiguration", "Ec2SubnetMissingIpv6Assignment", "Ec2SubnetNotFound", "IamInstanceProfileNotFound", "IamLimitExceeded", "IamNodeRoleNotFound", "InstanceLimitExceeded", "InsufficientFreeAddresses", "InternalFailure", "NodeCreationFailure"]
+                }
+            }
 impl AsRef<str> for NodegroupIssueCode {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

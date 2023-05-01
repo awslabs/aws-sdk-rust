@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackupPlanOutput {
+pub struct CreateBackupPlanOutput  {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
     pub backup_plan_id: std::option::Option<std::string::String>,
@@ -17,43 +17,39 @@ pub struct CreateBackupPlanOutput {
     pub version_id: std::option::Option<std::string::String>,
     /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     #[doc(hidden)]
-    pub advanced_backup_settings:
-        std::option::Option<std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    pub advanced_backup_settings: std::option::Option<std::vec::Vec<crate::types::AdvancedBackupSetting>>,
     _request_id: Option<String>,
 }
 impl CreateBackupPlanOutput {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(&self) -> std::option::Option<&str> {
+    pub fn backup_plan_id(&self) -> std::option::Option<& str> {
         self.backup_plan_id.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
-    pub fn backup_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn backup_plan_arn(&self) -> std::option::Option<& str> {
         self.backup_plan_arn.as_deref()
     }
     /// <p>The date and time that a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> std::option::Option<& str> {
         self.version_id.as_deref()
     }
     /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-    pub fn advanced_backup_settings(
-        &self,
-    ) -> std::option::Option<&[crate::types::AdvancedBackupSetting]> {
+    pub fn advanced_backup_settings(&self) -> std::option::Option<& [crate::types::AdvancedBackupSetting]> {
         self.advanced_backup_settings.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateBackupPlanOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl CreateBackupPlanOutput {
     /// Creates a new builder-style object to manufacture [`CreateBackupPlanOutput`](crate::operation::create_backup_plan::CreateBackupPlanOutput).
-    pub fn builder() -> crate::operation::create_backup_plan::builders::CreateBackupPlanOutputBuilder
-    {
+    pub fn builder() -> crate::operation::create_backup_plan::builders::CreateBackupPlanOutputBuilder {
         crate::operation::create_backup_plan::builders::CreateBackupPlanOutputBuilder::default()
     }
 }
@@ -66,8 +62,7 @@ pub struct CreateBackupPlanOutputBuilder {
     pub(crate) backup_plan_arn: std::option::Option<std::string::String>,
     pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) version_id: std::option::Option<std::string::String>,
-    pub(crate) advanced_backup_settings:
-        std::option::Option<std::vec::Vec<crate::types::AdvancedBackupSetting>>,
+    pub(crate) advanced_backup_settings: std::option::Option<std::vec::Vec<crate::types::AdvancedBackupSetting>>,
     _request_id: Option<String>,
 }
 impl CreateBackupPlanOutputBuilder {
@@ -78,8 +73,7 @@ impl CreateBackupPlanOutputBuilder {
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_plan_id = input;
-        self
+        self.backup_plan_id = input; self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
     pub fn backup_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,8 +82,7 @@ impl CreateBackupPlanOutputBuilder {
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
     pub fn set_backup_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_plan_arn = input;
-        self
+        self.backup_plan_arn = input; self
     }
     /// <p>The date and time that a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -97,12 +90,8 @@ impl CreateBackupPlanOutputBuilder {
         self
     }
     /// <p>The date and time that a backup plan is created, in Unix format and Coordinated Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_creation_date(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.creation_date = input;
-        self
+    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.creation_date = input; self
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +100,7 @@ impl CreateBackupPlanOutputBuilder {
     }
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. They cannot be edited.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input;
-        self
+        self.version_id = input; self
     }
     /// Appends an item to `advanced_backup_settings`.
     ///
@@ -121,36 +109,38 @@ impl CreateBackupPlanOutputBuilder {
     /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
     pub fn advanced_backup_settings(mut self, input: crate::types::AdvancedBackupSetting) -> Self {
         let mut v = self.advanced_backup_settings.unwrap_or_default();
-        v.push(input);
-        self.advanced_backup_settings = Some(v);
-        self
+                        v.push(input);
+                        self.advanced_backup_settings = Some(v);
+                        self
     }
     /// <p>A list of <code>BackupOptions</code> settings for a resource type. This option is only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
-    pub fn set_advanced_backup_settings(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AdvancedBackupSetting>>,
-    ) -> Self {
-        self.advanced_backup_settings = input;
-        self
+    pub fn set_advanced_backup_settings(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdvancedBackupSetting>>) -> Self {
+        self.advanced_backup_settings = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`CreateBackupPlanOutput`](crate::operation::create_backup_plan::CreateBackupPlanOutput).
     pub fn build(self) -> crate::operation::create_backup_plan::CreateBackupPlanOutput {
         crate::operation::create_backup_plan::CreateBackupPlanOutput {
-            backup_plan_id: self.backup_plan_id,
-            backup_plan_arn: self.backup_plan_arn,
-            creation_date: self.creation_date,
-            version_id: self.version_id,
-            advanced_backup_settings: self.advanced_backup_settings,
+            backup_plan_id: self.backup_plan_id
+            ,
+            backup_plan_arn: self.backup_plan_arn
+            ,
+            creation_date: self.creation_date
+            ,
+            version_id: self.version_id
+            ,
+            advanced_backup_settings: self.advanced_backup_settings
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

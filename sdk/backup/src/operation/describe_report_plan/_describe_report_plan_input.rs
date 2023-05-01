@@ -2,21 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReportPlanInput {
+pub struct DescribeReportPlanInput  {
     /// <p>The unique name of a report plan.</p>
     #[doc(hidden)]
     pub report_plan_name: std::option::Option<std::string::String>,
 }
 impl DescribeReportPlanInput {
     /// <p>The unique name of a report plan.</p>
-    pub fn report_plan_name(&self) -> std::option::Option<&str> {
+    pub fn report_plan_name(&self) -> std::option::Option<& str> {
         self.report_plan_name.as_deref()
     }
 }
 impl DescribeReportPlanInput {
     /// Creates a new builder-style object to manufacture [`DescribeReportPlanInput`](crate::operation::describe_report_plan::DescribeReportPlanInput).
-    pub fn builder(
-    ) -> crate::operation::describe_report_plan::builders::DescribeReportPlanInputBuilder {
+    pub fn builder() -> crate::operation::describe_report_plan::builders::DescribeReportPlanInputBuilder {
         crate::operation::describe_report_plan::builders::DescribeReportPlanInputBuilder::default()
     }
 }
@@ -35,20 +34,16 @@ impl DescribeReportPlanInputBuilder {
     }
     /// <p>The unique name of a report plan.</p>
     pub fn set_report_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_plan_name = input;
-        self
+        self.report_plan_name = input; self
     }
     /// Consumes the builder and constructs a [`DescribeReportPlanInput`](crate::operation::describe_report_plan::DescribeReportPlanInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::describe_report_plan::DescribeReportPlanInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::describe_report_plan::DescribeReportPlanInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::describe_report_plan::DescribeReportPlanInput {
-                report_plan_name: self.report_plan_name,
-            },
+                report_plan_name: self.report_plan_name
+                ,
+            }
         )
     }
 }
+

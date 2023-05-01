@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBackupVaultLockConfigurationInput {
+pub struct DeleteBackupVaultLockConfigurationInput  {
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
     #[doc(hidden)]
     pub backup_vault_name: std::option::Option<std::string::String>,
 }
 impl DeleteBackupVaultLockConfigurationInput {
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
-    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
+    pub fn backup_vault_name(&self) -> std::option::Option<& str> {
         self.backup_vault_name.as_deref()
     }
 }
 impl DeleteBackupVaultLockConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteBackupVaultLockConfigurationInput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput).
-    pub fn builder() -> crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationInputBuilder{
+    pub fn builder() -> crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationInputBuilder {
         crate::operation::delete_backup_vault_lock_configuration::builders::DeleteBackupVaultLockConfigurationInputBuilder::default()
     }
 }
@@ -33,15 +33,11 @@ impl DeleteBackupVaultLockConfigurationInputBuilder {
         self
     }
     /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
-    pub fn set_backup_vault_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.backup_vault_name = input;
-        self
+    pub fn set_backup_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.backup_vault_name = input; self
     }
     /// Consumes the builder and constructs a [`DeleteBackupVaultLockConfigurationInput`](crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput, aws_smithy_http::operation::error::BuildError>{
+    pub fn build(self) -> Result<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationInput {
                 backup_vault_name: self.backup_vault_name
@@ -50,3 +46,4 @@ impl DeleteBackupVaultLockConfigurationInputBuilder {
         )
     }
 }
+

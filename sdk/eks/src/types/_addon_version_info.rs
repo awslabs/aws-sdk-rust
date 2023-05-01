@@ -3,7 +3,7 @@
 /// <p>Information about an add-on version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddonVersionInfo {
+pub struct AddonVersionInfo  {
     /// <p>The version of the add-on.</p>
     #[doc(hidden)]
     pub addon_version: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct AddonVersionInfo {
 }
 impl AddonVersionInfo {
     /// <p>The version of the add-on.</p>
-    pub fn addon_version(&self) -> std::option::Option<&str> {
+    pub fn addon_version(&self) -> std::option::Option<& str> {
         self.addon_version.as_deref()
     }
     /// <p>The architectures that the version supports.</p>
-    pub fn architecture(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn architecture(&self) -> std::option::Option<& [std::string::String]> {
         self.architecture.as_deref()
     }
     /// <p>An object representing the compatibilities of a version.</p>
-    pub fn compatibilities(&self) -> std::option::Option<&[crate::types::Compatibility]> {
+    pub fn compatibilities(&self) -> std::option::Option<& [crate::types::Compatibility]> {
         self.compatibilities.as_deref()
     }
     /// <p>Whether the add-on requires configuration.</p>
@@ -59,8 +59,7 @@ impl AddonVersionInfoBuilder {
     }
     /// <p>The version of the add-on.</p>
     pub fn set_addon_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.addon_version = input;
-        self
+        self.addon_version = input; self
     }
     /// Appends an item to `architecture`.
     ///
@@ -69,17 +68,13 @@ impl AddonVersionInfoBuilder {
     /// <p>The architectures that the version supports.</p>
     pub fn architecture(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.architecture.unwrap_or_default();
-        v.push(input.into());
-        self.architecture = Some(v);
-        self
+                        v.push(input.into());
+                        self.architecture = Some(v);
+                        self
     }
     /// <p>The architectures that the version supports.</p>
-    pub fn set_architecture(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.architecture = input;
-        self
+    pub fn set_architecture(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.architecture = input; self
     }
     /// Appends an item to `compatibilities`.
     ///
@@ -88,17 +83,13 @@ impl AddonVersionInfoBuilder {
     /// <p>An object representing the compatibilities of a version.</p>
     pub fn compatibilities(mut self, input: crate::types::Compatibility) -> Self {
         let mut v = self.compatibilities.unwrap_or_default();
-        v.push(input);
-        self.compatibilities = Some(v);
-        self
+                        v.push(input);
+                        self.compatibilities = Some(v);
+                        self
     }
     /// <p>An object representing the compatibilities of a version.</p>
-    pub fn set_compatibilities(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Compatibility>>,
-    ) -> Self {
-        self.compatibilities = input;
-        self
+    pub fn set_compatibilities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Compatibility>>) -> Self {
+        self.compatibilities = input; self
     }
     /// <p>Whether the add-on requires configuration.</p>
     pub fn requires_configuration(mut self, input: bool) -> Self {
@@ -107,16 +98,21 @@ impl AddonVersionInfoBuilder {
     }
     /// <p>Whether the add-on requires configuration.</p>
     pub fn set_requires_configuration(mut self, input: std::option::Option<bool>) -> Self {
-        self.requires_configuration = input;
-        self
+        self.requires_configuration = input; self
     }
     /// Consumes the builder and constructs a [`AddonVersionInfo`](crate::types::AddonVersionInfo).
     pub fn build(self) -> crate::types::AddonVersionInfo {
         crate::types::AddonVersionInfo {
-            addon_version: self.addon_version,
-            architecture: self.architecture,
-            compatibilities: self.compatibilities,
-            requires_configuration: self.requires_configuration.unwrap_or_default(),
+            addon_version: self.addon_version
+            ,
+            architecture: self.architecture
+            ,
+            compatibilities: self.compatibilities
+            ,
+            requires_configuration: self.requires_configuration
+                .unwrap_or_default()
+            ,
         }
     }
 }
+

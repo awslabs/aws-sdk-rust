@@ -3,14 +3,14 @@
 /// <p>An object representing the logging configuration for resources in your cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Logging {
+pub struct Logging  {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
     #[doc(hidden)]
     pub cluster_logging: std::option::Option<std::vec::Vec<crate::types::LogSetup>>,
 }
 impl Logging {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
-    pub fn cluster_logging(&self) -> std::option::Option<&[crate::types::LogSetup]> {
+    pub fn cluster_logging(&self) -> std::option::Option<& [crate::types::LogSetup]> {
         self.cluster_logging.as_deref()
     }
 }
@@ -35,22 +35,20 @@ impl LoggingBuilder {
     /// <p>The cluster control plane logging configuration for your cluster.</p>
     pub fn cluster_logging(mut self, input: crate::types::LogSetup) -> Self {
         let mut v = self.cluster_logging.unwrap_or_default();
-        v.push(input);
-        self.cluster_logging = Some(v);
-        self
+                        v.push(input);
+                        self.cluster_logging = Some(v);
+                        self
     }
     /// <p>The cluster control plane logging configuration for your cluster.</p>
-    pub fn set_cluster_logging(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogSetup>>,
-    ) -> Self {
-        self.cluster_logging = input;
-        self
+    pub fn set_cluster_logging(mut self, input: std::option::Option<std::vec::Vec<crate::types::LogSetup>>) -> Self {
+        self.cluster_logging = input; self
     }
     /// Consumes the builder and constructs a [`Logging`](crate::types::Logging).
     pub fn build(self) -> crate::types::Logging {
         crate::types::Logging {
-            cluster_logging: self.cluster_logging,
+            cluster_logging: self.cluster_logging
+            ,
         }
     }
 }
+

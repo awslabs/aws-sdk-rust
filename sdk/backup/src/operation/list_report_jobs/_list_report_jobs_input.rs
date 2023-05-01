@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReportJobsInput {
+pub struct ListReportJobsInput  {
     /// <p>Returns only report jobs with the specified report plan name.</p>
     #[doc(hidden)]
     pub by_report_plan_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListReportJobsInput {
     /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
     #[doc(hidden)]
     pub by_creation_after: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
+    /// <p>Returns only report jobs that are in the specified status. The statuses are:</p> 
     /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
     #[doc(hidden)]
     pub by_status: std::option::Option<std::string::String>,
@@ -25,20 +25,20 @@ pub struct ListReportJobsInput {
 }
 impl ListReportJobsInput {
     /// <p>Returns only report jobs with the specified report plan name.</p>
-    pub fn by_report_plan_name(&self) -> std::option::Option<&str> {
+    pub fn by_report_plan_name(&self) -> std::option::Option<& str> {
         self.by_report_plan_name.as_deref()
     }
     /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
-    pub fn by_creation_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn by_creation_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.by_creation_before.as_ref()
     }
     /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
-    pub fn by_creation_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn by_creation_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.by_creation_after.as_ref()
     }
-    /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
+    /// <p>Returns only report jobs that are in the specified status. The statuses are:</p> 
     /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
-    pub fn by_status(&self) -> std::option::Option<&str> {
+    pub fn by_status(&self) -> std::option::Option<& str> {
         self.by_status.as_deref()
     }
     /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
@@ -46,7 +46,7 @@ impl ListReportJobsInput {
         self.max_results
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -75,12 +75,8 @@ impl ListReportJobsInputBuilder {
         self
     }
     /// <p>Returns only report jobs with the specified report plan name.</p>
-    pub fn set_by_report_plan_name(
-        mut self,
-        input: std::option::Option<std::string::String>,
-    ) -> Self {
-        self.by_report_plan_name = input;
-        self
+    pub fn set_by_report_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+        self.by_report_plan_name = input; self
     }
     /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
     pub fn by_creation_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -88,12 +84,8 @@ impl ListReportJobsInputBuilder {
         self
     }
     /// <p>Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
-    pub fn set_by_creation_before(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.by_creation_before = input;
-        self
+    pub fn set_by_creation_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.by_creation_before = input; self
     }
     /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
     pub fn by_creation_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -101,24 +93,19 @@ impl ListReportJobsInputBuilder {
         self
     }
     /// <p>Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</p>
-    pub fn set_by_creation_after(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.by_creation_after = input;
-        self
+    pub fn set_by_creation_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.by_creation_after = input; self
     }
-    /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
+    /// <p>Returns only report jobs that are in the specified status. The statuses are:</p> 
     /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
     pub fn by_status(mut self, input: impl Into<std::string::String>) -> Self {
         self.by_status = Some(input.into());
         self
     }
-    /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
+    /// <p>Returns only report jobs that are in the specified status. The statuses are:</p> 
     /// <p> <code>CREATED | RUNNING | COMPLETED | FAILED</code> </p>
     pub fn set_by_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.by_status = input;
-        self
+        self.by_status = input; self
     }
     /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -127,8 +114,7 @@ impl ListReportJobsInputBuilder {
     }
     /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will return 1 MB of data.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,23 +123,26 @@ impl ListReportJobsInputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`ListReportJobsInput`](crate::operation::list_report_jobs::ListReportJobsInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_report_jobs::ListReportJobsInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::list_report_jobs::ListReportJobsInput {
-            by_report_plan_name: self.by_report_plan_name,
-            by_creation_before: self.by_creation_before,
-            by_creation_after: self.by_creation_after,
-            by_status: self.by_status,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::list_report_jobs::ListReportJobsInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::list_report_jobs::ListReportJobsInput {
+                by_report_plan_name: self.by_report_plan_name
+                ,
+                by_creation_before: self.by_creation_before
+                ,
+                by_creation_after: self.by_creation_after
+                ,
+                by_status: self.by_status
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

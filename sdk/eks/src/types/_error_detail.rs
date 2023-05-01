@@ -3,16 +3,16 @@
 /// <p>An object representing an error when an asynchronous operation fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorDetail {
-    /// <p>A brief description of the error. </p>
-    /// <ul>
-    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li>
-    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li>
-    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li>
-    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li>
-    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li>
-    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
-    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
+pub struct ErrorDetail  {
+    /// <p>A brief description of the error. </p> 
+    /// <ul> 
+    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li> 
+    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li> 
+    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li> 
+    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li> 
+    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li> 
+    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li> 
+    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::types::ErrorCode>,
@@ -24,25 +24,25 @@ pub struct ErrorDetail {
     pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ErrorDetail {
-    /// <p>A brief description of the error. </p>
-    /// <ul>
-    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li>
-    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li>
-    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li>
-    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li>
-    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li>
-    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
-    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
+    /// <p>A brief description of the error. </p> 
+    /// <ul> 
+    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li> 
+    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li> 
+    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li> 
+    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li> 
+    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li> 
+    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li> 
+    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li> 
     /// </ul>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<& crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A more complete description of the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> std::option::Option<& str> {
         self.error_message.as_deref()
     }
     /// <p>An optional field that contains the resource IDs associated with the error.</p>
-    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_ids(&self) -> std::option::Option<& [std::string::String]> {
         self.resource_ids.as_deref()
     }
 }
@@ -62,33 +62,32 @@ pub struct ErrorDetailBuilder {
     pub(crate) resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ErrorDetailBuilder {
-    /// <p>A brief description of the error. </p>
-    /// <ul>
-    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li>
-    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li>
-    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li>
-    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li>
-    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li>
-    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
-    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
+    /// <p>A brief description of the error. </p> 
+    /// <ul> 
+    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li> 
+    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li> 
+    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li> 
+    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li> 
+    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li> 
+    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li> 
+    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li> 
     /// </ul>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
         self.error_code = Some(input);
         self
     }
-    /// <p>A brief description of the error. </p>
-    /// <ul>
-    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li>
-    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li>
-    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li>
-    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li>
-    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li>
-    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li>
-    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li>
+    /// <p>A brief description of the error. </p> 
+    /// <ul> 
+    /// <li> <p> <b>SubnetNotFound</b>: We couldn't find one of the subnets associated with the cluster.</p> </li> 
+    /// <li> <p> <b>SecurityGroupNotFound</b>: We couldn't find one of the security groups associated with the cluster.</p> </li> 
+    /// <li> <p> <b>EniLimitReached</b>: You have reached the elastic network interface limit for your account.</p> </li> 
+    /// <li> <p> <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any free IP addresses.</p> </li> 
+    /// <li> <p> <b>AccessDenied</b>: You don't have permissions to perform the specified operation.</p> </li> 
+    /// <li> <p> <b>OperationNotPermitted</b>: The service role associated with the cluster doesn't have the required access permissions for Amazon EKS.</p> </li> 
+    /// <li> <p> <b>VpcIdNotFound</b>: We couldn't find the VPC associated with the cluster.</p> </li> 
     /// </ul>
     pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
-        self.error_code = input;
-        self
+        self.error_code = input; self
     }
     /// <p>A more complete description of the error.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,8 +96,7 @@ impl ErrorDetailBuilder {
     }
     /// <p>A more complete description of the error.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input;
-        self
+        self.error_message = input; self
     }
     /// Appends an item to `resource_ids`.
     ///
@@ -107,24 +105,24 @@ impl ErrorDetailBuilder {
     /// <p>An optional field that contains the resource IDs associated with the error.</p>
     pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-        v.push(input.into());
-        self.resource_ids = Some(v);
-        self
+                        v.push(input.into());
+                        self.resource_ids = Some(v);
+                        self
     }
     /// <p>An optional field that contains the resource IDs associated with the error.</p>
-    pub fn set_resource_ids(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.resource_ids = input;
-        self
+    pub fn set_resource_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.resource_ids = input; self
     }
     /// Consumes the builder and constructs a [`ErrorDetail`](crate::types::ErrorDetail).
     pub fn build(self) -> crate::types::ErrorDetail {
         crate::types::ErrorDetail {
-            error_code: self.error_code,
-            error_message: self.error_message,
-            resource_ids: self.resource_ids,
+            error_code: self.error_code
+            ,
+            error_message: self.error_message
+            ,
+            resource_ids: self.resource_ids
+            ,
         }
     }
 }
+

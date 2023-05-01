@@ -3,7 +3,7 @@
 /// <p>An object representing an asynchronous update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Update {
+pub struct Update  {
     /// <p>A UUID that is used to track the update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct Update {
 }
 impl Update {
     /// <p>A UUID that is used to track the update.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
     /// <p>The current status of the update.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::UpdateStatus> {
+    pub fn status(&self) -> std::option::Option<& crate::types::UpdateStatus> {
         self.status.as_ref()
     }
     /// <p>The type of the update.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::UpdateType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::UpdateType> {
         self.r#type.as_ref()
     }
     /// <p>A key-value map that contains the parameters associated with the update.</p>
-    pub fn params(&self) -> std::option::Option<&[crate::types::UpdateParam]> {
+    pub fn params(&self) -> std::option::Option<& [crate::types::UpdateParam]> {
         self.params.as_deref()
     }
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::ErrorDetail]> {
+    pub fn errors(&self) -> std::option::Option<& [crate::types::ErrorDetail]> {
         self.errors.as_deref()
     }
 }
@@ -75,8 +75,7 @@ impl UpdateBuilder {
     }
     /// <p>A UUID that is used to track the update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// <p>The current status of the update.</p>
     pub fn status(mut self, input: crate::types::UpdateStatus) -> Self {
@@ -85,8 +84,7 @@ impl UpdateBuilder {
     }
     /// <p>The current status of the update.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::UpdateStatus>) -> Self {
-        self.status = input;
-        self
+        self.status = input; self
     }
     /// <p>The type of the update.</p>
     pub fn r#type(mut self, input: crate::types::UpdateType) -> Self {
@@ -95,8 +93,7 @@ impl UpdateBuilder {
     }
     /// <p>The type of the update.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::UpdateType>) -> Self {
-        self.r#type = input;
-        self
+        self.r#type = input; self
     }
     /// Appends an item to `params`.
     ///
@@ -105,17 +102,13 @@ impl UpdateBuilder {
     /// <p>A key-value map that contains the parameters associated with the update.</p>
     pub fn params(mut self, input: crate::types::UpdateParam) -> Self {
         let mut v = self.params.unwrap_or_default();
-        v.push(input);
-        self.params = Some(v);
-        self
+                        v.push(input);
+                        self.params = Some(v);
+                        self
     }
     /// <p>A key-value map that contains the parameters associated with the update.</p>
-    pub fn set_params(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UpdateParam>>,
-    ) -> Self {
-        self.params = input;
-        self
+    pub fn set_params(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateParam>>) -> Self {
+        self.params = input; self
     }
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -123,12 +116,8 @@ impl UpdateBuilder {
         self
     }
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
-    pub fn set_created_at(
-        mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
-    ) -> Self {
-        self.created_at = input;
-        self
+    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input; self
     }
     /// Appends an item to `errors`.
     ///
@@ -137,27 +126,30 @@ impl UpdateBuilder {
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
     pub fn errors(mut self, input: crate::types::ErrorDetail) -> Self {
         let mut v = self.errors.unwrap_or_default();
-        v.push(input);
-        self.errors = Some(v);
-        self
+                        v.push(input);
+                        self.errors = Some(v);
+                        self
     }
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
-    pub fn set_errors(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
-    ) -> Self {
-        self.errors = input;
-        self
+    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
+        self.errors = input; self
     }
     /// Consumes the builder and constructs a [`Update`](crate::types::Update).
     pub fn build(self) -> crate::types::Update {
         crate::types::Update {
-            id: self.id,
-            status: self.status,
-            r#type: self.r#type,
-            params: self.params,
-            created_at: self.created_at,
-            errors: self.errors,
+            id: self.id
+            ,
+            status: self.status
+            ,
+            r#type: self.r#type
+            ,
+            params: self.params
+            ,
+            created_at: self.created_at
+            ,
+            errors: self.errors
+            ,
         }
     }
 }
+

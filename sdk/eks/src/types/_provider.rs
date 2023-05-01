@@ -3,14 +3,14 @@
 /// <p>Identifies the Key Management Service (KMS) key used to encrypt the secrets.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Provider {
+pub struct Provider  {
     /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub key_arn: std::option::Option<std::string::String>,
 }
 impl Provider {
     /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
-    pub fn key_arn(&self) -> std::option::Option<&str> {
+    pub fn key_arn(&self) -> std::option::Option<& str> {
         self.key_arn.as_deref()
     }
 }
@@ -35,13 +35,14 @@ impl ProviderBuilder {
     }
     /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_arn = input;
-        self
+        self.key_arn = input; self
     }
     /// Consumes the builder and constructs a [`Provider`](crate::types::Provider).
     pub fn build(self) -> crate::types::Provider {
         crate::types::Provider {
-            key_arn: self.key_arn,
+            key_arn: self.key_arn
+            ,
         }
     }
 }
+

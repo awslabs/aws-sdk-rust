@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNodegroupOutput {
+pub struct DeleteNodegroupOutput  {
     /// <p>The full description of your deleted node group.</p>
     #[doc(hidden)]
     pub nodegroup: std::option::Option<crate::types::Nodegroup>,
@@ -10,15 +10,15 @@ pub struct DeleteNodegroupOutput {
 }
 impl DeleteNodegroupOutput {
     /// <p>The full description of your deleted node group.</p>
-    pub fn nodegroup(&self) -> std::option::Option<&crate::types::Nodegroup> {
+    pub fn nodegroup(&self) -> std::option::Option<& crate::types::Nodegroup> {
         self.nodegroup.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteNodegroupOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl DeleteNodegroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNodegroupOutput`](crate::operation::delete_nodegroup::DeleteNodegroupOutput).
     pub fn builder() -> crate::operation::delete_nodegroup::builders::DeleteNodegroupOutputBuilder {
@@ -41,23 +41,24 @@ impl DeleteNodegroupOutputBuilder {
     }
     /// <p>The full description of your deleted node group.</p>
     pub fn set_nodegroup(mut self, input: std::option::Option<crate::types::Nodegroup>) -> Self {
-        self.nodegroup = input;
-        self
+        self.nodegroup = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`DeleteNodegroupOutput`](crate::operation::delete_nodegroup::DeleteNodegroupOutput).
     pub fn build(self) -> crate::operation::delete_nodegroup::DeleteNodegroupOutput {
         crate::operation::delete_nodegroup::DeleteNodegroupOutput {
-            nodegroup: self.nodegroup,
+            nodegroup: self.nodegroup
+            ,
             _request_id: self._request_id,
         }
     }
 }
+
