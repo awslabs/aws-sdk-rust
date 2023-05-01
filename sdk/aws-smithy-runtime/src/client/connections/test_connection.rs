@@ -11,7 +11,6 @@ use aws_smithy_protocol_test::{assert_ok, validate_body, MediaType};
 use aws_smithy_runtime_api::client::orchestrator::{
     BoxFallibleFut, Connection, HttpRequest, HttpResponse,
 };
-use aws_smithy_runtime_api::config_bag::ConfigBag;
 use http::header::{HeaderName, CONTENT_TYPE};
 use std::fmt::Debug;
 use std::future::ready;
@@ -188,15 +187,14 @@ impl TestConnection {
 }
 
 impl Connection for TestConnection {
-    fn call(&self, request: &mut HttpRequest, _cfg: &ConfigBag) -> BoxFallibleFut<HttpResponse> {
+    fn call(&self, request: HttpRequest) -> BoxFallibleFut<HttpResponse> {
         // TODO(orchestrator) Validate request
 
         let res = if let Some((expected, resp)) = self.data.lock().unwrap().pop() {
-            let actual = try_clone_http_request(request).expect("test request is cloneable");
-            self.requests
-                .lock()
-                .unwrap()
-                .push(ValidateRequest { expected, actual });
+            self.requests.lock().unwrap().push(ValidateRequest {
+                expected,
+                actual: request,
+            });
             Ok(resp.map(SdkBody::from))
         } else {
             Err(ConnectorError::other("No more data".into(), None).into())
@@ -204,19 +202,4 @@ impl Connection for TestConnection {
 
         Box::pin(ready(res))
     }
-}
-
-pub fn try_clone_http_request(req: &http::Request<SdkBody>) -> Option<http::Request<SdkBody>> {
-    let cloned_body = req.body().try_clone()?;
-    let mut cloned_request = http::Request::builder()
-        .uri(req.uri().clone())
-        .method(req.method());
-    *cloned_request
-        .headers_mut()
-        .expect("builder has not been modified, headers must be valid") = req.headers().clone();
-    let req = cloned_request
-        .body(cloned_body)
-        .expect("a clone of a valid request should be a valid request");
-
-    Some(req)
 }

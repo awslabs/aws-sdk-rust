@@ -22,7 +22,7 @@ pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
 pub type BoxFallibleFut<T> = Pin<Box<dyn Future<Output = Result<T, BoxError>>>>;
 
 pub trait TraceProbe: Send + Sync + Debug {
-    fn dispatch_events(&self) -> BoxFallibleFut<()>;
+    fn dispatch_events(&self);
 }
 
 pub trait RequestSerializer: Send + Sync + Debug {
@@ -39,7 +39,13 @@ pub trait ResponseDeserializer: Send + Sync + Debug {
 }
 
 pub trait Connection: Send + Sync + Debug {
-    fn call(&self, request: &mut HttpRequest, cfg: &ConfigBag) -> BoxFallibleFut<HttpResponse>;
+    fn call(&self, request: HttpRequest) -> BoxFallibleFut<HttpResponse>;
+}
+
+impl Connection for Box<dyn Connection> {
+    fn call(&self, request: HttpRequest) -> BoxFallibleFut<HttpResponse> {
+        (**self).call(request)
+    }
 }
 
 pub trait RetryStrategy: Send + Sync + Debug {
@@ -72,6 +78,15 @@ pub trait AuthOptionResolver: Send + Sync + Debug {
     ) -> Result<Vec<HttpAuthOption>, BoxError>;
 }
 
+impl AuthOptionResolver for Box<dyn AuthOptionResolver> {
+    fn resolve_auth_options(
+        &self,
+        params: &AuthOptionResolverParams,
+    ) -> Result<Vec<HttpAuthOption>, BoxError> {
+        (**self).resolve_auth_options(params)
+    }
+}
+
 #[derive(Clone, Debug)]
 pub struct HttpAuthOption {
     scheme_id: &'static str,
@@ -96,7 +111,7 @@ impl HttpAuthOption {
 }
 
 pub trait IdentityResolver: Send + Sync + Debug {
-    fn resolve_identity(&self, cfg: &ConfigBag) -> Result<Identity, BoxError>;
+    fn resolve_identity(&self, identity_properties: &PropertyBag) -> BoxFallibleFut<Identity>;
 }
 
 #[derive(Debug)]
@@ -143,7 +158,10 @@ impl HttpAuthSchemes {
 pub trait HttpAuthScheme: Send + Sync + Debug {
     fn scheme_id(&self) -> &'static str;
 
-    fn identity_resolver(&self, identity_resolvers: &IdentityResolvers) -> &dyn IdentityResolver;
+    fn identity_resolver<'a>(
+        &self,
+        identity_resolvers: &'a IdentityResolvers,
+    ) -> Option<&'a dyn IdentityResolver>;
 
     fn request_signer(&self) -> &dyn HttpRequestSigner;
 }
@@ -154,10 +172,10 @@ pub trait HttpRequestSigner: Send + Sync + Debug {
     /// If the provided identity is incompatible with this signer, an error must be returned.
     fn sign_request(
         &self,
-        request: &HttpRequest,
+        request: &mut HttpRequest,
         identity: &Identity,
         cfg: &ConfigBag,
-    ) -> Result<HttpRequest, BoxError>;
+    ) -> Result<(), BoxError>;
 }
 
 pub trait EndpointResolver: Send + Sync + Debug {

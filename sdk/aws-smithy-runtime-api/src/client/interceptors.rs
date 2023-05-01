@@ -9,13 +9,26 @@ pub mod error;
 use crate::config_bag::ConfigBag;
 pub use context::InterceptorContext;
 pub use error::InterceptorError;
+use std::sync::{Arc, Mutex};
 
 macro_rules! interceptor_trait_fn {
     ($name:ident, $docs:tt) => {
         #[doc = $docs]
         fn $name(
-            &mut self,
+            &self,
             context: &InterceptorContext<TxReq, TxRes>,
+            cfg: &mut ConfigBag,
+        ) -> Result<(), InterceptorError> {
+            let _ctx = context;
+            let _cfg = cfg;
+            Ok(())
+        }
+    };
+    (mut $name:ident, $docs:tt) => {
+        #[doc = $docs]
+        fn $name(
+            &self,
+            context: &mut InterceptorContext<TxReq, TxRes>,
             cfg: &mut ConfigBag,
         ) -> Result<(), InterceptorError> {
             let _ctx = context;
@@ -35,7 +48,7 @@ macro_rules! interceptor_trait_fn {
 ///   of the SDK ’s request execution pipeline. Hooks are either "read" hooks, which make it possible
 ///   to read in-flight request or response messages, or "read/write" hooks, which make it possible
 ///   to modify in-flight request or output messages.
-pub trait Interceptor<TxReq, TxRes> {
+pub trait Interceptor<TxReq, TxRes>: std::fmt::Debug {
     interceptor_trait_fn!(
         read_before_execution,
         "
@@ -60,7 +73,7 @@ pub trait Interceptor<TxReq, TxRes> {
     );
 
     interceptor_trait_fn!(
-        modify_before_serialization,
+        mut modify_before_serialization,
         "
         A hook called before the input message is marshalled into a
         transport message.
@@ -129,7 +142,7 @@ pub trait Interceptor<TxReq, TxRes> {
     );
 
     interceptor_trait_fn!(
-        modify_before_retry_loop,
+        mut modify_before_retry_loop,
         "
         A hook called before the retry loop is entered. This method
         has the ability to modify and return a new transport request
@@ -176,7 +189,7 @@ pub trait Interceptor<TxReq, TxRes> {
     );
 
     interceptor_trait_fn!(
-        modify_before_signing,
+        mut modify_before_signing,
         "
         A hook called before the transport request message is signed.
         This method has the ability to modify and return a new transport
@@ -253,7 +266,7 @@ pub trait Interceptor<TxReq, TxRes> {
     );
 
     interceptor_trait_fn!(
-        modify_before_transmit,
+        mut modify_before_transmit,
         "
         /// A hook called before the transport request message is sent to the
         /// service. This method has the ability to modify and return
@@ -338,7 +351,7 @@ pub trait Interceptor<TxReq, TxRes> {
     );
 
     interceptor_trait_fn!(
-        modify_before_deserialization,
+        mut modify_before_deserialization,
         "
         A hook called before the transport response message is unmarshalled.
         This method has the ability to modify and return a new transport
@@ -421,7 +434,7 @@ pub trait Interceptor<TxReq, TxRes> {
     );
 
     interceptor_trait_fn!(
-        modify_before_attempt_completion,
+        mut modify_before_attempt_completion,
         "
         A hook called when an attempt is completed. This method has the
         ability to modify and return a new output message or error
@@ -477,7 +490,7 @@ pub trait Interceptor<TxReq, TxRes> {
     );
 
     interceptor_trait_fn!(
-        modify_before_completion,
+        mut modify_before_completion,
         "
         A hook called when an execution is completed.
         This method has the ability to modify and return a new
@@ -527,16 +540,45 @@ pub trait Interceptor<TxReq, TxRes> {
     );
 }
 
+pub type SharedInterceptor<TxReq, TxRes> = Arc<dyn Interceptor<TxReq, TxRes> + Send + Sync>;
+
+#[derive(Debug)]
+struct Inner<TxReq, TxRes> {
+    client_interceptors: Vec<Arc<dyn Interceptor<TxReq, TxRes> + Send + Sync>>,
+    operation_interceptors: Vec<Arc<dyn Interceptor<TxReq, TxRes> + Send + Sync>>,
+}
+
+// The compiler isn't smart enough to realize that TxReq and TxRes don't need to implement `Clone`
+impl<TxReq, TxRes> Clone for Inner<TxReq, TxRes> {
+    fn clone(&self) -> Self {
+        Self {
+            client_interceptors: self.client_interceptors.clone(),
+            operation_interceptors: self.operation_interceptors.clone(),
+        }
+    }
+}
+
+#[derive(Debug)]
 pub struct Interceptors<TxReq, TxRes> {
-    client_interceptors: Vec<Box<dyn Interceptor<TxReq, TxRes>>>,
-    operation_interceptors: Vec<Box<dyn Interceptor<TxReq, TxRes>>>,
+    inner: Arc<Mutex<Inner<TxReq, TxRes>>>,
+}
+
+// The compiler isn't smart enough to realize that TxReq and TxRes don't need to implement `Clone`
+impl<TxReq, TxRes> Clone for Interceptors<TxReq, TxRes> {
+    fn clone(&self) -> Self {
+        Self {
+            inner: self.inner.clone(),
+        }
+    }
 }
 
 impl<TxReq, TxRes> Default for Interceptors<TxReq, TxRes> {
     fn default() -> Self {
         Self {
-            client_interceptors: Vec::new(),
-            operation_interceptors: Vec::new(),
+            inner: Arc::new(Mutex::new(Inner {
+                client_interceptors: Vec::new(),
+                operation_interceptors: Vec::new(),
+            })),
         }
     }
 }
@@ -550,11 +592,18 @@ macro_rules! interceptor_impl_fn {
     };
     (context, $outer_name:ident, $inner_name:ident) => {
         pub fn $outer_name(
-            &mut self,
+            &self,
             context: &InterceptorContext<TxReq, TxRes>,
             cfg: &mut ConfigBag,
         ) -> Result<(), InterceptorError> {
-            for interceptor in self.client_interceptors.iter_mut() {
+            // Since interceptors can modify the interceptor list (since its in the config bag), copy the list ahead of time.
+            // This should be cheap since the interceptors inside the list are Arcs.
+            let client_interceptors = self.inner.lock().unwrap().client_interceptors.clone();
+            for interceptor in client_interceptors {
+                interceptor.$inner_name(context, cfg)?;
+            }
+            let operation_interceptors = self.inner.lock().unwrap().operation_interceptors.clone();
+            for interceptor in operation_interceptors {
                 interceptor.$inner_name(context, cfg)?;
             }
             Ok(())
@@ -562,11 +611,18 @@ macro_rules! interceptor_impl_fn {
     };
     (mut context, $outer_name:ident, $inner_name:ident) => {
         pub fn $outer_name(
-            &mut self,
+            &self,
             context: &mut InterceptorContext<TxReq, TxRes>,
             cfg: &mut ConfigBag,
         ) -> Result<(), InterceptorError> {
-            for interceptor in self.client_interceptors.iter_mut() {
+            // Since interceptors can modify the interceptor list (since its in the config bag), copy the list ahead of time.
+            // This should be cheap since the interceptors inside the list are Arcs.
+            let client_interceptors = self.inner.lock().unwrap().client_interceptors.clone();
+            for interceptor in client_interceptors {
+                interceptor.$inner_name(context, cfg)?;
+            }
+            let operation_interceptors = self.inner.lock().unwrap().operation_interceptors.clone();
+            for interceptor in operation_interceptors {
                 interceptor.$inner_name(context, cfg)?;
             }
             Ok(())
@@ -579,19 +635,27 @@ impl<TxReq, TxRes> Interceptors<TxReq, TxRes> {
         Self::default()
     }
 
-    pub fn with_client_interceptor(
-        &mut self,
-        interceptor: impl Interceptor<TxReq, TxRes> + 'static,
-    ) -> &mut Self {
-        self.client_interceptors.push(Box::new(interceptor));
+    pub fn register_client_interceptor(
+        &self,
+        interceptor: SharedInterceptor<TxReq, TxRes>,
+    ) -> &Self {
+        self.inner
+            .lock()
+            .unwrap()
+            .client_interceptors
+            .push(interceptor);
         self
     }
 
-    pub fn with_operation_interceptor(
-        &mut self,
-        interceptor: impl Interceptor<TxReq, TxRes> + 'static,
-    ) -> &mut Self {
-        self.operation_interceptors.push(Box::new(interceptor));
+    pub fn register_operation_interceptor(
+        &self,
+        interceptor: SharedInterceptor<TxReq, TxRes>,
+    ) -> &Self {
+        self.inner
+            .lock()
+            .unwrap()
+            .operation_interceptors
+            .push(interceptor);
         self
     }
 

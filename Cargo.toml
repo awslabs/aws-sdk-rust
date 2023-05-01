@@ -95,6 +95,8 @@ members = [
     "sdk/aws-endpoint",
     "sdk/aws-http",
     "sdk/aws-hyper",
+    "sdk/aws-runtime",
+    "sdk/aws-runtime-api",
     "sdk/aws-sig-auth",
     "sdk/aws-sigv4",
     "sdk/aws-smithy-async",

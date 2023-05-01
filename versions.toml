@@ -1,4 +1,4 @@
-smithy_rs_revision = '6a0cacd56edf877fc4b4b2dee0eda1f78ad8c769'
+smithy_rs_revision = '7b3bf2f7efbfb9addce406dec956ea3a88285703'
 aws_doc_sdk_examples_revision = '1f48dbeac254cb3fa6d3eb25628ee748d42017d1'
 
 [manual_interventions]
@@ -27,6 +27,16 @@ source_hash = '434dc8c95687f7d4c6204445ac9b7ce957a5757040a6187ace3607710aac687b'
 category = 'AwsRuntime'
 version = '0.55.1'
 source_hash = '034df117bac781485765257f3f1d5248156ab6c6581d4ee86aed6953a017446d'
+
+[crates.aws-runtime]
+category = 'AwsRuntime'
+version = '0.55.1'
+source_hash = '408a5d0c179d6534818407f3dd885171b8651d5053f8ac539c9dec3f6000d2fe'
+
+[crates.aws-runtime-api]
+category = 'AwsRuntime'
+version = '0.55.1'
+source_hash = 'beee47ed46e25687dca62c1fa505d0d6ac5fedcb1337e5ddb1d8439429184e2e'
 
 [crates.aws-sdk-accessanalyzer]
 category = 'AwsSdk'
@@ -2091,7 +2101,7 @@ source_hash = '1b0ae98089a33d8bc74eba13e679afc4b949c07414e614d0252ee380e4d97fd3'
 [crates.aws-smithy-client]
 category = 'SmithyRuntime'
 version = '0.55.1'
-source_hash = '1d5a118f045d5b3ac3a4da703c65fbda0fdc826a019ef3ef586d9e015bc53bb1'
+source_hash = 'e8de5bfbaeac2d2dcaebceee147c466761c8552446ad0b6f9f681d8326aacaac'
 
 [crates.aws-smithy-eventstream]
 category = 'SmithyRuntime'
@@ -2131,12 +2141,12 @@ source_hash = 'd23bb3777f4a48f82be9d68582b67b14e73832f04a58dd29e632f2171a2d7df5'
 [crates.aws-smithy-runtime]
 category = 'SmithyRuntime'
 version = '0.55.1'
-source_hash = '27f72b2d62e28de919213f52b7f7f28d15be20d3926dbd0a2d6252f98ece81d8'
+source_hash = 'c8e3ce433cacbca481940aad966a05aeaccd098caf197ab3f6fb43500e914e27'
 
 [crates.aws-smithy-runtime-api]
 category = 'SmithyRuntime'
 version = '0.55.1'
-source_hash = 'f81b8271284471fe1a65011462dd8d751eef8fa84a76b669f6c82734dfdda274'
+source_hash = '1a0df94e227fc9d80a9c510caee875165c0a66e3497bcbb10c4848a052b0f15b'
 
 [crates.aws-smithy-types]
 category = 'SmithyRuntime'
@@ -2158,6 +2168,8 @@ category = 'AwsRuntime'
 version = '0.55.1'
 source_hash = '9c045401f8ee87427a5100b3ebd54b26ecfbb896b03b4e7491095bf301344098'
 [release.crates]
+aws-runtime = '0.55.1'
+aws-runtime-api = '0.55.1'
 aws-sdk-accessanalyzer = '0.27.0'
 aws-sdk-account = '0.27.0'
 aws-sdk-acm = '0.27.0'

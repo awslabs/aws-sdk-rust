@@ -39,7 +39,7 @@ impl Phase {
     ) -> Self {
         match phase {
             OrchestrationPhase::Construction => {}
-            OrchestrationPhase::Dispatch => debug_assert!(context.request().is_ok()),
+            OrchestrationPhase::Dispatch => {}
             OrchestrationPhase::ResponseHandling => debug_assert!(context.response().is_ok()),
         }
         Self { phase, context }

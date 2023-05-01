@@ -26,8 +26,9 @@ pub async fn invoke(
 ) -> Result<Output, SdkError<Error, HttpResponse>> {
     let mut cfg = ConfigBag::base();
     let cfg = &mut cfg;
-    let mut interceptors = Interceptors::new();
-    let interceptors = &mut interceptors;
+
+    let interceptors = Interceptors::new();
+    cfg.put(interceptors.clone());
 
     let context = Phase::construction(InterceptorContext::new(input))
         // Client configuration
@@ -66,7 +67,7 @@ pub async fn invoke(
     let mut context = context;
     let handling_phase = loop {
         let dispatch_phase = Phase::dispatch(context);
-        context = make_an_attempt(dispatch_phase, cfg, interceptors)
+        context = make_an_attempt(dispatch_phase, cfg, &interceptors)
             .await?
             .include(|ctx| interceptors.read_after_attempt(ctx, cfg))?
             .include_mut(|ctx| interceptors.modify_before_attempt_completion(ctx, cfg))?
@@ -86,8 +87,7 @@ pub async fn invoke(
 
         let handling_phase = Phase::response_handling(context)
             .include_mut(|ctx| interceptors.modify_before_completion(ctx, cfg))?;
-        let trace_probe = cfg.trace_probe();
-        trace_probe.dispatch_events();
+        cfg.trace_probe().dispatch_events();
 
         break handling_phase.include(|ctx| interceptors.read_after_execution(ctx, cfg))?;
     };
@@ -101,7 +101,7 @@ pub async fn invoke(
 async fn make_an_attempt(
     dispatch_phase: Phase,
     cfg: &mut ConfigBag,
-    interceptors: &mut Interceptors<HttpRequest, HttpResponse>,
+    interceptors: &Interceptors<HttpRequest, HttpResponse>,
 ) -> Result<Phase, SdkError<Error, HttpResponse>> {
     let dispatch_phase = dispatch_phase
         .include(|ctx| interceptors.read_before_attempt(ctx, cfg))?
@@ -125,9 +125,9 @@ async fn make_an_attempt(
     // The connection consumes the request but we need to keep a copy of it
     // within the interceptor context, so we clone it here.
     let call_result = {
-        let tx_req = context.request_mut().expect("request has been set");
+        let request = context.take_request().expect("request has been set");
         let connection = cfg.connection();
-        connection.call(tx_req, cfg).await
+        connection.call(request).await
     };
 
     let mut context = Phase::dispatch(context)

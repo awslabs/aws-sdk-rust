@@ -1,6 +1,7 @@
 allowed_external_types = [
     "aws_smithy_runtime_api::*",
     "aws_smithy_http::*",
+    "aws_smithy_client::erase::DynConnector",
     # TODO(audit-external-type-usage) We should newtype these or otherwise avoid exposing them
     "http::header::name::HeaderName",
     "http::request::Request",

@@ -46,6 +46,7 @@ impl<Request, Response> InterceptorContext<Request, Response> {
     }
 
     /// Takes ownership of the input.
+    #[doc(hidden)]
     pub fn take_input(&mut self) -> Option<Input> {
         self.input.take()
     }
@@ -64,6 +65,12 @@ impl<Request, Response> InterceptorContext<Request, Response> {
         self.request
             .as_mut()
             .ok_or_else(InterceptorError::invalid_request_access)
+    }
+
+    /// Takes ownership of the request.
+    #[doc(hidden)]
+    pub fn take_request(&mut self) -> Option<Request> {
+        self.request.take()
     }
 
     /// Retrieve the response to the transmittable response for the operation

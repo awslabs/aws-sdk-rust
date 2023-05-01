@@ -3,19 +3,21 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_types::DateTime;
+use super::orchestrator::{BoxFallibleFut, IdentityResolver};
+use aws_smithy_http::property_bag::PropertyBag;
 use std::any::Any;
 use std::fmt::Debug;
 use std::sync::Arc;
+use std::time::SystemTime;
 
 #[derive(Clone, Debug)]
 pub struct Identity {
     data: Arc<dyn Any + Send + Sync>,
-    expiration: Option<DateTime>,
+    expiration: Option<SystemTime>,
 }
 
 impl Identity {
-    pub fn new(data: impl Any + Send + Sync, expiration: Option<DateTime>) -> Self {
+    pub fn new(data: impl Any + Send + Sync, expiration: Option<SystemTime>) -> Self {
         Self {
             data: Arc::new(data),
             expiration,
@@ -26,15 +28,38 @@ impl Identity {
         self.data.downcast_ref()
     }
 
-    pub fn expiration(&self) -> Option<&DateTime> {
+    pub fn expiration(&self) -> Option<&SystemTime> {
         self.expiration.as_ref()
+    }
+}
+
+#[derive(Debug)]
+pub struct AnonymousIdentity;
+
+impl AnonymousIdentity {
+    pub fn new() -> Self {
+        Self
+    }
+}
+
+#[derive(Debug)]
+pub struct AnonymousIdentityResolver;
+
+impl AnonymousIdentityResolver {
+    pub fn new() -> Self {
+        AnonymousIdentityResolver
+    }
+}
+
+impl IdentityResolver for AnonymousIdentityResolver {
+    fn resolve_identity(&self, _: &PropertyBag) -> BoxFallibleFut<Identity> {
+        Box::pin(async { Ok(Identity::new(AnonymousIdentity::new(), None)) })
     }
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aws_smithy_types::date_time::Format;
 
     #[test]
     fn check_send_sync() {
@@ -50,8 +75,7 @@ mod tests {
             last: String,
         }
 
-        let expiration =
-            DateTime::from_str("2023-03-15T00:00:00.000Z", Format::DateTimeWithOffset).unwrap();
+        let expiration = SystemTime::now();
         let identity = Identity::new(
             MyIdentityData {
                 first: "foo".into(),
