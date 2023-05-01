@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVehicleInput  {
+pub struct CreateVehicleInput {
     /// <p> The unique ID of the vehicle to create. </p>
     #[doc(hidden)]
     pub vehicle_name: std::option::Option<std::string::String>,
@@ -14,8 +14,9 @@ pub struct CreateVehicleInput  {
     pub decoder_manifest_arn: std::option::Option<std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p> 
+    pub attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p>
     /// <p>Default: <code></code> </p>
     #[doc(hidden)]
     pub association_behavior: std::option::Option<crate::types::VehicleAssociationBehavior>,
@@ -25,28 +26,33 @@ pub struct CreateVehicleInput  {
 }
 impl CreateVehicleInput {
     /// <p> The unique ID of the vehicle to create. </p>
-    pub fn vehicle_name(&self) -> std::option::Option<& str> {
+    pub fn vehicle_name(&self) -> std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
     /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
-    pub fn model_manifest_arn(&self) -> std::option::Option<& str> {
+    pub fn model_manifest_arn(&self) -> std::option::Option<&str> {
         self.model_manifest_arn.as_deref()
     }
     /// <p> The ARN of a decoder manifest. </p>
-    pub fn decoder_manifest_arn(&self) -> std::option::Option<& str> {
+    pub fn decoder_manifest_arn(&self) -> std::option::Option<&str> {
         self.decoder_manifest_arn.as_deref()
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.attributes.as_ref()
     }
-    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p> 
+    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p>
     /// <p>Default: <code></code> </p>
-    pub fn association_behavior(&self) -> std::option::Option<& crate::types::VehicleAssociationBehavior> {
+    pub fn association_behavior(
+        &self,
+    ) -> std::option::Option<&crate::types::VehicleAssociationBehavior> {
         self.association_behavior.as_ref()
     }
     /// <p>Metadata that can be used to manage the vehicle.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -64,7 +70,8 @@ pub struct CreateVehicleInputBuilder {
     pub(crate) vehicle_name: std::option::Option<std::string::String>,
     pub(crate) model_manifest_arn: std::option::Option<std::string::String>,
     pub(crate) decoder_manifest_arn: std::option::Option<std::string::String>,
-    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) association_behavior: std::option::Option<crate::types::VehicleAssociationBehavior>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
@@ -76,7 +83,8 @@ impl CreateVehicleInputBuilder {
     }
     /// <p> The unique ID of the vehicle to create. </p>
     pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vehicle_name = input; self
+        self.vehicle_name = input;
+        self
     }
     /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
     pub fn model_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,8 +92,12 @@ impl CreateVehicleInputBuilder {
         self
     }
     /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
-    pub fn set_model_manifest_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_manifest_arn = input; self
+    pub fn set_model_manifest_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.model_manifest_arn = input;
+        self
     }
     /// <p> The ARN of a decoder manifest. </p>
     pub fn decoder_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,34 +105,52 @@ impl CreateVehicleInputBuilder {
         self
     }
     /// <p> The ARN of a decoder manifest. </p>
-    pub fn set_decoder_manifest_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.decoder_manifest_arn = input; self
+    pub fn set_decoder_manifest_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.decoder_manifest_arn = input;
+        self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn attributes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.attributes = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.attributes = Some(hash_map);
+        self
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
-    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p> 
+    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p>
     /// <p>Default: <code></code> </p>
     pub fn association_behavior(mut self, input: crate::types::VehicleAssociationBehavior) -> Self {
         self.association_behavior = Some(input);
         self
     }
-    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p> 
+    /// <p> An option to create a new Amazon Web Services IoT thing when creating a vehicle, or to validate an existing Amazon Web Services IoT thing as a vehicle. </p>
     /// <p>Default: <code></code> </p>
-    pub fn set_association_behavior(mut self, input: std::option::Option<crate::types::VehicleAssociationBehavior>) -> Self {
-        self.association_behavior = input; self
+    pub fn set_association_behavior(
+        mut self,
+        input: std::option::Option<crate::types::VehicleAssociationBehavior>,
+    ) -> Self {
+        self.association_behavior = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -129,32 +159,32 @@ impl CreateVehicleInputBuilder {
     /// <p>Metadata that can be used to manage the vehicle.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Metadata that can be used to manage the vehicle.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateVehicleInput`](crate::operation::create_vehicle::CreateVehicleInput).
-    pub fn build(self) -> Result<crate::operation::create_vehicle::CreateVehicleInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_vehicle::CreateVehicleInput {
-                vehicle_name: self.vehicle_name
-                ,
-                model_manifest_arn: self.model_manifest_arn
-                ,
-                decoder_manifest_arn: self.decoder_manifest_arn
-                ,
-                attributes: self.attributes
-                ,
-                association_behavior: self.association_behavior
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_vehicle::CreateVehicleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_vehicle::CreateVehicleInput {
+            vehicle_name: self.vehicle_name,
+            model_manifest_arn: self.model_manifest_arn,
+            decoder_manifest_arn: self.decoder_manifest_arn,
+            attributes: self.attributes,
+            association_behavior: self.association_behavior,
+            tags: self.tags,
+        })
     }
 }
-

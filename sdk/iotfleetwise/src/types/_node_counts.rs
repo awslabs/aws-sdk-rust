@@ -3,7 +3,7 @@
 /// <p>Information about the number of nodes and node types in a vehicle network.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeCounts  {
+pub struct NodeCounts {
     /// <p>The total number of nodes in a vehicle network.</p>
     #[doc(hidden)]
     pub total_nodes: i32,
@@ -67,7 +67,8 @@ impl NodeCountsBuilder {
     }
     /// <p>The total number of nodes in a vehicle network.</p>
     pub fn set_total_nodes(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_nodes = input; self
+        self.total_nodes = input;
+        self
     }
     /// <p>The total number of nodes in a vehicle network that represent branches.</p>
     pub fn total_branches(mut self, input: i32) -> Self {
@@ -76,7 +77,8 @@ impl NodeCountsBuilder {
     }
     /// <p>The total number of nodes in a vehicle network that represent branches.</p>
     pub fn set_total_branches(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_branches = input; self
+        self.total_branches = input;
+        self
     }
     /// <p>The total number of nodes in a vehicle network that represent sensors.</p>
     pub fn total_sensors(mut self, input: i32) -> Self {
@@ -85,7 +87,8 @@ impl NodeCountsBuilder {
     }
     /// <p>The total number of nodes in a vehicle network that represent sensors.</p>
     pub fn set_total_sensors(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_sensors = input; self
+        self.total_sensors = input;
+        self
     }
     /// <p>The total number of nodes in a vehicle network that represent attributes.</p>
     pub fn total_attributes(mut self, input: i32) -> Self {
@@ -94,7 +97,8 @@ impl NodeCountsBuilder {
     }
     /// <p>The total number of nodes in a vehicle network that represent attributes.</p>
     pub fn set_total_attributes(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_attributes = input; self
+        self.total_attributes = input;
+        self
     }
     /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
     pub fn total_actuators(mut self, input: i32) -> Self {
@@ -103,27 +107,17 @@ impl NodeCountsBuilder {
     }
     /// <p>The total number of nodes in a vehicle network that represent actuators.</p>
     pub fn set_total_actuators(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_actuators = input; self
+        self.total_actuators = input;
+        self
     }
     /// Consumes the builder and constructs a [`NodeCounts`](crate::types::NodeCounts).
     pub fn build(self) -> crate::types::NodeCounts {
         crate::types::NodeCounts {
-            total_nodes: self.total_nodes
-                .unwrap_or_default()
-            ,
-            total_branches: self.total_branches
-                .unwrap_or_default()
-            ,
-            total_sensors: self.total_sensors
-                .unwrap_or_default()
-            ,
-            total_attributes: self.total_attributes
-                .unwrap_or_default()
-            ,
-            total_actuators: self.total_actuators
-                .unwrap_or_default()
-            ,
+            total_nodes: self.total_nodes.unwrap_or_default(),
+            total_branches: self.total_branches.unwrap_or_default(),
+            total_sensors: self.total_sensors.unwrap_or_default(),
+            total_attributes: self.total_attributes.unwrap_or_default(),
+            total_actuators: self.total_actuators.unwrap_or_default(),
         }
     }
 }
-

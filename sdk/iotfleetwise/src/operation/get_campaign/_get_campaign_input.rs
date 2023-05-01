@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCampaignInput  {
+pub struct GetCampaignInput {
     /// <p> The name of the campaign to retrieve information about. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl GetCampaignInput {
     /// <p> The name of the campaign to retrieve information about. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl GetCampaignInputBuilder {
     }
     /// <p> The name of the campaign to retrieve information about. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetCampaignInput`](crate::operation::get_campaign::GetCampaignInput).
-    pub fn build(self) -> Result<crate::operation::get_campaign::GetCampaignInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_campaign::GetCampaignInput {
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_campaign::GetCampaignInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_campaign::GetCampaignInput { name: self.name })
     }
 }
-

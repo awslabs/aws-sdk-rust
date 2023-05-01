@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFleetInput  {
+pub struct GetFleetInput {
     /// <p> The ID of the fleet to retrieve information about. </p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
 }
 impl GetFleetInput {
     /// <p> The ID of the fleet to retrieve information about. </p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetFleetInputBuilder {
     }
     /// <p> The ID of the fleet to retrieve information about. </p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetFleetInput`](crate::operation::get_fleet::GetFleetInput).
-    pub fn build(self) -> Result<crate::operation::get_fleet::GetFleetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_fleet::GetFleetInput {
-                fleet_id: self.fleet_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_fleet::GetFleetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_fleet::GetFleetInput {
+            fleet_id: self.fleet_id,
+        })
     }
 }
-
