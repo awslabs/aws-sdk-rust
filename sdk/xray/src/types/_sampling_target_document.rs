@@ -3,7 +3,7 @@
 /// <p>Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamplingTargetDocument  {
+pub struct SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct SamplingTargetDocument  {
 }
 impl SamplingTargetDocument {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<& str> {
+    pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
@@ -34,7 +34,7 @@ impl SamplingTargetDocument {
         self.reservoir_quota
     }
     /// <p>When the reservoir quota expires.</p>
-    pub fn reservoir_quota_ttl(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn reservoir_quota_ttl(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.reservoir_quota_ttl.as_ref()
     }
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
@@ -67,7 +67,8 @@ impl SamplingTargetDocumentBuilder {
     }
     /// <p>The name of the sampling rule.</p>
     pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_name = input; self
+        self.rule_name = input;
+        self
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fn fixed_rate(mut self, input: f64) -> Self {
@@ -76,7 +77,8 @@ impl SamplingTargetDocumentBuilder {
     }
     /// <p>The percentage of matching requests to instrument, after the reservoir is exhausted.</p>
     pub fn set_fixed_rate(mut self, input: std::option::Option<f64>) -> Self {
-        self.fixed_rate = input; self
+        self.fixed_rate = input;
+        self
     }
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
     pub fn reservoir_quota(mut self, input: i32) -> Self {
@@ -85,7 +87,8 @@ impl SamplingTargetDocumentBuilder {
     }
     /// <p>The number of requests per second that X-Ray allocated for this service.</p>
     pub fn set_reservoir_quota(mut self, input: std::option::Option<i32>) -> Self {
-        self.reservoir_quota = input; self
+        self.reservoir_quota = input;
+        self
     }
     /// <p>When the reservoir quota expires.</p>
     pub fn reservoir_quota_ttl(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +96,12 @@ impl SamplingTargetDocumentBuilder {
         self
     }
     /// <p>When the reservoir quota expires.</p>
-    pub fn set_reservoir_quota_ttl(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.reservoir_quota_ttl = input; self
+    pub fn set_reservoir_quota_ttl(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.reservoir_quota_ttl = input;
+        self
     }
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
     pub fn interval(mut self, input: i32) -> Self {
@@ -103,23 +110,17 @@ impl SamplingTargetDocumentBuilder {
     }
     /// <p>The number of seconds for the service to wait before getting sampling targets again.</p>
     pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
-        self.interval = input; self
+        self.interval = input;
+        self
     }
     /// Consumes the builder and constructs a [`SamplingTargetDocument`](crate::types::SamplingTargetDocument).
     pub fn build(self) -> crate::types::SamplingTargetDocument {
         crate::types::SamplingTargetDocument {
-            rule_name: self.rule_name
-            ,
-            fixed_rate: self.fixed_rate
-                .unwrap_or_default()
-            ,
-            reservoir_quota: self.reservoir_quota
-            ,
-            reservoir_quota_ttl: self.reservoir_quota_ttl
-            ,
-            interval: self.interval
-            ,
+            rule_name: self.rule_name,
+            fixed_rate: self.fixed_rate.unwrap_or_default(),
+            reservoir_quota: self.reservoir_quota,
+            reservoir_quota_ttl: self.reservoir_quota_ttl,
+            interval: self.interval,
         }
     }
 }
-

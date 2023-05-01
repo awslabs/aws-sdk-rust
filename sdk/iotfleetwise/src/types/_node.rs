@@ -4,20 +4,20 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Node {
-    /// <p>Information about a node specified as an actuator.</p> <note> 
-    /// <p>An actuator is a digital representation of a vehicle device.</p> 
+    /// <p>Information about a node specified as an actuator.</p> <note>
+    /// <p>An actuator is a digital representation of a vehicle device.</p>
     /// </note>
     Actuator(crate::types::Actuator),
-    /// <p>Information about a node specified as an attribute.</p> <note> 
-    /// <p>An attribute represents static information about a vehicle.</p> 
+    /// <p>Information about a node specified as an attribute.</p> <note>
+    /// <p>An attribute represents static information about a vehicle.</p>
     /// </note>
     Attribute(crate::types::Attribute),
-    /// <p>Information about a node specified as a branch.</p> <note> 
-    /// <p>A group of signals that are defined in a hierarchical structure.</p> 
+    /// <p>Information about a node specified as a branch.</p> <note>
+    /// <p>A group of signals that are defined in a hierarchical structure.</p>
     /// </note>
     Branch(crate::types::Branch),
-    /// <p>An input component that reports the environmental condition of a vehicle.</p> <note> 
-    /// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p> 
+    /// <p>An input component that reports the environmental condition of a vehicle.</p> <note>
+    /// <p>You can collect data about fluid levels, temperatures, vibrations, or battery voltage from sensors.</p>
     /// </note>
     Sensor(crate::types::Sensor),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -34,7 +34,11 @@ impl Node {
     /// Tries to convert the enum instance into [`Actuator`](crate::types::Node::Actuator), extracting the inner [`Actuator`](crate::types::Actuator).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_actuator(&self) -> std::result::Result<&crate::types::Actuator, &Self> {
-        if let Node::Actuator(val) = &self { Ok(val) } else { Err(self) }
+        if let Node::Actuator(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Actuator`](crate::types::Node::Actuator).
     pub fn is_actuator(&self) -> bool {
@@ -43,7 +47,11 @@ impl Node {
     /// Tries to convert the enum instance into [`Attribute`](crate::types::Node::Attribute), extracting the inner [`Attribute`](crate::types::Attribute).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_attribute(&self) -> std::result::Result<&crate::types::Attribute, &Self> {
-        if let Node::Attribute(val) = &self { Ok(val) } else { Err(self) }
+        if let Node::Attribute(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Attribute`](crate::types::Node::Attribute).
     pub fn is_attribute(&self) -> bool {
@@ -52,7 +60,11 @@ impl Node {
     /// Tries to convert the enum instance into [`Branch`](crate::types::Node::Branch), extracting the inner [`Branch`](crate::types::Branch).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_branch(&self) -> std::result::Result<&crate::types::Branch, &Self> {
-        if let Node::Branch(val) = &self { Ok(val) } else { Err(self) }
+        if let Node::Branch(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Branch`](crate::types::Node::Branch).
     pub fn is_branch(&self) -> bool {
@@ -61,7 +73,11 @@ impl Node {
     /// Tries to convert the enum instance into [`Sensor`](crate::types::Node::Sensor), extracting the inner [`Sensor`](crate::types::Sensor).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sensor(&self) -> std::result::Result<&crate::types::Sensor, &Self> {
-        if let Node::Sensor(val) = &self { Ok(val) } else { Err(self) }
+        if let Node::Sensor(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Sensor`](crate::types::Node::Sensor).
     pub fn is_sensor(&self) -> bool {
@@ -72,4 +88,3 @@ impl Node {
         matches!(self, Self::Unknown)
     }
 }
-

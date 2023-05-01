@@ -3,14 +3,14 @@
 /// <p>A list of EC2 instance IDs corresponding to the segments in a trace. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceIdDetail  {
+pub struct InstanceIdDetail {
     /// <p>The ID of a corresponding EC2 instance.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl InstanceIdDetail {
     /// <p>The ID of a corresponding EC2 instance.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl InstanceIdDetailBuilder {
     }
     /// <p>The ID of a corresponding EC2 instance.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceIdDetail`](crate::types::InstanceIdDetail).
     pub fn build(self) -> crate::types::InstanceIdDetail {
-        crate::types::InstanceIdDetail {
-            id: self.id
-            ,
-        }
+        crate::types::InstanceIdDetail { id: self.id }
     }
 }
-

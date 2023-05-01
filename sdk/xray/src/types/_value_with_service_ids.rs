@@ -3,7 +3,7 @@
 /// <p>Information about a segment annotation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValueWithServiceIds  {
+pub struct ValueWithServiceIds {
     /// <p>Values of the annotation.</p>
     #[doc(hidden)]
     pub annotation_value: std::option::Option<crate::types::AnnotationValue>,
@@ -13,11 +13,11 @@ pub struct ValueWithServiceIds  {
 }
 impl ValueWithServiceIds {
     /// <p>Values of the annotation.</p>
-    pub fn annotation_value(&self) -> std::option::Option<& crate::types::AnnotationValue> {
+    pub fn annotation_value(&self) -> std::option::Option<&crate::types::AnnotationValue> {
         self.annotation_value.as_ref()
     }
     /// <p>Services to which the annotation applies.</p>
-    pub fn service_ids(&self) -> std::option::Option<& [crate::types::ServiceId]> {
+    pub fn service_ids(&self) -> std::option::Option<&[crate::types::ServiceId]> {
         self.service_ids.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ValueWithServiceIdsBuilder {
         self
     }
     /// <p>Values of the annotation.</p>
-    pub fn set_annotation_value(mut self, input: std::option::Option<crate::types::AnnotationValue>) -> Self {
-        self.annotation_value = input; self
+    pub fn set_annotation_value(
+        mut self,
+        input: std::option::Option<crate::types::AnnotationValue>,
+    ) -> Self {
+        self.annotation_value = input;
+        self
     }
     /// Appends an item to `service_ids`.
     ///
@@ -52,22 +56,23 @@ impl ValueWithServiceIdsBuilder {
     /// <p>Services to which the annotation applies.</p>
     pub fn service_ids(mut self, input: crate::types::ServiceId) -> Self {
         let mut v = self.service_ids.unwrap_or_default();
-                        v.push(input);
-                        self.service_ids = Some(v);
-                        self
+        v.push(input);
+        self.service_ids = Some(v);
+        self
     }
     /// <p>Services to which the annotation applies.</p>
-    pub fn set_service_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceId>>) -> Self {
-        self.service_ids = input; self
+    pub fn set_service_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ServiceId>>,
+    ) -> Self {
+        self.service_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`ValueWithServiceIds`](crate::types::ValueWithServiceIds).
     pub fn build(self) -> crate::types::ValueWithServiceIds {
         crate::types::ValueWithServiceIds {
-            annotation_value: self.annotation_value
-            ,
-            service_ids: self.service_ids
-            ,
+            annotation_value: self.annotation_value,
+            service_ids: self.service_ids,
         }
     }
 }
-

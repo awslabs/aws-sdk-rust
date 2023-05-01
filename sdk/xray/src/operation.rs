@@ -90,4 +90,3 @@ pub mod update_group;
 
 /// Types for the `UpdateSamplingRule` operation.
 pub mod update_sampling_rule;
-

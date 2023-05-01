@@ -3,7 +3,7 @@
 /// <p>Information about a collection of standardized signals, which can be attributes, branches, sensors, or actuators.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignalCatalogSummary  {
+pub struct SignalCatalogSummary {
     /// <p>The name of the signal catalog.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SignalCatalogSummary  {
 }
 impl SignalCatalogSummary {
     /// <p>The name of the signal catalog.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the signal catalog.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the signal catalog was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl SignalCatalogSummaryBuilder {
     }
     /// <p>The name of the signal catalog.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the signal catalog.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl SignalCatalogSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the signal catalog.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,8 +78,12 @@ impl SignalCatalogSummaryBuilder {
         self
     }
     /// <p>The time the signal catalog was created in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The time the signal catalog was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -85,21 +91,20 @@ impl SignalCatalogSummaryBuilder {
         self
     }
     /// <p>The time the signal catalog was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input; self
+    pub fn set_last_modification_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modification_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`SignalCatalogSummary`](crate::types::SignalCatalogSummary).
     pub fn build(self) -> crate::types::SignalCatalogSummary {
         crate::types::SignalCatalogSummary {
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modification_time: self.last_modification_time
-            ,
+            name: self.name,
+            arn: self.arn,
+            creation_time: self.creation_time,
+            last_modification_time: self.last_modification_time,
         }
     }
 }
-

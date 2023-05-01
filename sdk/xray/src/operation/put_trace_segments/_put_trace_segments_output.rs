@@ -2,26 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutTraceSegmentsOutput  {
+pub struct PutTraceSegmentsOutput {
     /// <p>Segments that failed processing.</p>
     #[doc(hidden)]
-    pub unprocessed_trace_segments: std::option::Option<std::vec::Vec<crate::types::UnprocessedTraceSegment>>,
+    pub unprocessed_trace_segments:
+        std::option::Option<std::vec::Vec<crate::types::UnprocessedTraceSegment>>,
     _request_id: Option<String>,
 }
 impl PutTraceSegmentsOutput {
     /// <p>Segments that failed processing.</p>
-    pub fn unprocessed_trace_segments(&self) -> std::option::Option<& [crate::types::UnprocessedTraceSegment]> {
+    pub fn unprocessed_trace_segments(
+        &self,
+    ) -> std::option::Option<&[crate::types::UnprocessedTraceSegment]> {
         self.unprocessed_trace_segments.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutTraceSegmentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutTraceSegmentsOutput {
     /// Creates a new builder-style object to manufacture [`PutTraceSegmentsOutput`](crate::operation::put_trace_segments::PutTraceSegmentsOutput).
-    pub fn builder() -> crate::operation::put_trace_segments::builders::PutTraceSegmentsOutputBuilder {
+    pub fn builder() -> crate::operation::put_trace_segments::builders::PutTraceSegmentsOutputBuilder
+    {
         crate::operation::put_trace_segments::builders::PutTraceSegmentsOutputBuilder::default()
     }
 }
@@ -30,7 +34,8 @@ impl PutTraceSegmentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutTraceSegmentsOutputBuilder {
-    pub(crate) unprocessed_trace_segments: std::option::Option<std::vec::Vec<crate::types::UnprocessedTraceSegment>>,
+    pub(crate) unprocessed_trace_segments:
+        std::option::Option<std::vec::Vec<crate::types::UnprocessedTraceSegment>>,
     _request_id: Option<String>,
 }
 impl PutTraceSegmentsOutputBuilder {
@@ -39,32 +44,37 @@ impl PutTraceSegmentsOutputBuilder {
     /// To override the contents of this collection use [`set_unprocessed_trace_segments`](Self::set_unprocessed_trace_segments).
     ///
     /// <p>Segments that failed processing.</p>
-    pub fn unprocessed_trace_segments(mut self, input: crate::types::UnprocessedTraceSegment) -> Self {
+    pub fn unprocessed_trace_segments(
+        mut self,
+        input: crate::types::UnprocessedTraceSegment,
+    ) -> Self {
         let mut v = self.unprocessed_trace_segments.unwrap_or_default();
-                        v.push(input);
-                        self.unprocessed_trace_segments = Some(v);
-                        self
+        v.push(input);
+        self.unprocessed_trace_segments = Some(v);
+        self
     }
     /// <p>Segments that failed processing.</p>
-    pub fn set_unprocessed_trace_segments(mut self, input: std::option::Option<std::vec::Vec<crate::types::UnprocessedTraceSegment>>) -> Self {
-        self.unprocessed_trace_segments = input; self
+    pub fn set_unprocessed_trace_segments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UnprocessedTraceSegment>>,
+    ) -> Self {
+        self.unprocessed_trace_segments = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutTraceSegmentsOutput`](crate::operation::put_trace_segments::PutTraceSegmentsOutput).
     pub fn build(self) -> crate::operation::put_trace_segments::PutTraceSegmentsOutput {
         crate::operation::put_trace_segments::PutTraceSegmentsOutput {
-            unprocessed_trace_segments: self.unprocessed_trace_segments
-            ,
+            unprocessed_trace_segments: self.unprocessed_trace_segments,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,30 +3,30 @@
 /// <p>Information about a signal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SignalInformation  {
+pub struct SignalInformation {
     /// <p>The name of the signal.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The maximum number of samples to collect.</p>
     #[doc(hidden)]
     pub max_sample_count: std::option::Option<i64>,
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note> 
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     #[doc(hidden)]
     pub minimum_sampling_interval_ms: std::option::Option<i64>,
 }
 impl SignalInformation {
     /// <p>The name of the signal.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The maximum number of samples to collect.</p>
     pub fn max_sample_count(&self) -> std::option::Option<i64> {
         self.max_sample_count
     }
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note> 
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn minimum_sampling_interval_ms(&self) -> std::option::Option<i64> {
         self.minimum_sampling_interval_ms
@@ -55,7 +55,8 @@ impl SignalInformationBuilder {
     }
     /// <p>The name of the signal.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The maximum number of samples to collect.</p>
     pub fn max_sample_count(mut self, input: i64) -> Self {
@@ -64,31 +65,29 @@ impl SignalInformationBuilder {
     }
     /// <p>The maximum number of samples to collect.</p>
     pub fn set_max_sample_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.max_sample_count = input; self
+        self.max_sample_count = input;
+        self
     }
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note> 
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn minimum_sampling_interval_ms(mut self, input: i64) -> Self {
         self.minimum_sampling_interval_ms = Some(input);
         self
     }
-    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note> 
-    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p> 
+    /// <p>The minimum duration of time (in milliseconds) between two triggering events to collect data.</p> <note>
+    /// <p>If a signal changes often, you might want to collect data at a slower rate.</p>
     /// </note>
     pub fn set_minimum_sampling_interval_ms(mut self, input: std::option::Option<i64>) -> Self {
-        self.minimum_sampling_interval_ms = input; self
+        self.minimum_sampling_interval_ms = input;
+        self
     }
     /// Consumes the builder and constructs a [`SignalInformation`](crate::types::SignalInformation).
     pub fn build(self) -> crate::types::SignalInformation {
         crate::types::SignalInformation {
-            name: self.name
-            ,
-            max_sample_count: self.max_sample_count
-            ,
-            minimum_sampling_interval_ms: self.minimum_sampling_interval_ms
-            ,
+            name: self.name,
+            max_sample_count: self.max_sample_count,
+            minimum_sampling_interval_ms: self.minimum_sampling_interval_ms,
         }
     }
 }
-
