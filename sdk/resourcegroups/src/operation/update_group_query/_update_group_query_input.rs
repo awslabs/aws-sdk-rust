@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGroupQueryInput {
+pub struct UpdateGroupQueryInput  {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     #[doc(hidden)]
@@ -10,8 +10,8 @@ pub struct UpdateGroupQueryInput {
     /// <p>The name or the ARN of the resource group to query.</p>
     #[doc(hidden)]
     pub group: std::option::Option<std::string::String>,
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
-    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note> 
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p> 
     /// </note>
     #[doc(hidden)]
     pub resource_query: std::option::Option<crate::types::ResourceQuery>,
@@ -19,24 +19,23 @@ pub struct UpdateGroupQueryInput {
 impl UpdateGroupQueryInput {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> std::option::Option<& str> {
         self.group_name.as_deref()
     }
     /// <p>The name or the ARN of the resource group to query.</p>
-    pub fn group(&self) -> std::option::Option<&str> {
+    pub fn group(&self) -> std::option::Option<& str> {
         self.group.as_deref()
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
-    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note> 
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p> 
     /// </note>
-    pub fn resource_query(&self) -> std::option::Option<&crate::types::ResourceQuery> {
+    pub fn resource_query(&self) -> std::option::Option<& crate::types::ResourceQuery> {
         self.resource_query.as_ref()
     }
 }
 impl UpdateGroupQueryInput {
     /// Creates a new builder-style object to manufacture [`UpdateGroupQueryInput`](crate::operation::update_group_query::UpdateGroupQueryInput).
-    pub fn builder() -> crate::operation::update_group_query::builders::UpdateGroupQueryInputBuilder
-    {
+    pub fn builder() -> crate::operation::update_group_query::builders::UpdateGroupQueryInputBuilder {
         crate::operation::update_group_query::builders::UpdateGroupQueryInputBuilder::default()
     }
 }
@@ -59,8 +58,7 @@ impl UpdateGroupQueryInputBuilder {
     /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
     #[deprecated(note = "This field is deprecated, use Group instead.")]
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input;
-        self
+        self.group_name = input; self
     }
     /// <p>The name or the ARN of the resource group to query.</p>
     pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,39 +67,33 @@ impl UpdateGroupQueryInputBuilder {
     }
     /// <p>The name or the ARN of the resource group to query.</p>
     pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group = input;
-        self
+        self.group = input; self
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
-    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note> 
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p> 
     /// </note>
     pub fn resource_query(mut self, input: crate::types::ResourceQuery) -> Self {
         self.resource_query = Some(input);
         self
     }
-    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note>
-    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p>
+    /// <p>The resource query to determine which Amazon Web Services resources are members of this resource group.</p> <note> 
+    /// <p>A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.</p> 
     /// </note>
-    pub fn set_resource_query(
-        mut self,
-        input: std::option::Option<crate::types::ResourceQuery>,
-    ) -> Self {
-        self.resource_query = input;
-        self
+    pub fn set_resource_query(mut self, input: std::option::Option<crate::types::ResourceQuery>) -> Self {
+        self.resource_query = input; self
     }
     /// Consumes the builder and constructs a [`UpdateGroupQueryInput`](crate::operation::update_group_query::UpdateGroupQueryInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::update_group_query::UpdateGroupQueryInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::update_group_query::UpdateGroupQueryInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::update_group_query::UpdateGroupQueryInput {
-                group_name: self.group_name,
-                group: self.group,
-                resource_query: self.resource_query,
-            },
+                group_name: self.group_name
+                ,
+                group: self.group
+                ,
+                resource_query: self.resource_query
+                ,
+            }
         )
     }
 }
+

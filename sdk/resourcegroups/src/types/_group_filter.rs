@@ -3,7 +3,7 @@
 /// <p>A filter collection that you can use to restrict the results from a <code>List</code> operation to only those you want to include.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupFilter {
+pub struct GroupFilter  {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::GroupFilterName>,
@@ -13,11 +13,11 @@ pub struct GroupFilter {
 }
 impl GroupFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::GroupFilterName> {
+    pub fn name(&self) -> std::option::Option<& crate::types::GroupFilterName> {
         self.name.as_ref()
     }
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -43,8 +43,7 @@ impl GroupFilterBuilder {
     }
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::GroupFilterName>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// Appends an item to `values`.
     ///
@@ -53,23 +52,22 @@ impl GroupFilterBuilder {
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-        v.push(input.into());
-        self.values = Some(v);
-        self
+                        v.push(input.into());
+                        self.values = Some(v);
+                        self
     }
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
-    pub fn set_values(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.values = input;
-        self
+    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.values = input; self
     }
     /// Consumes the builder and constructs a [`GroupFilter`](crate::types::GroupFilter).
     pub fn build(self) -> crate::types::GroupFilter {
         crate::types::GroupFilter {
-            name: self.name,
-            values: self.values,
+            name: self.name
+            ,
+            values: self.values
+            ,
         }
     }
 }
+
