@@ -4,58 +4,49 @@ pub use crate::operation::list_field_level_encryption_configs::_list_field_level
 pub use crate::operation::list_field_level_encryption_configs::_list_field_level_encryption_configs_input::ListFieldLevelEncryptionConfigsInputBuilder;
 
 /// Fluent builder constructing a request to `ListFieldLevelEncryptionConfigs`.
-///
+/// 
 /// <p>List all field-level encryption configurations that have been created in CloudFront for this account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFieldLevelEncryptionConfigsFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::list_field_level_encryption_configs::builders::ListFieldLevelEncryptionConfigsInputBuilder
             }
-impl ListFieldLevelEncryptionConfigsFluentBuilder {
+impl ListFieldLevelEncryptionConfigsFluentBuilder  {
     /// Creates a new `ListFieldLevelEncryptionConfigs`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError>
-    >{
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsOutput, aws_smithy_http::result::SdkError<crate::operation::list_field_level_encryption_configs::ListFieldLevelEncryptionConfigsError>>
                      {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page).</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
@@ -77,3 +68,4 @@ impl ListFieldLevelEncryptionConfigsFluentBuilder {
         self
     }
 }
+

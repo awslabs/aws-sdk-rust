@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AssociateAttributeGroup`](crate::operation::associate_attribute_group) operation has
 /// a [`Client::associate_attribute_group`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.associate_attribute_group()
 ///     .application("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

@@ -3,3 +3,4 @@ pub use aws_http::request_id::RequestId;
 
 /// Types for the `PutAuditEvents` operation.
 pub mod put_audit_events;
+

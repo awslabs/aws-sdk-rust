@@ -3,20 +3,20 @@
 /// <p>To request to get a streaming distribution configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStreamingDistributionConfigInput {
+pub struct GetStreamingDistributionConfigInput  {
     /// <p>The streaming distribution's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetStreamingDistributionConfigInput {
     /// <p>The streaming distribution's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> std::option::Option<& str> {
         self.id.as_deref()
     }
 }
 impl GetStreamingDistributionConfigInput {
     /// Creates a new builder-style object to manufacture [`GetStreamingDistributionConfigInput`](crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigInput).
-    pub fn builder() -> crate::operation::get_streaming_distribution_config::builders::GetStreamingDistributionConfigInputBuilder{
+    pub fn builder() -> crate::operation::get_streaming_distribution_config::builders::GetStreamingDistributionConfigInputBuilder {
         crate::operation::get_streaming_distribution_config::builders::GetStreamingDistributionConfigInputBuilder::default()
     }
 }
@@ -35,16 +35,10 @@ impl GetStreamingDistributionConfigInputBuilder {
     }
     /// <p>The streaming distribution's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input;
-        self
+        self.id = input; self
     }
     /// Consumes the builder and constructs a [`GetStreamingDistributionConfigInput`](crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::get_streaming_distribution_config::GetStreamingDistributionConfigInput {
                 id: self.id
@@ -53,3 +47,4 @@ impl GetStreamingDistributionConfigInputBuilder {
         )
     }
 }
+

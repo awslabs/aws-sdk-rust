@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AddInstanceFleet`](crate::operation::add_instance_fleet) operation has
 /// a [`Client::add_instance_fleet`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.add_instance_fleet()
 ///     .cluster_id("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

@@ -150,13 +150,13 @@ pub use config::Config;
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`DescribeStream`](crate::operation::describe_stream) operation has
 /// a [`Client::describe_stream`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.describe_stream()
 ///     .stream_arn("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

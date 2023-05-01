@@ -150,13 +150,13 @@ pub use config::Config;
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`CreateAccessPoint`](crate::operation::create_access_point) operation has
 /// a [`Client::create_access_point`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.create_access_point()
 ///     .account_id("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

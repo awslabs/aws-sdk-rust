@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`CreateCallAnalyticsCategory`](crate::operation::create_call_analytics_category) operation has
 /// a [`Client::create_call_analytics_category`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.create_call_analytics_category()
 ///     .category_name("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

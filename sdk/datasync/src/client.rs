@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AddStorageSystem`](crate::operation::add_storage_system) operation has
 /// a [`Client::add_storage_system`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.add_storage_system()
 ///     .system_type("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

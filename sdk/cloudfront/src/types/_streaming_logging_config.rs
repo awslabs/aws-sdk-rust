@@ -3,7 +3,7 @@
 /// <p>A complex type that controls whether access logs are written for this streaming distribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamingLoggingConfig {
+pub struct StreamingLoggingConfig  {
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -20,11 +20,11 @@ impl StreamingLoggingConfig {
         self.enabled
     }
     /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> std::option::Option<& str> {
         self.bucket.as_deref()
     }
     /// <p>An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> std::option::Option<& str> {
         self.prefix.as_deref()
     }
 }
@@ -51,8 +51,7 @@ impl StreamingLoggingConfigBuilder {
     }
     /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't want to enable logging when you create a streaming distribution or if you want to disable logging for an existing streaming distribution, specify <code>false</code> for <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input;
-        self
+        self.enabled = input; self
     }
     /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,8 +60,7 @@ impl StreamingLoggingConfigBuilder {
     }
     /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input;
-        self
+        self.bucket = input; self
     }
     /// <p>An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,15 +69,18 @@ impl StreamingLoggingConfigBuilder {
     }
     /// <p>An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example, <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input;
-        self
+        self.prefix = input; self
     }
     /// Consumes the builder and constructs a [`StreamingLoggingConfig`](crate::types::StreamingLoggingConfig).
     pub fn build(self) -> crate::types::StreamingLoggingConfig {
         crate::types::StreamingLoggingConfig {
-            enabled: self.enabled,
-            bucket: self.bucket,
-            prefix: self.prefix,
+            enabled: self.enabled
+            ,
+            bucket: self.bucket
+            ,
+            prefix: self.prefix
+            ,
         }
     }
 }
+

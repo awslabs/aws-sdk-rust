@@ -3,7 +3,7 @@
 /// <p>A list of public keys that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublicKeyList {
+pub struct PublicKeyList  {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your public keys where you left off.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct PublicKeyList {
 }
 impl PublicKeyList {
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your public keys where you left off.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> std::option::Option<& str> {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of public keys you want in the response.</p>
@@ -31,7 +31,7 @@ impl PublicKeyList {
         self.quantity
     }
     /// <p>A list of public keys.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::PublicKeySummary]> {
+    pub fn items(&self) -> std::option::Option<& [crate::types::PublicKeySummary]> {
         self.items.as_deref()
     }
 }
@@ -59,8 +59,7 @@ impl PublicKeyListBuilder {
     }
     /// <p>If there are more elements to be listed, this element is present and contains the value that you can use for the <code>Marker</code> request parameter to continue listing your public keys where you left off.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input;
-        self
+        self.next_marker = input; self
     }
     /// <p>The maximum number of public keys you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -69,8 +68,7 @@ impl PublicKeyListBuilder {
     }
     /// <p>The maximum number of public keys you want in the response.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// <p>The number of public keys in the list.</p>
     pub fn quantity(mut self, input: i32) -> Self {
@@ -79,8 +77,7 @@ impl PublicKeyListBuilder {
     }
     /// <p>The number of public keys in the list.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input;
-        self
+        self.quantity = input; self
     }
     /// Appends an item to `items`.
     ///
@@ -89,25 +86,26 @@ impl PublicKeyListBuilder {
     /// <p>A list of public keys.</p>
     pub fn items(mut self, input: crate::types::PublicKeySummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-        v.push(input);
-        self.items = Some(v);
-        self
+                        v.push(input);
+                        self.items = Some(v);
+                        self
     }
     /// <p>A list of public keys.</p>
-    pub fn set_items(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PublicKeySummary>>,
-    ) -> Self {
-        self.items = input;
-        self
+    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::PublicKeySummary>>) -> Self {
+        self.items = input; self
     }
     /// Consumes the builder and constructs a [`PublicKeyList`](crate::types::PublicKeyList).
     pub fn build(self) -> crate::types::PublicKeyList {
         crate::types::PublicKeyList {
-            next_marker: self.next_marker,
-            max_items: self.max_items,
-            quantity: self.quantity,
-            items: self.items,
+            next_marker: self.next_marker
+            ,
+            max_items: self.max_items
+            ,
+            quantity: self.quantity
+            ,
+            items: self.items
+            ,
         }
     }
 }
+

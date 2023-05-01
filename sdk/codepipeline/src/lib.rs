@@ -207,13 +207,13 @@ pub use config::Config;
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AcknowledgeJob`](crate::operation::acknowledge_job) operation has
 /// a [`Client::acknowledge_job`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.acknowledge_job()
 ///     .job_id("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

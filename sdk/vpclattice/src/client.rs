@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`BatchUpdateRule`](crate::operation::batch_update_rule) operation has
 /// a [`Client::batch_update_rule`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.batch_update_rule()
 ///     .service_identifier("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

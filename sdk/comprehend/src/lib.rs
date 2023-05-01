@@ -150,13 +150,13 @@ pub use config::Config;
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`BatchDetectEntities`](crate::operation::batch_detect_entities) operation has
 /// a [`Client::batch_detect_entities`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.batch_detect_entities()
 ///     .language_code("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

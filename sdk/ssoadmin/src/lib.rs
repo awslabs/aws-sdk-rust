@@ -154,13 +154,13 @@ pub use config::Config;
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AttachCustomerManagedPolicyReferenceToPermissionSet`](crate::operation::attach_customer_managed_policy_reference_to_permission_set) operation has
 /// a [`Client::attach_customer_managed_policy_reference_to_permission_set`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.attach_customer_managed_policy_reference_to_permission_set()
 ///     .instance_arn("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

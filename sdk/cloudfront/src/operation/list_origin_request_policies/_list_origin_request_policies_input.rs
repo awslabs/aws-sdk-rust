@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOriginRequestPoliciesInput {
-    /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
-    /// <ul>
-    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
+pub struct ListOriginRequestPoliciesInput  {
+    /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li> 
+    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li> 
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::OriginRequestPolicyType>,
@@ -18,16 +18,16 @@ pub struct ListOriginRequestPoliciesInput {
     pub max_items: std::option::Option<i32>,
 }
 impl ListOriginRequestPoliciesInput {
-    /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
-    /// <ul>
-    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li> 
+    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li> 
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::OriginRequestPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<& crate::types::OriginRequestPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> std::option::Option<& str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of origin request policies that you want in the response.</p>
@@ -37,7 +37,7 @@ impl ListOriginRequestPoliciesInput {
 }
 impl ListOriginRequestPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListOriginRequestPoliciesInput`](crate::operation::list_origin_request_policies::ListOriginRequestPoliciesInput).
-    pub fn builder() -> crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesInputBuilder{
+    pub fn builder() -> crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesInputBuilder {
         crate::operation::list_origin_request_policies::builders::ListOriginRequestPoliciesInputBuilder::default()
     }
 }
@@ -51,26 +51,22 @@ pub struct ListOriginRequestPoliciesInputBuilder {
     pub(crate) max_items: std::option::Option<i32>,
 }
 impl ListOriginRequestPoliciesInputBuilder {
-    /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
-    /// <ul>
-    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li> 
+    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li> 
     /// </ul>
     pub fn r#type(mut self, input: crate::types::OriginRequestPolicyType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p>
-    /// <ul>
-    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li>
-    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li>
+    /// <p>A filter to return only the specified kinds of origin request policies. Valid values are:</p> 
+    /// <ul> 
+    /// <li> <p> <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p> </li> 
+    /// <li> <p> <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p> </li> 
     /// </ul>
-    pub fn set_type(
-        mut self,
-        input: std::option::Option<crate::types::OriginRequestPolicyType>,
-    ) -> Self {
-        self.r#type = input;
-        self
+    pub fn set_type(mut self, input: std::option::Option<crate::types::OriginRequestPolicyType>) -> Self {
+        self.r#type = input; self
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,8 +75,7 @@ impl ListOriginRequestPoliciesInputBuilder {
     }
     /// <p>Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input;
-        self
+        self.marker = input; self
     }
     /// <p>The maximum number of origin request policies that you want in the response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -89,22 +84,20 @@ impl ListOriginRequestPoliciesInputBuilder {
     }
     /// <p>The maximum number of origin request policies that you want in the response.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input;
-        self
+        self.max_items = input; self
     }
     /// Consumes the builder and constructs a [`ListOriginRequestPoliciesInput`](crate::operation::list_origin_request_policies::ListOriginRequestPoliciesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::list_origin_request_policies::ListOriginRequestPoliciesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::list_origin_request_policies::ListOriginRequestPoliciesInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::list_origin_request_policies::ListOriginRequestPoliciesInput {
-                r#type: self.r#type,
-                marker: self.marker,
-                max_items: self.max_items,
-            },
+                r#type: self.r#type
+                ,
+                marker: self.marker
+                ,
+                max_items: self.max_items
+                ,
+            }
         )
     }
 }
+

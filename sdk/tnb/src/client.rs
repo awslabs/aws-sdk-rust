@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`CancelSolNetworkOperation`](crate::operation::cancel_sol_network_operation) operation has
 /// a [`Client::cancel_sol_network_operation`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.cancel_sol_network_operation()
 ///     .ns_lcm_op_occ_id("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

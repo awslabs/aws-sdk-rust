@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCachePoliciesOutput {
+pub struct ListCachePoliciesOutput  {
     /// <p>A list of cache policies.</p>
     #[doc(hidden)]
     pub cache_policy_list: std::option::Option<crate::types::CachePolicyList>,
@@ -10,19 +10,18 @@ pub struct ListCachePoliciesOutput {
 }
 impl ListCachePoliciesOutput {
     /// <p>A list of cache policies.</p>
-    pub fn cache_policy_list(&self) -> std::option::Option<&crate::types::CachePolicyList> {
+    pub fn cache_policy_list(&self) -> std::option::Option<& crate::types::CachePolicyList> {
         self.cache_policy_list.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ListCachePoliciesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl ListCachePoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListCachePoliciesOutput`](crate::operation::list_cache_policies::ListCachePoliciesOutput).
-    pub fn builder(
-    ) -> crate::operation::list_cache_policies::builders::ListCachePoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::list_cache_policies::builders::ListCachePoliciesOutputBuilder {
         crate::operation::list_cache_policies::builders::ListCachePoliciesOutputBuilder::default()
     }
 }
@@ -41,27 +40,25 @@ impl ListCachePoliciesOutputBuilder {
         self
     }
     /// <p>A list of cache policies.</p>
-    pub fn set_cache_policy_list(
-        mut self,
-        input: std::option::Option<crate::types::CachePolicyList>,
-    ) -> Self {
-        self.cache_policy_list = input;
-        self
+    pub fn set_cache_policy_list(mut self, input: std::option::Option<crate::types::CachePolicyList>) -> Self {
+        self.cache_policy_list = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`ListCachePoliciesOutput`](crate::operation::list_cache_policies::ListCachePoliciesOutput).
     pub fn build(self) -> crate::operation::list_cache_policies::ListCachePoliciesOutput {
         crate::operation::list_cache_policies::ListCachePoliciesOutput {
-            cache_policy_list: self.cache_policy_list,
+            cache_policy_list: self.cache_policy_list
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

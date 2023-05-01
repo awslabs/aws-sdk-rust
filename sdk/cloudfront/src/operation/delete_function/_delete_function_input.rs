@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFunctionInput {
+pub struct DeleteFunctionInput  {
     /// <p>The name of the function that you are deleting.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteFunctionInput {
 }
 impl DeleteFunctionInput {
     /// <p>The name of the function that you are deleting.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> std::option::Option<& str> {
         self.name.as_deref()
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
-    pub fn if_match(&self) -> std::option::Option<&str> {
+    pub fn if_match(&self) -> std::option::Option<& str> {
         self.if_match.as_deref()
     }
 }
@@ -42,8 +42,7 @@ impl DeleteFunctionInputBuilder {
     }
     /// <p>The name of the function that you are deleting.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input;
-        self
+        self.name = input; self
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
     pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,19 +51,18 @@ impl DeleteFunctionInputBuilder {
     }
     /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which you can get using <code>DescribeFunction</code>.</p>
     pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.if_match = input;
-        self
+        self.if_match = input; self
     }
     /// Consumes the builder and constructs a [`DeleteFunctionInput`](crate::operation::delete_function::DeleteFunctionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::delete_function::DeleteFunctionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::delete_function::DeleteFunctionInput {
-            name: self.name,
-            if_match: self.if_match,
-        })
+    pub fn build(self) -> Result<crate::operation::delete_function::DeleteFunctionInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::delete_function::DeleteFunctionInput {
+                name: self.name
+                ,
+                if_match: self.if_match
+                ,
+            }
+        )
     }
 }
+

@@ -150,13 +150,13 @@ pub use config::Config;
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AcceptDirectConnectGatewayAssociationProposal`](crate::operation::accept_direct_connect_gateway_association_proposal) operation has
 /// a [`Client::accept_direct_connect_gateway_association_proposal`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.accept_direct_connect_gateway_association_proposal()
 ///     .direct_connect_gateway_id("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

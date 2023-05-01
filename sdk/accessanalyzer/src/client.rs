@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`ApplyArchiveRule`](crate::operation::apply_archive_rule) operation has
 /// a [`Client::apply_archive_rule`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.apply_archive_rule()
 ///     .analyzer_arn("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

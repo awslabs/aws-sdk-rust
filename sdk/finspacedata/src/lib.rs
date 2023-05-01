@@ -150,13 +150,13 @@ pub use config::Config;
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AssociateUserToPermissionGroup`](crate::operation::associate_user_to_permission_group) operation has
 /// a [`Client::associate_user_to_permission_group`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.associate_user_to_permission_group()
 ///     .permission_group_id("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

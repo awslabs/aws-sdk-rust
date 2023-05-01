@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AcceptDomainTransferFromAnotherAwsAccount`](crate::operation::accept_domain_transfer_from_another_aws_account) operation has
 /// a [`Client::accept_domain_transfer_from_another_aws_account`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.accept_domain_transfer_from_another_aws_account()
 ///     .domain_name("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

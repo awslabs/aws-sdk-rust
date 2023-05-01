@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`BatchAssociateScramSecret`](crate::operation::batch_associate_scram_secret) operation has
 /// a [`Client::batch_associate_scram_secret`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.batch_associate_scram_secret()
 ///     .cluster_arn("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

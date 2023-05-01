@@ -154,13 +154,13 @@ pub use config::Config;
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AssociateEntityToThing`](crate::operation::associate_entity_to_thing) operation has
 /// a [`Client::associate_entity_to_thing`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.associate_entity_to_thing()
 ///     .thing_name("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

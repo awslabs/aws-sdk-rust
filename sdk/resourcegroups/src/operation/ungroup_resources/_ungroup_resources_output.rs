@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UngroupResourcesOutput {
+pub struct UngroupResourcesOutput  {
     /// <p>A list of resources that were successfully removed from the group by this operation.</p>
     #[doc(hidden)]
     pub succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,27 +16,26 @@ pub struct UngroupResourcesOutput {
 }
 impl UngroupResourcesOutput {
     /// <p>A list of resources that were successfully removed from the group by this operation.</p>
-    pub fn succeeded(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn succeeded(&self) -> std::option::Option<& [std::string::String]> {
         self.succeeded.as_deref()
     }
     /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
-    pub fn failed(&self) -> std::option::Option<&[crate::types::FailedResource]> {
+    pub fn failed(&self) -> std::option::Option<& [crate::types::FailedResource]> {
         self.failed.as_deref()
     }
     /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
-    pub fn pending(&self) -> std::option::Option<&[crate::types::PendingResource]> {
+    pub fn pending(&self) -> std::option::Option<& [crate::types::PendingResource]> {
         self.pending.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UngroupResourcesOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl UngroupResourcesOutput {
     /// Creates a new builder-style object to manufacture [`UngroupResourcesOutput`](crate::operation::ungroup_resources::UngroupResourcesOutput).
-    pub fn builder() -> crate::operation::ungroup_resources::builders::UngroupResourcesOutputBuilder
-    {
+    pub fn builder() -> crate::operation::ungroup_resources::builders::UngroupResourcesOutputBuilder {
         crate::operation::ungroup_resources::builders::UngroupResourcesOutputBuilder::default()
     }
 }
@@ -58,17 +57,13 @@ impl UngroupResourcesOutputBuilder {
     /// <p>A list of resources that were successfully removed from the group by this operation.</p>
     pub fn succeeded(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.succeeded.unwrap_or_default();
-        v.push(input.into());
-        self.succeeded = Some(v);
-        self
+                        v.push(input.into());
+                        self.succeeded = Some(v);
+                        self
     }
     /// <p>A list of resources that were successfully removed from the group by this operation.</p>
-    pub fn set_succeeded(
-        mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
-    ) -> Self {
-        self.succeeded = input;
-        self
+    pub fn set_succeeded(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+        self.succeeded = input; self
     }
     /// Appends an item to `failed`.
     ///
@@ -77,17 +72,13 @@ impl UngroupResourcesOutputBuilder {
     /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
     pub fn failed(mut self, input: crate::types::FailedResource) -> Self {
         let mut v = self.failed.unwrap_or_default();
-        v.push(input);
-        self.failed = Some(v);
-        self
+                        v.push(input);
+                        self.failed = Some(v);
+                        self
     }
     /// <p>A list of any resources that failed to be removed from the group by this operation.</p>
-    pub fn set_failed(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FailedResource>>,
-    ) -> Self {
-        self.failed = input;
-        self
+    pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<crate::types::FailedResource>>) -> Self {
+        self.failed = input; self
     }
     /// Appends an item to `pending`.
     ///
@@ -96,34 +87,34 @@ impl UngroupResourcesOutputBuilder {
     /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
     pub fn pending(mut self, input: crate::types::PendingResource) -> Self {
         let mut v = self.pending.unwrap_or_default();
-        v.push(input);
-        self.pending = Some(v);
-        self
+                        v.push(input);
+                        self.pending = Some(v);
+                        self
     }
     /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
-    pub fn set_pending(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PendingResource>>,
-    ) -> Self {
-        self.pending = input;
-        self
+    pub fn set_pending(mut self, input: std::option::Option<std::vec::Vec<crate::types::PendingResource>>) -> Self {
+        self.pending = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`UngroupResourcesOutput`](crate::operation::ungroup_resources::UngroupResourcesOutput).
     pub fn build(self) -> crate::operation::ungroup_resources::UngroupResourcesOutput {
         crate::operation::ungroup_resources::UngroupResourcesOutput {
-            succeeded: self.succeeded,
-            failed: self.failed,
-            pending: self.pending,
+            succeeded: self.succeeded
+            ,
+            failed: self.failed
+            ,
+            pending: self.pending
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

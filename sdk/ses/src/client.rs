@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`CloneReceiptRuleSet`](crate::operation::clone_receipt_rule_set) operation has
 /// a [`Client::clone_receipt_rule_set`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.clone_receipt_rule_set()
 ///     .rule_set_name("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

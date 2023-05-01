@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-///
+/// 
 /// Here is an example of how you can make a match expression forward-compatible:
-///
+/// 
 /// ```text
 /// # let functionstage = unimplemented!();
 /// match functionstage {
@@ -30,64 +30,55 @@
 /// Specifically, when `functionstage` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FunctionStage::NewFeature` also yielding `"NewFeature"`.
-///
+/// 
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
+#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
 pub enum FunctionStage {
     #[allow(missing_docs)] // documentation missing in model
     Development,
     #[allow(missing_docs)] // documentation missing in model
     Live,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue),
+    Unknown(crate::primitives::UnknownVariantValue)
 }
 impl std::convert::From<&str> for FunctionStage {
-    fn from(s: &str) -> Self {
-        match s {
-            "DEVELOPMENT" => FunctionStage::Development,
-            "LIVE" => FunctionStage::Live,
-            other => {
-                FunctionStage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                fn from(s: &str) -> Self {
+                    match s {
+                        "DEVELOPMENT" => FunctionStage::Development,
+"LIVE" => FunctionStage::Live,
+other => FunctionStage::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
+                    }
+                }
             }
-        }
-    }
-}
 impl std::str::FromStr for FunctionStage {
-    type Err = std::convert::Infallible;
+                type Err = std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FunctionStage::from(s))
-    }
-}
+                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+                    Ok(FunctionStage::from(s))
+                }
+            }
 impl FunctionStage {
-    /// Returns the `&str` value of the enum member.
-    pub fn as_str(&self) -> &str {
-        match self {
-            FunctionStage::Development => "DEVELOPMENT",
-            FunctionStage::Live => "LIVE",
-            FunctionStage::Unknown(value) => value.as_str(),
-        }
-    }
-    /// Returns all the `&str` representations of the enum members.
-    pub const fn values() -> &'static [&'static str] {
-        &["DEVELOPMENT", "LIVE"]
-    }
+                /// Returns the `&str` value of the enum member.
+                pub fn as_str(&self) -> &str {
+                    match self {
+    FunctionStage::Development => "DEVELOPMENT",
+    FunctionStage::Live => "LIVE",
+    FunctionStage::Unknown(value) => value.as_str()
 }
+                }
+                /// Returns all the `&str` representations of the enum members.
+                pub const fn values() -> &'static [&'static str] {
+                    &["DEVELOPMENT", "LIVE"]
+                }
+            }
 impl AsRef<str> for FunctionStage {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
+                fn as_ref(&self) -> &str {
+                    self.as_str()
+                }
+            }
+

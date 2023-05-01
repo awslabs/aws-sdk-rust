@@ -150,13 +150,13 @@ pub use config::Config;
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`CreateBotVersion`](crate::operation::create_bot_version) operation has
 /// a [`Client::create_bot_version`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.create_bot_version()
 ///     .name("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

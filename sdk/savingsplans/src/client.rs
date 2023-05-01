@@ -60,13 +60,13 @@
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`CreateSavingsPlan`](crate::operation::create_savings_plan) operation has
 /// a [`Client::create_savings_plan`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.create_savings_plan()
 ///     .savings_plan_offering_id("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchResourcesInput {
+pub struct SearchResourcesInput  {
     /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
     #[doc(hidden)]
     pub resource_query: std::option::Option<crate::types::ResourceQuery>,
@@ -15,7 +15,7 @@ pub struct SearchResourcesInput {
 }
 impl SearchResourcesInput {
     /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
-    pub fn resource_query(&self) -> std::option::Option<&crate::types::ResourceQuery> {
+    pub fn resource_query(&self) -> std::option::Option<& crate::types::ResourceQuery> {
         self.resource_query.as_ref()
     }
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -23,7 +23,7 @@ impl SearchResourcesInput {
         self.max_results
     }
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> std::option::Option<& str> {
         self.next_token.as_deref()
     }
 }
@@ -49,12 +49,8 @@ impl SearchResourcesInputBuilder {
         self
     }
     /// <p>The search query, using the same formats that are supported for resource group definition. For more information, see <code>CreateGroup</code>.</p>
-    pub fn set_resource_query(
-        mut self,
-        input: std::option::Option<crate::types::ResourceQuery>,
-    ) -> Self {
-        self.resource_query = input;
-        self
+    pub fn set_resource_query(mut self, input: std::option::Option<crate::types::ResourceQuery>) -> Self {
+        self.resource_query = input; self
     }
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -63,8 +59,7 @@ impl SearchResourcesInputBuilder {
     }
     /// <p>The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input;
-        self
+        self.max_results = input; self
     }
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,20 +68,20 @@ impl SearchResourcesInputBuilder {
     }
     /// <p>The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input;
-        self
+        self.next_token = input; self
     }
     /// Consumes the builder and constructs a [`SearchResourcesInput`](crate::operation::search_resources::SearchResourcesInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::search_resources::SearchResourcesInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
-        Ok(crate::operation::search_resources::SearchResourcesInput {
-            resource_query: self.resource_query,
-            max_results: self.max_results,
-            next_token: self.next_token,
-        })
+    pub fn build(self) -> Result<crate::operation::search_resources::SearchResourcesInput, aws_smithy_http::operation::error::BuildError> {
+        Ok(
+            crate::operation::search_resources::SearchResourcesInput {
+                resource_query: self.resource_query
+                ,
+                max_results: self.max_results
+                ,
+                next_token: self.next_token
+                ,
+            }
+        )
     }
 }
+

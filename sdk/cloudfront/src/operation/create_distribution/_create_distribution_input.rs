@@ -3,21 +3,20 @@
 /// <p>The request to create a new distribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDistributionInput {
+pub struct CreateDistributionInput  {
     /// <p>The distribution's configuration information.</p>
     #[doc(hidden)]
     pub distribution_config: std::option::Option<crate::types::DistributionConfig>,
 }
 impl CreateDistributionInput {
     /// <p>The distribution's configuration information.</p>
-    pub fn distribution_config(&self) -> std::option::Option<&crate::types::DistributionConfig> {
+    pub fn distribution_config(&self) -> std::option::Option<& crate::types::DistributionConfig> {
         self.distribution_config.as_ref()
     }
 }
 impl CreateDistributionInput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
-    pub fn builder(
-    ) -> crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
+    pub fn builder() -> crate::operation::create_distribution::builders::CreateDistributionInputBuilder {
         crate::operation::create_distribution::builders::CreateDistributionInputBuilder::default()
     }
 }
@@ -35,24 +34,17 @@ impl CreateDistributionInputBuilder {
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn set_distribution_config(
-        mut self,
-        input: std::option::Option<crate::types::DistributionConfig>,
-    ) -> Self {
-        self.distribution_config = input;
-        self
+    pub fn set_distribution_config(mut self, input: std::option::Option<crate::types::DistributionConfig>) -> Self {
+        self.distribution_config = input; self
     }
     /// Consumes the builder and constructs a [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::create_distribution::CreateDistributionInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::create_distribution::CreateDistributionInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::create_distribution::CreateDistributionInput {
-                distribution_config: self.distribution_config,
-            },
+                distribution_config: self.distribution_config
+                ,
+            }
         )
     }
 }
+

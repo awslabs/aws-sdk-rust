@@ -3,7 +3,7 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDistributionConfigOutput {
+pub struct GetDistributionConfigOutput  {
     /// <p>The distribution's configuration information.</p>
     #[doc(hidden)]
     pub distribution_config: std::option::Option<crate::types::DistributionConfig>,
@@ -14,24 +14,22 @@ pub struct GetDistributionConfigOutput {
 }
 impl GetDistributionConfigOutput {
     /// <p>The distribution's configuration information.</p>
-    pub fn distribution_config(&self) -> std::option::Option<&crate::types::DistributionConfig> {
+    pub fn distribution_config(&self) -> std::option::Option<& crate::types::DistributionConfig> {
         self.distribution_config.as_ref()
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> std::option::Option<& str> {
         self.e_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDistributionConfigOutput {
-    fn request_id(&self) -> Option<&str> {
-        self._request_id.as_deref()
-    }
-}
+                                fn request_id(&self) -> Option<&str> {
+                                    self._request_id.as_deref()
+                                }
+                            }
 impl GetDistributionConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetDistributionConfigOutput`](crate::operation::get_distribution_config::GetDistributionConfigOutput).
-    pub fn builder(
-    ) -> crate::operation::get_distribution_config::builders::GetDistributionConfigOutputBuilder
-    {
+    pub fn builder() -> crate::operation::get_distribution_config::builders::GetDistributionConfigOutputBuilder {
         crate::operation::get_distribution_config::builders::GetDistributionConfigOutputBuilder::default()
     }
 }
@@ -51,12 +49,8 @@ impl GetDistributionConfigOutputBuilder {
         self
     }
     /// <p>The distribution's configuration information.</p>
-    pub fn set_distribution_config(
-        mut self,
-        input: std::option::Option<crate::types::DistributionConfig>,
-    ) -> Self {
-        self.distribution_config = input;
-        self
+    pub fn set_distribution_config(mut self, input: std::option::Option<crate::types::DistributionConfig>) -> Self {
+        self.distribution_config = input; self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,24 +59,26 @@ impl GetDistributionConfigOutputBuilder {
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input;
-        self
+        self.e_tag = input; self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-        self._request_id = Some(request_id.into());
-        self
-    }
-
-    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-        self._request_id = request_id;
-        self
-    }
+                                    self._request_id = Some(request_id.into());
+                                    self
+                                }
+    
+                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+                                    self._request_id = request_id;
+                                    self
+                                }
     /// Consumes the builder and constructs a [`GetDistributionConfigOutput`](crate::operation::get_distribution_config::GetDistributionConfigOutput).
     pub fn build(self) -> crate::operation::get_distribution_config::GetDistributionConfigOutput {
         crate::operation::get_distribution_config::GetDistributionConfigOutput {
-            distribution_config: self.distribution_config,
-            e_tag: self.e_tag,
+            distribution_config: self.distribution_config
+            ,
+            e_tag: self.e_tag
+            ,
             _request_id: self._request_id,
         }
     }
 }
+

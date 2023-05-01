@@ -234,13 +234,13 @@ pub use config::Config;
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`CancelComponentDeployment`](crate::operation::cancel_component_deployment) operation has
 /// a [`Client::cancel_component_deployment`], function which returns a builder for that operation.
-/// The fluent builder ultimately has a `call()` function that returns an async future that
+/// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 /// 
 /// ```rust,ignore
 /// let result = client.cancel_component_deployment()
 ///     .component_name("example")
-///     .call()
+///     .send()
 ///     .await;
 /// ```
 /// 
