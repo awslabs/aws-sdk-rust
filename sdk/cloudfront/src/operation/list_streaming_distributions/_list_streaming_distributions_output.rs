@@ -3,7 +3,7 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamingDistributionsOutput  {
+pub struct ListStreamingDistributionsOutput {
     /// <p>The <code>StreamingDistributionList</code> type.</p>
     #[doc(hidden)]
     pub streaming_distribution_list: std::option::Option<crate::types::StreamingDistributionList>,
@@ -11,18 +11,20 @@ pub struct ListStreamingDistributionsOutput  {
 }
 impl ListStreamingDistributionsOutput {
     /// <p>The <code>StreamingDistributionList</code> type.</p>
-    pub fn streaming_distribution_list(&self) -> std::option::Option<& crate::types::StreamingDistributionList> {
+    pub fn streaming_distribution_list(
+        &self,
+    ) -> std::option::Option<&crate::types::StreamingDistributionList> {
         self.streaming_distribution_list.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ListStreamingDistributionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListStreamingDistributionsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamingDistributionsOutput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput).
-    pub fn builder() -> crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsOutputBuilder{
         crate::operation::list_streaming_distributions::builders::ListStreamingDistributionsOutputBuilder::default()
     }
 }
@@ -31,35 +33,43 @@ impl ListStreamingDistributionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListStreamingDistributionsOutputBuilder {
-    pub(crate) streaming_distribution_list: std::option::Option<crate::types::StreamingDistributionList>,
+    pub(crate) streaming_distribution_list:
+        std::option::Option<crate::types::StreamingDistributionList>,
     _request_id: Option<String>,
 }
 impl ListStreamingDistributionsOutputBuilder {
     /// <p>The <code>StreamingDistributionList</code> type.</p>
-    pub fn streaming_distribution_list(mut self, input: crate::types::StreamingDistributionList) -> Self {
+    pub fn streaming_distribution_list(
+        mut self,
+        input: crate::types::StreamingDistributionList,
+    ) -> Self {
         self.streaming_distribution_list = Some(input);
         self
     }
     /// <p>The <code>StreamingDistributionList</code> type.</p>
-    pub fn set_streaming_distribution_list(mut self, input: std::option::Option<crate::types::StreamingDistributionList>) -> Self {
-        self.streaming_distribution_list = input; self
+    pub fn set_streaming_distribution_list(
+        mut self,
+        input: std::option::Option<crate::types::StreamingDistributionList>,
+    ) -> Self {
+        self.streaming_distribution_list = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListStreamingDistributionsOutput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput).
-    pub fn build(self) -> crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput {
         crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput {
-            streaming_distribution_list: self.streaming_distribution_list
-            ,
+            streaming_distribution_list: self.streaming_distribution_list,
             _request_id: self._request_id,
         }
     }
 }
-

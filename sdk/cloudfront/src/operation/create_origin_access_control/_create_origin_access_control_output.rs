@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOriginAccessControlOutput  {
+pub struct CreateOriginAccessControlOutput {
     /// <p>Contains an origin access control.</p>
     #[doc(hidden)]
     pub origin_access_control: std::option::Option<crate::types::OriginAccessControl>,
@@ -16,26 +16,26 @@ pub struct CreateOriginAccessControlOutput  {
 }
 impl CreateOriginAccessControlOutput {
     /// <p>Contains an origin access control.</p>
-    pub fn origin_access_control(&self) -> std::option::Option<& crate::types::OriginAccessControl> {
+    pub fn origin_access_control(&self) -> std::option::Option<&crate::types::OriginAccessControl> {
         self.origin_access_control.as_ref()
     }
     /// <p>The URL of the origin access control.</p>
-    pub fn location(&self) -> std::option::Option<& str> {
+    pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The version identifier for the current version of the origin access control.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateOriginAccessControlOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateOriginAccessControlOutput {
     /// Creates a new builder-style object to manufacture [`CreateOriginAccessControlOutput`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput).
-    pub fn builder() -> crate::operation::create_origin_access_control::builders::CreateOriginAccessControlOutputBuilder {
+    pub fn builder() -> crate::operation::create_origin_access_control::builders::CreateOriginAccessControlOutputBuilder{
         crate::operation::create_origin_access_control::builders::CreateOriginAccessControlOutputBuilder::default()
     }
 }
@@ -56,8 +56,12 @@ impl CreateOriginAccessControlOutputBuilder {
         self
     }
     /// <p>Contains an origin access control.</p>
-    pub fn set_origin_access_control(mut self, input: std::option::Option<crate::types::OriginAccessControl>) -> Self {
-        self.origin_access_control = input; self
+    pub fn set_origin_access_control(
+        mut self,
+        input: std::option::Option<crate::types::OriginAccessControl>,
+    ) -> Self {
+        self.origin_access_control = input;
+        self
     }
     /// <p>The URL of the origin access control.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +70,8 @@ impl CreateOriginAccessControlOutputBuilder {
     }
     /// <p>The URL of the origin access control.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// <p>The version identifier for the current version of the origin access control.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +80,27 @@ impl CreateOriginAccessControlOutputBuilder {
     }
     /// <p>The version identifier for the current version of the origin access control.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateOriginAccessControlOutput`](crate::operation::create_origin_access_control::CreateOriginAccessControlOutput).
-    pub fn build(self) -> crate::operation::create_origin_access_control::CreateOriginAccessControlOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_origin_access_control::CreateOriginAccessControlOutput {
         crate::operation::create_origin_access_control::CreateOriginAccessControlOutput {
-            origin_access_control: self.origin_access_control
-            ,
-            location: self.location
-            ,
-            e_tag: self.e_tag
-            ,
+            origin_access_control: self.origin_access_control,
+            location: self.location,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }
 }
-

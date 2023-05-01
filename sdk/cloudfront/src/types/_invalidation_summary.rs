@@ -3,7 +3,7 @@
 /// <p>A summary of an invalidation request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidationSummary  {
+pub struct InvalidationSummary {
     /// <p>The unique ID for an invalidation request.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct InvalidationSummary  {
 }
 impl InvalidationSummary {
     /// <p>The unique ID for an invalidation request.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The time that an invalidation request was created.</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The status of an invalidation request.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl InvalidationSummaryBuilder {
     }
     /// <p>The unique ID for an invalidation request.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The time that an invalidation request was created.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -59,8 +60,12 @@ impl InvalidationSummaryBuilder {
         self
     }
     /// <p>The time that an invalidation request was created.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>The status of an invalidation request.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +74,15 @@ impl InvalidationSummaryBuilder {
     }
     /// <p>The status of an invalidation request.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`InvalidationSummary`](crate::types::InvalidationSummary).
     pub fn build(self) -> crate::types::InvalidationSummary {
         crate::types::InvalidationSummary {
-            id: self.id
-            ,
-            create_time: self.create_time
-            ,
-            status: self.status
-            ,
+            id: self.id,
+            create_time: self.create_time,
+            status: self.status,
         }
     }
 }
-

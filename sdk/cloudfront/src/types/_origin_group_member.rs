@@ -3,14 +3,14 @@
 /// <p>An origin in an origin group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OriginGroupMember  {
+pub struct OriginGroupMember {
     /// <p>The ID for an origin in an origin group.</p>
     #[doc(hidden)]
     pub origin_id: std::option::Option<std::string::String>,
 }
 impl OriginGroupMember {
     /// <p>The ID for an origin in an origin group.</p>
-    pub fn origin_id(&self) -> std::option::Option<& str> {
+    pub fn origin_id(&self) -> std::option::Option<&str> {
         self.origin_id.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl OriginGroupMemberBuilder {
     }
     /// <p>The ID for an origin in an origin group.</p>
     pub fn set_origin_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.origin_id = input; self
+        self.origin_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`OriginGroupMember`](crate::types::OriginGroupMember).
     pub fn build(self) -> crate::types::OriginGroupMember {
         crate::types::OriginGroupMember {
-            origin_id: self.origin_id
-            ,
+            origin_id: self.origin_id,
         }
     }
 }
-

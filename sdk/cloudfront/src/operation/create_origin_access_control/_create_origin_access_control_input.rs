@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOriginAccessControlInput  {
+pub struct CreateOriginAccessControlInput {
     /// <p>Contains the origin access control.</p>
     #[doc(hidden)]
     pub origin_access_control_config: std::option::Option<crate::types::OriginAccessControlConfig>,
 }
 impl CreateOriginAccessControlInput {
     /// <p>Contains the origin access control.</p>
-    pub fn origin_access_control_config(&self) -> std::option::Option<& crate::types::OriginAccessControlConfig> {
+    pub fn origin_access_control_config(
+        &self,
+    ) -> std::option::Option<&crate::types::OriginAccessControlConfig> {
         self.origin_access_control_config.as_ref()
     }
 }
 impl CreateOriginAccessControlInput {
     /// Creates a new builder-style object to manufacture [`CreateOriginAccessControlInput`](crate::operation::create_origin_access_control::CreateOriginAccessControlInput).
-    pub fn builder() -> crate::operation::create_origin_access_control::builders::CreateOriginAccessControlInputBuilder {
+    pub fn builder() -> crate::operation::create_origin_access_control::builders::CreateOriginAccessControlInputBuilder{
         crate::operation::create_origin_access_control::builders::CreateOriginAccessControlInputBuilder::default()
     }
 }
@@ -24,26 +26,37 @@ impl CreateOriginAccessControlInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateOriginAccessControlInputBuilder {
-    pub(crate) origin_access_control_config: std::option::Option<crate::types::OriginAccessControlConfig>,
+    pub(crate) origin_access_control_config:
+        std::option::Option<crate::types::OriginAccessControlConfig>,
 }
 impl CreateOriginAccessControlInputBuilder {
     /// <p>Contains the origin access control.</p>
-    pub fn origin_access_control_config(mut self, input: crate::types::OriginAccessControlConfig) -> Self {
+    pub fn origin_access_control_config(
+        mut self,
+        input: crate::types::OriginAccessControlConfig,
+    ) -> Self {
         self.origin_access_control_config = Some(input);
         self
     }
     /// <p>Contains the origin access control.</p>
-    pub fn set_origin_access_control_config(mut self, input: std::option::Option<crate::types::OriginAccessControlConfig>) -> Self {
-        self.origin_access_control_config = input; self
+    pub fn set_origin_access_control_config(
+        mut self,
+        input: std::option::Option<crate::types::OriginAccessControlConfig>,
+    ) -> Self {
+        self.origin_access_control_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateOriginAccessControlInput`](crate::operation::create_origin_access_control::CreateOriginAccessControlInput).
-    pub fn build(self) -> Result<crate::operation::create_origin_access_control::CreateOriginAccessControlInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_origin_access_control::CreateOriginAccessControlInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_origin_access_control::CreateOriginAccessControlInput {
-                origin_access_control_config: self.origin_access_control_config
-                ,
-            }
+                origin_access_control_config: self.origin_access_control_config,
+            },
         )
     }
 }
-

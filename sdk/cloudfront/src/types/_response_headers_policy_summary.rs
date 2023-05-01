@@ -3,7 +3,7 @@
 /// <p>Contains a response headers policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResponseHeadersPolicySummary  {
+pub struct ResponseHeadersPolicySummary {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ResponseHeadersPolicyType>,
@@ -13,11 +13,13 @@ pub struct ResponseHeadersPolicySummary  {
 }
 impl ResponseHeadersPolicySummary {
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ResponseHeadersPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ResponseHeadersPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The response headers policy.</p>
-    pub fn response_headers_policy(&self) -> std::option::Option<& crate::types::ResponseHeadersPolicy> {
+    pub fn response_headers_policy(
+        &self,
+    ) -> std::option::Option<&crate::types::ResponseHeadersPolicy> {
         self.response_headers_policy.as_ref()
     }
 }
@@ -42,8 +44,12 @@ impl ResponseHeadersPolicySummaryBuilder {
         self
     }
     /// <p>The type of response headers policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ResponseHeadersPolicyType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::ResponseHeadersPolicyType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The response headers policy.</p>
     pub fn response_headers_policy(mut self, input: crate::types::ResponseHeadersPolicy) -> Self {
@@ -51,17 +57,18 @@ impl ResponseHeadersPolicySummaryBuilder {
         self
     }
     /// <p>The response headers policy.</p>
-    pub fn set_response_headers_policy(mut self, input: std::option::Option<crate::types::ResponseHeadersPolicy>) -> Self {
-        self.response_headers_policy = input; self
+    pub fn set_response_headers_policy(
+        mut self,
+        input: std::option::Option<crate::types::ResponseHeadersPolicy>,
+    ) -> Self {
+        self.response_headers_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResponseHeadersPolicySummary`](crate::types::ResponseHeadersPolicySummary).
     pub fn build(self) -> crate::types::ResponseHeadersPolicySummary {
         crate::types::ResponseHeadersPolicySummary {
-            r#type: self.r#type
-            ,
-            response_headers_policy: self.response_headers_policy
-            ,
+            r#type: self.r#type,
+            response_headers_policy: self.response_headers_policy,
         }
     }
 }
-

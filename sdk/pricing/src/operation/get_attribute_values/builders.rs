@@ -4,82 +4,55 @@ pub use crate::operation::get_attribute_values::_get_attribute_values_output::Ge
 pub use crate::operation::get_attribute_values::_get_attribute_values_input::GetAttributeValuesInputBuilder;
 
 /// Fluent builder constructing a request to `GetAttributeValues`.
-///
+/// 
 /// <p>Returns a list of attribute values. Attributes are similar to the details in a Price List API offer file. For a list of available attributes, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer File Definitions</a> in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Billing and Cost Management User Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAttributeValuesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
-    inner: crate::operation::get_attribute_values::builders::GetAttributeValuesInputBuilder,
-}
-impl GetAttributeValuesFluentBuilder {
+                handle: std::sync::Arc<crate::client::Handle>,
+                inner: crate::operation::get_attribute_values::builders::GetAttributeValuesInputBuilder
+            }
+impl GetAttributeValuesFluentBuilder  {
     /// Creates a new `GetAttributeValues`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-        Self {
-            handle,
-            inner: Default::default(),
-        }
-    }
-
-    /// Consume this builder, creating a customizable operation that can be modified before being
-    /// sent. The operation's inner [http::Request] can be modified as well.
-    pub async fn customize(
-        self,
-    ) -> std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_attribute_values::GetAttributeValues,
-            aws_http::retry::AwsResponseRetryClassifier,
-        >,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_values::GetAttributeValuesError,
-        >,
-    > {
-        let handle = self.handle.clone();
-        let operation = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-    }
-
-    /// Sends the request and returns the response.
-    ///
-    /// If an error occurs, an `SdkError` will be returned with additional details that
-    /// can be matched against.
-    ///
-    /// By default, any retryable failures will be retried twice. Retry behavior
-    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-    /// set when configuring the client.
-    pub async fn send(
-        self,
-    ) -> std::result::Result<
-        crate::operation::get_attribute_values::GetAttributeValuesOutput,
-        aws_smithy_http::result::SdkError<
-            crate::operation::get_attribute_values::GetAttributeValuesError,
-        >,
-    > {
-        let op = self
-            .inner
-            .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-            .make_operation(&self.handle.conf)
-            .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        self.handle.client.call(op).await
-    }
+                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+                        Self { handle, inner: Default::default() }
+                    }
+    
+                    /// Consume this builder, creating a customizable operation that can be modified before being
+                    /// sent. The operation's inner [http::Request] can be modified as well.
+                    pub async fn customize(self) -> std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_attribute_values::GetAttributeValues, aws_http::retry::AwsResponseRetryClassifier,>,
+                        aws_smithy_http::result::SdkError<crate::operation::get_attribute_values::GetAttributeValuesError>
+                    >  {
+                        let handle = self.handle.clone();
+                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+                    }
+    
+                    /// Sends the request and returns the response.
+                    ///
+                    /// If an error occurs, an `SdkError` will be returned with additional details that
+                    /// can be matched against.
+                    ///
+                    /// By default, any retryable failures will be retried twice. Retry behavior
+                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+                    /// set when configuring the client.
+                    pub async fn send(self) -> std::result::Result<crate::operation::get_attribute_values::GetAttributeValuesOutput, aws_smithy_http::result::SdkError<crate::operation::get_attribute_values::GetAttributeValuesError>>
+                     {
+                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
+                            .make_operation(&self.handle.conf)
+                            .await
+                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+                        self.handle.client.call(op).await
+                    }
     /// Create a paginator for this request
-    ///
-    /// Paginators are used by calling [`send().await`](crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator::send) which returns a `Stream`.
-    pub fn into_paginator(
-        self,
-    ) -> crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator {
-        crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator::new(
-            self.handle,
-            self.inner,
-        )
-    }
+                        ///
+                        /// Paginators are used by calling [`send().await`](crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator::send) which returns a `Stream`.
+                        pub fn into_paginator(self) -> crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator {
+                            crate::operation::get_attribute_values::paginator::GetAttributeValuesPaginator::new(self.handle, self.inner)
+                        }
     /// <p>The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.</p>
     pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());
@@ -121,3 +94,4 @@ impl GetAttributeValuesFluentBuilder {
         self
     }
 }
+

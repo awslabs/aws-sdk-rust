@@ -3,7 +3,7 @@
 /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data in a real-time log configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndPoint  {
+pub struct EndPoint {
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
     #[doc(hidden)]
     pub stream_type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EndPoint  {
 }
 impl EndPoint {
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
-    pub fn stream_type(&self) -> std::option::Option<& str> {
+    pub fn stream_type(&self) -> std::option::Option<&str> {
         self.stream_type.as_deref()
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn kinesis_stream_config(&self) -> std::option::Option<& crate::types::KinesisStreamConfig> {
+    pub fn kinesis_stream_config(&self) -> std::option::Option<&crate::types::KinesisStreamConfig> {
         self.kinesis_stream_config.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl EndPointBuilder {
     }
     /// <p>The type of data stream where you are sending real-time log data. The only valid value is <code>Kinesis</code>.</p>
     pub fn set_stream_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_type = input; self
+        self.stream_type = input;
+        self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
     pub fn kinesis_stream_config(mut self, input: crate::types::KinesisStreamConfig) -> Self {
@@ -51,17 +52,18 @@ impl EndPointBuilder {
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data.</p>
-    pub fn set_kinesis_stream_config(mut self, input: std::option::Option<crate::types::KinesisStreamConfig>) -> Self {
-        self.kinesis_stream_config = input; self
+    pub fn set_kinesis_stream_config(
+        mut self,
+        input: std::option::Option<crate::types::KinesisStreamConfig>,
+    ) -> Self {
+        self.kinesis_stream_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`EndPoint`](crate::types::EndPoint).
     pub fn build(self) -> crate::types::EndPoint {
         crate::types::EndPoint {
-            stream_type: self.stream_type
-            ,
-            kinesis_stream_config: self.kinesis_stream_config
-            ,
+            stream_type: self.stream_type,
+            kinesis_stream_config: self.kinesis_stream_config,
         }
     }
 }
-

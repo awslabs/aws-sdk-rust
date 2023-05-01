@@ -3,7 +3,7 @@
 /// <p>The range of possible sequence numbers for the shard.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SequenceNumberRange  {
+pub struct SequenceNumberRange {
     /// <p>The starting sequence number for the range.</p>
     #[doc(hidden)]
     pub starting_sequence_number: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SequenceNumberRange  {
 }
 impl SequenceNumberRange {
     /// <p>The starting sequence number for the range.</p>
-    pub fn starting_sequence_number(&self) -> std::option::Option<& str> {
+    pub fn starting_sequence_number(&self) -> std::option::Option<&str> {
         self.starting_sequence_number.as_deref()
     }
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    pub fn ending_sequence_number(&self) -> std::option::Option<& str> {
+    pub fn ending_sequence_number(&self) -> std::option::Option<&str> {
         self.ending_sequence_number.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl SequenceNumberRangeBuilder {
         self
     }
     /// <p>The starting sequence number for the range.</p>
-    pub fn set_starting_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.starting_sequence_number = input; self
+    pub fn set_starting_sequence_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.starting_sequence_number = input;
+        self
     }
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
     pub fn ending_sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +55,18 @@ impl SequenceNumberRangeBuilder {
         self
     }
     /// <p>The ending sequence number for the range. Shards that are in the OPEN state have an ending sequence number of <code>null</code>.</p>
-    pub fn set_ending_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ending_sequence_number = input; self
+    pub fn set_ending_sequence_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ending_sequence_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`SequenceNumberRange`](crate::types::SequenceNumberRange).
     pub fn build(self) -> crate::types::SequenceNumberRange {
         crate::types::SequenceNumberRange {
-            starting_sequence_number: self.starting_sequence_number
-            ,
-            ending_sequence_number: self.ending_sequence_number
-            ,
+            starting_sequence_number: self.starting_sequence_number,
+            ending_sequence_number: self.ending_sequence_number,
         }
     }
 }
-

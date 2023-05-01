@@ -3,23 +3,23 @@
 /// <p>Session stickiness provides the ability to define multiple requests from a single viewer as a single session. This prevents the potentially inconsistent experience of sending some of a given user's requests to your staging distribution, while others are sent to your primary distribution. Define the session duration using TTL values.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionStickinessConfig  {
-    /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p> 
+pub struct SessionStickinessConfig {
+    /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
     #[doc(hidden)]
     pub idle_ttl: std::option::Option<i32>,
-    /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p> 
+    /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
     #[doc(hidden)]
     pub maximum_ttl: std::option::Option<i32>,
 }
 impl SessionStickinessConfig {
-    /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p> 
+    /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
     pub fn idle_ttl(&self) -> std::option::Option<i32> {
         self.idle_ttl
     }
-    /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p> 
+    /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
     pub fn maximum_ttl(&self) -> std::option::Option<i32> {
         self.maximum_ttl
@@ -40,36 +40,35 @@ pub struct SessionStickinessConfigBuilder {
     pub(crate) maximum_ttl: std::option::Option<i32>,
 }
 impl SessionStickinessConfigBuilder {
-    /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p> 
+    /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
     pub fn idle_ttl(mut self, input: i32) -> Self {
         self.idle_ttl = Some(input);
         self
     }
-    /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p> 
+    /// <p>The amount of time after which you want sessions to cease if no requests are received. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>MaximumTTL</code>.</p>
     pub fn set_idle_ttl(mut self, input: std::option::Option<i32>) -> Self {
-        self.idle_ttl = input; self
+        self.idle_ttl = input;
+        self
     }
-    /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p> 
+    /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
     pub fn maximum_ttl(mut self, input: i32) -> Self {
         self.maximum_ttl = Some(input);
         self
     }
-    /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p> 
+    /// <p>The maximum amount of time to consider requests from the viewer as being part of the same session. Allowed values are 300–3600 seconds (5–60 minutes).</p>
     /// <p>The value must be less than or equal to <code>IdleTTL</code>.</p>
     pub fn set_maximum_ttl(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_ttl = input; self
+        self.maximum_ttl = input;
+        self
     }
     /// Consumes the builder and constructs a [`SessionStickinessConfig`](crate::types::SessionStickinessConfig).
     pub fn build(self) -> crate::types::SessionStickinessConfig {
         crate::types::SessionStickinessConfig {
-            idle_ttl: self.idle_ttl
-            ,
-            maximum_ttl: self.maximum_ttl
-            ,
+            idle_ttl: self.idle_ttl,
+            maximum_ttl: self.maximum_ttl,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetFunctionOutput  {
+pub struct GetFunctionOutput {
     /// <p>The function code of a CloudFront function.</p>
     #[doc(hidden)]
     pub function_code: std::option::Option<aws_smithy_types::Blob>,
@@ -16,19 +16,19 @@ pub struct GetFunctionOutput  {
 }
 impl GetFunctionOutput {
     /// <p>The function code of a CloudFront function.</p>
-    pub fn function_code(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn function_code(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.function_code.as_ref()
     }
     /// <p>The version identifier for the current version of the CloudFront function.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
     /// <p>The content type (media type) of the response.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
 }
-impl  std::fmt::Debug for GetFunctionOutput  {
+impl std::fmt::Debug for GetFunctionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFunctionOutput");
         formatter.field("function_code", &"*** Sensitive Data Redacted ***");
@@ -39,10 +39,10 @@ impl  std::fmt::Debug for GetFunctionOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetFunctionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetFunctionOutput {
     /// Creates a new builder-style object to manufacture [`GetFunctionOutput`](crate::operation::get_function::GetFunctionOutput).
     pub fn builder() -> crate::operation::get_function::builders::GetFunctionOutputBuilder {
@@ -67,7 +67,8 @@ impl GetFunctionOutputBuilder {
     }
     /// <p>The function code of a CloudFront function.</p>
     pub fn set_function_code(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.function_code = input; self
+        self.function_code = input;
+        self
     }
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl GetFunctionOutputBuilder {
     }
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     /// <p>The content type (media type) of the response.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,26 +87,24 @@ impl GetFunctionOutputBuilder {
     }
     /// <p>The content type (media type) of the response.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetFunctionOutput`](crate::operation::get_function::GetFunctionOutput).
     pub fn build(self) -> crate::operation::get_function::GetFunctionOutput {
         crate::operation::get_function::GetFunctionOutput {
-            function_code: self.function_code
-            ,
-            e_tag: self.e_tag
-            ,
-            content_type: self.content_type
-            ,
+            function_code: self.function_code,
+            e_tag: self.e_tag,
+            content_type: self.content_type,
             _request_id: self._request_id,
         }
     }
@@ -119,4 +119,3 @@ impl std::fmt::Debug for GetFunctionOutputBuilder {
         formatter.finish()
     }
 }
-

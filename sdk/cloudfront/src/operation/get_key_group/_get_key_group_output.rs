@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetKeyGroupOutput  {
+pub struct GetKeyGroupOutput {
     /// <p>The key group.</p>
     #[doc(hidden)]
     pub key_group: std::option::Option<crate::types::KeyGroup>,
@@ -13,19 +13,19 @@ pub struct GetKeyGroupOutput  {
 }
 impl GetKeyGroupOutput {
     /// <p>The key group.</p>
-    pub fn key_group(&self) -> std::option::Option<& crate::types::KeyGroup> {
+    pub fn key_group(&self) -> std::option::Option<&crate::types::KeyGroup> {
         self.key_group.as_ref()
     }
     /// <p>The identifier for this version of the key group.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetKeyGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetKeyGroupOutput {
     /// Creates a new builder-style object to manufacture [`GetKeyGroupOutput`](crate::operation::get_key_group::GetKeyGroupOutput).
     pub fn builder() -> crate::operation::get_key_group::builders::GetKeyGroupOutputBuilder {
@@ -49,7 +49,8 @@ impl GetKeyGroupOutputBuilder {
     }
     /// <p>The key group.</p>
     pub fn set_key_group(mut self, input: std::option::Option<crate::types::KeyGroup>) -> Self {
-        self.key_group = input; self
+        self.key_group = input;
+        self
     }
     /// <p>The identifier for this version of the key group.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +59,24 @@ impl GetKeyGroupOutputBuilder {
     }
     /// <p>The identifier for this version of the key group.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetKeyGroupOutput`](crate::operation::get_key_group::GetKeyGroupOutput).
     pub fn build(self) -> crate::operation::get_key_group::GetKeyGroupOutput {
         crate::operation::get_key_group::GetKeyGroupOutput {
-            key_group: self.key_group
-            ,
-            e_tag: self.e_tag
-            ,
+            key_group: self.key_group,
+            e_tag: self.e_tag,
             _request_id: self._request_id,
         }
     }
 }
-

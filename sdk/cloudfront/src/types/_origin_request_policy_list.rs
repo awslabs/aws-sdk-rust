@@ -3,7 +3,7 @@
 /// <p>A list of origin request policies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OriginRequestPolicyList  {
+pub struct OriginRequestPolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing origin request policies where you left off.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct OriginRequestPolicyList  {
 }
 impl OriginRequestPolicyList {
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing origin request policies where you left off.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of origin request policies requested.</p>
@@ -31,7 +31,7 @@ impl OriginRequestPolicyList {
         self.quantity
     }
     /// <p>Contains the origin request policies in the list.</p>
-    pub fn items(&self) -> std::option::Option<& [crate::types::OriginRequestPolicySummary]> {
+    pub fn items(&self) -> std::option::Option<&[crate::types::OriginRequestPolicySummary]> {
         self.items.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl OriginRequestPolicyListBuilder {
     }
     /// <p>If there are more items in the list than are in this response, this element is present. It contains the value that you should use in the <code>Marker</code> field of a subsequent request to continue listing origin request policies where you left off.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     /// <p>The maximum number of origin request policies requested.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl OriginRequestPolicyListBuilder {
     }
     /// <p>The maximum number of origin request policies requested.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input; self
+        self.max_items = input;
+        self
     }
     /// <p>The total number of origin request policies returned in the response.</p>
     pub fn quantity(mut self, input: i32) -> Self {
@@ -77,7 +79,8 @@ impl OriginRequestPolicyListBuilder {
     }
     /// <p>The total number of origin request policies returned in the response.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input; self
+        self.quantity = input;
+        self
     }
     /// Appends an item to `items`.
     ///
@@ -86,26 +89,25 @@ impl OriginRequestPolicyListBuilder {
     /// <p>Contains the origin request policies in the list.</p>
     pub fn items(mut self, input: crate::types::OriginRequestPolicySummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input);
-                        self.items = Some(v);
-                        self
+        v.push(input);
+        self.items = Some(v);
+        self
     }
     /// <p>Contains the origin request policies in the list.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::OriginRequestPolicySummary>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OriginRequestPolicySummary>>,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicyList`](crate::types::OriginRequestPolicyList).
     pub fn build(self) -> crate::types::OriginRequestPolicyList {
         crate::types::OriginRequestPolicyList {
-            next_marker: self.next_marker
-            ,
-            max_items: self.max_items
-            ,
-            quantity: self.quantity
-            ,
-            items: self.items
-            ,
+            next_marker: self.next_marker,
+            max_items: self.max_items,
+            quantity: self.quantity,
+            items: self.items,
         }
     }
 }
-

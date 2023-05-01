@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFieldLevelEncryptionConfigOutput  {
+pub struct UpdateFieldLevelEncryptionConfigOutput {
     /// <p>Return the results of updating the configuration.</p>
     #[doc(hidden)]
     pub field_level_encryption: std::option::Option<crate::types::FieldLevelEncryption>,
@@ -13,22 +13,24 @@ pub struct UpdateFieldLevelEncryptionConfigOutput  {
 }
 impl UpdateFieldLevelEncryptionConfigOutput {
     /// <p>Return the results of updating the configuration.</p>
-    pub fn field_level_encryption(&self) -> std::option::Option<& crate::types::FieldLevelEncryption> {
+    pub fn field_level_encryption(
+        &self,
+    ) -> std::option::Option<&crate::types::FieldLevelEncryption> {
         self.field_level_encryption.as_ref()
     }
     /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateFieldLevelEncryptionConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateFieldLevelEncryptionConfigOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFieldLevelEncryptionConfigOutput`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput).
-    pub fn builder() -> crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigOutputBuilder {
+    pub fn builder() -> crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigOutputBuilder{
         crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigOutputBuilder::default()
     }
 }
@@ -48,8 +50,12 @@ impl UpdateFieldLevelEncryptionConfigOutputBuilder {
         self
     }
     /// <p>Return the results of updating the configuration.</p>
-    pub fn set_field_level_encryption(mut self, input: std::option::Option<crate::types::FieldLevelEncryption>) -> Self {
-        self.field_level_encryption = input; self
+    pub fn set_field_level_encryption(
+        mut self,
+        input: std::option::Option<crate::types::FieldLevelEncryption>,
+    ) -> Self {
+        self.field_level_encryption = input;
+        self
     }
     /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,19 +64,20 @@ impl UpdateFieldLevelEncryptionConfigOutputBuilder {
     }
     /// <p>The value of the <code>ETag</code> header that you received when updating the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateFieldLevelEncryptionConfigOutput`](crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput).
-    pub fn build(self) -> crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput {
+    pub fn build(self) -> crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput{
         crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput {
             field_level_encryption: self.field_level_encryption
             ,
@@ -80,4 +87,3 @@ impl UpdateFieldLevelEncryptionConfigOutputBuilder {
         }
     }
 }
-

@@ -4,51 +4,73 @@ pub use crate::operation::enable_enhanced_monitoring::_enable_enhanced_monitorin
 pub use crate::operation::enable_enhanced_monitoring::_enable_enhanced_monitoring_input::EnableEnhancedMonitoringInputBuilder;
 
 /// Fluent builder constructing a request to `EnableEnhancedMonitoring`.
-/// 
-/// <p>Enables enhanced Kinesis data stream monitoring for shard-level metrics.</p> <note> 
-/// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p> 
+///
+/// <p>Enables enhanced Kinesis data stream monitoring for shard-level metrics.</p> <note>
+/// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableEnhancedMonitoringFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::enable_enhanced_monitoring::builders::EnableEnhancedMonitoringInputBuilder
             }
-impl EnableEnhancedMonitoringFluentBuilder  {
+impl EnableEnhancedMonitoringFluentBuilder {
     /// Creates a new `EnableEnhancedMonitoring`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoring, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput, aws_smithy_http::result::SdkError<crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoring,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the stream for which to enable enhanced monitoring.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -63,37 +85,40 @@ impl EnableEnhancedMonitoringFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_shard_level_metrics`](Self::set_shard_level_metrics).
     ///
-    /// <p>List of shard-level metrics to enable.</p> 
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p> 
-    /// <ul> 
-    /// <li> <p> <code>IncomingBytes</code> </p> </li> 
-    /// <li> <p> <code>IncomingRecords</code> </p> </li> 
-    /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
-    /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
-    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
-    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
-    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
-    /// <li> <p> <code>ALL</code> </p> </li> 
-    /// </ul> 
+    /// <p>List of shard-level metrics to enable.</p>
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p>
+    /// <ul>
+    /// <li> <p> <code>IncomingBytes</code> </p> </li>
+    /// <li> <p> <code>IncomingRecords</code> </p> </li>
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li>
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li>
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
+    /// <li> <p> <code>ALL</code> </p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn shard_level_metrics(mut self, input: crate::types::MetricsName) -> Self {
         self.inner = self.inner.shard_level_metrics(input);
         self
     }
-    /// <p>List of shard-level metrics to enable.</p> 
-    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p> 
-    /// <ul> 
-    /// <li> <p> <code>IncomingBytes</code> </p> </li> 
-    /// <li> <p> <code>IncomingRecords</code> </p> </li> 
-    /// <li> <p> <code>OutgoingBytes</code> </p> </li> 
-    /// <li> <p> <code>OutgoingRecords</code> </p> </li> 
-    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li> 
-    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li> 
-    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li> 
-    /// <li> <p> <code>ALL</code> </p> </li> 
-    /// </ul> 
+    /// <p>List of shard-level metrics to enable.</p>
+    /// <p>The following are the valid shard-level metrics. The value "<code>ALL</code>" enables every metric.</p>
+    /// <ul>
+    /// <li> <p> <code>IncomingBytes</code> </p> </li>
+    /// <li> <p> <code>IncomingRecords</code> </p> </li>
+    /// <li> <p> <code>OutgoingBytes</code> </p> </li>
+    /// <li> <p> <code>OutgoingRecords</code> </p> </li>
+    /// <li> <p> <code>WriteProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p> <code>ReadProvisionedThroughputExceeded</code> </p> </li>
+    /// <li> <p> <code>IteratorAgeMilliseconds</code> </p> </li>
+    /// <li> <p> <code>ALL</code> </p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
-    pub fn set_shard_level_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricsName>>) -> Self {
+    pub fn set_shard_level_metrics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricsName>>,
+    ) -> Self {
         self.inner = self.inner.set_shard_level_metrics(input);
         self
     }
@@ -108,4 +133,3 @@ impl EnableEnhancedMonitoringFluentBuilder  {
         self
     }
 }
-
