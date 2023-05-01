@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImportOutput  {
+pub struct DeleteImportOutput {
     /// <p>The unique identifier of the deleted import.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct DeleteImportOutput  {
 }
 impl DeleteImportOutput {
     /// <p>The unique identifier of the deleted import.</p>
-    pub fn import_id(&self) -> std::option::Option<& str> {
+    pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
     /// <p>The current status of the deletion. When the deletion is complete, the import will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListImports.html">ListImports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeImport.html">DescribeImport</a> operation with the import identifier will fail.</p>
-    pub fn import_status(&self) -> std::option::Option<& crate::types::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<&crate::types::ImportStatus> {
         self.import_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteImportOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteImportOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImportOutput`](crate::operation::delete_import::DeleteImportOutput).
     pub fn builder() -> crate::operation::delete_import::builders::DeleteImportOutputBuilder {
@@ -49,7 +49,8 @@ impl DeleteImportOutputBuilder {
     }
     /// <p>The unique identifier of the deleted import.</p>
     pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_id = input; self
+        self.import_id = input;
+        self
     }
     /// <p>The current status of the deletion. When the deletion is complete, the import will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListImports.html">ListImports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeImport.html">DescribeImport</a> operation with the import identifier will fail.</p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -57,27 +58,28 @@ impl DeleteImportOutputBuilder {
         self
     }
     /// <p>The current status of the deletion. When the deletion is complete, the import will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListImports.html">ListImports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeImport.html">DescribeImport</a> operation with the import identifier will fail.</p>
-    pub fn set_import_status(mut self, input: std::option::Option<crate::types::ImportStatus>) -> Self {
-        self.import_status = input; self
+    pub fn set_import_status(
+        mut self,
+        input: std::option::Option<crate::types::ImportStatus>,
+    ) -> Self {
+        self.import_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteImportOutput`](crate::operation::delete_import::DeleteImportOutput).
     pub fn build(self) -> crate::operation::delete_import::DeleteImportOutput {
         crate::operation::delete_import::DeleteImportOutput {
-            import_id: self.import_id
-            ,
-            import_status: self.import_status
-            ,
+            import_id: self.import_id,
+            import_status: self.import_status,
             _request_id: self._request_id,
         }
     }
 }
-

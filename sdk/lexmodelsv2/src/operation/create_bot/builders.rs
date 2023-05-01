@@ -4,49 +4,67 @@ pub use crate::operation::create_bot::_create_bot_output::CreateBotOutputBuilder
 pub use crate::operation::create_bot::_create_bot_input::CreateBotInputBuilder;
 
 /// Fluent builder constructing a request to `CreateBot`.
-/// 
+///
 /// <p>Creates an Amazon Lex conversational bot. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBotFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::create_bot::builders::CreateBotInputBuilder
-            }
-impl CreateBotFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::create_bot::builders::CreateBotInputBuilder,
+}
+impl CreateBotFluentBuilder {
     /// Creates a new `CreateBot`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_bot::CreateBot, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_bot::CreateBotOutput, aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_bot::CreateBot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_bot::CreateBotOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
     pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_name(input.into());
@@ -83,19 +101,22 @@ impl CreateBotFluentBuilder  {
         self
     }
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
-    pub fn set_data_privacy(mut self, input: std::option::Option<crate::types::DataPrivacy>) -> Self {
+    pub fn set_data_privacy(
+        mut self,
+        input: std::option::Option<crate::types::DataPrivacy>,
+    ) -> Self {
         self.inner = self.inner.set_data_privacy(input);
         self
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p> 
-    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p> 
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.idle_session_ttl_in_seconds(input);
         self
     }
-    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p> 
-    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p> 
+    /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
+    /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
     pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
@@ -106,12 +127,21 @@ impl CreateBotFluentBuilder  {
     /// To override the contents of this collection use [`set_bot_tags`](Self::set_bot_tags).
     ///
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn bot_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn bot_tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.bot_tags(k.into(), v.into());
         self
     }
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
-    pub fn set_bot_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_bot_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_bot_tags(input);
         self
     }
@@ -120,12 +150,21 @@ impl CreateBotFluentBuilder  {
     /// To override the contents of this collection use [`set_test_bot_alias_tags`](Self::set_test_bot_alias_tags).
     ///
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-    pub fn test_bot_alias_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn test_bot_alias_tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.test_bot_alias_tags(k.into(), v.into());
         self
     }
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
-    pub fn set_test_bot_alias_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_test_bot_alias_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_test_bot_alias_tags(input);
         self
     }
@@ -149,9 +188,11 @@ impl CreateBotFluentBuilder  {
         self
     }
     /// <p>The list of bot members in a network to be created.</p>
-    pub fn set_bot_members(mut self, input: std::option::Option<std::vec::Vec<crate::types::BotMember>>) -> Self {
+    pub fn set_bot_members(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
+    ) -> Self {
         self.inner = self.inner.set_bot_members(input);
         self
     }
 }
-

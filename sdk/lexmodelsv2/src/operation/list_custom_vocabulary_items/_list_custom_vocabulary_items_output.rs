@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomVocabularyItemsOutput  {
+pub struct ListCustomVocabularyItemsOutput {
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -14,7 +14,8 @@ pub struct ListCustomVocabularyItemsOutput  {
     pub locale_id: std::option::Option<std::string::String>,
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
     #[doc(hidden)]
-    pub custom_vocabulary_items: std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
+    pub custom_vocabulary_items:
+        std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -22,34 +23,36 @@ pub struct ListCustomVocabularyItemsOutput  {
 }
 impl ListCustomVocabularyItemsOutput {
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
-    pub fn locale_id(&self) -> std::option::Option<& str> {
+    pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
-    pub fn custom_vocabulary_items(&self) -> std::option::Option<& [crate::types::CustomVocabularyItem]> {
+    pub fn custom_vocabulary_items(
+        &self,
+    ) -> std::option::Option<&[crate::types::CustomVocabularyItem]> {
         self.custom_vocabulary_items.as_deref()
     }
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCustomVocabularyItemsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListCustomVocabularyItemsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomVocabularyItemsOutput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput).
-    pub fn builder() -> crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsOutputBuilder {
+    pub fn builder() -> crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsOutputBuilder{
         crate::operation::list_custom_vocabulary_items::builders::ListCustomVocabularyItemsOutputBuilder::default()
     }
 }
@@ -61,7 +64,8 @@ pub struct ListCustomVocabularyItemsOutputBuilder {
     pub(crate) bot_id: std::option::Option<std::string::String>,
     pub(crate) bot_version: std::option::Option<std::string::String>,
     pub(crate) locale_id: std::option::Option<std::string::String>,
-    pub(crate) custom_vocabulary_items: std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
+    pub(crate) custom_vocabulary_items:
+        std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -73,7 +77,8 @@ impl ListCustomVocabularyItemsOutputBuilder {
     }
     /// <p>The identifier of the bot associated with this custom vocabulary.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +87,8 @@ impl ListCustomVocabularyItemsOutputBuilder {
     }
     /// <p>The identifier of the version of the bot associated with this custom vocabulary.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +97,8 @@ impl ListCustomVocabularyItemsOutputBuilder {
     }
     /// <p>The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input; self
+        self.locale_id = input;
+        self
     }
     /// Appends an item to `custom_vocabulary_items`.
     ///
@@ -100,13 +107,17 @@ impl ListCustomVocabularyItemsOutputBuilder {
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
     pub fn custom_vocabulary_items(mut self, input: crate::types::CustomVocabularyItem) -> Self {
         let mut v = self.custom_vocabulary_items.unwrap_or_default();
-                        v.push(input);
-                        self.custom_vocabulary_items = Some(v);
-                        self
+        v.push(input);
+        self.custom_vocabulary_items = Some(v);
+        self
     }
     /// <p>The custom vocabulary items from the list custom vocabulary response.</p>
-    pub fn set_custom_vocabulary_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>) -> Self {
-        self.custom_vocabulary_items = input; self
+    pub fn set_custom_vocabulary_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CustomVocabularyItem>>,
+    ) -> Self {
+        self.custom_vocabulary_items = input;
+        self
     }
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,32 +126,29 @@ impl ListCustomVocabularyItemsOutputBuilder {
     }
     /// <p>The nextToken identifier to the list custom vocabulary response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListCustomVocabularyItemsOutput`](crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput).
-    pub fn build(self) -> crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput {
         crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput {
-            bot_id: self.bot_id
-            ,
-            bot_version: self.bot_version
-            ,
-            locale_id: self.locale_id
-            ,
-            custom_vocabulary_items: self.custom_vocabulary_items
-            ,
-            next_token: self.next_token
-            ,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            custom_vocabulary_items: self.custom_vocabulary_items,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

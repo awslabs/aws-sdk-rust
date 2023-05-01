@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportBackupPlanTemplateInput  {
+pub struct ExportBackupPlanTemplateInput {
     /// <p>Uniquely identifies a backup plan.</p>
     #[doc(hidden)]
     pub backup_plan_id: std::option::Option<std::string::String>,
 }
 impl ExportBackupPlanTemplateInput {
     /// <p>Uniquely identifies a backup plan.</p>
-    pub fn backup_plan_id(&self) -> std::option::Option<& str> {
+    pub fn backup_plan_id(&self) -> std::option::Option<&str> {
         self.backup_plan_id.as_deref()
     }
 }
 impl ExportBackupPlanTemplateInput {
     /// Creates a new builder-style object to manufacture [`ExportBackupPlanTemplateInput`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput).
-    pub fn builder() -> crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateInputBuilder
+    {
         crate::operation::export_backup_plan_template::builders::ExportBackupPlanTemplateInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl ExportBackupPlanTemplateInputBuilder {
     }
     /// <p>Uniquely identifies a backup plan.</p>
     pub fn set_backup_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_plan_id = input; self
+        self.backup_plan_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExportBackupPlanTemplateInput`](crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput).
-    pub fn build(self) -> Result<crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::export_backup_plan_template::ExportBackupPlanTemplateInput {
-                backup_plan_id: self.backup_plan_id
-                ,
-            }
+                backup_plan_id: self.backup_plan_id,
+            },
         )
     }
 }
-

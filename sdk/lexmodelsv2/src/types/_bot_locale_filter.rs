@@ -3,7 +3,7 @@
 /// <p>Filters responses returned by the <code>ListBotLocales</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleFilter  {
+pub struct BotLocaleFilter {
     /// <p>The name of the field to filter the list of bots.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::BotLocaleFilterName>,
@@ -16,15 +16,15 @@ pub struct BotLocaleFilter  {
 }
 impl BotLocaleFilter {
     /// <p>The name of the field to filter the list of bots.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::BotLocaleFilterName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::BotLocaleFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<& crate::types::BotLocaleFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<&crate::types::BotLocaleFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl BotLocaleFilterBuilder {
         self
     }
     /// <p>The name of the field to filter the list of bots.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::BotLocaleFilterName>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::BotLocaleFilterName>,
+    ) -> Self {
+        self.name = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -60,13 +64,17 @@ impl BotLocaleFilterBuilder {
     /// <p>The value to use for filtering the list of bots.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The value to use for filtering the list of bots.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
     pub fn operator(mut self, input: crate::types::BotLocaleFilterOperator) -> Self {
@@ -74,19 +82,19 @@ impl BotLocaleFilterBuilder {
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListBotLocales</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListBotLocales</code> operation should return aliases that contain the specified value.</p>
-    pub fn set_operator(mut self, input: std::option::Option<crate::types::BotLocaleFilterOperator>) -> Self {
-        self.operator = input; self
+    pub fn set_operator(
+        mut self,
+        input: std::option::Option<crate::types::BotLocaleFilterOperator>,
+    ) -> Self {
+        self.operator = input;
+        self
     }
     /// Consumes the builder and constructs a [`BotLocaleFilter`](crate::types::BotLocaleFilter).
     pub fn build(self) -> crate::types::BotLocaleFilter {
         crate::types::BotLocaleFilter {
-            name: self.name
-            ,
-            values: self.values
-            ,
-            operator: self.operator
-            ,
+            name: self.name,
+            values: self.values,
+            operator: self.operator,
         }
     }
 }
-

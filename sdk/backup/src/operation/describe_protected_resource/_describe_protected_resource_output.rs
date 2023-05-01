@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProtectedResourceOutput  {
+pub struct DescribeProtectedResourceOutput {
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -19,30 +19,30 @@ pub struct DescribeProtectedResourceOutput  {
 }
 impl DescribeProtectedResourceOutput {
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The type of Amazon Web Services resource saved as a recovery point; for example, an Amazon EBS volume or an Amazon RDS database.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The date and time that a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn last_backup_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_backup_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_backup_time.as_ref()
     }
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
-    pub fn resource_name(&self) -> std::option::Option<& str> {
+    pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProtectedResourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeProtectedResourceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectedResourceOutput`](crate::operation::describe_protected_resource::DescribeProtectedResourceOutput).
-    pub fn builder() -> crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder {
+    pub fn builder() -> crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder{
         crate::operation::describe_protected_resource::builders::DescribeProtectedResourceOutputBuilder::default()
     }
 }
@@ -65,7 +65,8 @@ impl DescribeProtectedResourceOutputBuilder {
     }
     /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the resource type.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>The type of Amazon Web Services resource saved as a recovery point; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +75,8 @@ impl DescribeProtectedResourceOutputBuilder {
     }
     /// <p>The type of Amazon Web Services resource saved as a recovery point; for example, an Amazon EBS volume or an Amazon RDS database.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>The date and time that a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn last_backup_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -82,8 +84,12 @@ impl DescribeProtectedResourceOutputBuilder {
         self
     }
     /// <p>The date and time that a resource was last backed up, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn set_last_backup_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_backup_time = input; self
+    pub fn set_last_backup_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_backup_time = input;
+        self
     }
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,30 +98,28 @@ impl DescribeProtectedResourceOutputBuilder {
     }
     /// <p>This is the non-unique name of the resource that belongs to the specified backup.</p>
     pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_name = input; self
+        self.resource_name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeProtectedResourceOutput`](crate::operation::describe_protected_resource::DescribeProtectedResourceOutput).
-    pub fn build(self) -> crate::operation::describe_protected_resource::DescribeProtectedResourceOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_protected_resource::DescribeProtectedResourceOutput {
         crate::operation::describe_protected_resource::DescribeProtectedResourceOutput {
-            resource_arn: self.resource_arn
-            ,
-            resource_type: self.resource_type
-            ,
-            last_backup_time: self.last_backup_time
-            ,
-            resource_name: self.resource_name
-            ,
+            resource_arn: self.resource_arn,
+            resource_type: self.resource_type,
+            last_backup_time: self.last_backup_time,
+            resource_name: self.resource_name,
             _request_id: self._request_id,
         }
     }
 }
-

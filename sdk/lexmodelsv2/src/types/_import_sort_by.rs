@@ -3,7 +3,7 @@
 /// <p>Provides information for sorting a list of imports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportSortBy  {
+pub struct ImportSortBy {
     /// <p>The export field to use for sorting.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::ImportSortAttribute>,
@@ -13,11 +13,11 @@ pub struct ImportSortBy  {
 }
 impl ImportSortBy {
     /// <p>The export field to use for sorting.</p>
-    pub fn attribute(&self) -> std::option::Option<& crate::types::ImportSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<&crate::types::ImportSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list.</p>
-    pub fn order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl ImportSortByBuilder {
         self
     }
     /// <p>The export field to use for sorting.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<crate::types::ImportSortAttribute>) -> Self {
-        self.attribute = input; self
+    pub fn set_attribute(
+        mut self,
+        input: std::option::Option<crate::types::ImportSortAttribute>,
+    ) -> Self {
+        self.attribute = input;
+        self
     }
     /// <p>The order to sort the list.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
@@ -52,16 +56,14 @@ impl ImportSortByBuilder {
     }
     /// <p>The order to sort the list.</p>
     pub fn set_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input; self
+        self.order = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportSortBy`](crate::types::ImportSortBy).
     pub fn build(self) -> crate::types::ImportSortBy {
         crate::types::ImportSortBy {
-            attribute: self.attribute
-            ,
-            order: self.order
-            ,
+            attribute: self.attribute,
+            order: self.order,
         }
     }
 }
-

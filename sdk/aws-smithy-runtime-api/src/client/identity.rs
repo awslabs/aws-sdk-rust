@@ -57,7 +57,7 @@ mod tests {
                 first: "foo".into(),
                 last: "bar".into(),
             },
-            Some(expiration.clone()),
+            Some(expiration),
         );
 
         assert_eq!("foo", identity.data::<MyIdentityData>().unwrap().first);

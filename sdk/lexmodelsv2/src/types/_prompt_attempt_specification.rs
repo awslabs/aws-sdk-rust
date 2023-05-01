@@ -3,7 +3,7 @@
 /// <p>Specifies the settings on a prompt attempt.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PromptAttemptSpecification  {
+pub struct PromptAttemptSpecification {
     /// <p>Indicates whether the user can interrupt a speech prompt attempt from the bot.</p>
     #[doc(hidden)]
     pub allow_interrupt: std::option::Option<bool>,
@@ -12,7 +12,8 @@ pub struct PromptAttemptSpecification  {
     pub allowed_input_types: std::option::Option<crate::types::AllowedInputTypes>,
     /// <p>Specifies the settings on audio and DTMF input.</p>
     #[doc(hidden)]
-    pub audio_and_dtmf_input_specification: std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
+    pub audio_and_dtmf_input_specification:
+        std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
     /// <p>Specifies the settings on text input.</p>
     #[doc(hidden)]
     pub text_input_specification: std::option::Option<crate::types::TextInputSpecification>,
@@ -23,15 +24,19 @@ impl PromptAttemptSpecification {
         self.allow_interrupt
     }
     /// <p>Indicates the allowed input types of the prompt attempt.</p>
-    pub fn allowed_input_types(&self) -> std::option::Option<& crate::types::AllowedInputTypes> {
+    pub fn allowed_input_types(&self) -> std::option::Option<&crate::types::AllowedInputTypes> {
         self.allowed_input_types.as_ref()
     }
     /// <p>Specifies the settings on audio and DTMF input.</p>
-    pub fn audio_and_dtmf_input_specification(&self) -> std::option::Option<& crate::types::AudioAndDtmfInputSpecification> {
+    pub fn audio_and_dtmf_input_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::AudioAndDtmfInputSpecification> {
         self.audio_and_dtmf_input_specification.as_ref()
     }
     /// <p>Specifies the settings on text input.</p>
-    pub fn text_input_specification(&self) -> std::option::Option<& crate::types::TextInputSpecification> {
+    pub fn text_input_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::TextInputSpecification> {
         self.text_input_specification.as_ref()
     }
 }
@@ -48,7 +53,8 @@ impl PromptAttemptSpecification {
 pub struct PromptAttemptSpecificationBuilder {
     pub(crate) allow_interrupt: std::option::Option<bool>,
     pub(crate) allowed_input_types: std::option::Option<crate::types::AllowedInputTypes>,
-    pub(crate) audio_and_dtmf_input_specification: std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
+    pub(crate) audio_and_dtmf_input_specification:
+        std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
     pub(crate) text_input_specification: std::option::Option<crate::types::TextInputSpecification>,
 }
 impl PromptAttemptSpecificationBuilder {
@@ -59,7 +65,8 @@ impl PromptAttemptSpecificationBuilder {
     }
     /// <p>Indicates whether the user can interrupt a speech prompt attempt from the bot.</p>
     pub fn set_allow_interrupt(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_interrupt = input; self
+        self.allow_interrupt = input;
+        self
     }
     /// <p>Indicates the allowed input types of the prompt attempt.</p>
     pub fn allowed_input_types(mut self, input: crate::types::AllowedInputTypes) -> Self {
@@ -67,17 +74,28 @@ impl PromptAttemptSpecificationBuilder {
         self
     }
     /// <p>Indicates the allowed input types of the prompt attempt.</p>
-    pub fn set_allowed_input_types(mut self, input: std::option::Option<crate::types::AllowedInputTypes>) -> Self {
-        self.allowed_input_types = input; self
+    pub fn set_allowed_input_types(
+        mut self,
+        input: std::option::Option<crate::types::AllowedInputTypes>,
+    ) -> Self {
+        self.allowed_input_types = input;
+        self
     }
     /// <p>Specifies the settings on audio and DTMF input.</p>
-    pub fn audio_and_dtmf_input_specification(mut self, input: crate::types::AudioAndDtmfInputSpecification) -> Self {
+    pub fn audio_and_dtmf_input_specification(
+        mut self,
+        input: crate::types::AudioAndDtmfInputSpecification,
+    ) -> Self {
         self.audio_and_dtmf_input_specification = Some(input);
         self
     }
     /// <p>Specifies the settings on audio and DTMF input.</p>
-    pub fn set_audio_and_dtmf_input_specification(mut self, input: std::option::Option<crate::types::AudioAndDtmfInputSpecification>) -> Self {
-        self.audio_and_dtmf_input_specification = input; self
+    pub fn set_audio_and_dtmf_input_specification(
+        mut self,
+        input: std::option::Option<crate::types::AudioAndDtmfInputSpecification>,
+    ) -> Self {
+        self.audio_and_dtmf_input_specification = input;
+        self
     }
     /// <p>Specifies the settings on text input.</p>
     pub fn text_input_specification(mut self, input: crate::types::TextInputSpecification) -> Self {
@@ -85,21 +103,20 @@ impl PromptAttemptSpecificationBuilder {
         self
     }
     /// <p>Specifies the settings on text input.</p>
-    pub fn set_text_input_specification(mut self, input: std::option::Option<crate::types::TextInputSpecification>) -> Self {
-        self.text_input_specification = input; self
+    pub fn set_text_input_specification(
+        mut self,
+        input: std::option::Option<crate::types::TextInputSpecification>,
+    ) -> Self {
+        self.text_input_specification = input;
+        self
     }
     /// Consumes the builder and constructs a [`PromptAttemptSpecification`](crate::types::PromptAttemptSpecification).
     pub fn build(self) -> crate::types::PromptAttemptSpecification {
         crate::types::PromptAttemptSpecification {
-            allow_interrupt: self.allow_interrupt
-            ,
-            allowed_input_types: self.allowed_input_types
-            ,
-            audio_and_dtmf_input_specification: self.audio_and_dtmf_input_specification
-            ,
-            text_input_specification: self.text_input_specification
-            ,
+            allow_interrupt: self.allow_interrupt,
+            allowed_input_types: self.allowed_input_types,
+            audio_and_dtmf_input_specification: self.audio_and_dtmf_input_specification,
+            text_input_specification: self.text_input_specification,
         }
     }
 }
-

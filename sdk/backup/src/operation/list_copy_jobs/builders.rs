@@ -4,55 +4,78 @@ pub use crate::operation::list_copy_jobs::_list_copy_jobs_output::ListCopyJobsOu
 pub use crate::operation::list_copy_jobs::_list_copy_jobs_input::ListCopyJobsInputBuilder;
 
 /// Fluent builder constructing a request to `ListCopyJobs`.
-/// 
+///
 /// <p>Returns metadata about your copy jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCopyJobsFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::list_copy_jobs::builders::ListCopyJobsInputBuilder
-            }
-impl ListCopyJobsFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::list_copy_jobs::builders::ListCopyJobsInputBuilder,
+}
+impl ListCopyJobsFluentBuilder {
     /// Creates a new `ListCopyJobs`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_copy_jobs::ListCopyJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_copy_jobs::ListCopyJobsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_copy_jobs::ListCopyJobsOutput, aws_smithy_http::result::SdkError<crate::operation::list_copy_jobs::ListCopyJobsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_copy_jobs::ListCopyJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_copy_jobs::ListCopyJobsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_copy_jobs::ListCopyJobsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_copy_jobs::ListCopyJobsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                        ///
-                        /// Paginators are used by calling [`send().await`](crate::operation::list_copy_jobs::paginator::ListCopyJobsPaginator::send) which returns a `Stream`.
-                        pub fn into_paginator(self) -> crate::operation::list_copy_jobs::paginator::ListCopyJobsPaginator {
-                            crate::operation::list_copy_jobs::paginator::ListCopyJobsPaginator::new(self.handle, self.inner)
-                        }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_copy_jobs::paginator::ListCopyJobsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_copy_jobs::paginator::ListCopyJobsPaginator {
+        crate::operation::list_copy_jobs::paginator::ListCopyJobsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return maxResults number of items, NextToken allows you to return more items in your list starting at the location pointed to by the next token. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -99,7 +122,10 @@ impl ListCopyJobsFluentBuilder  {
         self
     }
     /// <p>Returns only copy jobs that were created before the specified date.</p>
-    pub fn set_by_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_by_created_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_by_created_before(input);
         self
     }
@@ -109,43 +135,46 @@ impl ListCopyJobsFluentBuilder  {
         self
     }
     /// <p>Returns only copy jobs that were created after the specified date.</p>
-    pub fn set_by_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_by_created_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_by_created_after(input);
         self
     }
-    /// <p>Returns only backup jobs for the specified resources:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> 
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li> 
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> 
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> 
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> 
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> 
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li> 
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> 
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> 
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> 
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li> 
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li> 
+    /// <p>Returns only backup jobs for the specified resources:</p>
+    /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub fn by_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.by_resource_type(input.into());
         self
     }
-    /// <p>Returns only backup jobs for the specified resources:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li> 
-    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li> 
-    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> 
-    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> 
-    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> 
-    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> 
-    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li> 
-    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li> 
-    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> 
-    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> 
-    /// <li> <p> <code>S3</code> for Amazon S3</p> </li> 
-    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li> 
+    /// <p>Returns only backup jobs for the specified resources:</p>
+    /// <ul>
+    /// <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+    /// <li> <p> <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p> </li>
+    /// <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li>
+    /// <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li>
+    /// <li> <p> <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li>
+    /// <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li>
+    /// <li> <p> <code>FSx</code> for Amazon FSx</p> </li>
+    /// <li> <p> <code>Neptune</code> for Amazon Neptune</p> </li>
+    /// <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+    /// <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li>
+    /// <li> <p> <code>S3</code> for Amazon S3</p> </li>
+    /// <li> <p> <code>VirtualMachine</code> for virtual machines</p> </li>
     /// </ul>
     pub fn set_by_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_by_resource_type(input);
@@ -157,7 +186,10 @@ impl ListCopyJobsFluentBuilder  {
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
-    pub fn set_by_destination_vault_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_by_destination_vault_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_by_destination_vault_arn(input);
         self
     }
@@ -177,7 +209,10 @@ impl ListCopyJobsFluentBuilder  {
         self
     }
     /// <p>Returns only copy jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_by_complete_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_by_complete_before(input);
         self
     }
@@ -187,7 +222,10 @@ impl ListCopyJobsFluentBuilder  {
         self
     }
     /// <p>Returns only copy jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).</p>
-    pub fn set_by_complete_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_by_complete_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_by_complete_after(input);
         self
     }
@@ -202,4 +240,3 @@ impl ListCopyJobsFluentBuilder  {
         self
     }
 }
-

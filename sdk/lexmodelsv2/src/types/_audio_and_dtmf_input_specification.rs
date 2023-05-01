@@ -3,7 +3,7 @@
 /// <p>Specifies the audio and DTMF input specification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AudioAndDtmfInputSpecification  {
+pub struct AudioAndDtmfInputSpecification {
     /// <p>Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
     #[doc(hidden)]
     pub start_timeout_ms: std::option::Option<i32>,
@@ -20,11 +20,11 @@ impl AudioAndDtmfInputSpecification {
         self.start_timeout_ms
     }
     /// <p>Specifies the settings on audio input.</p>
-    pub fn audio_specification(&self) -> std::option::Option<& crate::types::AudioSpecification> {
+    pub fn audio_specification(&self) -> std::option::Option<&crate::types::AudioSpecification> {
         self.audio_specification.as_ref()
     }
     /// <p>Specifies the settings on DTMF input.</p>
-    pub fn dtmf_specification(&self) -> std::option::Option<& crate::types::DtmfSpecification> {
+    pub fn dtmf_specification(&self) -> std::option::Option<&crate::types::DtmfSpecification> {
         self.dtmf_specification.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl AudioAndDtmfInputSpecificationBuilder {
     }
     /// <p>Time for which a bot waits before assuming that the customer isn't going to speak or press a key. This timeout is shared between Audio and DTMF inputs.</p>
     pub fn set_start_timeout_ms(mut self, input: std::option::Option<i32>) -> Self {
-        self.start_timeout_ms = input; self
+        self.start_timeout_ms = input;
+        self
     }
     /// <p>Specifies the settings on audio input.</p>
     pub fn audio_specification(mut self, input: crate::types::AudioSpecification) -> Self {
@@ -59,8 +60,12 @@ impl AudioAndDtmfInputSpecificationBuilder {
         self
     }
     /// <p>Specifies the settings on audio input.</p>
-    pub fn set_audio_specification(mut self, input: std::option::Option<crate::types::AudioSpecification>) -> Self {
-        self.audio_specification = input; self
+    pub fn set_audio_specification(
+        mut self,
+        input: std::option::Option<crate::types::AudioSpecification>,
+    ) -> Self {
+        self.audio_specification = input;
+        self
     }
     /// <p>Specifies the settings on DTMF input.</p>
     pub fn dtmf_specification(mut self, input: crate::types::DtmfSpecification) -> Self {
@@ -68,19 +73,19 @@ impl AudioAndDtmfInputSpecificationBuilder {
         self
     }
     /// <p>Specifies the settings on DTMF input.</p>
-    pub fn set_dtmf_specification(mut self, input: std::option::Option<crate::types::DtmfSpecification>) -> Self {
-        self.dtmf_specification = input; self
+    pub fn set_dtmf_specification(
+        mut self,
+        input: std::option::Option<crate::types::DtmfSpecification>,
+    ) -> Self {
+        self.dtmf_specification = input;
+        self
     }
     /// Consumes the builder and constructs a [`AudioAndDtmfInputSpecification`](crate::types::AudioAndDtmfInputSpecification).
     pub fn build(self) -> crate::types::AudioAndDtmfInputSpecification {
         crate::types::AudioAndDtmfInputSpecification {
-            start_timeout_ms: self.start_timeout_ms
-            ,
-            audio_specification: self.audio_specification
-            ,
-            dtmf_specification: self.dtmf_specification
-            ,
+            start_timeout_ms: self.start_timeout_ms,
+            audio_specification: self.audio_specification,
+            dtmf_specification: self.dtmf_specification,
         }
     }
 }
-

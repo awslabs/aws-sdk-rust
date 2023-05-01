@@ -3,7 +3,7 @@
 /// <p>Provides one or more messages that Amazon Lex should send to the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageGroup  {
+pub struct MessageGroup {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
     #[doc(hidden)]
     pub message: std::option::Option<crate::types::Message>,
@@ -13,11 +13,11 @@ pub struct MessageGroup  {
 }
 impl MessageGroup {
     /// <p>The primary message that Amazon Lex should send to the user.</p>
-    pub fn message(&self) -> std::option::Option<& crate::types::Message> {
+    pub fn message(&self) -> std::option::Option<&crate::types::Message> {
         self.message.as_ref()
     }
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-    pub fn variations(&self) -> std::option::Option<& [crate::types::Message]> {
+    pub fn variations(&self) -> std::option::Option<&[crate::types::Message]> {
         self.variations.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl MessageGroupBuilder {
     }
     /// <p>The primary message that Amazon Lex should send to the user.</p>
     pub fn set_message(mut self, input: std::option::Option<crate::types::Message>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Appends an item to `variations`.
     ///
@@ -52,22 +53,23 @@ impl MessageGroupBuilder {
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
     pub fn variations(mut self, input: crate::types::Message) -> Self {
         let mut v = self.variations.unwrap_or_default();
-                        v.push(input);
-                        self.variations = Some(v);
-                        self
+        v.push(input);
+        self.variations = Some(v);
+        self
     }
     /// <p>Message variations to send to the user. When variations are defined, Amazon Lex chooses the primary message or one of the variations to send to the user.</p>
-    pub fn set_variations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Message>>) -> Self {
-        self.variations = input; self
+    pub fn set_variations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Message>>,
+    ) -> Self {
+        self.variations = input;
+        self
     }
     /// Consumes the builder and constructs a [`MessageGroup`](crate::types::MessageGroup).
     pub fn build(self) -> crate::types::MessageGroup {
         crate::types::MessageGroup {
-            message: self.message
-            ,
-            variations: self.variations
-            ,
+            message: self.message,
+            variations: self.variations,
         }
     }
 }
-

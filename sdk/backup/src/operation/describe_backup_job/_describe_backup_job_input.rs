@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBackupJobInput  {
+pub struct DescribeBackupJobInput {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     #[doc(hidden)]
     pub backup_job_id: std::option::Option<std::string::String>,
 }
 impl DescribeBackupJobInput {
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
-    pub fn backup_job_id(&self) -> std::option::Option<& str> {
+    pub fn backup_job_id(&self) -> std::option::Option<&str> {
         self.backup_job_id.as_deref()
     }
 }
 impl DescribeBackupJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeBackupJobInput`](crate::operation::describe_backup_job::DescribeBackupJobInput).
-    pub fn builder() -> crate::operation::describe_backup_job::builders::DescribeBackupJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_backup_job::builders::DescribeBackupJobInputBuilder {
         crate::operation::describe_backup_job::builders::DescribeBackupJobInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeBackupJobInputBuilder {
     }
     /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
     pub fn set_backup_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_job_id = input; self
+        self.backup_job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeBackupJobInput`](crate::operation::describe_backup_job::DescribeBackupJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_backup_job::DescribeBackupJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_backup_job::DescribeBackupJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_backup_job::DescribeBackupJobInput {
-                backup_job_id: self.backup_job_id
-                ,
-            }
+                backup_job_id: self.backup_job_id,
+            },
         )
     }
 }
-

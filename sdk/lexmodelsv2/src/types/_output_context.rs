@@ -3,7 +3,7 @@
 /// <p>Describes a session context that is activated when an intent is fulfilled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputContext  {
+pub struct OutputContext {
     /// <p>The name of the output context.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct OutputContext  {
 }
 impl OutputContext {
     /// <p>The name of the output context.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The amount of time, in seconds, that the output context should remain active. The time is figured from the first time the context is sent to the user.</p>
@@ -51,7 +51,8 @@ impl OutputContextBuilder {
     }
     /// <p>The name of the output context.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The amount of time, in seconds, that the output context should remain active. The time is figured from the first time the context is sent to the user.</p>
     pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl OutputContextBuilder {
     }
     /// <p>The amount of time, in seconds, that the output context should remain active. The time is figured from the first time the context is sent to the user.</p>
     pub fn set_time_to_live_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.time_to_live_in_seconds = input; self
+        self.time_to_live_in_seconds = input;
+        self
     }
     /// <p>The number of conversation turns that the output context should remain active. The number of turns is counted from the first time that the context is sent to the user.</p>
     pub fn turns_to_live(mut self, input: i32) -> Self {
@@ -69,18 +71,15 @@ impl OutputContextBuilder {
     }
     /// <p>The number of conversation turns that the output context should remain active. The number of turns is counted from the first time that the context is sent to the user.</p>
     pub fn set_turns_to_live(mut self, input: std::option::Option<i32>) -> Self {
-        self.turns_to_live = input; self
+        self.turns_to_live = input;
+        self
     }
     /// Consumes the builder and constructs a [`OutputContext`](crate::types::OutputContext).
     pub fn build(self) -> crate::types::OutputContext {
         crate::types::OutputContext {
-            name: self.name
-            ,
-            time_to_live_in_seconds: self.time_to_live_in_seconds
-            ,
-            turns_to_live: self.turns_to_live
-            ,
+            name: self.name,
+            time_to_live_in_seconds: self.time_to_live_in_seconds,
+            turns_to_live: self.turns_to_live,
         }
     }
 }
-

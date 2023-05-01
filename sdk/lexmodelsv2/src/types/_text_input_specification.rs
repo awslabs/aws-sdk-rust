@@ -3,7 +3,7 @@
 /// <p>Specifies the text input specifications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextInputSpecification  {
+pub struct TextInputSpecification {
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     #[doc(hidden)]
     pub start_timeout_ms: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl TextInputSpecificationBuilder {
     }
     /// <p>Time for which a bot waits before re-prompting a customer for text input.</p>
     pub fn set_start_timeout_ms(mut self, input: std::option::Option<i32>) -> Self {
-        self.start_timeout_ms = input; self
+        self.start_timeout_ms = input;
+        self
     }
     /// Consumes the builder and constructs a [`TextInputSpecification`](crate::types::TextInputSpecification).
     pub fn build(self) -> crate::types::TextInputSpecification {
         crate::types::TextInputSpecification {
-            start_timeout_ms: self.start_timeout_ms
-            ,
+            start_timeout_ms: self.start_timeout_ms,
         }
     }
 }
-

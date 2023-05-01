@@ -13,6 +13,9 @@ all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
+[features]
+test-util = ["dep:aws-smithy-protocol-test"]
+
 [dependencies]
 bytes = "1"
 http = "0.2.8"
@@ -24,6 +27,11 @@ tracing = "0.1"
 path = "../aws-smithy-http"
 version = "0.55.1"
 
+[dependencies.aws-smithy-protocol-test]
+path = "../aws-smithy-protocol-test"
+optional = true
+version = "0.55.1"
+
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 version = "0.55.1"
@@ -31,3 +39,7 @@ version = "0.55.1"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 version = "0.55.1"
+
+[dependencies.tokio]
+version = "1.25"
+features = []

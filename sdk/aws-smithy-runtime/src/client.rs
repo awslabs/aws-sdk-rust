@@ -4,3 +4,6 @@
  */
 
 pub mod orchestrator;
+
+/// Smithy connector runtime plugins
+pub mod connections;

@@ -3,7 +3,7 @@
 /// <p>Filters the response from the <code>ListIntents</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntentFilter  {
+pub struct IntentFilter {
     /// <p>The name of the field to use for the filter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::IntentFilterName>,
@@ -16,15 +16,15 @@ pub struct IntentFilter  {
 }
 impl IntentFilter {
     /// <p>The name of the field to use for the filter.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::IntentFilterName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::IntentFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use for the filter.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<& crate::types::IntentFilterOperator> {
+    pub fn operator(&self) -> std::option::Option<&crate::types::IntentFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl IntentFilterBuilder {
     }
     /// <p>The name of the field to use for the filter.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::IntentFilterName>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -60,13 +61,17 @@ impl IntentFilterBuilder {
     /// <p>The value to use for the filter.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The value to use for the filter.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
     pub fn operator(mut self, input: crate::types::IntentFilterOperator) -> Self {
@@ -74,19 +79,19 @@ impl IntentFilterBuilder {
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListIntents</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListIntents</code> operation should return aliases that contain the specified value.</p>
-    pub fn set_operator(mut self, input: std::option::Option<crate::types::IntentFilterOperator>) -> Self {
-        self.operator = input; self
+    pub fn set_operator(
+        mut self,
+        input: std::option::Option<crate::types::IntentFilterOperator>,
+    ) -> Self {
+        self.operator = input;
+        self
     }
     /// Consumes the builder and constructs a [`IntentFilter`](crate::types::IntentFilter).
     pub fn build(self) -> crate::types::IntentFilter {
         crate::types::IntentFilter {
-            name: self.name
-            ,
-            values: self.values
-            ,
-            operator: self.operator
-            ,
+            name: self.name,
+            values: self.values,
+            operator: self.operator,
         }
     }
 }
-

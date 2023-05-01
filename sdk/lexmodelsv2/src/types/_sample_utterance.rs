@@ -3,14 +3,14 @@
 /// <p>A sample utterance that invokes an intent or respond to a slot elicitation prompt.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SampleUtterance  {
+pub struct SampleUtterance {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
     #[doc(hidden)]
     pub utterance: std::option::Option<std::string::String>,
 }
 impl SampleUtterance {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
-    pub fn utterance(&self) -> std::option::Option<& str> {
+    pub fn utterance(&self) -> std::option::Option<&str> {
         self.utterance.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl SampleUtteranceBuilder {
     }
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
     pub fn set_utterance(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.utterance = input; self
+        self.utterance = input;
+        self
     }
     /// Consumes the builder and constructs a [`SampleUtterance`](crate::types::SampleUtterance).
     pub fn build(self) -> crate::types::SampleUtterance {
         crate::types::SampleUtterance {
-            utterance: self.utterance
-            ,
+            utterance: self.utterance,
         }
     }
 }
-

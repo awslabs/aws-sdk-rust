@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateReportPlanInput  {
+pub struct UpdateReportPlanInput {
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     #[doc(hidden)]
     pub report_plan_name: std::option::Option<std::string::String>,
@@ -12,8 +12,8 @@ pub struct UpdateReportPlanInput  {
     /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     #[doc(hidden)]
     pub report_delivery_channel: std::option::Option<crate::types::ReportDeliveryChannel>,
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
-    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     #[doc(hidden)]
     pub report_setting: std::option::Option<crate::types::ReportSetting>,
@@ -23,31 +23,34 @@ pub struct UpdateReportPlanInput  {
 }
 impl UpdateReportPlanInput {
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn report_plan_name(&self) -> std::option::Option<& str> {
+    pub fn report_plan_name(&self) -> std::option::Option<&str> {
         self.report_plan_name.as_deref()
     }
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
-    pub fn report_plan_description(&self) -> std::option::Option<& str> {
+    pub fn report_plan_description(&self) -> std::option::Option<&str> {
         self.report_plan_description.as_deref()
     }
     /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    pub fn report_delivery_channel(&self) -> std::option::Option<& crate::types::ReportDeliveryChannel> {
+    pub fn report_delivery_channel(
+        &self,
+    ) -> std::option::Option<&crate::types::ReportDeliveryChannel> {
         self.report_delivery_channel.as_ref()
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
-    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
-    pub fn report_setting(&self) -> std::option::Option<& crate::types::ReportSetting> {
+    pub fn report_setting(&self) -> std::option::Option<&crate::types::ReportSetting> {
         self.report_setting.as_ref()
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<& str> {
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
 }
 impl UpdateReportPlanInput {
     /// Creates a new builder-style object to manufacture [`UpdateReportPlanInput`](crate::operation::update_report_plan::UpdateReportPlanInput).
-    pub fn builder() -> crate::operation::update_report_plan::builders::UpdateReportPlanInputBuilder {
+    pub fn builder() -> crate::operation::update_report_plan::builders::UpdateReportPlanInputBuilder
+    {
         crate::operation::update_report_plan::builders::UpdateReportPlanInputBuilder::default()
     }
 }
@@ -70,7 +73,8 @@ impl UpdateReportPlanInputBuilder {
     }
     /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
     pub fn set_report_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_plan_name = input; self
+        self.report_plan_name = input;
+        self
     }
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
     pub fn report_plan_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +82,12 @@ impl UpdateReportPlanInputBuilder {
         self
     }
     /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
-    pub fn set_report_plan_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_plan_description = input; self
+    pub fn set_report_plan_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.report_plan_description = input;
+        self
     }
     /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
     pub fn report_delivery_channel(mut self, input: crate::types::ReportDeliveryChannel) -> Self {
@@ -87,21 +95,29 @@ impl UpdateReportPlanInputBuilder {
         self
     }
     /// <p>A structure that contains information about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
-    pub fn set_report_delivery_channel(mut self, input: std::option::Option<crate::types::ReportDeliveryChannel>) -> Self {
-        self.report_delivery_channel = input; self
+    pub fn set_report_delivery_channel(
+        mut self,
+        input: std::option::Option<crate::types::ReportDeliveryChannel>,
+    ) -> Self {
+        self.report_delivery_channel = input;
+        self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
-    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
     pub fn report_setting(mut self, input: crate::types::ReportSetting) -> Self {
         self.report_setting = Some(input);
         self
     }
-    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p> 
-    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p> 
+    /// <p>Identifies the report template for the report. Reports are built using a report template. The report templates are:</p>
+    /// <p> <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> </p>
     /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report coverage by Amazon Web Services Regions and frameworks.</p>
-    pub fn set_report_setting(mut self, input: std::option::Option<crate::types::ReportSetting>) -> Self {
-        self.report_setting = input; self
+    pub fn set_report_setting(
+        mut self,
+        input: std::option::Option<crate::types::ReportSetting>,
+    ) -> Self {
+        self.report_setting = input;
+        self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,25 +125,28 @@ impl UpdateReportPlanInputBuilder {
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.idempotency_token = input; self
+    pub fn set_idempotency_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.idempotency_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateReportPlanInput`](crate::operation::update_report_plan::UpdateReportPlanInput).
-    pub fn build(self) -> Result<crate::operation::update_report_plan::UpdateReportPlanInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_report_plan::UpdateReportPlanInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_report_plan::UpdateReportPlanInput {
-                report_plan_name: self.report_plan_name
-                ,
-                report_plan_description: self.report_plan_description
-                ,
-                report_delivery_channel: self.report_delivery_channel
-                ,
-                report_setting: self.report_setting
-                ,
-                idempotency_token: self.idempotency_token
-                ,
-            }
+                report_plan_name: self.report_plan_name,
+                report_plan_description: self.report_plan_description,
+                report_delivery_channel: self.report_delivery_channel,
+                report_setting: self.report_setting,
+                idempotency_token: self.idempotency_token,
+            },
         )
     }
 }
-

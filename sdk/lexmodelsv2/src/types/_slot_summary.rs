@@ -3,7 +3,7 @@
 /// <p>Summary information about a slot, a value that the bot elicits from the user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotSummary  {
+pub struct SlotSummary {
     /// <p>The unique identifier of the slot.</p>
     #[doc(hidden)]
     pub slot_id: std::option::Option<std::string::String>,
@@ -21,38 +21,41 @@ pub struct SlotSummary  {
     pub slot_type_id: std::option::Option<std::string::String>,
     /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
     #[doc(hidden)]
-    pub value_elicitation_prompt_specification: std::option::Option<crate::types::PromptSpecification>,
+    pub value_elicitation_prompt_specification:
+        std::option::Option<crate::types::PromptSpecification>,
     /// <p>The timestamp of the last date and time that the slot was updated.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SlotSummary {
     /// <p>The unique identifier of the slot.</p>
-    pub fn slot_id(&self) -> std::option::Option<& str> {
+    pub fn slot_id(&self) -> std::option::Option<&str> {
         self.slot_id.as_deref()
     }
     /// <p>The name given to the slot.</p>
-    pub fn slot_name(&self) -> std::option::Option<& str> {
+    pub fn slot_name(&self) -> std::option::Option<&str> {
         self.slot_name.as_deref()
     }
     /// <p>The description of the slot.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Whether the slot is required or optional. An intent is complete when all required slots are filled.</p>
-    pub fn slot_constraint(&self) -> std::option::Option<& crate::types::SlotConstraint> {
+    pub fn slot_constraint(&self) -> std::option::Option<&crate::types::SlotConstraint> {
         self.slot_constraint.as_ref()
     }
     /// <p>The unique identifier for the slot type that defines the values for the slot.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<& str> {
+    pub fn slot_type_id(&self) -> std::option::Option<&str> {
         self.slot_type_id.as_deref()
     }
     /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
-    pub fn value_elicitation_prompt_specification(&self) -> std::option::Option<& crate::types::PromptSpecification> {
+    pub fn value_elicitation_prompt_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::PromptSpecification> {
         self.value_elicitation_prompt_specification.as_ref()
     }
     /// <p>The timestamp of the last date and time that the slot was updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -72,7 +75,8 @@ pub struct SlotSummaryBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) slot_constraint: std::option::Option<crate::types::SlotConstraint>,
     pub(crate) slot_type_id: std::option::Option<std::string::String>,
-    pub(crate) value_elicitation_prompt_specification: std::option::Option<crate::types::PromptSpecification>,
+    pub(crate) value_elicitation_prompt_specification:
+        std::option::Option<crate::types::PromptSpecification>,
     pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl SlotSummaryBuilder {
@@ -83,7 +87,8 @@ impl SlotSummaryBuilder {
     }
     /// <p>The unique identifier of the slot.</p>
     pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_id = input; self
+        self.slot_id = input;
+        self
     }
     /// <p>The name given to the slot.</p>
     pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +97,8 @@ impl SlotSummaryBuilder {
     }
     /// <p>The name given to the slot.</p>
     pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_name = input; self
+        self.slot_name = input;
+        self
     }
     /// <p>The description of the slot.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +107,8 @@ impl SlotSummaryBuilder {
     }
     /// <p>The description of the slot.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Whether the slot is required or optional. An intent is complete when all required slots are filled.</p>
     pub fn slot_constraint(mut self, input: crate::types::SlotConstraint) -> Self {
@@ -109,8 +116,12 @@ impl SlotSummaryBuilder {
         self
     }
     /// <p>Whether the slot is required or optional. An intent is complete when all required slots are filled.</p>
-    pub fn set_slot_constraint(mut self, input: std::option::Option<crate::types::SlotConstraint>) -> Self {
-        self.slot_constraint = input; self
+    pub fn set_slot_constraint(
+        mut self,
+        input: std::option::Option<crate::types::SlotConstraint>,
+    ) -> Self {
+        self.slot_constraint = input;
+        self
     }
     /// <p>The unique identifier for the slot type that defines the values for the slot.</p>
     pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,16 +130,24 @@ impl SlotSummaryBuilder {
     }
     /// <p>The unique identifier for the slot type that defines the values for the slot.</p>
     pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_type_id = input; self
+        self.slot_type_id = input;
+        self
     }
     /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
-    pub fn value_elicitation_prompt_specification(mut self, input: crate::types::PromptSpecification) -> Self {
+    pub fn value_elicitation_prompt_specification(
+        mut self,
+        input: crate::types::PromptSpecification,
+    ) -> Self {
         self.value_elicitation_prompt_specification = Some(input);
         self
     }
     /// <p>Prompts that are sent to the user to elicit a value for the slot.</p>
-    pub fn set_value_elicitation_prompt_specification(mut self, input: std::option::Option<crate::types::PromptSpecification>) -> Self {
-        self.value_elicitation_prompt_specification = input; self
+    pub fn set_value_elicitation_prompt_specification(
+        mut self,
+        input: std::option::Option<crate::types::PromptSpecification>,
+    ) -> Self {
+        self.value_elicitation_prompt_specification = input;
+        self
     }
     /// <p>The timestamp of the last date and time that the slot was updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -136,27 +155,23 @@ impl SlotSummaryBuilder {
         self
     }
     /// <p>The timestamp of the last date and time that the slot was updated.</p>
-    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input; self
+    pub fn set_last_updated_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_date_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`SlotSummary`](crate::types::SlotSummary).
     pub fn build(self) -> crate::types::SlotSummary {
         crate::types::SlotSummary {
-            slot_id: self.slot_id
-            ,
-            slot_name: self.slot_name
-            ,
-            description: self.description
-            ,
-            slot_constraint: self.slot_constraint
-            ,
-            slot_type_id: self.slot_type_id
-            ,
-            value_elicitation_prompt_specification: self.value_elicitation_prompt_specification
-            ,
-            last_updated_date_time: self.last_updated_date_time
-            ,
+            slot_id: self.slot_id,
+            slot_name: self.slot_name,
+            description: self.description,
+            slot_constraint: self.slot_constraint,
+            slot_type_id: self.slot_type_id,
+            value_elicitation_prompt_specification: self.value_elicitation_prompt_specification,
+            last_updated_date_time: self.last_updated_date_time,
         }
     }
 }
-

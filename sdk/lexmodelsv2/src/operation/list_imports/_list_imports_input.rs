@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImportsInput  {
+pub struct ListImportsInput {
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListImportsInput  {
     /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p> 
+    /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code> request to return the next page of results. For a complete set of results, call the <code>ListImports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -28,32 +28,32 @@ pub struct ListImportsInput  {
 }
 impl ListImportsInput {
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to list imports for.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::ImportSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::ImportSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::ImportFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::ImportFilter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p> 
+    /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code> request to return the next page of results. For a complete set of results, call the <code>ListImports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the locale that should be present in the list. If you don't specify a resource type in the <code>filters</code> parameter, the list contains both bot locales and custom vocabularies.</p>
-    pub fn locale_id(&self) -> std::option::Option<& str> {
+    pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
 }
@@ -84,7 +84,8 @@ impl ListImportsInputBuilder {
     }
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The version of the bot to list imports for.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +94,8 @@ impl ListImportsInputBuilder {
     }
     /// <p>The version of the bot to list imports for.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     pub fn sort_by(mut self, input: crate::types::ImportSortBy) -> Self {
@@ -102,7 +104,8 @@ impl ListImportsInputBuilder {
     }
     /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
     pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ImportSortBy>) -> Self {
-        self.sort_by = input; self
+        self.sort_by = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -111,13 +114,17 @@ impl ListImportsInputBuilder {
     /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub fn filters(mut self, input: crate::types::ImportFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImportFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ImportFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -126,18 +133,20 @@ impl ListImportsInputBuilder {
     }
     /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
-    /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p> 
+    /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code> request to return the next page of results. For a complete set of results, call the <code>ListImports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p> 
+    /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code> request to return the next page of results. For a complete set of results, call the <code>ListImports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Specifies the locale that should be present in the list. If you don't specify a resource type in the <code>filters</code> parameter, the list contains both bot locales and custom vocabularies.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,28 +155,24 @@ impl ListImportsInputBuilder {
     }
     /// <p>Specifies the locale that should be present in the list. If you don't specify a resource type in the <code>filters</code> parameter, the list contains both bot locales and custom vocabularies.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input; self
+        self.locale_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListImportsInput`](crate::operation::list_imports::ListImportsInput).
-    pub fn build(self) -> Result<crate::operation::list_imports::ListImportsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_imports::ListImportsInput {
-                bot_id: self.bot_id
-                ,
-                bot_version: self.bot_version
-                ,
-                sort_by: self.sort_by
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                locale_id: self.locale_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_imports::ListImportsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_imports::ListImportsInput {
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            sort_by: self.sort_by,
+            filters: self.filters,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            locale_id: self.locale_id,
+        })
     }
 }
-

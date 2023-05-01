@@ -4,50 +4,68 @@ pub use crate::operation::update_export::_update_export_output::UpdateExportOutp
 pub use crate::operation::update_export::_update_export_input::UpdateExportInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateExport`.
-/// 
-/// <p>Updates the password used to protect an export zip archive.</p> 
+///
+/// <p>Updates the password used to protect an export zip archive.</p>
 /// <p>The password is not required. If you don't supply a password, Amazon Lex generates a zip file that is not protected by a password. This is the archive that is available at the pre-signed S3 URL provided by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateExportFluentBuilder {
-                handle: std::sync::Arc<crate::client::Handle>,
-                inner: crate::operation::update_export::builders::UpdateExportInputBuilder
-            }
-impl UpdateExportFluentBuilder  {
+    handle: std::sync::Arc<crate::client::Handle>,
+    inner: crate::operation::update_export::builders::UpdateExportInputBuilder,
+}
+impl UpdateExportFluentBuilder {
     /// Creates a new `UpdateExport`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_export::UpdateExport, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_export::UpdateExportError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_export::UpdateExportOutput, aws_smithy_http::result::SdkError<crate::operation::update_export::UpdateExportError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_export::UpdateExport,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_export::UpdateExportError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_export::UpdateExportOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_export::UpdateExportError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
     pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.export_id(input.into());
@@ -69,4 +87,3 @@ impl UpdateExportFluentBuilder  {
         self
     }
 }
-

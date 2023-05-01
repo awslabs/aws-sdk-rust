@@ -3,14 +3,14 @@
 /// <p>Defines a Speech Synthesis Markup Language (SSML) prompt.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsmlMessage  {
+pub struct SsmlMessage {
     /// <p>The SSML text that defines the prompt.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl SsmlMessage {
     /// <p>The SSML text that defines the prompt.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl SsmlMessageBuilder {
     }
     /// <p>The SSML text that defines the prompt.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`SsmlMessage`](crate::types::SsmlMessage).
     pub fn build(self) -> crate::types::SsmlMessage {
-        crate::types::SsmlMessage {
-            value: self.value
-            ,
-        }
+        crate::types::SsmlMessage { value: self.value }
     }
 }
-

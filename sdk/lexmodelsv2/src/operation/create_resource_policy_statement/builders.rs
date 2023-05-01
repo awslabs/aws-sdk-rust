@@ -4,50 +4,72 @@ pub use crate::operation::create_resource_policy_statement::_create_resource_pol
 pub use crate::operation::create_resource_policy_statement::_create_resource_policy_statement_input::CreateResourcePolicyStatementInputBuilder;
 
 /// Fluent builder constructing a request to `CreateResourcePolicyStatement`.
-/// 
-/// <p>Adds a new resource policy statement to a bot or bot alias. If a resource policy exists, the statement is added to the current resource policy. If a policy doesn't exist, a new policy is created.</p> 
+///
+/// <p>Adds a new resource policy statement to a bot or bot alias. If a resource policy exists, the statement is added to the current resource policy. If a policy doesn't exist, a new policy is created.</p>
 /// <p>You can't create a resource policy statement that allows cross-account access.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateResourcePolicyStatementFluentBuilder {
                 handle: std::sync::Arc<crate::client::Handle>,
                 inner: crate::operation::create_resource_policy_statement::builders::CreateResourcePolicyStatementInputBuilder
             }
-impl CreateResourcePolicyStatementFluentBuilder  {
+impl CreateResourcePolicyStatementFluentBuilder {
     /// Creates a new `CreateResourcePolicyStatement`.
-                    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
-                        Self { handle, inner: Default::default() }
-                    }
-    
-                    /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_resource_policy_statement::CreateResourcePolicyStatement, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementOutput, aws_smithy_http::result::SdkError<crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+        Self {
+            handle,
+            inner: Default::default(),
+        }
+    }
+
+    /// Consume this builder, creating a customizable operation that can be modified before being
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_resource_policy_statement::CreateResourcePolicyStatement,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -88,7 +110,10 @@ impl CreateResourcePolicyStatementFluentBuilder  {
         self
     }
     /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a resource. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
-    pub fn set_principal(mut self, input: std::option::Option<std::vec::Vec<crate::types::Principal>>) -> Self {
+    pub fn set_principal(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Principal>>,
+    ) -> Self {
         self.inner = self.inner.set_principal(input);
         self
     }
@@ -102,7 +127,10 @@ impl CreateResourcePolicyStatementFluentBuilder  {
         self
     }
     /// <p>The Amazon Lex action that this policy either allows or denies. The action must apply to the resource type of the specified ARN. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html"> Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
-    pub fn set_action(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_action(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
@@ -110,29 +138,43 @@ impl CreateResourcePolicyStatementFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_condition`](Self::set_condition).
     ///
-    /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p> 
+    /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
-    pub fn condition(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
+    pub fn condition(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::collections::HashMap<std::string::String, std::string::String>,
+    ) -> Self {
         self.inner = self.inner.condition(k.into(), v);
         self
     }
-    /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p> 
+    /// <p>Specifies a condition when the policy is in effect. If the principal of the policy is a service principal, you must provide two condition blocks, one with a SourceAccount global condition key and one with a SourceArn global condition key.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
-    pub fn set_condition(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+    pub fn set_condition(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_condition(input);
         self
     }
-    /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> 
+    /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
     pub fn expected_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.expected_revision_id(input.into());
         self
     }
-    /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> 
+    /// <p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p>
     /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
-    pub fn set_expected_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expected_revision_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_expected_revision_id(input);
         self
     }
 }
-

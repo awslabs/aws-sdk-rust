@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIntentInput  {
+pub struct CreateIntentInput {
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
     #[doc(hidden)]
     pub intent_name: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct CreateIntentInput  {
     /// <p>A unique identifier for the built-in intent to base this intent on.</p>
     #[doc(hidden)]
     pub parent_intent_signature: std::option::Option<std::string::String>,
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p> 
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
     /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
     #[doc(hidden)]
     pub sample_utterances: std::option::Option<std::vec::Vec<crate::types::SampleUtterance>>,
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p> 
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
     /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
     #[doc(hidden)]
     pub dialog_code_hook: std::option::Option<crate::types::DialogCodeHookSettings>,
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p> 
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
     /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
     #[doc(hidden)]
     pub fulfillment_code_hook: std::option::Option<crate::types::FulfillmentCodeHookSettings>,
@@ -30,15 +30,15 @@ pub struct CreateIntentInput  {
     /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
     #[doc(hidden)]
     pub intent_closing_setting: std::option::Option<crate::types::IntentClosingSetting>,
-    /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p> 
-    /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p> 
-    /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p> 
-    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p> 
+    /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
+    /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
+    /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
+    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     #[doc(hidden)]
     pub input_contexts: std::option::Option<std::vec::Vec<crate::types::InputContext>>,
-    /// <p>A lists of contexts that the intent activates when it is fulfilled.</p> 
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p> 
+    /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     #[doc(hidden)]
     pub output_contexts: std::option::Option<std::vec::Vec<crate::types::OutputContext>>,
@@ -60,72 +60,80 @@ pub struct CreateIntentInput  {
 }
 impl CreateIntentInput {
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
-    pub fn intent_name(&self) -> std::option::Option<& str> {
+    pub fn intent_name(&self) -> std::option::Option<&str> {
         self.intent_name.as_deref()
     }
     /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier for the built-in intent to base this intent on.</p>
-    pub fn parent_intent_signature(&self) -> std::option::Option<& str> {
+    pub fn parent_intent_signature(&self) -> std::option::Option<&str> {
         self.parent_intent_signature.as_deref()
     }
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p> 
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
     /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
-    pub fn sample_utterances(&self) -> std::option::Option<& [crate::types::SampleUtterance]> {
+    pub fn sample_utterances(&self) -> std::option::Option<&[crate::types::SampleUtterance]> {
         self.sample_utterances.as_deref()
     }
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p> 
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
     /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
-    pub fn dialog_code_hook(&self) -> std::option::Option<& crate::types::DialogCodeHookSettings> {
+    pub fn dialog_code_hook(&self) -> std::option::Option<&crate::types::DialogCodeHookSettings> {
         self.dialog_code_hook.as_ref()
     }
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p> 
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
     /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
-    pub fn fulfillment_code_hook(&self) -> std::option::Option<& crate::types::FulfillmentCodeHookSettings> {
+    pub fn fulfillment_code_hook(
+        &self,
+    ) -> std::option::Option<&crate::types::FulfillmentCodeHookSettings> {
         self.fulfillment_code_hook.as_ref()
     }
     /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
-    pub fn intent_confirmation_setting(&self) -> std::option::Option<& crate::types::IntentConfirmationSetting> {
+    pub fn intent_confirmation_setting(
+        &self,
+    ) -> std::option::Option<&crate::types::IntentConfirmationSetting> {
         self.intent_confirmation_setting.as_ref()
     }
     /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
-    pub fn intent_closing_setting(&self) -> std::option::Option<& crate::types::IntentClosingSetting> {
+    pub fn intent_closing_setting(
+        &self,
+    ) -> std::option::Option<&crate::types::IntentClosingSetting> {
         self.intent_closing_setting.as_ref()
     }
-    /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p> 
-    /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p> 
-    /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p> 
-    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p> 
+    /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
+    /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
+    /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
+    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
-    pub fn input_contexts(&self) -> std::option::Option<& [crate::types::InputContext]> {
+    pub fn input_contexts(&self) -> std::option::Option<&[crate::types::InputContext]> {
         self.input_contexts.as_deref()
     }
-    /// <p>A lists of contexts that the intent activates when it is fulfilled.</p> 
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p> 
+    /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
-    pub fn output_contexts(&self) -> std::option::Option<& [crate::types::OutputContext]> {
+    pub fn output_contexts(&self) -> std::option::Option<&[crate::types::OutputContext]> {
         self.output_contexts.as_deref()
     }
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
-    pub fn kendra_configuration(&self) -> std::option::Option<& crate::types::KendraConfiguration> {
+    pub fn kendra_configuration(&self) -> std::option::Option<&crate::types::KendraConfiguration> {
         self.kendra_configuration.as_ref()
     }
     /// <p>The identifier of the bot associated with this intent.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The identifier of the version of the bot associated with this intent.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(&self) -> std::option::Option<& str> {
+    pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
     /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
-    pub fn initial_response_setting(&self) -> std::option::Option<& crate::types::InitialResponseSetting> {
+    pub fn initial_response_setting(
+        &self,
+    ) -> std::option::Option<&crate::types::InitialResponseSetting> {
         self.initial_response_setting.as_ref()
     }
 }
@@ -145,8 +153,10 @@ pub struct CreateIntentInputBuilder {
     pub(crate) parent_intent_signature: std::option::Option<std::string::String>,
     pub(crate) sample_utterances: std::option::Option<std::vec::Vec<crate::types::SampleUtterance>>,
     pub(crate) dialog_code_hook: std::option::Option<crate::types::DialogCodeHookSettings>,
-    pub(crate) fulfillment_code_hook: std::option::Option<crate::types::FulfillmentCodeHookSettings>,
-    pub(crate) intent_confirmation_setting: std::option::Option<crate::types::IntentConfirmationSetting>,
+    pub(crate) fulfillment_code_hook:
+        std::option::Option<crate::types::FulfillmentCodeHookSettings>,
+    pub(crate) intent_confirmation_setting:
+        std::option::Option<crate::types::IntentConfirmationSetting>,
     pub(crate) intent_closing_setting: std::option::Option<crate::types::IntentClosingSetting>,
     pub(crate) input_contexts: std::option::Option<std::vec::Vec<crate::types::InputContext>>,
     pub(crate) output_contexts: std::option::Option<std::vec::Vec<crate::types::OutputContext>>,
@@ -164,7 +174,8 @@ impl CreateIntentInputBuilder {
     }
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
     pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.intent_name = input; self
+        self.intent_name = input;
+        self
     }
     /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,7 +184,8 @@ impl CreateIntentInputBuilder {
     }
     /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A unique identifier for the built-in intent to base this intent on.</p>
     pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,56 +193,82 @@ impl CreateIntentInputBuilder {
         self
     }
     /// <p>A unique identifier for the built-in intent to base this intent on.</p>
-    pub fn set_parent_intent_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_intent_signature = input; self
+    pub fn set_parent_intent_signature(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.parent_intent_signature = input;
+        self
     }
     /// Appends an item to `sample_utterances`.
     ///
     /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
     ///
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p> 
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
     /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
     pub fn sample_utterances(mut self, input: crate::types::SampleUtterance) -> Self {
         let mut v = self.sample_utterances.unwrap_or_default();
-                        v.push(input);
-                        self.sample_utterances = Some(v);
-                        self
+        v.push(input);
+        self.sample_utterances = Some(v);
+        self
     }
-    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p> 
+    /// <p>An array of strings that a user might say to signal the intent. For example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
     /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
-    pub fn set_sample_utterances(mut self, input: std::option::Option<std::vec::Vec<crate::types::SampleUtterance>>) -> Self {
-        self.sample_utterances = input; self
+    pub fn set_sample_utterances(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SampleUtterance>>,
+    ) -> Self {
+        self.sample_utterances = input;
+        self
     }
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p> 
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
     /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
     pub fn dialog_code_hook(mut self, input: crate::types::DialogCodeHookSettings) -> Self {
         self.dialog_code_hook = Some(input);
         self
     }
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p> 
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user input. You can invoke this Lambda function to personalize user interaction.</p>
     /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
-    pub fn set_dialog_code_hook(mut self, input: std::option::Option<crate::types::DialogCodeHookSettings>) -> Self {
-        self.dialog_code_hook = input; self
+    pub fn set_dialog_code_hook(
+        mut self,
+        input: std::option::Option<crate::types::DialogCodeHookSettings>,
+    ) -> Self {
+        self.dialog_code_hook = input;
+        self
     }
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p> 
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
     /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
-    pub fn fulfillment_code_hook(mut self, input: crate::types::FulfillmentCodeHookSettings) -> Self {
+    pub fn fulfillment_code_hook(
+        mut self,
+        input: crate::types::FulfillmentCodeHookSettings,
+    ) -> Self {
         self.fulfillment_code_hook = Some(input);
         self
     }
-    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p> 
+    /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the intent is ready for fulfillment. You can invoke this function to complete the bot's transaction with the user.</p>
     /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
-    pub fn set_fulfillment_code_hook(mut self, input: std::option::Option<crate::types::FulfillmentCodeHookSettings>) -> Self {
-        self.fulfillment_code_hook = input; self
+    pub fn set_fulfillment_code_hook(
+        mut self,
+        input: std::option::Option<crate::types::FulfillmentCodeHookSettings>,
+    ) -> Self {
+        self.fulfillment_code_hook = input;
+        self
     }
     /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
-    pub fn intent_confirmation_setting(mut self, input: crate::types::IntentConfirmationSetting) -> Self {
+    pub fn intent_confirmation_setting(
+        mut self,
+        input: crate::types::IntentConfirmationSetting,
+    ) -> Self {
         self.intent_confirmation_setting = Some(input);
         self
     }
     /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
-    pub fn set_intent_confirmation_setting(mut self, input: std::option::Option<crate::types::IntentConfirmationSetting>) -> Self {
-        self.intent_confirmation_setting = input; self
+    pub fn set_intent_confirmation_setting(
+        mut self,
+        input: std::option::Option<crate::types::IntentConfirmationSetting>,
+    ) -> Self {
+        self.intent_confirmation_setting = input;
+        self
     }
     /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
     pub fn intent_closing_setting(mut self, input: crate::types::IntentClosingSetting) -> Self {
@@ -238,50 +276,62 @@ impl CreateIntentInputBuilder {
         self
     }
     /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
-    pub fn set_intent_closing_setting(mut self, input: std::option::Option<crate::types::IntentClosingSetting>) -> Self {
-        self.intent_closing_setting = input; self
+    pub fn set_intent_closing_setting(
+        mut self,
+        input: std::option::Option<crate::types::IntentClosingSetting>,
+    ) -> Self {
+        self.intent_closing_setting = input;
+        self
     }
     /// Appends an item to `input_contexts`.
     ///
     /// To override the contents of this collection use [`set_input_contexts`](Self::set_input_contexts).
     ///
-    /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p> 
-    /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p> 
-    /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p> 
-    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p> 
+    /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
+    /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
+    /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
+    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub fn input_contexts(mut self, input: crate::types::InputContext) -> Self {
         let mut v = self.input_contexts.unwrap_or_default();
-                        v.push(input);
-                        self.input_contexts = Some(v);
-                        self
+        v.push(input);
+        self.input_contexts = Some(v);
+        self
     }
-    /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p> 
-    /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p> 
-    /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p> 
-    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p> 
+    /// <p>A list of contexts that must be active for this intent to be considered by Amazon Lex.</p>
+    /// <p>When an intent has an input context list, Amazon Lex only considers using the intent in an interaction with the user when the specified contexts are included in the active context list for the session. If the contexts are not active, then Amazon Lex will not use the intent.</p>
+    /// <p>A context can be automatically activated using the <code>outputContexts</code> property or it can be set at runtime.</p>
+    /// <p> For example, if there are two intents with different input contexts that respond to the same utterances, only the intent with the active context will respond.</p>
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
-    pub fn set_input_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputContext>>) -> Self {
-        self.input_contexts = input; self
+    pub fn set_input_contexts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InputContext>>,
+    ) -> Self {
+        self.input_contexts = input;
+        self
     }
     /// Appends an item to `output_contexts`.
     ///
     /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
     ///
-    /// <p>A lists of contexts that the intent activates when it is fulfilled.</p> 
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p> 
+    /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub fn output_contexts(mut self, input: crate::types::OutputContext) -> Self {
         let mut v = self.output_contexts.unwrap_or_default();
-                        v.push(input);
-                        self.output_contexts = Some(v);
-                        self
+        v.push(input);
+        self.output_contexts = Some(v);
+        self
     }
-    /// <p>A lists of contexts that the intent activates when it is fulfilled.</p> 
-    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p> 
+    /// <p>A lists of contexts that the intent activates when it is fulfilled.</p>
+    /// <p>You can use an output context to indicate the intents that Amazon Lex should consider for the next turn of the conversation with a customer. </p>
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
-    pub fn set_output_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::types::OutputContext>>) -> Self {
-        self.output_contexts = input; self
+    pub fn set_output_contexts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OutputContext>>,
+    ) -> Self {
+        self.output_contexts = input;
+        self
     }
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
     pub fn kendra_configuration(mut self, input: crate::types::KendraConfiguration) -> Self {
@@ -289,8 +339,12 @@ impl CreateIntentInputBuilder {
         self
     }
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
-    pub fn set_kendra_configuration(mut self, input: std::option::Option<crate::types::KendraConfiguration>) -> Self {
-        self.kendra_configuration = input; self
+    pub fn set_kendra_configuration(
+        mut self,
+        input: std::option::Option<crate::types::KendraConfiguration>,
+    ) -> Self {
+        self.kendra_configuration = input;
+        self
     }
     /// <p>The identifier of the bot associated with this intent.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -299,7 +353,8 @@ impl CreateIntentInputBuilder {
     }
     /// <p>The identifier of the bot associated with this intent.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The identifier of the version of the bot associated with this intent.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -308,7 +363,8 @@ impl CreateIntentInputBuilder {
     }
     /// <p>The identifier of the version of the bot associated with this intent.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -317,7 +373,8 @@ impl CreateIntentInputBuilder {
     }
     /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input; self
+        self.locale_id = input;
+        self
     }
     /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
     pub fn initial_response_setting(mut self, input: crate::types::InitialResponseSetting) -> Self {
@@ -325,45 +382,36 @@ impl CreateIntentInputBuilder {
         self
     }
     /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
-    pub fn set_initial_response_setting(mut self, input: std::option::Option<crate::types::InitialResponseSetting>) -> Self {
-        self.initial_response_setting = input; self
+    pub fn set_initial_response_setting(
+        mut self,
+        input: std::option::Option<crate::types::InitialResponseSetting>,
+    ) -> Self {
+        self.initial_response_setting = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateIntentInput`](crate::operation::create_intent::CreateIntentInput).
-    pub fn build(self) -> Result<crate::operation::create_intent::CreateIntentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_intent::CreateIntentInput {
-                intent_name: self.intent_name
-                ,
-                description: self.description
-                ,
-                parent_intent_signature: self.parent_intent_signature
-                ,
-                sample_utterances: self.sample_utterances
-                ,
-                dialog_code_hook: self.dialog_code_hook
-                ,
-                fulfillment_code_hook: self.fulfillment_code_hook
-                ,
-                intent_confirmation_setting: self.intent_confirmation_setting
-                ,
-                intent_closing_setting: self.intent_closing_setting
-                ,
-                input_contexts: self.input_contexts
-                ,
-                output_contexts: self.output_contexts
-                ,
-                kendra_configuration: self.kendra_configuration
-                ,
-                bot_id: self.bot_id
-                ,
-                bot_version: self.bot_version
-                ,
-                locale_id: self.locale_id
-                ,
-                initial_response_setting: self.initial_response_setting
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_intent::CreateIntentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_intent::CreateIntentInput {
+            intent_name: self.intent_name,
+            description: self.description,
+            parent_intent_signature: self.parent_intent_signature,
+            sample_utterances: self.sample_utterances,
+            dialog_code_hook: self.dialog_code_hook,
+            fulfillment_code_hook: self.fulfillment_code_hook,
+            intent_confirmation_setting: self.intent_confirmation_setting,
+            intent_closing_setting: self.intent_closing_setting,
+            input_contexts: self.input_contexts,
+            output_contexts: self.output_contexts,
+            kendra_configuration: self.kendra_configuration,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            initial_response_setting: self.initial_response_setting,
+        })
     }
 }
-

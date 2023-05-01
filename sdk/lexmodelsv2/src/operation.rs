@@ -213,4 +213,3 @@ pub mod update_slot;
 
 /// Types for the `UpdateSlotType` operation.
 pub mod update_slot_type;
-

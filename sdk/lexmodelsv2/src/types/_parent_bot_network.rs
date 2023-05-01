@@ -3,7 +3,7 @@
 /// <p>A network of bots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParentBotNetwork  {
+pub struct ParentBotNetwork {
     /// <p>The identifier of the network of bots assigned by Amazon Lex.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ParentBotNetwork  {
 }
 impl ParentBotNetwork {
     /// <p>The identifier of the network of bots assigned by Amazon Lex.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the network of bots.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ParentBotNetworkBuilder {
     }
     /// <p>The identifier of the network of bots assigned by Amazon Lex.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The version of the network of bots.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ParentBotNetworkBuilder {
     }
     /// <p>The version of the network of bots.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParentBotNetwork`](crate::types::ParentBotNetwork).
     pub fn build(self) -> crate::types::ParentBotNetwork {
         crate::types::ParentBotNetwork {
-            bot_id: self.bot_id
-            ,
-            bot_version: self.bot_version
-            ,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Settings that determine the Lambda function that Amazon Lex uses for processing user responses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DialogCodeHookSettings  {
+pub struct DialogCodeHookSettings {
     /// <p>Enables the dialog code hook so that it processes user requests.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -35,15 +35,13 @@ impl DialogCodeHookSettingsBuilder {
     }
     /// <p>Enables the dialog code hook so that it processes user requests.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`DialogCodeHookSettings`](crate::types::DialogCodeHookSettings).
     pub fn build(self) -> crate::types::DialogCodeHookSettings {
         crate::types::DialogCodeHookSettings {
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
+            enabled: self.enabled.unwrap_or_default(),
         }
     }
 }
-

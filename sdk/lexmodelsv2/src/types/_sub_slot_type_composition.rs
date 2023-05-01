@@ -3,7 +3,7 @@
 /// <p>Subslot type composition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubSlotTypeComposition  {
+pub struct SubSlotTypeComposition {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SubSlotTypeComposition  {
 }
 impl SubSlotTypeComposition {
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
-    pub fn slot_type_id(&self) -> std::option::Option<& str> {
+    pub fn slot_type_id(&self) -> std::option::Option<&str> {
         self.slot_type_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl SubSlotTypeCompositionBuilder {
     }
     /// <p>Name of a constituent sub slot inside a composite slot.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
     pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl SubSlotTypeCompositionBuilder {
     }
     /// <p>The unique identifier assigned to a slot type. This refers to either a built-in slot type or the unique slotTypeId of a custom slot type.</p>
     pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.slot_type_id = input; self
+        self.slot_type_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`SubSlotTypeComposition`](crate::types::SubSlotTypeComposition).
     pub fn build(self) -> crate::types::SubSlotTypeComposition {
         crate::types::SubSlotTypeComposition {
-            name: self.name
-            ,
-            slot_type_id: self.slot_type_id
-            ,
+            name: self.name,
+            slot_type_id: self.slot_type_id,
         }
     }
 }
-

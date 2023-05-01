@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBotVersionInput  {
+pub struct DeleteBotVersionInput {
     /// <p>The identifier of the bot that contains the version.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteBotVersionInput  {
 }
 impl DeleteBotVersionInput {
     /// <p>The identifier of the bot that contains the version.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot to delete.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is being used by another resource.</p>
@@ -29,7 +29,8 @@ impl DeleteBotVersionInput {
 }
 impl DeleteBotVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteBotVersionInput`](crate::operation::delete_bot_version::DeleteBotVersionInput).
-    pub fn builder() -> crate::operation::delete_bot_version::builders::DeleteBotVersionInputBuilder {
+    pub fn builder() -> crate::operation::delete_bot_version::builders::DeleteBotVersionInputBuilder
+    {
         crate::operation::delete_bot_version::builders::DeleteBotVersionInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DeleteBotVersionInputBuilder {
     }
     /// <p>The identifier of the bot that contains the version.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The version of the bot to delete.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl DeleteBotVersionInputBuilder {
     }
     /// <p>The version of the bot to delete.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// <p>By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is being used by another resource.</p>
     pub fn skip_resource_in_use_check(mut self, input: bool) -> Self {
@@ -68,21 +71,22 @@ impl DeleteBotVersionInputBuilder {
     }
     /// <p>By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is being used by another resource.</p>
     pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
-        self.skip_resource_in_use_check = input; self
+        self.skip_resource_in_use_check = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBotVersionInput`](crate::operation::delete_bot_version::DeleteBotVersionInput).
-    pub fn build(self) -> Result<crate::operation::delete_bot_version::DeleteBotVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_bot_version::DeleteBotVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_bot_version::DeleteBotVersionInput {
-                bot_id: self.bot_id
-                ,
-                bot_version: self.bot_version
-                ,
-                skip_resource_in_use_check: self.skip_resource_in_use_check
-                    .unwrap_or_default()
-                ,
-            }
+                bot_id: self.bot_id,
+                bot_version: self.bot_version,
+                skip_resource_in_use_check: self.skip_resource_in_use_check.unwrap_or_default(),
+            },
         )
     }
 }
-

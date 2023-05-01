@@ -4,4 +4,5 @@ allowed_external_types = [
 
     "http::request::Request",
     "http::response::Response",
+    "http::uri::Uri",
 ]

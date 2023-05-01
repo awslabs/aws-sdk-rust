@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateExportInput  {
+pub struct UpdateExportInput {
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct UpdateExportInput  {
 }
 impl UpdateExportInput {
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
-    pub fn export_id(&self) -> std::option::Option<& str> {
+    pub fn export_id(&self) -> std::option::Option<&str> {
         self.export_id.as_deref()
     }
     /// <p>The new password to use to encrypt the export zip archive.</p>
-    pub fn file_password(&self) -> std::option::Option<& str> {
+    pub fn file_password(&self) -> std::option::Option<&str> {
         self.file_password.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateExportInput  {
+impl std::fmt::Debug for UpdateExportInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateExportInput");
         formatter.field("export_id", &self.export_id);
@@ -50,7 +50,8 @@ impl UpdateExportInputBuilder {
     }
     /// <p>The unique identifier Amazon Lex assigned to the export.</p>
     pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_id = input; self
+        self.export_id = input;
+        self
     }
     /// <p>The new password to use to encrypt the export zip archive.</p>
     pub fn file_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,18 +60,20 @@ impl UpdateExportInputBuilder {
     }
     /// <p>The new password to use to encrypt the export zip archive.</p>
     pub fn set_file_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_password = input; self
+        self.file_password = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateExportInput`](crate::operation::update_export::UpdateExportInput).
-    pub fn build(self) -> Result<crate::operation::update_export::UpdateExportInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_export::UpdateExportInput {
-                export_id: self.export_id
-                ,
-                file_password: self.file_password
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_export::UpdateExportInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_export::UpdateExportInput {
+            export_id: self.export_id,
+            file_password: self.file_password,
+        })
     }
 }
 impl std::fmt::Debug for UpdateExportInputBuilder {
@@ -81,4 +84,3 @@ impl std::fmt::Debug for UpdateExportInputBuilder {
         formatter.finish()
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFrameworkInput  {
+pub struct DescribeFrameworkInput {
     /// <p>The unique name of a framework.</p>
     #[doc(hidden)]
     pub framework_name: std::option::Option<std::string::String>,
 }
 impl DescribeFrameworkInput {
     /// <p>The unique name of a framework.</p>
-    pub fn framework_name(&self) -> std::option::Option<& str> {
+    pub fn framework_name(&self) -> std::option::Option<&str> {
         self.framework_name.as_deref()
     }
 }
 impl DescribeFrameworkInput {
     /// Creates a new builder-style object to manufacture [`DescribeFrameworkInput`](crate::operation::describe_framework::DescribeFrameworkInput).
-    pub fn builder() -> crate::operation::describe_framework::builders::DescribeFrameworkInputBuilder {
+    pub fn builder() -> crate::operation::describe_framework::builders::DescribeFrameworkInputBuilder
+    {
         crate::operation::describe_framework::builders::DescribeFrameworkInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeFrameworkInputBuilder {
     }
     /// <p>The unique name of a framework.</p>
     pub fn set_framework_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.framework_name = input; self
+        self.framework_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeFrameworkInput`](crate::operation::describe_framework::DescribeFrameworkInput).
-    pub fn build(self) -> Result<crate::operation::describe_framework::DescribeFrameworkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_framework::DescribeFrameworkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_framework::DescribeFrameworkInput {
-                framework_name: self.framework_name
-                ,
-            }
+                framework_name: self.framework_name,
+            },
         )
     }
 }
-

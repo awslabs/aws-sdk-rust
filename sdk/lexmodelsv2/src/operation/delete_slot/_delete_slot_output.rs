@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSlotOutput  {
+pub struct DeleteSlotOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteSlotOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteSlotOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSlotOutput`](crate::operation::delete_slot::DeleteSlotOutput).
     pub fn builder() -> crate::operation::delete_slot::builders::DeleteSlotOutputBuilder {
@@ -25,14 +25,14 @@ pub struct DeleteSlotOutputBuilder {
 }
 impl DeleteSlotOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteSlotOutput`](crate::operation::delete_slot::DeleteSlotOutput).
     pub fn build(self) -> crate::operation::delete_slot::DeleteSlotOutput {
         crate::operation::delete_slot::DeleteSlotOutput {
@@ -40,4 +40,3 @@ impl DeleteSlotOutputBuilder {
         }
     }
 }
-

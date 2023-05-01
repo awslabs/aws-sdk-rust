@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBotLocaleOutput  {
+pub struct UpdateBotLocaleOutput {
     /// <p>The identifier of the bot that contains the updated locale.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -43,23 +43,23 @@ pub struct UpdateBotLocaleOutput  {
 }
 impl UpdateBotLocaleOutput {
     /// <p>The identifier of the bot that contains the updated locale.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot that contains the updated locale.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>The language and locale of the updated bot locale.</p>
-    pub fn locale_id(&self) -> std::option::Option<& str> {
+    pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
     /// <p>The updated locale name for the locale.</p>
-    pub fn locale_name(&self) -> std::option::Option<& str> {
+    pub fn locale_name(&self) -> std::option::Option<&str> {
         self.locale_name.as_deref()
     }
     /// <p>The updated description of the locale.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The updated confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
@@ -67,38 +67,39 @@ impl UpdateBotLocaleOutput {
         self.nlu_intent_confidence_threshold
     }
     /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
-    pub fn voice_settings(&self) -> std::option::Option<& crate::types::VoiceSettings> {
+    pub fn voice_settings(&self) -> std::option::Option<&crate::types::VoiceSettings> {
         self.voice_settings.as_ref()
     }
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
-    pub fn bot_locale_status(&self) -> std::option::Option<& crate::types::BotLocaleStatus> {
+    pub fn bot_locale_status(&self) -> std::option::Option<&crate::types::BotLocaleStatus> {
         self.bot_locale_status.as_ref()
     }
     /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
-    pub fn failure_reasons(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn failure_reasons(&self) -> std::option::Option<&[std::string::String]> {
         self.failure_reasons.as_deref()
     }
     /// <p>A timestamp of the date and time that the locale was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A timestamp of the date and time that the locale was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn recommended_actions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn recommended_actions(&self) -> std::option::Option<&[std::string::String]> {
         self.recommended_actions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateBotLocaleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateBotLocaleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBotLocaleOutput`](crate::operation::update_bot_locale::UpdateBotLocaleOutput).
-    pub fn builder() -> crate::operation::update_bot_locale::builders::UpdateBotLocaleOutputBuilder {
+    pub fn builder() -> crate::operation::update_bot_locale::builders::UpdateBotLocaleOutputBuilder
+    {
         crate::operation::update_bot_locale::builders::UpdateBotLocaleOutputBuilder::default()
     }
 }
@@ -129,7 +130,8 @@ impl UpdateBotLocaleOutputBuilder {
     }
     /// <p>The identifier of the bot that contains the updated locale.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The version of the bot that contains the updated locale.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,7 +140,8 @@ impl UpdateBotLocaleOutputBuilder {
     }
     /// <p>The version of the bot that contains the updated locale.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// <p>The language and locale of the updated bot locale.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,7 +150,8 @@ impl UpdateBotLocaleOutputBuilder {
     }
     /// <p>The language and locale of the updated bot locale.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input; self
+        self.locale_id = input;
+        self
     }
     /// <p>The updated locale name for the locale.</p>
     pub fn locale_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,7 +160,8 @@ impl UpdateBotLocaleOutputBuilder {
     }
     /// <p>The updated locale name for the locale.</p>
     pub fn set_locale_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_name = input; self
+        self.locale_name = input;
+        self
     }
     /// <p>The updated description of the locale.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,7 +170,8 @@ impl UpdateBotLocaleOutputBuilder {
     }
     /// <p>The updated description of the locale.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The updated confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
     pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
@@ -174,7 +180,8 @@ impl UpdateBotLocaleOutputBuilder {
     }
     /// <p>The updated confidence threshold for inserting the <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents for an utterance.</p>
     pub fn set_nlu_intent_confidence_threshold(mut self, input: std::option::Option<f64>) -> Self {
-        self.nlu_intent_confidence_threshold = input; self
+        self.nlu_intent_confidence_threshold = input;
+        self
     }
     /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
     pub fn voice_settings(mut self, input: crate::types::VoiceSettings) -> Self {
@@ -182,8 +189,12 @@ impl UpdateBotLocaleOutputBuilder {
         self
     }
     /// <p>The updated Amazon Polly voice to use for voice interaction with the user.</p>
-    pub fn set_voice_settings(mut self, input: std::option::Option<crate::types::VoiceSettings>) -> Self {
-        self.voice_settings = input; self
+    pub fn set_voice_settings(
+        mut self,
+        input: std::option::Option<crate::types::VoiceSettings>,
+    ) -> Self {
+        self.voice_settings = input;
+        self
     }
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
     pub fn bot_locale_status(mut self, input: crate::types::BotLocaleStatus) -> Self {
@@ -191,8 +202,12 @@ impl UpdateBotLocaleOutputBuilder {
         self
     }
     /// <p>The current status of the locale. When the bot status is <code>Built</code> the locale is ready for use.</p>
-    pub fn set_bot_locale_status(mut self, input: std::option::Option<crate::types::BotLocaleStatus>) -> Self {
-        self.bot_locale_status = input; self
+    pub fn set_bot_locale_status(
+        mut self,
+        input: std::option::Option<crate::types::BotLocaleStatus>,
+    ) -> Self {
+        self.bot_locale_status = input;
+        self
     }
     /// Appends an item to `failure_reasons`.
     ///
@@ -201,13 +216,17 @@ impl UpdateBotLocaleOutputBuilder {
     /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
     pub fn failure_reasons(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.failure_reasons.unwrap_or_default();
-                        v.push(input.into());
-                        self.failure_reasons = Some(v);
-                        self
+        v.push(input.into());
+        self.failure_reasons = Some(v);
+        self
     }
     /// <p>If the <code>botLocaleStatus</code> is <code>Failed</code>, the <code>failureReasons</code> field lists the errors that occurred while building the bot.</p>
-    pub fn set_failure_reasons(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.failure_reasons = input; self
+    pub fn set_failure_reasons(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.failure_reasons = input;
+        self
     }
     /// <p>A timestamp of the date and time that the locale was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -215,8 +234,12 @@ impl UpdateBotLocaleOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the locale was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>A timestamp of the date and time that the locale was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -224,8 +247,12 @@ impl UpdateBotLocaleOutputBuilder {
         self
     }
     /// <p>A timestamp of the date and time that the locale was last updated.</p>
-    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input; self
+    pub fn set_last_updated_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_date_time = input;
+        self
     }
     /// Appends an item to `recommended_actions`.
     ///
@@ -234,52 +261,43 @@ impl UpdateBotLocaleOutputBuilder {
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
     pub fn recommended_actions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.recommended_actions.unwrap_or_default();
-                        v.push(input.into());
-                        self.recommended_actions = Some(v);
-                        self
+        v.push(input.into());
+        self.recommended_actions = Some(v);
+        self
     }
     /// <p>Recommended actions to take to resolve an error in the <code>failureReasons</code> field.</p>
-    pub fn set_recommended_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.recommended_actions = input; self
+    pub fn set_recommended_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.recommended_actions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateBotLocaleOutput`](crate::operation::update_bot_locale::UpdateBotLocaleOutput).
     pub fn build(self) -> crate::operation::update_bot_locale::UpdateBotLocaleOutput {
         crate::operation::update_bot_locale::UpdateBotLocaleOutput {
-            bot_id: self.bot_id
-            ,
-            bot_version: self.bot_version
-            ,
-            locale_id: self.locale_id
-            ,
-            locale_name: self.locale_name
-            ,
-            description: self.description
-            ,
-            nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold
-            ,
-            voice_settings: self.voice_settings
-            ,
-            bot_locale_status: self.bot_locale_status
-            ,
-            failure_reasons: self.failure_reasons
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            last_updated_date_time: self.last_updated_date_time
-            ,
-            recommended_actions: self.recommended_actions
-            ,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            locale_name: self.locale_name,
+            description: self.description,
+            nlu_intent_confidence_threshold: self.nlu_intent_confidence_threshold,
+            voice_settings: self.voice_settings,
+            bot_locale_status: self.bot_locale_status,
+            failure_reasons: self.failure_reasons,
+            creation_date_time: self.creation_date_time,
+            last_updated_date_time: self.last_updated_date_time,
+            recommended_actions: self.recommended_actions,
             _request_id: self._request_id,
         }
     }
 }
-

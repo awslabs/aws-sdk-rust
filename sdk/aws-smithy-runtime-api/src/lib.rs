@@ -9,6 +9,7 @@
     unreachable_pub,
     rust_2018_idioms
 )]
+#![allow(clippy::new_without_default)]
 
 //! Basic types for the new smithy client orchestrator.
 
