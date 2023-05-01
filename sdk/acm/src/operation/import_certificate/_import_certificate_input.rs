@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportCertificateInput {
+pub struct ImportCertificateInput  {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
@@ -15,35 +15,35 @@ pub struct ImportCertificateInput {
     /// <p>The PEM encoded certificate chain.</p>
     #[doc(hidden)]
     pub certificate_chain: std::option::Option<aws_smithy_types::Blob>,
-    /// <p>One or more resource tags to associate with the imported certificate. </p>
+    /// <p>One or more resource tags to associate with the imported certificate. </p> 
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl ImportCertificateInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> std::option::Option<& str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The certificate to import.</p>
-    pub fn certificate(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn certificate(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.certificate.as_ref()
     }
     /// <p>The private key that matches the public key in the certificate.</p>
-    pub fn private_key(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn private_key(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.private_key.as_ref()
     }
     /// <p>The PEM encoded certificate chain.</p>
-    pub fn certificate_chain(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn certificate_chain(&self) -> std::option::Option<& aws_smithy_types::Blob> {
         self.certificate_chain.as_ref()
     }
-    /// <p>One or more resource tags to associate with the imported certificate. </p>
+    /// <p>One or more resource tags to associate with the imported certificate. </p> 
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl std::fmt::Debug for ImportCertificateInput {
+impl  std::fmt::Debug for ImportCertificateInput  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportCertificateInput");
         formatter.field("certificate_arn", &self.certificate_arn);
@@ -56,8 +56,7 @@ impl std::fmt::Debug for ImportCertificateInput {
 }
 impl ImportCertificateInput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
-    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateInputBuilder
-    {
+    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateInputBuilder {
         crate::operation::import_certificate::builders::ImportCertificateInputBuilder::default()
     }
 }
@@ -80,8 +79,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this field. </p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input;
-        self
+        self.certificate_arn = input; self
     }
     /// <p>The certificate to import.</p>
     pub fn certificate(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -90,8 +88,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>The certificate to import.</p>
     pub fn set_certificate(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.certificate = input;
-        self
+        self.certificate = input; self
     }
     /// <p>The private key that matches the public key in the certificate.</p>
     pub fn private_key(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -100,8 +97,7 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>The private key that matches the public key in the certificate.</p>
     pub fn set_private_key(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.private_key = input;
-        self
+        self.private_key = input; self
     }
     /// <p>The PEM encoded certificate chain.</p>
     pub fn certificate_chain(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -109,49 +105,41 @@ impl ImportCertificateInputBuilder {
         self
     }
     /// <p>The PEM encoded certificate chain.</p>
-    pub fn set_certificate_chain(
-        mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
-    ) -> Self {
-        self.certificate_chain = input;
-        self
+    pub fn set_certificate_chain(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+        self.certificate_chain = input; self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more resource tags to associate with the imported certificate. </p>
+    /// <p>One or more resource tags to associate with the imported certificate. </p> 
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = Some(v);
-        self
+                        v.push(input);
+                        self.tags = Some(v);
+                        self
     }
-    /// <p>One or more resource tags to associate with the imported certificate. </p>
+    /// <p>One or more resource tags to associate with the imported certificate. </p> 
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
-    pub fn set_tags(
-        mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    ) -> Self {
-        self.tags = input;
-        self
+    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input; self
     }
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
-    pub fn build(
-        self,
-    ) -> Result<
-        crate::operation::import_certificate::ImportCertificateInput,
-        aws_smithy_http::operation::error::BuildError,
-    > {
+    pub fn build(self) -> Result<crate::operation::import_certificate::ImportCertificateInput, aws_smithy_http::operation::error::BuildError> {
         Ok(
             crate::operation::import_certificate::ImportCertificateInput {
-                certificate_arn: self.certificate_arn,
-                certificate: self.certificate,
-                private_key: self.private_key,
-                certificate_chain: self.certificate_chain,
-                tags: self.tags,
-            },
+                certificate_arn: self.certificate_arn
+                ,
+                certificate: self.certificate
+                ,
+                private_key: self.private_key
+                ,
+                certificate_chain: self.certificate_chain
+                ,
+                tags: self.tags
+                ,
+            }
         )
     }
 }
@@ -166,3 +154,4 @@ impl std::fmt::Debug for ImportCertificateInputBuilder {
         formatter.finish()
     }
 }
+
