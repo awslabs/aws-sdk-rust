@@ -71,8 +71,6 @@ pub(crate) mod shape_synthesis_task_not_found_exception;
 
 pub(crate) mod shape_synthesize_speech_input;
 
-pub(crate) mod shape_synthesize_speech_output;
-
 pub(crate) mod shape_text_length_exceeded_exception;
 
 pub(crate) mod shape_unsupported_pls_alphabet_exception;
@@ -88,6 +86,8 @@ pub(crate) mod shape_lexicon_description_list;
 pub(crate) mod shape_synthesis_task;
 
 pub(crate) mod shape_synthesis_tasks;
+
+pub(crate) mod shape_synthesize_speech_output;
 
 pub(crate) mod shape_voice_list;
 

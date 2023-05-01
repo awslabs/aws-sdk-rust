@@ -41,13 +41,9 @@ pub(crate) mod shape_not_acceptable_exception;
 
 pub(crate) mod shape_not_found_exception;
 
-pub(crate) mod shape_post_content_output;
-
 pub(crate) mod shape_post_text_input;
 
 pub(crate) mod shape_put_session_input;
-
-pub(crate) mod shape_put_session_output;
 
 pub(crate) mod shape_request_timeout_exception;
 
@@ -66,6 +62,10 @@ pub(crate) mod shape_intent_list;
 pub(crate) mod shape_intent_summary;
 
 pub(crate) mod shape_intent_summary_list;
+
+pub(crate) mod shape_post_content_output;
+
+pub(crate) mod shape_put_session_output;
 
 pub(crate) mod shape_response_card;
 

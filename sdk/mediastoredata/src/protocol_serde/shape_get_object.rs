@@ -21,51 +21,10 @@ pub fn ser_get_object_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_object_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
+pub fn de_get_object_op_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
-    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
-                        std::mem::swap(&mut _response_body, response.body_mut());
-                        let _response_body = &mut _response_body;
-    
-                        let _response_status = response.status().as_u16();
-                        let _response_headers = response.headers();
-    Ok({
-        #[allow(unused_mut)]
-        let mut output = crate::operation::get_object::builders::GetObjectOutputBuilder::default();
-        output = output.set_body(
-            Some(crate::protocol_serde::shape_get_object_output::de_body_payload(_response_body)?)
-        );
-        output = output.set_cache_control(
-            crate::protocol_serde::shape_get_object_output::de_cache_control_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse CacheControl from header `Cache-Control"))?
-        );
-        output = output.set_content_length(
-            crate::protocol_serde::shape_get_object_output::de_content_length_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentLength from header `Content-Length"))?
-        );
-        output = output.set_content_range(
-            crate::protocol_serde::shape_get_object_output::de_content_range_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentRange from header `Content-Range"))?
-        );
-        output = output.set_content_type(
-            crate::protocol_serde::shape_get_object_output::de_content_type_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentType from header `Content-Type"))?
-        );
-        output = output.set_e_tag(
-            crate::protocol_serde::shape_get_object_output::de_e_tag_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse ETag from header `ETag"))?
-        );
-        output = output.set_last_modified(
-            crate::protocol_serde::shape_get_object_output::de_last_modified_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse LastModified from header `Last-Modified"))?
-        );
-        output = output.set_status_code(
-            Some(_response_status as _)
-        );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
-    })
+    crate::protocol_serde::shape_get_object::de_get_object_http_response_with_props(response, &properties)
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -146,6 +105,53 @@ pub fn de_get_object_http_error(_response_status: u16, _response_headers: &http:
             tmp
         }),
         _ => crate::operation::get_object::GetObjectError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+#[allow(unused_variables)]
+pub fn de_get_object_http_response_with_props(response: &mut http::Response<aws_smithy_http::body::SdkBody>, properties: &aws_smithy_http::property_bag::PropertyBag) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
+    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
+                        std::mem::swap(&mut _response_body, response.body_mut());
+                        let _response_body = &mut _response_body;
+    
+                        let _response_status = response.status().as_u16();
+                        let _response_headers = response.headers();
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::operation::get_object::builders::GetObjectOutputBuilder::default();
+        output = output.set_body(
+            Some(crate::protocol_serde::shape_get_object_output::de_body_payload(_response_body)?)
+        );
+        output = output.set_cache_control(
+            crate::protocol_serde::shape_get_object_output::de_cache_control_header(_response_headers)
+                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse CacheControl from header `Cache-Control"))?
+        );
+        output = output.set_content_length(
+            crate::protocol_serde::shape_get_object_output::de_content_length_header(_response_headers)
+                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentLength from header `Content-Length"))?
+        );
+        output = output.set_content_range(
+            crate::protocol_serde::shape_get_object_output::de_content_range_header(_response_headers)
+                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentRange from header `Content-Range"))?
+        );
+        output = output.set_content_type(
+            crate::protocol_serde::shape_get_object_output::de_content_type_header(_response_headers)
+                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+        );
+        output = output.set_e_tag(
+            crate::protocol_serde::shape_get_object_output::de_e_tag_header(_response_headers)
+                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse ETag from header `ETag"))?
+        );
+        output = output.set_last_modified(
+            crate::protocol_serde::shape_get_object_output::de_last_modified_header(_response_headers)
+                                    .map_err(|_|crate::operation::get_object::GetObjectError::unhandled("Failed to parse LastModified from header `Last-Modified"))?
+        );
+        output = output.set_status_code(
+            Some(_response_status as _)
+        );
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output.build()
     })
 }
 

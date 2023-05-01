@@ -29,6 +29,8 @@ pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_service_unavailable_exception;
 
+pub(crate) mod shape_configuration_event;
+
 pub(crate) mod shape_start_call_analytics_stream_transcription_output;
 
 pub(crate) mod shape_start_medical_stream_transcription_output;
@@ -40,15 +42,13 @@ pub fn parse_event_stream_error_metadata(payload: &bytes::Bytes) -> Result<aws_s
                     crate::json_errors::parse_error_metadata(payload, &http::HeaderMap::new())
                 }
 
-pub(crate) mod shape_configuration_event;
+pub(crate) mod shape_channel_definition;
+
+pub(crate) mod shape_post_call_analytics_settings;
 
 pub(crate) mod shape_category_event;
 
-pub(crate) mod shape_channel_definition;
-
 pub(crate) mod shape_medical_transcript_event;
-
-pub(crate) mod shape_post_call_analytics_settings;
 
 pub(crate) mod shape_transcript_event;
 

@@ -161,9 +161,65 @@ pub fn ser_get_object_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_object_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
+pub fn de_get_object_op_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
+    crate::protocol_serde::shape_get_object::de_get_object_http_response_with_props(response, &properties)
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn de_get_object_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_object::GetObjectError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    let generic = generic_builder.build();
+    let error_code = match generic.code() {
+                                Some(code) => code,
+                                None => return Err(crate::operation::get_object::GetObjectError::unhandled(generic))
+                            };
+    
+                            let _error_message = generic.message().map(|msg|msg.to_owned());
+    Err(match error_code {
+        "InvalidObjectState" => crate::operation::get_object::GetObjectError::InvalidObjectState({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidObjectStateBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_object_state::de_invalid_object_state_xml_err(_response_body, output).map_err(crate::operation::get_object::GetObjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        "NoSuchKey" => crate::operation::get_object::GetObjectError::NoSuchKey({
+            #[allow(unused_mut)]
+            let mut tmp =
+                 {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::NoSuchKeyBuilder::default();
+                    output = crate::protocol_serde::shape_no_such_key::de_no_such_key_xml_err(_response_body, output).map_err(crate::operation::get_object::GetObjectError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                }
+            ;
+            if tmp.message.is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        }),
+        _ => crate::operation::get_object::GetObjectError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+#[allow(unused_variables)]
+pub fn de_get_object_http_response_with_props(response: &mut http::Response<aws_smithy_http::body::SdkBody>, properties: &aws_smithy_http::property_bag::PropertyBag) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
     let mut _response_body = aws_smithy_http::body::SdkBody::taken();
                         std::mem::swap(&mut _response_body, response.body_mut());
                         let _response_body = &mut _response_body;
@@ -344,56 +400,6 @@ pub fn de_get_object_http_response_(op_response: &mut aws_smithy_http::operation
                                     }
                                 }
         output.build()
-    })
-}
-
-#[allow(clippy::unnecessary_wraps)]
-pub fn de_get_object_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError> {
-    #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_object::GetObjectError::unhandled)?;
-    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
-    let generic = generic_builder.build();
-    let error_code = match generic.code() {
-                                Some(code) => code,
-                                None => return Err(crate::operation::get_object::GetObjectError::unhandled(generic))
-                            };
-    
-                            let _error_message = generic.message().map(|msg|msg.to_owned());
-    Err(match error_code {
-        "InvalidObjectState" => crate::operation::get_object::GetObjectError::InvalidObjectState({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::InvalidObjectStateBuilder::default();
-                    output = crate::protocol_serde::shape_invalid_object_state::de_invalid_object_state_xml_err(_response_body, output).map_err(crate::operation::get_object::GetObjectError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        "NoSuchKey" => crate::operation::get_object::GetObjectError::NoSuchKey({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::types::error::builders::NoSuchKeyBuilder::default();
-                    output = crate::protocol_serde::shape_no_such_key::de_no_such_key_xml_err(_response_body, output).map_err(crate::operation::get_object::GetObjectError::unhandled)?;
-                    let output = output.meta(generic);
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        }),
-        _ => crate::operation::get_object::GetObjectError::generic(generic)
     })
 }
 

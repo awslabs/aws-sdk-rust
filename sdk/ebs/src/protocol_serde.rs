@@ -31,8 +31,6 @@ pub(crate) mod shape_concurrent_limit_exceeded_exception;
 
 pub(crate) mod shape_conflict_exception;
 
-pub(crate) mod shape_get_snapshot_block_output;
-
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_put_snapshot_block_output;
@@ -50,6 +48,8 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_blocks;
 
 pub(crate) mod shape_changed_blocks;
+
+pub(crate) mod shape_get_snapshot_block_output;
 
 pub(crate) mod shape_tag;
 

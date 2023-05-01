@@ -76,6 +76,33 @@ impl<T: 'static> DerefMut for TypedBox<T> {
     }
 }
 
+#[derive(Debug)]
+pub struct TypedRef<'a, T> {
+    inner: &'a TypeErasedBox,
+    _phantom: PhantomData<T>,
+}
+
+impl<'a, T: 'static> TypedRef<'a, T> {
+    pub fn assume_from(type_erased: &'a TypeErasedBox) -> Option<TypedRef<'a, T>> {
+        if type_erased.downcast_ref::<T>().is_some() {
+            Some(TypedRef {
+                inner: type_erased,
+                _phantom: Default::default(),
+            })
+        } else {
+            None
+        }
+    }
+}
+
+impl<'a, T: 'static> Deref for TypedRef<'a, T> {
+    type Target = T;
+
+    fn deref(&self) -> &Self::Target {
+        self.inner.downcast_ref().expect("type checked")
+    }
+}
+
 /// A new-type around `Box<dyn Any + Send + Sync>`
 #[derive(Debug)]
 pub struct TypeErasedBox {

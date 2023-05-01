@@ -7,8 +7,6 @@ pub fn parse_http_error_metadata(_response_status: u16, response_headers: &http:
 
 pub(crate) mod shape_put_raw_message_content;
 
-pub(crate) mod shape_get_raw_message_content_output;
-
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
                 if data.is_empty() {
                     b"{}"
@@ -26,6 +24,8 @@ pub(crate) mod shape_message_rejected;
 pub(crate) mod shape_put_raw_message_content_input;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_get_raw_message_content_output;
 
 pub(crate) mod shape_raw_message_content;
 

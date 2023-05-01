@@ -27,8 +27,6 @@ pub(crate) mod shape_client_limit_exceeded_exception;
 
 pub(crate) mod shape_get_clip_input;
 
-pub(crate) mod shape_get_clip_output;
-
 pub(crate) mod shape_get_dash_streaming_session_url_input;
 
 pub(crate) mod shape_get_hls_streaming_session_url_input;
@@ -36,8 +34,6 @@ pub(crate) mod shape_get_hls_streaming_session_url_input;
 pub(crate) mod shape_get_images_input;
 
 pub(crate) mod shape_get_media_for_fragment_list_input;
-
-pub(crate) mod shape_get_media_for_fragment_list_output;
 
 pub(crate) mod shape_invalid_argument_exception;
 
@@ -64,6 +60,10 @@ pub(crate) mod shape_dash_fragment_selector;
 pub(crate) mod shape_fragment_list;
 
 pub(crate) mod shape_fragment_selector;
+
+pub(crate) mod shape_get_clip_output;
+
+pub(crate) mod shape_get_media_for_fragment_list_output;
 
 pub(crate) mod shape_hls_fragment_selector;
 

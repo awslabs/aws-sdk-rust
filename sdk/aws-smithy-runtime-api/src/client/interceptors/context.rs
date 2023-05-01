@@ -13,7 +13,7 @@ pub type OutputOrError = Result<Output, Error>;
 
 /// A container for the data currently available to an interceptor.
 pub struct InterceptorContext<Request, Response> {
-    input: Input,
+    input: Option<Input>,
     output_or_error: Option<OutputOrError>,
     request: Option<Request>,
     response: Option<Response>,
@@ -24,21 +24,30 @@ pub struct InterceptorContext<Request, Response> {
 impl<Request, Response> InterceptorContext<Request, Response> {
     pub fn new(input: Input) -> Self {
         Self {
-            input,
+            input: Some(input),
             output_or_error: None,
             request: None,
             response: None,
         }
     }
 
-    /// Retrieve the modeled request for the operation being invoked.
-    pub fn input(&self) -> &Input {
-        &self.input
+    /// Retrieve the input for the operation being invoked.
+    pub fn input(&self) -> Result<&Input, InterceptorError> {
+        self.input
+            .as_ref()
+            .ok_or_else(InterceptorError::invalid_input_access)
     }
 
-    /// Retrieve the modeled request for the operation being invoked.
-    pub fn input_mut(&mut self) -> &mut Input {
-        &mut self.input
+    /// Retrieve the input for the operation being invoked.
+    pub fn input_mut(&mut self) -> Result<&mut Input, InterceptorError> {
+        self.input
+            .as_mut()
+            .ok_or_else(InterceptorError::invalid_input_access)
+    }
+
+    /// Takes ownership of the input.
+    pub fn take_input(&mut self) -> Option<Input> {
+        self.input.take()
     }
 
     /// Retrieve the transmittable request for the operation being invoked.
@@ -80,7 +89,7 @@ impl<Request, Response> InterceptorContext<Request, Response> {
     pub fn output_or_error(&self) -> Result<Result<&Output, &Error>, InterceptorError> {
         self.output_or_error
             .as_ref()
-            .ok_or_else(InterceptorError::invalid_modeled_response_access)
+            .ok_or_else(InterceptorError::invalid_output_access)
             .map(|res| res.as_ref())
     }
 
@@ -90,10 +99,10 @@ impl<Request, Response> InterceptorContext<Request, Response> {
     pub fn output_or_error_mut(&mut self) -> Result<&mut Result<Output, Error>, InterceptorError> {
         self.output_or_error
             .as_mut()
-            .ok_or_else(InterceptorError::invalid_modeled_response_access)
+            .ok_or_else(InterceptorError::invalid_output_access)
     }
 
-    // There is no set_modeled_request method because that can only be set once, during context construction
+    // There is no set_input method because that can only be set once, during context construction
 
     pub fn set_request(&mut self, request: Request) {
         if self.request.is_some() {
@@ -125,7 +134,7 @@ impl<Request, Response> InterceptorContext<Request, Response> {
     pub fn into_parts(
         self,
     ) -> (
-        Input,
+        Option<Input>,
         Option<OutputOrError>,
         Option<Request>,
         Option<Response>,

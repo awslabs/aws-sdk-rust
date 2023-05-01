@@ -161,10 +161,6 @@ pub(crate) mod shape_create_variant_store_input;
 
 pub(crate) mod shape_create_workflow_input;
 
-pub(crate) mod shape_get_read_set_output;
-
-pub(crate) mod shape_get_reference_output;
-
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_annotation_import_jobs_input;
@@ -250,6 +246,10 @@ pub(crate) mod shape_export_read_set_filter;
 pub(crate) mod shape_export_read_set_job_detail_list;
 
 pub(crate) mod shape_format_options;
+
+pub(crate) mod shape_get_read_set_output;
+
+pub(crate) mod shape_get_reference_output;
 
 pub(crate) mod shape_import_read_set_filter;
 

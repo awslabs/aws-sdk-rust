@@ -311,13 +311,9 @@ pub(crate) mod shape_get_object_legal_hold_output;
 
 pub(crate) mod shape_get_object_lock_configuration_output;
 
-pub(crate) mod shape_get_object_output;
-
 pub(crate) mod shape_get_object_retention_output;
 
 pub(crate) mod shape_get_object_tagging_output;
-
-pub(crate) mod shape_get_object_torrent_output;
 
 pub(crate) mod shape_get_public_access_block_output;
 
@@ -355,15 +351,9 @@ pub(crate) mod shape_restore_object_output;
 
 pub(crate) mod shape_select_object_content_input;
 
-pub(crate) mod shape_select_object_content_output;
-
 pub(crate) mod shape_upload_part_copy_output;
 
 pub(crate) mod shape_upload_part_output;
-
-pub fn parse_event_stream_error_metadata(payload: &bytes::Bytes) -> Result<aws_smithy_types::error::metadata::Builder, aws_smithy_xml::decode::XmlDecodeError> {
-    crate::rest_xml_unwrapped_errors::parse_error_metadata(payload.as_ref())
-}
 
 pub(crate) mod shape_accelerate_configuration;
 
@@ -402,6 +392,10 @@ pub(crate) mod shape_error_document;
 pub(crate) mod shape_event_bridge_configuration;
 
 pub(crate) mod shape_get_object_attributes_parts;
+
+pub(crate) mod shape_get_object_output;
+
+pub(crate) mod shape_get_object_torrent_output;
 
 pub(crate) mod shape_grants;
 
@@ -463,6 +457,8 @@ pub(crate) mod shape_routing_rules;
 
 pub(crate) mod shape_scan_range;
 
+pub(crate) mod shape_select_object_content_output;
+
 pub(crate) mod shape_server_side_encryption_configuration;
 
 pub(crate) mod shape_tag_set;
@@ -474,6 +470,10 @@ pub(crate) mod shape_topic_configuration;
 pub(crate) mod shape_versioning_configuration;
 
 pub(crate) mod shape_website_configuration;
+
+pub fn parse_event_stream_error_metadata(payload: &bytes::Bytes) -> Result<aws_smithy_types::error::metadata::Builder, aws_smithy_xml::decode::XmlDecodeError> {
+    crate::rest_xml_unwrapped_errors::parse_error_metadata(payload.as_ref())
+}
 
 pub(crate) mod shape_abort_incomplete_multipart_upload;
 
@@ -533,8 +533,6 @@ pub(crate) mod shape_ownership_controls_rule;
 
 pub(crate) mod shape_policy_status;
 
-pub(crate) mod shape_progress_event;
-
 pub(crate) mod shape_replication_rule;
 
 pub(crate) mod shape_routing_rule;
@@ -542,8 +540,6 @@ pub(crate) mod shape_routing_rule;
 pub(crate) mod shape_select_parameters;
 
 pub(crate) mod shape_server_side_encryption_rule;
-
-pub(crate) mod shape_stats_event;
 
 pub(crate) mod shape_storage_class_analysis;
 
@@ -577,7 +573,7 @@ pub(crate) mod shape_lifecycle_rule_and_operator;
 
 pub(crate) mod shape_metrics_and_operator;
 
-pub(crate) mod shape_progress;
+pub(crate) mod shape_progress_event;
 
 pub(crate) mod shape_redirect;
 
@@ -591,7 +587,7 @@ pub(crate) mod shape_server_side_encryption_by_default;
 
 pub(crate) mod shape_source_selection_criteria;
 
-pub(crate) mod shape_stats;
+pub(crate) mod shape_stats_event;
 
 pub(crate) mod shape_storage_class_analysis_data_export;
 
@@ -613,6 +609,8 @@ pub(crate) mod shape_metadata_entry;
 
 pub(crate) mod shape_metrics;
 
+pub(crate) mod shape_progress;
+
 pub(crate) mod shape_replica_modifications;
 
 pub(crate) mod shape_replication_rule_and_operator;
@@ -620,6 +618,8 @@ pub(crate) mod shape_replication_rule_and_operator;
 pub(crate) mod shape_replication_time;
 
 pub(crate) mod shape_sse_kms_encrypted_objects;
+
+pub(crate) mod shape_stats;
 
 pub(crate) mod shape_analytics_s3_bucket_destination;
 

@@ -210,9 +210,9 @@ pub(crate) mod protocol_serde;
 
 mod endpoint_lib;
 
-mod event_stream_serde;
-
 mod rest_xml_unwrapped_errors;
+
+mod event_stream_serde;
 
 #[doc(inline)]
 pub use client::Client;

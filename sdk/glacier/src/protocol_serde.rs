@@ -99,8 +99,6 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
                 }
             }
 
-pub(crate) mod shape_get_job_output_output;
-
 pub(crate) mod shape_get_vault_access_policy_output;
 
 pub(crate) mod shape_get_vault_notifications_output;
@@ -138,6 +136,8 @@ pub(crate) mod shape_upload_archive_output;
 pub(crate) mod shape_upload_multipart_part_output;
 
 pub(crate) mod shape_data_retrieval_policy;
+
+pub(crate) mod shape_get_job_output_output;
 
 pub(crate) mod shape_inventory_retrieval_job_description;
 

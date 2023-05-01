@@ -167,8 +167,6 @@ pub(crate) mod shape_get_temporary_glue_table_credentials_input;
 
 pub(crate) mod shape_get_work_unit_results_input;
 
-pub(crate) mod shape_get_work_unit_results_output;
-
 pub(crate) mod shape_get_work_units_input;
 
 pub(crate) mod shape_glue_encryption_exception;
@@ -258,6 +256,8 @@ pub(crate) mod shape_database_lf_tags_list;
 pub(crate) mod shape_execution_statistics;
 
 pub(crate) mod shape_filter_condition;
+
+pub(crate) mod shape_get_work_unit_results_output;
 
 pub(crate) mod shape_lf_tag;
 

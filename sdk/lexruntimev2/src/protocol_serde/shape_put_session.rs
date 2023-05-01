@@ -29,44 +29,10 @@ pub fn ser_put_session_input(input: &crate::operation::put_session::PutSessionIn
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_put_session_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::put_session::PutSessionOutput, crate::operation::put_session::PutSessionError> {
+pub fn de_put_session_op_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::put_session::PutSessionOutput, crate::operation::put_session::PutSessionError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
-    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
-                        std::mem::swap(&mut _response_body, response.body_mut());
-                        let _response_body = &mut _response_body;
-    
-                        let _response_status = response.status().as_u16();
-                        let _response_headers = response.headers();
-    Ok({
-        #[allow(unused_mut)]
-        let mut output = crate::operation::put_session::builders::PutSessionOutputBuilder::default();
-        output = output.set_audio_stream(
-            Some(crate::protocol_serde::shape_put_session_output::de_audio_stream_payload(_response_body)?)
-        );
-        output = output.set_content_type(
-            crate::protocol_serde::shape_put_session_output::de_content_type_header(_response_headers)
-                                    .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse contentType from header `Content-Type"))?
-        );
-        output = output.set_messages(
-            crate::protocol_serde::shape_put_session_output::de_messages_header(_response_headers)
-                                    .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse messages from header `x-amz-lex-messages"))?
-        );
-        output = output.set_request_attributes(
-            crate::protocol_serde::shape_put_session_output::de_request_attributes_header(_response_headers)
-                                    .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse requestAttributes from header `x-amz-lex-request-attributes"))?
-        );
-        output = output.set_session_id(
-            crate::protocol_serde::shape_put_session_output::de_session_id_header(_response_headers)
-                                    .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse sessionId from header `x-amz-lex-session-id"))?
-        );
-        output = output.set_session_state(
-            crate::protocol_serde::shape_put_session_output::de_session_state_header(_response_headers)
-                                    .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse sessionState from header `x-amz-lex-session-state"))?
-        );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
-    })
+    crate::protocol_serde::shape_put_session::de_put_session_http_response_with_props(response, &properties)
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -211,6 +177,46 @@ pub fn de_put_session_http_error(_response_status: u16, _response_headers: &http
             tmp
         }),
         _ => crate::operation::put_session::PutSessionError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+#[allow(unused_variables)]
+pub fn de_put_session_http_response_with_props(response: &mut http::Response<aws_smithy_http::body::SdkBody>, properties: &aws_smithy_http::property_bag::PropertyBag) -> std::result::Result<crate::operation::put_session::PutSessionOutput, crate::operation::put_session::PutSessionError> {
+    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
+                        std::mem::swap(&mut _response_body, response.body_mut());
+                        let _response_body = &mut _response_body;
+    
+                        let _response_status = response.status().as_u16();
+                        let _response_headers = response.headers();
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::operation::put_session::builders::PutSessionOutputBuilder::default();
+        output = output.set_audio_stream(
+            Some(crate::protocol_serde::shape_put_session_output::de_audio_stream_payload(_response_body)?)
+        );
+        output = output.set_content_type(
+            crate::protocol_serde::shape_put_session_output::de_content_type_header(_response_headers)
+                                    .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse contentType from header `Content-Type"))?
+        );
+        output = output.set_messages(
+            crate::protocol_serde::shape_put_session_output::de_messages_header(_response_headers)
+                                    .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse messages from header `x-amz-lex-messages"))?
+        );
+        output = output.set_request_attributes(
+            crate::protocol_serde::shape_put_session_output::de_request_attributes_header(_response_headers)
+                                    .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse requestAttributes from header `x-amz-lex-request-attributes"))?
+        );
+        output = output.set_session_id(
+            crate::protocol_serde::shape_put_session_output::de_session_id_header(_response_headers)
+                                    .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse sessionId from header `x-amz-lex-session-id"))?
+        );
+        output = output.set_session_state(
+            crate::protocol_serde::shape_put_session_output::de_session_state_header(_response_headers)
+                                    .map_err(|_|crate::operation::put_session::PutSessionError::unhandled("Failed to parse sessionState from header `x-amz-lex-session-state"))?
+        );
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output.build()
     })
 }
 

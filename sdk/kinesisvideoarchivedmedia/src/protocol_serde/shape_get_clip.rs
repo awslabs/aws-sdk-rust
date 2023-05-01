@@ -8,28 +8,10 @@ pub fn ser_get_clip_input(input: &crate::operation::get_clip::GetClipInput) -> R
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_clip_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_clip::GetClipOutput, crate::operation::get_clip::GetClipError> {
+pub fn de_get_clip_op_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_clip::GetClipOutput, crate::operation::get_clip::GetClipError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
-    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
-                        std::mem::swap(&mut _response_body, response.body_mut());
-                        let _response_body = &mut _response_body;
-    
-                        let _response_status = response.status().as_u16();
-                        let _response_headers = response.headers();
-    Ok({
-        #[allow(unused_mut)]
-        let mut output = crate::operation::get_clip::builders::GetClipOutputBuilder::default();
-        output = output.set_content_type(
-            crate::protocol_serde::shape_get_clip_output::de_content_type_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_clip::GetClipError::unhandled("Failed to parse ContentType from header `Content-Type"))?
-        );
-        output = output.set_payload(
-            Some(crate::protocol_serde::shape_get_clip_output::de_payload_payload(_response_body)?)
-        );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
-    })
+    crate::protocol_serde::shape_get_clip::de_get_clip_http_response_with_props(response, &properties)
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -190,6 +172,30 @@ pub fn de_get_clip_http_error(_response_status: u16, _response_headers: &http::h
             tmp
         }),
         _ => crate::operation::get_clip::GetClipError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+#[allow(unused_variables)]
+pub fn de_get_clip_http_response_with_props(response: &mut http::Response<aws_smithy_http::body::SdkBody>, properties: &aws_smithy_http::property_bag::PropertyBag) -> std::result::Result<crate::operation::get_clip::GetClipOutput, crate::operation::get_clip::GetClipError> {
+    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
+                        std::mem::swap(&mut _response_body, response.body_mut());
+                        let _response_body = &mut _response_body;
+    
+                        let _response_status = response.status().as_u16();
+                        let _response_headers = response.headers();
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::operation::get_clip::builders::GetClipOutputBuilder::default();
+        output = output.set_content_type(
+            crate::protocol_serde::shape_get_clip_output::de_content_type_header(_response_headers)
+                                    .map_err(|_|crate::operation::get_clip::GetClipError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+        );
+        output = output.set_payload(
+            Some(crate::protocol_serde::shape_get_clip_output::de_payload_payload(_response_body)?)
+        );
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output.build()
     })
 }
 

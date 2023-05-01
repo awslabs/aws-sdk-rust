@@ -159,8 +159,6 @@ pub(crate) mod shape_create_partner_input_input;
 
 pub(crate) mod shape_create_tags_input;
 
-pub(crate) mod shape_describe_input_device_thumbnail_output;
-
 pub(crate) mod shape_forbidden_exception;
 
 pub(crate) mod shape_gateway_timeout_exception;
@@ -281,6 +279,8 @@ pub(crate) mod shape_batch_schedule_action_delete_result;
 pub(crate) mod shape_cdi_input_specification;
 
 pub(crate) mod shape_channel;
+
+pub(crate) mod shape_describe_input_device_thumbnail_output;
 
 pub(crate) mod shape_encoder_settings;
 

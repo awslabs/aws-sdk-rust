@@ -22,11 +22,11 @@ pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
 pub type BoxFallibleFut<T> = Pin<Box<dyn Future<Output = Result<T, BoxError>>>>;
 
 pub trait TraceProbe: Send + Sync + Debug {
-    fn dispatch_events(&self, cfg: &ConfigBag) -> BoxFallibleFut<()>;
+    fn dispatch_events(&self) -> BoxFallibleFut<()>;
 }
 
 pub trait RequestSerializer: Send + Sync + Debug {
-    fn serialize_input(&self, input: &Input, cfg: &ConfigBag) -> Result<HttpRequest, BoxError>;
+    fn serialize_input(&self, input: Input) -> Result<HttpRequest, BoxError>;
 }
 
 pub trait ResponseDeserializer: Send + Sync + Debug {
@@ -161,11 +161,7 @@ pub trait HttpRequestSigner: Send + Sync + Debug {
 }
 
 pub trait EndpointResolver: Send + Sync + Debug {
-    fn resolve_and_apply_endpoint(
-        &self,
-        request: &mut HttpRequest,
-        cfg: &ConfigBag,
-    ) -> Result<(), BoxError>;
+    fn resolve_and_apply_endpoint(&self, request: &mut HttpRequest) -> Result<(), BoxError>;
 }
 
 pub trait ConfigBagAccessors {

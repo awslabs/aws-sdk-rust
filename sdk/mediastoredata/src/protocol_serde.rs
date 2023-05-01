@@ -27,13 +27,13 @@ pub(crate) mod shape_container_not_found_exception;
 
 pub(crate) mod shape_describe_object_output;
 
-pub(crate) mod shape_get_object_output;
-
 pub(crate) mod shape_internal_server_error;
 
 pub(crate) mod shape_object_not_found_exception;
 
 pub(crate) mod shape_requested_range_not_satisfiable_exception;
+
+pub(crate) mod shape_get_object_output;
 
 pub(crate) mod shape_item_list;
 

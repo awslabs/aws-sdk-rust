@@ -189,24 +189,31 @@ impl InterceptorError {
             source: Some(source.into()),
         }
     }
-    /// Create a new error indicating that an interceptor tried to access the tx_request out of turn
+    /// Create a new error indicating that an interceptor tried to access the request out of turn
     pub fn invalid_request_access() -> Self {
         Self {
             kind: ErrorKind::InvalidRequestAccess,
             source: None,
         }
     }
-    /// Create a new error indicating that an interceptor tried to access the tx_response out of turn
+    /// Create a new error indicating that an interceptor tried to access the response out of turn
     pub fn invalid_response_access() -> Self {
         Self {
             kind: ErrorKind::InvalidResponseAccess,
             source: None,
         }
     }
-    /// Create a new error indicating that an interceptor tried to access the modeled_response out of turn
-    pub fn invalid_modeled_response_access() -> Self {
+    /// Create a new error indicating that an interceptor tried to access the input out of turn
+    pub fn invalid_input_access() -> Self {
         Self {
-            kind: ErrorKind::InvalidModeledResponseAccess,
+            kind: ErrorKind::InvalidInputAccess,
+            source: None,
+        }
+    }
+    /// Create a new error indicating that an interceptor tried to access the output out of turn
+    pub fn invalid_output_access() -> Self {
+        Self {
+            kind: ErrorKind::InvalidOutputAccess,
             source: None,
         }
     }
@@ -257,8 +264,10 @@ enum ErrorKind {
     InvalidRequestAccess,
     /// An interceptor tried to access the response out of turn
     InvalidResponseAccess,
-    /// An interceptor tried to access the modeled_response out of turn
-    InvalidModeledResponseAccess,
+    /// An interceptor tried to access the input out of turn
+    InvalidInputAccess,
+    /// An interceptor tried to access the output out of turn
+    InvalidOutputAccess,
 }
 
 impl fmt::Display for InterceptorError {
@@ -327,9 +336,13 @@ impl fmt::Display for InterceptorError {
             InvalidResponseAccess => {
                 write!(f, "tried to access response before transmitting a request")
             }
-            InvalidModeledResponseAccess => write!(
+            InvalidInputAccess => write!(
                 f,
-                "tried to access modeled_response before response deserialization"
+                "tried to access the input before response deserialization"
+            ),
+            InvalidOutputAccess => write!(
+                f,
+                "tried to access the output before response deserialization"
             ),
         }
     }

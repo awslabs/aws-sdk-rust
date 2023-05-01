@@ -35,9 +35,25 @@ pub fn ser_get_object_torrent_headers(
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_object_torrent_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_object_torrent::GetObjectTorrentOutput, crate::operation::get_object_torrent::GetObjectTorrentError> {
+pub fn de_get_object_torrent_op_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_object_torrent::GetObjectTorrentOutput, crate::operation::get_object_torrent::GetObjectTorrentError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
+    crate::protocol_serde::shape_get_object_torrent::de_get_object_torrent_http_response_with_props(response, &properties)
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn de_get_object_torrent_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_object_torrent::GetObjectTorrentOutput, crate::operation::get_object_torrent::GetObjectTorrentError> {
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_object_torrent::GetObjectTorrentError::unhandled)?;
+    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    let generic = generic_builder.build();
+    Err(crate::operation::get_object_torrent::GetObjectTorrentError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+#[allow(unused_variables)]
+pub fn de_get_object_torrent_http_response_with_props(response: &mut http::Response<aws_smithy_http::body::SdkBody>, properties: &aws_smithy_http::property_bag::PropertyBag) -> std::result::Result<crate::operation::get_object_torrent::GetObjectTorrentOutput, crate::operation::get_object_torrent::GetObjectTorrentError> {
     let mut _response_body = aws_smithy_http::body::SdkBody::taken();
                         std::mem::swap(&mut _response_body, response.body_mut());
                         let _response_body = &mut _response_body;
@@ -58,15 +74,5 @@ pub fn de_get_object_torrent_http_response_(op_response: &mut aws_smithy_http::o
         output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
         output.build()
     })
-}
-
-#[allow(clippy::unnecessary_wraps)]
-pub fn de_get_object_torrent_http_error(_response_status: u16, _response_headers: &http::header::HeaderMap, _response_body: &[u8]) -> std::result::Result<crate::operation::get_object_torrent::GetObjectTorrentOutput, crate::operation::get_object_torrent::GetObjectTorrentError> {
-    #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::get_object_torrent::GetObjectTorrentError::unhandled)?;
-    generic_builder = crate::s3_request_id::apply_extended_request_id(generic_builder, _response_headers);
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
-    let generic = generic_builder.build();
-    Err(crate::operation::get_object_torrent::GetObjectTorrentError::generic(generic))
 }
 

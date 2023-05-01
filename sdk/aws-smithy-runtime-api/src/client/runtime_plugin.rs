@@ -5,7 +5,7 @@
 
 use crate::config_bag::ConfigBag;
 
-type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
+pub type BoxError = Box<dyn std::error::Error + Send + Sync + 'static>;
 
 pub trait RuntimePlugin {
     fn configure(&self, cfg: &mut ConfigBag) -> Result<(), BoxError>;
@@ -32,17 +32,17 @@ impl RuntimePlugins {
     }
 
     pub fn with_client_plugin(
-        &mut self,
+        mut self,
         plugin: impl Into<Box<dyn RuntimePlugin + 'static>>,
-    ) -> &mut Self {
+    ) -> Self {
         self.client_plugins.push(plugin.into());
         self
     }
 
     pub fn with_operation_plugin(
-        &mut self,
+        mut self,
         plugin: impl Into<Box<dyn RuntimePlugin + 'static>>,
-    ) -> &mut Self {
+    ) -> Self {
         self.operation_plugins.push(plugin.into());
         self
     }
@@ -79,7 +79,6 @@ mod tests {
 
     #[test]
     fn can_add_runtime_plugin_implementors_to_runtime_plugins() {
-        let mut rps = RuntimePlugins::new();
-        rps.with_client_plugin(SomeStruct);
+        RuntimePlugins::new().with_client_plugin(SomeStruct);
     }
 }

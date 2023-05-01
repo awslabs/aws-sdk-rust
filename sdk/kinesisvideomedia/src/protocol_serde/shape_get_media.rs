@@ -8,28 +8,10 @@ pub fn ser_get_media_input(input: &crate::operation::get_media::GetMediaInput) -
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_media_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_media::GetMediaOutput, crate::operation::get_media::GetMediaError> {
+pub fn de_get_media_op_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_media::GetMediaOutput, crate::operation::get_media::GetMediaError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
-    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
-                        std::mem::swap(&mut _response_body, response.body_mut());
-                        let _response_body = &mut _response_body;
-    
-                        let _response_status = response.status().as_u16();
-                        let _response_headers = response.headers();
-    Ok({
-        #[allow(unused_mut)]
-        let mut output = crate::operation::get_media::builders::GetMediaOutputBuilder::default();
-        output = output.set_content_type(
-            crate::protocol_serde::shape_get_media_output::de_content_type_header(_response_headers)
-                                    .map_err(|_|crate::operation::get_media::GetMediaError::unhandled("Failed to parse ContentType from header `Content-Type"))?
-        );
-        output = output.set_payload(
-            Some(crate::protocol_serde::shape_get_media_output::de_payload_payload(_response_body)?)
-        );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
-    })
+    crate::protocol_serde::shape_get_media::de_get_media_http_response_with_props(response, &properties)
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -142,6 +124,30 @@ pub fn de_get_media_http_error(_response_status: u16, _response_headers: &http::
             tmp
         }),
         _ => crate::operation::get_media::GetMediaError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+#[allow(unused_variables)]
+pub fn de_get_media_http_response_with_props(response: &mut http::Response<aws_smithy_http::body::SdkBody>, properties: &aws_smithy_http::property_bag::PropertyBag) -> std::result::Result<crate::operation::get_media::GetMediaOutput, crate::operation::get_media::GetMediaError> {
+    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
+                        std::mem::swap(&mut _response_body, response.body_mut());
+                        let _response_body = &mut _response_body;
+    
+                        let _response_status = response.status().as_u16();
+                        let _response_headers = response.headers();
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::operation::get_media::builders::GetMediaOutputBuilder::default();
+        output = output.set_content_type(
+            crate::protocol_serde::shape_get_media_output::de_content_type_header(_response_headers)
+                                    .map_err(|_|crate::operation::get_media::GetMediaError::unhandled("Failed to parse ContentType from header `Content-Type"))?
+        );
+        output = output.set_payload(
+            Some(crate::protocol_serde::shape_get_media_output::de_payload_payload(_response_body)?)
+        );
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output.build()
     })
 }
 

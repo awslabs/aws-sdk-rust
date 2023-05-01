@@ -19,8 +19,6 @@ pub(crate) mod shape_connection_limit_exceeded_exception;
 
 pub(crate) mod shape_get_media_input;
 
-pub(crate) mod shape_get_media_output;
-
 pub(crate) mod shape_invalid_argument_exception;
 
 pub(crate) mod shape_invalid_endpoint_exception;
@@ -28,6 +26,8 @@ pub(crate) mod shape_invalid_endpoint_exception;
 pub(crate) mod shape_not_authorized_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_get_media_output;
 
 pub(crate) mod shape_start_selector;
 

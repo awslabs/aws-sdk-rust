@@ -35,11 +35,7 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_put_session_input;
 
-pub(crate) mod shape_put_session_output;
-
 pub(crate) mod shape_recognize_text_input;
-
-pub(crate) mod shape_recognize_utterance_output;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -52,6 +48,10 @@ pub(crate) mod shape_interpretations;
 pub(crate) mod shape_message;
 
 pub(crate) mod shape_messages;
+
+pub(crate) mod shape_put_session_output;
+
+pub(crate) mod shape_recognize_utterance_output;
 
 pub(crate) mod shape_recognized_bot_member;
 

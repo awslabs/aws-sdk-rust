@@ -57,8 +57,6 @@ pub(crate) mod shape_export_earth_observation_job_input;
 
 pub(crate) mod shape_export_vector_enrichment_job_input;
 
-pub(crate) mod shape_get_tile_output;
-
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_earth_observation_jobs_input;
@@ -98,6 +96,8 @@ pub(crate) mod shape_export_error_details;
 pub(crate) mod shape_export_vector_enrichment_job_output_config;
 
 pub(crate) mod shape_filter_list;
+
+pub(crate) mod shape_get_tile_output;
 
 pub(crate) mod shape_image_source_band_list;
 

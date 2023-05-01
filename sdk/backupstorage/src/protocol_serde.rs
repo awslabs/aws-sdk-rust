@@ -39,10 +39,6 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_data_already_exists_exception;
 
-pub(crate) mod shape_get_chunk_output;
-
-pub(crate) mod shape_get_object_metadata_output;
-
 pub(crate) mod shape_illegal_argument_exception;
 
 pub(crate) mod shape_kms_invalid_key_usage_exception;
@@ -62,6 +58,10 @@ pub(crate) mod shape_start_object_input;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_chunk_list;
+
+pub(crate) mod shape_get_chunk_output;
+
+pub(crate) mod shape_get_object_metadata_output;
 
 pub(crate) mod shape_object_list;
 

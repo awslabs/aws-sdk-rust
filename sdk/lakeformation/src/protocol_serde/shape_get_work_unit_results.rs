@@ -8,24 +8,10 @@ pub fn ser_get_work_unit_results_input(input: &crate::operation::get_work_unit_r
 }
 
 #[allow(clippy::unnecessary_wraps)]
-pub fn de_get_work_unit_results_http_response_(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_work_unit_results::GetWorkUnitResultsOutput, crate::operation::get_work_unit_results::GetWorkUnitResultsError> {
+pub fn de_get_work_unit_results_op_response(op_response: &mut aws_smithy_http::operation::Response) -> std::result::Result<crate::operation::get_work_unit_results::GetWorkUnitResultsOutput, crate::operation::get_work_unit_results::GetWorkUnitResultsError> {
     #[allow(unused_variables)]
     let (response, properties) = op_response.parts_mut();
-    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
-                        std::mem::swap(&mut _response_body, response.body_mut());
-                        let _response_body = &mut _response_body;
-    
-                        let _response_status = response.status().as_u16();
-                        let _response_headers = response.headers();
-    Ok({
-        #[allow(unused_mut)]
-        let mut output = crate::operation::get_work_unit_results::builders::GetWorkUnitResultsOutputBuilder::default();
-        output = output.set_result_stream(
-            Some(crate::protocol_serde::shape_get_work_unit_results_output::de_result_stream_payload(_response_body)?)
-        );
-        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
-        output.build()
-    })
+    crate::protocol_serde::shape_get_work_unit_results::de_get_work_unit_results_http_response_with_props(response, &properties)
 }
 
 #[allow(clippy::unnecessary_wraps)]
@@ -122,6 +108,26 @@ pub fn de_get_work_unit_results_http_error(_response_status: u16, _response_head
             tmp
         }),
         _ => crate::operation::get_work_unit_results::GetWorkUnitResultsError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+#[allow(unused_variables)]
+pub fn de_get_work_unit_results_http_response_with_props(response: &mut http::Response<aws_smithy_http::body::SdkBody>, properties: &aws_smithy_http::property_bag::PropertyBag) -> std::result::Result<crate::operation::get_work_unit_results::GetWorkUnitResultsOutput, crate::operation::get_work_unit_results::GetWorkUnitResultsError> {
+    let mut _response_body = aws_smithy_http::body::SdkBody::taken();
+                        std::mem::swap(&mut _response_body, response.body_mut());
+                        let _response_body = &mut _response_body;
+    
+                        let _response_status = response.status().as_u16();
+                        let _response_headers = response.headers();
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::operation::get_work_unit_results::builders::GetWorkUnitResultsOutputBuilder::default();
+        output = output.set_result_stream(
+            Some(crate::protocol_serde::shape_get_work_unit_results_output::de_result_stream_payload(_response_body)?)
+        );
+        output._set_request_id(aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string));
+        output.build()
     })
 }
 

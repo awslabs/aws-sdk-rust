@@ -103,8 +103,6 @@ pub(crate) mod shape_delete_package_versions_input;
 
 pub(crate) mod shape_dispose_package_versions_input;
 
-pub(crate) mod shape_get_package_version_asset_output;
-
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_domains_input;
@@ -138,6 +136,8 @@ pub(crate) mod shape_asset_summary_list;
 pub(crate) mod shape_domain_description;
 
 pub(crate) mod shape_domain_summary_list;
+
+pub(crate) mod shape_get_package_version_asset_output;
 
 pub(crate) mod shape_package_dependency_list;
 
