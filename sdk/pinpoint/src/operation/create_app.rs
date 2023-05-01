@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApp {
                         crate::protocol_serde::shape_create_app::de_create_app_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

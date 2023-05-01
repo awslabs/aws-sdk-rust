@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCoreNetworks {
                         crate::protocol_serde::shape_list_core_networks::de_list_core_networks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

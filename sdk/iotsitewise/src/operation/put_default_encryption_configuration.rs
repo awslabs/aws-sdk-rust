@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDefaultEncryptionConf
                         crate::protocol_serde::shape_put_default_encryption_configuration::de_put_default_encryption_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

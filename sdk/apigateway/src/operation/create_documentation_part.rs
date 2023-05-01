@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDocumentationPart 
                         crate::protocol_serde::shape_create_documentation_part::de_create_documentation_part_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

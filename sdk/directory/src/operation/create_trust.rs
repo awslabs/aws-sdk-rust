@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrust {
                         crate::protocol_serde::shape_create_trust::de_create_trust_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

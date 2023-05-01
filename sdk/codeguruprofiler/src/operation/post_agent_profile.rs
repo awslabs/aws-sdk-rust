@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostAgentProfile {
                         crate::protocol_serde::shape_post_agent_profile::de_post_agent_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

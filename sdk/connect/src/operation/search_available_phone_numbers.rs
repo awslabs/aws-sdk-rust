@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchAvailablePhoneNumb
                         crate::protocol_serde::shape_search_available_phone_numbers::de_search_available_phone_numbers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

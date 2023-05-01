@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchSuspendUser {
                         crate::protocol_serde::shape_batch_suspend_user::de_batch_suspend_user_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

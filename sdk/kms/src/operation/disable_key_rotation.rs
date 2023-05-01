@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableKeyRotation {
                         crate::protocol_serde::shape_disable_key_rotation::de_disable_key_rotation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

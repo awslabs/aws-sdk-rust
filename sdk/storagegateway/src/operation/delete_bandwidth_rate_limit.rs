@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBandwidthRateLimit
                         crate::protocol_serde::shape_delete_bandwidth_rate_limit::de_delete_bandwidth_rate_limit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

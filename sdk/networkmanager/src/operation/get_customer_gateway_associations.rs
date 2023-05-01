@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCustomerGatewayAssoci
                         crate::protocol_serde::shape_get_customer_gateway_associations::de_get_customer_gateway_associations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

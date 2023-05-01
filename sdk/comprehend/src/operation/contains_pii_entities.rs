@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ContainsPiiEntities {
                         crate::protocol_serde::shape_contains_pii_entities::de_contains_pii_entities_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

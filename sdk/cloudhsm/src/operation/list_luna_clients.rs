@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLunaClients {
                         crate::protocol_serde::shape_list_luna_clients::de_list_luna_clients_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

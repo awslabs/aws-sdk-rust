@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrafficMirrorTarge
                         crate::protocol_serde::shape_delete_traffic_mirror_target::de_delete_traffic_mirror_target_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

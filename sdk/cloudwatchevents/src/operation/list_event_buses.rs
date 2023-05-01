@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventBuses {
                         crate::protocol_serde::shape_list_event_buses::de_list_event_buses_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataQualityRuleRecomm
                         crate::protocol_serde::shape_get_data_quality_rule_recommendation_run::de_get_data_quality_rule_recommendation_run_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

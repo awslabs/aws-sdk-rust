@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWebsiteCertifica
                         crate::protocol_serde::shape_describe_website_certificate_authority::de_describe_website_certificate_authority_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

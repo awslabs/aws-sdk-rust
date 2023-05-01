@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVoiceConnectorProxy {
                         crate::protocol_serde::shape_put_voice_connector_proxy::de_put_voice_connector_proxy_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

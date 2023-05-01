@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReusableDelegationSet
                         crate::protocol_serde::shape_get_reusable_delegation_set::de_get_reusable_delegation_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

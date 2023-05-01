@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangeServerLifeCycleSta
                         crate::protocol_serde::shape_change_server_life_cycle_state::de_change_server_life_cycle_state_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

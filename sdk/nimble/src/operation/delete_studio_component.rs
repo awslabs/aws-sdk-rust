@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStudioComponent {
                         crate::protocol_serde::shape_delete_studio_component::de_delete_studio_component_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

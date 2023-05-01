@@ -119,6 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIngestions {
                         crate::protocol_serde::shape_list_ingestions::de_list_ingestions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

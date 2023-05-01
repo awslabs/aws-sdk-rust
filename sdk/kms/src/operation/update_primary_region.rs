@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePrimaryRegion {
                         crate::protocol_serde::shape_update_primary_region::de_update_primary_region_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

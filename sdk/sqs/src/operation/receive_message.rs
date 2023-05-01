@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReceiveMessage {
                         crate::protocol_serde::shape_receive_message::de_receive_message_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

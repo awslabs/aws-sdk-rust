@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ClaimGameServer {
                         crate::protocol_serde::shape_claim_game_server::de_claim_game_server_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

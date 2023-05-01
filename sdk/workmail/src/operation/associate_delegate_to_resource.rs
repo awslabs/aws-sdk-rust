@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDelegateToResou
                         crate::protocol_serde::shape_associate_delegate_to_resource::de_associate_delegate_to_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStreamingImage {
                         crate::protocol_serde::shape_create_streaming_image::de_create_streaming_image_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

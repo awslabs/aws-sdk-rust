@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterTaskWithMaintena
                         crate::protocol_serde::shape_register_task_with_maintenance_window::de_register_task_with_maintenance_window_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

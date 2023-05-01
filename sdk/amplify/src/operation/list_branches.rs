@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBranches {
                         crate::protocol_serde::shape_list_branches::de_list_branches_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

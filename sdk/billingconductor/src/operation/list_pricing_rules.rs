@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingRules {
                         crate::protocol_serde::shape_list_pricing_rules::de_list_pricing_rules_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetUtilization
                         crate::protocol_serde::shape_describe_fleet_utilization::de_describe_fleet_utilization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MoveByoipCidrToIpam {
                         crate::protocol_serde::shape_move_byoip_cidr_to_ipam::de_move_byoip_cidr_to_ipam_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

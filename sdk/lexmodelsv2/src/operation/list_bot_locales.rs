@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBotLocales {
                         crate::protocol_serde::shape_list_bot_locales::de_list_bot_locales_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

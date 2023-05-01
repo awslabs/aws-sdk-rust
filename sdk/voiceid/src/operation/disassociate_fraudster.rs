@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateFraudster {
                         crate::protocol_serde::shape_disassociate_fraudster::de_disassociate_fraudster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

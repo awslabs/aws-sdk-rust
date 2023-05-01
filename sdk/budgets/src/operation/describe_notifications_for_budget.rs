@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNotificationsFor
                         crate::protocol_serde::shape_describe_notifications_for_budget::de_describe_notifications_for_budget_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

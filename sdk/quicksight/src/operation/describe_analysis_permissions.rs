@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAnalysisPermissi
                         crate::protocol_serde::shape_describe_analysis_permissions::de_describe_analysis_permissions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

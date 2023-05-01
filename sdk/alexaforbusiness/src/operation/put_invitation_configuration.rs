@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutInvitationConfigurati
                         crate::protocol_serde::shape_put_invitation_configuration::de_put_invitation_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

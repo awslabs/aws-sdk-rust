@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyEventSubscription 
                         crate::protocol_serde::shape_modify_event_subscription::de_modify_event_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

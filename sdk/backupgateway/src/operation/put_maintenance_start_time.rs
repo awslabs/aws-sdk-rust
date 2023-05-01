@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMaintenanceStartTime 
                         crate::protocol_serde::shape_put_maintenance_start_time::de_put_maintenance_start_time_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

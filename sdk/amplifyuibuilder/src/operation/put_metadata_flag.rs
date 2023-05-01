@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetadataFlag {
                         crate::protocol_serde::shape_put_metadata_flag::de_put_metadata_flag_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

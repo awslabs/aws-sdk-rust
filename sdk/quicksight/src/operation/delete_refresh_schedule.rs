@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRefreshSchedule {
                         crate::protocol_serde::shape_delete_refresh_schedule::de_delete_refresh_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

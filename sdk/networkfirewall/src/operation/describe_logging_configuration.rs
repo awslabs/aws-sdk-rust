@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoggingConfigura
                         crate::protocol_serde::shape_describe_logging_configuration::de_describe_logging_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

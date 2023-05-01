@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Invoke {
                         crate::protocol_serde::shape_invoke::de_invoke_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

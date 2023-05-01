@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnlockRule {
                         crate::protocol_serde::shape_unlock_rule::de_unlock_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

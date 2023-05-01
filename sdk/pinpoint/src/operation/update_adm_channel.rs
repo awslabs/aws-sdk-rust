@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAdmChannel {
                         crate::protocol_serde::shape_update_adm_channel::de_update_adm_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

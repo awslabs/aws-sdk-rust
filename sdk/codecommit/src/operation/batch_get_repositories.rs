@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetRepositories {
                         crate::protocol_serde::shape_batch_get_repositories::de_batch_get_repositories_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

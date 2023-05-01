@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartOutboundVoiceContac
                         crate::protocol_serde::shape_start_outbound_voice_contact::de_start_outbound_voice_contact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

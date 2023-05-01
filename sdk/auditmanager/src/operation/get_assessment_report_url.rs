@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssessmentReportUrl {
                         crate::protocol_serde::shape_get_assessment_report_url::de_get_assessment_report_url_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

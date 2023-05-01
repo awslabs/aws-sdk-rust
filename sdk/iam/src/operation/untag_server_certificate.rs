@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagServerCertificate {
                         crate::protocol_serde::shape_untag_server_certificate::de_untag_server_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

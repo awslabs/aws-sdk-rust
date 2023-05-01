@@ -89,6 +89,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessToken {
                         crate::protocol_serde::shape_create_access_token::de_create_access_token_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAssessmentControlS
                         crate::protocol_serde::shape_update_assessment_control_set_status::de_update_assessment_control_set_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

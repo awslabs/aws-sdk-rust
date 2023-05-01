@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSigningProfile {
                         crate::protocol_serde::shape_put_signing_profile::de_put_signing_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

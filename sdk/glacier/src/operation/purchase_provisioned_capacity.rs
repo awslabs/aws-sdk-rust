@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseProvisionedCapac
                         crate::protocol_serde::shape_purchase_provisioned_capacity::de_purchase_provisioned_capacity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

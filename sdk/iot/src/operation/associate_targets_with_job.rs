@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTargetsWithJob 
                         crate::protocol_serde::shape_associate_targets_with_job::de_associate_targets_with_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

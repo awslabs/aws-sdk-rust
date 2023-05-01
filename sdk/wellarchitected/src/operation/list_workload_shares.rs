@@ -123,6 +123,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkloadShares {
                         crate::protocol_serde::shape_list_workload_shares::de_list_workload_shares_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

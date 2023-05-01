@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPosition {
                         crate::protocol_serde::shape_get_position::de_get_position_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

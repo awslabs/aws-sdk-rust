@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStudioMembers {
                         crate::protocol_serde::shape_list_studio_members::de_list_studio_members_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

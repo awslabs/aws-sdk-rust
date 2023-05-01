@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MigrateWorkspace {
                         crate::protocol_serde::shape_migrate_workspace::de_migrate_workspace_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

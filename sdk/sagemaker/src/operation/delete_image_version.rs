@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteImageVersion {
                         crate::protocol_serde::shape_delete_image_version::de_delete_image_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

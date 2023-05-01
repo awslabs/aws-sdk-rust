@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelImageCreation {
                         crate::protocol_serde::shape_cancel_image_creation::de_cancel_image_creation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

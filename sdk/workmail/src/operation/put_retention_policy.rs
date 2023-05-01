@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRetentionPolicy {
                         crate::protocol_serde::shape_put_retention_policy::de_put_retention_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

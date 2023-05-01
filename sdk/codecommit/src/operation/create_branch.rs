@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBranch {
                         crate::protocol_serde::shape_create_branch::de_create_branch_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

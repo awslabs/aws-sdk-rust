@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomPlugins {
                         crate::protocol_serde::shape_list_custom_plugins::de_list_custom_plugins_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

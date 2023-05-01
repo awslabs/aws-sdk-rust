@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationSetSuppr
                         crate::protocol_serde::shape_put_configuration_set_suppression_options::de_put_configuration_set_suppression_options_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

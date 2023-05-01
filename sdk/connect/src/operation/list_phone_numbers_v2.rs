@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumbersV2 {
                         crate::protocol_serde::shape_list_phone_numbers_v2::de_list_phone_numbers_v2_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetServiceSpecificCred
                         crate::protocol_serde::shape_reset_service_specific_credential::de_reset_service_specific_credential_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

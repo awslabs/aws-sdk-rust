@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAnomalyMonitor {
                         crate::protocol_serde::shape_create_anomaly_monitor::de_create_anomaly_monitor_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

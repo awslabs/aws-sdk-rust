@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResolverEndpoin
                         crate::protocol_serde::shape_associate_resolver_endpoint_ip_address::de_associate_resolver_endpoint_ip_address_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

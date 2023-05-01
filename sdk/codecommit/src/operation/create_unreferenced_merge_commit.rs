@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUnreferencedMergeC
                         crate::protocol_serde::shape_create_unreferenced_merge_commit::de_create_unreferenced_merge_commit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

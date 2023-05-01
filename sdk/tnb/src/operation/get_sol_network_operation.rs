@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSolNetworkOperation {
                         crate::protocol_serde::shape_get_sol_network_operation::de_get_sol_network_operation_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFaceLivenessSessio
                         crate::protocol_serde::shape_create_face_liveness_session::de_create_face_liveness_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

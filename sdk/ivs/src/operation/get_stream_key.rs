@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamKey {
                         crate::protocol_serde::shape_get_stream_key::de_get_stream_key_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

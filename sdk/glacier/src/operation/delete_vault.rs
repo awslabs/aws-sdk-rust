@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVault {
                         crate::protocol_serde::shape_delete_vault::de_delete_vault_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

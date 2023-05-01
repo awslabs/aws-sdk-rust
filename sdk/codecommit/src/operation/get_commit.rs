@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCommit {
                         crate::protocol_serde::shape_get_commit::de_get_commit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

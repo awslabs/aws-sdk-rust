@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCelebrityInfo {
                         crate::protocol_serde::shape_get_celebrity_info::de_get_celebrity_info_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

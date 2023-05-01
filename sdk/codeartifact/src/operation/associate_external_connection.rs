@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateExternalConnect
                         crate::protocol_serde::shape_associate_external_connection::de_associate_external_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

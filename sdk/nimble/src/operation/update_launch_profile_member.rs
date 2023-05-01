@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLaunchProfileMembe
                         crate::protocol_serde::shape_update_launch_profile_member::de_update_launch_profile_member_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

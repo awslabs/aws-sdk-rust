@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateUserFromPerm
                         crate::protocol_serde::shape_disassociate_user_from_permission_group::de_disassociate_user_from_permission_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

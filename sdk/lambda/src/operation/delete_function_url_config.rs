@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFunctionUrlConfig 
                         crate::protocol_serde::shape_delete_function_url_config::de_delete_function_url_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePrimaryEmailAddres
                         crate::protocol_serde::shape_update_primary_email_address::de_update_primary_email_address_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

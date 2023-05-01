@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRelationalDatabase
                         crate::protocol_serde::shape_create_relational_database::de_create_relational_database_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

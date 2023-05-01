@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePortfolio {
                         crate::protocol_serde::shape_update_portfolio::de_update_portfolio_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

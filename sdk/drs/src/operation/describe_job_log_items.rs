@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJobLogItems {
                         crate::protocol_serde::shape_describe_job_log_items::de_describe_job_log_items_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

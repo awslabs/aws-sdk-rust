@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddEndpoints {
                         crate::protocol_serde::shape_add_endpoints::de_add_endpoints_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectEntitiesV2 {
                         crate::protocol_serde::shape_detect_entities_v2::de_detect_entities_v2_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

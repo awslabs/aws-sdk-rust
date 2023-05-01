@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachDisk {
                         crate::protocol_serde::shape_attach_disk::de_attach_disk_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

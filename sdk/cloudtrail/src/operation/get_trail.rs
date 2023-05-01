@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrail {
                         crate::protocol_serde::shape_get_trail::de_get_trail_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

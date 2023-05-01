@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateServiceQuotaTem
                         crate::protocol_serde::shape_associate_service_quota_template::de_associate_service_quota_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

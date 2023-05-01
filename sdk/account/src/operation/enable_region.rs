@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableRegion {
                         crate::protocol_serde::shape_enable_region::de_enable_region_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

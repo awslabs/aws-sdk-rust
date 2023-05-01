@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LabelParameterVersion {
                         crate::protocol_serde::shape_label_parameter_version::de_label_parameter_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExpressions {
                         crate::protocol_serde::shape_describe_expressions::de_describe_expressions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

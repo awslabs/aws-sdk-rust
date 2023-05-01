@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommendationTemp
                         crate::protocol_serde::shape_delete_recommendation_template::de_delete_recommendation_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

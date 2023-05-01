@@ -135,6 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCampaignDateRangeKpi 
                         crate::protocol_serde::shape_get_campaign_date_range_kpi::de_get_campaign_date_range_kpi_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

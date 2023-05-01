@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNatGateway {
                         crate::protocol_serde::shape_delete_nat_gateway::de_delete_nat_gateway_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

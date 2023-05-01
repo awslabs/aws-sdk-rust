@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplyPendingMaintenanceA
                         crate::protocol_serde::shape_apply_pending_maintenance_action::de_apply_pending_maintenance_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

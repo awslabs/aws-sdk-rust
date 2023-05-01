@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComputeEnvironment
                         crate::protocol_serde::shape_update_compute_environment::de_update_compute_environment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

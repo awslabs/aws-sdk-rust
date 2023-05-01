@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeThingRegistratio
                         crate::protocol_serde::shape_describe_thing_registration_task::de_describe_thing_registration_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

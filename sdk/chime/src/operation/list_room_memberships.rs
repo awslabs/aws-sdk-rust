@@ -119,6 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoomMemberships {
                         crate::protocol_serde::shape_list_room_memberships::de_list_room_memberships_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

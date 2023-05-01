@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateAttendeeCapab
                         crate::protocol_serde::shape_batch_update_attendee_capabilities_except::de_batch_update_attendee_capabilities_except_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupPlanTemplates 
                         crate::protocol_serde::shape_list_backup_plan_templates::de_list_backup_plan_templates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

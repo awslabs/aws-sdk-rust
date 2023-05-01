@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCreateAccountStatus 
                         crate::protocol_serde::shape_list_create_account_status::de_list_create_account_status_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

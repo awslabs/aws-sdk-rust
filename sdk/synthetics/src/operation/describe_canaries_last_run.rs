@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCanariesLastRun 
                         crate::protocol_serde::shape_describe_canaries_last_run::de_describe_canaries_last_run_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGitHubAccountToken
                         crate::protocol_serde::shape_delete_git_hub_account_token::de_delete_git_hub_account_token_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessKeyInfo {
                         crate::protocol_serde::shape_get_access_key_info::de_get_access_key_info_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

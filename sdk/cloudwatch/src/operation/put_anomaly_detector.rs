@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAnomalyDetector {
                         crate::protocol_serde::shape_put_anomaly_detector::de_put_anomaly_detector_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

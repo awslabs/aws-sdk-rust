@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCapacityReservatio
                         crate::protocol_serde::shape_create_capacity_reservation_fleet::de_create_capacity_reservation_fleet_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSourceCredentials {
                         crate::protocol_serde::shape_list_source_credentials::de_list_source_credentials_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

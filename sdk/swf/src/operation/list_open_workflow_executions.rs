@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOpenWorkflowExecutio
                         crate::protocol_serde::shape_list_open_workflow_executions::de_list_open_workflow_executions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

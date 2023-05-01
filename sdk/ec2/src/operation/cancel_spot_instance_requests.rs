@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSpotInstanceReques
                         crate::protocol_serde::shape_cancel_spot_instance_requests::de_cancel_spot_instance_requests_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutOptedOutNumber {
                         crate::protocol_serde::shape_put_opted_out_number::de_put_opted_out_number_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

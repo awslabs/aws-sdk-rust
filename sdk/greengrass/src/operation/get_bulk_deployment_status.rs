@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBulkDeploymentStatus 
                         crate::protocol_serde::shape_get_bulk_deployment_status::de_get_bulk_deployment_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePatchBaseline {
                         crate::protocol_serde::shape_update_patch_baseline::de_update_patch_baseline_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

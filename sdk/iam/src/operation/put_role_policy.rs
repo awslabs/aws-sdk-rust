@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRolePolicy {
                         crate::protocol_serde::shape_put_role_policy::de_put_role_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

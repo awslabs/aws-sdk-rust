@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveDraftAppVersionRes
                         crate::protocol_serde::shape_remove_draft_app_version_resource_mappings::de_remove_draft_app_version_resource_mappings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

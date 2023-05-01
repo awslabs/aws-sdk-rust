@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppMonitor {
                         crate::protocol_serde::shape_delete_app_monitor::de_delete_app_monitor_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateEnvironmentOper
                         crate::protocol_serde::shape_associate_environment_operations_role::de_associate_environment_operations_role_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

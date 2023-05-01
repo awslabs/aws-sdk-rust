@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAlarmActions {
                         crate::protocol_serde::shape_enable_alarm_actions::de_enable_alarm_actions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

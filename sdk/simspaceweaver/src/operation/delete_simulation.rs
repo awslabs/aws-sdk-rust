@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSimulation {
                         crate::protocol_serde::shape_delete_simulation::de_delete_simulation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

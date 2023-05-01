@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAutoScalingConfigura
                         crate::protocol_serde::shape_list_auto_scaling_configurations::de_list_auto_scaling_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

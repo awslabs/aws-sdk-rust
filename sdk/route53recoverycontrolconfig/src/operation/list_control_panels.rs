@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListControlPanels {
                         crate::protocol_serde::shape_list_control_panels::de_list_control_panels_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceCreditSp
                         crate::protocol_serde::shape_describe_instance_credit_specifications::de_describe_instance_credit_specifications_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

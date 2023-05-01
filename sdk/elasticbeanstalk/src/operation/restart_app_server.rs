@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestartAppServer {
                         crate::protocol_serde::shape_restart_app_server::de_restart_app_server_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

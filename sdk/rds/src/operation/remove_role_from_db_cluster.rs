@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveRoleFromDBCluster 
                         crate::protocol_serde::shape_remove_role_from_db_cluster::de_remove_role_from_db_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

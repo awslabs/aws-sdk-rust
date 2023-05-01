@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRegistryCatalogData {
                         crate::protocol_serde::shape_put_registry_catalog_data::de_put_registry_catalog_data_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLags {
                         crate::protocol_serde::shape_describe_lags::de_describe_lags_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

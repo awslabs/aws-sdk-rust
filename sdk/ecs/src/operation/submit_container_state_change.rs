@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubmitContainerStateChan
                         crate::protocol_serde::shape_submit_container_state_change::de_submit_container_state_change_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

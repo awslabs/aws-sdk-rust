@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationOutput {
                         crate::protocol_serde::shape_add_application_output::de_add_application_output_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemporaryGluePartitio
                         crate::protocol_serde::shape_get_temporary_glue_partition_credentials::de_get_temporary_glue_partition_credentials_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesByThreeWay 
                         crate::protocol_serde::shape_merge_branches_by_three_way::de_merge_branches_by_three_way_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

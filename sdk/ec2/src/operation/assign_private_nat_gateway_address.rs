@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssignPrivateNatGatewayA
                         crate::protocol_serde::shape_assign_private_nat_gateway_address::de_assign_private_nat_gateway_address_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

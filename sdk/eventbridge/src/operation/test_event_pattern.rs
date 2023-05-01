@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestEventPattern {
                         crate::protocol_serde::shape_test_event_pattern::de_test_event_pattern_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

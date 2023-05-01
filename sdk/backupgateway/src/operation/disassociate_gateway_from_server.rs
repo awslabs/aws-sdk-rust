@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateGatewayFromS
                         crate::protocol_serde::shape_disassociate_gateway_from_server::de_disassociate_gateway_from_server_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

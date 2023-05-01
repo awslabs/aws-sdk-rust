@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePool {
                         crate::protocol_serde::shape_update_pool::de_update_pool_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

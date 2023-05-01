@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRecommender {
                         crate::protocol_serde::shape_start_recommender::de_start_recommender_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

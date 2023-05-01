@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDescribeTypeConfigu
                         crate::protocol_serde::shape_batch_describe_type_configurations::de_batch_describe_type_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

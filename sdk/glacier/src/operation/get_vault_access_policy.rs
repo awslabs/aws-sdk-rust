@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVaultAccessPolicy {
                         crate::protocol_serde::shape_get_vault_access_policy::de_get_vault_access_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

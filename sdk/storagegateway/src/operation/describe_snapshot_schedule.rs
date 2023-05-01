@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshotSchedule
                         crate::protocol_serde::shape_describe_snapshot_schedule::de_describe_snapshot_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

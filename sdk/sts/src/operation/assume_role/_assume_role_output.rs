@@ -2,7 +2,7 @@
 
 /// <p>Contains the response to a successful <code>AssumeRole</code> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssumeRoleOutput  {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note> 
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p> 
@@ -44,6 +44,17 @@ impl AssumeRoleOutput {
         self.source_identity.as_deref()
     }
 }
+impl  std::fmt::Debug for AssumeRoleOutput  {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssumeRoleOutput");
+        formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("assumed_role_user", &self.assumed_role_user);
+        formatter.field("packed_policy_size", &self.packed_policy_size);
+        formatter.field("source_identity", &self.source_identity);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl aws_http::request_id::RequestId for AssumeRoleOutput {
                                 fn request_id(&self) -> Option<&str> {
                                     self._request_id.as_deref()
@@ -58,7 +69,7 @@ impl AssumeRoleOutput {
 
 /// A builder for [`AssumeRoleOutput`](crate::operation::assume_role::AssumeRoleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct AssumeRoleOutputBuilder {
     pub(crate) credentials: std::option::Option<crate::types::Credentials>,
     pub(crate) assumed_role_user: std::option::Option<crate::types::AssumedRoleUser>,
@@ -133,6 +144,17 @@ impl AssumeRoleOutputBuilder {
             ,
             _request_id: self._request_id,
         }
+    }
+}
+impl std::fmt::Debug for AssumeRoleOutputBuilder {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssumeRoleOutputBuilder");
+        formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("assumed_role_user", &self.assumed_role_user);
+        formatter.field("packed_policy_size", &self.packed_policy_size);
+        formatter.field("source_identity", &self.source_identity);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }
 

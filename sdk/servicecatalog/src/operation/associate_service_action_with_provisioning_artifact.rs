@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateServiceActionWi
                         crate::protocol_serde::shape_associate_service_action_with_provisioning_artifact::de_associate_service_action_with_provisioning_artifact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

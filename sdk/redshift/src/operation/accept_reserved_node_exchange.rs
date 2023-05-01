@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptReservedNodeExchan
                         crate::protocol_serde::shape_accept_reserved_node_exchange::de_accept_reserved_node_exchange_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

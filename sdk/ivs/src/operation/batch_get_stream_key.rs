@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetStreamKey {
                         crate::protocol_serde::shape_batch_get_stream_key::de_batch_get_stream_key_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

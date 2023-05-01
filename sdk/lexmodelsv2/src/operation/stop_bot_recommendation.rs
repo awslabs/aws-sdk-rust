@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopBotRecommendation {
                         crate::protocol_serde::shape_stop_bot_recommendation::de_stop_bot_recommendation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

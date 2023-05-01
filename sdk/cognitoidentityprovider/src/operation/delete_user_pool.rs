@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserPool {
                         crate::protocol_serde::shape_delete_user_pool::de_delete_user_pool_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

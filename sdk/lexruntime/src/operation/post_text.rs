@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostText {
                         crate::protocol_serde::shape_post_text::de_post_text_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

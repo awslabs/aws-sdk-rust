@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifyMac {
                         crate::protocol_serde::shape_verify_mac::de_verify_mac_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

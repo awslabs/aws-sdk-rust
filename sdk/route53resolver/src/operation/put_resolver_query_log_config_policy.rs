@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResolverQueryLogConfi
                         crate::protocol_serde::shape_put_resolver_query_log_config_policy::de_put_resolver_query_log_config_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

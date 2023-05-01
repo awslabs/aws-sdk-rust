@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHypervisors {
                         crate::protocol_serde::shape_list_hypervisors::de_list_hypervisors_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

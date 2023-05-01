@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAggregationAutho
                         crate::protocol_serde::shape_describe_aggregation_authorizations::de_describe_aggregation_authorizations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

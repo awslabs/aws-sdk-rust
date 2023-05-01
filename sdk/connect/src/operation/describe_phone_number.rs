@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePhoneNumber {
                         crate::protocol_serde::shape_describe_phone_number::de_describe_phone_number_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

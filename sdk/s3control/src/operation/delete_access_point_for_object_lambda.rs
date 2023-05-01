@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPointForObje
                         crate::protocol_serde::shape_delete_access_point_for_object_lambda::de_delete_access_point_for_object_lambda_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

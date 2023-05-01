@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserPoolDomain {
                         crate::protocol_serde::shape_describe_user_pool_domain::de_describe_user_pool_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

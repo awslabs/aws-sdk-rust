@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddLFTagsToResource {
                         crate::protocol_serde::shape_add_lf_tags_to_resource::de_add_lf_tags_to_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

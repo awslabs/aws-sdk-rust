@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateSession {
                         crate::protocol_serde::shape_terminate_session::de_terminate_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

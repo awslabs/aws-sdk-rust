@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopProductSubscription 
                         crate::protocol_serde::shape_stop_product_subscription::de_stop_product_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

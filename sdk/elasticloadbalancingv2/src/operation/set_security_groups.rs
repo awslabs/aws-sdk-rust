@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetSecurityGroups {
                         crate::protocol_serde::shape_set_security_groups::de_set_security_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

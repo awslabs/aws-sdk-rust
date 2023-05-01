@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceConnectorTerm
                         crate::protocol_serde::shape_delete_voice_connector_termination_credentials::de_delete_voice_connector_termination_credentials_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

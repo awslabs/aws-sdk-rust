@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubmitContactEvaluation 
                         crate::protocol_serde::shape_submit_contact_evaluation::de_submit_contact_evaluation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

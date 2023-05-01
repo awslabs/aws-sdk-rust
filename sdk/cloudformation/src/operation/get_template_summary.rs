@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplateSummary {
                         crate::protocol_serde::shape_get_template_summary::de_get_template_summary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateDataKeyPair {
                         crate::protocol_serde::shape_generate_data_key_pair::de_generate_data_key_pair_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

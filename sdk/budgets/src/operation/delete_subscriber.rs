@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSubscriber {
                         crate::protocol_serde::shape_delete_subscriber::de_delete_subscriber_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

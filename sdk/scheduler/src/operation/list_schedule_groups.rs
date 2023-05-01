@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListScheduleGroups {
                         crate::protocol_serde::shape_list_schedule_groups::de_list_schedule_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

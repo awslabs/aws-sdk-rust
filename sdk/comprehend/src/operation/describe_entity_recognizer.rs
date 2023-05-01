@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEntityRecognizer
                         crate::protocol_serde::shape_describe_entity_recognizer::de_describe_entity_recognizer_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

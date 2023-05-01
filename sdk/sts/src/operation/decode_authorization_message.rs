@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DecodeAuthorizationMessa
                         crate::protocol_serde::shape_decode_authorization_message::de_decode_authorization_message_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

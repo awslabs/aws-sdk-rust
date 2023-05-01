@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchRead {
                         crate::protocol_serde::shape_batch_read::de_batch_read_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

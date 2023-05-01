@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIdentityProvider {
                         crate::protocol_serde::shape_update_identity_provider::de_update_identity_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

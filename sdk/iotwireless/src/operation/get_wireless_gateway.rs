@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWirelessGateway {
                         crate::protocol_serde::shape_get_wireless_gateway::de_get_wireless_gateway_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

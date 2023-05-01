@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMonitoringSubscrip
                         crate::protocol_serde::shape_delete_monitoring_subscription::de_delete_monitoring_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

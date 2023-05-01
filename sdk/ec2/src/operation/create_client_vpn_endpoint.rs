@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateClientVpnEndpoint 
                         crate::protocol_serde::shape_create_client_vpn_endpoint::de_create_client_vpn_endpoint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

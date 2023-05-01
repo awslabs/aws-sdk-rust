@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrustAnchor {
                         crate::protocol_serde::shape_get_trust_anchor::de_get_trust_anchor_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

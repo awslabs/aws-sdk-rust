@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendBulkEmail {
                         crate::protocol_serde::shape_send_bulk_email::de_send_bulk_email_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

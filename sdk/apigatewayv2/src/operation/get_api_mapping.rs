@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApiMapping {
                         crate::protocol_serde::shape_get_api_mapping::de_get_api_mapping_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

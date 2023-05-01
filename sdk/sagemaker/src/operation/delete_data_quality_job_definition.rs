@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataQualityJobDefi
                         crate::protocol_serde::shape_delete_data_quality_job_definition::de_delete_data_quality_job_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

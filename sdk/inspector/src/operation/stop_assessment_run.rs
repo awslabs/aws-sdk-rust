@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopAssessmentRun {
                         crate::protocol_serde::shape_stop_assessment_run::de_stop_assessment_run_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

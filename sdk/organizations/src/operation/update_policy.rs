@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePolicy {
                         crate::protocol_serde::shape_update_policy::de_update_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

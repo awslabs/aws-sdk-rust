@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelBatchImportJob {
                         crate::protocol_serde::shape_cancel_batch_import_job::de_cancel_batch_import_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

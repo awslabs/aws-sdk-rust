@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPermissionsBoundaryFo
                         crate::protocol_serde::shape_get_permissions_boundary_for_permission_set::de_get_permissions_boundary_for_permission_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

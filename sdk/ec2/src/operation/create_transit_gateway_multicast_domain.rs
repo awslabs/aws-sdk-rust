@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitGatewayMult
                         crate::protocol_serde::shape_create_transit_gateway_multicast_domain::de_create_transit_gateway_multicast_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

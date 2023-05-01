@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnalyzedResource {
                         crate::protocol_serde::shape_get_analyzed_resource::de_get_analyzed_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

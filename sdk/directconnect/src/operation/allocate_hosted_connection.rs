@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateHostedConnection
                         crate::protocol_serde::shape_allocate_hosted_connection::de_allocate_hosted_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

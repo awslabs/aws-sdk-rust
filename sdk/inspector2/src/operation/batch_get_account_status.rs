@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetAccountStatus {
                         crate::protocol_serde::shape_batch_get_account_status::de_batch_get_account_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

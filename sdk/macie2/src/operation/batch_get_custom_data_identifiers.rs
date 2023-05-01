@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetCustomDataIdenti
                         crate::protocol_serde::shape_batch_get_custom_data_identifiers::de_batch_get_custom_data_identifiers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

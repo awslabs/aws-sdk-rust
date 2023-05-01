@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUsagePlanKey {
                         crate::protocol_serde::shape_delete_usage_plan_key::de_delete_usage_plan_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

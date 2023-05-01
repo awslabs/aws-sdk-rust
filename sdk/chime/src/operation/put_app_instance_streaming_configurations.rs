@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppInstanceStreamingC
                         crate::protocol_serde::shape_put_app_instance_streaming_configurations::de_put_app_instance_streaming_configurations_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

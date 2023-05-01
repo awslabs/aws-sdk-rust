@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateShareInvitation {
                         crate::protocol_serde::shape_update_share_invitation::de_update_share_invitation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

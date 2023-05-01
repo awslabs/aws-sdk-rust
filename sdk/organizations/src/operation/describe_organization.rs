@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganization {
                         crate::protocol_serde::shape_describe_organization::de_describe_organization_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

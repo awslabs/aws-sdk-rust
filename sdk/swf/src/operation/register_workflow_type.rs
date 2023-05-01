@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterWorkflowType {
                         crate::protocol_serde::shape_register_workflow_type::de_register_workflow_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

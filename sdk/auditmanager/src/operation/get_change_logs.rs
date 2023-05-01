@@ -123,6 +123,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChangeLogs {
                         crate::protocol_serde::shape_get_change_logs::de_get_change_logs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

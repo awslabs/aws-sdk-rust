@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLexicon {
                         crate::protocol_serde::shape_delete_lexicon::de_delete_lexicon_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

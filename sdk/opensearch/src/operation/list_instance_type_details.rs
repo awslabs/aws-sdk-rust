@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstanceTypeDetails 
                         crate::protocol_serde::shape_list_instance_type_details::de_list_instance_type_details_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

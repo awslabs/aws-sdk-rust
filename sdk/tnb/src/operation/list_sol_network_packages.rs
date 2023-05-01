@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSolNetworkPackages {
                         crate::protocol_serde::shape_list_sol_network_packages::de_list_sol_network_packages_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

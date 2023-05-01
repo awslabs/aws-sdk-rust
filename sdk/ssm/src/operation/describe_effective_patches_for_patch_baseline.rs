@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEffectivePatches
                         crate::protocol_serde::shape_describe_effective_patches_for_patch_baseline::de_describe_effective_patches_for_patch_baseline_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

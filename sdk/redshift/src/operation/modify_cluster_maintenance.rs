@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyClusterMaintenance
                         crate::protocol_serde::shape_modify_cluster_maintenance::de_modify_cluster_maintenance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

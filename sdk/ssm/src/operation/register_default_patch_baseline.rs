@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDefaultPatchBase
                         crate::protocol_serde::shape_register_default_patch_baseline::de_register_default_patch_baseline_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

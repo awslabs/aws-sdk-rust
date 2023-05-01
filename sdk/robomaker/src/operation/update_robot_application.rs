@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRobotApplication {
                         crate::protocol_serde::shape_update_robot_application::de_update_robot_application_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

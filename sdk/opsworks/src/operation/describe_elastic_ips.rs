@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeElasticIps {
                         crate::protocol_serde::shape_describe_elastic_ips::de_describe_elastic_ips_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

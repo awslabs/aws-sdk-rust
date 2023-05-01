@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVectorEnrichmentJo
                         crate::protocol_serde::shape_delete_vector_enrichment_job::de_delete_vector_enrichment_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

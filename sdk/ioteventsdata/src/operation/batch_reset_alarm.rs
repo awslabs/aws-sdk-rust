@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchResetAlarm {
                         crate::protocol_serde::shape_batch_reset_alarm::de_batch_reset_alarm_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

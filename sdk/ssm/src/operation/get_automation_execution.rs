@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAutomationExecution {
                         crate::protocol_serde::shape_get_automation_execution::de_get_automation_execution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

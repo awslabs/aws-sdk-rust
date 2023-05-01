@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFieldLevelEncryption
                         crate::protocol_serde::shape_list_field_level_encryption_profiles::de_list_field_level_encryption_profiles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

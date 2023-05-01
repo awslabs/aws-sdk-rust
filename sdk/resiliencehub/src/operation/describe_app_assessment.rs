@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppAssessment {
                         crate::protocol_serde::shape_describe_app_assessment::de_describe_app_assessment_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

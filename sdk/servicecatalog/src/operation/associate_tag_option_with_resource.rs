@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTagOptionWithRe
                         crate::protocol_serde::shape_associate_tag_option_with_resource::de_associate_tag_option_with_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHostnameSuggestion {
                         crate::protocol_serde::shape_get_hostname_suggestion::de_get_hostname_suggestion_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

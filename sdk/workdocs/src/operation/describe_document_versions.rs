@@ -124,6 +124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDocumentVersions
                         crate::protocol_serde::shape_describe_document_versions::de_describe_document_versions_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

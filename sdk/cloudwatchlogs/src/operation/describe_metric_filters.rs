@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMetricFilters {
                         crate::protocol_serde::shape_describe_metric_filters::de_describe_metric_filters_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

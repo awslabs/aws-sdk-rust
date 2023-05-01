@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveBackendConfig {
                         crate::protocol_serde::shape_remove_backend_config::de_remove_backend_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendContactReachabilit
                         crate::protocol_serde::shape_resend_contact_reachability_email::de_resend_contact_reachability_email_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

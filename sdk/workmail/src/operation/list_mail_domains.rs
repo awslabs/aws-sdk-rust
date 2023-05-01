@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMailDomains {
                         crate::protocol_serde::shape_list_mail_domains::de_list_mail_domains_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

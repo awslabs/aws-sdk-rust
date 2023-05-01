@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeComments {
                         crate::protocol_serde::shape_describe_comments::de_describe_comments_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVodSources {
                         crate::protocol_serde::shape_list_vod_sources::de_list_vod_sources_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

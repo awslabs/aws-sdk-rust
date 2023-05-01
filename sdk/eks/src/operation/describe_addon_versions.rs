@@ -138,6 +138,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAddonVersions {
                         crate::protocol_serde::shape_describe_addon_versions::de_describe_addon_versions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

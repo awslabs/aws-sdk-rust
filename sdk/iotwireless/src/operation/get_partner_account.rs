@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPartnerAccount {
                         crate::protocol_serde::shape_get_partner_account::de_get_partner_account_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

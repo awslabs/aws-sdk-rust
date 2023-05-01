@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBuildBatches {
                         crate::protocol_serde::shape_list_build_batches::de_list_build_batches_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

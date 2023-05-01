@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributedGrants {
                         crate::protocol_serde::shape_list_distributed_grants::de_list_distributed_grants_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

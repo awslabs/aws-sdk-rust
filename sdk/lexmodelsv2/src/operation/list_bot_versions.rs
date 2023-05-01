@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBotVersions {
                         crate::protocol_serde::shape_list_bot_versions::de_list_bot_versions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

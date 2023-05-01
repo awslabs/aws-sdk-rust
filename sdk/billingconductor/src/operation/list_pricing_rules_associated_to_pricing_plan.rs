@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingRulesAssociat
                         crate::protocol_serde::shape_list_pricing_rules_associated_to_pricing_plan::de_list_pricing_rules_associated_to_pricing_plan_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

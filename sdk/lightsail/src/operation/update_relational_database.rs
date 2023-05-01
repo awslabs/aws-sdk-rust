@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRelationalDatabase
                         crate::protocol_serde::shape_update_relational_database::de_update_relational_database_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

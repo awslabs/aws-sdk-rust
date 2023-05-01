@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancerTlsCer
                         crate::protocol_serde::shape_delete_load_balancer_tls_certificate::de_delete_load_balancer_tls_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

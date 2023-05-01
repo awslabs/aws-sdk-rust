@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataSourceFromS3 {
                         crate::protocol_serde::shape_create_data_source_from_s3::de_create_data_source_from_s3_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

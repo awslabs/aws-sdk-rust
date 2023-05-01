@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateArchiveRule {
                         crate::protocol_serde::shape_create_archive_rule::de_create_archive_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

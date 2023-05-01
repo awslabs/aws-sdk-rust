@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThingGroupsForThing 
                         crate::protocol_serde::shape_list_thing_groups_for_thing::de_list_thing_groups_for_thing_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

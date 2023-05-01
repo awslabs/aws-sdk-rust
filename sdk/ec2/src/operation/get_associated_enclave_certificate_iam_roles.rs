@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssociatedEnclaveCert
                         crate::protocol_serde::shape_get_associated_enclave_certificate_iam_roles::de_get_associated_enclave_certificate_iam_roles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

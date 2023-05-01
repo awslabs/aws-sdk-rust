@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectFromService {
                         crate::protocol_serde::shape_disconnect_from_service::de_disconnect_from_service_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

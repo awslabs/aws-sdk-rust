@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyBackupAttributes {
                         crate::protocol_serde::shape_modify_backup_attributes::de_modify_backup_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

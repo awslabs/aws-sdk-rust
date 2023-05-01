@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckIfPhoneNumberIsOpte
                         crate::protocol_serde::shape_check_if_phone_number_is_opted_out::de_check_if_phone_number_is_opted_out_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

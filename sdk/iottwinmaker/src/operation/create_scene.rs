@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateScene {
                         crate::protocol_serde::shape_create_scene::de_create_scene_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

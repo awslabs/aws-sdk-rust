@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchQuantumTasks {
                         crate::protocol_serde::shape_search_quantum_tasks::de_search_quantum_tasks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

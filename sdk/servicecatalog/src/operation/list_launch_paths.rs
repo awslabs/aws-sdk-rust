@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLaunchPaths {
                         crate::protocol_serde::shape_list_launch_paths::de_list_launch_paths_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

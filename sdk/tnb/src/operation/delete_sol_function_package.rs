@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSolFunctionPackage
                         crate::protocol_serde::shape_delete_sol_function_package::de_delete_sol_function_package_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

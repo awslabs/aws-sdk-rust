@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateMulticastGro
                         crate::protocol_serde::shape_disassociate_multicast_group_from_fuota_task::de_disassociate_multicast_group_from_fuota_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

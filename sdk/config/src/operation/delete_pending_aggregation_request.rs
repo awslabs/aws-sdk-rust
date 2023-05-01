@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePendingAggregation
                         crate::protocol_serde::shape_delete_pending_aggregation_request::de_delete_pending_aggregation_request_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

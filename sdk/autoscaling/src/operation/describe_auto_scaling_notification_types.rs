@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAutoScalingNotif
                         crate::protocol_serde::shape_describe_auto_scaling_notification_types::de_describe_auto_scaling_notification_types_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

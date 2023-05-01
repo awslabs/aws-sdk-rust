@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDetectorModelAnalys
                         crate::protocol_serde::shape_start_detector_model_analysis::de_start_detector_model_analysis_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

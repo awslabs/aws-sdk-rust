@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateTemplate {
                         crate::protocol_serde::shape_generate_template::de_generate_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

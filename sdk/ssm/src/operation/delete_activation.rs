@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteActivation {
                         crate::protocol_serde::shape_delete_activation::de_delete_activation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -121,6 +121,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReferences {
                         crate::protocol_serde::shape_list_references::de_list_references_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

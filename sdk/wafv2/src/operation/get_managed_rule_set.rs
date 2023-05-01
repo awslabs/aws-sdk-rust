@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedRuleSet {
                         crate::protocol_serde::shape_get_managed_rule_set::de_get_managed_rule_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

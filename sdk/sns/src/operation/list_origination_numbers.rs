@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOriginationNumbers {
                         crate::protocol_serde::shape_list_origination_numbers::de_list_origination_numbers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

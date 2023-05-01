@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptEulas {
                         crate::protocol_serde::shape_accept_eulas::de_accept_eulas_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

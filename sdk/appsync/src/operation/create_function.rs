@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFunction {
                         crate::protocol_serde::shape_create_function::de_create_function_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

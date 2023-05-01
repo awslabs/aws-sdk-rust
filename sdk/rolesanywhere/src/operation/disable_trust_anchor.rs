@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableTrustAnchor {
                         crate::protocol_serde::shape_disable_trust_anchor::de_disable_trust_anchor_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

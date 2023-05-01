@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSink {
                         crate::protocol_serde::shape_delete_sink::de_delete_sink_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

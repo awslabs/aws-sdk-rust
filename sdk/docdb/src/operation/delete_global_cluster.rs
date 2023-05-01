@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGlobalCluster {
                         crate::protocol_serde::shape_delete_global_cluster::de_delete_global_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

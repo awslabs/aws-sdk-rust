@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVoiceConnectorTermina
                         crate::protocol_serde::shape_put_voice_connector_termination::de_put_voice_connector_termination_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

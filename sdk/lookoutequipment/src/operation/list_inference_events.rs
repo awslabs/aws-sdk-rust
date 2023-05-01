@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInferenceEvents {
                         crate::protocol_serde::shape_list_inference_events::de_list_inference_events_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

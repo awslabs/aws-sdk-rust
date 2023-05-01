@@ -60,6 +60,13 @@ pub trait ParseHttpResponse {
     /// if `parse_unloaded` will never return `None`, however, it may make your code easier to test if an
     /// implementation is provided.
     fn parse_loaded(&self, response: &http::Response<Bytes>) -> Self::Output;
+
+    /// Returns whether the contents of this response are sensitive
+    ///
+    /// When this is set to true, wire logging will be disabled
+    fn sensitive(&self) -> bool {
+        false
+    }
 }
 
 /// Convenience Trait for non-streaming APIs
@@ -72,6 +79,13 @@ pub trait ParseStrictResponse {
 
     /// Parse an [`http::Response<Bytes>`] into `Self::Output`.
     fn parse(&self, response: &http::Response<Bytes>) -> Self::Output;
+
+    /// Returns whether the contents of this response are sensitive
+    ///
+    /// When this is set to true, wire logging will be disabled
+    fn sensitive(&self) -> bool {
+        false
+    }
 }
 
 impl<T: ParseStrictResponse> ParseHttpResponse for T {
@@ -83,6 +97,10 @@ impl<T: ParseStrictResponse> ParseHttpResponse for T {
 
     fn parse_loaded(&self, response: &http::Response<Bytes>) -> Self::Output {
         self.parse(response)
+    }
+
+    fn sensitive(&self) -> bool {
+        ParseStrictResponse::sensitive(self)
     }
 }
 

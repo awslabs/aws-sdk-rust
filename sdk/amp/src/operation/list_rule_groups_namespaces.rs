@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuleGroupsNamespaces
                         crate::protocol_serde::shape_list_rule_groups_namespaces::de_list_rule_groups_namespaces_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

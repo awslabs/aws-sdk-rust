@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterAVSDevice {
                         crate::protocol_serde::shape_register_avs_device::de_register_avs_device_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

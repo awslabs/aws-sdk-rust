@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetUserMFAPreference {
                         crate::protocol_serde::shape_set_user_mfa_preference::de_set_user_mfa_preference_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

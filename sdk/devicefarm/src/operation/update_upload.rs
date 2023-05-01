@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUpload {
                         crate::protocol_serde::shape_update_upload::de_update_upload_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

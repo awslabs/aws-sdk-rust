@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIndexFields {
                         crate::protocol_serde::shape_describe_index_fields::de_describe_index_fields_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

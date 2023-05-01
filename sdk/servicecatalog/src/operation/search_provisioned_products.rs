@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchProvisionedProduct
                         crate::protocol_serde::shape_search_provisioned_products::de_search_provisioned_products_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

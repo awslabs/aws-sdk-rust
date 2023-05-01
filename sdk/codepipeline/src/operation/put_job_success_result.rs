@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutJobSuccessResult {
                         crate::protocol_serde::shape_put_job_success_result::de_put_job_success_result_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

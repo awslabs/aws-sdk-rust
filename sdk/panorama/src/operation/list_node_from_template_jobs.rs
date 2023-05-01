@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNodeFromTemplateJobs
                         crate::protocol_serde::shape_list_node_from_template_jobs::de_list_node_from_template_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

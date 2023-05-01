@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetListElements {
                         crate::protocol_serde::shape_get_list_elements::de_get_list_elements_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

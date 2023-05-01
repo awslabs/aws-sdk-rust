@@ -123,6 +123,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLinkAssociations {
                         crate::protocol_serde::shape_get_link_associations::de_get_link_associations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

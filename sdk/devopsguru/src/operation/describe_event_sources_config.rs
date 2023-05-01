@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventSourcesConf
                         crate::protocol_serde::shape_describe_event_sources_config::de_describe_event_sources_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

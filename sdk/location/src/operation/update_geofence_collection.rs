@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGeofenceCollection
                         crate::protocol_serde::shape_update_geofence_collection::de_update_geofence_collection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

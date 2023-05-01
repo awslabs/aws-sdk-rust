@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterEventTopic {
                         crate::protocol_serde::shape_register_event_topic::de_register_event_topic_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBotVersion {
                         crate::protocol_serde::shape_delete_bot_version::de_delete_bot_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

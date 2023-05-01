@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopBuild {
                         crate::protocol_serde::shape_stop_build::de_stop_build_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserByPrincipalId 
                         crate::protocol_serde::shape_delete_user_by_principal_id::de_delete_user_by_principal_id_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

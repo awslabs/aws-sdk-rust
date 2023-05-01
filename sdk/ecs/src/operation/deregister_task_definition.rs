@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterTaskDefinition
                         crate::protocol_serde::shape_deregister_task_definition::de_deregister_task_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

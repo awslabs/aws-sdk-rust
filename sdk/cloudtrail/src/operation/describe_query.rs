@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeQuery {
                         crate::protocol_serde::shape_describe_query::de_describe_query_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

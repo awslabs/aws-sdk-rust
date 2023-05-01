@@ -115,6 +115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualService {
                         crate::protocol_serde::shape_create_virtual_service::de_create_virtual_service_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

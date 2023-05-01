@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDetectorModelAna
                         crate::protocol_serde::shape_describe_detector_model_analysis::de_describe_detector_model_analysis_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

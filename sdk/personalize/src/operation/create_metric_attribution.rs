@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMetricAttribution 
                         crate::protocol_serde::shape_create_metric_attribution::de_create_metric_attribution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

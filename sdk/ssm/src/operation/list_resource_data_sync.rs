@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceDataSync {
                         crate::protocol_serde::shape_list_resource_data_sync::de_list_resource_data_sync_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

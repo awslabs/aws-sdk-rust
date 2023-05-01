@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDigest {
                         crate::protocol_serde::shape_get_digest::de_get_digest_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

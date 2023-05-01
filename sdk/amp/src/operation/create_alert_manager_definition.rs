@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAlertManagerDefini
                         crate::protocol_serde::shape_create_alert_manager_definition::de_create_alert_manager_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOptionGroups {
                         crate::protocol_serde::shape_describe_option_groups::de_describe_option_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

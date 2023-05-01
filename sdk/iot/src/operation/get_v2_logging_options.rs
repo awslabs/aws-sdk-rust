@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetV2LoggingOptions {
                         crate::protocol_serde::shape_get_v2_logging_options::de_get_v2_logging_options_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

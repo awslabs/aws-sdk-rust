@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVaultLock {
                         crate::protocol_serde::shape_get_vault_lock::de_get_vault_lock_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

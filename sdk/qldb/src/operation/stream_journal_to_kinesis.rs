@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StreamJournalToKinesis {
                         crate::protocol_serde::shape_stream_journal_to_kinesis::de_stream_journal_to_kinesis_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateTableRows {
                         crate::protocol_serde::shape_batch_create_table_rows::de_batch_create_table_rows_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

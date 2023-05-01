@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEdgeConfiguratio
                         crate::protocol_serde::shape_describe_edge_configuration::de_describe_edge_configuration_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

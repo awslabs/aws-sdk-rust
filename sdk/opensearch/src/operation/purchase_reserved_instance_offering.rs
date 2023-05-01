@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseReservedInstance
                         crate::protocol_serde::shape_purchase_reserved_instance_offering::de_purchase_reserved_instance_offering_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

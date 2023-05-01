@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReadPreset {
                         crate::protocol_serde::shape_read_preset::de_read_preset_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

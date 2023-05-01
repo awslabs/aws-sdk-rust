@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopVoiceToneAnalysisTas
                         crate::protocol_serde::shape_stop_voice_tone_analysis_task::de_stop_voice_tone_analysis_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

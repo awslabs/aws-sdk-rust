@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAutoScalingGroupRecom
                         crate::protocol_serde::shape_get_auto_scaling_group_recommendations::de_get_auto_scaling_group_recommendations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

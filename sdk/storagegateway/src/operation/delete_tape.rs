@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTape {
                         crate::protocol_serde::shape_delete_tape::de_delete_tape_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

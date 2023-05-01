@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventsDetectionJobs 
                         crate::protocol_serde::shape_list_events_detection_jobs::de_list_events_detection_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

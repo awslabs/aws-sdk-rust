@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterGatewayInstanc
                         crate::protocol_serde::shape_deregister_gateway_instance::de_deregister_gateway_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

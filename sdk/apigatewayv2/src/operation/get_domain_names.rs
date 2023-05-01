@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainNames {
                         crate::protocol_serde::shape_get_domain_names::de_get_domain_names_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

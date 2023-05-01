@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for IncreaseNodeGroupsInGlob
                         crate::protocol_serde::shape_increase_node_groups_in_global_replication_group::de_increase_node_groups_in_global_replication_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBlueprint {
                         crate::protocol_serde::shape_delete_blueprint::de_delete_blueprint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

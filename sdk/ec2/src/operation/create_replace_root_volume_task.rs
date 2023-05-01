@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplaceRootVolumeT
                         crate::protocol_serde::shape_create_replace_root_volume_task::de_create_replace_root_volume_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

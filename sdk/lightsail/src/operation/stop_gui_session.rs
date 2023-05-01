@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopGUISession {
                         crate::protocol_serde::shape_stop_gui_session::de_stop_gui_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

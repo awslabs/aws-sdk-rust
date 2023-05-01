@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelAuditTask {
                         crate::protocol_serde::shape_cancel_audit_task::de_cancel_audit_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

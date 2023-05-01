@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnlinkIdentity {
                         crate::protocol_serde::shape_unlink_identity::de_unlink_identity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

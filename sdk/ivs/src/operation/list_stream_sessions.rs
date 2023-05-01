@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamSessions {
                         crate::protocol_serde::shape_list_stream_sessions::de_list_stream_sessions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

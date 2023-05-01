@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBulkDeployments {
                         crate::protocol_serde::shape_list_bulk_deployments::de_list_bulk_deployments_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

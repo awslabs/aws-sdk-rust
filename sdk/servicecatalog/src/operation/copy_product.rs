@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyProduct {
                         crate::protocol_serde::shape_copy_product::de_copy_product_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

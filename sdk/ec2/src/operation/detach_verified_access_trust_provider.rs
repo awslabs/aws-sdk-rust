@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachVerifiedAccessTrus
                         crate::protocol_serde::shape_detach_verified_access_trust_provider::de_detach_verified_access_trust_provider_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDevice {
                         crate::protocol_serde::shape_delete_device::de_delete_device_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

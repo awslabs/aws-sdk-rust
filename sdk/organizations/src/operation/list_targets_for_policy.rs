@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTargetsForPolicy {
                         crate::protocol_serde::shape_list_targets_for_policy::de_list_targets_for_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

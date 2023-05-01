@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMatches {
                         crate::protocol_serde::shape_get_matches::de_get_matches_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

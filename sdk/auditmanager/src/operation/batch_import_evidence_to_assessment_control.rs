@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchImportEvidenceToAss
                         crate::protocol_serde::shape_batch_import_evidence_to_assessment_control::de_batch_import_evidence_to_assessment_control_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

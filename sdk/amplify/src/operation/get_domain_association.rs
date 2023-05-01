@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainAssociation {
                         crate::protocol_serde::shape_get_domain_association::de_get_domain_association_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

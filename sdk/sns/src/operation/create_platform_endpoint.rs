@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlatformEndpoint {
                         crate::protocol_serde::shape_create_platform_endpoint::de_create_platform_endpoint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

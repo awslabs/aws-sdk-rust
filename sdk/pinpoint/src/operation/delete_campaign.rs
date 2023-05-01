@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCampaign {
                         crate::protocol_serde::shape_delete_campaign::de_delete_campaign_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

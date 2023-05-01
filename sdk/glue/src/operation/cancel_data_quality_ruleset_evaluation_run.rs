@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDataQualityRuleset
                         crate::protocol_serde::shape_cancel_data_quality_ruleset_evaluation_run::de_cancel_data_quality_ruleset_evaluation_run_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePushTemplate {
                         crate::protocol_serde::shape_create_push_template::de_create_push_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIntegrationRespons
                         crate::protocol_serde::shape_update_integration_response::de_update_integration_response_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

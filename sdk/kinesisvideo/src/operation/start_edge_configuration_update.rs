@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEdgeConfigurationUp
                         crate::protocol_serde::shape_start_edge_configuration_update::de_start_edge_configuration_update_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

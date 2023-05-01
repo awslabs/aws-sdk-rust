@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProtectionGroup {
                         crate::protocol_serde::shape_update_protection_group::de_update_protection_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

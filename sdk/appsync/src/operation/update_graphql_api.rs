@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGraphqlApi {
                         crate::protocol_serde::shape_update_graphql_api::de_update_graphql_api_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

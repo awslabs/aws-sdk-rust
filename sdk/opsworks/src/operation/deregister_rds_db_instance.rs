@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterRdsDbInstance 
                         crate::protocol_serde::shape_deregister_rds_db_instance::de_deregister_rds_db_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

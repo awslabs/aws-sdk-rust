@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAssistant {
                         crate::protocol_serde::shape_create_assistant::de_create_assistant_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

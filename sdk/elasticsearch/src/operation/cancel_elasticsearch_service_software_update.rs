@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelElasticsearchServi
                         crate::protocol_serde::shape_cancel_elasticsearch_service_software_update::de_cancel_elasticsearch_service_software_update_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

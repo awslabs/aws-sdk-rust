@@ -115,6 +115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChannelMembership 
                         crate::protocol_serde::shape_delete_channel_membership::de_delete_channel_membership_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

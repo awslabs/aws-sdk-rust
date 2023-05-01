@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAwsNetworkPerfor
                         crate::protocol_serde::shape_describe_aws_network_performance_metric_subscriptions::de_describe_aws_network_performance_metric_subscriptions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponentVersionArtif
                         crate::protocol_serde::shape_get_component_version_artifact::de_get_component_version_artifact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

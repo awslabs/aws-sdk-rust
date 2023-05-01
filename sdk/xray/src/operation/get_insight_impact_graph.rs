@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsightImpactGraph {
                         crate::protocol_serde::shape_get_insight_impact_graph::de_get_insight_impact_graph_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

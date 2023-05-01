@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCoipCidr {
                         crate::protocol_serde::shape_create_coip_cidr::de_create_coip_cidr_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

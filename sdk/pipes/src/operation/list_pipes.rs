@@ -132,6 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPipes {
                         crate::protocol_serde::shape_list_pipes::de_list_pipes_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

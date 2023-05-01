@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyResourceDeployment
                         crate::protocol_serde::shape_notify_resource_deployment_status_change::de_notify_resource_deployment_status_change_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

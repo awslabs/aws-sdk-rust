@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyNetworkInterfaceAt
                         crate::protocol_serde::shape_modify_network_interface_attribute::de_modify_network_interface_attribute_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

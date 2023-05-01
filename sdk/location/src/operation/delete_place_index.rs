@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePlaceIndex {
                         crate::protocol_serde::shape_delete_place_index::de_delete_place_index_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestIdentityProvider {
                         crate::protocol_serde::shape_test_identity_provider::de_test_identity_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

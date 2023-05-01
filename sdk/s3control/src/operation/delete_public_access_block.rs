@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock 
                         crate::protocol_serde::shape_delete_public_access_block::de_delete_public_access_block_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

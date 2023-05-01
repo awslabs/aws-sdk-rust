@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateReportDefinition {
                         crate::protocol_serde::shape_update_report_definition::de_update_report_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

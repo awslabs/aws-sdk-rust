@@ -115,6 +115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitiateVaultLock {
                         crate::protocol_serde::shape_initiate_vault_lock::de_initiate_vault_lock_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

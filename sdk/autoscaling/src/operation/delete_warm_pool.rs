@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWarmPool {
                         crate::protocol_serde::shape_delete_warm_pool::de_delete_warm_pool_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

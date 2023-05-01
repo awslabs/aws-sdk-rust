@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppVersionAppCompo
                         crate::protocol_serde::shape_delete_app_version_app_component::de_delete_app_version_app_component_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

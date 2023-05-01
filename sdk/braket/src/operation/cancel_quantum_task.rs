@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelQuantumTask {
                         crate::protocol_serde::shape_cancel_quantum_task::de_cancel_quantum_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

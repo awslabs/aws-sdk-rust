@@ -123,6 +123,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLayerVersions {
                         crate::protocol_serde::shape_list_layer_versions::de_list_layer_versions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

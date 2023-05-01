@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSignalCatalog {
                         crate::protocol_serde::shape_delete_signal_catalog::de_delete_signal_catalog_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

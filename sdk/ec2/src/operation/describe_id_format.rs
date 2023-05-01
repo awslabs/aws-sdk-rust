@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIdFormat {
                         crate::protocol_serde::shape_describe_id_format::de_describe_id_format_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

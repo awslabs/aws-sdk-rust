@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveAttributesFromFind
                         crate::protocol_serde::shape_remove_attributes_from_findings::de_remove_attributes_from_findings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

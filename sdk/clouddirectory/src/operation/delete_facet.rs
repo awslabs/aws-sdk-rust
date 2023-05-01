@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFacet {
                         crate::protocol_serde::shape_delete_facet::de_delete_facet_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

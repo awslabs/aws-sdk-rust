@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsOfResource {
                         crate::protocol_serde::shape_list_tags_of_resource::de_list_tags_of_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

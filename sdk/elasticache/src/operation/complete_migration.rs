@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteMigration {
                         crate::protocol_serde::shape_complete_migration::de_complete_migration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

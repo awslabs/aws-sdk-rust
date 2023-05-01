@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListV2LoggingLevels {
                         crate::protocol_serde::shape_list_v2_logging_levels::de_list_v2_logging_levels_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

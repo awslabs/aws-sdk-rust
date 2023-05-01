@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCertificatesByCA {
                         crate::protocol_serde::shape_list_certificates_by_ca::de_list_certificates_by_ca_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

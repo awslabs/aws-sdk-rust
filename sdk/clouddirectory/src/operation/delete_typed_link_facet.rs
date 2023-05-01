@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTypedLinkFacet {
                         crate::protocol_serde::shape_delete_typed_link_facet::de_delete_typed_link_facet_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

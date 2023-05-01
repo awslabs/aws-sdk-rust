@@ -119,6 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFolderMembers {
                         crate::protocol_serde::shape_list_folder_members::de_list_folder_members_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

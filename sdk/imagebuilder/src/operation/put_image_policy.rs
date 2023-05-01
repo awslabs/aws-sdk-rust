@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutImagePolicy {
                         crate::protocol_serde::shape_put_image_policy::de_put_image_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ValidatePipelineDefiniti
                         crate::protocol_serde::shape_validate_pipeline_definition::de_validate_pipeline_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

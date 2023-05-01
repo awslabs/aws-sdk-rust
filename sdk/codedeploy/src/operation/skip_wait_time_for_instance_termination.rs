@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SkipWaitTimeForInstanceT
                         crate::protocol_serde::shape_skip_wait_time_for_instance_termination::de_skip_wait_time_for_instance_termination_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

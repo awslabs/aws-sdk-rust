@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCostAndUsage {
                         crate::protocol_serde::shape_get_cost_and_usage::de_get_cost_and_usage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

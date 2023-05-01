@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSessionEmbedUrl {
                         crate::protocol_serde::shape_get_session_embed_url::de_get_session_embed_url_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

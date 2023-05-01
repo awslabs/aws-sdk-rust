@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSuiteRunReport {
                         crate::protocol_serde::shape_get_suite_run_report::de_get_suite_run_report_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

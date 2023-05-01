@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutImageTagMutability {
                         crate::protocol_serde::shape_put_image_tag_mutability::de_put_image_tag_mutability_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

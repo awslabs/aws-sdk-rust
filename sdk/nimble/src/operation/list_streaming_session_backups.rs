@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamingSessionBack
                         crate::protocol_serde::shape_list_streaming_session_backups::de_list_streaming_session_backups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

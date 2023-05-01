@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCloudFormationStackRe
                         crate::protocol_serde::shape_get_cloud_formation_stack_records::de_get_cloud_formation_stack_records_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

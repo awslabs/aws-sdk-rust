@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventTrackers {
                         crate::protocol_serde::shape_list_event_trackers::de_list_event_trackers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

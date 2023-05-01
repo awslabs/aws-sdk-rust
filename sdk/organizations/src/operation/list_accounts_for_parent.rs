@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountsForParent {
                         crate::protocol_serde::shape_list_accounts_for_parent::de_list_accounts_for_parent_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

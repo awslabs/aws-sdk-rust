@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AuthorizeDataShare {
                         crate::protocol_serde::shape_authorize_data_share::de_authorize_data_share_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

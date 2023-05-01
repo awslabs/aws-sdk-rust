@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceUserEndpo
                         crate::protocol_serde::shape_list_app_instance_user_endpoints::de_list_app_instance_user_endpoints_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateUser {
                         crate::protocol_serde::shape_activate_user::de_activate_user_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGlobalTables {
                         crate::protocol_serde::shape_list_global_tables::de_list_global_tables_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

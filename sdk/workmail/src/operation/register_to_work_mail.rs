@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterToWorkMail {
                         crate::protocol_serde::shape_register_to_work_mail::de_register_to_work_mail_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

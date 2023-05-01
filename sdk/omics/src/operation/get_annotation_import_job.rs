@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnnotationImportJob {
                         crate::protocol_serde::shape_get_annotation_import_job::de_get_annotation_import_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

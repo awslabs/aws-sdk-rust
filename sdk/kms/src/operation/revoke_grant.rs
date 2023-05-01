@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeGrant {
                         crate::protocol_serde::shape_revoke_grant::de_revoke_grant_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

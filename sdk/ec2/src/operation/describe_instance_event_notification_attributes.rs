@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceEventNot
                         crate::protocol_serde::shape_describe_instance_event_notification_attributes::de_describe_instance_event_notification_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

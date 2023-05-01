@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecommendationPrefere
                         crate::protocol_serde::shape_put_recommendation_preferences::de_put_recommendation_preferences_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

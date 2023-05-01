@@ -143,6 +143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyObjectComplete {
                         crate::protocol_serde::shape_notify_object_complete::de_notify_object_complete_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

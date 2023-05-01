@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLoadBalancerAttrib
                         crate::protocol_serde::shape_modify_load_balancer_attributes::de_modify_load_balancer_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

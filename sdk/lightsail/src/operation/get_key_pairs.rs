@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyPairs {
                         crate::protocol_serde::shape_get_key_pairs::de_get_key_pairs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

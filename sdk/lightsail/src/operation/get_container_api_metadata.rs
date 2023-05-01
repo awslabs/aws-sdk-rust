@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContainerAPIMetadata 
                         crate::protocol_serde::shape_get_container_api_metadata::de_get_container_api_metadata_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

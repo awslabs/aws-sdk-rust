@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportServerEngineAttrib
                         crate::protocol_serde::shape_export_server_engine_attribute::de_export_server_engine_attribute_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

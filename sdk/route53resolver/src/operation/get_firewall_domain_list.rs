@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallDomainList {
                         crate::protocol_serde::shape_get_firewall_domain_list::de_get_firewall_domain_list_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

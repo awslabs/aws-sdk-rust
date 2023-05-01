@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutWorkflowRunProperties
                         crate::protocol_serde::shape_put_workflow_run_properties::de_put_workflow_run_properties_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

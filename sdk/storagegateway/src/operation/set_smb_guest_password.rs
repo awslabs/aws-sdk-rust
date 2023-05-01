@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetSMBGuestPassword {
                         crate::protocol_serde::shape_set_smb_guest_password::de_set_smb_guest_password_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

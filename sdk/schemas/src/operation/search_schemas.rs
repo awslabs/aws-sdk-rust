@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchSchemas {
                         crate::protocol_serde::shape_search_schemas::de_search_schemas_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

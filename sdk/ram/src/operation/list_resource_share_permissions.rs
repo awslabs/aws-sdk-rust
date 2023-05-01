@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceSharePermiss
                         crate::protocol_serde::shape_list_resource_share_permissions::de_list_resource_share_permissions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterApplicationRevis
                         crate::protocol_serde::shape_register_application_revision::de_register_application_revision_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

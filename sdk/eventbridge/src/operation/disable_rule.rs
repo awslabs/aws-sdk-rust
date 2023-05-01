@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableRule {
                         crate::protocol_serde::shape_disable_rule::de_disable_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

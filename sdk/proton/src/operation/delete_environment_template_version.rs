@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEnvironmentTemplat
                         crate::protocol_serde::shape_delete_environment_template_version::de_delete_environment_template_version_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyClusterDbRevision 
                         crate::protocol_serde::shape_modify_cluster_db_revision::de_modify_cluster_db_revision_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

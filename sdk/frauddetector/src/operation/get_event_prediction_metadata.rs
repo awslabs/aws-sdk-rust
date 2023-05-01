@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventPredictionMetada
                         crate::protocol_serde::shape_get_event_prediction_metadata::de_get_event_prediction_metadata_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RefreshToken {
                         crate::protocol_serde::shape_refresh_token::de_refresh_token_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

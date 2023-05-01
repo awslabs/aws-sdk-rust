@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEntityRecognizer {
                         crate::protocol_serde::shape_delete_entity_recognizer::de_delete_entity_recognizer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

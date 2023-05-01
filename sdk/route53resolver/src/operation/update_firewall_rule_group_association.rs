@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallRuleGroupA
                         crate::protocol_serde::shape_update_firewall_rule_group_association::de_update_firewall_rule_group_association_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

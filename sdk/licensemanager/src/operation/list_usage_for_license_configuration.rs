@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUsageForLicenseConfi
                         crate::protocol_serde::shape_list_usage_for_license_configuration::de_list_usage_for_license_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

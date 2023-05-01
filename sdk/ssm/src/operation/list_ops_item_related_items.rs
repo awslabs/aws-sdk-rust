@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOpsItemRelatedItems 
                         crate::protocol_serde::shape_list_ops_item_related_items::de_list_ops_item_related_items_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

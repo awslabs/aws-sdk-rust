@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOriginAccessControlCo
                         crate::protocol_serde::shape_get_origin_access_control_config::de_get_origin_access_control_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

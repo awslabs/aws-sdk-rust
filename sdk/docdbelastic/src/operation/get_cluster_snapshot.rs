@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetClusterSnapshot {
                         crate::protocol_serde::shape_get_cluster_snapshot::de_get_cluster_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

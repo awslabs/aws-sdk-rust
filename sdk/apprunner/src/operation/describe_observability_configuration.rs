@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeObservabilityCon
                         crate::protocol_serde::shape_describe_observability_configuration::de_describe_observability_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelFindingsReport {
                         crate::protocol_serde::shape_cancel_findings_report::de_cancel_findings_report_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

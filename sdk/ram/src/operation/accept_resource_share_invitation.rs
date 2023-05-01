@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptResourceShareInvit
                         crate::protocol_serde::shape_accept_resource_share_invitation::de_accept_resource_share_invitation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApplicationPresign
                         crate::protocol_serde::shape_create_application_presigned_url::de_create_application_presigned_url_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

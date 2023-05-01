@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntityRecognizers {
                         crate::protocol_serde::shape_list_entity_recognizers::de_list_entity_recognizers_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChunks {
                         crate::protocol_serde::shape_list_chunks::de_list_chunks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

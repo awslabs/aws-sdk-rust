@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeCluster {
                         crate::protocol_serde::shape_resume_cluster::de_resume_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

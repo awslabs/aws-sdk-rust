@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifyEmailAddress {
                         crate::protocol_serde::shape_verify_email_address::de_verify_email_address_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

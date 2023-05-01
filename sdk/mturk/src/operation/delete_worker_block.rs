@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkerBlock {
                         crate::protocol_serde::shape_delete_worker_block::de_delete_worker_block_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccess {
                         crate::protocol_serde::shape_update_access::de_update_access_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

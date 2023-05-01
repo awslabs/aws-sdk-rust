@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNodeFromTemplateJo
                         crate::protocol_serde::shape_create_node_from_template_job::de_create_node_from_template_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

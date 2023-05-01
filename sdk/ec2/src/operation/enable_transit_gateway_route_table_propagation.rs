@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableTransitGatewayRout
                         crate::protocol_serde::shape_enable_transit_gateway_route_table_propagation::de_enable_transit_gateway_route_table_propagation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

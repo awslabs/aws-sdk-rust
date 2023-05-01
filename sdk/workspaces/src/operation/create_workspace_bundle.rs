@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspaceBundle {
                         crate::protocol_serde::shape_create_workspace_bundle::de_create_workspace_bundle_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

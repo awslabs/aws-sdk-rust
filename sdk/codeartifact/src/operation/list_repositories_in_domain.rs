@@ -128,6 +128,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositoriesInDomain
                         crate::protocol_serde::shape_list_repositories_in_domain::de_list_repositories_in_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

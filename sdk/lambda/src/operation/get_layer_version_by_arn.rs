@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLayerVersionByArn {
                         crate::protocol_serde::shape_get_layer_version_by_arn::de_get_layer_version_by_arn_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

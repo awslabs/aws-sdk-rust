@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountAuditConfig
                         crate::protocol_serde::shape_delete_account_audit_configuration::de_delete_account_audit_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

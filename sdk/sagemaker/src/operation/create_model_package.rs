@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateModelPackage {
                         crate::protocol_serde::shape_create_model_package::de_create_model_package_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

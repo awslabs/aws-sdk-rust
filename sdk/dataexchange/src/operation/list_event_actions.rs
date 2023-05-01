@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventActions {
                         crate::protocol_serde::shape_list_event_actions::de_list_event_actions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

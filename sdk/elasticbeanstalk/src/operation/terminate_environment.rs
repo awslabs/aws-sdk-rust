@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateEnvironment {
                         crate::protocol_serde::shape_terminate_environment::de_terminate_environment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

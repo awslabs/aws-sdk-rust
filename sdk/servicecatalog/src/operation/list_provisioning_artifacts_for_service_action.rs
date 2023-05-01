@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProvisioningArtifact
                         crate::protocol_serde::shape_list_provisioning_artifacts_for_service_action::de_list_provisioning_artifacts_for_service_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThemes {
                         crate::protocol_serde::shape_list_themes::de_list_themes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

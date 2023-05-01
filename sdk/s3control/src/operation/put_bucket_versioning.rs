@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketVersioning {
                         crate::protocol_serde::shape_put_bucket_versioning::de_put_bucket_versioning_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

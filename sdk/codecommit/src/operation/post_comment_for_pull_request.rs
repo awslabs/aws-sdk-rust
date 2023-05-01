@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PostCommentForPullReques
                         crate::protocol_serde::shape_post_comment_for_pull_request::de_post_comment_for_pull_request_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

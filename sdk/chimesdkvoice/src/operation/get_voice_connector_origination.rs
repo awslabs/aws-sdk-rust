@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnectorOrigina
                         crate::protocol_serde::shape_get_voice_connector_origination::de_get_voice_connector_origination_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

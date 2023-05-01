@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSiteAddress {
                         crate::protocol_serde::shape_get_site_address::de_get_site_address_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

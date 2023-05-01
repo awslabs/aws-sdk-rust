@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteServiceSpecificCre
                         crate::protocol_serde::shape_delete_service_specific_credential::de_delete_service_specific_credential_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

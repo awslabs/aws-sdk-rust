@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWaves {
                         crate::protocol_serde::shape_list_waves::de_list_waves_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

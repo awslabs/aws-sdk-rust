@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMapRun {
                         crate::protocol_serde::shape_update_map_run::de_update_map_run_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

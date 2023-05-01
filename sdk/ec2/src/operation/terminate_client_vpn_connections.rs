@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateClientVpnConnec
                         crate::protocol_serde::shape_terminate_client_vpn_connections::de_terminate_client_vpn_connections_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteSql {
                         crate::protocol_serde::shape_execute_sql::de_execute_sql_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

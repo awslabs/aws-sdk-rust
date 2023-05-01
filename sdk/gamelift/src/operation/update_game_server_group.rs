@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGameServerGroup {
                         crate::protocol_serde::shape_update_game_server_group::de_update_game_server_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

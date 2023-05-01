@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetUICustomization {
                         crate::protocol_serde::shape_set_ui_customization::de_set_ui_customization_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

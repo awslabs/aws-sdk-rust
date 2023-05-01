@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetDeploymentGroups
                         crate::protocol_serde::shape_batch_get_deployment_groups::de_batch_get_deployment_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

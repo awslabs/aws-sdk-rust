@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterCompute {
                         crate::protocol_serde::shape_register_compute::de_register_compute_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

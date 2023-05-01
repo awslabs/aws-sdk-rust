@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetryStageExecution {
                         crate::protocol_serde::shape_retry_stage_execution::de_retry_stage_execution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

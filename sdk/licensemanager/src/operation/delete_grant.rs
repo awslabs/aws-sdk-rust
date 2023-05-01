@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGrant {
                         crate::protocol_serde::shape_delete_grant::de_delete_grant_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableZones {
                         crate::protocol_serde::shape_list_available_zones::de_list_available_zones_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

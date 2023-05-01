@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateSubnets {
                         crate::protocol_serde::shape_associate_subnets::de_associate_subnets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

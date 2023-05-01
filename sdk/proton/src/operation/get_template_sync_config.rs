@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTemplateSyncConfig {
                         crate::protocol_serde::shape_get_template_sync_config::de_get_template_sync_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

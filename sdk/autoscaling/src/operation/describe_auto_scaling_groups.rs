@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAutoScalingGroup
                         crate::protocol_serde::shape_describe_auto_scaling_groups::de_describe_auto_scaling_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

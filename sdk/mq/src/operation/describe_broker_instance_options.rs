@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBrokerInstanceOp
                         crate::protocol_serde::shape_describe_broker_instance_options::de_describe_broker_instance_options_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

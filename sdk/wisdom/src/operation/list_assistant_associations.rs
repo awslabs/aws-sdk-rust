@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssistantAssociation
                         crate::protocol_serde::shape_list_assistant_associations::de_list_assistant_associations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

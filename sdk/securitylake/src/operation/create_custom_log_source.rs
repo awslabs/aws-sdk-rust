@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomLogSource {
                         crate::protocol_serde::shape_create_custom_log_source::de_create_custom_log_source_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

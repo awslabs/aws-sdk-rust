@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxOpenZ
                         crate::protocol_serde::shape_describe_location_fsx_open_zfs::de_describe_location_fsx_open_zfs_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

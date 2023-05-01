@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCrossAccountAuthor
                         crate::protocol_serde::shape_create_cross_account_authorization::de_create_cross_account_authorization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

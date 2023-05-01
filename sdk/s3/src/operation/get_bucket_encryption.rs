@@ -108,6 +108,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
                         crate::protocol_serde::shape_get_bucket_encryption::de_get_bucket_encryption_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRepositoryPermissions
                         crate::protocol_serde::shape_put_repository_permissions_policy::de_put_repository_permissions_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

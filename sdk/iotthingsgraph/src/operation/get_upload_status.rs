@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUploadStatus {
                         crate::protocol_serde::shape_get_upload_status::de_get_upload_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

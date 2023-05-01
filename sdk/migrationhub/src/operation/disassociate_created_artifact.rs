@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateCreatedArtif
                         crate::protocol_serde::shape_disassociate_created_artifact::de_disassociate_created_artifact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

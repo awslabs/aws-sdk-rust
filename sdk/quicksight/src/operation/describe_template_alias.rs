@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTemplateAlias {
                         crate::protocol_serde::shape_describe_template_alias::de_describe_template_alias_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

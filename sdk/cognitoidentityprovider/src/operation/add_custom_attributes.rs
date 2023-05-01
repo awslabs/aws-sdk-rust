@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddCustomAttributes {
                         crate::protocol_serde::shape_add_custom_attributes::de_add_custom_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

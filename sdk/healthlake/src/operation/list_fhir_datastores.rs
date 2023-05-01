@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFHIRDatastores {
                         crate::protocol_serde::shape_list_fhir_datastores::de_list_fhir_datastores_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

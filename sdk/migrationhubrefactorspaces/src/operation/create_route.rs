@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoute {
                         crate::protocol_serde::shape_create_route::de_create_route_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

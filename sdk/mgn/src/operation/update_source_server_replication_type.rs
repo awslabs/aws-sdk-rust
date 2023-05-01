@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSourceServerReplic
                         crate::protocol_serde::shape_update_source_server_replication_type::de_update_source_server_replication_type_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

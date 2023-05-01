@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLaunchTemplate {
                         crate::protocol_serde::shape_modify_launch_template::de_modify_launch_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

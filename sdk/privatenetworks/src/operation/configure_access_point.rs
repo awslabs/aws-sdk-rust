@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureAccessPoint {
                         crate::protocol_serde::shape_configure_access_point::de_configure_access_point_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

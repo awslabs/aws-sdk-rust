@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLag {
                         crate::protocol_serde::shape_delete_lag::de_delete_lag_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

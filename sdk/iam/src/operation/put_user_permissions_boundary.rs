@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutUserPermissionsBounda
                         crate::protocol_serde::shape_put_user_permissions_boundary::de_put_user_permissions_boundary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

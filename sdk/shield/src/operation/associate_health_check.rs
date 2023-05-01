@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateHealthCheck {
                         crate::protocol_serde::shape_associate_health_check::de_associate_health_check_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

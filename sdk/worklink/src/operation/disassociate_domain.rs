@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDomain {
                         crate::protocol_serde::shape_disassociate_domain::de_disassociate_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

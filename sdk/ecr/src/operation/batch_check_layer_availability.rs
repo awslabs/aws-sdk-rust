@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCheckLayerAvailabil
                         crate::protocol_serde::shape_batch_check_layer_availability::de_batch_check_layer_availability_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSuiteDefinition {
                         crate::protocol_serde::shape_create_suite_definition::de_create_suite_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

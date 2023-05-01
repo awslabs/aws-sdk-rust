@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingEndpoin
                         crate::protocol_serde::shape_list_custom_routing_endpoint_groups::de_list_custom_routing_endpoint_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

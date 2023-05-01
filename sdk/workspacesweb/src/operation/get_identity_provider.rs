@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityProvider {
                         crate::protocol_serde::shape_get_identity_provider::de_get_identity_provider_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

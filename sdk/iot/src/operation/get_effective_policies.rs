@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEffectivePolicies {
                         crate::protocol_serde::shape_get_effective_policies::de_get_effective_policies_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

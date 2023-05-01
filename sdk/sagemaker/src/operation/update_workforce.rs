@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkforce {
                         crate::protocol_serde::shape_update_workforce::de_update_workforce_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

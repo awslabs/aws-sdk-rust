@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJobQueue {
                         crate::protocol_serde::shape_create_job_queue::de_create_job_queue_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

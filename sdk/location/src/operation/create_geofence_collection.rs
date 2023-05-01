@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGeofenceCollection
                         crate::protocol_serde::shape_create_geofence_collection::de_create_geofence_collection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

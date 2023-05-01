@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelKeyDeletion {
                         crate::protocol_serde::shape_cancel_key_deletion::de_cancel_key_deletion_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

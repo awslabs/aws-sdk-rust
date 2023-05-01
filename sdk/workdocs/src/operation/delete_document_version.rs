@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDocumentVersion {
                         crate::protocol_serde::shape_delete_document_version::de_delete_document_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

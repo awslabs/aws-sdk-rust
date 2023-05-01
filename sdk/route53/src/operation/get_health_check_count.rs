@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHealthCheckCount {
                         crate::protocol_serde::shape_get_health_check_count::de_get_health_check_count_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

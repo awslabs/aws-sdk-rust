@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositorySyncStatus 
                         crate::protocol_serde::shape_get_repository_sync_status::de_get_repository_sync_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

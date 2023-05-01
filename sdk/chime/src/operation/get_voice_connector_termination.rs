@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVoiceConnectorTermina
                         crate::protocol_serde::shape_get_voice_connector_termination::de_get_voice_connector_termination_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

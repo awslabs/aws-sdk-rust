@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImagePipeline {
                         crate::protocol_serde::shape_get_image_pipeline::de_get_image_pipeline_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDirectoryConfig {
                         crate::protocol_serde::shape_update_directory_config::de_update_directory_config_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

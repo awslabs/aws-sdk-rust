@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendContactMethodVerific
                         crate::protocol_serde::shape_send_contact_method_verification::de_send_contact_method_verification_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

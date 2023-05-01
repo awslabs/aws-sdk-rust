@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyClusterIamRoles {
                         crate::protocol_serde::shape_modify_cluster_iam_roles::de_modify_cluster_iam_roles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

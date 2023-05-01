@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainChangeProg
                         crate::protocol_serde::shape_describe_domain_change_progress::de_describe_domain_change_progress_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

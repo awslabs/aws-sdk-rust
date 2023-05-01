@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransformJob {
                         crate::protocol_serde::shape_create_transform_job::de_create_transform_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

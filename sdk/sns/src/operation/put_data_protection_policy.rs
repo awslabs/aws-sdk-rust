@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDataProtectionPolicy 
                         crate::protocol_serde::shape_put_data_protection_policy::de_put_data_protection_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

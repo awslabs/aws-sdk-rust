@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMetricFilter {
                         crate::protocol_serde::shape_delete_metric_filter::de_delete_metric_filter_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

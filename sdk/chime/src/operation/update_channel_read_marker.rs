@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateChannelReadMarker 
                         crate::protocol_serde::shape_update_channel_read_marker::de_update_channel_read_marker_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

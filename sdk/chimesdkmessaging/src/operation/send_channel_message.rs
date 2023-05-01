@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendChannelMessage {
                         crate::protocol_serde::shape_send_channel_message::de_send_channel_message_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

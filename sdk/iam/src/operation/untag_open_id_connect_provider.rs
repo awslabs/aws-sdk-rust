@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagOpenIDConnectProvid
                         crate::protocol_serde::shape_untag_open_id_connect_provider::de_untag_open_id_connect_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

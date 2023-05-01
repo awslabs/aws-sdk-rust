@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopProjectVersion {
                         crate::protocol_serde::shape_stop_project_version::de_stop_project_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

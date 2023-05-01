@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketVersioning {
                         crate::protocol_serde::shape_get_bucket_versioning::de_get_bucket_versioning_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

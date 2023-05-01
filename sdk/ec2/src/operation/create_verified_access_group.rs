@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVerifiedAccessGrou
                         crate::protocol_serde::shape_create_verified_access_group::de_create_verified_access_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

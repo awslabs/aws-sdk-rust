@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDatalakeAutoEnable {
                         crate::protocol_serde::shape_get_datalake_auto_enable::de_get_datalake_auto_enable_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

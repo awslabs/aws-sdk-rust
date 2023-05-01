@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestInvokeAuthorizer {
                         crate::protocol_serde::shape_test_invoke_authorizer::de_test_invoke_authorizer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

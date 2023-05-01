@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSolNetworkInstance
                         crate::protocol_serde::shape_delete_sol_network_instance::de_delete_sol_network_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

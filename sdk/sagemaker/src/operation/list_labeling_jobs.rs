@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLabelingJobs {
                         crate::protocol_serde::shape_list_labeling_jobs::de_list_labeling_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

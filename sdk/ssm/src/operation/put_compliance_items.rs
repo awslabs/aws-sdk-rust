@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutComplianceItems {
                         crate::protocol_serde::shape_put_compliance_items::de_put_compliance_items_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

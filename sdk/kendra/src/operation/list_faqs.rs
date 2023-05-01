@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFaqs {
                         crate::protocol_serde::shape_list_faqs::de_list_faqs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

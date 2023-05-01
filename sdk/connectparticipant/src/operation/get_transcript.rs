@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTranscript {
                         crate::protocol_serde::shape_get_transcript::de_get_transcript_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

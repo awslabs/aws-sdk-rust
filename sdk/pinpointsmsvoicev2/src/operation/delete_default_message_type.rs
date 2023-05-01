@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDefaultMessageType
                         crate::protocol_serde::shape_delete_default_message_type::de_delete_default_message_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

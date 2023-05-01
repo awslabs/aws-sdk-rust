@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestFailover {
                         crate::protocol_serde::shape_test_failover::de_test_failover_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

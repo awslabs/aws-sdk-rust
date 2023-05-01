@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForDecisionTask {
                         crate::protocol_serde::shape_poll_for_decision_task::de_poll_for_decision_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

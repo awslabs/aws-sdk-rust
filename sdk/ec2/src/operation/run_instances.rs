@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RunInstances {
                         crate::protocol_serde::shape_run_instances::de_run_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

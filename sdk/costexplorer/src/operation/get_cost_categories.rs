@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCostCategories {
                         crate::protocol_serde::shape_get_cost_categories::de_get_cost_categories_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

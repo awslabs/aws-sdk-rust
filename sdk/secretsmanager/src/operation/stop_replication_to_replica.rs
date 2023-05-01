@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopReplicationToReplica
                         crate::protocol_serde::shape_stop_replication_to_replica::de_stop_replication_to_replica_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

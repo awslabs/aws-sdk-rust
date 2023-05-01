@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterInstancesWithLoa
                         crate::protocol_serde::shape_register_instances_with_load_balancer::de_register_instances_with_load_balancer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

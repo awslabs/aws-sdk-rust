@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAggregatedUtterances
                         crate::protocol_serde::shape_list_aggregated_utterances::de_list_aggregated_utterances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOutpostsWithS3 {
                         crate::protocol_serde::shape_list_outposts_with_s3::de_list_outposts_with_s3_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

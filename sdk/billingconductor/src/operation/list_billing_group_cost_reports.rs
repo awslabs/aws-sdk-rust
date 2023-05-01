@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBillingGroupCostRepo
                         crate::protocol_serde::shape_list_billing_group_cost_reports::de_list_billing_group_cost_reports_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

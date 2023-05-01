@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDetectorModel {
                         crate::protocol_serde::shape_create_detector_model::de_create_detector_model_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

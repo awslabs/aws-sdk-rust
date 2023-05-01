@@ -278,6 +278,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
                         crate::protocol_serde::shape_put_object::de_put_object_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEncryptionConfig {
                         crate::protocol_serde::shape_get_encryption_config::de_get_encryption_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

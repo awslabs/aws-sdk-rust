@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for JoinStorageSession {
                         crate::protocol_serde::shape_join_storage_session::de_join_storage_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

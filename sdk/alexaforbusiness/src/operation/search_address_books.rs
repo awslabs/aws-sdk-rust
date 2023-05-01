@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchAddressBooks {
                         crate::protocol_serde::shape_search_address_books::de_search_address_books_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

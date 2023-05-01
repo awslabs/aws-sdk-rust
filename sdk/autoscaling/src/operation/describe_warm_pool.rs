@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWarmPool {
                         crate::protocol_serde::shape_describe_warm_pool::de_describe_warm_pool_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

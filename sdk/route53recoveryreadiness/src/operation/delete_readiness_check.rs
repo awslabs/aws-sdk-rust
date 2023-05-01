@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReadinessCheck {
                         crate::protocol_serde::shape_delete_readiness_check::de_delete_readiness_check_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

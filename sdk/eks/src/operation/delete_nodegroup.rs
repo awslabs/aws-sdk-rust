@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNodegroup {
                         crate::protocol_serde::shape_delete_nodegroup::de_delete_nodegroup_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

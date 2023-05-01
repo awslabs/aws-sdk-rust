@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptSharedDirectory {
                         crate::protocol_serde::shape_accept_shared_directory::de_accept_shared_directory_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

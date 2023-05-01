@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetReceiptRulePosition {
                         crate::protocol_serde::shape_set_receipt_rule_position::de_set_receipt_rule_position_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

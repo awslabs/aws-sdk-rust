@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspaces {
                         crate::protocol_serde::shape_describe_workspaces::de_describe_workspaces_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

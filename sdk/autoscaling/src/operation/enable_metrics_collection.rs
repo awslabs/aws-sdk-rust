@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableMetricsCollection 
                         crate::protocol_serde::shape_enable_metrics_collection::de_enable_metrics_collection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

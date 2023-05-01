@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlerts {
                         crate::protocol_serde::shape_list_alerts::de_list_alerts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachNetworkInterface {
                         crate::protocol_serde::shape_attach_network_interface::de_attach_network_interface_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRefreshSchedules {
                         crate::protocol_serde::shape_list_refresh_schedules::de_list_refresh_schedules_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

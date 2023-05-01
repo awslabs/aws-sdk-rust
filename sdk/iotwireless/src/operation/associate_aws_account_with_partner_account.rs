@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAwsAccountWithP
                         crate::protocol_serde::shape_associate_aws_account_with_partner_account::de_associate_aws_account_with_partner_account_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

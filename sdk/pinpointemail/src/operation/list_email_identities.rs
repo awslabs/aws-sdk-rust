@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEmailIdentities {
                         crate::protocol_serde::shape_list_email_identities::de_list_email_identities_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

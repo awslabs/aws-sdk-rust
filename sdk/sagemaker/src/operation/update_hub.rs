@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHub {
                         crate::protocol_serde::shape_update_hub::de_update_hub_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

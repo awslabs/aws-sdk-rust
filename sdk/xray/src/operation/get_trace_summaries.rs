@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTraceSummaries {
                         crate::protocol_serde::shape_get_trace_summaries::de_get_trace_summaries_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

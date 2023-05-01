@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSavingsPlans {
                         crate::protocol_serde::shape_describe_savings_plans::de_describe_savings_plans_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

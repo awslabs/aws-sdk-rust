@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportHubContent {
                         crate::protocol_serde::shape_import_hub_content::de_import_hub_content_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

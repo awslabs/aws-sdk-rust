@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachManagedPolicyToPer
                         crate::protocol_serde::shape_attach_managed_policy_to_permission_set::de_attach_managed_policy_to_permission_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

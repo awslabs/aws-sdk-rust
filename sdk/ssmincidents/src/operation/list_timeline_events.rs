@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTimelineEvents {
                         crate::protocol_serde::shape_list_timeline_events::de_list_timeline_events_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

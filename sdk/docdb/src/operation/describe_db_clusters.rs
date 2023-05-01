@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDBClusters {
                         crate::protocol_serde::shape_describe_db_clusters::de_describe_db_clusters_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

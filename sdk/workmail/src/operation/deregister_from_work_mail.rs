@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterFromWorkMail {
                         crate::protocol_serde::shape_deregister_from_work_mail::de_deregister_from_work_mail_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

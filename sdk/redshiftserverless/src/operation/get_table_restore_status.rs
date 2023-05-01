@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTableRestoreStatus {
                         crate::protocol_serde::shape_get_table_restore_status::de_get_table_restore_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

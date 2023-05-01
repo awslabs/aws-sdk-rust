@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectorRegistrat
                         crate::protocol_serde::shape_update_connector_registration::de_update_connector_registration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

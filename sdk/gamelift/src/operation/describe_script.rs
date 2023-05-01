@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScript {
                         crate::protocol_serde::shape_describe_script::de_describe_script_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

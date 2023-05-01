@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationEfs {
                         crate::protocol_serde::shape_create_location_efs::de_create_location_efs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

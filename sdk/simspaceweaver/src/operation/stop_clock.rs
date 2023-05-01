@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopClock {
                         crate::protocol_serde::shape_stop_clock::de_stop_clock_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartVpcEndpointServiceP
                         crate::protocol_serde::shape_start_vpc_endpoint_service_private_dns_verification::de_start_vpc_endpoint_service_private_dns_verification_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

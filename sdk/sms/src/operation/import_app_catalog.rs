@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportAppCatalog {
                         crate::protocol_serde::shape_import_app_catalog::de_import_app_catalog_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

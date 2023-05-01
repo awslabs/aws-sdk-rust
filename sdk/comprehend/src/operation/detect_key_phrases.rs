@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectKeyPhrases {
                         crate::protocol_serde::shape_detect_key_phrases::de_detect_key_phrases_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

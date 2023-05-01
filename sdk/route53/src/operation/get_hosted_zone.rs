@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHostedZone {
                         crate::protocol_serde::shape_get_hosted_zone::de_get_hosted_zone_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTagsForResource {
                         crate::protocol_serde::shape_update_tags_for_resource::de_update_tags_for_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

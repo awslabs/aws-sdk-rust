@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAgent {
                         crate::protocol_serde::shape_delete_agent::de_delete_agent_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

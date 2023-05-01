@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMulticastGroupSessi
                         crate::protocol_serde::shape_start_multicast_group_session::de_start_multicast_group_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

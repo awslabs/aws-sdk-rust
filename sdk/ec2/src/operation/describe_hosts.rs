@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHosts {
                         crate::protocol_serde::shape_describe_hosts::de_describe_hosts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

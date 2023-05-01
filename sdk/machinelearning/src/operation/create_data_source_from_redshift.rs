@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataSourceFromReds
                         crate::protocol_serde::shape_create_data_source_from_redshift::de_create_data_source_from_redshift_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

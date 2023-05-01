@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServicesInScope {
                         crate::protocol_serde::shape_get_services_in_scope::de_get_services_in_scope_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

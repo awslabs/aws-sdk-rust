@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceTemplateVersio
                         crate::protocol_serde::shape_get_service_template_version::de_get_service_template_version_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

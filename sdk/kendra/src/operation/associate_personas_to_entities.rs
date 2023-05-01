@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePersonasToEntit
                         crate::protocol_serde::shape_associate_personas_to_entities::de_associate_personas_to_entities_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

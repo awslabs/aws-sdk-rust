@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListS3Buckets {
                         crate::protocol_serde::shape_list_s3_buckets::de_list_s3_buckets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

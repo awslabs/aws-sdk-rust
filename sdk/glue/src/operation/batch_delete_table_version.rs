@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteTableVersion 
                         crate::protocol_serde::shape_batch_delete_table_version::de_batch_delete_table_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

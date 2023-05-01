@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocatePublicVirtualInt
                         crate::protocol_serde::shape_allocate_public_virtual_interface::de_allocate_public_virtual_interface_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

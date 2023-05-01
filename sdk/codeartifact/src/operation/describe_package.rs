@@ -128,6 +128,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePackage {
                         crate::protocol_serde::shape_describe_package::de_describe_package_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

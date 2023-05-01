@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchRasterDataCollecti
                         crate::protocol_serde::shape_search_raster_data_collection::de_search_raster_data_collection_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

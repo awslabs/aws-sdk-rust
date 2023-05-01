@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRiskConfiguratio
                         crate::protocol_serde::shape_describe_risk_configuration::de_describe_risk_configuration_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

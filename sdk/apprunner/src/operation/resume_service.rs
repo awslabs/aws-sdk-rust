@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeService {
                         crate::protocol_serde::shape_resume_service::de_resume_service_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

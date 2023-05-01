@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApplicableIndivi
                         crate::protocol_serde::shape_describe_applicable_individual_assessments::de_describe_applicable_individual_assessments_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

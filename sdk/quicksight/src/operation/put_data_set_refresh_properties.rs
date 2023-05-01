@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDataSetRefreshPropert
                         crate::protocol_serde::shape_put_data_set_refresh_properties::de_put_data_set_refresh_properties_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

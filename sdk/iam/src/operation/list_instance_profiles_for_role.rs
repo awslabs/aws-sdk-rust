@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstanceProfilesForR
                         crate::protocol_serde::shape_list_instance_profiles_for_role::de_list_instance_profiles_for_role_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

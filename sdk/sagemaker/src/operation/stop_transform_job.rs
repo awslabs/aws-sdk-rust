@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopTransformJob {
                         crate::protocol_serde::shape_stop_transform_job::de_stop_transform_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

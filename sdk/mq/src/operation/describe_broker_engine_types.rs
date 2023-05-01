@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBrokerEngineType
                         crate::protocol_serde::shape_describe_broker_engine_types::de_describe_broker_engine_types_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

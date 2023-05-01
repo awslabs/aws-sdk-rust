@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceProfile {
                         crate::protocol_serde::shape_get_resource_profile::de_get_resource_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

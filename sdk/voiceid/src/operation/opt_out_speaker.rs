@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OptOutSpeaker {
                         crate::protocol_serde::shape_opt_out_speaker::de_opt_out_speaker_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

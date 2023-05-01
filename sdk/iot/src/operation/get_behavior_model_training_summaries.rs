@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBehaviorModelTraining
                         crate::protocol_serde::shape_get_behavior_model_training_summaries::de_get_behavior_model_training_summaries_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

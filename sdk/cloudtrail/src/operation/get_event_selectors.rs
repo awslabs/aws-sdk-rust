@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventSelectors {
                         crate::protocol_serde::shape_get_event_selectors::de_get_event_selectors_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSupportedResourceType
                         crate::protocol_serde::shape_get_supported_resource_types::de_get_supported_resource_types_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

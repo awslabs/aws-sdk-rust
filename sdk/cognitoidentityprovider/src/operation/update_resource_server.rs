@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceServer {
                         crate::protocol_serde::shape_update_resource_server::de_update_resource_server_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

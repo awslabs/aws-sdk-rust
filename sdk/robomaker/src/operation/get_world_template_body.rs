@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorldTemplateBody {
                         crate::protocol_serde::shape_get_world_template_body::de_get_world_template_body_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

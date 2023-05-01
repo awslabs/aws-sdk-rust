@@ -102,6 +102,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
                         crate::protocol_serde::shape_head_bucket::de_head_bucket_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

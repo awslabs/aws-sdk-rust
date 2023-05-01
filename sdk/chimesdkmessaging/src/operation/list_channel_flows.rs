@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelFlows {
                         crate::protocol_serde::shape_list_channel_flows::de_list_channel_flows_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

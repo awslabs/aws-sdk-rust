@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactInformation {
                         crate::protocol_serde::shape_get_contact_information::de_get_contact_information_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

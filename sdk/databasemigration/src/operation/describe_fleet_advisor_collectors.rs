@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetAdvisorColl
                         crate::protocol_serde::shape_describe_fleet_advisor_collectors::de_describe_fleet_advisor_collectors_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

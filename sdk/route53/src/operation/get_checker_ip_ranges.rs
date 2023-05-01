@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCheckerIpRanges {
                         crate::protocol_serde::shape_get_checker_ip_ranges::de_get_checker_ip_ranges_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

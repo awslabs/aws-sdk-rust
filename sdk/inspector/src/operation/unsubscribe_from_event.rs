@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnsubscribeFromEvent {
                         crate::protocol_serde::shape_unsubscribe_from_event::de_unsubscribe_from_event_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

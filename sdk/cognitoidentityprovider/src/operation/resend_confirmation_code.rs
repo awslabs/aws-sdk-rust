@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendConfirmationCode {
                         crate::protocol_serde::shape_resend_confirmation_code::de_resend_confirmation_code_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutGeofence {
                         crate::protocol_serde::shape_put_geofence::de_put_geofence_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

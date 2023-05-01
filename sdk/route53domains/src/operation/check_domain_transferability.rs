@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckDomainTransferabili
                         crate::protocol_serde::shape_check_domain_transferability::de_check_domain_transferability_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

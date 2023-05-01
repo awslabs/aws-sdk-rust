@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAllowList {
                         crate::protocol_serde::shape_delete_allow_list::de_delete_allow_list_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

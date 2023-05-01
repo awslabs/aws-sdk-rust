@@ -374,7 +374,7 @@ mod loader {
         ///
         /// # Example: Using a custom profile file path
         ///
-        /// ```
+        /// ```no_run
         /// use aws_config::profile::{ProfileFileCredentialsProvider, ProfileFileRegionProvider};
         /// use aws_config::profile::profile_file::{ProfileFiles, ProfileFileKind};
         ///
@@ -417,7 +417,7 @@ mod loader {
         ///
         /// # Example: Using a custom profile name
         ///
-        /// ```
+        /// ```no_run
         /// use aws_config::profile::{ProfileFileCredentialsProvider, ProfileFileRegionProvider};
         /// use aws_config::profile::profile_file::{ProfileFiles, ProfileFileKind};
         ///

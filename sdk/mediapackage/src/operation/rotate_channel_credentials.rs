@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateChannelCredentials
                         crate::protocol_serde::shape_rotate_channel_credentials::de_rotate_channel_credentials_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

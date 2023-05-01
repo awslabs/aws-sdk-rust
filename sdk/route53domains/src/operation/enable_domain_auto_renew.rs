@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableDomainAutoRenew {
                         crate::protocol_serde::shape_enable_domain_auto_renew::de_enable_domain_auto_renew_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

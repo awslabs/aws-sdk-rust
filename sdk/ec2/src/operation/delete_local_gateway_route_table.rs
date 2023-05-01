@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLocalGatewayRouteT
                         crate::protocol_serde::shape_delete_local_gateway_route_table::de_delete_local_gateway_route_table_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

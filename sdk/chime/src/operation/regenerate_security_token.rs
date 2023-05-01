@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegenerateSecurityToken 
                         crate::protocol_serde::shape_regenerate_security_token::de_regenerate_security_token_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

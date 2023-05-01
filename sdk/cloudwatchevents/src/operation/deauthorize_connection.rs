@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeauthorizeConnection {
                         crate::protocol_serde::shape_deauthorize_connection::de_deauthorize_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

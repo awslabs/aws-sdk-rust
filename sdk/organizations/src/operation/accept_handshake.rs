@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptHandshake {
                         crate::protocol_serde::shape_accept_handshake::de_accept_handshake_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

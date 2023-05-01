@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataLakeSettings {
                         crate::protocol_serde::shape_get_data_lake_settings::de_get_data_lake_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

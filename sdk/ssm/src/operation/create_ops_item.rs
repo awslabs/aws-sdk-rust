@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOpsItem {
                         crate::protocol_serde::shape_create_ops_item::de_create_ops_item_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

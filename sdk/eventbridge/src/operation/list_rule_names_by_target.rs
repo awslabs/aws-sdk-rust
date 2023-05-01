@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRuleNamesByTarget {
                         crate::protocol_serde::shape_list_rule_names_by_target::de_list_rule_names_by_target_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

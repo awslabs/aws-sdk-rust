@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEnvironmentStatu
                         crate::protocol_serde::shape_describe_environment_status::de_describe_environment_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

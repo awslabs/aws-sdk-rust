@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBlueprint {
                         crate::protocol_serde::shape_update_blueprint::de_update_blueprint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

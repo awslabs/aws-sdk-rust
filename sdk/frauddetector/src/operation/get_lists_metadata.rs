@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetListsMetadata {
                         crate::protocol_serde::shape_get_lists_metadata::de_get_lists_metadata_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

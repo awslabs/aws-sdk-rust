@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendBounce {
                         crate::protocol_serde::shape_send_bounce::de_send_bounce_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFleetLocations {
                         crate::protocol_serde::shape_create_fleet_locations::de_create_fleet_locations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

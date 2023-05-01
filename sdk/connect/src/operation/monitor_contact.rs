@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MonitorContact {
                         crate::protocol_serde::shape_monitor_contact::de_monitor_contact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

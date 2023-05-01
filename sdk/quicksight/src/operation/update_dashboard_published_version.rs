@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDashboardPublished
                         crate::protocol_serde::shape_update_dashboard_published_version::de_update_dashboard_published_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeEndpointAsync {
                         crate::protocol_serde::shape_invoke_endpoint_async::de_invoke_endpoint_async_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

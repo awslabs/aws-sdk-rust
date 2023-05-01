@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOfferingPromotions {
                         crate::protocol_serde::shape_list_offering_promotions::de_list_offering_promotions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

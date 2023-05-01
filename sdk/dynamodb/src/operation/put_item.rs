@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutItem {
                         crate::protocol_serde::shape_put_item::de_put_item_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

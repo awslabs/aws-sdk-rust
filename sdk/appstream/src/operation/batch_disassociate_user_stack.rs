@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDisassociateUserSta
                         crate::protocol_serde::shape_batch_disassociate_user_stack::de_batch_disassociate_user_stack_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

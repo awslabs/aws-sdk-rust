@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationVpcConfigu
                         crate::protocol_serde::shape_add_application_vpc_configuration::de_add_application_vpc_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

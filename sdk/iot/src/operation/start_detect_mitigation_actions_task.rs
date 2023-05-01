@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDetectMitigationAct
                         crate::protocol_serde::shape_start_detect_mitigation_actions_task::de_start_detect_mitigation_actions_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

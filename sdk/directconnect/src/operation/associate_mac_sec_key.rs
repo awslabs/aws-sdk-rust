@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateMacSecKey {
                         crate::protocol_serde::shape_associate_mac_sec_key::de_associate_mac_sec_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

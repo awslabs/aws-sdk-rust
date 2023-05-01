@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCompatibleImages {
                         crate::protocol_serde::shape_list_compatible_images::de_list_compatible_images_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

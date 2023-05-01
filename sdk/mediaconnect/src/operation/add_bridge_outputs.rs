@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddBridgeOutputs {
                         crate::protocol_serde::shape_add_bridge_outputs::de_add_bridge_outputs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

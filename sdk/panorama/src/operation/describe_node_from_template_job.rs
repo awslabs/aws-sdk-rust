@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNodeFromTemplate
                         crate::protocol_serde::shape_describe_node_from_template_job::de_describe_node_from_template_job_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

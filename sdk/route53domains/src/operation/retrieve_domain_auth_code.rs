@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetrieveDomainAuthCode {
                         crate::protocol_serde::shape_retrieve_domain_auth_code::de_retrieve_domain_auth_code_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

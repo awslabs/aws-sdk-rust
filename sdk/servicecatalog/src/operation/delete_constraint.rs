@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConstraint {
                         crate::protocol_serde::shape_delete_constraint::de_delete_constraint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFleetAdvisorCollec
                         crate::protocol_serde::shape_create_fleet_advisor_collector::de_create_fleet_advisor_collector_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

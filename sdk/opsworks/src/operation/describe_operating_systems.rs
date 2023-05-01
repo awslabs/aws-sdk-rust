@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOperatingSystems
                         crate::protocol_serde::shape_describe_operating_systems::de_describe_operating_systems_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

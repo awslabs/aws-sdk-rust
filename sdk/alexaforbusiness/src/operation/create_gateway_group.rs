@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGatewayGroup {
                         crate::protocol_serde::shape_create_gateway_group::de_create_gateway_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

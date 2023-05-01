@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckDNSAvailability {
                         crate::protocol_serde::shape_check_dns_availability::de_check_dns_availability_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetImpersonationRole {
                         crate::protocol_serde::shape_get_impersonation_role::de_get_impersonation_role_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

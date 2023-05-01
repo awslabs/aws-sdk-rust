@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplySchema {
                         crate::protocol_serde::shape_apply_schema::de_apply_schema_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

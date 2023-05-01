@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationTaskA
                         crate::protocol_serde::shape_describe_replication_task_assessment_results::de_describe_replication_task_assessment_results_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

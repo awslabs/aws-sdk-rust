@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PeerVpc {
                         crate::protocol_serde::shape_peer_vpc::de_peer_vpc_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

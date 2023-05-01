@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEventIntegration {
                         crate::protocol_serde::shape_update_event_integration::de_update_event_integration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

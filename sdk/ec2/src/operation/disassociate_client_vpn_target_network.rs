@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateClientVpnTar
                         crate::protocol_serde::shape_disassociate_client_vpn_target_network::de_disassociate_client_vpn_target_network_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

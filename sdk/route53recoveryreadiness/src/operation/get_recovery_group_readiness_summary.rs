@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecoveryGroupReadines
                         crate::protocol_serde::shape_get_recovery_group_readiness_summary::de_get_recovery_group_readiness_summary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

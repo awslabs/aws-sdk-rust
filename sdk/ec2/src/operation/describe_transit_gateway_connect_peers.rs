@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTransitGatewayCo
                         crate::protocol_serde::shape_describe_transit_gateway_connect_peers::de_describe_transit_gateway_connect_peers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

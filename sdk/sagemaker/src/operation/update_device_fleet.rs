@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDeviceFleet {
                         crate::protocol_serde::shape_update_device_fleet::de_update_device_fleet_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

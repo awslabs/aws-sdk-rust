@@ -122,6 +122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListShareInvitations {
                         crate::protocol_serde::shape_list_share_invitations::de_list_share_invitations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

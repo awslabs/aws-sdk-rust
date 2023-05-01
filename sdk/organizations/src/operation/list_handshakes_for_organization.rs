@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHandshakesForOrganiz
                         crate::protocol_serde::shape_list_handshakes_for_organization::de_list_handshakes_for_organization_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

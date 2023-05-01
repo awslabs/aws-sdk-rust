@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketsAggregation {
                         crate::protocol_serde::shape_get_buckets_aggregation::de_get_buckets_aggregation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

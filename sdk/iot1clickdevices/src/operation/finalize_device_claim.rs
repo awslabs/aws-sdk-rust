@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for FinalizeDeviceClaim {
                         crate::protocol_serde::shape_finalize_device_claim::de_finalize_device_claim_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

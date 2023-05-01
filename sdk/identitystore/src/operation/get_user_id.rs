@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserId {
                         crate::protocol_serde::shape_get_user_id::de_get_user_id_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

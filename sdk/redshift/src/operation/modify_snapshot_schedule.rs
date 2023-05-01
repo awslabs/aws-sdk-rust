@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySnapshotSchedule {
                         crate::protocol_serde::shape_modify_snapshot_schedule::de_modify_snapshot_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

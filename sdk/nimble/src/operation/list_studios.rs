@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStudios {
                         crate::protocol_serde::shape_list_studios::de_list_studios_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

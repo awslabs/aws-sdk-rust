@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEnvironmentEC2 {
                         crate::protocol_serde::shape_create_environment_ec2::de_create_environment_ec2_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

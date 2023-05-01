@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThirdPartyFirewallFi
                         crate::protocol_serde::shape_list_third_party_firewall_firewall_policies::de_list_third_party_firewall_firewall_policies_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

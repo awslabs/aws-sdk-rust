@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRasterDataCollection 
                         crate::protocol_serde::shape_get_raster_data_collection::de_get_raster_data_collection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

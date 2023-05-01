@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationSetSendi
                         crate::protocol_serde::shape_put_configuration_set_sending_options::de_put_configuration_set_sending_options_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

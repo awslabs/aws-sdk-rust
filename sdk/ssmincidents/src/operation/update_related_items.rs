@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRelatedItems {
                         crate::protocol_serde::shape_update_related_items::de_update_related_items_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEventsConfiguratio
                         crate::protocol_serde::shape_delete_events_configuration::de_delete_events_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

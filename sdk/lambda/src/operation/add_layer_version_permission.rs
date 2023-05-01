@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddLayerVersionPermissio
                         crate::protocol_serde::shape_add_layer_version_permission::de_add_layer_version_permission_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

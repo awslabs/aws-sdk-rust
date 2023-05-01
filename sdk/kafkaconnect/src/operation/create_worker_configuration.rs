@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkerConfiguratio
                         crate::protocol_serde::shape_create_worker_configuration::de_create_worker_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

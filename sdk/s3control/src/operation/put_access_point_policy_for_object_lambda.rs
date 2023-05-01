@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessPointPolicyForO
                         crate::protocol_serde::shape_put_access_point_policy_for_object_lambda::de_put_access_point_policy_for_object_lambda_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

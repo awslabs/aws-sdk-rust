@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBotChannelAssociation
                         crate::protocol_serde::shape_get_bot_channel_association::de_get_bot_channel_association_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFolderContents {
                         crate::protocol_serde::shape_delete_folder_contents::de_delete_folder_contents_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

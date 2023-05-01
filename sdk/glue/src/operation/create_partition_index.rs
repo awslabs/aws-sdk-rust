@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePartitionIndex {
                         crate::protocol_serde::shape_create_partition_index::de_create_partition_index_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

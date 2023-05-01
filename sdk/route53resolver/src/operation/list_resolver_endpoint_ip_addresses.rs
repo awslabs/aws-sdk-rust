@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverEndpointIpAd
                         crate::protocol_serde::shape_list_resolver_endpoint_ip_addresses::de_list_resolver_endpoint_ip_addresses_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

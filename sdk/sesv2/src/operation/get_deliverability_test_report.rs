@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeliverabilityTestRep
                         crate::protocol_serde::shape_get_deliverability_test_report::de_get_deliverability_test_report_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

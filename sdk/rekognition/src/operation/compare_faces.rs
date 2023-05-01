@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompareFaces {
                         crate::protocol_serde::shape_compare_faces::de_compare_faces_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

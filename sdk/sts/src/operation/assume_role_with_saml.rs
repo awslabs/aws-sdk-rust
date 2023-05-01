@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRoleWithSAML {
                         crate::protocol_serde::shape_assume_role_with_saml::de_assume_role_with_saml_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

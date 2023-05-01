@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSubChannels {
                         crate::protocol_serde::shape_list_sub_channels::de_list_sub_channels_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

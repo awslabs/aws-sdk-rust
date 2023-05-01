@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLogPattern {
                         crate::protocol_serde::shape_delete_log_pattern::de_delete_log_pattern_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

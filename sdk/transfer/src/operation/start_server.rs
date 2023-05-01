@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartServer {
                         crate::protocol_serde::shape_start_server::de_start_server_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

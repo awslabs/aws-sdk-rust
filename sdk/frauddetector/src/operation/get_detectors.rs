@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDetectors {
                         crate::protocol_serde::shape_get_detectors::de_get_detectors_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

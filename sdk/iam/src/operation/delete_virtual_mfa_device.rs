@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualMFADevice {
                         crate::protocol_serde::shape_delete_virtual_mfa_device::de_delete_virtual_mfa_device_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

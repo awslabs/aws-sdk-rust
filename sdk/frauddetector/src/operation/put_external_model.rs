@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutExternalModel {
                         crate::protocol_serde::shape_put_external_model::de_put_external_model_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

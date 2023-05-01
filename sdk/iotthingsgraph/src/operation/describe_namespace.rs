@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNamespace {
                         crate::protocol_serde::shape_describe_namespace::de_describe_namespace_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

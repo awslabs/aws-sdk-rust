@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStorageLensConfigurat
                         crate::protocol_serde::shape_put_storage_lens_configuration::de_put_storage_lens_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

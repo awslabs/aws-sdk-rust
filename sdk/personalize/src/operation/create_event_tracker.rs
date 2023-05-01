@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEventTracker {
                         crate::protocol_serde::shape_create_event_tracker::de_create_event_tracker_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

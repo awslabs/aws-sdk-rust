@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActivatedRulesInRule
                         crate::protocol_serde::shape_list_activated_rules_in_rule_group::de_list_activated_rules_in_rule_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

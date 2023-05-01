@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReplicationConfigurat
                         crate::protocol_serde::shape_get_replication_configuration::de_get_replication_configuration_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

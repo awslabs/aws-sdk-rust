@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBlueprint {
                         crate::protocol_serde::shape_create_blueprint::de_create_blueprint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

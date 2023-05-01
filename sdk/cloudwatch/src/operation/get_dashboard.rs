@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDashboard {
                         crate::protocol_serde::shape_get_dashboard::de_get_dashboard_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

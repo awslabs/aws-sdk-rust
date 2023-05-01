@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketPolicy {
                         crate::protocol_serde::shape_put_bucket_policy::de_put_bucket_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

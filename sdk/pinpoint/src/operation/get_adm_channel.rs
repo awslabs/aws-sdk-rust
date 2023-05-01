@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAdmChannel {
                         crate::protocol_serde::shape_get_adm_channel::de_get_adm_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

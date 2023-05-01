@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentTextDetection
                         crate::protocol_serde::shape_get_document_text_detection::de_get_document_text_detection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

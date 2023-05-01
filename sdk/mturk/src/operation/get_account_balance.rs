@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountBalance {
                         crate::protocol_serde::shape_get_account_balance::de_get_account_balance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

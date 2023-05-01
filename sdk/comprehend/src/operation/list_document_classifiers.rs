@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDocumentClassifiers 
                         crate::protocol_serde::shape_list_document_classifiers::de_list_document_classifiers_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

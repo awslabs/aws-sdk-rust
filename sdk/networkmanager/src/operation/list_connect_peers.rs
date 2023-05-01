@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnectPeers {
                         crate::protocol_serde::shape_list_connect_peers::de_list_connect_peers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

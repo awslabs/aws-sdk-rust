@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateOrganizationalUnit
                         crate::protocol_serde::shape_update_organizational_unit::de_update_organizational_unit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

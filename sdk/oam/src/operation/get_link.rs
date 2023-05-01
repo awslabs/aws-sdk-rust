@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLink {
                         crate::protocol_serde::shape_get_link::de_get_link_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

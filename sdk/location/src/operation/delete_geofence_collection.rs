@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGeofenceCollection
                         crate::protocol_serde::shape_delete_geofence_collection::de_delete_geofence_collection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

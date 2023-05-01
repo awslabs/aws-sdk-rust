@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessKeyLastUsed {
                         crate::protocol_serde::shape_get_access_key_last_used::de_get_access_key_last_used_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTarget {
                         crate::protocol_serde::shape_delete_target::de_delete_target_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBusinessReportSche
                         crate::protocol_serde::shape_delete_business_report_schedule::de_delete_business_report_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStagingAccounts {
                         crate::protocol_serde::shape_list_staging_accounts::de_list_staging_accounts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

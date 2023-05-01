@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebalanceSlotsInGlobalRe
                         crate::protocol_serde::shape_rebalance_slots_in_global_replication_group::de_rebalance_slots_in_global_replication_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

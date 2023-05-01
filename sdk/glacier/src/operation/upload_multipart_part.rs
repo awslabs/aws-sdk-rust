@@ -126,6 +126,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadMultipartPart {
                         crate::protocol_serde::shape_upload_multipart_part::de_upload_multipart_part_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeResize {
                         crate::protocol_serde::shape_describe_resize::de_describe_resize_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

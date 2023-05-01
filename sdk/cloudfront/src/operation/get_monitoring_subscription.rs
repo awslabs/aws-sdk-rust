@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMonitoringSubscriptio
                         crate::protocol_serde::shape_get_monitoring_subscription::de_get_monitoring_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

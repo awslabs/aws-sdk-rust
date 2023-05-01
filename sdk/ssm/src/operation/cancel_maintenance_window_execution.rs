@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelMaintenanceWindowE
                         crate::protocol_serde::shape_cancel_maintenance_window_execution::de_cancel_maintenance_window_execution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

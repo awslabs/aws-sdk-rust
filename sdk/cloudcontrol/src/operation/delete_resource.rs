@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResource {
                         crate::protocol_serde::shape_delete_resource::de_delete_resource_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

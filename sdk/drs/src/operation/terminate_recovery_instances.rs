@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateRecoveryInstanc
                         crate::protocol_serde::shape_terminate_recovery_instances::de_terminate_recovery_instances_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

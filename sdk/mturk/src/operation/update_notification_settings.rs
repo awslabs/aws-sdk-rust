@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotificationSettin
                         crate::protocol_serde::shape_update_notification_settings::de_update_notification_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

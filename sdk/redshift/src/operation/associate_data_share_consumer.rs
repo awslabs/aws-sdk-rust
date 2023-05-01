@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDataShareConsum
                         crate::protocol_serde::shape_associate_data_share_consumer::de_associate_data_share_consumer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

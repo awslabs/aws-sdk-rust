@@ -132,6 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePackageVersionsSta
                         crate::protocol_serde::shape_update_package_versions_status::de_update_package_versions_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

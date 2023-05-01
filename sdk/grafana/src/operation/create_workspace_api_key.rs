@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkspaceApiKey {
                         crate::protocol_serde::shape_create_workspace_api_key::de_create_workspace_api_key_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

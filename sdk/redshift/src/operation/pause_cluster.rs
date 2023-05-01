@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PauseCluster {
                         crate::protocol_serde::shape_pause_cluster::de_pause_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

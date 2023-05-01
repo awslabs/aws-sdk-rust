@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLabels {
                         crate::protocol_serde::shape_delete_labels::de_delete_labels_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

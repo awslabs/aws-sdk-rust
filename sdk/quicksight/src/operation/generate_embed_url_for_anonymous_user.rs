@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateEmbedUrlForAnony
                         crate::protocol_serde::shape_generate_embed_url_for_anonymous_user::de_generate_embed_url_for_anonymous_user_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

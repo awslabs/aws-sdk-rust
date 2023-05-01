@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountClosedWorkflowExecu
                         crate::protocol_serde::shape_count_closed_workflow_executions::de_count_closed_workflow_executions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

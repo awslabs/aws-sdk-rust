@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnablePolicyType {
                         crate::protocol_serde::shape_enable_policy_type::de_enable_policy_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

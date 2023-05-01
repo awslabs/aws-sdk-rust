@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSensitivityInspection
                         crate::protocol_serde::shape_get_sensitivity_inspection_template::de_get_sensitivity_inspection_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

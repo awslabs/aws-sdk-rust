@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartEngagement {
                         crate::protocol_serde::shape_start_engagement::de_start_engagement_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

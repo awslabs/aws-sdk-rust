@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessKey {
                         crate::protocol_serde::shape_create_access_key::de_create_access_key_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -143,6 +143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPointsByBack
                         crate::protocol_serde::shape_list_recovery_points_by_backup_vault::de_list_recovery_points_by_backup_vault_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

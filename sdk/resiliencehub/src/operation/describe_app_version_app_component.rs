@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppVersionAppCom
                         crate::protocol_serde::shape_describe_app_version_app_component::de_describe_app_version_app_component_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

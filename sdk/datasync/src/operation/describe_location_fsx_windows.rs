@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxWindo
                         crate::protocol_serde::shape_describe_location_fsx_windows::de_describe_location_fsx_windows_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

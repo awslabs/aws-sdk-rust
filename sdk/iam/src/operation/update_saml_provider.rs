@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSAMLProvider {
                         crate::protocol_serde::shape_update_saml_provider::de_update_saml_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

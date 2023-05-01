@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIdentityProviderConf
                         crate::protocol_serde::shape_list_identity_provider_configs::de_list_identity_provider_configs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

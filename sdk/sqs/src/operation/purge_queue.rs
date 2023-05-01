@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurgeQueue {
                         crate::protocol_serde::shape_purge_queue::de_purge_queue_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

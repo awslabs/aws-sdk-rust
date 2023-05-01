@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutImageScanningConfigur
                         crate::protocol_serde::shape_put_image_scanning_configuration::de_put_image_scanning_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

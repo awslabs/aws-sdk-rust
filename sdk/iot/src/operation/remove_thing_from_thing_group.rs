@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveThingFromThingGrou
                         crate::protocol_serde::shape_remove_thing_from_thing_group::de_remove_thing_from_thing_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

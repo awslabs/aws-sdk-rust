@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateHostedConnectio
                         crate::protocol_serde::shape_associate_hosted_connection::de_associate_hosted_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

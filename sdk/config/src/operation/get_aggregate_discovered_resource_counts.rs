@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAggregateDiscoveredRe
                         crate::protocol_serde::shape_get_aggregate_discovered_resource_counts::de_get_aggregate_discovered_resource_counts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

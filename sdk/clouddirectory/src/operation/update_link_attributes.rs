@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLinkAttributes {
                         crate::protocol_serde::shape_update_link_attributes::de_update_link_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

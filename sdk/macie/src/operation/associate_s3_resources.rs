@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateS3Resources {
                         crate::protocol_serde::shape_associate_s3_resources::de_associate_s3_resources_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

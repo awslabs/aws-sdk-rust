@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopSuiteRun {
                         crate::protocol_serde::shape_stop_suite_run::de_stop_suite_run_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

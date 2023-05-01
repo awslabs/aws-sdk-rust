@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AbortDocumentVersionUplo
                         crate::protocol_serde::shape_abort_document_version_upload::de_abort_document_version_upload_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

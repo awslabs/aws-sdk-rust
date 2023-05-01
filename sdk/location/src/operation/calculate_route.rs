@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CalculateRoute {
                         crate::protocol_serde::shape_calculate_route::de_calculate_route_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

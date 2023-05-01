@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSensitiveDataOccurren
                         crate::protocol_serde::shape_get_sensitive_data_occurrences::de_get_sensitive_data_occurrences_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

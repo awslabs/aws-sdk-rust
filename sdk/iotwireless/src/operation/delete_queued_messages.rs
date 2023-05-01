@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQueuedMessages {
                         crate::protocol_serde::shape_delete_queued_messages::de_delete_queued_messages_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

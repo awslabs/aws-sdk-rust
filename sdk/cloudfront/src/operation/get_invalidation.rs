@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInvalidation {
                         crate::protocol_serde::shape_get_invalidation::de_get_invalidation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

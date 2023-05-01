@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTypedLinkFacetAttrib
                         crate::protocol_serde::shape_list_typed_link_facet_attributes::de_list_typed_link_facet_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
                         crate::protocol_serde::shape_tag_resource::de_tag_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

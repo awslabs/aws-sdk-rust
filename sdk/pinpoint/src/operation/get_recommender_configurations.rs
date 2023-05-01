@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommenderConfigurat
                         crate::protocol_serde::shape_get_recommender_configurations::de_get_recommender_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

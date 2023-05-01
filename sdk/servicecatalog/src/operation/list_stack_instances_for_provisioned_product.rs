@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStackInstancesForPro
                         crate::protocol_serde::shape_list_stack_instances_for_provisioned_product::de_list_stack_instances_for_provisioned_product_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

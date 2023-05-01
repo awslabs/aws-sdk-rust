@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVerifiedAccessIn
                         crate::protocol_serde::shape_describe_verified_access_instances::de_describe_verified_access_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

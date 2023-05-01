@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBatchSegmentJobs {
                         crate::protocol_serde::shape_list_batch_segment_jobs::de_list_batch_segment_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

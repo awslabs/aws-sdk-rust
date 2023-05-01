@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteGeofence {
                         crate::protocol_serde::shape_batch_delete_geofence::de_batch_delete_geofence_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

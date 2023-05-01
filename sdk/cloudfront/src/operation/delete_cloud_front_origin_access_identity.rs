@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCloudFrontOriginAc
                         crate::protocol_serde::shape_delete_cloud_front_origin_access_identity::de_delete_cloud_front_origin_access_identity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

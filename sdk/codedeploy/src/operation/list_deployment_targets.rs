@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeploymentTargets {
                         crate::protocol_serde::shape_list_deployment_targets::de_list_deployment_targets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

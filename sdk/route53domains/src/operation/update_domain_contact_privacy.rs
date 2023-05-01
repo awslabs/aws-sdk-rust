@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainContactPriva
                         crate::protocol_serde::shape_update_domain_contact_privacy::de_update_domain_contact_privacy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

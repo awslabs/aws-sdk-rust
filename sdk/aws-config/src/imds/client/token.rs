@@ -197,4 +197,8 @@ impl ParseStrictResponse for GetTokenResponseHandler {
             expiry: self.time.now() + Duration::from_secs(ttl),
         })
     }
+
+    fn sensitive(&self) -> bool {
+        true
+    }
 }

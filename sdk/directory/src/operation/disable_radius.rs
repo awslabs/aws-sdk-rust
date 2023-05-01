@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableRadius {
                         crate::protocol_serde::shape_disable_radius::de_disable_radius_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

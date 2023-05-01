@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableControl {
                         crate::protocol_serde::shape_enable_control::de_enable_control_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

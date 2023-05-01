@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySnapshotCopyRetent
                         crate::protocol_serde::shape_modify_snapshot_copy_retention_period::de_modify_snapshot_copy_retention_period_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportClientVpnClientCer
                         crate::protocol_serde::shape_import_client_vpn_client_certificate_revocation_list::de_import_client_vpn_client_certificate_revocation_list_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

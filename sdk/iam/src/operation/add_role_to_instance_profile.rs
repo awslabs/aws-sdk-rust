@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddRoleToInstanceProfile
                         crate::protocol_serde::shape_add_role_to_instance_profile::de_add_role_to_instance_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

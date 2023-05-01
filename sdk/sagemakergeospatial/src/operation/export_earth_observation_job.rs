@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportEarthObservationJo
                         crate::protocol_serde::shape_export_earth_observation_job::de_export_earth_observation_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

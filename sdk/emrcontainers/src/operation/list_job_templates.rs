@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobTemplates {
                         crate::protocol_serde::shape_list_job_templates::de_list_job_templates_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

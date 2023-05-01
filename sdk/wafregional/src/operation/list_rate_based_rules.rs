@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRateBasedRules {
                         crate::protocol_serde::shape_list_rate_based_rules::de_list_rate_based_rules_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

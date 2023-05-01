@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSipMediaApplicatio
                         crate::protocol_serde::shape_update_sip_media_application::de_update_sip_media_application_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

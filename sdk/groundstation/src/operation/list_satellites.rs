@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSatellites {
                         crate::protocol_serde::shape_list_satellites::de_list_satellites_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

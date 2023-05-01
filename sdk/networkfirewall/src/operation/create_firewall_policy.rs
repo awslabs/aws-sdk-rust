@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewallPolicy {
                         crate::protocol_serde::shape_create_firewall_policy::de_create_firewall_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

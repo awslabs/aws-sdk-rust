@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBasePathMapping {
                         crate::protocol_serde::shape_delete_base_path_mapping::de_delete_base_path_mapping_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBundles {
                         crate::protocol_serde::shape_get_bundles::de_get_bundles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

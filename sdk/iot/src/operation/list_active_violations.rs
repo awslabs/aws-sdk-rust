@@ -132,6 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListActiveViolations {
                         crate::protocol_serde::shape_list_active_violations::de_list_active_violations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

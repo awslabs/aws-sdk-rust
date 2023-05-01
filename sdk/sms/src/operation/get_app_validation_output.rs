@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppValidationOutput {
                         crate::protocol_serde::shape_get_app_validation_output::de_get_app_validation_output_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

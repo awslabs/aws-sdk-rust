@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIpamDiscoveredAccount
                         crate::protocol_serde::shape_get_ipam_discovered_accounts::de_get_ipam_discovered_accounts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePlacement {
                         crate::protocol_serde::shape_describe_placement::de_describe_placement_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

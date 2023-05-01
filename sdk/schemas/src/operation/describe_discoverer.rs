@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDiscoverer {
                         crate::protocol_serde::shape_describe_discoverer::de_describe_discoverer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

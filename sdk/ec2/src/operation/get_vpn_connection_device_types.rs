@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVpnConnectionDeviceTy
                         crate::protocol_serde::shape_get_vpn_connection_device_types::de_get_vpn_connection_device_types_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserProfiles {
                         crate::protocol_serde::shape_describe_user_profiles::de_describe_user_profiles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

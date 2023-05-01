@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketStatistics {
                         crate::protocol_serde::shape_get_bucket_statistics::de_get_bucket_statistics_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

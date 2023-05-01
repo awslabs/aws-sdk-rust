@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApplication {
                         crate::protocol_serde::shape_get_application::de_get_application_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

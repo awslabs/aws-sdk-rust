@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNotebookInstanceLi
                         crate::protocol_serde::shape_delete_notebook_instance_lifecycle_config::de_delete_notebook_instance_lifecycle_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

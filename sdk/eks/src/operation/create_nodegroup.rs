@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNodegroup {
                         crate::protocol_serde::shape_create_nodegroup::de_create_nodegroup_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcEndpointService
                         crate::protocol_serde::shape_modify_vpc_endpoint_service_configuration::de_modify_vpc_endpoint_service_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

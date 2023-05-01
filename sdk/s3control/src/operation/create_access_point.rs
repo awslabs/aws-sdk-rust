@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPoint {
                         crate::protocol_serde::shape_create_access_point::de_create_access_point_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

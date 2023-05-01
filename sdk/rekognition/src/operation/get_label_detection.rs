@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLabelDetection {
                         crate::protocol_serde::shape_get_label_detection::de_get_label_detection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

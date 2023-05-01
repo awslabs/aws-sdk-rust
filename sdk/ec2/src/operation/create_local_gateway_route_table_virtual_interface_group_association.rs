@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocalGatewayRouteT
                         crate::protocol_serde::shape_create_local_gateway_route_table_virtual_interface_group_association::de_create_local_gateway_route_table_virtual_interface_group_association_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

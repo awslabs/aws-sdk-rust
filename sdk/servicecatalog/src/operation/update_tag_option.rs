@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTagOption {
                         crate::protocol_serde::shape_update_tag_option::de_update_tag_option_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

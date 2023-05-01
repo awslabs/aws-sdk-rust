@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInstanceAdmins {
                         crate::protocol_serde::shape_list_app_instance_admins::de_list_app_instance_admins_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

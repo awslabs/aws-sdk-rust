@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectionLoa {
                         crate::protocol_serde::shape_describe_connection_loa::de_describe_connection_loa_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

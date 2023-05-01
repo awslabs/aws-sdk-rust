@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomLineItem {
                         crate::protocol_serde::shape_delete_custom_line_item::de_delete_custom_line_item_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

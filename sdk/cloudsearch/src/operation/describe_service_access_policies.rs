@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeServiceAccessPol
                         crate::protocol_serde::shape_describe_service_access_policies::de_describe_service_access_policies_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

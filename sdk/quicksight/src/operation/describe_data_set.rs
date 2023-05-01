@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataSet {
                         crate::protocol_serde::shape_describe_data_set::de_describe_data_set_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

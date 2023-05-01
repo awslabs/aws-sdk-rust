@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannelMessageStatus 
                         crate::protocol_serde::shape_get_channel_message_status::de_get_channel_message_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkflowTypes {
                         crate::protocol_serde::shape_list_workflow_types::de_list_workflow_types_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateMobileSdkRelease
                         crate::protocol_serde::shape_generate_mobile_sdk_release_url::de_generate_mobile_sdk_release_url_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

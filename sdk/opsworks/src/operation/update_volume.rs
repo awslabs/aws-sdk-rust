@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVolume {
                         crate::protocol_serde::shape_update_volume::de_update_volume_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

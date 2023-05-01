@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDiskSnapshot {
                         crate::protocol_serde::shape_get_disk_snapshot::de_get_disk_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

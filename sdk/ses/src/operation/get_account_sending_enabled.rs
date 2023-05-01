@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountSendingEnabled
                         crate::protocol_serde::shape_get_account_sending_enabled::de_get_account_sending_enabled_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

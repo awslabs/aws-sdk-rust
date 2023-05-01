@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomPlugin {
                         crate::protocol_serde::shape_delete_custom_plugin::de_delete_custom_plugin_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

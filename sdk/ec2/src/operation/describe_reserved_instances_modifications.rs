@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedInstance
                         crate::protocol_serde::shape_describe_reserved_instances_modifications::de_describe_reserved_instances_modifications_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

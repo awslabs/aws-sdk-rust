@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomDBEngineVers
                         crate::protocol_serde::shape_delete_custom_db_engine_version::de_delete_custom_db_engine_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

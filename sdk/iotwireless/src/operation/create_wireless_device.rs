@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWirelessDevice {
                         crate::protocol_serde::shape_create_wireless_device::de_create_wireless_device_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEntityAggregates
                         crate::protocol_serde::shape_describe_entity_aggregates::de_describe_entity_aggregates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

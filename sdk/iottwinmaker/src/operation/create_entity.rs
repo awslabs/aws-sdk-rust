@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEntity {
                         crate::protocol_serde::shape_create_entity::de_create_entity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

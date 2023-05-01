@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContainerServiceDeplo
                         crate::protocol_serde::shape_get_container_service_deployments::de_get_container_service_deployments_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

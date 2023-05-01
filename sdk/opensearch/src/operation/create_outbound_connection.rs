@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOutboundConnection
                         crate::protocol_serde::shape_create_outbound_connection::de_create_outbound_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

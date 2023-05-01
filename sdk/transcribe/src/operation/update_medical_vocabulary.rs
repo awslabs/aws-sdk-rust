@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMedicalVocabulary 
                         crate::protocol_serde::shape_update_medical_vocabulary::de_update_medical_vocabulary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

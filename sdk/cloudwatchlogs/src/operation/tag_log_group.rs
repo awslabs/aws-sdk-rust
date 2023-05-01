@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagLogGroup {
                         crate::protocol_serde::shape_tag_log_group::de_tag_log_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDimensionKeyDetails {
                         crate::protocol_serde::shape_get_dimension_key_details::de_get_dimension_key_details_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

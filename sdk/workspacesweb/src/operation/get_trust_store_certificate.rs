@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrustStoreCertificate
                         crate::protocol_serde::shape_get_trust_store_certificate::de_get_trust_store_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

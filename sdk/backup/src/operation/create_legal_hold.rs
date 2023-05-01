@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLegalHold {
                         crate::protocol_serde::shape_create_legal_hold::de_create_legal_hold_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

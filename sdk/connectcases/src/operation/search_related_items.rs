@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchRelatedItems {
                         crate::protocol_serde::shape_search_related_items::de_search_related_items_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

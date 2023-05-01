@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExperimentTemplate {
                         crate::protocol_serde::shape_get_experiment_template::de_get_experiment_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

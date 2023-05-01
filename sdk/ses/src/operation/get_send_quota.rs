@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSendQuota {
                         crate::protocol_serde::shape_get_send_quota::de_get_send_quota_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

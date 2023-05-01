@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStackInstance {
                         crate::protocol_serde::shape_describe_stack_instance::de_describe_stack_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

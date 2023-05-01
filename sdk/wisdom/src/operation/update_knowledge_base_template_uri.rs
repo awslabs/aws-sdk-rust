@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateKnowledgeBaseTempl
                         crate::protocol_serde::shape_update_knowledge_base_template_uri::de_update_knowledge_base_template_uri_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssessmentFrameworks
                         crate::protocol_serde::shape_list_assessment_frameworks::de_list_assessment_frameworks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

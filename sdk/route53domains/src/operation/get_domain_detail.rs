@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainDetail {
                         crate::protocol_serde::shape_get_domain_detail::de_get_domain_detail_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

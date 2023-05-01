@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCase {
                         crate::protocol_serde::shape_create_case::de_create_case_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

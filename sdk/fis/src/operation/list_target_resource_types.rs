@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTargetResourceTypes 
                         crate::protocol_serde::shape_list_target_resource_types::de_list_target_resource_types_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

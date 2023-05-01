@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEnvironment {
                         crate::protocol_serde::shape_update_environment::de_update_environment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

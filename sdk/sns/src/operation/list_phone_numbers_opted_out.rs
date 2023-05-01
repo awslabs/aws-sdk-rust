@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumbersOptedOut
                         crate::protocol_serde::shape_list_phone_numbers_opted_out::de_list_phone_numbers_opted_out_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

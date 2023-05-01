@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceFleet {
                         crate::protocol_serde::shape_modify_instance_fleet::de_modify_instance_fleet_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

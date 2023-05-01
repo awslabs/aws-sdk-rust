@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeSnapshotAccess {
                         crate::protocol_serde::shape_revoke_snapshot_access::de_revoke_snapshot_access_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

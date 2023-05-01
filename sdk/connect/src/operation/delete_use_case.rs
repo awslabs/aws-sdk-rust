@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUseCase {
                         crate::protocol_serde::shape_delete_use_case::de_delete_use_case_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

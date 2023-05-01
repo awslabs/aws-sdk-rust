@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServiceSyncConfig 
                         crate::protocol_serde::shape_update_service_sync_config::de_update_service_sync_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

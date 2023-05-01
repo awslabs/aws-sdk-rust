@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOrganizationInsights
                         crate::protocol_serde::shape_list_organization_insights::de_list_organization_insights_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

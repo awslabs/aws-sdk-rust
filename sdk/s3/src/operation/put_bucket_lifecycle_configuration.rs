@@ -128,6 +128,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
                         crate::protocol_serde::shape_put_bucket_lifecycle_configuration::de_put_bucket_lifecycle_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

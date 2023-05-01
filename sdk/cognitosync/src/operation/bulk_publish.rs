@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BulkPublish {
                         crate::protocol_serde::shape_bulk_publish::de_bulk_publish_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

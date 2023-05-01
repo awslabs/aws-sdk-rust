@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAssociationStatus 
                         crate::protocol_serde::shape_update_association_status::de_update_association_status_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

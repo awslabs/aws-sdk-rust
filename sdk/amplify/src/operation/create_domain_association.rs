@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomainAssociation 
                         crate::protocol_serde::shape_create_domain_association::de_create_domain_association_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

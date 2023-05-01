@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRunGroups {
                         crate::protocol_serde::shape_list_run_groups::de_list_run_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

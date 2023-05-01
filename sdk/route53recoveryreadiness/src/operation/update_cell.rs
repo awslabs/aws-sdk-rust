@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCell {
                         crate::protocol_serde::shape_update_cell::de_update_cell_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

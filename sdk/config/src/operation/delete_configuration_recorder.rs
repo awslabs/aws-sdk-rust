@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConfigurationRecor
                         crate::protocol_serde::shape_delete_configuration_recorder::de_delete_configuration_recorder_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDocumentClassifier
                         crate::protocol_serde::shape_create_document_classifier::de_create_document_classifier_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

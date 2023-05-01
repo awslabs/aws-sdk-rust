@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetResourceAccessForBuck
                         crate::protocol_serde::shape_set_resource_access_for_bucket::de_set_resource_access_for_bucket_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

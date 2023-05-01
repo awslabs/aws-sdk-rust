@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSpeakerSearchTask {
                         crate::protocol_serde::shape_get_speaker_search_task::de_get_speaker_search_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

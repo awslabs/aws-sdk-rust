@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartQueryPlanning {
                         crate::protocol_serde::shape_start_query_planning::de_start_query_planning_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

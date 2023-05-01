@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMigrationTask {
                         crate::protocol_serde::shape_describe_migration_task::de_describe_migration_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

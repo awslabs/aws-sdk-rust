@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVirtualCluster {
                         crate::protocol_serde::shape_create_virtual_cluster::de_create_virtual_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

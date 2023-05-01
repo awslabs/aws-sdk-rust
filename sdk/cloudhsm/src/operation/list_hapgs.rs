@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHapgs {
                         crate::protocol_serde::shape_list_hapgs::de_list_hapgs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

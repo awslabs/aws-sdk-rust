@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConsoleScreenshot {
                         crate::protocol_serde::shape_get_console_screenshot::de_get_console_screenshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

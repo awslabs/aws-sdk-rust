@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachElasticLoadBalance
                         crate::protocol_serde::shape_detach_elastic_load_balancer::de_detach_elastic_load_balancer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

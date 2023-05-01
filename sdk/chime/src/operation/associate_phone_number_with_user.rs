@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePhoneNumberWith
                         crate::protocol_serde::shape_associate_phone_number_with_user::de_associate_phone_number_with_user_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

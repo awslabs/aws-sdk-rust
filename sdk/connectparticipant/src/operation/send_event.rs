@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendEvent {
                         crate::protocol_serde::shape_send_event::de_send_event_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListScramSecrets {
                         crate::protocol_serde::shape_list_scram_secrets::de_list_scram_secrets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSafetyRules {
                         crate::protocol_serde::shape_list_safety_rules::de_list_safety_rules_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

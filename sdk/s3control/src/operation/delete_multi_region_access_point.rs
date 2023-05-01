@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiRegionAccessP
                         crate::protocol_serde::shape_delete_multi_region_access_point::de_delete_multi_region_access_point_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

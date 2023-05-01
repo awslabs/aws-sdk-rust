@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceConnectorEmer
                         crate::protocol_serde::shape_delete_voice_connector_emergency_calling_configuration::de_delete_voice_connector_emergency_calling_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

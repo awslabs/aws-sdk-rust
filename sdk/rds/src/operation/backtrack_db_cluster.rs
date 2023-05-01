@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BacktrackDBCluster {
                         crate::protocol_serde::shape_backtrack_db_cluster::de_backtrack_db_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

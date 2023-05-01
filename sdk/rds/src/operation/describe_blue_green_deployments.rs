@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBlueGreenDeploym
                         crate::protocol_serde::shape_describe_blue_green_deployments::de_describe_blue_green_deployments_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

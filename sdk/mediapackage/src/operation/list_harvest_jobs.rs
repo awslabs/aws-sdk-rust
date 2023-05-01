@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHarvestJobs {
                         crate::protocol_serde::shape_list_harvest_jobs::de_list_harvest_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

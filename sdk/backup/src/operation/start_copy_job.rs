@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCopyJob {
                         crate::protocol_serde::shape_start_copy_job::de_start_copy_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

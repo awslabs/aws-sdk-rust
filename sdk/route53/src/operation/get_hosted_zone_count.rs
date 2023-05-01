@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHostedZoneCount {
                         crate::protocol_serde::shape_get_hosted_zone_count::de_get_hosted_zone_count_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

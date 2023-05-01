@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFederationToken {
                         crate::protocol_serde::shape_get_federation_token::de_get_federation_token_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

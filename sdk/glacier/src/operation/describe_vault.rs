@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVault {
                         crate::protocol_serde::shape_describe_vault::de_describe_vault_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

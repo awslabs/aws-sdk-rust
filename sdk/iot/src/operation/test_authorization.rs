@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestAuthorization {
                         crate::protocol_serde::shape_test_authorization::de_test_authorization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetVpcEndpoint {
                         crate::protocol_serde::shape_batch_get_vpc_endpoint::de_batch_get_vpc_endpoint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRepositoryAssoci
                         crate::protocol_serde::shape_describe_repository_association::de_describe_repository_association_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

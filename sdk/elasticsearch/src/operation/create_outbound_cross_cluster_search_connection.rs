@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOutboundCrossClust
                         crate::protocol_serde::shape_create_outbound_cross_cluster_search_connection::de_create_outbound_cross_cluster_search_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

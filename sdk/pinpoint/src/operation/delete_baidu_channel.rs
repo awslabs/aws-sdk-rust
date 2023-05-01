@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBaiduChannel {
                         crate::protocol_serde::shape_delete_baidu_channel::de_delete_baidu_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

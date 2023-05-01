@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHsm {
                         crate::protocol_serde::shape_describe_hsm::de_describe_hsm_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

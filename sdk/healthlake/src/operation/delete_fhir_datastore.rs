@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFHIRDatastore {
                         crate::protocol_serde::shape_delete_fhir_datastore::de_delete_fhir_datastore_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

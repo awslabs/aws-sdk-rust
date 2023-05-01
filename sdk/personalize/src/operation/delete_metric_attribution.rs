@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMetricAttribution 
                         crate::protocol_serde::shape_delete_metric_attribution::de_delete_metric_attribution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

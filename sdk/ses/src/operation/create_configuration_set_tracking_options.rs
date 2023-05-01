@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfigurationSetTr
                         crate::protocol_serde::shape_create_configuration_set_tracking_options::de_create_configuration_set_tracking_options_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

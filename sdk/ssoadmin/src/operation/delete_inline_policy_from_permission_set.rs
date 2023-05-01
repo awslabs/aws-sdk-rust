@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInlinePolicyFromPe
                         crate::protocol_serde::shape_delete_inline_policy_from_permission_set::de_delete_inline_policy_from_permission_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

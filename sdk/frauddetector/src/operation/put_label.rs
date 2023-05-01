@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLabel {
                         crate::protocol_serde::shape_put_label::de_put_label_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

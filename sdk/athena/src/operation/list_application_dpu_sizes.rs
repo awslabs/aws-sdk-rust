@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationDPUSizes 
                         crate::protocol_serde::shape_list_application_dpu_sizes::de_list_application_dpu_sizes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspaceAuthent
                         crate::protocol_serde::shape_describe_workspace_authentication::de_describe_workspace_authentication_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

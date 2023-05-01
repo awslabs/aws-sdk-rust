@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBatchJobExecution {
                         crate::protocol_serde::shape_get_batch_job_execution::de_get_batch_job_execution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

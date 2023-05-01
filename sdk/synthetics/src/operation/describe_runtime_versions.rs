@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuntimeVersions 
                         crate::protocol_serde::shape_describe_runtime_versions::de_describe_runtime_versions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

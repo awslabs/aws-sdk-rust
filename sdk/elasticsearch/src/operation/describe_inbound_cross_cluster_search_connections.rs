@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInboundCrossClus
                         crate::protocol_serde::shape_describe_inbound_cross_cluster_search_connections::de_describe_inbound_cross_cluster_search_connections_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

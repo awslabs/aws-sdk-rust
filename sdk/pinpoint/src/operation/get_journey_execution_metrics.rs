@@ -119,6 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJourneyExecutionMetri
                         crate::protocol_serde::shape_get_journey_execution_metrics::de_get_journey_execution_metrics_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

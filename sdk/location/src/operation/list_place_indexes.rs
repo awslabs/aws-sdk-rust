@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlaceIndexes {
                         crate::protocol_serde::shape_list_place_indexes::de_list_place_indexes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

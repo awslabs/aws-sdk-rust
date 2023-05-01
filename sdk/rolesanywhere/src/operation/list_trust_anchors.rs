@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrustAnchors {
                         crate::protocol_serde::shape_list_trust_anchors::de_list_trust_anchors_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportVolume {
                         crate::protocol_serde::shape_import_volume::de_import_volume_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

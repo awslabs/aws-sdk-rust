@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedGroups {
                         crate::protocol_serde::shape_list_associated_groups::de_list_associated_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

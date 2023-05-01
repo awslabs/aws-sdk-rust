@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestByThreeW
                         crate::protocol_serde::shape_merge_pull_request_by_three_way::de_merge_pull_request_by_three_way_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

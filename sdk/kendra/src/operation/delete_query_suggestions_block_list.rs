@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQuerySuggestionsBl
                         crate::protocol_serde::shape_delete_query_suggestions_block_list::de_delete_query_suggestions_block_list_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

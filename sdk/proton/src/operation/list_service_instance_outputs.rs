@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServiceInstanceOutpu
                         crate::protocol_serde::shape_list_service_instance_outputs::de_list_service_instance_outputs_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

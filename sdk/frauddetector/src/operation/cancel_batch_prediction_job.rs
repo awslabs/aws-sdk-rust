@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelBatchPredictionJob
                         crate::protocol_serde::shape_cancel_batch_prediction_job::de_cancel_batch_prediction_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

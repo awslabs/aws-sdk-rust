@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportImage {
                         crate::protocol_serde::shape_import_image::de_import_image_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

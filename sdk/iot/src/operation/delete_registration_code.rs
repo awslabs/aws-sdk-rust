@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRegistrationCode {
                         crate::protocol_serde::shape_delete_registration_code::de_delete_registration_code_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

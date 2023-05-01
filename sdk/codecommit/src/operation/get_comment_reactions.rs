@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCommentReactions {
                         crate::protocol_serde::shape_get_comment_reactions::de_get_comment_reactions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

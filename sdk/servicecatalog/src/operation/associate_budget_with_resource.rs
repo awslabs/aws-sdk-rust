@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateBudgetWithResou
                         crate::protocol_serde::shape_associate_budget_with_resource::de_associate_budget_with_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

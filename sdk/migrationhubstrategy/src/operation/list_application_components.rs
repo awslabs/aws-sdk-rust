@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationComponent
                         crate::protocol_serde::shape_list_application_components::de_list_application_components_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

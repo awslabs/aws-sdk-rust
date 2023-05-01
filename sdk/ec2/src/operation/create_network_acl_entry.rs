@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkAclEntry {
                         crate::protocol_serde::shape_create_network_acl_entry::de_create_network_acl_entry_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

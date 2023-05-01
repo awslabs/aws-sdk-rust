@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableLDAPS {
                         crate::protocol_serde::shape_enable_ldaps::de_enable_ldaps_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

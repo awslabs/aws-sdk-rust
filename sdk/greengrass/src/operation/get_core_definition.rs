@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCoreDefinition {
                         crate::protocol_serde::shape_get_core_definition::de_get_core_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

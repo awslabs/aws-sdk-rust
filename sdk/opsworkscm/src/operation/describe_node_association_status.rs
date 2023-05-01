@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNodeAssociationS
                         crate::protocol_serde::shape_describe_node_association_status::de_describe_node_association_status_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

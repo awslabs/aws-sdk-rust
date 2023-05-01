@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStorageSystem {
                         crate::protocol_serde::shape_update_storage_system::de_update_storage_system_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewall {
                         crate::protocol_serde::shape_delete_firewall::de_delete_firewall_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

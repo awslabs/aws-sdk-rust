@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetricDataV2 {
                         crate::protocol_serde::shape_get_metric_data_v2::de_get_metric_data_v2_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

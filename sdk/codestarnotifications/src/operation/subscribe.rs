@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Subscribe {
                         crate::protocol_serde::shape_subscribe::de_subscribe_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

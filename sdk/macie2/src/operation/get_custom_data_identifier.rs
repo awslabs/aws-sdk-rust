@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCustomDataIdentifier 
                         crate::protocol_serde::shape_get_custom_data_identifier::de_get_custom_data_identifier_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

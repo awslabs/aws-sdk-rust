@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfiguration {
                         crate::protocol_serde::shape_get_configuration::de_get_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

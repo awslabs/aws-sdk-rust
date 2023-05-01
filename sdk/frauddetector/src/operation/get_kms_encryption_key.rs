@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKMSEncryptionKey {
                         crate::protocol_serde::shape_get_kms_encryption_key::de_get_kms_encryption_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

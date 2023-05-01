@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebootDBInstance {
                         crate::protocol_serde::shape_reboot_db_instance::de_reboot_db_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

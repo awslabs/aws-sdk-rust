@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RunPipelineActivity {
                         crate::protocol_serde::shape_run_pipeline_activity::de_run_pipeline_activity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByWebAC
                         crate::protocol_serde::shape_list_distributions_by_web_acl_id::de_list_distributions_by_web_acl_id_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

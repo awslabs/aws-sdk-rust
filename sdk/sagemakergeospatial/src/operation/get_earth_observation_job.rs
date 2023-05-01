@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEarthObservationJob {
                         crate::protocol_serde::shape_get_earth_observation_job::de_get_earth_observation_job_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

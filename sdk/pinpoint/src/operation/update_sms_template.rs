@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSmsTemplate {
                         crate::protocol_serde::shape_update_sms_template::de_update_sms_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

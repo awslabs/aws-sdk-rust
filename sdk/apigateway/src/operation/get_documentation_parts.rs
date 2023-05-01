@@ -137,6 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentationParts {
                         crate::protocol_serde::shape_get_documentation_parts::de_get_documentation_parts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

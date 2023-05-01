@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCallAnalyticsCateg
                         crate::protocol_serde::shape_delete_call_analytics_category::de_delete_call_analytics_category_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

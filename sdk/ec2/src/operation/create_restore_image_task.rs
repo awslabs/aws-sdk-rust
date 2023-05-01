@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRestoreImageTask {
                         crate::protocol_serde::shape_create_restore_image_task::de_create_restore_image_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

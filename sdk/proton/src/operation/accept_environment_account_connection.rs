@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptEnvironmentAccount
                         crate::protocol_serde::shape_accept_environment_account_connection::de_accept_environment_account_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

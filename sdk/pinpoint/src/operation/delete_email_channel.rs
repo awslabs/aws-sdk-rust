@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEmailChannel {
                         crate::protocol_serde::shape_delete_email_channel::de_delete_email_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

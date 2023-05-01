@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTestRecommendations 
                         crate::protocol_serde::shape_list_test_recommendations::de_list_test_recommendations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

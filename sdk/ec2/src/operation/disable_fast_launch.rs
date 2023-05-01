@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableFastLaunch {
                         crate::protocol_serde::shape_disable_fast_launch::de_disable_fast_launch_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

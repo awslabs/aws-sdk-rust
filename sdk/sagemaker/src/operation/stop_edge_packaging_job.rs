@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEdgePackagingJob {
                         crate::protocol_serde::shape_stop_edge_packaging_job::de_stop_edge_packaging_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

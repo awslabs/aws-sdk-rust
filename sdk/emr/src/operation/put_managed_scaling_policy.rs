@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutManagedScalingPolicy 
                         crate::protocol_serde::shape_put_managed_scaling_policy::de_put_managed_scaling_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

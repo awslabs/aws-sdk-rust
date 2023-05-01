@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVaultNotifications
                         crate::protocol_serde::shape_delete_vault_notifications::de_delete_vault_notifications_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetThingShadow {
                         crate::protocol_serde::shape_get_thing_shadow::de_get_thing_shadow_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

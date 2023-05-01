@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGcmChannel {
                         crate::protocol_serde::shape_delete_gcm_channel::de_delete_gcm_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

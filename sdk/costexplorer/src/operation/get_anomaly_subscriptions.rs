@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAnomalySubscriptions 
                         crate::protocol_serde::shape_get_anomaly_subscriptions::de_get_anomaly_subscriptions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

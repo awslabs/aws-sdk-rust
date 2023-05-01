@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateRoomMembershi
                         crate::protocol_serde::shape_batch_create_room_membership::de_batch_create_room_membership_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

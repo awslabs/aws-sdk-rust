@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyAuthenticationProf
                         crate::protocol_serde::shape_modify_authentication_profile::de_modify_authentication_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

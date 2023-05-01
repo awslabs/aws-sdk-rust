@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSigningPlatform {
                         crate::protocol_serde::shape_get_signing_platform::de_get_signing_platform_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProblemObservati
                         crate::protocol_serde::shape_describe_problem_observations::de_describe_problem_observations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

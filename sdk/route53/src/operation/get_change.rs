@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChange {
                         crate::protocol_serde::shape_get_change::de_get_change_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

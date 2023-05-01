@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateGatewayToServer
                         crate::protocol_serde::shape_associate_gateway_to_server::de_associate_gateway_to_server_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

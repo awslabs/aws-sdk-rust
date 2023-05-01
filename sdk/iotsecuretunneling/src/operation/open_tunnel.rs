@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for OpenTunnel {
                         crate::protocol_serde::shape_open_tunnel::de_open_tunnel_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

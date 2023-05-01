@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkload {
                         crate::protocol_serde::shape_delete_workload::de_delete_workload_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

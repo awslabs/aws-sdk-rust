@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoom {
                         crate::protocol_serde::shape_get_room::de_get_room_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

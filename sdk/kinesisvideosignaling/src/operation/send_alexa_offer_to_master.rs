@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendAlexaOfferToMaster {
                         crate::protocol_serde::shape_send_alexa_offer_to_master::de_send_alexa_offer_to_master_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

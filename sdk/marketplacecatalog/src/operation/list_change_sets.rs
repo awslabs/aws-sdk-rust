@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChangeSets {
                         crate::protocol_serde::shape_list_change_sets::de_list_change_sets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

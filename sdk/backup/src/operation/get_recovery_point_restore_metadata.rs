@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecoveryPointRestoreM
                         crate::protocol_serde::shape_get_recovery_point_restore_metadata::de_get_recovery_point_restore_metadata_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

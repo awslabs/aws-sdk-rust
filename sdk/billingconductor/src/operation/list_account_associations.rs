@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssociations 
                         crate::protocol_serde::shape_list_account_associations::de_list_account_associations_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

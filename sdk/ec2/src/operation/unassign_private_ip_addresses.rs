@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnassignPrivateIpAddress
                         crate::protocol_serde::shape_unassign_private_ip_addresses::de_unassign_private_ip_addresses_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

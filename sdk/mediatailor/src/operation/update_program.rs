@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateProgram {
                         crate::protocol_serde::shape_update_program::de_update_program_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayPeering
                         crate::protocol_serde::shape_get_transit_gateway_peering::de_get_transit_gateway_peering_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

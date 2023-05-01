@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomerManagedPolic
                         crate::protocol_serde::shape_list_customer_managed_policy_references_in_permission_set::de_list_customer_managed_policy_references_in_permission_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

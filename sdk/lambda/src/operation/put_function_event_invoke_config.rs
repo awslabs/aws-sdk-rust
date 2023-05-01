@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFunctionEventInvokeCo
                         crate::protocol_serde::shape_put_function_event_invoke_config::de_put_function_event_invoke_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

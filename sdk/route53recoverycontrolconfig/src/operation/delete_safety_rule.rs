@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSafetyRule {
                         crate::protocol_serde::shape_delete_safety_rule::de_delete_safety_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

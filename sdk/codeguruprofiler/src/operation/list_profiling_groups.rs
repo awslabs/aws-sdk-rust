@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfilingGroups {
                         crate::protocol_serde::shape_list_profiling_groups::de_list_profiling_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

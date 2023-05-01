@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThingPrincipals {
                         crate::protocol_serde::shape_list_thing_principals::de_list_thing_principals_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetScreenData {
                         crate::protocol_serde::shape_get_screen_data::de_get_screen_data_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

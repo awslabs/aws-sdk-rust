@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceInstanceSyncSt
                         crate::protocol_serde::shape_get_service_instance_sync_status::de_get_service_instance_sync_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

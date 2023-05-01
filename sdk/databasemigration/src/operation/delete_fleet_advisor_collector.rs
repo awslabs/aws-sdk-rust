@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFleetAdvisorCollec
                         crate::protocol_serde::shape_delete_fleet_advisor_collector::de_delete_fleet_advisor_collector_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -115,6 +115,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
                         crate::protocol_serde::shape_create_multipart_upload::de_create_multipart_upload_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPredictiveScalingFore
                         crate::protocol_serde::shape_get_predictive_scaling_forecast::de_get_predictive_scaling_forecast_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

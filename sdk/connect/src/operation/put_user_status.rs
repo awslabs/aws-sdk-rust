@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutUserStatus {
                         crate::protocol_serde::shape_put_user_status::de_put_user_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

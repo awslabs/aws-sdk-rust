@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LookupPolicy {
                         crate::protocol_serde::shape_lookup_policy::de_lookup_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

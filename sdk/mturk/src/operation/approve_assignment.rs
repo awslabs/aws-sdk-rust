@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApproveAssignment {
                         crate::protocol_serde::shape_approve_assignment::de_approve_assignment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

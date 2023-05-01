@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckoutLicense {
                         crate::protocol_serde::shape_checkout_license::de_checkout_license_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

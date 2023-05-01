@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAvailabilityOption
                         crate::protocol_serde::shape_update_availability_options::de_update_availability_options_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

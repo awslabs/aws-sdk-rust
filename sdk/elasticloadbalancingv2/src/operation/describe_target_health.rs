@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTargetHealth {
                         crate::protocol_serde::shape_describe_target_health::de_describe_target_health_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

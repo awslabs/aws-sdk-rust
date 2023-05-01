@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeProfiles {
                         crate::protocol_serde::shape_merge_profiles::de_merge_profiles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

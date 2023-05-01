@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVoiceProfile {
                         crate::protocol_serde::shape_create_voice_profile::de_create_voice_profile_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

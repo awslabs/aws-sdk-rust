@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceCapacityRe
                         crate::protocol_serde::shape_modify_instance_capacity_reservation_attributes::de_modify_instance_capacity_reservation_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

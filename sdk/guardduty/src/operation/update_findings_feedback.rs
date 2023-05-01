@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFindingsFeedback {
                         crate::protocol_serde::shape_update_findings_feedback::de_update_findings_feedback_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

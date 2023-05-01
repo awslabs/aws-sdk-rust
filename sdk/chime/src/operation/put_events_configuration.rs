@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEventsConfiguration {
                         crate::protocol_serde::shape_put_events_configuration::de_put_events_configuration_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

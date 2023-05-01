@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverRuleAssociati
                         crate::protocol_serde::shape_get_resolver_rule_association::de_get_resolver_rule_association_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

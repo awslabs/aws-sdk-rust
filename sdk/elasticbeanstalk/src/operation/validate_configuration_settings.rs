@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ValidateConfigurationSet
                         crate::protocol_serde::shape_validate_configuration_settings::de_validate_configuration_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

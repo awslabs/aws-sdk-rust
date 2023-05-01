@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterTaskFromMainte
                         crate::protocol_serde::shape_deregister_task_from_maintenance_window::de_deregister_task_from_maintenance_window_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

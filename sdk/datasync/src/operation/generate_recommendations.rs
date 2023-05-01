@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateRecommendations 
                         crate::protocol_serde::shape_generate_recommendations::de_generate_recommendations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

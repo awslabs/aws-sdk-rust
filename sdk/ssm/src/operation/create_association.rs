@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAssociation {
                         crate::protocol_serde::shape_create_association::de_create_association_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssetRelationships {
                         crate::protocol_serde::shape_list_asset_relationships::de_list_asset_relationships_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

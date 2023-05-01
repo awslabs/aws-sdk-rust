@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnvironmentTemplateVe
                         crate::protocol_serde::shape_get_environment_template_version::de_get_environment_template_version_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

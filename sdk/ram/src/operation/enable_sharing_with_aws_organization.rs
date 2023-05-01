@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableSharingWithAwsOrga
                         crate::protocol_serde::shape_enable_sharing_with_aws_organization::de_enable_sharing_with_aws_organization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSnapshot {
                         crate::protocol_serde::shape_start_snapshot::de_start_snapshot_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCarrierGateway {
                         crate::protocol_serde::shape_create_carrier_gateway::de_create_carrier_gateway_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

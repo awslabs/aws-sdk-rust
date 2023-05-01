@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMultiplex {
                         crate::protocol_serde::shape_describe_multiplex::de_describe_multiplex_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

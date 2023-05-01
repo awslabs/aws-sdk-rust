@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendAutomationSignal {
                         crate::protocol_serde::shape_send_automation_signal::de_send_automation_signal_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

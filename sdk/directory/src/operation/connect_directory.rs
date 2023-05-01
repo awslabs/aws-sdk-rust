@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConnectDirectory {
                         crate::protocol_serde::shape_connect_directory::de_connect_directory_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

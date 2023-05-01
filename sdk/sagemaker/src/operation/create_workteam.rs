@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkteam {
                         crate::protocol_serde::shape_create_workteam::de_create_workteam_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

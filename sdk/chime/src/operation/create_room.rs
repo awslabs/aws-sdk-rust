@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoom {
                         crate::protocol_serde::shape_create_room::de_create_room_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

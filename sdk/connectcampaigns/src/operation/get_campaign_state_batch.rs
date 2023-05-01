@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCampaignStateBatch {
                         crate::protocol_serde::shape_get_campaign_state_batch::de_get_campaign_state_batch_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateModelManifest {
                         crate::protocol_serde::shape_update_model_manifest::de_update_model_manifest_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

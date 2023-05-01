@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateMac {
                         crate::protocol_serde::shape_generate_mac::de_generate_mac_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgetActionHist
                         crate::protocol_serde::shape_describe_budget_action_histories::de_describe_budget_action_histories_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCertificate {
                         crate::protocol_serde::shape_describe_certificate::de_describe_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

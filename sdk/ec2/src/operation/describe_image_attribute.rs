@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageAttribute {
                         crate::protocol_serde::shape_describe_image_attribute::de_describe_image_attribute_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

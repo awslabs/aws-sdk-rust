@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnections {
                         crate::protocol_serde::shape_get_connections::de_get_connections_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

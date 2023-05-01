@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseOffering {
                         crate::protocol_serde::shape_purchase_offering::de_purchase_offering_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

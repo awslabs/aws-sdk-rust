@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveEndpoints {
                         crate::protocol_serde::shape_remove_endpoints::de_remove_endpoints_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

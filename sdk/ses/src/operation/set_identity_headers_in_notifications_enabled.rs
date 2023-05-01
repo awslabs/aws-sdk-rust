@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityHeadersInNoti
                         crate::protocol_serde::shape_set_identity_headers_in_notifications_enabled::de_set_identity_headers_in_notifications_enabled_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

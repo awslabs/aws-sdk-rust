@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportKeyMaterial {
                         crate::protocol_serde::shape_import_key_material::de_import_key_material_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

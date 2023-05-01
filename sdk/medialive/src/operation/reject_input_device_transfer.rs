@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectInputDeviceTransfe
                         crate::protocol_serde::shape_reject_input_device_transfer::de_reject_input_device_transfer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

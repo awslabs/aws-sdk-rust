@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetDeployments {
                         crate::protocol_serde::shape_reset_deployments::de_reset_deployments_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

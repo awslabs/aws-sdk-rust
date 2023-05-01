@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePortfolioShares 
                         crate::protocol_serde::shape_describe_portfolio_shares::de_describe_portfolio_shares_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

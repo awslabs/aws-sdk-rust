@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRoleAlias {
                         crate::protocol_serde::shape_describe_role_alias::de_describe_role_alias_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

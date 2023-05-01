@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRepositoryName {
                         crate::protocol_serde::shape_update_repository_name::de_update_repository_name_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePrefetchSchedule {
                         crate::protocol_serde::shape_delete_prefetch_schedule::de_delete_prefetch_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

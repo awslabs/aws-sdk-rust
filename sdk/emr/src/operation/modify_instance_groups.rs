@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceGroups {
                         crate::protocol_serde::shape_modify_instance_groups::de_modify_instance_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

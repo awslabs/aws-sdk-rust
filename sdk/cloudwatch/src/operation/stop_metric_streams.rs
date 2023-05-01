@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMetricStreams {
                         crate::protocol_serde::shape_stop_metric_streams::de_stop_metric_streams_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

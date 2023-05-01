@@ -134,6 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPackageVersionReadme 
                         crate::protocol_serde::shape_get_package_version_readme::de_get_package_version_readme_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

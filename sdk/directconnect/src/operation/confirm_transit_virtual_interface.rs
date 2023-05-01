@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmTransitVirtualInt
                         crate::protocol_serde::shape_confirm_transit_virtual_interface::de_confirm_transit_virtual_interface_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

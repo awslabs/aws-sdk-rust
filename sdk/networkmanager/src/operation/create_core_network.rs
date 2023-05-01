@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCoreNetwork {
                         crate::protocol_serde::shape_create_core_network::de_create_core_network_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

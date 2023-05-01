@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceSet {
                         crate::protocol_serde::shape_get_resource_set::de_get_resource_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

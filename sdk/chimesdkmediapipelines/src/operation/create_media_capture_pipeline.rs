@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMediaCapturePipeli
                         crate::protocol_serde::shape_create_media_capture_pipeline::de_create_media_capture_pipeline_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

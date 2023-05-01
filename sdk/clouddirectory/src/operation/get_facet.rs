@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFacet {
                         crate::protocol_serde::shape_get_facet::de_get_facet_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

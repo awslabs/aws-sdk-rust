@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCanary {
                         crate::protocol_serde::shape_update_canary::de_update_canary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

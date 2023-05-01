@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ClaimDevicesByClaimCode 
                         crate::protocol_serde::shape_claim_devices_by_claim_code::de_claim_devices_by_claim_code_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

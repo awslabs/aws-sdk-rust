@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachVerifiedAccessTrus
                         crate::protocol_serde::shape_attach_verified_access_trust_provider::de_attach_verified_access_trust_provider_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBotAlias {
                         crate::protocol_serde::shape_update_bot_alias::de_update_bot_alias_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

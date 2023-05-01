@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRetentionPolicy {
                         crate::protocol_serde::shape_delete_retention_policy::de_delete_retention_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
                         crate::protocol_serde::shape_get_speech_synthesis_task::de_get_speech_synthesis_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

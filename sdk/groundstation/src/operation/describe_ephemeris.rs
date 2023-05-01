@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEphemeris {
                         crate::protocol_serde::shape_describe_ephemeris::de_describe_ephemeris_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

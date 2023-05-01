@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDBInstanceAutomate
                         crate::protocol_serde::shape_delete_db_instance_automated_backup::de_delete_db_instance_automated_backup_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondDecisionTaskCompl
                         crate::protocol_serde::shape_respond_decision_task_completed::de_respond_decision_task_completed_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

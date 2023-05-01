@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCustomRulePolicy {
                         crate::protocol_serde::shape_get_custom_rule_policy::de_get_custom_rule_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateApprovalRuleTem
                         crate::protocol_serde::shape_associate_approval_rule_template_with_repository::de_associate_approval_rule_template_with_repository_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCidrLocations {
                         crate::protocol_serde::shape_list_cidr_locations::de_list_cidr_locations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

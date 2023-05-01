@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterStreamConsumer
                         crate::protocol_serde::shape_deregister_stream_consumer::de_deregister_stream_consumer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

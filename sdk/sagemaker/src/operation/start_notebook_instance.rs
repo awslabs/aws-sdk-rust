@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartNotebookInstance {
                         crate::protocol_serde::shape_start_notebook_instance::de_start_notebook_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

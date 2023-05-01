@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRunGroup {
                         crate::protocol_serde::shape_create_run_group::de_create_run_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

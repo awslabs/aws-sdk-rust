@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssociationForService
                         crate::protocol_serde::shape_get_association_for_service_quota_template::de_get_association_for_service_quota_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSession {
                         crate::protocol_serde::shape_get_session::de_get_session_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

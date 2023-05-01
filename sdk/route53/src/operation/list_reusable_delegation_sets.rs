@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReusableDelegationSe
                         crate::protocol_serde::shape_list_reusable_delegation_sets::de_list_reusable_delegation_sets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

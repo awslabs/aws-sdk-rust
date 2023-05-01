@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateObject {
                         crate::protocol_serde::shape_create_object::de_create_object_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

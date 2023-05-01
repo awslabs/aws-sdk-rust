@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIncidentRecord {
                         crate::protocol_serde::shape_update_incident_record::de_update_incident_record_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

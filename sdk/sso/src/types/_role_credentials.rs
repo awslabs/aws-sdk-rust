@@ -38,10 +38,10 @@ impl RoleCredentials {
 impl  std::fmt::Debug for RoleCredentials  {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoleCredentials");
-        formatter.field("access_key_id", &self.access_key_id);
+        formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
         formatter.field("session_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("expiration", &self.expiration);
+        formatter.field("expiration", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -116,10 +116,10 @@ impl RoleCredentialsBuilder {
 impl std::fmt::Debug for RoleCredentialsBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RoleCredentialsBuilder");
-        formatter.field("access_key_id", &self.access_key_id);
+        formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_access_key", &"*** Sensitive Data Redacted ***");
         formatter.field("session_token", &"*** Sensitive Data Redacted ***");
-        formatter.field("expiration", &self.expiration);
+        formatter.field("expiration", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

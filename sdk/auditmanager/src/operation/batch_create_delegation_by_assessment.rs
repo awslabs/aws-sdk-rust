@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateDelegationByA
                         crate::protocol_serde::shape_batch_create_delegation_by_assessment::de_batch_create_delegation_by_assessment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

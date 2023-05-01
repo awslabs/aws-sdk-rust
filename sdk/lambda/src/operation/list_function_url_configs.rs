@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFunctionUrlConfigs {
                         crate::protocol_serde::shape_list_function_url_configs::de_list_function_url_configs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResources {
                         crate::protocol_serde::shape_get_resources::de_get_resources_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

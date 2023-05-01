@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetJobBookmark {
                         crate::protocol_serde::shape_reset_job_bookmark::de_reset_job_bookmark_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

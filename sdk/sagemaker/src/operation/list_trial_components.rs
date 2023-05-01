@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrialComponents {
                         crate::protocol_serde::shape_list_trial_components::de_list_trial_components_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

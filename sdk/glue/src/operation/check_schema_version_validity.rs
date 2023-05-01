@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckSchemaVersionValidi
                         crate::protocol_serde::shape_check_schema_version_validity::de_check_schema_version_validity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

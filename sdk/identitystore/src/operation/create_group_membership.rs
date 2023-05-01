@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroupMembership {
                         crate::protocol_serde::shape_create_group_membership::de_create_group_membership_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

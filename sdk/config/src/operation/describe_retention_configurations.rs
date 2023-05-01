@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRetentionConfigu
                         crate::protocol_serde::shape_describe_retention_configurations::de_describe_retention_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

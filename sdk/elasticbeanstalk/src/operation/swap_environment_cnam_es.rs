@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SwapEnvironmentCNAMEs {
                         crate::protocol_serde::shape_swap_environment_cnam_es::de_swap_environment_cnam_es_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

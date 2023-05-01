@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPermission {
                         crate::protocol_serde::shape_get_permission::de_get_permission_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

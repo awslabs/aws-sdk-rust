@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDiscoverySummary {
                         crate::protocol_serde::shape_get_discovery_summary::de_get_discovery_summary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

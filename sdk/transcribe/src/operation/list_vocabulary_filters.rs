@@ -121,6 +121,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVocabularyFilters {
                         crate::protocol_serde::shape_list_vocabulary_filters::de_list_vocabulary_filters_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

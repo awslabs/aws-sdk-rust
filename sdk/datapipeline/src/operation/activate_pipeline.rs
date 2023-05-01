@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivatePipeline {
                         crate::protocol_serde::shape_activate_pipeline::de_activate_pipeline_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

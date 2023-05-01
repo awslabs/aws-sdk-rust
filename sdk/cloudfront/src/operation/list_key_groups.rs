@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeyGroups {
                         crate::protocol_serde::shape_list_key_groups::de_list_key_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

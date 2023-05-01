@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomDomains {
                         crate::protocol_serde::shape_describe_custom_domains::de_describe_custom_domains_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

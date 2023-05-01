@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualMFADevices {
                         crate::protocol_serde::shape_list_virtual_mfa_devices::de_list_virtual_mfa_devices_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

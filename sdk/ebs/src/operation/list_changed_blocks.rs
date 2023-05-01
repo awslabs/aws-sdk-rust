@@ -123,6 +123,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChangedBlocks {
                         crate::protocol_serde::shape_list_changed_blocks::de_list_changed_blocks_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

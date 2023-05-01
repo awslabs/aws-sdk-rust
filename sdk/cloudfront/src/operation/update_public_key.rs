@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePublicKey {
                         crate::protocol_serde::shape_update_public_key::de_update_public_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

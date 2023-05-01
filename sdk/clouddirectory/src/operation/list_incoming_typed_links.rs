@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIncomingTypedLinks {
                         crate::protocol_serde::shape_list_incoming_typed_links::de_list_incoming_typed_links_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

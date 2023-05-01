@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayRout
                         crate::protocol_serde::shape_delete_transit_gateway_route_table::de_delete_transit_gateway_route_table_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

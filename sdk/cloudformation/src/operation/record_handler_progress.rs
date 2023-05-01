@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecordHandlerProgress {
                         crate::protocol_serde::shape_record_handler_progress::de_record_handler_progress_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

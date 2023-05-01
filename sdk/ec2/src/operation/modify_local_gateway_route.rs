@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLocalGatewayRoute 
                         crate::protocol_serde::shape_modify_local_gateway_route::de_modify_local_gateway_route_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

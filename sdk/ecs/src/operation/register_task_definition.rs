@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterTaskDefinition {
                         crate::protocol_serde::shape_register_task_definition::de_register_task_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

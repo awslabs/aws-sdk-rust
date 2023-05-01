@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableKinesisStreamingDe
                         crate::protocol_serde::shape_enable_kinesis_streaming_destination::de_enable_kinesis_streaming_destination_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

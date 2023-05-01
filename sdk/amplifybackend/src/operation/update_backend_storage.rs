@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBackendStorage {
                         crate::protocol_serde::shape_update_backend_storage::de_update_backend_storage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

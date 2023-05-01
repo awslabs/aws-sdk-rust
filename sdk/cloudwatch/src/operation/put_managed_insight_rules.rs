@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutManagedInsightRules {
                         crate::protocol_serde::shape_put_managed_insight_rules::de_put_managed_insight_rules_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

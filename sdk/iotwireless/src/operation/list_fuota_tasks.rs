@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFuotaTasks {
                         crate::protocol_serde::shape_list_fuota_tasks::de_list_fuota_tasks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

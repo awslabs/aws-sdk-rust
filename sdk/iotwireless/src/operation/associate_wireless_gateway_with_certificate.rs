@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessGateway
                         crate::protocol_serde::shape_associate_wireless_gateway_with_certificate::de_associate_wireless_gateway_with_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

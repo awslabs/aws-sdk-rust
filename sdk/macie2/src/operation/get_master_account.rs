@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMasterAccount {
                         crate::protocol_serde::shape_get_master_account::de_get_master_account_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

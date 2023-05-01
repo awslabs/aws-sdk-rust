@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallDomains {
                         crate::protocol_serde::shape_update_firewall_domains::de_update_firewall_domains_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

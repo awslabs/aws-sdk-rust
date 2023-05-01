@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDirectoryLimits {
                         crate::protocol_serde::shape_get_directory_limits::de_get_directory_limits_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

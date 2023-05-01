@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFindingsFilters {
                         crate::protocol_serde::shape_list_findings_filters::de_list_findings_filters_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

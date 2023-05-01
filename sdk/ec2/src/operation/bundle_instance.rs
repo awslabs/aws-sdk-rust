@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BundleInstance {
                         crate::protocol_serde::shape_bundle_instance::de_bundle_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

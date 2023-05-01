@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContentSummary {
                         crate::protocol_serde::shape_get_content_summary::de_get_content_summary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

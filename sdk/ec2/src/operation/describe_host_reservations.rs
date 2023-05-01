@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHostReservations
                         crate::protocol_serde::shape_describe_host_reservations::de_describe_host_reservations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

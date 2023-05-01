@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllowCustomRoutingTraffi
                         crate::protocol_serde::shape_allow_custom_routing_traffic::de_allow_custom_routing_traffic_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

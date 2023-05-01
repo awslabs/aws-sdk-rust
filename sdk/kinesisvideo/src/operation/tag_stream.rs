@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagStream {
                         crate::protocol_serde::shape_tag_stream::de_tag_stream_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

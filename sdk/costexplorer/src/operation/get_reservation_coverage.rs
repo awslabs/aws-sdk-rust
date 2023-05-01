@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReservationCoverage {
                         crate::protocol_serde::shape_get_reservation_coverage::de_get_reservation_coverage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

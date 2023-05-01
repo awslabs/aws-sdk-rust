@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCommit {
                         crate::protocol_serde::shape_create_commit::de_create_commit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

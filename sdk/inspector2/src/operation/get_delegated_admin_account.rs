@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDelegatedAdminAccount
                         crate::protocol_serde::shape_get_delegated_admin_account::de_get_delegated_admin_account_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

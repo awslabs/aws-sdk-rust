@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRoute {
                         crate::protocol_serde::shape_describe_route::de_describe_route_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

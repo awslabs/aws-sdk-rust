@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDimension {
                         crate::protocol_serde::shape_create_dimension::de_create_dimension_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

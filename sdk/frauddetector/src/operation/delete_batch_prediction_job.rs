@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBatchPredictionJob
                         crate::protocol_serde::shape_delete_batch_prediction_job::de_delete_batch_prediction_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

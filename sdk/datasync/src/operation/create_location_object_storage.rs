@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLocationObjectStor
                         crate::protocol_serde::shape_create_location_object_storage::de_create_location_object_storage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

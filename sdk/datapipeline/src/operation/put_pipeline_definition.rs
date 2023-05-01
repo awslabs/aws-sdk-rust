@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPipelineDefinition {
                         crate::protocol_serde::shape_put_pipeline_definition::de_put_pipeline_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

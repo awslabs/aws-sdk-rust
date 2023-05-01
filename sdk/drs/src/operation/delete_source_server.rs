@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSourceServer {
                         crate::protocol_serde::shape_delete_source_server::de_delete_source_server_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

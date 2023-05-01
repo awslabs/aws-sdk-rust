@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTapeWithBarcode {
                         crate::protocol_serde::shape_create_tape_with_barcode::de_create_tape_with_barcode_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

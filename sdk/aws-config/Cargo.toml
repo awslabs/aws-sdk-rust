@@ -113,6 +113,10 @@ serde_json = "1"
 version = "0.3.16"
 default-features = false
 
+[dev-dependencies.tracing-subscriber]
+version = "0.3.16"
+features = ["fmt", "json"]
+
 [dev-dependencies.tokio]
 version = "1.23.1"
 features = ["full", "test-util"]

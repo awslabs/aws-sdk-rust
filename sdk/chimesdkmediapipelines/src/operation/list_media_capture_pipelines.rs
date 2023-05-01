@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMediaCapturePipeline
                         crate::protocol_serde::shape_list_media_capture_pipelines::de_list_media_capture_pipelines_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

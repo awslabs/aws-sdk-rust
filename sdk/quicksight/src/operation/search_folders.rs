@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchFolders {
                         crate::protocol_serde::shape_search_folders::de_search_folders_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAnalysisDefiniti
                         crate::protocol_serde::shape_describe_analysis_definition::de_describe_analysis_definition_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

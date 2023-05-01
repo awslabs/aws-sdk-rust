@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableSagemakerServiceca
                         crate::protocol_serde::shape_enable_sagemaker_servicecatalog_portfolio::de_enable_sagemaker_servicecatalog_portfolio_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableSerialConsoleAcce
                         crate::protocol_serde::shape_disable_serial_console_access::de_disable_serial_console_access_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

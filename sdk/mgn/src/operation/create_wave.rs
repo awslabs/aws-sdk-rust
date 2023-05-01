@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWave {
                         crate::protocol_serde::shape_create_wave::de_create_wave_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

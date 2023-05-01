@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForStream {
                         crate::protocol_serde::shape_list_tags_for_stream::de_list_tags_for_stream_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

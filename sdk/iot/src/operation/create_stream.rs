@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStream {
                         crate::protocol_serde::shape_create_stream::de_create_stream_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

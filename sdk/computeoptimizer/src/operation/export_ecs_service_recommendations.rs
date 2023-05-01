@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportECSServiceRecommen
                         crate::protocol_serde::shape_export_ecs_service_recommendations::de_export_ecs_service_recommendations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

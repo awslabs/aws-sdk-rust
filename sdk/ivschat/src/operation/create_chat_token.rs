@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChatToken {
                         crate::protocol_serde::shape_create_chat_token::de_create_chat_token_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

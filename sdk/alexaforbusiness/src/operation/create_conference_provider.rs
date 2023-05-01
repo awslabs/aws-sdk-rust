@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConferenceProvider
                         crate::protocol_serde::shape_create_conference_provider::de_create_conference_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

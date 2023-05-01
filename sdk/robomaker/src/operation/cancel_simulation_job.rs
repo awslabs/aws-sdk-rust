@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSimulationJob {
                         crate::protocol_serde::shape_cancel_simulation_job::de_cancel_simulation_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

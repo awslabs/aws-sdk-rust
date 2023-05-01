@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSMBLocalGroups {
                         crate::protocol_serde::shape_update_smb_local_groups::de_update_smb_local_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

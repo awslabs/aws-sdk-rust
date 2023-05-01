@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateEdgeDeploymentPlan
                         crate::protocol_serde::shape_create_edge_deployment_plan::de_create_edge_deployment_plan_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

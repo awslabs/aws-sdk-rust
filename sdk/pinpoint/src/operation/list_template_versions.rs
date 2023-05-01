@@ -119,6 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplateVersions {
                         crate::protocol_serde::shape_list_template_versions::de_list_template_versions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

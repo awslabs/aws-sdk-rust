@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTeamMember {
                         crate::protocol_serde::shape_associate_team_member::de_associate_team_member_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

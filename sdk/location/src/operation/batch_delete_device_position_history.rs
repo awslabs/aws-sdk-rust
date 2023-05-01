@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteDevicePositio
                         crate::protocol_serde::shape_batch_delete_device_position_history::de_batch_delete_device_position_history_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIndex {
                         crate::protocol_serde::shape_list_index::de_list_index_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -149,6 +149,10 @@ impl ParseStrictResponse for CredentialsResponseParser {
             )),
         }
     }
+
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 #[derive(Clone, Debug)]

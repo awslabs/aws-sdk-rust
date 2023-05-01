@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRawMessageContent {
                         crate::protocol_serde::shape_put_raw_message_content::de_put_raw_message_content_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicyStat
                         crate::protocol_serde::shape_get_access_point_policy_status::de_get_access_point_policy_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

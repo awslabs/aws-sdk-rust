@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetParametersByPath {
                         crate::protocol_serde::shape_get_parameters_by_path::de_get_parameters_by_path_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptQualificationReque
                         crate::protocol_serde::shape_accept_qualification_request::de_accept_qualification_request_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

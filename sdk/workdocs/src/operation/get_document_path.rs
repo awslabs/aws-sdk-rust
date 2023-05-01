@@ -119,6 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDocumentPath {
                         crate::protocol_serde::shape_get_document_path::de_get_document_path_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

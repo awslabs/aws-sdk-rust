@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstanceMetadataOp
                         crate::protocol_serde::shape_modify_instance_metadata_options::de_modify_instance_metadata_options_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

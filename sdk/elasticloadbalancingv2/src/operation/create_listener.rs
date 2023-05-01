@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateListener {
                         crate::protocol_serde::shape_create_listener::de_create_listener_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

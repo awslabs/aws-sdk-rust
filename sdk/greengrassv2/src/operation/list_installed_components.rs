@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstalledComponents 
                         crate::protocol_serde::shape_list_installed_components::de_list_installed_components_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

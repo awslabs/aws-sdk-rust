@@ -115,6 +115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRescoreExecutionPlan
                         crate::protocol_serde::shape_list_rescore_execution_plans::de_list_rescore_execution_plans_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

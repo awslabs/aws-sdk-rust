@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBridgeSource {
                         crate::protocol_serde::shape_update_bridge_source::de_update_bridge_source_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

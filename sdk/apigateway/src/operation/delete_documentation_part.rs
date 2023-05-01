@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDocumentationPart 
                         crate::protocol_serde::shape_delete_documentation_part::de_delete_documentation_part_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

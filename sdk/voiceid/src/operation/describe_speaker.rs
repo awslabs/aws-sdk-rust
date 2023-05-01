@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpeaker {
                         crate::protocol_serde::shape_describe_speaker::de_describe_speaker_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateLenses {
                         crate::protocol_serde::shape_disassociate_lenses::de_disassociate_lenses_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

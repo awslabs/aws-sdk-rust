@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSchemaFromJson {
                         crate::protocol_serde::shape_put_schema_from_json::de_put_schema_from_json_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

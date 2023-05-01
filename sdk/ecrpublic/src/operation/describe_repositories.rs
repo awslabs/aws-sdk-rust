@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRepositories {
                         crate::protocol_serde::shape_describe_repositories::de_describe_repositories_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

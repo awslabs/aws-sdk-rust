@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyDBSnapshot {
                         crate::protocol_serde::shape_modify_db_snapshot::de_modify_db_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

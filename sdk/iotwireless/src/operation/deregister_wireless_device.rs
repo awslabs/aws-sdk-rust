@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterWirelessDevice
                         crate::protocol_serde::shape_deregister_wireless_device::de_deregister_wireless_device_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeleteEventsByEventTy
                         crate::protocol_serde::shape_get_delete_events_by_event_type_status::de_get_delete_events_by_event_type_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

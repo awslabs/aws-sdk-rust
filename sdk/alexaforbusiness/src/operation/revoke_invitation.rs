@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeInvitation {
                         crate::protocol_serde::shape_revoke_invitation::de_revoke_invitation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSourceRegions {
                         crate::protocol_serde::shape_describe_source_regions::de_describe_source_regions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

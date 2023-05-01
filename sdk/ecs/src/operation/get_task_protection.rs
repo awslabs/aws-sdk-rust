@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTaskProtection {
                         crate::protocol_serde::shape_get_task_protection::de_get_task_protection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

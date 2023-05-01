@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetryDataReplication {
                         crate::protocol_serde::shape_retry_data_replication::de_retry_data_replication_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

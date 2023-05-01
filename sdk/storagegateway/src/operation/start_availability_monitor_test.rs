@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAvailabilityMonitor
                         crate::protocol_serde::shape_start_availability_monitor_test::de_start_availability_monitor_test_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

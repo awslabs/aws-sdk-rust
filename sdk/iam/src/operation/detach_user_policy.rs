@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachUserPolicy {
                         crate::protocol_serde::shape_detach_user_policy::de_detach_user_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

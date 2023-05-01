@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateOrganizationsAcc
                         crate::protocol_serde::shape_generate_organizations_access_report::de_generate_organizations_access_report_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

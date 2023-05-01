@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppliedSchemaArns {
                         crate::protocol_serde::shape_list_applied_schema_arns::de_list_applied_schema_arns_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

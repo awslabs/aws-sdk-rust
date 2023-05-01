@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Sign {
                         crate::protocol_serde::shape_sign::de_sign_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPortalServiceProvider
                         crate::protocol_serde::shape_get_portal_service_provider_metadata::de_get_portal_service_provider_metadata_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

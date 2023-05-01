@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUpgradeStatus {
                         crate::protocol_serde::shape_get_upgrade_status::de_get_upgrade_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVerifiedAccessTr
                         crate::protocol_serde::shape_describe_verified_access_trust_providers::de_describe_verified_access_trust_providers_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

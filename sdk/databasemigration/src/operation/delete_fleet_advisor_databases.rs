@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFleetAdvisorDataba
                         crate::protocol_serde::shape_delete_fleet_advisor_databases::de_delete_fleet_advisor_databases_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

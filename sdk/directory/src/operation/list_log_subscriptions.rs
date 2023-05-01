@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLogSubscriptions {
                         crate::protocol_serde::shape_list_log_subscriptions::de_list_log_subscriptions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

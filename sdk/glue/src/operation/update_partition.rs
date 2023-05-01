@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePartition {
                         crate::protocol_serde::shape_update_partition::de_update_partition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

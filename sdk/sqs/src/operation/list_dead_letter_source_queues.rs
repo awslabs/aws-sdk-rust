@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeadLetterSourceQueu
                         crate::protocol_serde::shape_list_dead_letter_source_queues::de_list_dead_letter_source_queues_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAnalyzer {
                         crate::protocol_serde::shape_create_analyzer::de_create_analyzer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

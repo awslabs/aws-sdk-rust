@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDownloadUrlForLayer {
                         crate::protocol_serde::shape_get_download_url_for_layer::de_get_download_url_for_layer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

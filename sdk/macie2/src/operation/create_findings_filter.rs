@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFindingsFilter {
                         crate::protocol_serde::shape_create_findings_filter::de_create_findings_filter_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

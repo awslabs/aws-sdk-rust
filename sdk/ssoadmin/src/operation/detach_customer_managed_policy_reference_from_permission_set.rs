@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachCustomerManagedPol
                         crate::protocol_serde::shape_detach_customer_managed_policy_reference_from_permission_set::de_detach_customer_managed_policy_reference_from_permission_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeactivateDeviceIdentifi
                         crate::protocol_serde::shape_deactivate_device_identifier::de_deactivate_device_identifier_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

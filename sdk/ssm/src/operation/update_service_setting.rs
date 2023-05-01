@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServiceSetting {
                         crate::protocol_serde::shape_update_service_setting::de_update_service_setting_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

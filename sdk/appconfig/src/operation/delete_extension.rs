@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteExtension {
                         crate::protocol_serde::shape_delete_extension::de_delete_extension_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

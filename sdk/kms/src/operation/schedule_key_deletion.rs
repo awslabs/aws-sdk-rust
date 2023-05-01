@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ScheduleKeyDeletion {
                         crate::protocol_serde::shape_schedule_key_deletion::de_schedule_key_deletion_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

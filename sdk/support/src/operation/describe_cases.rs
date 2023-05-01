@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCases {
                         crate::protocol_serde::shape_describe_cases::de_describe_cases_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

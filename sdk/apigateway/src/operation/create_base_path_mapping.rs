@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBasePathMapping {
                         crate::protocol_serde::shape_create_base_path_mapping::de_create_base_path_mapping_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptInboundConnection 
                         crate::protocol_serde::shape_accept_inbound_connection::de_accept_inbound_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

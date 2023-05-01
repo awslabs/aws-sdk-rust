@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePipeline {
                         crate::protocol_serde::shape_describe_pipeline::de_describe_pipeline_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationReferenceD
                         crate::protocol_serde::shape_add_application_reference_data_source::de_add_application_reference_data_source_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

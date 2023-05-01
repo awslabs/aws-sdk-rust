@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChannelFlowCallback {
                         crate::protocol_serde::shape_channel_flow_callback::de_channel_flow_callback_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

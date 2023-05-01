@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfigurationProfile 
                         crate::protocol_serde::shape_get_configuration_profile::de_get_configuration_profile_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

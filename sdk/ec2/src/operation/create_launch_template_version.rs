@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLaunchTemplateVers
                         crate::protocol_serde::shape_create_launch_template_version::de_create_launch_template_version_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

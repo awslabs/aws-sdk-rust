@@ -119,6 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRepositoryPermissi
                         crate::protocol_serde::shape_delete_repository_permissions_policy::de_delete_repository_permissions_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

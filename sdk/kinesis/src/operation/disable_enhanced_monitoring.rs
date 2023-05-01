@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableEnhancedMonitorin
                         crate::protocol_serde::shape_disable_enhanced_monitoring::de_disable_enhanced_monitoring_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

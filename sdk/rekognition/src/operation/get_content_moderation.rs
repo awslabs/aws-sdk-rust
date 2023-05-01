@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContentModeration {
                         crate::protocol_serde::shape_get_content_moderation::de_get_content_moderation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

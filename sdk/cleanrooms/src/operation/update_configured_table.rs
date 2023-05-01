@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfiguredTable {
                         crate::protocol_serde::shape_update_configured_table::de_update_configured_table_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

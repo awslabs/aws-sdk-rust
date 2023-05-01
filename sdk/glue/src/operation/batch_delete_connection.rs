@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteConnection {
                         crate::protocol_serde::shape_batch_delete_connection::de_batch_delete_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

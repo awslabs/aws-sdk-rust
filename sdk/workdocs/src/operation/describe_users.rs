@@ -143,6 +143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUsers {
                         crate::protocol_serde::shape_describe_users::de_describe_users_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

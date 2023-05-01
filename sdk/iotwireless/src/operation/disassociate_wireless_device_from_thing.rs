@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateWirelessDevi
                         crate::protocol_serde::shape_disassociate_wireless_device_from_thing::de_disassociate_wireless_device_from_thing_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

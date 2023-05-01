@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReplicationConfi
                         crate::protocol_serde::shape_describe_replication_configurations::de_describe_replication_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportResourcesToDraftAp
                         crate::protocol_serde::shape_import_resources_to_draft_app_version::de_import_resources_to_draft_app_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

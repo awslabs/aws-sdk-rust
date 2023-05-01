@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterRobot {
                         crate::protocol_serde::shape_deregister_robot::de_deregister_robot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

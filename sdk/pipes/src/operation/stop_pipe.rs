@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopPipe {
                         crate::protocol_serde::shape_stop_pipe::de_stop_pipe_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

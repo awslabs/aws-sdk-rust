@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSessionStatus {
                         crate::protocol_serde::shape_get_session_status::de_get_session_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

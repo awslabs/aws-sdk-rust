@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationOver
                         crate::protocol_serde::shape_describe_organization_overview::de_describe_organization_overview_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

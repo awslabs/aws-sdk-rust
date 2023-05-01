@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCredentials {
                         crate::protocol_serde::shape_get_credentials::de_get_credentials_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

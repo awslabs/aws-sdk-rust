@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CountPendingDecisionTask
                         crate::protocol_serde::shape_count_pending_decision_tasks::de_count_pending_decision_tasks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

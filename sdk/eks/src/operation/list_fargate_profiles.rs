@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFargateProfiles {
                         crate::protocol_serde::shape_list_fargate_profiles::de_list_fargate_profiles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

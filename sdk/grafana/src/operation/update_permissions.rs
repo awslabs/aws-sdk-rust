@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePermissions {
                         crate::protocol_serde::shape_update_permissions::de_update_permissions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreFromClusterSnapsh
                         crate::protocol_serde::shape_restore_from_cluster_snapshot::de_restore_from_cluster_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

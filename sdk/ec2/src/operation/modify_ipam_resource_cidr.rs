@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyIpamResourceCidr {
                         crate::protocol_serde::shape_modify_ipam_resource_cidr::de_modify_ipam_resource_cidr_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

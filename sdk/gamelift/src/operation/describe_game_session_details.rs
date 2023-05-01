@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGameSessionDetai
                         crate::protocol_serde::shape_describe_game_session_details::de_describe_game_session_details_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

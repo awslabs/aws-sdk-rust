@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchCreateRumMetricDefi
                         crate::protocol_serde::shape_batch_create_rum_metric_definitions::de_batch_create_rum_metric_definitions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

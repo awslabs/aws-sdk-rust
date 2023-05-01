@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReportTaskProgress {
                         crate::protocol_serde::shape_report_task_progress::de_report_task_progress_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

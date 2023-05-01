@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateMemberToGroup {
                         crate::protocol_serde::shape_associate_member_to_group::de_associate_member_to_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

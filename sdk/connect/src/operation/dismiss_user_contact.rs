@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DismissUserContact {
                         crate::protocol_serde::shape_dismiss_user_contact::de_dismiss_user_contact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

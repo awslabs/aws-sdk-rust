@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTestEventNotificatio
                         crate::protocol_serde::shape_send_test_event_notification::de_send_test_event_notification_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

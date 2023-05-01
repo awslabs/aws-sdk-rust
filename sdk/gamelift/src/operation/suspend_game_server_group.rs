@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SuspendGameServerGroup {
                         crate::protocol_serde::shape_suspend_game_server_group::de_suspend_game_server_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

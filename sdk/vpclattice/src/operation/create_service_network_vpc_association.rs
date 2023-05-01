@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateServiceNetworkVpcA
                         crate::protocol_serde::shape_create_service_network_vpc_association::de_create_service_network_vpc_association_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

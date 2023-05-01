@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationConfigu
                         crate::protocol_serde::shape_create_replication_configuration_template::de_create_replication_configuration_template_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

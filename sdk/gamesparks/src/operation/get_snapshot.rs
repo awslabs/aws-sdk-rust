@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSnapshot {
                         crate::protocol_serde::shape_get_snapshot::de_get_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

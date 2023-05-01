@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntityPersonas {
                         crate::protocol_serde::shape_list_entity_personas::de_list_entity_personas_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

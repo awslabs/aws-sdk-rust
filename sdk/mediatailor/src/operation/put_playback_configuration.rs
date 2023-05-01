@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPlaybackConfiguration
                         crate::protocol_serde::shape_put_playback_configuration::de_put_playback_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

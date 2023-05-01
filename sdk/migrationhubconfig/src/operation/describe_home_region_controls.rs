@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHomeRegionContro
                         crate::protocol_serde::shape_describe_home_region_controls::de_describe_home_region_controls_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

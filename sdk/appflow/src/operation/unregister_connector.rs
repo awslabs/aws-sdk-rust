@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnregisterConnector {
                         crate::protocol_serde::shape_unregister_connector::de_unregister_connector_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

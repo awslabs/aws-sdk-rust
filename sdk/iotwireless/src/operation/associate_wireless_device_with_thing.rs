@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWirelessDeviceW
                         crate::protocol_serde::shape_associate_wireless_device_with_thing::de_associate_wireless_device_with_thing_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

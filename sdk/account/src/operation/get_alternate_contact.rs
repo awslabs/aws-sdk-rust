@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAlternateContact {
                         crate::protocol_serde::shape_get_alternate_contact::de_get_alternate_contact_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

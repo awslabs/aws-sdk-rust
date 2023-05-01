@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStreamingImages {
                         crate::protocol_serde::shape_list_streaming_images::de_list_streaming_images_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

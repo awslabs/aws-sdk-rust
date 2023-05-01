@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableApplicationLayerA
                         crate::protocol_serde::shape_disable_application_layer_automatic_response::de_disable_application_layer_automatic_response_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

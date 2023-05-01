@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWhatIfForecastExpo
                         crate::protocol_serde::shape_delete_what_if_forecast_export::de_delete_what_if_forecast_export_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

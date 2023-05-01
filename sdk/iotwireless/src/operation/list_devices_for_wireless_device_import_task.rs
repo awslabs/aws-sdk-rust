@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevicesForWirelessDe
                         crate::protocol_serde::shape_list_devices_for_wireless_device_import_task::de_list_devices_for_wireless_device_import_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

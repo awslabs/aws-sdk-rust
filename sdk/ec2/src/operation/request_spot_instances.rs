@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestSpotInstances {
                         crate::protocol_serde::shape_request_spot_instances::de_request_spot_instances_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

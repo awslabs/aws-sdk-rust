@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutGatewayResponse {
                         crate::protocol_serde::shape_put_gateway_response::de_put_gateway_response_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

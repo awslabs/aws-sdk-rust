@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegexMatchSet {
                         crate::protocol_serde::shape_get_regex_match_set::de_get_regex_match_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

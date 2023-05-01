@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddPermission {
                         crate::protocol_serde::shape_add_permission::de_add_permission_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

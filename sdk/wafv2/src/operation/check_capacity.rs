@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckCapacity {
                         crate::protocol_serde::shape_check_capacity::de_check_capacity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

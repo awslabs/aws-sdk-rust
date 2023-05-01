@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListControlInsightsByCon
                         crate::protocol_serde::shape_list_control_insights_by_control_domain::de_list_control_insights_by_control_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

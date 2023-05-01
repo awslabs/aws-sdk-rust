@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePricingRule {
                         crate::protocol_serde::shape_update_pricing_rule::de_update_pricing_rule_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

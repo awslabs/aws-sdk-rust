@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterWorkspaceDirec
                         crate::protocol_serde::shape_deregister_workspace_directory::de_deregister_workspace_directory_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

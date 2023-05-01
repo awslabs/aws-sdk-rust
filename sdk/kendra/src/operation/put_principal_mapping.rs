@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPrincipalMapping {
                         crate::protocol_serde::shape_put_principal_mapping::de_put_principal_mapping_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBuilds {
                         crate::protocol_serde::shape_list_builds::de_list_builds_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

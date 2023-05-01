@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStacks {
                         crate::protocol_serde::shape_list_stacks::de_list_stacks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

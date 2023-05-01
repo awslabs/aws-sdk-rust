@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReferenceStore {
                         crate::protocol_serde::shape_get_reference_store::de_get_reference_store_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

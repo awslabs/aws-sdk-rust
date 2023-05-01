@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIpRestriction {
                         crate::protocol_serde::shape_describe_ip_restriction::de_describe_ip_restriction_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

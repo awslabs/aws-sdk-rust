@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFraudsterRegistrati
                         crate::protocol_serde::shape_start_fraudster_registration_job::de_start_fraudster_registration_job_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

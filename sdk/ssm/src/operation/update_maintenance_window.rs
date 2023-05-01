@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMaintenanceWindow 
                         crate::protocol_serde::shape_update_maintenance_window::de_update_maintenance_window_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

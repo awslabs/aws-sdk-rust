@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePlayerSession {
                         crate::protocol_serde::shape_create_player_session::de_create_player_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

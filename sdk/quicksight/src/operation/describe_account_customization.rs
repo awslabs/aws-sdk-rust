@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountCustomiza
                         crate::protocol_serde::shape_describe_account_customization::de_describe_account_customization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

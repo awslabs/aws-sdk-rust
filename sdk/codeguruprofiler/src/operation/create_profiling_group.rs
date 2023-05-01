@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProfilingGroup {
                         crate::protocol_serde::shape_create_profiling_group::de_create_profiling_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

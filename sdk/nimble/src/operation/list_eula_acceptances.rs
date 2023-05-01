@@ -115,6 +115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEulaAcceptances {
                         crate::protocol_serde::shape_list_eula_acceptances::de_list_eula_acceptances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

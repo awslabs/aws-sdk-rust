@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateClassificationJob 
                         crate::protocol_serde::shape_update_classification_job::de_update_classification_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationCloudWatch
                         crate::protocol_serde::shape_add_application_cloud_watch_logging_option::de_add_application_cloud_watch_logging_option_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

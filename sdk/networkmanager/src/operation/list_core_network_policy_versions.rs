@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCoreNetworkPolicyVer
                         crate::protocol_serde::shape_list_core_network_policy_versions::de_list_core_network_policy_versions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHypervisorPropertyMap
                         crate::protocol_serde::shape_get_hypervisor_property_mappings::de_get_hypervisor_property_mappings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

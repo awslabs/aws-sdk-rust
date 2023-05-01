@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSequenceStore {
                         crate::protocol_serde::shape_get_sequence_store::de_get_sequence_store_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

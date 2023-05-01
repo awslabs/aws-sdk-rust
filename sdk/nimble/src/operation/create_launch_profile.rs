@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLaunchProfile {
                         crate::protocol_serde::shape_create_launch_profile::de_create_launch_profile_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFilter {
                         crate::protocol_serde::shape_update_filter::de_update_filter_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

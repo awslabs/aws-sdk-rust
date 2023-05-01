@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpnConnectionRoute
                         crate::protocol_serde::shape_create_vpn_connection_route::de_create_vpn_connection_route_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

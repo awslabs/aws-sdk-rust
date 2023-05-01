@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWhatIfForecast {
                         crate::protocol_serde::shape_create_what_if_forecast::de_create_what_if_forecast_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

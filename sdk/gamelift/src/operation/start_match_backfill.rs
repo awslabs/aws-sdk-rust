@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMatchBackfill {
                         crate::protocol_serde::shape_start_match_backfill::de_start_match_backfill_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

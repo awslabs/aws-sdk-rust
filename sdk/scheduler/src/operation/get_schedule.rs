@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSchedule {
                         crate::protocol_serde::shape_get_schedule::de_get_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

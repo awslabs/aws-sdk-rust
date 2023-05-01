@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRegistryPolicy {
                         crate::protocol_serde::shape_delete_registry_policy::de_delete_registry_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

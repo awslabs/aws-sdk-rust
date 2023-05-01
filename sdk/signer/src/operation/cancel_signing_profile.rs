@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSigningProfile {
                         crate::protocol_serde::shape_cancel_signing_profile::de_cancel_signing_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

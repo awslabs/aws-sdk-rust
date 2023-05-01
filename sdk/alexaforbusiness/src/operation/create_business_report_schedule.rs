@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBusinessReportSche
                         crate::protocol_serde::shape_create_business_report_schedule::de_create_business_report_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

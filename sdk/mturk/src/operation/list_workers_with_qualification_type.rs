@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkersWithQualifica
                         crate::protocol_serde::shape_list_workers_with_qualification_type::de_list_workers_with_qualification_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

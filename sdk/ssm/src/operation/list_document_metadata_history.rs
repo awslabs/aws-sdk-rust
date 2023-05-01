@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDocumentMetadataHist
                         crate::protocol_serde::shape_list_document_metadata_history::de_list_document_metadata_history_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

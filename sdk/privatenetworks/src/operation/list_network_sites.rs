@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListNetworkSites {
                         crate::protocol_serde::shape_list_network_sites::de_list_network_sites_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

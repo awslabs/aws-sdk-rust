@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkerConfigurations
                         crate::protocol_serde::shape_list_worker_configurations::de_list_worker_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAggregationAuthori
                         crate::protocol_serde::shape_delete_aggregation_authorization::de_delete_aggregation_authorization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

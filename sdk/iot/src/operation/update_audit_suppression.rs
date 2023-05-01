@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAuditSuppression {
                         crate::protocol_serde::shape_update_audit_suppression::de_update_audit_suppression_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

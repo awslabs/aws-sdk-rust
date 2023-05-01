@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutApprovalResult {
                         crate::protocol_serde::shape_put_approval_result::de_put_approval_result_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

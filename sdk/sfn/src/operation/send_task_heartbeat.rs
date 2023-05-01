@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTaskHeartbeat {
                         crate::protocol_serde::shape_send_task_heartbeat::de_send_task_heartbeat_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

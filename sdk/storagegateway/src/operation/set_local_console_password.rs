@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetLocalConsolePassword 
                         crate::protocol_serde::shape_set_local_console_password::de_set_local_console_password_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

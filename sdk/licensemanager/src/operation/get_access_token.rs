@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessToken {
                         crate::protocol_serde::shape_get_access_token::de_get_access_token_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

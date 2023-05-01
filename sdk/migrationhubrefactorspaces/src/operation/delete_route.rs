@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoute {
                         crate::protocol_serde::shape_delete_route::de_delete_route_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

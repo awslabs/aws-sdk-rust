@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportSourceCredentials 
                         crate::protocol_serde::shape_import_source_credentials::de_import_source_credentials_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

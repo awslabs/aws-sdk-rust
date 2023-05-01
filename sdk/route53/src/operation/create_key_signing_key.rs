@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKeySigningKey {
                         crate::protocol_serde::shape_create_key_signing_key::de_create_key_signing_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

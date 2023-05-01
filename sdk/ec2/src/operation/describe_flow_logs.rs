@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFlowLogs {
                         crate::protocol_serde::shape_describe_flow_logs::de_describe_flow_logs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

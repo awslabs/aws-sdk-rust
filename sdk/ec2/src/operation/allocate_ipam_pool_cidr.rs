@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateIpamPoolCidr {
                         crate::protocol_serde::shape_allocate_ipam_pool_cidr::de_allocate_ipam_pool_cidr_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

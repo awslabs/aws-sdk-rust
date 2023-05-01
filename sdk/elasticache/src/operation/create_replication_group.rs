@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationGroup {
                         crate::protocol_serde::shape_create_replication_group::de_create_replication_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

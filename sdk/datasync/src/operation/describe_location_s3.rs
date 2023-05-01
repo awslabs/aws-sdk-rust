@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationS3 {
                         crate::protocol_serde::shape_describe_location_s3::de_describe_location_s3_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

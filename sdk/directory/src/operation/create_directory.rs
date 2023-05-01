@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDirectory {
                         crate::protocol_serde::shape_create_directory::de_create_directory_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectorDefinitionVe
                         crate::protocol_serde::shape_get_connector_definition_version::de_get_connector_definition_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

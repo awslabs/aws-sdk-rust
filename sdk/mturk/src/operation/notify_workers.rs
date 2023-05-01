@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyWorkers {
                         crate::protocol_serde::shape_notify_workers::de_notify_workers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

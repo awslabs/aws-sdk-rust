@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDataCellsFilter {
                         crate::protocol_serde::shape_create_data_cells_filter::de_create_data_cells_filter_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopCrawlerSchedule {
                         crate::protocol_serde::shape_stop_crawler_schedule::de_stop_crawler_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

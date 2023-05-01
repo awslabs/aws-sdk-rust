@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVerifiedEmailAddress
                         crate::protocol_serde::shape_list_verified_email_addresses::de_list_verified_email_addresses_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

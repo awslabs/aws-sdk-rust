@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnsubscribeFromDataset {
                         crate::protocol_serde::shape_unsubscribe_from_dataset::de_unsubscribe_from_dataset_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

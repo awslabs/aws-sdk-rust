@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProvisioningClaim 
                         crate::protocol_serde::shape_create_provisioning_claim::de_create_provisioning_claim_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

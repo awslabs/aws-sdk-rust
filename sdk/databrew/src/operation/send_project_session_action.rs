@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendProjectSessionAction
                         crate::protocol_serde::shape_send_project_session_action::de_send_project_session_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEndpointsByPlatformA
                         crate::protocol_serde::shape_list_endpoints_by_platform_application::de_list_endpoints_by_platform_application_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

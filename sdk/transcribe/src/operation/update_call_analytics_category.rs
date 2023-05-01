@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCallAnalyticsCateg
                         crate::protocol_serde::shape_update_call_analytics_category::de_update_call_analytics_category_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

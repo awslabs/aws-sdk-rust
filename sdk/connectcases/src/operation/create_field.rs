@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateField {
                         crate::protocol_serde::shape_create_field::de_create_field_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

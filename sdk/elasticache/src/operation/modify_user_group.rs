@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyUserGroup {
                         crate::protocol_serde::shape_modify_user_group::de_modify_user_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

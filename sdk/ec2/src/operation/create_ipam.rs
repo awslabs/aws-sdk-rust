@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIpam {
                         crate::protocol_serde::shape_create_ipam::de_create_ipam_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInferenceScheduler
                         crate::protocol_serde::shape_delete_inference_scheduler::de_delete_inference_scheduler_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

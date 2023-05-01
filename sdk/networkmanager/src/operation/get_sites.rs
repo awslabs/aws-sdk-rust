@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSites {
                         crate::protocol_serde::shape_get_sites::de_get_sites_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

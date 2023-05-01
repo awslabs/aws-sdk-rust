@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupCertificateAuth
                         crate::protocol_serde::shape_list_group_certificate_authorities::de_list_group_certificate_authorities_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTransitGatewayRouteTa
                         crate::protocol_serde::shape_get_transit_gateway_route_table_attachment::de_get_transit_gateway_route_table_attachment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

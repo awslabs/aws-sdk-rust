@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveSchemaVersionMetad
                         crate::protocol_serde::shape_remove_schema_version_metadata::de_remove_schema_version_metadata_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

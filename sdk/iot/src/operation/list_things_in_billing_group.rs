@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThingsInBillingGroup
                         crate::protocol_serde::shape_list_things_in_billing_group::de_list_things_in_billing_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

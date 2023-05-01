@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGameServers {
                         crate::protocol_serde::shape_list_game_servers::de_list_game_servers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLoadBalancerTlsCertif
                         crate::protocol_serde::shape_get_load_balancer_tls_certificates::de_get_load_balancer_tls_certificates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

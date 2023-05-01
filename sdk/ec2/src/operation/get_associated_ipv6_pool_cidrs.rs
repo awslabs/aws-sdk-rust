@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssociatedIpv6PoolCid
                         crate::protocol_serde::shape_get_associated_ipv6_pool_cidrs::de_get_associated_ipv6_pool_cidrs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

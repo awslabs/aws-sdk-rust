@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBrowserSettings {
                         crate::protocol_serde::shape_update_browser_settings::de_update_browser_settings_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

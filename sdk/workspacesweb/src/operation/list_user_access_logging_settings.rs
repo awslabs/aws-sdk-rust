@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserAccessLoggingSet
                         crate::protocol_serde::shape_list_user_access_logging_settings::de_list_user_access_logging_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

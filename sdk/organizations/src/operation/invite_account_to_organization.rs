@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InviteAccountToOrganizat
                         crate::protocol_serde::shape_invite_account_to_organization::de_invite_account_to_organization_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

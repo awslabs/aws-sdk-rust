@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStudio {
                         crate::protocol_serde::shape_get_studio::de_get_studio_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

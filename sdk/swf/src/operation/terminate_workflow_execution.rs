@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateWorkflowExecuti
                         crate::protocol_serde::shape_terminate_workflow_execution::de_terminate_workflow_execution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

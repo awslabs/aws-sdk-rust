@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableResourceDim
                         crate::protocol_serde::shape_list_available_resource_dimensions::de_list_available_resource_dimensions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

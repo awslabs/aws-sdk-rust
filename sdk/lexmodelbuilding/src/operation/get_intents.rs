@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIntents {
                         crate::protocol_serde::shape_get_intents::de_get_intents_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

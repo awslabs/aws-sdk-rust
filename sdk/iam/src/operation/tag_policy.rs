@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagPolicy {
                         crate::protocol_serde::shape_tag_policy::de_tag_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

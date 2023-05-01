@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMailboxPermissions {
                         crate::protocol_serde::shape_put_mailbox_permissions::de_put_mailbox_permissions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeIpRules {
                         crate::protocol_serde::shape_revoke_ip_rules::de_revoke_ip_rules_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

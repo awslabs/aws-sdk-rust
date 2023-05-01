@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPoolDomain {
                         crate::protocol_serde::shape_update_user_pool_domain::de_update_user_pool_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

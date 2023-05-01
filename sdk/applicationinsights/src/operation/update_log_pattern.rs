@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLogPattern {
                         crate::protocol_serde::shape_update_log_pattern::de_update_log_pattern_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

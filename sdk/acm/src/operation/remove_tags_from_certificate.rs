@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTagsFromCertificat
                         crate::protocol_serde::shape_remove_tags_from_certificate::de_remove_tags_from_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

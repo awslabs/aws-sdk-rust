@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeRevision {
                         crate::protocol_serde::shape_revoke_revision::de_revoke_revision_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

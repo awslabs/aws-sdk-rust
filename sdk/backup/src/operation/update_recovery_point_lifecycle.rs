@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRecoveryPointLifec
                         crate::protocol_serde::shape_update_recovery_point_lifecycle::de_update_recovery_point_lifecycle_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

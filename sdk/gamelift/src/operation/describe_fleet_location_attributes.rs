@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFleetLocationAtt
                         crate::protocol_serde::shape_describe_fleet_location_attributes::de_describe_fleet_location_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

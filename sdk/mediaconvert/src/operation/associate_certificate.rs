@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateCertificate {
                         crate::protocol_serde::shape_associate_certificate::de_associate_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

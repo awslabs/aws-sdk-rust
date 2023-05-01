@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVoiceConnectorTermin
                         crate::protocol_serde::shape_list_voice_connector_termination_credentials::de_list_voice_connector_termination_credentials_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGrant {
                         crate::protocol_serde::shape_get_grant::de_get_grant_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

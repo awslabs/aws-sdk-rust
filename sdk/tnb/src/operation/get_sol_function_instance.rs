@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSolFunctionInstance {
                         crate::protocol_serde::shape_get_sol_function_instance::de_get_sol_function_instance_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

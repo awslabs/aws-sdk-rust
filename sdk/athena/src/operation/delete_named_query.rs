@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNamedQuery {
                         crate::protocol_serde::shape_delete_named_query::de_delete_named_query_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

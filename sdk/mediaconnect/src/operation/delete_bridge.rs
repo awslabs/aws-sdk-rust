@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBridge {
                         crate::protocol_serde::shape_delete_bridge::de_delete_bridge_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

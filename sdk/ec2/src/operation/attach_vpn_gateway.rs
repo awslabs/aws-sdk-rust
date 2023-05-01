@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachVpnGateway {
                         crate::protocol_serde::shape_attach_vpn_gateway::de_attach_vpn_gateway_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

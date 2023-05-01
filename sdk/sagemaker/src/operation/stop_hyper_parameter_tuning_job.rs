@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopHyperParameterTuning
                         crate::protocol_serde::shape_stop_hyper_parameter_tuning_job::de_stop_hyper_parameter_tuning_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCoverageStatistics {
                         crate::protocol_serde::shape_get_coverage_statistics::de_get_coverage_statistics_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

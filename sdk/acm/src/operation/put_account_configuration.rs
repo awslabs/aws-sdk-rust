@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountConfiguration 
                         crate::protocol_serde::shape_put_account_configuration::de_put_account_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

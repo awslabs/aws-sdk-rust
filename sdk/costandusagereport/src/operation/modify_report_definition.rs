@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyReportDefinition {
                         crate::protocol_serde::shape_modify_report_definition::de_modify_report_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

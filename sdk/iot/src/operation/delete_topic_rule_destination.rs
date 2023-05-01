@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTopicRuleDestinati
                         crate::protocol_serde::shape_delete_topic_rule_destination::de_delete_topic_rule_destination_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

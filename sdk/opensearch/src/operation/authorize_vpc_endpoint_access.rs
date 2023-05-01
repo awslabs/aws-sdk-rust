@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AuthorizeVpcEndpointAcce
                         crate::protocol_serde::shape_authorize_vpc_endpoint_access::de_authorize_vpc_endpoint_access_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

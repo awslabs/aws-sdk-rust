@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfigurationProfi
                         crate::protocol_serde::shape_update_configuration_profile::de_update_configuration_profile_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

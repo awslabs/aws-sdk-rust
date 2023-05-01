@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVirtualMachine {
                         crate::protocol_serde::shape_get_virtual_machine::de_get_virtual_machine_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

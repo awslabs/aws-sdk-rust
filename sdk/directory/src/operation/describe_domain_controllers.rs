@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainController
                         crate::protocol_serde::shape_describe_domain_controllers::de_describe_domain_controllers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

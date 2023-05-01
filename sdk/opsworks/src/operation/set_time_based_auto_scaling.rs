@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetTimeBasedAutoScaling 
                         crate::protocol_serde::shape_set_time_based_auto_scaling::de_set_time_based_auto_scaling_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

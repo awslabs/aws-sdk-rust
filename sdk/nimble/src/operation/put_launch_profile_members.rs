@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLaunchProfileMembers 
                         crate::protocol_serde::shape_put_launch_profile_members::de_put_launch_profile_members_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

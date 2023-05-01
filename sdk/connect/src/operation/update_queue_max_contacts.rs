@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateQueueMaxContacts {
                         crate::protocol_serde::shape_update_queue_max_contacts::de_update_queue_max_contacts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

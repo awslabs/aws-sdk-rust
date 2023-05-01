@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusterOperations {
                         crate::protocol_serde::shape_list_cluster_operations::de_list_cluster_operations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

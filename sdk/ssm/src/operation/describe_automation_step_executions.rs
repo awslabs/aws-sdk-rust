@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAutomationStepEx
                         crate::protocol_serde::shape_describe_automation_step_executions::de_describe_automation_step_executions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

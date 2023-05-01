@@ -115,6 +115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAssetProperty {
                         crate::protocol_serde::shape_update_asset_property::de_update_asset_property_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInput {
                         crate::protocol_serde::shape_create_input::de_create_input_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

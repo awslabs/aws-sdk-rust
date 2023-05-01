@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAttributeGroup 
                         crate::protocol_serde::shape_associate_attribute_group::de_associate_attribute_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

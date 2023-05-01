@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStage {
                         crate::protocol_serde::shape_get_stage::de_get_stage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

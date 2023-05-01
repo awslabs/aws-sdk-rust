@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVoiceProfileDomain
                         crate::protocol_serde::shape_update_voice_profile_domain::de_update_voice_profile_domain_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

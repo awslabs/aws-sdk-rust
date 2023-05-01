@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCodeRepository {
                         crate::protocol_serde::shape_delete_code_repository::de_delete_code_repository_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

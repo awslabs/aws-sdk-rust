@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForVault {
                         crate::protocol_serde::shape_list_tags_for_vault::de_list_tags_for_vault_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

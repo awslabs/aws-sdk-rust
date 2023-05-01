@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactSchedule {
                         crate::protocol_serde::shape_update_contact_schedule::de_update_contact_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

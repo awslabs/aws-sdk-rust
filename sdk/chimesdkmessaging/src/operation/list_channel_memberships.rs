@@ -124,6 +124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelMemberships {
                         crate::protocol_serde::shape_list_channel_memberships::de_list_channel_memberships_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

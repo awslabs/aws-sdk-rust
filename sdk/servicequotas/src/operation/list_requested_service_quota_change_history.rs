@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRequestedServiceQuot
                         crate::protocol_serde::shape_list_requested_service_quota_change_history::de_list_requested_service_quota_change_history_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

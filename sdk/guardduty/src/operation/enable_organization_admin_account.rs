@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableOrganizationAdminA
                         crate::protocol_serde::shape_enable_organization_admin_account::de_enable_organization_admin_account_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

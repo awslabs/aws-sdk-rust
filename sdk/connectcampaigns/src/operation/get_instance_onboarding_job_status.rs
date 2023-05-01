@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceOnboardingJob
                         crate::protocol_serde::shape_get_instance_onboarding_job_status::de_get_instance_onboarding_job_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

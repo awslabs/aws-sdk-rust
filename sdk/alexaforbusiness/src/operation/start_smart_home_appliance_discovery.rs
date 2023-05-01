@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSmartHomeApplianceD
                         crate::protocol_serde::shape_start_smart_home_appliance_discovery::de_start_smart_home_appliance_discovery_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

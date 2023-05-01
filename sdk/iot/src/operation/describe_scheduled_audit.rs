@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeScheduledAudit {
                         crate::protocol_serde::shape_describe_scheduled_audit::de_describe_scheduled_audit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

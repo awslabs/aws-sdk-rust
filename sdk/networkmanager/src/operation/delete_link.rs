@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLink {
                         crate::protocol_serde::shape_delete_link::de_delete_link_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

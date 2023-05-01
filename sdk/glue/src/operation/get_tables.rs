@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTables {
                         crate::protocol_serde::shape_get_tables::de_get_tables_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

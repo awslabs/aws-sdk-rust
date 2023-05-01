@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateProactiveEngage
                         crate::protocol_serde::shape_associate_proactive_engagement_details::de_associate_proactive_engagement_details_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

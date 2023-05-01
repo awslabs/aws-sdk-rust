@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePullRequest {
                         crate::protocol_serde::shape_create_pull_request::de_create_pull_request_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

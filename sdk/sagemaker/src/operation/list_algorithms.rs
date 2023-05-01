@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlgorithms {
                         crate::protocol_serde::shape_list_algorithms::de_list_algorithms_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

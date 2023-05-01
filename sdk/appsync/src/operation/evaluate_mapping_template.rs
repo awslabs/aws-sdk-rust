@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluateMappingTemplate 
                         crate::protocol_serde::shape_evaluate_mapping_template::de_evaluate_mapping_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

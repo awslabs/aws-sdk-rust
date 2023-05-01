@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketReplication 
                         crate::protocol_serde::shape_delete_bucket_replication::de_delete_bucket_replication_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

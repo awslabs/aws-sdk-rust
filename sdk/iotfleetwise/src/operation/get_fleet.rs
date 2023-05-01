@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFleet {
                         crate::protocol_serde::shape_get_fleet::de_get_fleet_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

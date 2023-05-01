@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectorEntity 
                         crate::protocol_serde::shape_describe_connector_entity::de_describe_connector_entity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

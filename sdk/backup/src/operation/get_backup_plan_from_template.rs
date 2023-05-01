@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupPlanFromTemplat
                         crate::protocol_serde::shape_get_backup_plan_from_template::de_get_backup_plan_from_template_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

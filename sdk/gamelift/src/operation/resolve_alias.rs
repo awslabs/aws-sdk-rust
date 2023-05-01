@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResolveAlias {
                         crate::protocol_serde::shape_resolve_alias::de_resolve_alias_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

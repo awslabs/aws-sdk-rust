@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserSettings {
                         crate::protocol_serde::shape_get_user_settings::de_get_user_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

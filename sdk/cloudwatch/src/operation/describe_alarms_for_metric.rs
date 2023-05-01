@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAlarmsForMetric 
                         crate::protocol_serde::shape_describe_alarms_for_metric::de_describe_alarms_for_metric_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

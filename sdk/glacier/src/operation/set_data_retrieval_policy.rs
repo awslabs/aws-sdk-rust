@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetDataRetrievalPolicy {
                         crate::protocol_serde::shape_set_data_retrieval_policy::de_set_data_retrieval_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

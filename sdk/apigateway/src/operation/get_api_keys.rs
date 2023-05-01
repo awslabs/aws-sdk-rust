@@ -126,6 +126,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApiKeys {
                         crate::protocol_serde::shape_get_api_keys::de_get_api_keys_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

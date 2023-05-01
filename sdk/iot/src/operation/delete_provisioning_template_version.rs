@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProvisioningTempla
                         crate::protocol_serde::shape_delete_provisioning_template_version::de_delete_provisioning_template_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleaseIpamPoolAllocatio
                         crate::protocol_serde::shape_release_ipam_pool_allocation::de_release_ipam_pool_allocation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ValidateTemplate {
                         crate::protocol_serde::shape_validate_template::de_validate_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

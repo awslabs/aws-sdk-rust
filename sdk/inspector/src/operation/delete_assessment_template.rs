@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssessmentTemplate
                         crate::protocol_serde::shape_delete_assessment_template::de_delete_assessment_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

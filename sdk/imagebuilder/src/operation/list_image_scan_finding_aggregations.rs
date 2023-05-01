@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListImageScanFindingAggr
                         crate::protocol_serde::shape_list_image_scan_finding_aggregations::de_list_image_scan_finding_aggregations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

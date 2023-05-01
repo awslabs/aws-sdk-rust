@@ -157,6 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBackupJobs {
                         crate::protocol_serde::shape_list_backup_jobs::de_list_backup_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

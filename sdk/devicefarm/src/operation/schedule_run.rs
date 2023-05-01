@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ScheduleRun {
                         crate::protocol_serde::shape_schedule_run::de_schedule_run_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

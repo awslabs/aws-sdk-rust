@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApiDestination {
                         crate::protocol_serde::shape_create_api_destination::de_create_api_destination_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

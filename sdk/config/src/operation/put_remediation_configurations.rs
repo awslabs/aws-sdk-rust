@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRemediationConfigurat
                         crate::protocol_serde::shape_put_remediation_configurations::de_put_remediation_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

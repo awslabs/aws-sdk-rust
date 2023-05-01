@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePhoneNumberSetting
                         crate::protocol_serde::shape_update_phone_number_settings::de_update_phone_number_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

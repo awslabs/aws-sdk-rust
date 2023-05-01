@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateUser {
                         crate::protocol_serde::shape_batch_update_user::de_batch_update_user_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

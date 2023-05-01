@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListKeywordsForDataSourc
                         crate::protocol_serde::shape_list_keywords_for_data_source::de_list_keywords_for_data_source_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

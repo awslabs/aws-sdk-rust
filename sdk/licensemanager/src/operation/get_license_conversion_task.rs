@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseConversionTask
                         crate::protocol_serde::shape_get_license_conversion_task::de_get_license_conversion_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

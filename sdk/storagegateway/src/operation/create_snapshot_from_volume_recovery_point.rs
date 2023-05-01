@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshotFromVolume
                         crate::protocol_serde::shape_create_snapshot_from_volume_recovery_point::de_create_snapshot_from_volume_recovery_point_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

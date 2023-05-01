@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkflow {
                         crate::protocol_serde::shape_update_workflow::de_update_workflow_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

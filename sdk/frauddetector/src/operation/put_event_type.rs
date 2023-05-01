@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEventType {
                         crate::protocol_serde::shape_put_event_type::de_put_event_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

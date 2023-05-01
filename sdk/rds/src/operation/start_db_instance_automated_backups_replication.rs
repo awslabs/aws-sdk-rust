@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDBInstanceAutomated
                         crate::protocol_serde::shape_start_db_instance_automated_backups_replication::de_start_db_instance_automated_backups_replication_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

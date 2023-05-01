@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomLineItemVersio
                         crate::protocol_serde::shape_list_custom_line_item_versions::de_list_custom_line_item_versions_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDatasetContent {
                         crate::protocol_serde::shape_get_dataset_content::de_get_dataset_content_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

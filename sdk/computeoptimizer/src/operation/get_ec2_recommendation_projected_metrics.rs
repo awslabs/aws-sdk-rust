@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEC2RecommendationProj
                         crate::protocol_serde::shape_get_ec2_recommendation_projected_metrics::de_get_ec2_recommendation_projected_metrics_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

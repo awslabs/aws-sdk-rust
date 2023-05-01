@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDistributionsByRealt
                         crate::protocol_serde::shape_list_distributions_by_realtime_log_config::de_list_distributions_by_realtime_log_config_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

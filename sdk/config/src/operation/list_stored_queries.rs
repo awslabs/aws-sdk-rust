@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStoredQueries {
                         crate::protocol_serde::shape_list_stored_queries::de_list_stored_queries_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

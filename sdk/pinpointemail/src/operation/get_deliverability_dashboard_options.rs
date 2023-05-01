@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeliverabilityDashboa
                         crate::protocol_serde::shape_get_deliverability_dashboard_options::de_get_deliverability_dashboard_options_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

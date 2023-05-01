@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RecordActivityTaskHeartb
                         crate::protocol_serde::shape_record_activity_task_heartbeat::de_record_activity_task_heartbeat_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRunGroup {
                         crate::protocol_serde::shape_get_run_group::de_get_run_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

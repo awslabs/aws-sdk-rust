@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstanceBot {
                         crate::protocol_serde::shape_create_app_instance_bot::de_create_app_instance_bot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

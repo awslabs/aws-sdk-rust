@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyInstancePlacement 
                         crate::protocol_serde::shape_modify_instance_placement::de_modify_instance_placement_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

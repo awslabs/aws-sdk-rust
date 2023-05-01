@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComponentType {
                         crate::protocol_serde::shape_create_component_type::de_create_component_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

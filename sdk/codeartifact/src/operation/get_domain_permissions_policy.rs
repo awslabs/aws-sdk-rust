@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainPermissionsPoli
                         crate::protocol_serde::shape_get_domain_permissions_policy::de_get_domain_permissions_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

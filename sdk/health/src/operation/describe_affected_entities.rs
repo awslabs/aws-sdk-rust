@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAffectedEntities
                         crate::protocol_serde::shape_describe_affected_entities::de_describe_affected_entities_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDefaultVocabula
                         crate::protocol_serde::shape_associate_default_vocabulary::de_associate_default_vocabulary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

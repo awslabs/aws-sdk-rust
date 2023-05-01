@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSkillsStoreSkillsByC
                         crate::protocol_serde::shape_list_skills_store_skills_by_category::de_list_skills_store_skills_by_category_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

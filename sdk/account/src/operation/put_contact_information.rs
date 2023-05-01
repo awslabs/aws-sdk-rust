@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutContactInformation {
                         crate::protocol_serde::shape_put_contact_information::de_put_contact_information_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

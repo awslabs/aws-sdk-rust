@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRemainingFreeTrialDay
                         crate::protocol_serde::shape_get_remaining_free_trial_days::de_get_remaining_free_trial_days_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

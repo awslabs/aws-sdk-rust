@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDominantLanguage
                         crate::protocol_serde::shape_describe_dominant_language_detection_job::de_describe_dominant_language_detection_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

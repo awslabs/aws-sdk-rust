@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComponentType {
                         crate::protocol_serde::shape_update_component_type::de_update_component_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

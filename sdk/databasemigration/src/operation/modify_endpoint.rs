@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyEndpoint {
                         crate::protocol_serde::shape_modify_endpoint::de_modify_endpoint_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

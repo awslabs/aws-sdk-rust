@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
                         crate::protocol_serde::shape_get_component::de_get_component_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResolveRoom {
                         crate::protocol_serde::shape_resolve_room::de_resolve_room_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

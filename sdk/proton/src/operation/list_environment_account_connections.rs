@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnvironmentAccountCo
                         crate::protocol_serde::shape_list_environment_account_connections::de_list_environment_account_connections_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

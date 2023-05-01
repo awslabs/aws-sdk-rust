@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTableStorageOptimize
                         crate::protocol_serde::shape_list_table_storage_optimizers::de_list_table_storage_optimizers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

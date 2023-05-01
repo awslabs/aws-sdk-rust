@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLag {
                         crate::protocol_serde::shape_create_lag::de_create_lag_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

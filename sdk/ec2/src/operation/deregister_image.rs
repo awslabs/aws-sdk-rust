@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterImage {
                         crate::protocol_serde::shape_deregister_image::de_deregister_image_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

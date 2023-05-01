@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestSegmentPattern {
                         crate::protocol_serde::shape_test_segment_pattern::de_test_segment_pattern_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInAppTemplate {
                         crate::protocol_serde::shape_update_in_app_template::de_update_in_app_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateProductWithPort
                         crate::protocol_serde::shape_associate_product_with_portfolio::de_associate_product_with_portfolio_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

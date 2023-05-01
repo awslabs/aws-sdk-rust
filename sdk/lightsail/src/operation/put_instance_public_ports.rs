@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutInstancePublicPorts {
                         crate::protocol_serde::shape_put_instance_public_ports::de_put_instance_public_ports_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

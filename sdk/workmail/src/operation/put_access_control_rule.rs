@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessControlRule {
                         crate::protocol_serde::shape_put_access_control_rule::de_put_access_control_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAddressTransfers
                         crate::protocol_serde::shape_describe_address_transfers::de_describe_address_transfers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

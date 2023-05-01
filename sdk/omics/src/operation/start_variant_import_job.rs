@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartVariantImportJob {
                         crate::protocol_serde::shape_start_variant_import_job::de_start_variant_import_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

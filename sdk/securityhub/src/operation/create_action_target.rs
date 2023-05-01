@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateActionTarget {
                         crate::protocol_serde::shape_create_action_target::de_create_action_target_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

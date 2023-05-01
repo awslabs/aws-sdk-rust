@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVPCAssociationAuth
                         crate::protocol_serde::shape_delete_vpc_association_authorization::de_delete_vpc_association_authorization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

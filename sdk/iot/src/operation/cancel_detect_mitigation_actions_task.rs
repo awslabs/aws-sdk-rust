@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDetectMitigationAc
                         crate::protocol_serde::shape_cancel_detect_mitigation_actions_task::de_cancel_detect_mitigation_actions_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

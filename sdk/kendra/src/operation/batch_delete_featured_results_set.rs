@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDeleteFeaturedResul
                         crate::protocol_serde::shape_batch_delete_featured_results_set::de_batch_delete_featured_results_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

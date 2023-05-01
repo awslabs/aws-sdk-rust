@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryLineage {
                         crate::protocol_serde::shape_query_lineage::de_query_lineage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDefaultCreditSpecific
                         crate::protocol_serde::shape_get_default_credit_specification::de_get_default_credit_specification_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

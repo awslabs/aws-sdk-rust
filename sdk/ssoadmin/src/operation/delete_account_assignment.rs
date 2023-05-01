@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccountAssignment 
                         crate::protocol_serde::shape_delete_account_assignment::de_delete_account_assignment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

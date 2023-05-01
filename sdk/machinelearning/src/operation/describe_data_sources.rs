@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDataSources {
                         crate::protocol_serde::shape_describe_data_sources::de_describe_data_sources_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

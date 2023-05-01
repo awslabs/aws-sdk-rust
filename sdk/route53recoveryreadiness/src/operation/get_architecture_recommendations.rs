@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetArchitectureRecommend
                         crate::protocol_serde::shape_get_architecture_recommendations::de_get_architecture_recommendations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

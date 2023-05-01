@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrial {
                         crate::protocol_serde::shape_delete_trial::de_delete_trial_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

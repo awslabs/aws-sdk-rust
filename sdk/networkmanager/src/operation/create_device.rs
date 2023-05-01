@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDevice {
                         crate::protocol_serde::shape_create_device::de_create_device_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

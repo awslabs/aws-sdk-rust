@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInstanceProfile {
                         crate::protocol_serde::shape_update_instance_profile::de_update_instance_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

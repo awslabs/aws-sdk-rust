@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetControlOperation {
                         crate::protocol_serde::shape_get_control_operation::de_get_control_operation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

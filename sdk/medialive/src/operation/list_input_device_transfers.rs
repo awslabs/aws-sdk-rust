@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputDeviceTransfers
                         crate::protocol_serde::shape_list_input_device_transfers::de_list_input_device_transfers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

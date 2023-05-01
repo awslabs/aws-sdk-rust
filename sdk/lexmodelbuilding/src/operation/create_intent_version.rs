@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIntentVersion {
                         crate::protocol_serde::shape_create_intent_version::de_create_intent_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

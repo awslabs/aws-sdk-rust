@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyApplicationState {
                         crate::protocol_serde::shape_notify_application_state::de_notify_application_state_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

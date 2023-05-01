@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartLendingAnalysis {
                         crate::protocol_serde::shape_start_lending_analysis::de_start_lending_analysis_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

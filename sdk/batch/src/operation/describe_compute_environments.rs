@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeComputeEnvironme
                         crate::protocol_serde::shape_describe_compute_environments::de_describe_compute_environments_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

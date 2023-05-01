@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomRoutingPortMap
                         crate::protocol_serde::shape_list_custom_routing_port_mappings::de_list_custom_routing_port_mappings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

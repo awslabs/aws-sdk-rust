@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CalculateRouteMatrix {
                         crate::protocol_serde::shape_calculate_route_matrix::de_calculate_route_matrix_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

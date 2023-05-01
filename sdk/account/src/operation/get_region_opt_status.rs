@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegionOptStatus {
                         crate::protocol_serde::shape_get_region_opt_status::de_get_region_opt_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAnomalyMonitor {
                         crate::protocol_serde::shape_delete_anomaly_monitor::de_delete_anomaly_monitor_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

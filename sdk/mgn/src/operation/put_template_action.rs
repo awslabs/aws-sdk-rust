@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutTemplateAction {
                         crate::protocol_serde::shape_put_template_action::de_put_template_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

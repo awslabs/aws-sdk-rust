@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallRuleGroupPoli
                         crate::protocol_serde::shape_get_firewall_rule_group_policy::de_get_firewall_rule_group_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

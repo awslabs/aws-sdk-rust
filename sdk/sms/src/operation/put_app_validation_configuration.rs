@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppValidationConfigur
                         crate::protocol_serde::shape_put_app_validation_configuration::de_put_app_validation_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

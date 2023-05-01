@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyClusterSnapshot {
                         crate::protocol_serde::shape_modify_cluster_snapshot::de_modify_cluster_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

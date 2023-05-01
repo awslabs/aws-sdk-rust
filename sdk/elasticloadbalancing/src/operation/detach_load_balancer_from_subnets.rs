@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachLoadBalancerFromSu
                         crate::protocol_serde::shape_detach_load_balancer_from_subnets::de_detach_load_balancer_from_subnets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

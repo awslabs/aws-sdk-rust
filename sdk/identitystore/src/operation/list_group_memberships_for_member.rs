@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupMembershipsForM
                         crate::protocol_serde::shape_list_group_memberships_for_member::de_list_group_memberships_for_member_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

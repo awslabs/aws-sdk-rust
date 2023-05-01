@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComment {
                         crate::protocol_serde::shape_create_comment::de_create_comment_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

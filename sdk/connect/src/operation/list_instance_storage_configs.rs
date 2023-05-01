@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstanceStorageConfi
                         crate::protocol_serde::shape_list_instance_storage_configs::de_list_instance_storage_configs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

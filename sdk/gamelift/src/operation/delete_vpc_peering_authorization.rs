@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcPeeringAuthoriz
                         crate::protocol_serde::shape_delete_vpc_peering_authorization::de_delete_vpc_peering_authorization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

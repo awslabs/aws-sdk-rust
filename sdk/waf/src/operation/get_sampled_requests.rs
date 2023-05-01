@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSampledRequests {
                         crate::protocol_serde::shape_get_sampled_requests::de_get_sampled_requests_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

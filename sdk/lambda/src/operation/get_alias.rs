@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAlias {
                         crate::protocol_serde::shape_get_alias::de_get_alias_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

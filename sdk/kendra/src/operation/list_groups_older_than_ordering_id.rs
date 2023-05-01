@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupsOlderThanOrder
                         crate::protocol_serde::shape_list_groups_older_than_ordering_id::de_list_groups_older_than_ordering_id_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AbortEnvironmentUpdate {
                         crate::protocol_serde::shape_abort_environment_update::de_abort_environment_update_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

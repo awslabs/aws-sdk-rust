@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVerifiedAccessEndp
                         crate::protocol_serde::shape_create_verified_access_endpoint::de_create_verified_access_endpoint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

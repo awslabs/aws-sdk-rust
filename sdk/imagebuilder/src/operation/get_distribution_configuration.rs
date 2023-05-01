@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDistributionConfigura
                         crate::protocol_serde::shape_get_distribution_configuration::de_get_distribution_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

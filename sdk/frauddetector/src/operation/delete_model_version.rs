@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteModelVersion {
                         crate::protocol_serde::shape_delete_model_version::de_delete_model_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

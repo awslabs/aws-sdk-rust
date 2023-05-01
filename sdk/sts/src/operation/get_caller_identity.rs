@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallerIdentity {
                         crate::protocol_serde::shape_get_caller_identity::de_get_caller_identity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

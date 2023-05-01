@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpgradeElasticsearchDoma
                         crate::protocol_serde::shape_upgrade_elasticsearch_domain::de_upgrade_elasticsearch_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

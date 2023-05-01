@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMeetingTranscription
                         crate::protocol_serde::shape_stop_meeting_transcription::de_stop_meeting_transcription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

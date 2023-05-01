@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVolumeAttribute 
                         crate::protocol_serde::shape_describe_volume_attribute::de_describe_volume_attribute_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

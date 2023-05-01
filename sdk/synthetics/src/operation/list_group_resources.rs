@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupResources {
                         crate::protocol_serde::shape_list_group_resources::de_list_group_resources_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

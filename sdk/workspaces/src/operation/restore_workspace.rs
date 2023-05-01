@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreWorkspace {
                         crate::protocol_serde::shape_restore_workspace::de_restore_workspace_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataEndpoint {
                         crate::protocol_serde::shape_get_data_endpoint::de_get_data_endpoint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

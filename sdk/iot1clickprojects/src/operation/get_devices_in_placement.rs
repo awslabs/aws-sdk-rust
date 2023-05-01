@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevicesInPlacement {
                         crate::protocol_serde::shape_get_devices_in_placement::de_get_devices_in_placement_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

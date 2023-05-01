@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRotation {
                         crate::protocol_serde::shape_get_rotation::de_get_rotation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

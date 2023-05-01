@@ -139,6 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPackageVersionDepend
                         crate::protocol_serde::shape_list_package_version_dependencies::de_list_package_version_dependencies_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

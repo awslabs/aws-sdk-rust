@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPortal {
                         crate::protocol_serde::shape_get_portal::de_get_portal_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOrders {
                         crate::protocol_serde::shape_list_orders::de_list_orders_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

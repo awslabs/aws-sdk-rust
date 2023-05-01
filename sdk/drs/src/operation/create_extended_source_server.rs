@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateExtendedSourceServ
                         crate::protocol_serde::shape_create_extended_source_server::de_create_extended_source_server_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

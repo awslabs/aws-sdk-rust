@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactAttributes {
                         crate::protocol_serde::shape_get_contact_attributes::de_get_contact_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

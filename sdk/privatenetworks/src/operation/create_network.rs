@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetwork {
                         crate::protocol_serde::shape_create_network::de_create_network_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

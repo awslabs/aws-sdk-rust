@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetExternalDataViewAcces
                         crate::protocol_serde::shape_get_external_data_view_access_details::de_get_external_data_view_access_details_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

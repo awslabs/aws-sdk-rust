@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAddress {
                         crate::protocol_serde::shape_describe_address::de_describe_address_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestAlarm {
                         crate::protocol_serde::shape_test_alarm::de_test_alarm_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

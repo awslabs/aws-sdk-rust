@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomain {
                         crate::protocol_serde::shape_update_domain::de_update_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

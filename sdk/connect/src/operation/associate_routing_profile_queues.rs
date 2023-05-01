@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateRoutingProfileQ
                         crate::protocol_serde::shape_associate_routing_profile_queues::de_associate_routing_profile_queues_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

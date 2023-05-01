@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFields {
                         crate::protocol_serde::shape_list_fields::de_list_fields_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

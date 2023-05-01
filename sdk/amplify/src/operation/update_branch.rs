@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBranch {
                         crate::protocol_serde::shape_update_branch::de_update_branch_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

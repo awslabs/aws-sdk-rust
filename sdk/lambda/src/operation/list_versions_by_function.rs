@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVersionsByFunction {
                         crate::protocol_serde::shape_list_versions_by_function::de_list_versions_by_function_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

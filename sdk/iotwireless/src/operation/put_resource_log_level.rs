@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourceLogLevel {
                         crate::protocol_serde::shape_put_resource_log_level::de_put_resource_log_level_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

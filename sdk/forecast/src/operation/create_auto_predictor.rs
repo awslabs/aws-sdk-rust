@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAutoPredictor {
                         crate::protocol_serde::shape_create_auto_predictor::de_create_auto_predictor_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

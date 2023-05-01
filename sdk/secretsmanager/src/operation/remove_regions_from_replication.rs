@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveRegionsFromReplica
                         crate::protocol_serde::shape_remove_regions_from_replication::de_remove_regions_from_replication_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

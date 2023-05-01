@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveSourceServerAction
                         crate::protocol_serde::shape_remove_source_server_action::de_remove_source_server_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

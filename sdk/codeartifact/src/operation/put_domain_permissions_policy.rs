@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDomainPermissionsPoli
                         crate::protocol_serde::shape_put_domain_permissions_policy::de_put_domain_permissions_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

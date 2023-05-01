@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateContactChannel {
                         crate::protocol_serde::shape_activate_contact_channel::de_activate_contact_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

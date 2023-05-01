@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartZonalShift {
                         crate::protocol_serde::shape_start_zonal_shift::de_start_zonal_shift_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

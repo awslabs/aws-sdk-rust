@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiplex {
                         crate::protocol_serde::shape_delete_multiplex::de_delete_multiplex_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

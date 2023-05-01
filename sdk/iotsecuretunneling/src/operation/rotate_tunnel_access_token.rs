@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateTunnelAccessToken 
                         crate::protocol_serde::shape_rotate_tunnel_access_token::de_rotate_tunnel_access_token_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

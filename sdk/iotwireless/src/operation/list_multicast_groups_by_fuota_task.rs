@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMulticastGroupsByFuo
                         crate::protocol_serde::shape_list_multicast_groups_by_fuota_task::de_list_multicast_groups_by_fuota_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

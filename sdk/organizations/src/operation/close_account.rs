@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CloseAccount {
                         crate::protocol_serde::shape_close_account::de_close_account_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

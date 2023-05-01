@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeResourcePolicy {
                         crate::protocol_serde::shape_describe_resource_policy::de_describe_resource_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTableObjects {
                         crate::protocol_serde::shape_update_table_objects::de_update_table_objects_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

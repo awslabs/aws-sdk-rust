@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLogStream {
                         crate::protocol_serde::shape_create_log_stream::de_create_log_stream_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

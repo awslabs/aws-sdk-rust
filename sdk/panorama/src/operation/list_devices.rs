@@ -125,6 +125,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDevices {
                         crate::protocol_serde::shape_list_devices::de_list_devices_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

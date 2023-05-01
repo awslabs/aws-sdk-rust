@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateClientVpnTarget
                         crate::protocol_serde::shape_associate_client_vpn_target_network::de_associate_client_vpn_target_network_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualRouter {
                         crate::protocol_serde::shape_delete_virtual_router::de_delete_virtual_router_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

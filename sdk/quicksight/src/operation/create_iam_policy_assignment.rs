@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIAMPolicyAssignmen
                         crate::protocol_serde::shape_create_iam_policy_assignment::de_create_iam_policy_assignment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

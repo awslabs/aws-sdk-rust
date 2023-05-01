@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCertificateAuthori
                         crate::protocol_serde::shape_create_certificate_authority_audit_report::de_create_certificate_authority_audit_report_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

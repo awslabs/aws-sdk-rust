@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRestoreJob {
                         crate::protocol_serde::shape_describe_restore_job::de_describe_restore_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

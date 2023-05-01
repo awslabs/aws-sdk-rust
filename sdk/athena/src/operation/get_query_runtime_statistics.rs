@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueryRuntimeStatistic
                         crate::protocol_serde::shape_get_query_runtime_statistics::de_get_query_runtime_statistics_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartGeneratedCodeJob {
                         crate::protocol_serde::shape_start_generated_code_job::de_start_generated_code_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

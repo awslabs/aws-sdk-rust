@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySelfservicePermiss
                         crate::protocol_serde::shape_modify_selfservice_permissions::de_modify_selfservice_permissions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

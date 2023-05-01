@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ValidateSecurityProfileB
                         crate::protocol_serde::shape_validate_security_profile_behaviors::de_validate_security_profile_behaviors_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

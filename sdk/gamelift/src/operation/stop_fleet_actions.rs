@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopFleetActions {
                         crate::protocol_serde::shape_stop_fleet_actions::de_stop_fleet_actions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

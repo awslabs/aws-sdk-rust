@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketLifecycleCon
                         crate::protocol_serde::shape_delete_bucket_lifecycle_configuration::de_delete_bucket_lifecycle_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

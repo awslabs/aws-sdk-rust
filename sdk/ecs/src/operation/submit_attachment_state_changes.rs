@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubmitAttachmentStateCha
                         crate::protocol_serde::shape_submit_attachment_state_changes::de_submit_attachment_state_changes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

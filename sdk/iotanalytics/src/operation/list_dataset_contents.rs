@@ -123,6 +123,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDatasetContents {
                         crate::protocol_serde::shape_list_dataset_contents::de_list_dataset_contents_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DefineIndexField {
                         crate::protocol_serde::shape_define_index_field::de_define_index_field_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLens {
                         crate::protocol_serde::shape_get_lens::de_get_lens_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

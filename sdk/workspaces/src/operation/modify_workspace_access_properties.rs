@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyWorkspaceAccessPro
                         crate::protocol_serde::shape_modify_workspace_access_properties::de_modify_workspace_access_properties_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedRoute53Hea
                         crate::protocol_serde::shape_list_associated_route53_health_checks::de_list_associated_route53_health_checks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

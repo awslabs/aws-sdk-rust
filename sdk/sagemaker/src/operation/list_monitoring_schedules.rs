@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMonitoringSchedules 
                         crate::protocol_serde::shape_list_monitoring_schedules::de_list_monitoring_schedules_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

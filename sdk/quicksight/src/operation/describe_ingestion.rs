@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIngestion {
                         crate::protocol_serde::shape_describe_ingestion::de_describe_ingestion_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

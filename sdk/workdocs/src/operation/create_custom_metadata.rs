@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomMetadata {
                         crate::protocol_serde::shape_create_custom_metadata::de_create_custom_metadata_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

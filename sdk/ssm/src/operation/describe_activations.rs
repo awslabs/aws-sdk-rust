@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeActivations {
                         crate::protocol_serde::shape_describe_activations::de_describe_activations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

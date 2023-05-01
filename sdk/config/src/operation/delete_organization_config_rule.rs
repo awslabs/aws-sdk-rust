@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOrganizationConfig
                         crate::protocol_serde::shape_delete_organization_config_rule::de_delete_organization_config_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

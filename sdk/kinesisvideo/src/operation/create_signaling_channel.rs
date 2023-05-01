@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSignalingChannel {
                         crate::protocol_serde::shape_create_signaling_channel::de_create_signaling_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

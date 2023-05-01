@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CloseInstancePublicPorts
                         crate::protocol_serde::shape_close_instance_public_ports::de_close_instance_public_ports_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

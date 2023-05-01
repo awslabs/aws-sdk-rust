@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueryLoggingConfigs 
                         crate::protocol_serde::shape_list_query_logging_configs::de_list_query_logging_configs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

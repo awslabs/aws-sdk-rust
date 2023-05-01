@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteServiceQuotaIncrea
                         crate::protocol_serde::shape_delete_service_quota_increase_request_from_template::de_delete_service_quota_increase_request_from_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -119,6 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomainDeliverability
                         crate::protocol_serde::shape_list_domain_deliverability_campaigns::de_list_domain_deliverability_campaigns_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

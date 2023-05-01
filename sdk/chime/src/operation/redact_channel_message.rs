@@ -115,6 +115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RedactChannelMessage {
                         crate::protocol_serde::shape_redact_channel_message::de_redact_channel_message_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

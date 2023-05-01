@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnlinkDeveloperIdentity 
                         crate::protocol_serde::shape_unlink_developer_identity::de_unlink_developer_identity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

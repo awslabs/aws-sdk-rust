@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobBookmark {
                         crate::protocol_serde::shape_get_job_bookmark::de_get_job_bookmark_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

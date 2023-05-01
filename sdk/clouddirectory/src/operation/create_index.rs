@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIndex {
                         crate::protocol_serde::shape_create_index::de_create_index_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

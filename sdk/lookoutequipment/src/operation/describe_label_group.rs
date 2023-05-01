@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLabelGroup {
                         crate::protocol_serde::shape_describe_label_group::de_describe_label_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

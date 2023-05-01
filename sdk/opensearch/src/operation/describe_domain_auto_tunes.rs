@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDomainAutoTunes 
                         crate::protocol_serde::shape_describe_domain_auto_tunes::de_describe_domain_auto_tunes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

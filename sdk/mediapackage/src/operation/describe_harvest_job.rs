@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHarvestJob {
                         crate::protocol_serde::shape_describe_harvest_job::de_describe_harvest_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

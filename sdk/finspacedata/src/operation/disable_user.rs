@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableUser {
                         crate::protocol_serde::shape_disable_user::de_disable_user_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

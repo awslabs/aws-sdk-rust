@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModelPackagingJobs {
                         crate::protocol_serde::shape_list_model_packaging_jobs::de_list_model_packaging_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

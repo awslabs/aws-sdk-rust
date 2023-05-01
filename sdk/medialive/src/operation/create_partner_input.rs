@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePartnerInput {
                         crate::protocol_serde::shape_create_partner_input::de_create_partner_input_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

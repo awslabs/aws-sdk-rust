@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportTableToPointInTime
                         crate::protocol_serde::shape_export_table_to_point_in_time::de_export_table_to_point_in_time_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

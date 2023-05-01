@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPackageVersionHistory
                         crate::protocol_serde::shape_get_package_version_history::de_get_package_version_history_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRumMetricsDestinatio
                         crate::protocol_serde::shape_list_rum_metrics_destinations::de_list_rum_metrics_destinations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RequestCertificate {
                         crate::protocol_serde::shape_request_certificate::de_request_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

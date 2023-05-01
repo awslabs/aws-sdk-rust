@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SignOutUser {
                         crate::protocol_serde::shape_sign_out_user::de_sign_out_user_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

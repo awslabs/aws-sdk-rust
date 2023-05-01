@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteThingShadow {
                         crate::protocol_serde::shape_delete_thing_shadow::de_delete_thing_shadow_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

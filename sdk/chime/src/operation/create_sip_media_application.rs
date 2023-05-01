@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSipMediaApplicatio
                         crate::protocol_serde::shape_create_sip_media_application::de_create_sip_media_application_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

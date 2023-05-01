@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PauseService {
                         crate::protocol_serde::shape_pause_service::de_pause_service_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

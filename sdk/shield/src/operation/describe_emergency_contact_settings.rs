@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEmergencyContact
                         crate::protocol_serde::shape_describe_emergency_contact_settings::de_describe_emergency_contact_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateListener {
                         crate::protocol_serde::shape_update_listener::de_update_listener_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

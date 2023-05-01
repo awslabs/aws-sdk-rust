@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRefreshSchedule {
                         crate::protocol_serde::shape_create_refresh_schedule::de_create_refresh_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

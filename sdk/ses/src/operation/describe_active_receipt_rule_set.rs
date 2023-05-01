@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeActiveReceiptRul
                         crate::protocol_serde::shape_describe_active_receipt_rule_set::de_describe_active_receipt_rule_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

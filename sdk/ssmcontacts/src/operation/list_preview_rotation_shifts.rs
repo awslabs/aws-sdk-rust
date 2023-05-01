@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPreviewRotationShift
                         crate::protocol_serde::shape_list_preview_rotation_shifts::de_list_preview_rotation_shifts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

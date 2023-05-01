@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomainPermissionsP
                         crate::protocol_serde::shape_delete_domain_permissions_policy::de_delete_domain_permissions_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

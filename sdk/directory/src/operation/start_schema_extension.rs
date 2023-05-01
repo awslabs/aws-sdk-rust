@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSchemaExtension {
                         crate::protocol_serde::shape_start_schema_extension::de_start_schema_extension_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

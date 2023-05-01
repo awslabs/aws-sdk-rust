@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecoveryPoint {
                         crate::protocol_serde::shape_describe_recovery_point::de_describe_recovery_point_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

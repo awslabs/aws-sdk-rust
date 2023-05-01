@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFleet {
                         crate::protocol_serde::shape_delete_fleet::de_delete_fleet_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

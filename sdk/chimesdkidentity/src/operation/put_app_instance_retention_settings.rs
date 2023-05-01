@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppInstanceRetentionS
                         crate::protocol_serde::shape_put_app_instance_retention_settings::de_put_app_instance_retention_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

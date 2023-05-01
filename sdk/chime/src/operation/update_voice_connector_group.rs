@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVoiceConnectorGrou
                         crate::protocol_serde::shape_update_voice_connector_group::de_update_voice_connector_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

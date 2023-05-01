@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkforce {
                         crate::protocol_serde::shape_describe_workforce::de_describe_workforce_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

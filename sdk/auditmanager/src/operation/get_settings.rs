@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSettings {
                         crate::protocol_serde::shape_get_settings::de_get_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

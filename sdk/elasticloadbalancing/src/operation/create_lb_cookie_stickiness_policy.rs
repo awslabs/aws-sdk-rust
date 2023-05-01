@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLBCookieStickiness
                         crate::protocol_serde::shape_create_lb_cookie_stickiness_policy::de_create_lb_cookie_stickiness_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

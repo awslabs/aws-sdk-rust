@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoom {
                         crate::protocol_serde::shape_get_room::de_get_room_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

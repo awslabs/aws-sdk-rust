@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetFreeTrialInfo {
                         crate::protocol_serde::shape_batch_get_free_trial_info::de_batch_get_free_trial_info_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

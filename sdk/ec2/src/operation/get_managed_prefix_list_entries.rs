@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedPrefixListEntr
                         crate::protocol_serde::shape_get_managed_prefix_list_entries::de_get_managed_prefix_list_entries_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

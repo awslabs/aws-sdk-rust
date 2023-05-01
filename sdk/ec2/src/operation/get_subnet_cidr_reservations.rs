@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubnetCidrReservation
                         crate::protocol_serde::shape_get_subnet_cidr_reservations::de_get_subnet_cidr_reservations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

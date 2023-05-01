@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartBatchJob {
                         crate::protocol_serde::shape_start_batch_job::de_start_batch_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

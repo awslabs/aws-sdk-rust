@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAuditFinding {
                         crate::protocol_serde::shape_describe_audit_finding::de_describe_audit_finding_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

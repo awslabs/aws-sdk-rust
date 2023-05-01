@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmPrivateVirtualInt
                         crate::protocol_serde::shape_confirm_private_virtual_interface::de_confirm_private_virtual_interface_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

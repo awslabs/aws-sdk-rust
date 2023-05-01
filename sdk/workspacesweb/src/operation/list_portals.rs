@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPortals {
                         crate::protocol_serde::shape_list_portals::de_list_portals_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStudioLifecycleCon
                         crate::protocol_serde::shape_create_studio_lifecycle_config::de_create_studio_lifecycle_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

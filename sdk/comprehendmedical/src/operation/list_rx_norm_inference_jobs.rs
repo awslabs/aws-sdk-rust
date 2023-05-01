@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRxNormInferenceJobs 
                         crate::protocol_serde::shape_list_rx_norm_inference_jobs::de_list_rx_norm_inference_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

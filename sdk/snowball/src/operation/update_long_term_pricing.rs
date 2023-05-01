@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLongTermPricing {
                         crate::protocol_serde::shape_update_long_term_pricing::de_update_long_term_pricing_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

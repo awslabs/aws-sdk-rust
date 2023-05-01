@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAssociationExecu
                         crate::protocol_serde::shape_describe_association_execution_targets::de_describe_association_execution_targets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -115,6 +115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAssetModel {
                         crate::protocol_serde::shape_delete_asset_model::de_delete_asset_model_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

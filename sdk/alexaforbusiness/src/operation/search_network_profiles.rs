@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchNetworkProfiles {
                         crate::protocol_serde::shape_search_network_profiles::de_search_network_profiles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

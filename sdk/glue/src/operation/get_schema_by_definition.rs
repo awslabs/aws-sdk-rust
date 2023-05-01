@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSchemaByDefinition {
                         crate::protocol_serde::shape_get_schema_by_definition::de_get_schema_by_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

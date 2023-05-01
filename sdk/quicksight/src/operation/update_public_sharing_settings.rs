@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePublicSharingSetti
                         crate::protocol_serde::shape_update_public_sharing_settings::de_update_public_sharing_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

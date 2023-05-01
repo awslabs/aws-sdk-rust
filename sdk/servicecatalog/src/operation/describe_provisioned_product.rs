@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProvisionedProdu
                         crate::protocol_serde::shape_describe_provisioned_product::de_describe_provisioned_product_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

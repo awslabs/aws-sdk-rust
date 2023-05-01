@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateOriginationI
                         crate::protocol_serde::shape_disassociate_origination_identity::de_disassociate_origination_identity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

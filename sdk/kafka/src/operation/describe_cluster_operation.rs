@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClusterOperation
                         crate::protocol_serde::shape_describe_cluster_operation::de_describe_cluster_operation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

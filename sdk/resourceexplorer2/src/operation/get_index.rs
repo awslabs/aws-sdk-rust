@@ -91,6 +91,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIndex {
                         crate::protocol_serde::shape_get_index::de_get_index_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

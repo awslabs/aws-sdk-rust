@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedResources 
                         crate::protocol_serde::shape_list_associated_resources::de_list_associated_resources_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

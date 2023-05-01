@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchMeterUsage {
                         crate::protocol_serde::shape_batch_meter_usage::de_batch_meter_usage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

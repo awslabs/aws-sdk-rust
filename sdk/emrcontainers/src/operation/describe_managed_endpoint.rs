@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeManagedEndpoint 
                         crate::protocol_serde::shape_describe_managed_endpoint::de_describe_managed_endpoint_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

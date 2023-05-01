@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateSecret {
                         crate::protocol_serde::shape_rotate_secret::de_rotate_secret_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

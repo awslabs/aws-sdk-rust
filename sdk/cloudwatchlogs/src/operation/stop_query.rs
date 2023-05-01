@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopQuery {
                         crate::protocol_serde::shape_stop_query::de_stop_query_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInsightRules {
                         crate::protocol_serde::shape_delete_insight_rules::de_delete_insight_rules_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

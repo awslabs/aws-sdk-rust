@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConfigRuleEvalua
                         crate::protocol_serde::shape_describe_config_rule_evaluation_status::de_describe_config_rule_evaluation_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

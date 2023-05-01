@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteLifecycleAction 
                         crate::protocol_serde::shape_complete_lifecycle_action::de_complete_lifecycle_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

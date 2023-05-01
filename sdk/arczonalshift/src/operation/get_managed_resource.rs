@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetManagedResource {
                         crate::protocol_serde::shape_get_managed_resource::de_get_managed_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

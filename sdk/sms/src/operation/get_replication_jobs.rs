@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReplicationJobs {
                         crate::protocol_serde::shape_get_replication_jobs::de_get_replication_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

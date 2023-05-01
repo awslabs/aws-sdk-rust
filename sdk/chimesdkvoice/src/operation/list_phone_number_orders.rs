@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumberOrders {
                         crate::protocol_serde::shape_list_phone_number_orders::de_list_phone_number_orders_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

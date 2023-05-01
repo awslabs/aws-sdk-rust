@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQuantumTask {
                         crate::protocol_serde::shape_get_quantum_task::de_get_quantum_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

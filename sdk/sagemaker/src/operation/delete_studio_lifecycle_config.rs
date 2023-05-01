@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStudioLifecycleCon
                         crate::protocol_serde::shape_delete_studio_lifecycle_config::de_delete_studio_lifecycle_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

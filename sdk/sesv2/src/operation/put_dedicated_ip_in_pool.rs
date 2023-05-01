@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDedicatedIpInPool {
                         crate::protocol_serde::shape_put_dedicated_ip_in_pool::de_put_dedicated_ip_in_pool_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

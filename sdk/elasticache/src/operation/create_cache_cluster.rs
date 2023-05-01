@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCacheCluster {
                         crate::protocol_serde::shape_create_cache_cluster::de_create_cache_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

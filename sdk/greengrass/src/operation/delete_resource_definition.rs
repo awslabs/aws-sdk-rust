@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResourceDefinition
                         crate::protocol_serde::shape_delete_resource_definition::de_delete_resource_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

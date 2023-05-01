@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeclineInvitations {
                         crate::protocol_serde::shape_decline_invitations::de_decline_invitations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

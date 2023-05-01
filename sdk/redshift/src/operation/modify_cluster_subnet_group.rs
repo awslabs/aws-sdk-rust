@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyClusterSubnetGroup
                         crate::protocol_serde::shape_modify_cluster_subnet_group::de_modify_cluster_subnet_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

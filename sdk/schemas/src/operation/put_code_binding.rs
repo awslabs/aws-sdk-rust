@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCodeBinding {
                         crate::protocol_serde::shape_put_code_binding::de_put_code_binding_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

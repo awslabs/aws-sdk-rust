@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIpamPoolAllocations {
                         crate::protocol_serde::shape_get_ipam_pool_allocations::de_get_ipam_pool_allocations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

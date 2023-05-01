@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactChannels {
                         crate::protocol_serde::shape_list_contact_channels::de_list_contact_channels_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

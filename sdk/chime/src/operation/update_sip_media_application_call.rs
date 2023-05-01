@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSipMediaApplicatio
                         crate::protocol_serde::shape_update_sip_media_application_call::de_update_sip_media_application_call_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

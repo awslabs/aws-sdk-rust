@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCompatibleElasticsear
                         crate::protocol_serde::shape_get_compatible_elasticsearch_versions::de_get_compatible_elasticsearch_versions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

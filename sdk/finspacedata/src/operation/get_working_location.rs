@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkingLocation {
                         crate::protocol_serde::shape_get_working_location::de_get_working_location_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartConfigurationSessio
                         crate::protocol_serde::shape_start_configuration_session::de_start_configuration_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

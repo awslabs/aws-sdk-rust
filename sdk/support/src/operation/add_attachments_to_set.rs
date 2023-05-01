@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddAttachmentsToSet {
                         crate::protocol_serde::shape_add_attachments_to_set::de_add_attachments_to_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

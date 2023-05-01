@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualInterfaceAt
                         crate::protocol_serde::shape_update_virtual_interface_attributes::de_update_virtual_interface_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

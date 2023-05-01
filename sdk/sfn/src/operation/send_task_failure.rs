@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTaskFailure {
                         crate::protocol_serde::shape_send_task_failure::de_send_task_failure_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

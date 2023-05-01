@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SyncDeploymentJob {
                         crate::protocol_serde::shape_sync_deployment_job::de_sync_deployment_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

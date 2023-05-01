@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApplicationMainten
                         crate::protocol_serde::shape_update_application_maintenance_configuration::de_update_application_maintenance_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddUserToGroup {
                         crate::protocol_serde::shape_add_user_to_group::de_add_user_to_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

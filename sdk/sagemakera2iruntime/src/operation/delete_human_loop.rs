@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHumanLoop {
                         crate::protocol_serde::shape_delete_human_loop::de_delete_human_loop_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

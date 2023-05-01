@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGameSessionLogUrl {
                         crate::protocol_serde::shape_get_game_session_log_url::de_get_game_session_log_url_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

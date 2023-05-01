@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExchangeCodeForToken {
                         crate::protocol_serde::shape_exchange_code_for_token::de_exchange_code_for_token_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

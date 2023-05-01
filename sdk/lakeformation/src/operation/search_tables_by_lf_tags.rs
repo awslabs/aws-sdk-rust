@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchTablesByLFTags {
                         crate::protocol_serde::shape_search_tables_by_lf_tags::de_search_tables_by_lf_tags_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

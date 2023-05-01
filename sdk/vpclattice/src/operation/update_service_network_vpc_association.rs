@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateServiceNetworkVpcA
                         crate::protocol_serde::shape_update_service_network_vpc_association::de_update_service_network_vpc_association_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateModelBiasJobDefini
                         crate::protocol_serde::shape_create_model_bias_job_definition::de_create_model_bias_job_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

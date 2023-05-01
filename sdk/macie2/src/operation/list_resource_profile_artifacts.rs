@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceProfileArtif
                         crate::protocol_serde::shape_list_resource_profile_artifacts::de_list_resource_profile_artifacts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

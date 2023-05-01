@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAcceptedPortfolioSha
                         crate::protocol_serde::shape_list_accepted_portfolio_shares::de_list_accepted_portfolio_shares_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProvisioningArti
                         crate::protocol_serde::shape_describe_provisioning_artifact::de_describe_provisioning_artifact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

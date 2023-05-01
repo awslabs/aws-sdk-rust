@@ -134,6 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelMessages {
                         crate::protocol_serde::shape_list_channel_messages::de_list_channel_messages_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

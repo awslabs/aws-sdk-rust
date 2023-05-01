@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVPCAssociationAuthor
                         crate::protocol_serde::shape_list_vpc_association_authorizations::de_list_vpc_association_authorizations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

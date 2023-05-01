@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNatGateway {
                         crate::protocol_serde::shape_create_nat_gateway::de_create_nat_gateway_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

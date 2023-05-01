@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityPoolRoles {
                         crate::protocol_serde::shape_set_identity_pool_roles::de_set_identity_pool_roles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

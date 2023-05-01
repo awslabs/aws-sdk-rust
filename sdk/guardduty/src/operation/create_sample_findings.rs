@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSampleFindings {
                         crate::protocol_serde::shape_create_sample_findings::de_create_sample_findings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

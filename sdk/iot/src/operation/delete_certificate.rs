@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCertificate {
                         crate::protocol_serde::shape_delete_certificate::de_delete_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

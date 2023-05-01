@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDisassociateScramSe
                         crate::protocol_serde::shape_batch_disassociate_scram_secret::de_batch_disassociate_scram_secret_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogs {
                         crate::protocol_serde::shape_configure_logs::de_configure_logs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

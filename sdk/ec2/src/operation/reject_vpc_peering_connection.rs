@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectVpcPeeringConnecti
                         crate::protocol_serde::shape_reject_vpc_peering_connection::de_reject_vpc_peering_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

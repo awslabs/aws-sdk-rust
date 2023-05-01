@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteTransaction {
                         crate::protocol_serde::shape_execute_transaction::de_execute_transaction_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

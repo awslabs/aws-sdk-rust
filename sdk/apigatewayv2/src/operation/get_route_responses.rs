@@ -119,6 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRouteResponses {
                         crate::protocol_serde::shape_get_route_responses::de_get_route_responses_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

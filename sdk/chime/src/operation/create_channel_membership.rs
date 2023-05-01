@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateChannelMembership 
                         crate::protocol_serde::shape_create_channel_membership::de_create_channel_membership_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

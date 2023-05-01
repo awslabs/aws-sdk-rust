@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketAccessKey {
                         crate::protocol_serde::shape_delete_bucket_access_key::de_delete_bucket_access_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

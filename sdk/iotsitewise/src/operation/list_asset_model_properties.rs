@@ -122,6 +122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssetModelProperties
                         crate::protocol_serde::shape_list_asset_model_properties::de_list_asset_model_properties_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

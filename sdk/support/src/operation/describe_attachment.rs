@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAttachment {
                         crate::protocol_serde::shape_describe_attachment::de_describe_attachment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

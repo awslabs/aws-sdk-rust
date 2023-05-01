@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferCertificate {
                         crate::protocol_serde::shape_transfer_certificate::de_transfer_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

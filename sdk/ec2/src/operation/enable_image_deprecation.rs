@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableImageDeprecation {
                         crate::protocol_serde::shape_enable_image_deprecation::de_enable_image_deprecation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

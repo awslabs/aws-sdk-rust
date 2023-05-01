@@ -256,7 +256,7 @@ fn calculate_signing_headers<'a>(
     // Step 4: https://docs.aws.amazon.com/en_pv/general/latest/gr/sigv4-add-signature-to-request.html
     let values = creq.values.as_headers().expect("signing with headers");
     let mut headers = HeaderMap::new();
-    add_header(&mut headers, header::X_AMZ_DATE, &values.date_time);
+    add_header(&mut headers, header::X_AMZ_DATE, &values.date_time, false);
     headers.insert(
         "authorization",
         build_authorization_header(params.access_key, &creq, sts, &signature),
@@ -266,18 +266,26 @@ fn calculate_signing_headers<'a>(
             &mut headers,
             header::X_AMZ_CONTENT_SHA_256,
             &values.content_sha256,
+            false,
         );
     }
 
     if let Some(security_token) = params.security_token {
-        add_header(&mut headers, header::X_AMZ_SECURITY_TOKEN, security_token);
+        add_header(
+            &mut headers,
+            header::X_AMZ_SECURITY_TOKEN,
+            security_token,
+            true,
+        );
     }
 
     Ok(SigningOutput::new(headers, signature))
 }
 
-fn add_header(map: &mut HeaderMap<HeaderValue>, key: &'static str, value: &str) {
-    map.insert(key, HeaderValue::try_from(value).expect(key));
+fn add_header(map: &mut HeaderMap<HeaderValue>, key: &'static str, value: &str, sensitive: bool) {
+    let mut value = HeaderValue::try_from(value).expect(key);
+    value.set_sensitive(sensitive);
+    map.insert(key, value);
 }
 
 // add signature to authorization header

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlert {
                         crate::protocol_serde::shape_delete_alert::de_delete_alert_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

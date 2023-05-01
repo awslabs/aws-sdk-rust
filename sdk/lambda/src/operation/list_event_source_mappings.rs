@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventSourceMappings 
                         crate::protocol_serde::shape_list_event_source_mappings::de_list_event_source_mappings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

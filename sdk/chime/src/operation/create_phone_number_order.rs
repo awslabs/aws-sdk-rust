@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePhoneNumberOrder {
                         crate::protocol_serde::shape_create_phone_number_order::de_create_phone_number_order_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

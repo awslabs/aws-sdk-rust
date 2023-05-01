@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetQueueAttributes {
                         crate::protocol_serde::shape_get_queue_attributes::de_get_queue_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

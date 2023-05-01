@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAllowLists {
                         crate::protocol_serde::shape_list_allow_lists::de_list_allow_lists_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

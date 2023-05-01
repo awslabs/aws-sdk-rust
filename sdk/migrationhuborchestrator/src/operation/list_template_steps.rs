@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTemplateSteps {
                         crate::protocol_serde::shape_list_template_steps::de_list_template_steps_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

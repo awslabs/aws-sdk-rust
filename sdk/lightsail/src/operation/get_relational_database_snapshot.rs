@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRelationalDatabaseSna
                         crate::protocol_serde::shape_get_relational_database_snapshot::de_get_relational_database_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

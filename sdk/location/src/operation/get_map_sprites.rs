@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMapSprites {
                         crate::protocol_serde::shape_get_map_sprites::de_get_map_sprites_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

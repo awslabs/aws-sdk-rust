@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InstallToRemoteAccessSes
                         crate::protocol_serde::shape_install_to_remote_access_session::de_install_to_remote_access_session_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitiateAuth {
                         crate::protocol_serde::shape_initiate_auth::de_initiate_auth_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

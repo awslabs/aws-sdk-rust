@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevice {
                         crate::protocol_serde::shape_get_device::de_get_device_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

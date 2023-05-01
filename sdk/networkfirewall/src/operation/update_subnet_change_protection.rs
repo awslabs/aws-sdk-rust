@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSubnetChangeProtec
                         crate::protocol_serde::shape_update_subnet_change_protection::de_update_subnet_change_protection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

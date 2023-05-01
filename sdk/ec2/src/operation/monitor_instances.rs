@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MonitorInstances {
                         crate::protocol_serde::shape_monitor_instances::de_monitor_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

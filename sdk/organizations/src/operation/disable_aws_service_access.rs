@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAWSServiceAccess 
                         crate::protocol_serde::shape_disable_aws_service_access::de_disable_aws_service_access_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNatGateways {
                         crate::protocol_serde::shape_describe_nat_gateways::de_describe_nat_gateways_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachLoadBalancerToSubn
                         crate::protocol_serde::shape_attach_load_balancer_to_subnets::de_attach_load_balancer_to_subnets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

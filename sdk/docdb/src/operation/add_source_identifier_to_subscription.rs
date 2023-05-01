@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddSourceIdentifierToSub
                         crate::protocol_serde::shape_add_source_identifier_to_subscription::de_add_source_identifier_to_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

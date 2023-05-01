@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProvisionedConcurrenc
                         crate::protocol_serde::shape_put_provisioned_concurrency_config::de_put_provisioned_concurrency_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

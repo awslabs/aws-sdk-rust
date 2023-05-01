@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReservationPurchaseRe
                         crate::protocol_serde::shape_get_reservation_purchase_recommendation::de_get_reservation_purchase_recommendation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

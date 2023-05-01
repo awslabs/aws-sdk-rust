@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactAttributes 
                         crate::protocol_serde::shape_update_contact_attributes::de_update_contact_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSchedulingPolicy {
                         crate::protocol_serde::shape_create_scheduling_policy::de_create_scheduling_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

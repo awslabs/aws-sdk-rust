@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAuditSuppression {
                         crate::protocol_serde::shape_create_audit_suppression::de_create_audit_suppression_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

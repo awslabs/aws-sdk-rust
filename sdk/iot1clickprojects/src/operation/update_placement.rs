@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePlacement {
                         crate::protocol_serde::shape_update_placement::de_update_placement_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

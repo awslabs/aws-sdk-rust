@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevicePositionHistory
                         crate::protocol_serde::shape_get_device_position_history::de_get_device_position_history_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

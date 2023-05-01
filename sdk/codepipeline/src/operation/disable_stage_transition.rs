@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableStageTransition {
                         crate::protocol_serde::shape_disable_stage_transition::de_disable_stage_transition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

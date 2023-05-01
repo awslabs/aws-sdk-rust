@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQuickConnects {
                         crate::protocol_serde::shape_list_quick_connects::de_list_quick_connects_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

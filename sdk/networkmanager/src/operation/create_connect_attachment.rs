@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnectAttachment 
                         crate::protocol_serde::shape_create_connect_attachment::de_create_connect_attachment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

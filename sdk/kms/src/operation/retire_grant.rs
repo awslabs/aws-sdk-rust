@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetireGrant {
                         crate::protocol_serde::shape_retire_grant::de_retire_grant_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

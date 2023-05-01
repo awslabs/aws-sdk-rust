@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDetectSyntax {
                         crate::protocol_serde::shape_batch_detect_syntax::de_batch_detect_syntax_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAttachmentUpload {
                         crate::protocol_serde::shape_start_attachment_upload::de_start_attachment_upload_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLedgerPermissionsM
                         crate::protocol_serde::shape_update_ledger_permissions_mode::de_update_ledger_permissions_mode_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

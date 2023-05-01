@@ -124,6 +124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMethodResponse {
                         crate::protocol_serde::shape_put_method_response::de_put_method_response_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

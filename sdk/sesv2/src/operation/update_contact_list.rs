@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactList {
                         crate::protocol_serde::shape_update_contact_list::de_update_contact_list_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

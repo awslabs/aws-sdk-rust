@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroupMembership {
                         crate::protocol_serde::shape_delete_group_membership::de_delete_group_membership_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

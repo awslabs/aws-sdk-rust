@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartResourceEvaluation 
                         crate::protocol_serde::shape_start_resource_evaluation::de_start_resource_evaluation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

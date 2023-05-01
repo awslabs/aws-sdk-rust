@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAgreement {
                         crate::protocol_serde::shape_describe_agreement::de_describe_agreement_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InferSNOMEDCT {
                         crate::protocol_serde::shape_infer_snomedct::de_infer_snomedct_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

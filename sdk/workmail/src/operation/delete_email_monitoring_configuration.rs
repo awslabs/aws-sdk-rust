@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEmailMonitoringCon
                         crate::protocol_serde::shape_delete_email_monitoring_configuration::de_delete_email_monitoring_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

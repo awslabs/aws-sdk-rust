@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVoiceProfiles {
                         crate::protocol_serde::shape_list_voice_profiles::de_list_voice_profiles_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

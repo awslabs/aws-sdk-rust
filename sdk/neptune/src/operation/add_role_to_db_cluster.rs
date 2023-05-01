@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddRoleToDBCluster {
                         crate::protocol_serde::shape_add_role_to_db_cluster::de_add_role_to_db_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

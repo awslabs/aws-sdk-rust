@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopSimulation {
                         crate::protocol_serde::shape_stop_simulation::de_stop_simulation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

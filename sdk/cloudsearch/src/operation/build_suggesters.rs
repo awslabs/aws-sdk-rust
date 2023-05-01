@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BuildSuggesters {
                         crate::protocol_serde::shape_build_suggesters::de_build_suggesters_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

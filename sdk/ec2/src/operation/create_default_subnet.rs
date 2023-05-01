@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDefaultSubnet {
                         crate::protocol_serde::shape_create_default_subnet::de_create_default_subnet_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

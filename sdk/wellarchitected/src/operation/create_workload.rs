@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkload {
                         crate::protocol_serde::shape_create_workload::de_create_workload_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

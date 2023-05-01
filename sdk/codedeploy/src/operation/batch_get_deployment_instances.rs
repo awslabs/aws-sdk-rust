@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetDeploymentInstan
                         crate::protocol_serde::shape_batch_get_deployment_instances::de_batch_get_deployment_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

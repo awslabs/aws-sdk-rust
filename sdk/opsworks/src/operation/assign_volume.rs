@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssignVolume {
                         crate::protocol_serde::shape_assign_volume::de_assign_volume_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

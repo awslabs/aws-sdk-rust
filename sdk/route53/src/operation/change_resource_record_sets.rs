@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangeResourceRecordSets
                         crate::protocol_serde::shape_change_resource_record_sets::de_change_resource_record_sets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

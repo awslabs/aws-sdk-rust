@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEbsDefaultKmsKeyId {
                         crate::protocol_serde::shape_get_ebs_default_kms_key_id::de_get_ebs_default_kms_key_id_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

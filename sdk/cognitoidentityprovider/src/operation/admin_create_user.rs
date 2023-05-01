@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminCreateUser {
                         crate::protocol_serde::shape_admin_create_user::de_admin_create_user_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

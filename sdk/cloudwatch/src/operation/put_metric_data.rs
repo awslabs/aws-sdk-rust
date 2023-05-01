@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetricData {
                         crate::protocol_serde::shape_put_metric_data::de_put_metric_data_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

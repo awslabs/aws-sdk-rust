@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConfigurationSetEvent
                         crate::protocol_serde::shape_get_configuration_set_event_destinations::de_get_configuration_set_event_destinations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountPasswordPolicy
                         crate::protocol_serde::shape_get_account_password_policy::de_get_account_password_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

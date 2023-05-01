@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDistributionMetricDat
                         crate::protocol_serde::shape_get_distribution_metric_data::de_get_distribution_metric_data_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

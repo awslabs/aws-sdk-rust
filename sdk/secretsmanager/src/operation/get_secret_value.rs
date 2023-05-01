@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSecretValue {
                         crate::protocol_serde::shape_get_secret_value::de_get_secret_value_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCloudFrontOriginAc
                         crate::protocol_serde::shape_update_cloud_front_origin_access_identity::de_update_cloud_front_origin_access_identity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartBulkDeployment {
                         crate::protocol_serde::shape_start_bulk_deployment::de_start_bulk_deployment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

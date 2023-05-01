@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterPatchBaselineF
                         crate::protocol_serde::shape_deregister_patch_baseline_for_patch_group::de_deregister_patch_baseline_for_patch_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

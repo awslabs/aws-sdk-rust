@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeAsync {
                         crate::protocol_serde::shape_invoke_async::de_invoke_async_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

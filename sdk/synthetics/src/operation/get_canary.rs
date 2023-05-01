@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCanary {
                         crate::protocol_serde::shape_get_canary::de_get_canary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

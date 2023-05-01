@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSecurityProfile {
                         crate::protocol_serde::shape_create_security_profile::de_create_security_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

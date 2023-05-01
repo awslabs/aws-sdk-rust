@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendPipelineExecutionSte
                         crate::protocol_serde::shape_send_pipeline_execution_step_failure::de_send_pipeline_execution_step_failure_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

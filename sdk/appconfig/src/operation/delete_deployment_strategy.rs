@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDeploymentStrategy
                         crate::protocol_serde::shape_delete_deployment_strategy::de_delete_deployment_strategy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagInstanceProfile {
                         crate::protocol_serde::shape_untag_instance_profile::de_untag_instance_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

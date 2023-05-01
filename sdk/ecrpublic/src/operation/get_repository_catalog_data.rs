@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryCatalogData
                         crate::protocol_serde::shape_get_repository_catalog_data::de_get_repository_catalog_data_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

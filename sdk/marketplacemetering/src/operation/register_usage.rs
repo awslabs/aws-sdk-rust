@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterUsage {
                         crate::protocol_serde::shape_register_usage::de_register_usage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

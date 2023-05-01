@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJournalS3Exports {
                         crate::protocol_serde::shape_list_journal_s3_exports::de_list_journal_s3_exports_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

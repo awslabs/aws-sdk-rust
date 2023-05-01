@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReportPlan {
                         crate::protocol_serde::shape_delete_report_plan::de_delete_report_plan_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendActivationCode {
                         crate::protocol_serde::shape_send_activation_code::de_send_activation_code_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

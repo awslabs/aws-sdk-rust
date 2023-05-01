@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateEncryptionConfi
                         crate::protocol_serde::shape_associate_encryption_config::de_associate_encryption_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

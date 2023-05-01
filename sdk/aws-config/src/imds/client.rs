@@ -280,6 +280,10 @@ impl ParseStrictResponse for ImdsGetResponseHandler {
             Err(InnerImdsError::BadStatus)
         }
     }
+
+    fn sensitive(&self) -> bool {
+        true
+    }
 }
 
 /// IMDSv2 Endpoint Mode

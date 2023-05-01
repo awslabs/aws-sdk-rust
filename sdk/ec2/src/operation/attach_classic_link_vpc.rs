@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachClassicLinkVpc {
                         crate::protocol_serde::shape_attach_classic_link_vpc::de_attach_classic_link_vpc_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

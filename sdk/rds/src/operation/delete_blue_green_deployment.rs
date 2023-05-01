@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBlueGreenDeploymen
                         crate::protocol_serde::shape_delete_blue_green_deployment::de_delete_blue_green_deployment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

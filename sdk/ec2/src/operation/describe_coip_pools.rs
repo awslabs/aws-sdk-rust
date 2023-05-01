@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCoipPools {
                         crate::protocol_serde::shape_describe_coip_pools::de_describe_coip_pools_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

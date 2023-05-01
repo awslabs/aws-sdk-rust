@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateSkillWithSkillG
                         crate::protocol_serde::shape_associate_skill_with_skill_group::de_associate_skill_with_skill_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

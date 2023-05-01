@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVerifiedAccessGrou
                         crate::protocol_serde::shape_modify_verified_access_group::de_modify_verified_access_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

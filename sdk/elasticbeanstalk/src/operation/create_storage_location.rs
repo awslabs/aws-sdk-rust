@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStorageLocation {
                         crate::protocol_serde::shape_create_storage_location::de_create_storage_location_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

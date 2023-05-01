@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelModerator
                         crate::protocol_serde::shape_describe_channel_moderator::de_describe_channel_moderator_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

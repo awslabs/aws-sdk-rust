@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLicenseManagerReportG
                         crate::protocol_serde::shape_get_license_manager_report_generator::de_get_license_manager_report_generator_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

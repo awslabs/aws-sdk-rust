@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchChannels {
                         crate::protocol_serde::shape_search_channels::de_search_channels_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

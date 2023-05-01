@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeviceIdentifier {
                         crate::protocol_serde::shape_get_device_identifier::de_get_device_identifier_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

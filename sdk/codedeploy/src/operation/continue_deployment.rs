@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ContinueDeployment {
                         crate::protocol_serde::shape_continue_deployment::de_continue_deployment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

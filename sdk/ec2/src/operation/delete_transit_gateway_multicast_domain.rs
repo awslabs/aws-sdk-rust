@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTransitGatewayMult
                         crate::protocol_serde::shape_delete_transit_gateway_multicast_domain::de_delete_transit_gateway_multicast_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelPolicyGeneration {
                         crate::protocol_serde::shape_cancel_policy_generation::de_cancel_policy_generation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApiDestinations {
                         crate::protocol_serde::shape_list_api_destinations::de_list_api_destinations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

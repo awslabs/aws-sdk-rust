@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAuthEventFeedback 
                         crate::protocol_serde::shape_update_auth_event_feedback::de_update_auth_event_feedback_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

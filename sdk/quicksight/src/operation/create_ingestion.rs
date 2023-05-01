@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIngestion {
                         crate::protocol_serde::shape_create_ingestion::de_create_ingestion_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

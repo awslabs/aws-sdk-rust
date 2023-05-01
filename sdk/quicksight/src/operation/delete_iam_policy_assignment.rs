@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIAMPolicyAssignmen
                         crate::protocol_serde::shape_delete_iam_policy_assignment::de_delete_iam_policy_assignment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReadSetExportJob {
                         crate::protocol_serde::shape_start_read_set_export_job::de_start_read_set_export_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

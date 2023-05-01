@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifyDomainIdentity {
                         crate::protocol_serde::shape_verify_domain_identity::de_verify_domain_identity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

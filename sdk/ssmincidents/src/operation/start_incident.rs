@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartIncident {
                         crate::protocol_serde::shape_start_incident::de_start_incident_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

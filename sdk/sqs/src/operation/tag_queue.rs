@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagQueue {
                         crate::protocol_serde::shape_tag_queue::de_tag_queue_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

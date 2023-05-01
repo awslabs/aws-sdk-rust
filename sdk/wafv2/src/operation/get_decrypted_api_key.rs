@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDecryptedAPIKey {
                         crate::protocol_serde::shape_get_decrypted_api_key::de_get_decrypted_api_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

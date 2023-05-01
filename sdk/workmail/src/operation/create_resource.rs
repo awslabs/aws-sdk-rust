@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResource {
                         crate::protocol_serde::shape_create_resource::de_create_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

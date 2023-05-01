@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomKeyStores 
                         crate::protocol_serde::shape_describe_custom_key_stores::de_describe_custom_key_stores_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

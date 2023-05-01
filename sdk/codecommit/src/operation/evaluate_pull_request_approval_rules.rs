@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluatePullRequestAppro
                         crate::protocol_serde::shape_evaluate_pull_request_approval_rules::de_evaluate_pull_request_approval_rules_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommendationLi
                         crate::protocol_serde::shape_describe_recommendation_limitations::de_describe_recommendation_limitations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

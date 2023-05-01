@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpotPriceHistory
                         crate::protocol_serde::shape_describe_spot_price_history::de_describe_spot_price_history_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

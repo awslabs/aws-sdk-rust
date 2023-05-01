@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVoiceConnectorEmergen
                         crate::protocol_serde::shape_put_voice_connector_emergency_calling_configuration::de_put_voice_connector_emergency_calling_configuration_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

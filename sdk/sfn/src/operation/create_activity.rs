@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateActivity {
                         crate::protocol_serde::shape_create_activity::de_create_activity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

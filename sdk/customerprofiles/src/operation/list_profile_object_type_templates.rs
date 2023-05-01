@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProfileObjectTypeTem
                         crate::protocol_serde::shape_list_profile_object_type_templates::de_list_profile_object_type_templates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

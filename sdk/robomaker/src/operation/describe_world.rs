@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorld {
                         crate::protocol_serde::shape_describe_world::de_describe_world_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

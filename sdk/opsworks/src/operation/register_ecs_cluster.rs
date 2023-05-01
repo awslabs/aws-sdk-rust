@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterEcsCluster {
                         crate::protocol_serde::shape_register_ecs_cluster::de_register_ecs_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

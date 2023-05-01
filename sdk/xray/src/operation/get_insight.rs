@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInsight {
                         crate::protocol_serde::shape_get_insight::de_get_insight_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

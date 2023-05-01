@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportSshPublicKey {
                         crate::protocol_serde::shape_import_ssh_public_key::de_import_ssh_public_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

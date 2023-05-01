@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLogLevelsByResourc
                         crate::protocol_serde::shape_update_log_levels_by_resource_types::de_update_log_levels_by_resource_types_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

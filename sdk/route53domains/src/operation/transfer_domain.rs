@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferDomain {
                         crate::protocol_serde::shape_transfer_domain::de_transfer_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

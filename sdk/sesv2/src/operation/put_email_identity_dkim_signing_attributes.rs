@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEmailIdentityDkimSign
                         crate::protocol_serde::shape_put_email_identity_dkim_signing_attributes::de_put_email_identity_dkim_signing_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetQueueAttributes {
                         crate::protocol_serde::shape_set_queue_attributes::de_set_queue_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

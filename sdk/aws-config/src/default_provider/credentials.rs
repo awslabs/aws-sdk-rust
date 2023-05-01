@@ -198,8 +198,6 @@ impl Builder {
 
 #[cfg(test)]
 mod test {
-    use tracing_test::traced_test;
-
     use aws_credential_types::provider::ProvideCredentials;
 
     use crate::default_provider::credentials::DefaultCredentialsChain;
@@ -242,7 +240,6 @@ mod test {
             make_test!($name, execute, $provider_config_builder);
         };
         ($name: ident, $func: ident, $provider_config_builder: expr) => {
-            #[traced_test]
             #[tokio::test]
             async fn $name() {
                 crate::test_case::TestEnvironment::from_dir(concat!(
@@ -324,7 +321,6 @@ mod test {
     }
 
     #[tokio::test]
-    #[traced_test]
     #[cfg(feature = "client-hyper")]
     async fn no_providers_configured_err() {
         use crate::provider_config::ProviderConfig;

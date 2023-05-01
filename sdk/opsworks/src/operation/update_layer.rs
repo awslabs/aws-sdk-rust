@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLayer {
                         crate::protocol_serde::shape_update_layer::de_update_layer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

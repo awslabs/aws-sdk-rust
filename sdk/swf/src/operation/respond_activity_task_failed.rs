@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondActivityTaskFaile
                         crate::protocol_serde::shape_respond_activity_task_failed::de_respond_activity_task_failed_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcAttribute {
                         crate::protocol_serde::shape_describe_vpc_attribute::de_describe_vpc_attribute_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

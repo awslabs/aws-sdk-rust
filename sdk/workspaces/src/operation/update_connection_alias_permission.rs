@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectionAliasPer
                         crate::protocol_serde::shape_update_connection_alias_permission::de_update_connection_alias_permission_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAddressBook {
                         crate::protocol_serde::shape_create_address_book::de_create_address_book_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

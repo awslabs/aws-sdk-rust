@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGame {
                         crate::protocol_serde::shape_delete_game::de_delete_game_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

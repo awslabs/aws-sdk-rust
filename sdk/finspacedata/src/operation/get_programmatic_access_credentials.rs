@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProgrammaticAccessCre
                         crate::protocol_serde::shape_get_programmatic_access_credentials::de_get_programmatic_access_credentials_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSyncExecution {
                         crate::protocol_serde::shape_start_sync_execution::de_start_sync_execution_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

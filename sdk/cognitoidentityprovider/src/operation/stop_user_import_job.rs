@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopUserImportJob {
                         crate::protocol_serde::shape_stop_user_import_job::de_stop_user_import_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

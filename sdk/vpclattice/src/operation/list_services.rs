@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServices {
                         crate::protocol_serde::shape_list_services::de_list_services_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

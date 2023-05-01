@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHostedConfiguratio
                         crate::protocol_serde::shape_create_hosted_configuration_version::de_create_hosted_configuration_version_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

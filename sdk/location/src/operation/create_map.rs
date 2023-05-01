@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMap {
                         crate::protocol_serde::shape_create_map::de_create_map_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

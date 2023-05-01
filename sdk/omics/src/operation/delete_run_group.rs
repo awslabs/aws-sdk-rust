@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRunGroup {
                         crate::protocol_serde::shape_delete_run_group::de_delete_run_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

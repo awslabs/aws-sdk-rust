@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterSchemaVersion {
                         crate::protocol_serde::shape_register_schema_version::de_register_schema_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

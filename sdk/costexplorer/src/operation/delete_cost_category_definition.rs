@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCostCategoryDefini
                         crate::protocol_serde::shape_delete_cost_category_definition::de_delete_cost_category_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

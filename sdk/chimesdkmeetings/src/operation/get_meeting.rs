@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMeeting {
                         crate::protocol_serde::shape_get_meeting::de_get_meeting_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

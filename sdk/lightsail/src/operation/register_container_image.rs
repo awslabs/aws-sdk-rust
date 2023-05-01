@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterContainerImage {
                         crate::protocol_serde::shape_register_container_image::de_register_container_image_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

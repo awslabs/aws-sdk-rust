@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListScenes {
                         crate::protocol_serde::shape_list_scenes::de_list_scenes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

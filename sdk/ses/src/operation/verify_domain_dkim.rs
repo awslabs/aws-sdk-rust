@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifyDomainDkim {
                         crate::protocol_serde::shape_verify_domain_dkim::de_verify_domain_dkim_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

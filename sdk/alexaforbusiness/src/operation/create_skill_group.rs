@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSkillGroup {
                         crate::protocol_serde::shape_create_skill_group::de_create_skill_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

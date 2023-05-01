@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterSlackWorkspaceFo
                         crate::protocol_serde::shape_register_slack_workspace_for_organization::de_register_slack_workspace_for_organization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

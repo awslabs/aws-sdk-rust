@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpendLimits {
                         crate::protocol_serde::shape_describe_spend_limits::de_describe_spend_limits_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

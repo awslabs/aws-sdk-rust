@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCloudFrontOriginAcces
                         crate::protocol_serde::shape_get_cloud_front_origin_access_identity_config::de_get_cloud_front_origin_access_identity_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

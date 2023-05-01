@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
                         crate::protocol_serde::shape_describe_tags::de_describe_tags_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

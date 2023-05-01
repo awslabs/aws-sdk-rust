@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRotation {
                         crate::protocol_serde::shape_delete_rotation::de_delete_rotation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

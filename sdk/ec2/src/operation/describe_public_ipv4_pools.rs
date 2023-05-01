@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePublicIpv4Pools 
                         crate::protocol_serde::shape_describe_public_ipv4_pools::de_describe_public_ipv4_pools_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

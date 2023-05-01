@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RollbackApplication {
                         crate::protocol_serde::shape_rollback_application::de_rollback_application_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

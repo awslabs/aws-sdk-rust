@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterCrossAccountAcce
                         crate::protocol_serde::shape_register_cross_account_access_role::de_register_cross_account_access_role_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

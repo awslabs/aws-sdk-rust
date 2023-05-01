@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApps {
                         crate::protocol_serde::shape_list_apps::de_list_apps_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

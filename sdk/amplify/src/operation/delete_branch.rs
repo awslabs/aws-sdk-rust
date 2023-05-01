@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBranch {
                         crate::protocol_serde::shape_delete_branch::de_delete_branch_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

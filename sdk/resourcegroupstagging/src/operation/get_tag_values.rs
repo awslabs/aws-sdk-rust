@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTagValues {
                         crate::protocol_serde::shape_get_tag_values::de_get_tag_values_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

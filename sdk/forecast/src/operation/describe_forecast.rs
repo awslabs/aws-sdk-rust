@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeForecast {
                         crate::protocol_serde::shape_describe_forecast::de_describe_forecast_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

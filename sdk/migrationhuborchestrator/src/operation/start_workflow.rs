@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartWorkflow {
                         crate::protocol_serde::shape_start_workflow::de_start_workflow_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAddressTransfer {
                         crate::protocol_serde::shape_enable_address_transfer::de_enable_address_transfer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

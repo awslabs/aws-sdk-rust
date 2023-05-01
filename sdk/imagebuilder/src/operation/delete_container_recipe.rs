@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContainerRecipe {
                         crate::protocol_serde::shape_delete_container_recipe::de_delete_container_recipe_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

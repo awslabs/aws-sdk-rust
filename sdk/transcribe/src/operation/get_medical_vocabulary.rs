@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMedicalVocabulary {
                         crate::protocol_serde::shape_get_medical_vocabulary::de_get_medical_vocabulary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

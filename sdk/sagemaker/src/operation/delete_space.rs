@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSpace {
                         crate::protocol_serde::shape_delete_space::de_delete_space_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

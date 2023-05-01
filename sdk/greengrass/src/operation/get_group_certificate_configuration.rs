@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroupCertificateConfi
                         crate::protocol_serde::shape_get_group_certificate_configuration::de_get_group_certificate_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

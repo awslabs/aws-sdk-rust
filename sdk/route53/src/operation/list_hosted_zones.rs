@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHostedZones {
                         crate::protocol_serde::shape_list_hosted_zones::de_list_hosted_zones_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

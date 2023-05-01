@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for IndexFaces {
                         crate::protocol_serde::shape_index_faces::de_index_faces_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

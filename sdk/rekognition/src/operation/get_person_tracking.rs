@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPersonTracking {
                         crate::protocol_serde::shape_get_person_tracking::de_get_person_tracking_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

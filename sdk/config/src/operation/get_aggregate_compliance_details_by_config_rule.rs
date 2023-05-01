@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAggregateComplianceDe
                         crate::protocol_serde::shape_get_aggregate_compliance_details_by_config_rule::de_get_aggregate_compliance_details_by_config_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EvaluateCode {
                         crate::protocol_serde::shape_evaluate_code::de_evaluate_code_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBudgets {
                         crate::protocol_serde::shape_describe_budgets::de_describe_budgets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveThingFromBillingGr
                         crate::protocol_serde::shape_remove_thing_from_billing_group::de_remove_thing_from_billing_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

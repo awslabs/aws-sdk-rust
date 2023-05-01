@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelMulticastGroupSess
                         crate::protocol_serde::shape_cancel_multicast_group_session::de_cancel_multicast_group_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

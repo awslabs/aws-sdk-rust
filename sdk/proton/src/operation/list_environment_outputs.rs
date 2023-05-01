@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnvironmentOutputs {
                         crate::protocol_serde::shape_list_environment_outputs::de_list_environment_outputs_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

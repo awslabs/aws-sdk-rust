@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQueryLoggingConfig
                         crate::protocol_serde::shape_create_query_logging_config::de_create_query_logging_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

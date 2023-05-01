@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteThreatIntelSet {
                         crate::protocol_serde::shape_delete_threat_intel_set::de_delete_threat_intel_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

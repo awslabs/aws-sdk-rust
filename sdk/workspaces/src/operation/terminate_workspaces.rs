@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateWorkspaces {
                         crate::protocol_serde::shape_terminate_workspaces::de_terminate_workspaces_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

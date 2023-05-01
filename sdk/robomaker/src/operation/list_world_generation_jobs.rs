@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorldGenerationJobs 
                         crate::protocol_serde::shape_list_world_generation_jobs::de_list_world_generation_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

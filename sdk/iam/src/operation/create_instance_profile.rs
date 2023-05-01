@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInstanceProfile {
                         crate::protocol_serde::shape_create_instance_profile::de_create_instance_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

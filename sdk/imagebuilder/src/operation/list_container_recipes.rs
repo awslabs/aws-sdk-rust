@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContainerRecipes {
                         crate::protocol_serde::shape_list_container_recipes::de_list_container_recipes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

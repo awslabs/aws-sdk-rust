@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportTerminology {
                         crate::protocol_serde::shape_import_terminology::de_import_terminology_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

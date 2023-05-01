@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSegmentReferences {
                         crate::protocol_serde::shape_list_segment_references::de_list_segment_references_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

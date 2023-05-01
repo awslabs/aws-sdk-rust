@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateFirewallPolicy 
                         crate::protocol_serde::shape_associate_firewall_policy::de_associate_firewall_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

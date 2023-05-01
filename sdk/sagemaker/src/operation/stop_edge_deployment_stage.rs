@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopEdgeDeploymentStage 
                         crate::protocol_serde::shape_stop_edge_deployment_stage::de_stop_edge_deployment_stage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

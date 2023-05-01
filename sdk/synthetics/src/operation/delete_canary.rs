@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCanary {
                         crate::protocol_serde::shape_delete_canary::de_delete_canary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

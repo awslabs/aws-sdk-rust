@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachObject {
                         crate::protocol_serde::shape_detach_object::de_detach_object_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

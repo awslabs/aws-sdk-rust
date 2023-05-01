@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRuleGroupMetadat
                         crate::protocol_serde::shape_describe_rule_group_metadata::de_describe_rule_group_metadata_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

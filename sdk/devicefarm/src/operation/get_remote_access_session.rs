@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRemoteAccessSession {
                         crate::protocol_serde::shape_get_remote_access_session::de_get_remote_access_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

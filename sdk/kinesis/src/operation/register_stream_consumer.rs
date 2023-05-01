@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterStreamConsumer {
                         crate::protocol_serde::shape_register_stream_consumer::de_register_stream_consumer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

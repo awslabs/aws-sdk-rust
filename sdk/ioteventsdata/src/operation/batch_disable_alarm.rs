@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDisableAlarm {
                         crate::protocol_serde::shape_batch_disable_alarm::de_batch_disable_alarm_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplicationCloudWa
                         crate::protocol_serde::shape_delete_application_cloud_watch_logging_option::de_delete_application_cloud_watch_logging_option_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

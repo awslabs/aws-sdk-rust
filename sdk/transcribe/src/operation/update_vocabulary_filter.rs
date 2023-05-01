@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVocabularyFilter {
                         crate::protocol_serde::shape_update_vocabulary_filter::de_update_vocabulary_filter_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

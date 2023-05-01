@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAssessmentTemplate
                         crate::protocol_serde::shape_create_assessment_template::de_create_assessment_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

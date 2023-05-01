@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLink {
                         crate::protocol_serde::shape_associate_link::de_associate_link_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

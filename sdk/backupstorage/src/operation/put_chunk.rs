@@ -132,6 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutChunk {
                         crate::protocol_serde::shape_put_chunk::de_put_chunk_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

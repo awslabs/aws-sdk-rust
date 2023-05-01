@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateParticipantRoleCon
                         crate::protocol_serde::shape_update_participant_role_config::de_update_participant_role_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

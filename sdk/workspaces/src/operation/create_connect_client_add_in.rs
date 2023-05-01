@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnectClientAddIn
                         crate::protocol_serde::shape_create_connect_client_add_in::de_create_connect_client_add_in_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

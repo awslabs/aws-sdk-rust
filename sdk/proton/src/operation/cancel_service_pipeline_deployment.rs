@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelServicePipelineDep
                         crate::protocol_serde::shape_cancel_service_pipeline_deployment::de_cancel_service_pipeline_deployment_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

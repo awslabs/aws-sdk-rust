@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityFeedbackForwa
                         crate::protocol_serde::shape_set_identity_feedback_forwarding_enabled::de_set_identity_feedback_forwarding_enabled_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

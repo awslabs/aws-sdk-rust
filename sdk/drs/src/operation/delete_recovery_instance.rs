@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecoveryInstance {
                         crate::protocol_serde::shape_delete_recovery_instance::de_delete_recovery_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

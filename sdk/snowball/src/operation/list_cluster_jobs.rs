@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClusterJobs {
                         crate::protocol_serde::shape_list_cluster_jobs::de_list_cluster_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

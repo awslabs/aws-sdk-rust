@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAutoScalingInsta
                         crate::protocol_serde::shape_describe_auto_scaling_instances::de_describe_auto_scaling_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

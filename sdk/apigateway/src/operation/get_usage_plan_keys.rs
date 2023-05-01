@@ -122,6 +122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUsagePlanKeys {
                         crate::protocol_serde::shape_get_usage_plan_keys::de_get_usage_plan_keys_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

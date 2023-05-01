@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPlatformVersions {
                         crate::protocol_serde::shape_list_platform_versions::de_list_platform_versions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

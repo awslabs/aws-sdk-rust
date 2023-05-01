@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutEmailIdentityFeedback
                         crate::protocol_serde::shape_put_email_identity_feedback_attributes::de_put_email_identity_feedback_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

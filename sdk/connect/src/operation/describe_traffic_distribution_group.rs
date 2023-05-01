@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrafficDistribut
                         crate::protocol_serde::shape_describe_traffic_distribution_group::de_describe_traffic_distribution_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopWorkspaces {
                         crate::protocol_serde::shape_stop_workspaces::de_stop_workspaces_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

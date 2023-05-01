@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveNotificationChanne
                         crate::protocol_serde::shape_remove_notification_channel::de_remove_notification_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

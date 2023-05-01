@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterGameServer {
                         crate::protocol_serde::shape_register_game_server::de_register_game_server_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

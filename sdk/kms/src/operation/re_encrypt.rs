@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReEncrypt {
                         crate::protocol_serde::shape_re_encrypt::de_re_encrypt_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

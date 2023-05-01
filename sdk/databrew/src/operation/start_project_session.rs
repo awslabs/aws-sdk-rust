@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartProjectSession {
                         crate::protocol_serde::shape_start_project_session::de_start_project_session_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelEnvironmentDeploym
                         crate::protocol_serde::shape_cancel_environment_deployment::de_cancel_environment_deployment_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

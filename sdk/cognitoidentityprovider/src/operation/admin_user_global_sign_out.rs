@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminUserGlobalSignOut {
                         crate::protocol_serde::shape_admin_user_global_sign_out::de_admin_user_global_sign_out_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

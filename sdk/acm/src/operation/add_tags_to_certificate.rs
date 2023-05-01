@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddTagsToCertificate {
                         crate::protocol_serde::shape_add_tags_to_certificate::de_add_tags_to_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

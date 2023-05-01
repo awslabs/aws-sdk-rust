@@ -126,6 +126,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultipartUploads {
                         crate::protocol_serde::shape_list_multipart_uploads::de_list_multipart_uploads_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

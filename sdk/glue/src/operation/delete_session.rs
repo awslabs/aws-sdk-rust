@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSession {
                         crate::protocol_serde::shape_delete_session::de_delete_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFeatureTransform
                         crate::protocol_serde::shape_describe_feature_transformation::de_describe_feature_transformation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

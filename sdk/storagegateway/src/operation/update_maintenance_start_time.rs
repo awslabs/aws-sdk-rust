@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMaintenanceStartTi
                         crate::protocol_serde::shape_update_maintenance_start_time::de_update_maintenance_start_time_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

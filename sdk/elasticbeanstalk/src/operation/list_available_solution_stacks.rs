@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableSolutionSta
                         crate::protocol_serde::shape_list_available_solution_stacks::de_list_available_solution_stacks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAddress {
                         crate::protocol_serde::shape_create_address::de_create_address_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

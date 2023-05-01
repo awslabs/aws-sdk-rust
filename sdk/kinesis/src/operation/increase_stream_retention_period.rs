@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for IncreaseStreamRetentionP
                         crate::protocol_serde::shape_increase_stream_retention_period::de_increase_stream_retention_period_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

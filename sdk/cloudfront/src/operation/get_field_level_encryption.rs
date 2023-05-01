@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFieldLevelEncryption 
                         crate::protocol_serde::shape_get_field_level_encryption::de_get_field_level_encryption_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

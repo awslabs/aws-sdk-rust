@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactList {
                         crate::protocol_serde::shape_get_contact_list::de_get_contact_list_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

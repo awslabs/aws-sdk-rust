@@ -123,6 +123,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAuditTasks {
                         crate::protocol_serde::shape_list_audit_tasks::de_list_audit_tasks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

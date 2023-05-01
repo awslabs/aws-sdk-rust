@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfiguredTableAna
                         crate::protocol_serde::shape_create_configured_table_analysis_rule::de_create_configured_table_analysis_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

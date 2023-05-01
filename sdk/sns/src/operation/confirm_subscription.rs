@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmSubscription {
                         crate::protocol_serde::shape_confirm_subscription::de_confirm_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

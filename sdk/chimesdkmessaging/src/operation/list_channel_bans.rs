@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChannelBans {
                         crate::protocol_serde::shape_list_channel_bans::de_list_channel_bans_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

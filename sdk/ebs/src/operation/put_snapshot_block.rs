@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSnapshotBlock {
                         crate::protocol_serde::shape_put_snapshot_block::de_put_snapshot_block_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrustedAdvisorCh
                         crate::protocol_serde::shape_describe_trusted_advisor_check_summaries::de_describe_trusted_advisor_check_summaries_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

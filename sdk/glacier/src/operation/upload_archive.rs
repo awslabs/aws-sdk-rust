@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadArchive {
                         crate::protocol_serde::shape_upload_archive::de_upload_archive_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkSettings {
                         crate::protocol_serde::shape_create_network_settings::de_create_network_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

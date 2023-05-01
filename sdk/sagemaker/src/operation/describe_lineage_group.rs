@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLineageGroup {
                         crate::protocol_serde::shape_describe_lineage_group::de_describe_lineage_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

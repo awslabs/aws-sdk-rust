@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartCutover {
                         crate::protocol_serde::shape_start_cutover::de_start_cutover_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

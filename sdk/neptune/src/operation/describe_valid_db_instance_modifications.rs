@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeValidDBInstanceM
                         crate::protocol_serde::shape_describe_valid_db_instance_modifications::de_describe_valid_db_instance_modifications_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

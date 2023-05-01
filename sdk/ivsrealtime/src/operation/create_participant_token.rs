@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateParticipantToken {
                         crate::protocol_serde::shape_create_participant_token::de_create_participant_token_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

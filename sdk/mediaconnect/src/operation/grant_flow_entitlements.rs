@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GrantFlowEntitlements {
                         crate::protocol_serde::shape_grant_flow_entitlements::de_grant_flow_entitlements_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

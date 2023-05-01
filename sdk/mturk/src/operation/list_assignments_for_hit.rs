@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssignmentsForHIT {
                         crate::protocol_serde::shape_list_assignments_for_hit::de_list_assignments_for_hit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RespondToAuthChallenge {
                         crate::protocol_serde::shape_respond_to_auth_challenge::de_respond_to_auth_challenge_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReportsForReportGrou
                         crate::protocol_serde::shape_list_reports_for_report_group::de_list_reports_for_report_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainStatisticsRepor
                         crate::protocol_serde::shape_get_domain_statistics_report::de_get_domain_statistics_report_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

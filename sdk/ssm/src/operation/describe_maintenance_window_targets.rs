@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindo
                         crate::protocol_serde::shape_describe_maintenance_window_targets::de_describe_maintenance_window_targets_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

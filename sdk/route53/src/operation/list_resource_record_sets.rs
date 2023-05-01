@@ -124,6 +124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceRecordSets {
                         crate::protocol_serde::shape_list_resource_record_sets::de_list_resource_record_sets_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLanguageModel {
                         crate::protocol_serde::shape_describe_language_model::de_describe_language_model_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

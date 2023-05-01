@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferContact {
                         crate::protocol_serde::shape_transfer_contact::de_transfer_contact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFlowMediaStream {
                         crate::protocol_serde::shape_update_flow_media_stream::de_update_flow_media_stream_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMaintenanceWindowExec
                         crate::protocol_serde::shape_get_maintenance_window_execution::de_get_maintenance_window_execution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeApplicationFleet
                         crate::protocol_serde::shape_describe_application_fleet_associations::de_describe_application_fleet_associations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

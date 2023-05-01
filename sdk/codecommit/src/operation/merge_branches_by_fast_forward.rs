@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeBranchesByFastForwa
                         crate::protocol_serde::shape_merge_branches_by_fast_forward::de_merge_branches_by_fast_forward_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

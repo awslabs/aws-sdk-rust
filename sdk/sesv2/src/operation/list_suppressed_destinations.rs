@@ -124,6 +124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSuppressedDestinatio
                         crate::protocol_serde::shape_list_suppressed_destinations::de_list_suppressed_destinations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

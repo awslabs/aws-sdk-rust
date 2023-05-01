@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectText {
                         crate::protocol_serde::shape_detect_text::de_detect_text_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

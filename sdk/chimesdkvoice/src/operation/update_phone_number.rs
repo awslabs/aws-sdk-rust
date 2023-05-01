@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePhoneNumber {
                         crate::protocol_serde::shape_update_phone_number::de_update_phone_number_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

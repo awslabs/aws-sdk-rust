@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PromoteResourceShareCrea
                         crate::protocol_serde::shape_promote_resource_share_created_from_policy::de_promote_resource_share_created_from_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

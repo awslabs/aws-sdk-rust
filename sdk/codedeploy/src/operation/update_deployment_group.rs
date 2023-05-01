@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDeploymentGroup {
                         crate::protocol_serde::shape_update_deployment_group::de_update_deployment_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

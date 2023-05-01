@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterCACertificate {
                         crate::protocol_serde::shape_register_ca_certificate::de_register_ca_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

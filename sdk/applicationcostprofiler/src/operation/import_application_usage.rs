@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportApplicationUsage {
                         crate::protocol_serde::shape_import_application_usage::de_import_application_usage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

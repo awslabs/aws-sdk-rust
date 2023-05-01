@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTargetedSentimen
                         crate::protocol_serde::shape_describe_targeted_sentiment_detection_job::de_describe_targeted_sentiment_detection_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

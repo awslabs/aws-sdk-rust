@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataCellsFilter {
                         crate::protocol_serde::shape_get_data_cells_filter::de_get_data_cells_filter_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminRespondToAuthChalle
                         crate::protocol_serde::shape_admin_respond_to_auth_challenge::de_admin_respond_to_auth_challenge_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

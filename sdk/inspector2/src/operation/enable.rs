@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Enable {
                         crate::protocol_serde::shape_enable::de_enable_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

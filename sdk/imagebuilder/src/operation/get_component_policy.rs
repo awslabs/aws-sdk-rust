@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponentPolicy {
                         crate::protocol_serde::shape_get_component_policy::de_get_component_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLFTag {
                         crate::protocol_serde::shape_create_lf_tag::de_create_lf_tag_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

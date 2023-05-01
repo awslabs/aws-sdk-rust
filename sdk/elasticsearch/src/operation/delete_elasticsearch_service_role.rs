@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteElasticsearchServi
                         crate::protocol_serde::shape_delete_elasticsearch_service_role::de_delete_elasticsearch_service_role_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

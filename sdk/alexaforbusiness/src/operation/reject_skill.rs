@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectSkill {
                         crate::protocol_serde::shape_reject_skill::de_reject_skill_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -125,6 +125,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
                         crate::protocol_serde::shape_write_get_object_response::de_write_get_object_response_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

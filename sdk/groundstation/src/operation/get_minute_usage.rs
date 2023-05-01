@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMinuteUsage {
                         crate::protocol_serde::shape_get_minute_usage::de_get_minute_usage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

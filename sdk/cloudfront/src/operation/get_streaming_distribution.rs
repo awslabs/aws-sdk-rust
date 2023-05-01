@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingDistribution
                         crate::protocol_serde::shape_get_streaming_distribution::de_get_streaming_distribution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

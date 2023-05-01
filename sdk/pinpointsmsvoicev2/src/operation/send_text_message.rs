@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendTextMessage {
                         crate::protocol_serde::shape_send_text_message::de_send_text_message_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

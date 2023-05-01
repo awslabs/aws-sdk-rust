@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualNode {
                         crate::protocol_serde::shape_delete_virtual_node::de_delete_virtual_node_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

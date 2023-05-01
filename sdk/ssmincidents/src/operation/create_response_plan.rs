@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResponsePlan {
                         crate::protocol_serde::shape_create_response_plan::de_create_response_plan_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CloseTunnel {
                         crate::protocol_serde::shape_close_tunnel::de_close_tunnel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

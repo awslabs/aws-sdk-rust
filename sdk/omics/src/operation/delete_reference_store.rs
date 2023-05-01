@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReferenceStore {
                         crate::protocol_serde::shape_delete_reference_store::de_delete_reference_store_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

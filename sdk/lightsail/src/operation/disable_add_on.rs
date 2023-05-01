@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAddOn {
                         crate::protocol_serde::shape_disable_add_on::de_disable_add_on_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

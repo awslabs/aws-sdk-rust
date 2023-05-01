@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddClientIDToOpenIDConne
                         crate::protocol_serde::shape_add_client_id_to_open_id_connect_provider::de_add_client_id_to_open_id_connect_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

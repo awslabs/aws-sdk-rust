@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVpcIngressConnec
                         crate::protocol_serde::shape_describe_vpc_ingress_connection::de_describe_vpc_ingress_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePartners {
                         crate::protocol_serde::shape_describe_partners::de_describe_partners_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

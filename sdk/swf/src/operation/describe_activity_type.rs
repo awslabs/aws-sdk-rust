@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeActivityType {
                         crate::protocol_serde::shape_describe_activity_type::de_describe_activity_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagProject {
                         crate::protocol_serde::shape_untag_project::de_untag_project_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

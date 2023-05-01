@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteV2LoggingLevel {
                         crate::protocol_serde::shape_delete_v2_logging_level::de_delete_v2_logging_level_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

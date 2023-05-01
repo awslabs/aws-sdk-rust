@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitiateDeviceClaim {
                         crate::protocol_serde::shape_initiate_device_claim::de_initiate_device_claim_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

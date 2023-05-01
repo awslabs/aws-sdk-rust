@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConferencePreference 
                         crate::protocol_serde::shape_get_conference_preference::de_get_conference_preference_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

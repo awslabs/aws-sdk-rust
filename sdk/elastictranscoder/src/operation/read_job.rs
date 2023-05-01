@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReadJob {
                         crate::protocol_serde::shape_read_job::de_read_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

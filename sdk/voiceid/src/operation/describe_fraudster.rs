@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFraudster {
                         crate::protocol_serde::shape_describe_fraudster::de_describe_fraudster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

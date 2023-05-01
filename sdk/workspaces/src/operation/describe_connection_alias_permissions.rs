@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectionAliasP
                         crate::protocol_serde::shape_describe_connection_alias_permissions::de_describe_connection_alias_permissions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

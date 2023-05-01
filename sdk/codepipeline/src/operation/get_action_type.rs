@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetActionType {
                         crate::protocol_serde::shape_get_action_type::de_get_action_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

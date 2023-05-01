@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSlackChannelConfigur
                         crate::protocol_serde::shape_list_slack_channel_configurations::de_list_slack_channel_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

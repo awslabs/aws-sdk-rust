@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConfigurationSetRe
                         crate::protocol_serde::shape_update_configuration_set_reputation_metrics_enabled::de_update_configuration_set_reputation_metrics_enabled_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

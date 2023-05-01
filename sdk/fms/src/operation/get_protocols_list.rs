@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProtocolsList {
                         crate::protocol_serde::shape_get_protocols_list::de_get_protocols_list_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

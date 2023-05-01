@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebuildEnvironment {
                         crate::protocol_serde::shape_rebuild_environment::de_rebuild_environment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

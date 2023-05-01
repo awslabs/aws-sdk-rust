@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteBudgetAction {
                         crate::protocol_serde::shape_execute_budget_action::de_execute_budget_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

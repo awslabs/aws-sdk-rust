@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListServiceQuotas {
                         crate::protocol_serde::shape_list_service_quotas::de_list_service_quotas_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

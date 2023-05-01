@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListExtensibleSourceServ
                         crate::protocol_serde::shape_list_extensible_source_servers::de_list_extensible_source_servers_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

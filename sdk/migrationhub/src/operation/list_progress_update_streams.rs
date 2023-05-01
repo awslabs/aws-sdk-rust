@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListProgressUpdateStream
                         crate::protocol_serde::shape_list_progress_update_streams::de_list_progress_update_streams_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

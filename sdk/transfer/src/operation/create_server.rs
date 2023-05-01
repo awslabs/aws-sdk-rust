@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateServer {
                         crate::protocol_serde::shape_create_server::de_create_server_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

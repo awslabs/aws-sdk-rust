@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComputeAccess {
                         crate::protocol_serde::shape_get_compute_access::de_get_compute_access_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

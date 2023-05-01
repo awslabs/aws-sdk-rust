@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAttack {
                         crate::protocol_serde::shape_describe_attack::de_describe_attack_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

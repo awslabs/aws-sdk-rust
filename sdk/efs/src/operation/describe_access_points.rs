@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccessPoints {
                         crate::protocol_serde::shape_describe_access_points::de_describe_access_points_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

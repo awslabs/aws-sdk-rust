@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAttributeGroup {
                         crate::protocol_serde::shape_update_attribute_group::de_update_attribute_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

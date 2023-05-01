@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetItem {
                         crate::protocol_serde::shape_batch_get_item::de_batch_get_item_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

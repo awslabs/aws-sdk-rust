@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteReceiptFilter {
                         crate::protocol_serde::shape_delete_receipt_filter::de_delete_receipt_filter_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

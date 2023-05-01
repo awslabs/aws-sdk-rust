@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateApprovalRule
                         crate::protocol_serde::shape_disassociate_approval_rule_template_from_repository::de_disassociate_approval_rule_template_from_repository_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

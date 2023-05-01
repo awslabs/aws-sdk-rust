@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMapRun {
                         crate::protocol_serde::shape_describe_map_run::de_describe_map_run_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

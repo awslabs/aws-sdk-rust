@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContainerRecipePolicy
                         crate::protocol_serde::shape_get_container_recipe_policy::de_get_container_recipe_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProcessingJob {
                         crate::protocol_serde::shape_create_processing_job::de_create_processing_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

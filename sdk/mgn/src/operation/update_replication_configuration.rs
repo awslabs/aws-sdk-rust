@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateReplicationConfigu
                         crate::protocol_serde::shape_update_replication_configuration::de_update_replication_configuration_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

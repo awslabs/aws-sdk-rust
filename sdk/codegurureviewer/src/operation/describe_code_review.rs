@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCodeReview {
                         crate::protocol_serde::shape_describe_code_review::de_describe_code_review_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

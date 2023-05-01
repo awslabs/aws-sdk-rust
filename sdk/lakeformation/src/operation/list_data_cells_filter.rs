@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDataCellsFilter {
                         crate::protocol_serde::shape_list_data_cells_filter::de_list_data_cells_filter_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

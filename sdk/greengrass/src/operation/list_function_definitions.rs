@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFunctionDefinitions 
                         crate::protocol_serde::shape_list_function_definitions::de_list_function_definitions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWirelessDevice {
                         crate::protocol_serde::shape_delete_wireless_device::de_delete_wireless_device_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

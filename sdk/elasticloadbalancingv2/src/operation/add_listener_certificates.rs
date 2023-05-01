@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddListenerCertificates 
                         crate::protocol_serde::shape_add_listener_certificates::de_add_listener_certificates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

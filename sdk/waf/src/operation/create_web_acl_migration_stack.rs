@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWebACLMigrationSta
                         crate::protocol_serde::shape_create_web_acl_migration_stack::de_create_web_acl_migration_stack_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

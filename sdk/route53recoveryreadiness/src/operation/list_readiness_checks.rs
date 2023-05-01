@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReadinessChecks {
                         crate::protocol_serde::shape_list_readiness_checks::de_list_readiness_checks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

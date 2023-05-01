@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartReportJob {
                         crate::protocol_serde::shape_start_report_job::de_start_report_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

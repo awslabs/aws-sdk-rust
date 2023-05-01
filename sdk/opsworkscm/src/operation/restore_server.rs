@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreServer {
                         crate::protocol_serde::shape_restore_server::de_restore_server_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

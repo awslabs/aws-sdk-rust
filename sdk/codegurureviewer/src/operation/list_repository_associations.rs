@@ -135,6 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositoryAssociatio
                         crate::protocol_serde::shape_list_repository_associations::de_list_repository_associations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

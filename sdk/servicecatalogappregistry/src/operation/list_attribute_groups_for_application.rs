@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAttributeGroupsForAp
                         crate::protocol_serde::shape_list_attribute_groups_for_application::de_list_attribute_groups_for_application_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

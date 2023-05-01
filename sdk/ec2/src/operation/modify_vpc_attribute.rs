@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyVpcAttribute {
                         crate::protocol_serde::shape_modify_vpc_attribute::de_modify_vpc_attribute_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

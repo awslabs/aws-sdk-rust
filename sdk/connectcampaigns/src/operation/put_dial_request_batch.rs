@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDialRequestBatch {
                         crate::protocol_serde::shape_put_dial_request_batch::de_put_dial_request_batch_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

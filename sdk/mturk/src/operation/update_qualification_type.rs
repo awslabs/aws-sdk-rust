@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateQualificationType 
                         crate::protocol_serde::shape_update_qualification_type::de_update_qualification_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

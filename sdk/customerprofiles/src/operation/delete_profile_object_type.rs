@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteProfileObjectType 
                         crate::protocol_serde::shape_delete_profile_object_type::de_delete_profile_object_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddUploadBuffer {
                         crate::protocol_serde::shape_add_upload_buffer::de_add_upload_buffer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

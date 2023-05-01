@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutConfigurationAggregat
                         crate::protocol_serde::shape_put_configuration_aggregator::de_put_configuration_aggregator_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PollForThirdPartyJobs {
                         crate::protocol_serde::shape_poll_for_third_party_jobs::de_poll_for_third_party_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

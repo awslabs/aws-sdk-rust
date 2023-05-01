@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFpgaImage {
                         crate::protocol_serde::shape_delete_fpga_image::de_delete_fpga_image_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

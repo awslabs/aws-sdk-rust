@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficPolicy {
                         crate::protocol_serde::shape_create_traffic_policy::de_create_traffic_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

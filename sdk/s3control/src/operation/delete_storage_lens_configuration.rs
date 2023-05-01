@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStorageLensConfigu
                         crate::protocol_serde::shape_delete_storage_lens_configuration::de_delete_storage_lens_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

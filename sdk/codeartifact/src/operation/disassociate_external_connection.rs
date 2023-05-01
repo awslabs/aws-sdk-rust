@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateExternalConn
                         crate::protocol_serde::shape_disassociate_external_connection::de_disassociate_external_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

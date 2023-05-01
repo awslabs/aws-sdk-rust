@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnarchiveFindings {
                         crate::protocol_serde::shape_unarchive_findings::de_unarchive_findings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

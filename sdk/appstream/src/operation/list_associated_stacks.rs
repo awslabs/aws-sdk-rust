@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssociatedStacks {
                         crate::protocol_serde::shape_list_associated_stacks::de_list_associated_stacks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

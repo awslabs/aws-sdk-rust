@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTaskSets {
                         crate::protocol_serde::shape_describe_task_sets::de_describe_task_sets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

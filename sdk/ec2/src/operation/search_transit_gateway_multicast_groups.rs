@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchTransitGatewayMult
                         crate::protocol_serde::shape_search_transit_gateway_multicast_groups::de_search_transit_gateway_multicast_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

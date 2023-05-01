@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolversByFunction 
                         crate::protocol_serde::shape_list_resolvers_by_function::de_list_resolvers_by_function_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

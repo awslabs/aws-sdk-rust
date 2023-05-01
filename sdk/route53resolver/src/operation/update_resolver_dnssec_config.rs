@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResolverDnssecConf
                         crate::protocol_serde::shape_update_resolver_dnssec_config::de_update_resolver_dnssec_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

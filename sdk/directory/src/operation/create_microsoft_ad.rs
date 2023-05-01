@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMicrosoftAD {
                         crate::protocol_serde::shape_create_microsoft_ad::de_create_microsoft_ad_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

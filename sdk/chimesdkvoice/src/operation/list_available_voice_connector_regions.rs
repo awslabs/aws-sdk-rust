@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAvailableVoiceConnec
                         crate::protocol_serde::shape_list_available_voice_connector_regions::de_list_available_voice_connector_regions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListByoipCidrs {
                         crate::protocol_serde::shape_list_byoip_cidrs::de_list_byoip_cidrs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

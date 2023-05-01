@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobRun {
                         crate::protocol_serde::shape_get_job_run::de_get_job_run_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecords {
                         crate::protocol_serde::shape_get_records::de_get_records_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

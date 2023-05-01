@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppInstanceAdmin {
                         crate::protocol_serde::shape_create_app_instance_admin::de_create_app_instance_admin_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

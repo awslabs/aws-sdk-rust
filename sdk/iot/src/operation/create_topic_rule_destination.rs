@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTopicRuleDestinati
                         crate::protocol_serde::shape_create_topic_rule_destination::de_create_topic_rule_destination_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

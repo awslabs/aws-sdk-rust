@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceProfile {
                         crate::protocol_serde::shape_get_service_profile::de_get_service_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVehicle {
                         crate::protocol_serde::shape_get_vehicle::de_get_vehicle_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

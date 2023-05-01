@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTrunkInterfa
                         crate::protocol_serde::shape_disassociate_trunk_interface::de_disassociate_trunk_interface_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

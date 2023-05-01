@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMaintenance {
                         crate::protocol_serde::shape_start_maintenance::de_start_maintenance_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

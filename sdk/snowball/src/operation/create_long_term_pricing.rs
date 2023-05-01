@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLongTermPricing {
                         crate::protocol_serde::shape_create_long_term_pricing::de_create_long_term_pricing_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

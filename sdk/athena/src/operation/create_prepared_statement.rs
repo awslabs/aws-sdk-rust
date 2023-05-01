@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePreparedStatement 
                         crate::protocol_serde::shape_create_prepared_statement::de_create_prepared_statement_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

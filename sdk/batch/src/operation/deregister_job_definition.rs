@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterJobDefinition 
                         crate::protocol_serde::shape_deregister_job_definition::de_deregister_job_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

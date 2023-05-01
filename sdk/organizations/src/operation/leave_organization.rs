@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for LeaveOrganization {
                         crate::protocol_serde::shape_leave_organization::de_leave_organization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

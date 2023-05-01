@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroupId {
                         crate::protocol_serde::shape_get_group_id::de_get_group_id_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

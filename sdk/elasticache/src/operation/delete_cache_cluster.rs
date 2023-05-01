@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCacheCluster {
                         crate::protocol_serde::shape_delete_cache_cluster::de_delete_cache_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

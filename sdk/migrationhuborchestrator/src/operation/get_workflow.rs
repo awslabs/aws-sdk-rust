@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflow {
                         crate::protocol_serde::shape_get_workflow::de_get_workflow_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListItems {
                         crate::protocol_serde::shape_list_items::de_list_items_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

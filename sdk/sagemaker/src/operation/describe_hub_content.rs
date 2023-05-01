@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHubContent {
                         crate::protocol_serde::shape_describe_hub_content::de_describe_hub_content_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

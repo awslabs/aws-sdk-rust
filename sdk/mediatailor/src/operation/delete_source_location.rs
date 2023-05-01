@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSourceLocation {
                         crate::protocol_serde::shape_delete_source_location::de_delete_source_location_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

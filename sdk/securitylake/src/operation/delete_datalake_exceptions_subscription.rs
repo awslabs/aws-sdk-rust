@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDatalakeExceptions
                         crate::protocol_serde::shape_delete_datalake_exceptions_subscription::de_delete_datalake_exceptions_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

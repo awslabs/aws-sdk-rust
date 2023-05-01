@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRoom {
                         crate::protocol_serde::shape_delete_room::de_delete_room_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

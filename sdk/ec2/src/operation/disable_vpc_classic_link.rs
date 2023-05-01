@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableVpcClassicLink {
                         crate::protocol_serde::shape_disable_vpc_classic_link::de_disable_vpc_classic_link_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

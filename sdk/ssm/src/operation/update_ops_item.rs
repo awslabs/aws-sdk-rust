@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateOpsItem {
                         crate::protocol_serde::shape_update_ops_item::de_update_ops_item_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

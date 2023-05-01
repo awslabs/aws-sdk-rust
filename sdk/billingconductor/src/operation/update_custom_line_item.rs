@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomLineItem {
                         crate::protocol_serde::shape_update_custom_line_item::de_update_custom_line_item_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

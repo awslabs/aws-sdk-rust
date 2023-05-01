@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAppInstanceBot {
                         crate::protocol_serde::shape_describe_app_instance_bot::de_describe_app_instance_bot_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

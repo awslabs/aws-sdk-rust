@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDocumentClassifi
                         crate::protocol_serde::shape_describe_document_classifier::de_describe_document_classifier_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

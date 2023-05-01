@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptInvitation {
                         crate::protocol_serde::shape_accept_invitation::de_accept_invitation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBlueprints {
                         crate::protocol_serde::shape_list_blueprints::de_list_blueprints_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

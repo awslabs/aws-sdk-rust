@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyTransitGatewayPref
                         crate::protocol_serde::shape_modify_transit_gateway_prefix_list_reference::de_modify_transit_gateway_prefix_list_reference_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

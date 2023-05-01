@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPoolClient {
                         crate::protocol_serde::shape_update_user_pool_client::de_update_user_pool_client_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

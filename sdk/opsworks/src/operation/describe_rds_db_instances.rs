@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRdsDbInstances {
                         crate::protocol_serde::shape_describe_rds_db_instances::de_describe_rds_db_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetwork {
                         crate::protocol_serde::shape_get_network::de_get_network_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendValidationEmail {
                         crate::protocol_serde::shape_resend_validation_email::de_resend_validation_email_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

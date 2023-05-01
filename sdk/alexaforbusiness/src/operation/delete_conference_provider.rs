@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConferenceProvider
                         crate::protocol_serde::shape_delete_conference_provider::de_delete_conference_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBandwidthRateLim
                         crate::protocol_serde::shape_describe_bandwidth_rate_limit_schedule::de_describe_bandwidth_rate_limit_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

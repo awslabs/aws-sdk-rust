@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSegment {
                         crate::protocol_serde::shape_create_segment::de_create_segment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

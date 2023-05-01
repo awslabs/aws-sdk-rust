@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchGameSessions {
                         crate::protocol_serde::shape_search_game_sessions::de_search_game_sessions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

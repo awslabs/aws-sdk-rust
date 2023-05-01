@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchTables {
                         crate::protocol_serde::shape_search_tables::de_search_tables_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

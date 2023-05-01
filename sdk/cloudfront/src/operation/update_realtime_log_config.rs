@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRealtimeLogConfig 
                         crate::protocol_serde::shape_update_realtime_log_config::de_update_realtime_log_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

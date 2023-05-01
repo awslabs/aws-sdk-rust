@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcknowledgeJob {
                         crate::protocol_serde::shape_acknowledge_job::de_acknowledge_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

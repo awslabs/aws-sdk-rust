@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCostAllocationTags {
                         crate::protocol_serde::shape_list_cost_allocation_tags::de_list_cost_allocation_tags_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

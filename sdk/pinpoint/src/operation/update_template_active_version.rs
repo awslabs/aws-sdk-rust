@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTemplateActiveVers
                         crate::protocol_serde::shape_update_template_active_version::de_update_template_active_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

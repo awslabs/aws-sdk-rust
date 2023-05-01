@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSharedReportGroups {
                         crate::protocol_serde::shape_list_shared_report_groups::de_list_shared_report_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

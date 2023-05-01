@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVoiceProfileDomain
                         crate::protocol_serde::shape_delete_voice_profile_domain::de_delete_voice_profile_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

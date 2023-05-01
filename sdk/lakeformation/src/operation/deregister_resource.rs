@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterResource {
                         crate::protocol_serde::shape_deregister_resource::de_deregister_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

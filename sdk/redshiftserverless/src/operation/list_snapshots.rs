@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSnapshots {
                         crate::protocol_serde::shape_list_snapshots::de_list_snapshots_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

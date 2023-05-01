@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFile {
                         crate::protocol_serde::shape_put_file::de_put_file_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetColumnStatisticsForPa
                         crate::protocol_serde::shape_get_column_statistics_for_partition::de_get_column_statistics_for_partition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

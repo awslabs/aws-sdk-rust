@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSpeakerEnrollmentJo
                         crate::protocol_serde::shape_start_speaker_enrollment_job::de_start_speaker_enrollment_job_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

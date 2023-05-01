@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachInstancesToLoadBal
                         crate::protocol_serde::shape_attach_instances_to_load_balancer::de_attach_instances_to_load_balancer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

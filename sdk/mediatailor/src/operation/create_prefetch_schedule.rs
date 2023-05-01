@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePrefetchSchedule {
                         crate::protocol_serde::shape_create_prefetch_schedule::de_create_prefetch_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

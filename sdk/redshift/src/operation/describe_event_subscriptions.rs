@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventSubscriptio
                         crate::protocol_serde::shape_describe_event_subscriptions::de_describe_event_subscriptions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplaceIamInstanceProfil
                         crate::protocol_serde::shape_replace_iam_instance_profile_association::de_replace_iam_instance_profile_association_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

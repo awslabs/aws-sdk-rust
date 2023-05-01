@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOutgoingCertificates
                         crate::protocol_serde::shape_list_outgoing_certificates::de_list_outgoing_certificates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFramework {
                         crate::protocol_serde::shape_describe_framework::de_describe_framework_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

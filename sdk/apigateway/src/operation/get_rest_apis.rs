@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRestApis {
                         crate::protocol_serde::shape_get_rest_apis::de_get_rest_apis_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartBulkDisassociateWir
                         crate::protocol_serde::shape_start_bulk_disassociate_wireless_device_from_multicast_group::de_start_bulk_disassociate_wireless_device_from_multicast_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

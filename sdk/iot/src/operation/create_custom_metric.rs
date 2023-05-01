@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomMetric {
                         crate::protocol_serde::shape_create_custom_metric::de_create_custom_metric_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

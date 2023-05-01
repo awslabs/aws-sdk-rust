@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCoreDevice {
                         crate::protocol_serde::shape_delete_core_device::de_delete_core_device_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

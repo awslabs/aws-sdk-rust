@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSavingsPlansPurchas
                         crate::protocol_serde::shape_start_savings_plans_purchase_recommendation_generation::de_start_savings_plans_purchase_recommendation_generation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

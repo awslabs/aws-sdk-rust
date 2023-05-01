@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCommandInvocations {
                         crate::protocol_serde::shape_list_command_invocations::de_list_command_invocations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

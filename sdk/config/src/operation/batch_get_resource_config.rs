@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetResourceConfig {
                         crate::protocol_serde::shape_batch_get_resource_config::de_batch_get_resource_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

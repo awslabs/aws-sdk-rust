@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSessionStrea
                         crate::protocol_serde::shape_get_streaming_session_stream::de_get_streaming_session_stream_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

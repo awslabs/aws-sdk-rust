@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRepositoryTriggers {
                         crate::protocol_serde::shape_get_repository_triggers::de_get_repository_triggers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

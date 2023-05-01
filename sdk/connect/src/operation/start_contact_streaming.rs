@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartContactStreaming {
                         crate::protocol_serde::shape_start_contact_streaming::de_start_contact_streaming_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

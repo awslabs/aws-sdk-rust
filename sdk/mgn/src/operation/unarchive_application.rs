@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnarchiveApplication {
                         crate::protocol_serde::shape_unarchive_application::de_unarchive_application_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

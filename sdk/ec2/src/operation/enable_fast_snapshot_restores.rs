@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableFastSnapshotRestor
                         crate::protocol_serde::shape_enable_fast_snapshot_restores::de_enable_fast_snapshot_restores_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

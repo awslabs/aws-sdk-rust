@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCasesForContact {
                         crate::protocol_serde::shape_list_cases_for_contact::de_list_cases_for_contact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

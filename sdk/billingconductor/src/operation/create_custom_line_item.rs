@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomLineItem {
                         crate::protocol_serde::shape_create_custom_line_item::de_create_custom_line_item_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

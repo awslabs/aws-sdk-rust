@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnection {
                         crate::protocol_serde::shape_update_connection::de_update_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

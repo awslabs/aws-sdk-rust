@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChapCredentials 
                         crate::protocol_serde::shape_describe_chap_credentials::de_describe_chap_credentials_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

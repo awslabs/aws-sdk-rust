@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyDBParameterGroup {
                         crate::protocol_serde::shape_modify_db_parameter_group::de_modify_db_parameter_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

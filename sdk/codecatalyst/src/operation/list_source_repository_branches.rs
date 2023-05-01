@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSourceRepositoryBran
                         crate::protocol_serde::shape_list_source_repository_branches::de_list_source_repository_branches_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

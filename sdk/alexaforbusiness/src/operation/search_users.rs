@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchUsers {
                         crate::protocol_serde::shape_search_users::de_search_users_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

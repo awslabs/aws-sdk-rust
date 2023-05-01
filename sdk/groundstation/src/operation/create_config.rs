@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConfig {
                         crate::protocol_serde::shape_create_config::de_create_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDisk {
                         crate::protocol_serde::shape_create_disk::de_create_disk_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateKnowledgeBase {
                         crate::protocol_serde::shape_create_knowledge_base::de_create_knowledge_base_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

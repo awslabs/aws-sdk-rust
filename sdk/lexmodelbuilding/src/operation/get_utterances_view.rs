@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUtterancesView {
                         crate::protocol_serde::shape_get_utterances_view::de_get_utterances_view_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

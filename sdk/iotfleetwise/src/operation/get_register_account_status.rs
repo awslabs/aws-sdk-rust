@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRegisterAccountStatus
                         crate::protocol_serde::shape_get_register_account_status::de_get_register_account_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

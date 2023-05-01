@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnvironmentProvision
                         crate::protocol_serde::shape_list_environment_provisioned_resources::de_list_environment_provisioned_resources_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

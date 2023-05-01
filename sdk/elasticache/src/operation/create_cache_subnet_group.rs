@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCacheSubnetGroup {
                         crate::protocol_serde::shape_create_cache_subnet_group::de_create_cache_subnet_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

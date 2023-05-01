@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIntegrationRespons
                         crate::protocol_serde::shape_create_integration_response::de_create_integration_response_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

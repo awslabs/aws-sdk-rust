@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergePullRequestBySquash
                         crate::protocol_serde::shape_merge_pull_request_by_squash::de_merge_pull_request_by_squash_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

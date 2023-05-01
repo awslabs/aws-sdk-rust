@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SampleChannelData {
                         crate::protocol_serde::shape_sample_channel_data::de_sample_channel_data_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

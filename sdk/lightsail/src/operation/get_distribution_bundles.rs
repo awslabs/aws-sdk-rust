@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDistributionBundles {
                         crate::protocol_serde::shape_get_distribution_bundles::de_get_distribution_bundles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

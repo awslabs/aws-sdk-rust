@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImageScanFinding
                         crate::protocol_serde::shape_describe_image_scan_findings::de_describe_image_scan_findings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

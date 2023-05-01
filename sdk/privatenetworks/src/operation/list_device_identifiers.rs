@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeviceIdentifiers {
                         crate::protocol_serde::shape_list_device_identifiers::de_list_device_identifiers_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

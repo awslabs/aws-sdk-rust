@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStreamMode {
                         crate::protocol_serde::shape_update_stream_mode::de_update_stream_mode_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

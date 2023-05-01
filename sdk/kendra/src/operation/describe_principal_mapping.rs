@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePrincipalMapping
                         crate::protocol_serde::shape_describe_principal_mapping::de_describe_principal_mapping_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

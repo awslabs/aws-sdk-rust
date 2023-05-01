@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRuntimeManagementConf
                         crate::protocol_serde::shape_put_runtime_management_config::de_put_runtime_management_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

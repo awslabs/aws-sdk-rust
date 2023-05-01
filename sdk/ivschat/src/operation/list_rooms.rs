@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRooms {
                         crate::protocol_serde::shape_list_rooms::de_list_rooms_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DecreaseReplicaCount {
                         crate::protocol_serde::shape_decrease_replica_count::de_decrease_replica_count_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

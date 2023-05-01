@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetadata {
                         crate::protocol_serde::shape_put_metadata::de_put_metadata_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

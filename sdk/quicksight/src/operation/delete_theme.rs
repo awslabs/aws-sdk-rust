@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTheme {
                         crate::protocol_serde::shape_delete_theme::de_delete_theme_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVpcEndpointService
                         crate::protocol_serde::shape_delete_vpc_endpoint_service_configurations::de_delete_vpc_endpoint_service_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

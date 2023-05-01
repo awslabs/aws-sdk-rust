@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResolverQuer
                         crate::protocol_serde::shape_disassociate_resolver_query_log_config::de_disassociate_resolver_query_log_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

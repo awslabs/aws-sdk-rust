@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityResolutionJob
                         crate::protocol_serde::shape_get_identity_resolution_job::de_get_identity_resolution_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

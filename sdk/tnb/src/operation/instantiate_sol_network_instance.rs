@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InstantiateSolNetworkIns
                         crate::protocol_serde::shape_instantiate_sol_network_instance::de_instantiate_sol_network_instance_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

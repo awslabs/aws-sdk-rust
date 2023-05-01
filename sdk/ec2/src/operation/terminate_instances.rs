@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateInstances {
                         crate::protocol_serde::shape_terminate_instances::de_terminate_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

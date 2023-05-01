@@ -128,6 +128,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListJobExecutionsForThin
                         crate::protocol_serde::shape_list_job_executions_for_thing::de_list_job_executions_for_thing_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutChannelMembershipPref
                         crate::protocol_serde::shape_put_channel_membership_preferences::de_put_channel_membership_preferences_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

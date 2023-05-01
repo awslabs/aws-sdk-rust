@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAllowedNodeTypeModif
                         crate::protocol_serde::shape_list_allowed_node_type_modifications::de_list_allowed_node_type_modifications_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

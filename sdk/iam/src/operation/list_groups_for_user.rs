@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupsForUser {
                         crate::protocol_serde::shape_list_groups_for_user::de_list_groups_for_user_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -115,6 +115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSequenceStores {
                         crate::protocol_serde::shape_list_sequence_stores::de_list_sequence_stores_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

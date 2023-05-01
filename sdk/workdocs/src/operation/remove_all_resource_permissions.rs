@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveAllResourcePermiss
                         crate::protocol_serde::shape_remove_all_resource_permissions::de_remove_all_resource_permissions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReservedNodes {
                         crate::protocol_serde::shape_describe_reserved_nodes::de_describe_reserved_nodes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStudioSessionMapping 
                         crate::protocol_serde::shape_get_studio_session_mapping::de_get_studio_session_mapping_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

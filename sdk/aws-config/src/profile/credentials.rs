@@ -455,14 +455,12 @@ async fn build_provider_chain(
 
 #[cfg(test)]
 mod test {
-    use tracing_test::traced_test;
 
     use crate::profile::credentials::Builder;
     use crate::test_case::TestEnvironment;
 
     macro_rules! make_test {
         ($name: ident) => {
-            #[traced_test]
             #[tokio::test]
             async fn $name() {
                 TestEnvironment::from_dir(concat!(

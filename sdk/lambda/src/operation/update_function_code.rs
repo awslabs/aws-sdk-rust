@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionCode {
                         crate::protocol_serde::shape_update_function_code::de_update_function_code_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

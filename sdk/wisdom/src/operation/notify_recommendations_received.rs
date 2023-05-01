@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyRecommendationsRec
                         crate::protocol_serde::shape_notify_recommendations_received::de_notify_recommendations_received_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

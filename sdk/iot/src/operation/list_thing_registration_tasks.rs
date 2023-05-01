@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThingRegistrationTas
                         crate::protocol_serde::shape_list_thing_registration_tasks::de_list_thing_registration_tasks_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

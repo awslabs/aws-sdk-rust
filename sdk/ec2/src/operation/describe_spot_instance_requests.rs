@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpotInstanceRequ
                         crate::protocol_serde::shape_describe_spot_instance_requests::de_describe_spot_instance_requests_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

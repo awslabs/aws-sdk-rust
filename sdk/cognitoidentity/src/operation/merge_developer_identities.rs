@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MergeDeveloperIdentities
                         crate::protocol_serde::shape_merge_developer_identities::de_merge_developer_identities_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

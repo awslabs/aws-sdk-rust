@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateRandom {
                         crate::protocol_serde::shape_generate_random::de_generate_random_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

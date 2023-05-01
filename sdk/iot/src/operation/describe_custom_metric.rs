@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomMetric {
                         crate::protocol_serde::shape_describe_custom_metric::de_describe_custom_metric_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

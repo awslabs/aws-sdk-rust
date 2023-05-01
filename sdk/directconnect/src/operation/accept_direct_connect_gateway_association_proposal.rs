@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptDirectConnectGatew
                         crate::protocol_serde::shape_accept_direct_connect_gateway_association_proposal::de_accept_direct_connect_gateway_association_proposal_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

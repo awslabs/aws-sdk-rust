@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTriggers {
                         crate::protocol_serde::shape_list_triggers::de_list_triggers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

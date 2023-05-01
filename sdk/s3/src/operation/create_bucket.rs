@@ -107,6 +107,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
                         crate::protocol_serde::shape_create_bucket::de_create_bucket_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

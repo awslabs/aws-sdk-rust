@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelTaskExecution {
                         crate::protocol_serde::shape_cancel_task_execution::de_cancel_task_execution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

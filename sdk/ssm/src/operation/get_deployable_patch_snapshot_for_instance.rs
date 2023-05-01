@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeployablePatchSnapsh
                         crate::protocol_serde::shape_get_deployable_patch_snapshot_for_instance::de_get_deployable_patch_snapshot_for_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFastSnapshotRest
                         crate::protocol_serde::shape_describe_fast_snapshot_restores::de_describe_fast_snapshot_restores_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

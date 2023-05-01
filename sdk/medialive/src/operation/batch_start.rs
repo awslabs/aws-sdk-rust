@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchStart {
                         crate::protocol_serde::shape_batch_start::de_batch_start_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

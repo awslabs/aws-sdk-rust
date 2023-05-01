@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableProactiveEngageme
                         crate::protocol_serde::shape_disable_proactive_engagement::de_disable_proactive_engagement_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

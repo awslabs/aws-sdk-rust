@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceTypesFromInst
                         crate::protocol_serde::shape_get_instance_types_from_instance_requirements::de_get_instance_types_from_instance_requirements_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

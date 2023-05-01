@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBootstrapActions {
                         crate::protocol_serde::shape_list_bootstrap_actions::de_list_bootstrap_actions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

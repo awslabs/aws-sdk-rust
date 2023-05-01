@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessControlEffect {
                         crate::protocol_serde::shape_get_access_control_effect::de_get_access_control_effect_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopStreamingSession {
                         crate::protocol_serde::shape_stop_streaming_session::de_stop_streaming_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

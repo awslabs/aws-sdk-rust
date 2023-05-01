@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeviceProfile {
                         crate::protocol_serde::shape_create_device_profile::de_create_device_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

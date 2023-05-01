@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEntitlements {
                         crate::protocol_serde::shape_describe_entitlements::de_describe_entitlements_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

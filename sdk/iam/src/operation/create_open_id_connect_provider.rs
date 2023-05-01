@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOpenIDConnectProvi
                         crate::protocol_serde::shape_create_open_id_connect_provider::de_create_open_id_connect_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

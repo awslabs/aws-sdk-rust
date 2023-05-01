@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSMBFileShareVisibi
                         crate::protocol_serde::shape_update_smb_file_share_visibility::de_update_smb_file_share_visibility_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

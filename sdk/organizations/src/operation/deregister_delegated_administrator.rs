@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterDelegatedAdmin
                         crate::protocol_serde::shape_deregister_delegated_administrator::de_deregister_delegated_administrator_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

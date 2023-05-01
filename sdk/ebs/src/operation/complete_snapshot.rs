@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteSnapshot {
                         crate::protocol_serde::shape_complete_snapshot::de_complete_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateApiKey {
                         crate::protocol_serde::shape_create_api_key::de_create_api_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

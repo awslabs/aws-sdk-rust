@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFieldLevelEncrypti
                         crate::protocol_serde::shape_delete_field_level_encryption_profile::de_delete_field_level_encryption_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

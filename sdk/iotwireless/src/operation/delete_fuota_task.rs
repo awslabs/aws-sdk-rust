@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFuotaTask {
                         crate::protocol_serde::shape_delete_fuota_task::de_delete_fuota_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateToken {
                         crate::protocol_serde::shape_create_token::de_create_token_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

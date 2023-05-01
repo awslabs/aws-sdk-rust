@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterWebhookWithThird
                         crate::protocol_serde::shape_register_webhook_with_third_party::de_register_webhook_with_third_party_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

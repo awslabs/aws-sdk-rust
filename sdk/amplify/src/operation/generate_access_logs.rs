@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GenerateAccessLogs {
                         crate::protocol_serde::shape_generate_access_logs::de_generate_access_logs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

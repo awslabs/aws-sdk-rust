@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SignalApplicationInstanc
                         crate::protocol_serde::shape_signal_application_instance_node_instances::de_signal_application_instance_node_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

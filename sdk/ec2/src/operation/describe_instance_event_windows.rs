@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceEventWin
                         crate::protocol_serde::shape_describe_instance_event_windows::de_describe_instance_event_windows_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

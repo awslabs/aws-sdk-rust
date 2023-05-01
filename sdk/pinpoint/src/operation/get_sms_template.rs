@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSmsTemplate {
                         crate::protocol_serde::shape_get_sms_template::de_get_sms_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

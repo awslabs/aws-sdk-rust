@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAutomaticTapeCreat
                         crate::protocol_serde::shape_delete_automatic_tape_creation_policy::de_delete_automatic_tape_creation_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

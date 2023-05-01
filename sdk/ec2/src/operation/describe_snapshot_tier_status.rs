@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSnapshotTierStat
                         crate::protocol_serde::shape_describe_snapshot_tier_status::de_describe_snapshot_tier_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

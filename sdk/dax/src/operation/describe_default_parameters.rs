@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDefaultParameter
                         crate::protocol_serde::shape_describe_default_parameters::de_describe_default_parameters_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

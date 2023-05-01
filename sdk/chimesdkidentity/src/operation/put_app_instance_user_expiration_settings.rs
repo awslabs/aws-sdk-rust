@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAppInstanceUserExpira
                         crate::protocol_serde::shape_put_app_instance_user_expiration_settings::de_put_app_instance_user_expiration_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

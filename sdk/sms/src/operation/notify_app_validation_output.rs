@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyAppValidationOutpu
                         crate::protocol_serde::shape_notify_app_validation_output::de_notify_app_validation_output_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

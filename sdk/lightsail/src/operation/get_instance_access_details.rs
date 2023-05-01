@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceAccessDetails
                         crate::protocol_serde::shape_get_instance_access_details::de_get_instance_access_details_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

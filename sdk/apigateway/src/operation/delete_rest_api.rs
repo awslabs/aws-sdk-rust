@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRestApi {
                         crate::protocol_serde::shape_delete_rest_api::de_delete_rest_api_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

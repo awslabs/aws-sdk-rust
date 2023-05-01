@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCostCategoryDefiniti
                         crate::protocol_serde::shape_list_cost_category_definitions::de_list_cost_category_definitions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

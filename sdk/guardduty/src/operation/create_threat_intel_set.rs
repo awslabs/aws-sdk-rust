@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateThreatIntelSet {
                         crate::protocol_serde::shape_create_threat_intel_set::de_create_threat_intel_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResolver {
                         crate::protocol_serde::shape_delete_resolver::de_delete_resolver_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

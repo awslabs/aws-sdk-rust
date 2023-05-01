@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetParametersForImport {
                         crate::protocol_serde::shape_get_parameters_for_import::de_get_parameters_for_import_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

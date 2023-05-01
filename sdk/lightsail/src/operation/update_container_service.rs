@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContainerService {
                         crate::protocol_serde::shape_update_container_service::de_update_container_service_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

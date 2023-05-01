@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RevokeFlowEntitlement {
                         crate::protocol_serde::shape_revoke_flow_entitlement::de_revoke_flow_entitlement_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

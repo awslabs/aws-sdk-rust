@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNotificationSubscr
                         crate::protocol_serde::shape_create_notification_subscription::de_create_notification_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

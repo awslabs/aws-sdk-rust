@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetApps {
                         crate::protocol_serde::shape_get_apps::de_get_apps_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchRoutingProfiles {
                         crate::protocol_serde::shape_search_routing_profiles::de_search_routing_profiles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSqlInjectionMatchS
                         crate::protocol_serde::shape_delete_sql_injection_match_set::de_delete_sql_injection_match_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

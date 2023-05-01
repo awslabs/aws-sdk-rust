@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyCertificateBasedAu
                         crate::protocol_serde::shape_modify_certificate_based_auth_properties::de_modify_certificate_based_auth_properties_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

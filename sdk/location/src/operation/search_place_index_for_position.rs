@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForPosit
                         crate::protocol_serde::shape_search_place_index_for_position::de_search_place_index_for_position_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

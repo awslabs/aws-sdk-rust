@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEffectivePermissionsF
                         crate::protocol_serde::shape_get_effective_permissions_for_path::de_get_effective_permissions_for_path_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

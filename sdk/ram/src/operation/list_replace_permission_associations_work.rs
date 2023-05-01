@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReplacePermissionAss
                         crate::protocol_serde::shape_list_replace_permission_associations_work::de_list_replace_permission_associations_work_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

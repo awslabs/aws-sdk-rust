@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateServiceInstance {
                         crate::protocol_serde::shape_create_service_instance::de_create_service_instance_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

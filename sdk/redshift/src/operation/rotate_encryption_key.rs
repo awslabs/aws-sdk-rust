@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateEncryptionKey {
                         crate::protocol_serde::shape_rotate_encryption_key::de_rotate_encryption_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

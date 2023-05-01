@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ForgetSmartHomeAppliance
                         crate::protocol_serde::shape_forget_smart_home_appliances::de_forget_smart_home_appliances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

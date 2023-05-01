@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDiskFromSnapshot {
                         crate::protocol_serde::shape_create_disk_from_snapshot::de_create_disk_from_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

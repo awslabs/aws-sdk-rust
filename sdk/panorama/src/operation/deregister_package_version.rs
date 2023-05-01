@@ -125,6 +125,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterPackageVersion
                         crate::protocol_serde::shape_deregister_package_version::de_deregister_package_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

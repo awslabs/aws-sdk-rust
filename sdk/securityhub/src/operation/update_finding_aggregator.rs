@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFindingAggregator 
                         crate::protocol_serde::shape_update_finding_aggregator::de_update_finding_aggregator_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachLoadBalancerTarget
                         crate::protocol_serde::shape_detach_load_balancer_target_groups::de_detach_load_balancer_target_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallManagerRul
                         crate::protocol_serde::shape_delete_firewall_manager_rule_groups::de_delete_firewall_manager_rule_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

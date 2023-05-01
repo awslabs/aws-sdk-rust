@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOTAUpdate {
                         crate::protocol_serde::shape_create_ota_update::de_create_ota_update_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

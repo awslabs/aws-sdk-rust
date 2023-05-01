@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTagOption {
                         crate::protocol_serde::shape_delete_tag_option::de_delete_tag_option_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

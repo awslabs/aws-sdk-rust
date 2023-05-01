@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIdentityPolicy {
                         crate::protocol_serde::shape_delete_identity_policy::de_delete_identity_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

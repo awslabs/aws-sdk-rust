@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEntityTypes {
                         crate::protocol_serde::shape_get_entity_types::de_get_entity_types_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

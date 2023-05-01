@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRelationalDatabaseLog
                         crate::protocol_serde::shape_get_relational_database_log_events::de_get_relational_database_log_events_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

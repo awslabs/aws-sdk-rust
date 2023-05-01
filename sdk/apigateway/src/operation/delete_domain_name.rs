@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomainName {
                         crate::protocol_serde::shape_delete_domain_name::de_delete_domain_name_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

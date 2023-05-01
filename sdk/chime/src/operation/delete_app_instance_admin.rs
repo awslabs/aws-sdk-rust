@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAppInstanceAdmin {
                         crate::protocol_serde::shape_delete_app_instance_admin::de_delete_app_instance_admin_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

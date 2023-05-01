@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRecovery {
                         crate::protocol_serde::shape_start_recovery::de_start_recovery_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

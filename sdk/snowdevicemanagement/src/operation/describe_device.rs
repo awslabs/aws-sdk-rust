@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDevice {
                         crate::protocol_serde::shape_describe_device::de_describe_device_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

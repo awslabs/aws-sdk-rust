@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTextTranslationJob 
                         crate::protocol_serde::shape_start_text_translation_job::de_start_text_translation_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

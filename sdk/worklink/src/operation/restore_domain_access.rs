@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreDomainAccess {
                         crate::protocol_serde::shape_restore_domain_access::de_restore_domain_access_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

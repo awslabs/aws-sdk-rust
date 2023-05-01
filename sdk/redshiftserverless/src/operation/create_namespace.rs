@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNamespace {
                         crate::protocol_serde::shape_create_namespace::de_create_namespace_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

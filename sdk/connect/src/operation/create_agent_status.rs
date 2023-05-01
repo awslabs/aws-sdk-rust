@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAgentStatus {
                         crate::protocol_serde::shape_create_agent_status::de_create_agent_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

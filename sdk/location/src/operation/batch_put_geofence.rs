@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutGeofence {
                         crate::protocol_serde::shape_batch_put_geofence::de_batch_put_geofence_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

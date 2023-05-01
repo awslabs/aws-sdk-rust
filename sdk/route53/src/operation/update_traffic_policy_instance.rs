@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTrafficPolicyInsta
                         crate::protocol_serde::shape_update_traffic_policy_instance::de_update_traffic_policy_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

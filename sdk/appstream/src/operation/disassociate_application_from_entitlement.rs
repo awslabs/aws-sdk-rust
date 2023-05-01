@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateApplicationF
                         crate::protocol_serde::shape_disassociate_application_from_entitlement::de_disassociate_application_from_entitlement_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

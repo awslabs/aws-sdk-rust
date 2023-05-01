@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAutoMLJobV2 {
                         crate::protocol_serde::shape_describe_auto_ml_job_v2::de_describe_auto_ml_job_v2_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

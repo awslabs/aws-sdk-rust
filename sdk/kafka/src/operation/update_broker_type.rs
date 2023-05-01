@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBrokerType {
                         crate::protocol_serde::shape_update_broker_type::de_update_broker_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

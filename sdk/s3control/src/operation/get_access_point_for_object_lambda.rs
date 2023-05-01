@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointForObjectL
                         crate::protocol_serde::shape_get_access_point_for_object_lambda::de_get_access_point_for_object_lambda_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

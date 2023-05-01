@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocationFsxOntap
                         crate::protocol_serde::shape_describe_location_fsx_ontap::de_describe_location_fsx_ontap_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

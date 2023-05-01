@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVolume {
                         crate::protocol_serde::shape_create_volume::de_create_volume_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrail {
                         crate::protocol_serde::shape_delete_trail::de_delete_trail_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

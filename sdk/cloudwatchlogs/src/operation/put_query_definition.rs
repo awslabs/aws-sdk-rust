@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutQueryDefinition {
                         crate::protocol_serde::shape_put_query_definition::de_put_query_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRecommendationTemp
                         crate::protocol_serde::shape_create_recommendation_template::de_create_recommendation_template_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

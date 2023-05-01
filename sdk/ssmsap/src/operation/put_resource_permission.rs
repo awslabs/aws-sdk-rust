@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResourcePermission {
                         crate::protocol_serde::shape_put_resource_permission::de_put_resource_permission_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

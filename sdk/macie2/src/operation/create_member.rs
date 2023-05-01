@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMember {
                         crate::protocol_serde::shape_create_member::de_create_member_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

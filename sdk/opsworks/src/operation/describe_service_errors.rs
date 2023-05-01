@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeServiceErrors {
                         crate::protocol_serde::shape_describe_service_errors::de_describe_service_errors_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

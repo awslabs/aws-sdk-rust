@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAuthenticationPr
                         crate::protocol_serde::shape_describe_authentication_profiles::de_describe_authentication_profiles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

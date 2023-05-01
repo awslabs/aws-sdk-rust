@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetricAlarm {
                         crate::protocol_serde::shape_put_metric_alarm::de_put_metric_alarm_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

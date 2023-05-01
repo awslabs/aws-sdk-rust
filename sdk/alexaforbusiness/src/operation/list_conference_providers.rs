@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConferenceProviders 
                         crate::protocol_serde::shape_list_conference_providers::de_list_conference_providers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

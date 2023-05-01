@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DiscoverInstances {
                         crate::protocol_serde::shape_discover_instances::de_discover_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

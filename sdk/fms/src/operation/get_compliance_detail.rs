@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComplianceDetail {
                         crate::protocol_serde::shape_get_compliance_detail::de_get_compliance_detail_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

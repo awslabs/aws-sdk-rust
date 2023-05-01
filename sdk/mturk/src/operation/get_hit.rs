@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHIT {
                         crate::protocol_serde::shape_get_hit::de_get_hit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

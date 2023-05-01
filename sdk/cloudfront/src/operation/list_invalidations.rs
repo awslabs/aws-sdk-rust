@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInvalidations {
                         crate::protocol_serde::shape_list_invalidations::de_list_invalidations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

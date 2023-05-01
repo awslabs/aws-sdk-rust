@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadLayerPart {
                         crate::protocol_serde::shape_upload_layer_part::de_upload_layer_part_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

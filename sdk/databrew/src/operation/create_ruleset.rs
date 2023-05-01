@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRuleset {
                         crate::protocol_serde::shape_create_ruleset::de_create_ruleset_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

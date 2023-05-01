@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccountSummary {
                         crate::protocol_serde::shape_get_account_summary::de_get_account_summary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNotificationChanne
                         crate::protocol_serde::shape_delete_notification_channel::de_delete_notification_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

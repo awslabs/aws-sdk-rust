@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRouteCalculator {
                         crate::protocol_serde::shape_create_route_calculator::de_create_route_calculator_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

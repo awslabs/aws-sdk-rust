@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStreamingSession {
                         crate::protocol_serde::shape_get_streaming_session::de_get_streaming_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeKeywords {
                         crate::protocol_serde::shape_describe_keywords::de_describe_keywords_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualInterface
                         crate::protocol_serde::shape_describe_virtual_interfaces::de_describe_virtual_interfaces_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

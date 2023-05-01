@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteThingType {
                         crate::protocol_serde::shape_delete_thing_type::de_delete_thing_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

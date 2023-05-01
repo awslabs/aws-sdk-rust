@@ -124,6 +124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHostedConfigurationV
                         crate::protocol_serde::shape_list_hosted_configuration_versions::de_list_hosted_configuration_versions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

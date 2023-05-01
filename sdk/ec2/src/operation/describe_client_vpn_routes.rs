@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClientVpnRoutes 
                         crate::protocol_serde::shape_describe_client_vpn_routes::de_describe_client_vpn_routes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

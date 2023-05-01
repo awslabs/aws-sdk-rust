@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateContactWithAddr
                         crate::protocol_serde::shape_associate_contact_with_address_book::de_associate_contact_with_address_book_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

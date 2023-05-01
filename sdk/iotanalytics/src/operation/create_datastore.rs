@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDatastore {
                         crate::protocol_serde::shape_create_datastore::de_create_datastore_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

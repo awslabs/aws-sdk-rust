@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDataCatalogEncryption
                         crate::protocol_serde::shape_put_data_catalog_encryption_settings::de_put_data_catalog_encryption_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

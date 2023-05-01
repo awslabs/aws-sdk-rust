@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachInstances {
                         crate::protocol_serde::shape_attach_instances::de_attach_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

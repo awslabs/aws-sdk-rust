@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSourceCredentials 
                         crate::protocol_serde::shape_delete_source_credentials::de_delete_source_credentials_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStorageVirtualMach
                         crate::protocol_serde::shape_create_storage_virtual_machine::de_create_storage_virtual_machine_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

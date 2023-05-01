@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDefaultVpc {
                         crate::protocol_serde::shape_create_default_vpc::de_create_default_vpc_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

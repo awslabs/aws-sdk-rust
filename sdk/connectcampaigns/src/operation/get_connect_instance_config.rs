@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetConnectInstanceConfig
                         crate::protocol_serde::shape_get_connect_instance_config::de_get_connect_instance_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

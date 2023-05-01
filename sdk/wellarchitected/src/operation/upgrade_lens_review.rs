@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpgradeLensReview {
                         crate::protocol_serde::shape_upgrade_lens_review::de_upgrade_lens_review_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

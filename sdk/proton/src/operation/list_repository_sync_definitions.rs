@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRepositorySyncDefini
                         crate::protocol_serde::shape_list_repository_sync_definitions::de_list_repository_sync_definitions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

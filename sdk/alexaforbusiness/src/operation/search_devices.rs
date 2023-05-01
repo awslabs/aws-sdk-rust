@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchDevices {
                         crate::protocol_serde::shape_search_devices::de_search_devices_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

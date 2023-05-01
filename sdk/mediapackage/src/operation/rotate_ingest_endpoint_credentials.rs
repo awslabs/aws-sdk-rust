@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RotateIngestEndpointCred
                         crate::protocol_serde::shape_rotate_ingest_endpoint_credentials::de_rotate_ingest_endpoint_credentials_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

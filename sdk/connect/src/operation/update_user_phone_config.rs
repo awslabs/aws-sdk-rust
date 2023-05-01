@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPhoneConfig {
                         crate::protocol_serde::shape_update_user_phone_config::de_update_user_phone_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

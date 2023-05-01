@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateView {
                         crate::protocol_serde::shape_create_view::de_create_view_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

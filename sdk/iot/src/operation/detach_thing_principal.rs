@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachThingPrincipal {
                         crate::protocol_serde::shape_detach_thing_principal::de_detach_thing_principal_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectParentPaths {
                         crate::protocol_serde::shape_list_object_parent_paths::de_list_object_parent_paths_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

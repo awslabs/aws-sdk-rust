@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomVocabularyItem
                         crate::protocol_serde::shape_list_custom_vocabulary_items::de_list_custom_vocabulary_items_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

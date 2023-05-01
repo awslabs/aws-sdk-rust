@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBridge {
                         crate::protocol_serde::shape_describe_bridge::de_describe_bridge_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

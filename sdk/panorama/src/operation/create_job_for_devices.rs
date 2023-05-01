@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateJobForDevices {
                         crate::protocol_serde::shape_create_job_for_devices::de_create_job_for_devices_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

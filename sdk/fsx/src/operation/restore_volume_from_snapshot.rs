@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreVolumeFromSnapsho
                         crate::protocol_serde::shape_restore_volume_from_snapshot::de_restore_volume_from_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

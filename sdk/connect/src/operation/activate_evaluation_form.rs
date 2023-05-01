@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ActivateEvaluationForm {
                         crate::protocol_serde::shape_activate_evaluation_form::de_activate_evaluation_form_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

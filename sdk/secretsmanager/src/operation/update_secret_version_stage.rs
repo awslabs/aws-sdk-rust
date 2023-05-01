@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecretVersionStage
                         crate::protocol_serde::shape_update_secret_version_stage::de_update_secret_version_stage_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

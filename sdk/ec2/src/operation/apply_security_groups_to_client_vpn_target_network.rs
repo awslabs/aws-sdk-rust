@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplySecurityGroupsToCli
                         crate::protocol_serde::shape_apply_security_groups_to_client_vpn_target_network::de_apply_security_groups_to_client_vpn_target_network_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

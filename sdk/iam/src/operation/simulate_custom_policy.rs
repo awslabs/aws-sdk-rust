@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SimulateCustomPolicy {
                         crate::protocol_serde::shape_simulate_custom_policy::de_simulate_custom_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSchedulingPolici
                         crate::protocol_serde::shape_describe_scheduling_policies::de_describe_scheduling_policies_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

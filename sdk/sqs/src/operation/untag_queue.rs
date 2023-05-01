@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagQueue {
                         crate::protocol_serde::shape_untag_queue::de_untag_queue_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

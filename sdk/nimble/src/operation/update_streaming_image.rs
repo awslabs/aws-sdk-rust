@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateStreamingImage {
                         crate::protocol_serde::shape_update_streaming_image::de_update_streaming_image_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

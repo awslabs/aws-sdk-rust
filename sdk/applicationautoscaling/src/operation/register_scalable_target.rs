@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterScalableTarget {
                         crate::protocol_serde::shape_register_scalable_target::de_register_scalable_target_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

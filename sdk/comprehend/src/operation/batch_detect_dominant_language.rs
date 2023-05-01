@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDetectDominantLangu
                         crate::protocol_serde::shape_batch_detect_dominant_language::de_batch_detect_dominant_language_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

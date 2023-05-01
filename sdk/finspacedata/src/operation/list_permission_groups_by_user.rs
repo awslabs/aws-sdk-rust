@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPermissionGroupsByUs
                         crate::protocol_serde::shape_list_permission_groups_by_user::de_list_permission_groups_by_user_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

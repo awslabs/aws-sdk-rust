@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PurchaseScheduledInstanc
                         crate::protocol_serde::shape_purchase_scheduled_instances::de_purchase_scheduled_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

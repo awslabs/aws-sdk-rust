@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSite {
                         crate::protocol_serde::shape_delete_site::de_delete_site_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

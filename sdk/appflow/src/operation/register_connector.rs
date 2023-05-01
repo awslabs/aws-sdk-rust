@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterConnector {
                         crate::protocol_serde::shape_register_connector::de_register_connector_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

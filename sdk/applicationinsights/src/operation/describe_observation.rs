@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeObservation {
                         crate::protocol_serde::shape_describe_observation::de_describe_observation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

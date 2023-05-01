@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInputs {
                         crate::protocol_serde::shape_list_inputs::de_list_inputs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

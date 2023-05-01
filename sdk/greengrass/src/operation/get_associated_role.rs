@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssociatedRole {
                         crate::protocol_serde::shape_get_associated_role::de_get_associated_role_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

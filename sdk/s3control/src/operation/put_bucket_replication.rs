@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketReplication {
                         crate::protocol_serde::shape_put_bucket_replication::de_put_bucket_replication_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetClassifiers {
                         crate::protocol_serde::shape_get_classifiers::de_get_classifiers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

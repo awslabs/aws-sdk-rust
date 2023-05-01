@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceSetting {
                         crate::protocol_serde::shape_get_service_setting::de_get_service_setting_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

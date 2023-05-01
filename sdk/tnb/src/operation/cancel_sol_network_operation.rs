@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelSolNetworkOperatio
                         crate::protocol_serde::shape_cancel_sol_network_operation::de_cancel_sol_network_operation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

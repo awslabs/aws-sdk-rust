@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchPlaceIndexForSugge
                         crate::protocol_serde::shape_search_place_index_for_suggestions::de_search_place_index_for_suggestions_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

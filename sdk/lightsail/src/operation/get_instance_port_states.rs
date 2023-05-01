@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstancePortStates {
                         crate::protocol_serde::shape_get_instance_port_states::de_get_instance_port_states_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateSolNetworkInsta
                         crate::protocol_serde::shape_terminate_sol_network_instance::de_terminate_sol_network_instance_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

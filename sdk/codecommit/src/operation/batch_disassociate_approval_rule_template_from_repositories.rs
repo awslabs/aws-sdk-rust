@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchDisassociateApprova
                         crate::protocol_serde::shape_batch_disassociate_approval_rule_template_from_repositories::de_batch_disassociate_approval_rule_template_from_repositories_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

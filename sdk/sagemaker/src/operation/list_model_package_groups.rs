@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModelPackageGroups {
                         crate::protocol_serde::shape_list_model_package_groups::de_list_model_package_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

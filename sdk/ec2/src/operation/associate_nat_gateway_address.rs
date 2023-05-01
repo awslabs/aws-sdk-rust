@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateNatGatewayAddre
                         crate::protocol_serde::shape_associate_nat_gateway_address::de_associate_nat_gateway_address_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

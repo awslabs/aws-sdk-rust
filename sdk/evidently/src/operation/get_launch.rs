@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLaunch {
                         crate::protocol_serde::shape_get_launch::de_get_launch_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

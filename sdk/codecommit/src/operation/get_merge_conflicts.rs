@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMergeConflicts {
                         crate::protocol_serde::shape_get_merge_conflicts::de_get_merge_conflicts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyIdentityIdFormat {
                         crate::protocol_serde::shape_modify_identity_id_format::de_modify_identity_id_format_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

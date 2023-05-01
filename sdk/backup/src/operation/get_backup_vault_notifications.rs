@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackupVaultNotificati
                         crate::protocol_serde::shape_get_backup_vault_notifications::de_get_backup_vault_notifications_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

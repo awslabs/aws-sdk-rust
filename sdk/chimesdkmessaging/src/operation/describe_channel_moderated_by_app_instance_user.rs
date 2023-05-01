@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeChannelModerated
                         crate::protocol_serde::shape_describe_channel_moderated_by_app_instance_user::de_describe_channel_moderated_by_app_instance_user_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOptedOutNumber {
                         crate::protocol_serde::shape_delete_opted_out_number::de_delete_opted_out_number_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AuthorizeClusterSecurity
                         crate::protocol_serde::shape_authorize_cluster_security_group_ingress::de_authorize_cluster_security_group_ingress_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

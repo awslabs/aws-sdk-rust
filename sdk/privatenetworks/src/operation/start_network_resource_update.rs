@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartNetworkResourceUpda
                         crate::protocol_serde::shape_start_network_resource_update::de_start_network_resource_update_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

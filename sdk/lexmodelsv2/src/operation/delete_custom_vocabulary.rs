@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomVocabulary {
                         crate::protocol_serde::shape_delete_custom_vocabulary::de_delete_custom_vocabulary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

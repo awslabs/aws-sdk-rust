@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchProductsAsAdmin {
                         crate::protocol_serde::shape_search_products_as_admin::de_search_products_as_admin_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

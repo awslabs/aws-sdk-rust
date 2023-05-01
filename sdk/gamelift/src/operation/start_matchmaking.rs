@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMatchmaking {
                         crate::protocol_serde::shape_start_matchmaking::de_start_matchmaking_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

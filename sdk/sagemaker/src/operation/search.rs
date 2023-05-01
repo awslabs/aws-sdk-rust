@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Search {
                         crate::protocol_serde::shape_search::de_search_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

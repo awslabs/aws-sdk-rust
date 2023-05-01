@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRelationalDatabaseBun
                         crate::protocol_serde::shape_get_relational_database_bundles::de_get_relational_database_bundles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

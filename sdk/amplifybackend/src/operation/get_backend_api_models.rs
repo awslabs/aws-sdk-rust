@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBackendAPIModels {
                         crate::protocol_serde::shape_get_backend_api_models::de_get_backend_api_models_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

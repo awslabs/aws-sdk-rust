@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartHumanLoop {
                         crate::protocol_serde::shape_start_human_loop::de_start_human_loop_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDataflowEndpointGroup
                         crate::protocol_serde::shape_get_dataflow_endpoint_group::de_get_dataflow_endpoint_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

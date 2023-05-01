@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterOnPremisesInstan
                         crate::protocol_serde::shape_register_on_premises_instance::de_register_on_premises_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

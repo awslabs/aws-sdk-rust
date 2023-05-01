@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEphemeris {
                         crate::protocol_serde::shape_delete_ephemeris::de_delete_ephemeris_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

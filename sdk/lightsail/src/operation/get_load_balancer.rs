@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLoadBalancer {
                         crate::protocol_serde::shape_get_load_balancer::de_get_load_balancer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

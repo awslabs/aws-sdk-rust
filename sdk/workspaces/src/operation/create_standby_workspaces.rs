@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStandbyWorkspaces 
                         crate::protocol_serde::shape_create_standby_workspaces::de_create_standby_workspaces_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

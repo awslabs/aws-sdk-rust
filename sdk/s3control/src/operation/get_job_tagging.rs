@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobTagging {
                         crate::protocol_serde::shape_get_job_tagging::de_get_job_tagging_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

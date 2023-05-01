@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateAddress {
                         crate::protocol_serde::shape_allocate_address::de_allocate_address_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

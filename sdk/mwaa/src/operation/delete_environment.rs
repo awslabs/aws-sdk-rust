@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEnvironment {
                         crate::protocol_serde::shape_delete_environment::de_delete_environment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

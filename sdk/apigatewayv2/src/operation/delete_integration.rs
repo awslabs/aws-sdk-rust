@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIntegration {
                         crate::protocol_serde::shape_delete_integration::de_delete_integration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

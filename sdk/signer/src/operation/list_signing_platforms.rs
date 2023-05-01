@@ -122,6 +122,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSigningPlatforms {
                         crate::protocol_serde::shape_list_signing_platforms::de_list_signing_platforms_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

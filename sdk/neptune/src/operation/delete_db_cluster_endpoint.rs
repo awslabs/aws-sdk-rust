@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDBClusterEndpoint 
                         crate::protocol_serde::shape_delete_db_cluster_endpoint::de_delete_db_cluster_endpoint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

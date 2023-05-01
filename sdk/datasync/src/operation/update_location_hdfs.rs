@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateLocationHdfs {
                         crate::protocol_serde::shape_update_location_hdfs::de_update_location_hdfs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

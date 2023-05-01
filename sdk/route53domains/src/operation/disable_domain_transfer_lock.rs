@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableDomainTransferLoc
                         crate::protocol_serde::shape_disable_domain_transfer_lock::de_disable_domain_transfer_lock_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

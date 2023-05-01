@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConfigurationProfile
                         crate::protocol_serde::shape_list_configuration_profiles::de_list_configuration_profiles_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

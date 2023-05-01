@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SignalResource {
                         crate::protocol_serde::shape_signal_resource::de_signal_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

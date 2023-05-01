@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindo
                         crate::protocol_serde::shape_describe_maintenance_windows_for_target::de_describe_maintenance_windows_for_target_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateOptionGroup {
                         crate::protocol_serde::shape_create_option_group::de_create_option_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

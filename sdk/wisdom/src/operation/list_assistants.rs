@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAssistants {
                         crate::protocol_serde::shape_list_assistants::de_list_assistants_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

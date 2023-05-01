@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFolderPermission
                         crate::protocol_serde::shape_describe_folder_permissions::de_describe_folder_permissions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

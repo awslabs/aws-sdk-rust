@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkGroup {
                         crate::protocol_serde::shape_get_work_group::de_get_work_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

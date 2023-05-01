@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkflowRunProperties
                         crate::protocol_serde::shape_get_workflow_run_properties::de_get_workflow_run_properties_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

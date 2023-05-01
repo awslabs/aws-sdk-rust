@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVoiceConnectorLogging
                         crate::protocol_serde::shape_put_voice_connector_logging_configuration::de_put_voice_connector_logging_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

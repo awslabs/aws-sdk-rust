@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGUISessionAccessDe
                         crate::protocol_serde::shape_create_gui_session_access_details::de_create_gui_session_access_details_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

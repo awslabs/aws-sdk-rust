@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUploads {
                         crate::protocol_serde::shape_list_uploads::de_list_uploads_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetUserPassword {
                         crate::protocol_serde::shape_reset_user_password::de_reset_user_password_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

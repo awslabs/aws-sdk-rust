@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNetworkInterface {
                         crate::protocol_serde::shape_create_network_interface::de_create_network_interface_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

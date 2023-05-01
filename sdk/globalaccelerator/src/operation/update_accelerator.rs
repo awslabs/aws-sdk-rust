@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAccelerator {
                         crate::protocol_serde::shape_update_accelerator::de_update_accelerator_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitializeCluster {
                         crate::protocol_serde::shape_initialize_cluster::de_initialize_cluster_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

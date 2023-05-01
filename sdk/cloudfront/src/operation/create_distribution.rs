@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDistribution {
                         crate::protocol_serde::shape_create_distribution::de_create_distribution_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

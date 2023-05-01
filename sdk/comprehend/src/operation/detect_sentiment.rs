@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectSentiment {
                         crate::protocol_serde::shape_detect_sentiment::de_detect_sentiment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

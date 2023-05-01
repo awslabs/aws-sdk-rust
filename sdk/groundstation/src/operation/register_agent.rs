@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterAgent {
                         crate::protocol_serde::shape_register_agent::de_register_agent_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

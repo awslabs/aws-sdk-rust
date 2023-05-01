@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMap {
                         crate::protocol_serde::shape_delete_map::de_delete_map_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

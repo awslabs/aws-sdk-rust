@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReadinessCheckResourc
                         crate::protocol_serde::shape_get_readiness_check_resource_status::de_get_readiness_check_resource_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetIdentityMailFromDomai
                         crate::protocol_serde::shape_set_identity_mail_from_domain::de_set_identity_mail_from_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

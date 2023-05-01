@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplicateSecretToRegions
                         crate::protocol_serde::shape_replicate_secret_to_regions::de_replicate_secret_to_regions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

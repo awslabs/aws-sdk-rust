@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLogPattern {
                         crate::protocol_serde::shape_create_log_pattern::de_create_log_pattern_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

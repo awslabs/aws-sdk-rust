@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAssignment {
                         crate::protocol_serde::shape_get_assignment::de_get_assignment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyReplicationGroupSh
                         crate::protocol_serde::shape_modify_replication_group_shard_configuration::de_modify_replication_group_shard_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

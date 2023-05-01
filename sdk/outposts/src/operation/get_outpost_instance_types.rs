@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOutpostInstanceTypes 
                         crate::protocol_serde::shape_get_outpost_instance_types::de_get_outpost_instance_types_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

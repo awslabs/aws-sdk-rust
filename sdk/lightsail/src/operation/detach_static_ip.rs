@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachStaticIp {
                         crate::protocol_serde::shape_detach_static_ip::de_detach_static_ip_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

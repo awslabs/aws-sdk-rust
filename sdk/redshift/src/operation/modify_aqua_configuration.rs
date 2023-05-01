@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyAquaConfiguration 
                         crate::protocol_serde::shape_modify_aqua_configuration::de_modify_aqua_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

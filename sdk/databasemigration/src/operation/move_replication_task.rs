@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MoveReplicationTask {
                         crate::protocol_serde::shape_move_replication_task::de_move_replication_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

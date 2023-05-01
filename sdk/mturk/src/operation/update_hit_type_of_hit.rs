@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHITTypeOfHIT {
                         crate::protocol_serde::shape_update_hit_type_of_hit::de_update_hit_type_of_hit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

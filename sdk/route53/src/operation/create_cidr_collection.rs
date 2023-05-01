@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCidrCollection {
                         crate::protocol_serde::shape_create_cidr_collection::de_create_cidr_collection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

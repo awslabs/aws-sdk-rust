@@ -95,6 +95,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateView {
                         crate::protocol_serde::shape_update_view::de_update_view_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

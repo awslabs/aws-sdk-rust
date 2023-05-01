@@ -85,6 +85,7 @@ impl aws_smithy_http::response::ParseStrictResponse for VerifySession {
                         crate::protocol_serde::shape_verify_session::de_verify_session_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

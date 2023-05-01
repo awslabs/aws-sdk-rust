@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectMetricSetConfig {
                         crate::protocol_serde::shape_detect_metric_set_config::de_detect_metric_set_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

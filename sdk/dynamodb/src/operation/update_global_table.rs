@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGlobalTable {
                         crate::protocol_serde::shape_update_global_table::de_update_global_table_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDataSetRefreshProp
                         crate::protocol_serde::shape_delete_data_set_refresh_properties::de_delete_data_set_refresh_properties_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

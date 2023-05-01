@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDetectorVersion {
                         crate::protocol_serde::shape_get_detector_version::de_get_detector_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

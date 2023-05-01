@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWirelessGateways {
                         crate::protocol_serde::shape_list_wireless_gateways::de_list_wireless_gateways_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

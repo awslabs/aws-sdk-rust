@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOTAUpdates {
                         crate::protocol_serde::shape_list_ota_updates::de_list_ota_updates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

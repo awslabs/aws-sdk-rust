@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateApplicationResourc
                         crate::protocol_serde::shape_update_application_resource_lifecycle::de_update_application_resource_lifecycle_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRequestedServiceQuota
                         crate::protocol_serde::shape_get_requested_service_quota_change::de_get_requested_service_quota_change_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

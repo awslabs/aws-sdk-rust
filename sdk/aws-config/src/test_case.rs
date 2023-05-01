@@ -16,11 +16,17 @@ use serde::Deserialize;
 use crate::connector::default_connector;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use std::collections::HashMap;
+use std::env;
 use std::error::Error;
 use std::fmt::Debug;
 use std::future::Future;
+use std::io::Write;
 use std::path::{Path, PathBuf};
+use std::sync::{Arc, Mutex};
 use std::time::{Duration, UNIX_EPOCH};
+use tracing::dispatcher::DefaultGuard;
+use tracing::Level;
+use tracing_subscriber::fmt::TestWriter;
 
 /// Test case credentials
 ///
@@ -84,7 +90,7 @@ impl AsyncSleep for InstantSleep {
     }
 }
 
-#[derive(Deserialize)]
+#[derive(Deserialize, Debug)]
 pub(crate) enum GenericTestResult<T> {
     Ok(T),
     ErrorContains(String),
@@ -127,6 +133,79 @@ pub(crate) struct Metadata {
     result: TestResult,
     docs: String,
     name: String,
+}
+
+struct Tee<W> {
+    buf: Arc<Mutex<Vec<u8>>>,
+    quiet: bool,
+    inner: W,
+}
+
+/// Capture logs from this test.
+///
+/// The logs will be captured until the `DefaultGuard` is dropped.
+///
+/// *Why use this instead of traced_test?*
+/// This captures _all_ logs, not just logs produced by the current crate.
+fn capture_test_logs() -> (DefaultGuard, Rx) {
+    // it may be helpful to upstream this at some point
+    let (mut writer, rx) = Tee::stdout();
+    if env::var("VERBOSE_TEST_LOGS").is_ok() {
+        writer.loud();
+    } else {
+        eprintln!("To see full logs from this test set VERBOSE_TEST_LOGS=true");
+    }
+    let subscriber = tracing_subscriber::fmt()
+        .with_max_level(Level::TRACE)
+        .with_writer(Mutex::new(writer))
+        .finish();
+    let guard = tracing::subscriber::set_default(subscriber);
+    (guard, rx)
+}
+
+struct Rx(Arc<Mutex<Vec<u8>>>);
+impl Rx {
+    pub(crate) fn contents(&self) -> String {
+        String::from_utf8(self.0.lock().unwrap().clone()).unwrap()
+    }
+}
+
+impl Tee<TestWriter> {
+    fn stdout() -> (Self, Rx) {
+        let buf: Arc<Mutex<Vec<u8>>> = Default::default();
+        (
+            Tee {
+                buf: buf.clone(),
+                quiet: true,
+                inner: TestWriter::new(),
+            },
+            Rx(buf),
+        )
+    }
+}
+
+impl<W> Tee<W> {
+    fn loud(&mut self) {
+        self.quiet = false;
+    }
+}
+
+impl<W> Write for Tee<W>
+where
+    W: Write,
+{
+    fn write(&mut self, buf: &[u8]) -> std::io::Result<usize> {
+        self.buf.lock().unwrap().extend_from_slice(buf);
+        if !self.quiet {
+            self.inner.write(buf)
+        } else {
+            Ok(buf.len())
+        }
+    }
+
+    fn flush(&mut self) -> std::io::Result<()> {
+        self.inner.flush()
+    }
 }
 
 impl TestEnvironment {
@@ -232,12 +311,26 @@ impl TestEnvironment {
         eprintln!("test case: {}. {}", self.metadata.name, self.metadata.docs);
     }
 
+    fn lines_with_secrets<'a>(&'a self, logs: &'a str) -> Vec<&'a str> {
+        logs.lines().filter(|l| self.contains_secret(l)).collect()
+    }
+
+    fn contains_secret(&self, log_line: &str) -> bool {
+        assert!(log_line.lines().count() <= 1);
+        match &self.metadata.result {
+            // NOTE: we aren't currently erroring if the session token is leaked, that is in the canonical request among other things
+            TestResult::Ok(creds) => log_line.contains(&creds.secret_access_key),
+            TestResult::ErrorContains(_) => false,
+        }
+    }
+
     /// Execute a test case. Failures lead to panics.
     pub(crate) async fn execute<F, P>(&self, make_provider: impl Fn(ProviderConfig) -> F)
     where
         F: Future<Output = P>,
         P: ProvideCredentials,
     {
+        let (_guard, rx) = capture_test_logs();
         let provider = make_provider(self.provider_config.clone()).await;
         let result = provider.provide_credentials().await;
         tokio::time::pause();
@@ -256,6 +349,14 @@ impl TestEnvironment {
             Ok(()) => {}
             Err(e) => panic!("{}", e),
         }
+        let contents = rx.contents();
+        let leaking_lines = self.lines_with_secrets(&contents);
+        assert!(
+            leaking_lines.is_empty(),
+            "secret was exposed\n{:?}\nSee the following log lines:\n  {}",
+            self.metadata.result,
+            leaking_lines.join("\n  ")
+        )
     }
 
     #[track_caller]

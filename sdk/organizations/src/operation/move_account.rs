@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MoveAccount {
                         crate::protocol_serde::shape_move_account::de_move_account_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

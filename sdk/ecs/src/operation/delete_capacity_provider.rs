@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCapacityProvider {
                         crate::protocol_serde::shape_delete_capacity_provider::de_delete_capacity_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

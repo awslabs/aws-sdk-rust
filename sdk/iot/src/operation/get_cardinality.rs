@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCardinality {
                         crate::protocol_serde::shape_get_cardinality::de_get_cardinality_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

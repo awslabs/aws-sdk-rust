@@ -110,6 +110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelIngestion {
                         crate::protocol_serde::shape_cancel_ingestion::de_cancel_ingestion_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

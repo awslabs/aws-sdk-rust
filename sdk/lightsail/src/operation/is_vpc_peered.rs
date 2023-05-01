@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for IsVpcPeered {
                         crate::protocol_serde::shape_is_vpc_peered::de_is_vpc_peered_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

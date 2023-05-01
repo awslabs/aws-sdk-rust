@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMetricAttributionMet
                         crate::protocol_serde::shape_list_metric_attribution_metrics::de_list_metric_attribution_metrics_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

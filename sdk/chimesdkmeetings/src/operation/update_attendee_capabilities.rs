@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAttendeeCapabiliti
                         crate::protocol_serde::shape_update_attendee_capabilities::de_update_attendee_capabilities_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

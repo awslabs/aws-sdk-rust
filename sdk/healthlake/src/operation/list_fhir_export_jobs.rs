@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFHIRExportJobs {
                         crate::protocol_serde::shape_list_fhir_export_jobs::de_list_fhir_export_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

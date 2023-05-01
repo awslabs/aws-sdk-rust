@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateScene {
                         crate::protocol_serde::shape_update_scene::de_update_scene_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

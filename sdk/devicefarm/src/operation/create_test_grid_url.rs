@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTestGridUrl {
                         crate::protocol_serde::shape_create_test_grid_url::de_create_test_grid_url_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TranslateText {
                         crate::protocol_serde::shape_translate_text::de_translate_text_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

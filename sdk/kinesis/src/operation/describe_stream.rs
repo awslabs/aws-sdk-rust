@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStream {
                         crate::protocol_serde::shape_describe_stream::de_describe_stream_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

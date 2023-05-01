@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRandomPassword {
                         crate::protocol_serde::shape_get_random_password::de_get_random_password_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

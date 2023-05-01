@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKnownHostKeys {
                         crate::protocol_serde::shape_delete_known_host_keys::de_delete_known_host_keys_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

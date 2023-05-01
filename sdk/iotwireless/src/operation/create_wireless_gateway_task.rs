@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWirelessGatewayTas
                         crate::protocol_serde::shape_create_wireless_gateway_task::de_create_wireless_gateway_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

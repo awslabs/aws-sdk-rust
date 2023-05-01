@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAwsNetworkPerform
                         crate::protocol_serde::shape_disable_aws_network_performance_metric_subscription::de_disable_aws_network_performance_metric_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

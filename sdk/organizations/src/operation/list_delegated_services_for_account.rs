@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDelegatedServicesFor
                         crate::protocol_serde::shape_list_delegated_services_for_account::de_list_delegated_services_for_account_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

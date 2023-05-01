@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHumanTaskUis {
                         crate::protocol_serde::shape_list_human_task_uis::de_list_human_task_uis_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

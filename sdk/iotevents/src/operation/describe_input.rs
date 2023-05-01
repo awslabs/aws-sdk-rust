@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInput {
                         crate::protocol_serde::shape_describe_input::de_describe_input_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

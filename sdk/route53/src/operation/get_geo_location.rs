@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGeoLocation {
                         crate::protocol_serde::shape_get_geo_location::de_get_geo_location_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

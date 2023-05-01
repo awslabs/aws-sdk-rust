@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrustStores {
                         crate::protocol_serde::shape_list_trust_stores::de_list_trust_stores_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

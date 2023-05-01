@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddDraftAppVersionResour
                         crate::protocol_serde::shape_add_draft_app_version_resource_mappings::de_add_draft_app_version_resource_mappings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

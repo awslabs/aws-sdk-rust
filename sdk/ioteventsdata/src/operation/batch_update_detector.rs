@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUpdateDetector {
                         crate::protocol_serde::shape_batch_update_detector::de_batch_update_detector_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateStorediSCSIVolume 
                         crate::protocol_serde::shape_create_storedi_scsi_volume::de_create_storedi_scsi_volume_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

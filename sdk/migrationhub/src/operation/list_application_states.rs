@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApplicationStates {
                         crate::protocol_serde::shape_list_application_states::de_list_application_states_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

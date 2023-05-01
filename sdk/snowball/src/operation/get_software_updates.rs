@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSoftwareUpdates {
                         crate::protocol_serde::shape_get_software_updates::de_get_software_updates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

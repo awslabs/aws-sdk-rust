@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePublishingDestin
                         crate::protocol_serde::shape_describe_publishing_destination::de_describe_publishing_destination_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

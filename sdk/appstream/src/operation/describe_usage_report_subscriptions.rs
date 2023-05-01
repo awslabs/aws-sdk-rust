@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUsageReportSubsc
                         crate::protocol_serde::shape_describe_usage_report_subscriptions::de_describe_usage_report_subscriptions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReplicationSubnetG
                         crate::protocol_serde::shape_create_replication_subnet_group::de_create_replication_subnet_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetThirdPartyJobDetails 
                         crate::protocol_serde::shape_get_third_party_job_details::de_get_third_party_job_details_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

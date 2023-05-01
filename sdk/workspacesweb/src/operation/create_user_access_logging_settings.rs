@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserAccessLoggingS
                         crate::protocol_serde::shape_create_user_access_logging_settings::de_create_user_access_logging_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

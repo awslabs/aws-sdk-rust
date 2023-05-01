@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFragments {
                         crate::protocol_serde::shape_list_fragments::de_list_fragments_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

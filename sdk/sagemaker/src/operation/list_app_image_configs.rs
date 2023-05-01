@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppImageConfigs {
                         crate::protocol_serde::shape_list_app_image_configs::de_list_app_image_configs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

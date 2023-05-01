@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountAlias {
                         crate::protocol_serde::shape_put_account_alias::de_put_account_alias_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

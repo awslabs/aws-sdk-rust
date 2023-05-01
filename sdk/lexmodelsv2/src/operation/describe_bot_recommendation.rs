@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBotRecommendatio
                         crate::protocol_serde::shape_describe_bot_recommendation::de_describe_bot_recommendation_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

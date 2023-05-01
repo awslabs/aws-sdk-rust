@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEventSourceMapping {
                         crate::protocol_serde::shape_get_event_source_mapping::de_get_event_source_mapping_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

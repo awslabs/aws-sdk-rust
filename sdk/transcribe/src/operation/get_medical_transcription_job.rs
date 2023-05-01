@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMedicalTranscriptionJ
                         crate::protocol_serde::shape_get_medical_transcription_job::de_get_medical_transcription_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

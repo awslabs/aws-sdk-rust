@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchWrite {
                         crate::protocol_serde::shape_batch_write::de_batch_write_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

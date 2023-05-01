@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUser {
                         crate::protocol_serde::shape_get_user::de_get_user_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

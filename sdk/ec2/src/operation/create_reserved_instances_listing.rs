@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReservedInstancesL
                         crate::protocol_serde::shape_create_reserved_instances_listing::de_create_reserved_instances_listing_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

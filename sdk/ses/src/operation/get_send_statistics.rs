@@ -93,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSendStatistics {
                         crate::protocol_serde::shape_get_send_statistics::de_get_send_statistics_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

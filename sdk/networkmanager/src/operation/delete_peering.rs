@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePeering {
                         crate::protocol_serde::shape_delete_peering::de_delete_peering_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

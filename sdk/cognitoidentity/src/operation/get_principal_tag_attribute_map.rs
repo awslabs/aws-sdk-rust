@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPrincipalTagAttribute
                         crate::protocol_serde::shape_get_principal_tag_attribute_map::de_get_principal_tag_attribute_map_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

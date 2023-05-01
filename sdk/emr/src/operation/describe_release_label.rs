@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReleaseLabel {
                         crate::protocol_serde::shape_describe_release_label::de_describe_release_label_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDiscoverer {
                         crate::protocol_serde::shape_stop_discoverer::de_stop_discoverer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

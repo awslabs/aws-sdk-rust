@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecret {
                         crate::protocol_serde::shape_update_secret::de_update_secret_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMediaInsightsPipel
                         crate::protocol_serde::shape_update_media_insights_pipeline_configuration::de_update_media_insights_pipeline_configuration_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

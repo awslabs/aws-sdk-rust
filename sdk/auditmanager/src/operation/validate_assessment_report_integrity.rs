@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ValidateAssessmentReport
                         crate::protocol_serde::shape_validate_assessment_report_integrity::de_validate_assessment_report_integrity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

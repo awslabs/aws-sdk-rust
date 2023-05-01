@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTableReplicaAuto
                         crate::protocol_serde::shape_describe_table_replica_auto_scaling::de_describe_table_replica_auto_scaling_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

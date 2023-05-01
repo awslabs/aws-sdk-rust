@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAllowedNodeTypeUpdat
                         crate::protocol_serde::shape_list_allowed_node_type_updates::de_list_allowed_node_type_updates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

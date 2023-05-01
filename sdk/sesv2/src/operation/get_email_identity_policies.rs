@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEmailIdentityPolicies
                         crate::protocol_serde::shape_get_email_identity_policies::de_get_email_identity_policies_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

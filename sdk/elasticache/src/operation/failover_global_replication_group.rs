@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for FailoverGlobalReplicatio
                         crate::protocol_serde::shape_failover_global_replication_group::de_failover_global_replication_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

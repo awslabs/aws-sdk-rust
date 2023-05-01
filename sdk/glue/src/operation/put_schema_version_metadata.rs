@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutSchemaVersionMetadata
                         crate::protocol_serde::shape_put_schema_version_metadata::de_put_schema_version_metadata_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

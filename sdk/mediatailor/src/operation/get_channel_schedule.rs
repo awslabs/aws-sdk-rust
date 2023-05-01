@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetChannelSchedule {
                         crate::protocol_serde::shape_get_channel_schedule::de_get_channel_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

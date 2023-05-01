@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteChapCredentials {
                         crate::protocol_serde::shape_delete_chap_credentials::de_delete_chap_credentials_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAWSDefaultServiceQuot
                         crate::protocol_serde::shape_get_aws_default_service_quota::de_get_aws_default_service_quota_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

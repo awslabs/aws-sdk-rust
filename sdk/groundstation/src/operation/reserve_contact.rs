@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReserveContact {
                         crate::protocol_serde::shape_reserve_contact::de_reserve_contact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

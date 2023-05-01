@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartAssociationsOnce {
                         crate::protocol_serde::shape_start_associations_once::de_start_associations_once_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

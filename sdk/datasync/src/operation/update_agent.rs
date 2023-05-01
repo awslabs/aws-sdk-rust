@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAgent {
                         crate::protocol_serde::shape_update_agent::de_update_agent_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

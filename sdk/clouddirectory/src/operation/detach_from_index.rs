@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachFromIndex {
                         crate::protocol_serde::shape_detach_from_index::de_detach_from_index_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

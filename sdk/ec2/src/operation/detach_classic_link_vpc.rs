@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachClassicLinkVpc {
                         crate::protocol_serde::shape_detach_classic_link_vpc::de_detach_classic_link_vpc_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

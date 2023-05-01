@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestRenderEmailTemplate 
                         crate::protocol_serde::shape_test_render_email_template::de_test_render_email_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

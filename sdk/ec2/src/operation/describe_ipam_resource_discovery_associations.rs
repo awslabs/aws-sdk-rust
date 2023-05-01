@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeIpamResourceDisc
                         crate::protocol_serde::shape_describe_ipam_resource_discovery_associations::de_describe_ipam_resource_discovery_associations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

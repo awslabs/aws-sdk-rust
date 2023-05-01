@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAdditionalAssignme
                         crate::protocol_serde::shape_create_additional_assignments_for_hit::de_create_additional_assignments_for_hit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

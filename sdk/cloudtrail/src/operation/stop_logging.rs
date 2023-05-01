@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopLogging {
                         crate::protocol_serde::shape_stop_logging::de_stop_logging_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLifecycleConfiguratio
                         crate::protocol_serde::shape_put_lifecycle_configuration::de_put_lifecycle_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

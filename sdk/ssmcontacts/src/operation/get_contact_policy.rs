@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactPolicy {
                         crate::protocol_serde::shape_get_contact_policy::de_get_contact_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveSourceIdentifierFr
                         crate::protocol_serde::shape_remove_source_identifier_from_subscription::de_remove_source_identifier_from_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

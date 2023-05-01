@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccountVdmAttributes 
                         crate::protocol_serde::shape_put_account_vdm_attributes::de_put_account_vdm_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUnfilteredPartitionsM
                         crate::protocol_serde::shape_get_unfiltered_partitions_metadata::de_get_unfiltered_partitions_metadata_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

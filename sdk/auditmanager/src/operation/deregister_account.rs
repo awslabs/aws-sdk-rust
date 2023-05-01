@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterAccount {
                         crate::protocol_serde::shape_deregister_account::de_deregister_account_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

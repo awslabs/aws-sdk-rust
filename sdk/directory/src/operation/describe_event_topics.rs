@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventTopics {
                         crate::protocol_serde::shape_describe_event_topics::de_describe_event_topics_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

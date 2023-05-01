@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserPolicy {
                         crate::protocol_serde::shape_get_user_policy::de_get_user_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

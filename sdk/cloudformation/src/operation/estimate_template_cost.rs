@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EstimateTemplateCost {
                         crate::protocol_serde::shape_estimate_template_cost::de_estimate_template_cost_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

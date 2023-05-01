@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpaces {
                         crate::protocol_serde::shape_list_spaces::de_list_spaces_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

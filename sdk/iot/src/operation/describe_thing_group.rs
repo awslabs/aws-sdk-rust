@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeThingGroup {
                         crate::protocol_serde::shape_describe_thing_group::de_describe_thing_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

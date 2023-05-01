@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntitiesForPolicy {
                         crate::protocol_serde::shape_list_entities_for_policy::de_list_entities_for_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

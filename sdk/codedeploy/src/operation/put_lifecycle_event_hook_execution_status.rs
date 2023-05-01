@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLifecycleEventHookExe
                         crate::protocol_serde::shape_put_lifecycle_event_hook_execution_status::de_put_lifecycle_event_hook_execution_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

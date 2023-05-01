@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetVpnTunnelReplacementS
                         crate::protocol_serde::shape_get_vpn_tunnel_replacement_status::de_get_vpn_tunnel_replacement_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

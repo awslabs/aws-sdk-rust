@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVectorEnrichmentJobs
                         crate::protocol_serde::shape_list_vector_enrichment_jobs::de_list_vector_enrichment_jobs_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

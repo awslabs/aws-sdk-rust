@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkspacesConnec
                         crate::protocol_serde::shape_describe_workspaces_connection_status::de_describe_workspaces_connection_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

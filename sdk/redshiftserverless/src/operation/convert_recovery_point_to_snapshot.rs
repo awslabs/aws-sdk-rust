@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConvertRecoveryPointToSn
                         crate::protocol_serde::shape_convert_recovery_point_to_snapshot::de_convert_recovery_point_to_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

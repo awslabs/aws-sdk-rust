@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelWorldGenerationJob
                         crate::protocol_serde::shape_cancel_world_generation_job::de_cancel_world_generation_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPropertyValue {
                         crate::protocol_serde::shape_get_property_value::de_get_property_value_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

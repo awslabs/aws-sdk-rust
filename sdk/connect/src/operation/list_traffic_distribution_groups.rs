@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrafficDistributionG
                         crate::protocol_serde::shape_list_traffic_distribution_groups::de_list_traffic_distribution_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

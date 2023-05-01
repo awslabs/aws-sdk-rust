@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWhatIfForecasts {
                         crate::protocol_serde::shape_list_what_if_forecasts::de_list_what_if_forecasts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

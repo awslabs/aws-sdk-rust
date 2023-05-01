@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObservabilityConfi
                         crate::protocol_serde::shape_delete_observability_configuration::de_delete_observability_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

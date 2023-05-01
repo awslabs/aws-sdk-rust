@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGameSessionQueue {
                         crate::protocol_serde::shape_delete_game_session_queue::de_delete_game_session_queue_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

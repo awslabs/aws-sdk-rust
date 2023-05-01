@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTrackerConsu
                         crate::protocol_serde::shape_disassociate_tracker_consumer::de_disassociate_tracker_consumer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

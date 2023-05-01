@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeProfilingGroup {
                         crate::protocol_serde::shape_describe_profiling_group::de_describe_profiling_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

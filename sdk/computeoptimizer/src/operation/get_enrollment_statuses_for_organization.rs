@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnrollmentStatusesFor
                         crate::protocol_serde::shape_get_enrollment_statuses_for_organization::de_get_enrollment_statuses_for_organization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

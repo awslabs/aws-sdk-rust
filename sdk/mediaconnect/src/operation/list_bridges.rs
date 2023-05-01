@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBridges {
                         crate::protocol_serde::shape_list_bridges::de_list_bridges_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

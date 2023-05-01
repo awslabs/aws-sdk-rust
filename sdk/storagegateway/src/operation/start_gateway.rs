@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartGateway {
                         crate::protocol_serde::shape_start_gateway::de_start_gateway_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

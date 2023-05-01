@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnectorEntities {
                         crate::protocol_serde::shape_list_connector_entities::de_list_connector_entities_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

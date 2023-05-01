@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ChangeMessageVisibility 
                         crate::protocol_serde::shape_change_message_visibility::de_change_message_visibility_http_response(status, headers, body)
                      }
                 }
+                
             }
 #[allow(unreachable_code, unused_variables)]
 #[cfg(test)]

@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutProjectEvents {
                         crate::protocol_serde::shape_put_project_events::de_put_project_events_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAWSOrganizationsAcces
                         crate::protocol_serde::shape_get_aws_organizations_access_status::de_get_aws_organizations_access_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

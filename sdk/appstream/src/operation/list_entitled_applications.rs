@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntitledApplications
                         crate::protocol_serde::shape_list_entitled_applications::de_list_entitled_applications_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

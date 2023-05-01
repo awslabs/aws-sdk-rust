@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDiscoverer {
                         crate::protocol_serde::shape_start_discoverer::de_start_discoverer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

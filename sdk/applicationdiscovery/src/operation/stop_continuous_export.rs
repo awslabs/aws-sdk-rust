@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopContinuousExport {
                         crate::protocol_serde::shape_stop_continuous_export::de_stop_continuous_export_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

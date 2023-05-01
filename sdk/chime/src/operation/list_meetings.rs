@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMeetings {
                         crate::protocol_serde::shape_list_meetings::de_list_meetings_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

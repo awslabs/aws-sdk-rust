@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDataIngestionJob {
                         crate::protocol_serde::shape_start_data_ingestion_job::de_start_data_ingestion_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

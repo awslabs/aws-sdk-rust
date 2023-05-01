@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLatestAssessmentId {
                         crate::protocol_serde::shape_get_latest_assessment_id::de_get_latest_assessment_id_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

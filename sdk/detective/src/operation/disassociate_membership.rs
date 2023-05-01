@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateMembership {
                         crate::protocol_serde::shape_disassociate_membership::de_disassociate_membership_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

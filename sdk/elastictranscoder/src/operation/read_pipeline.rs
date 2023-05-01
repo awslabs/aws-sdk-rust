@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReadPipeline {
                         crate::protocol_serde::shape_read_pipeline::de_read_pipeline_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

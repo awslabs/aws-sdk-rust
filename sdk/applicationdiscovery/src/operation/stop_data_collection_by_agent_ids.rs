@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDataCollectionByAgen
                         crate::protocol_serde::shape_stop_data_collection_by_agent_ids::de_stop_data_collection_by_agent_ids_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

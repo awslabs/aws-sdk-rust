@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEnvironmentTemplates
                         crate::protocol_serde::shape_list_environment_templates::de_list_environment_templates_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

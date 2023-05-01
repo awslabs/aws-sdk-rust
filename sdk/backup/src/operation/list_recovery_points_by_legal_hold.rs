@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRecoveryPointsByLega
                         crate::protocol_serde::shape_list_recovery_points_by_legal_hold::de_list_recovery_points_by_legal_hold_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

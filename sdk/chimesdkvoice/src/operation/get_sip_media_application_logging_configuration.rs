@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSipMediaApplicationLo
                         crate::protocol_serde::shape_get_sip_media_application_logging_configuration::de_get_sip_media_application_logging_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

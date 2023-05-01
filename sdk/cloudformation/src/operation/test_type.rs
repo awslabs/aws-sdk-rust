@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestType {
                         crate::protocol_serde::shape_test_type::de_test_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

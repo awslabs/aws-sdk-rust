@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFeaturedResultsSet
                         crate::protocol_serde::shape_create_featured_results_set::de_create_featured_results_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

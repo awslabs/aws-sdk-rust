@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVpcConnector {
                         crate::protocol_serde::shape_create_vpc_connector::de_create_vpc_connector_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

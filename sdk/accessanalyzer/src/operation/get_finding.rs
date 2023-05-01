@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFinding {
                         crate::protocol_serde::shape_get_finding::de_get_finding_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteManagedEndpoint {
                         crate::protocol_serde::shape_delete_managed_endpoint::de_delete_managed_endpoint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

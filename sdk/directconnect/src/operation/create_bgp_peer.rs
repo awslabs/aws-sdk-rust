@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBGPPeer {
                         crate::protocol_serde::shape_create_bgp_peer::de_create_bgp_peer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

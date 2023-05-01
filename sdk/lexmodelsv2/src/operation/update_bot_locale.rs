@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBotLocale {
                         crate::protocol_serde::shape_update_bot_locale::de_update_bot_locale_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCodeBinding {
                         crate::protocol_serde::shape_describe_code_binding::de_describe_code_binding_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

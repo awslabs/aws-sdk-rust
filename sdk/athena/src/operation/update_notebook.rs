@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateNotebook {
                         crate::protocol_serde::shape_update_notebook::de_update_notebook_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

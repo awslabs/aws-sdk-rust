@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSecurityConfiguration
                         crate::protocol_serde::shape_get_security_configurations::de_get_security_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

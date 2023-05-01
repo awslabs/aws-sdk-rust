@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TerminateTargetInstances
                         crate::protocol_serde::shape_terminate_target_instances::de_terminate_target_instances_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

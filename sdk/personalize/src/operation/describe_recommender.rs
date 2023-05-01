@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommender {
                         crate::protocol_serde::shape_describe_recommender::de_describe_recommender_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

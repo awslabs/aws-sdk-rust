@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOrganizationServiceA
                         crate::protocol_serde::shape_list_organization_service_access_status::de_list_organization_service_access_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

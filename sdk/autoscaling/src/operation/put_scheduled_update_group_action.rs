@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutScheduledUpdateGroupA
                         crate::protocol_serde::shape_put_scheduled_update_group_action::de_put_scheduled_update_group_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

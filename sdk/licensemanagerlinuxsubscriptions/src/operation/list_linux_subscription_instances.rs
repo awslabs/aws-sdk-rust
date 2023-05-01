@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLinuxSubscriptionIns
                         crate::protocol_serde::shape_list_linux_subscription_instances::de_list_linux_subscription_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

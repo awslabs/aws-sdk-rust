@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchUnsuspendUser {
                         crate::protocol_serde::shape_batch_unsuspend_user::de_batch_unsuspend_user_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

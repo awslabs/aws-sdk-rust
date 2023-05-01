@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMobileDeviceAccessEff
                         crate::protocol_serde::shape_get_mobile_device_access_effect::de_get_mobile_device_access_effect_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSiteToSiteVpnAttac
                         crate::protocol_serde::shape_create_site_to_site_vpn_attachment::de_create_site_to_site_vpn_attachment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

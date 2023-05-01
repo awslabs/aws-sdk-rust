@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFunctionDefinition
                         crate::protocol_serde::shape_update_function_definition::de_update_function_definition_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

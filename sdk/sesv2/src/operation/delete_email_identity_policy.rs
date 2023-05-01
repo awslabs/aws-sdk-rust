@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteEmailIdentityPolic
                         crate::protocol_serde::shape_delete_email_identity_policy::de_delete_email_identity_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

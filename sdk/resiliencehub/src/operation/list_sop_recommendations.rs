@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSopRecommendations {
                         crate::protocol_serde::shape_list_sop_recommendations::de_list_sop_recommendations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

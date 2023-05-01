@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SuspendContactRecording 
                         crate::protocol_serde::shape_suspend_contact_recording::de_suspend_contact_recording_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

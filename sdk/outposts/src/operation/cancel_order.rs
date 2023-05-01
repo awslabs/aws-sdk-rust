@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelOrder {
                         crate::protocol_serde::shape_cancel_order::de_cancel_order_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

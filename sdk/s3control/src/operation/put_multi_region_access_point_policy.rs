@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMultiRegionAccessPoin
                         crate::protocol_serde::shape_put_multi_region_access_point_policy::de_put_multi_region_access_point_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

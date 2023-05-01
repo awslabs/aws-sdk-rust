@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterIdentityProvid
                         crate::protocol_serde::shape_deregister_identity_provider::de_deregister_identity_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

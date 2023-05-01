@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteCommand {
                         crate::protocol_serde::shape_execute_command::de_execute_command_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

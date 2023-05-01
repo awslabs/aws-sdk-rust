@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPointsForObjec
                         crate::protocol_serde::shape_list_access_points_for_object_lambda::de_list_access_points_for_object_lambda_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

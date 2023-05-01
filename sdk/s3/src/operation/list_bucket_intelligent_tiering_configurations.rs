@@ -113,6 +113,7 @@ tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(respon
                         crate::protocol_serde::shape_list_bucket_intelligent_tiering_configurations::de_list_bucket_intelligent_tiering_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

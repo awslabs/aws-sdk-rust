@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetSubnets {
                         crate::protocol_serde::shape_set_subnets::de_set_subnets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -119,6 +119,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCoreNetworkChangeSet 
                         crate::protocol_serde::shape_get_core_network_change_set::de_get_core_network_change_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

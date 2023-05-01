@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcknowledgeOrderReceipt 
                         crate::protocol_serde::shape_acknowledge_order_receipt::de_acknowledge_order_receipt_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

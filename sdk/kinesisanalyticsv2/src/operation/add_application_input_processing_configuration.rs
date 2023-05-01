@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddApplicationInputProce
                         crate::protocol_serde::shape_add_application_input_processing_configuration::de_add_application_input_processing_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

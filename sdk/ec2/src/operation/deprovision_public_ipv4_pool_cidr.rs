@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprovisionPublicIpv4Poo
                         crate::protocol_serde::shape_deprovision_public_ipv4_pool_cidr::de_deprovision_public_ipv4_pool_cidr_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

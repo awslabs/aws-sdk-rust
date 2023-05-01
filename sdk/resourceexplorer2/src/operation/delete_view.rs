@@ -95,6 +95,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteView {
                         crate::protocol_serde::shape_delete_view::de_delete_view_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

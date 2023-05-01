@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyWorkspaceImage {
                         crate::protocol_serde::shape_copy_workspace_image::de_copy_workspace_image_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

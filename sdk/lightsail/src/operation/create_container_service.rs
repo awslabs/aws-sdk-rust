@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContainerService {
                         crate::protocol_serde::shape_create_container_service::de_create_container_service_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResiliencyPolicy {
                         crate::protocol_serde::shape_create_resiliency_policy::de_create_resiliency_policy_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

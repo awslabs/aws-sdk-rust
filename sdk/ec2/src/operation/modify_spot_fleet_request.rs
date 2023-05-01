@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifySpotFleetRequest {
                         crate::protocol_serde::shape_modify_spot_fleet_request::de_modify_spot_fleet_request_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

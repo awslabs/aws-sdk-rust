@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLogGroupFields {
                         crate::protocol_serde::shape_get_log_group_fields::de_get_log_group_fields_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

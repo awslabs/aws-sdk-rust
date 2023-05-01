@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMLTaskRun {
                         crate::protocol_serde::shape_get_ml_task_run::de_get_ml_task_run_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

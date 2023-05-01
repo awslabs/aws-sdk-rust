@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTimelineEvent {
                         crate::protocol_serde::shape_get_timeline_event::de_get_timeline_event_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

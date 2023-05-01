@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOperationsForResource
                         crate::protocol_serde::shape_get_operations_for_resource::de_get_operations_for_resource_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

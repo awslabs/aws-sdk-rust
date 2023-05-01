@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetArtifactUrl {
                         crate::protocol_serde::shape_get_artifact_url::de_get_artifact_url_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

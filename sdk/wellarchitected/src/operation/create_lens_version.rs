@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLensVersion {
                         crate::protocol_serde::shape_create_lens_version::de_create_lens_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

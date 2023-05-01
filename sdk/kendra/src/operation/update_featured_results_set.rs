@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFeaturedResultsSet
                         crate::protocol_serde::shape_update_featured_results_set::de_update_featured_results_set_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

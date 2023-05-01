@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachTrafficSources {
                         crate::protocol_serde::shape_detach_traffic_sources::de_detach_traffic_sources_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

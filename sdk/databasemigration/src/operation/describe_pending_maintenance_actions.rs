@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePendingMaintenan
                         crate::protocol_serde::shape_describe_pending_maintenance_actions::de_describe_pending_maintenance_actions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

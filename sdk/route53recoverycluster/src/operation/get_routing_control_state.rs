@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRoutingControlState {
                         crate::protocol_serde::shape_get_routing_control_state::de_get_routing_control_state_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

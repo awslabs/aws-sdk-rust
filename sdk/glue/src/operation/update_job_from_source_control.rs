@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobFromSourceContr
                         crate::protocol_serde::shape_update_job_from_source_control::de_update_job_from_source_control_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

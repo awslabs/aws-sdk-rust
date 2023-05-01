@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableSecurityHub {
                         crate::protocol_serde::shape_disable_security_hub::de_disable_security_hub_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartVectorEnrichmentJob
                         crate::protocol_serde::shape_start_vector_enrichment_job::de_start_vector_enrichment_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

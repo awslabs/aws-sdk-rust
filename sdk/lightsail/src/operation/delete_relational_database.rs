@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRelationalDatabase
                         crate::protocol_serde::shape_delete_relational_database::de_delete_relational_database_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

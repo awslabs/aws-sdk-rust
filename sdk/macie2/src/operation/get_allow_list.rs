@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAllowList {
                         crate::protocol_serde::shape_get_allow_list::de_get_allow_list_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

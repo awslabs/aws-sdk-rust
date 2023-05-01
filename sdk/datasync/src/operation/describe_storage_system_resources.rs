@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStorageSystemRes
                         crate::protocol_serde::shape_describe_storage_system_resources::de_describe_storage_system_resources_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEndpointWeightsAnd
                         crate::protocol_serde::shape_update_endpoint_weights_and_capacities::de_update_endpoint_weights_and_capacities_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

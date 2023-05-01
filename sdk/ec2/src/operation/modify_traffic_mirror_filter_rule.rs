@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyTrafficMirrorFilte
                         crate::protocol_serde::shape_modify_traffic_mirror_filter_rule::de_modify_traffic_mirror_filter_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

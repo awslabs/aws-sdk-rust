@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIdentityVerificationA
                         crate::protocol_serde::shape_get_identity_verification_attributes::de_get_identity_verification_attributes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

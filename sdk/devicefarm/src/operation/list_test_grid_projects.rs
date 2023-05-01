@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTestGridProjects {
                         crate::protocol_serde::shape_list_test_grid_projects::de_list_test_grid_projects_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

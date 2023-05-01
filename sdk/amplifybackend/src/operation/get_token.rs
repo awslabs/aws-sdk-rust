@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetToken {
                         crate::protocol_serde::shape_get_token::de_get_token_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

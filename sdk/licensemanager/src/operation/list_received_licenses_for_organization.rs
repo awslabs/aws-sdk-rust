@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListReceivedLicensesForO
                         crate::protocol_serde::shape_list_received_licenses_for_organization::de_list_received_licenses_for_organization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResolverQueryLo
                         crate::protocol_serde::shape_associate_resolver_query_log_config::de_associate_resolver_query_log_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHsmClientCertifica
                         crate::protocol_serde::shape_delete_hsm_client_certificate::de_delete_hsm_client_certificate_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

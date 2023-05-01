@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportHostKey {
                         crate::protocol_serde::shape_import_host_key::de_import_host_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

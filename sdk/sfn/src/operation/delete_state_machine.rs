@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStateMachine {
                         crate::protocol_serde::shape_delete_state_machine::de_delete_state_machine_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

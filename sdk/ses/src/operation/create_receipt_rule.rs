@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateReceiptRule {
                         crate::protocol_serde::shape_create_receipt_rule::de_create_receipt_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFunctionConcurrency {
                         crate::protocol_serde::shape_get_function_concurrency::de_get_function_concurrency_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

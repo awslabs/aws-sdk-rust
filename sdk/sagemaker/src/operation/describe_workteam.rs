@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeWorkteam {
                         crate::protocol_serde::shape_describe_workteam::de_describe_workteam_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

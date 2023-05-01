@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAllFeatures {
                         crate::protocol_serde::shape_enable_all_features::de_enable_all_features_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelZonalShift {
                         crate::protocol_serde::shape_cancel_zonal_shift::de_cancel_zonal_shift_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

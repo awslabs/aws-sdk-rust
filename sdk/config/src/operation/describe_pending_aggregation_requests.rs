@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePendingAggregati
                         crate::protocol_serde::shape_describe_pending_aggregation_requests::de_describe_pending_aggregation_requests_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

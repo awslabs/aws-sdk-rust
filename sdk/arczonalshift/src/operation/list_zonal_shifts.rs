@@ -112,6 +112,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListZonalShifts {
                         crate::protocol_serde::shape_list_zonal_shifts::de_list_zonal_shifts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeStudio {
                         crate::protocol_serde::shape_describe_studio::de_describe_studio_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

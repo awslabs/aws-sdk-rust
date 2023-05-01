@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateVPCWithHostedZo
                         crate::protocol_serde::shape_associate_vpc_with_hosted_zone::de_associate_vpc_with_hosted_zone_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

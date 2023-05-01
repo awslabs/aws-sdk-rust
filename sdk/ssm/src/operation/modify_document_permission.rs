@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyDocumentPermission
                         crate::protocol_serde::shape_modify_document_permission::de_modify_document_permission_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

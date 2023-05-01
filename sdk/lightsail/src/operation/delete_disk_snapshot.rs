@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDiskSnapshot {
                         crate::protocol_serde::shape_delete_disk_snapshot::de_delete_disk_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

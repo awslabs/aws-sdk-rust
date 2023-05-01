@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVaults {
                         crate::protocol_serde::shape_list_vaults::de_list_vaults_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

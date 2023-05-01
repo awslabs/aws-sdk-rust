@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteNetwork {
                         crate::protocol_serde::shape_delete_network::de_delete_network_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

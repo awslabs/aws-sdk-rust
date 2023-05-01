@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopCampaign {
                         crate::protocol_serde::shape_stop_campaign::de_stop_campaign_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetDefaultSenderId {
                         crate::protocol_serde::shape_set_default_sender_id::de_set_default_sender_id_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

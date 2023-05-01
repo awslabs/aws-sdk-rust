@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopTrigger {
                         crate::protocol_serde::shape_stop_trigger::de_stop_trigger_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

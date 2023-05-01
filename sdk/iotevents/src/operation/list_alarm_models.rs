@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAlarmModels {
                         crate::protocol_serde::shape_list_alarm_models::de_list_alarm_models_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

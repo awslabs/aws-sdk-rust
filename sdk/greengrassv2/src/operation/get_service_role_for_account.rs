@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceRoleForAccount
                         crate::protocol_serde::shape_get_service_role_for_account::de_get_service_role_for_account_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBackupVault {
                         crate::protocol_serde::shape_create_backup_vault::de_create_backup_vault_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

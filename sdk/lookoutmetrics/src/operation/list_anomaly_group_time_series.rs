@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAnomalyGroupTimeSeri
                         crate::protocol_serde::shape_list_anomaly_group_time_series::de_list_anomaly_group_time_series_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

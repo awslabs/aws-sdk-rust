@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGlobalReplicationG
                         crate::protocol_serde::shape_delete_global_replication_group::de_delete_global_replication_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

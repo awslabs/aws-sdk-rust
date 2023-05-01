@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDistributionWithSt
                         crate::protocol_serde::shape_update_distribution_with_staging_config::de_update_distribution_with_staging_config_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

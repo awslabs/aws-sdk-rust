@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCostAllocationTags
                         crate::protocol_serde::shape_update_cost_allocation_tags_status::de_update_cost_allocation_tags_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartMultiplex {
                         crate::protocol_serde::shape_start_multiplex::de_start_multiplex_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

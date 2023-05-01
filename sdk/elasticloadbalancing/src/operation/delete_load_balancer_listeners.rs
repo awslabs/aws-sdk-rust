@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancerListen
                         crate::protocol_serde::shape_delete_load_balancer_listeners::de_delete_load_balancer_listeners_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

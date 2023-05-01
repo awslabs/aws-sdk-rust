@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoleAlias {
                         crate::protocol_serde::shape_update_role_alias::de_update_role_alias_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

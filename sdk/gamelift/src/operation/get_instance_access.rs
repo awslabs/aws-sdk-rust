@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInstanceAccess {
                         crate::protocol_serde::shape_get_instance_access::de_get_instance_access_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

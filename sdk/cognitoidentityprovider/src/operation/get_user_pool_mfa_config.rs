@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserPoolMfaConfig {
                         crate::protocol_serde::shape_get_user_pool_mfa_config::de_get_user_pool_mfa_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

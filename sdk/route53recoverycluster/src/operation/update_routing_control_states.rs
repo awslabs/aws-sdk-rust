@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingControlStat
                         crate::protocol_serde::shape_update_routing_control_states::de_update_routing_control_states_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyUsageLimit {
                         crate::protocol_serde::shape_modify_usage_limit::de_modify_usage_limit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAuthorizer {
                         crate::protocol_serde::shape_get_authorizer::de_get_authorizer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

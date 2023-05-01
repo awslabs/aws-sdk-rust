@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetHostReservationPurcha
                         crate::protocol_serde::shape_get_host_reservation_purchase_preview::de_get_host_reservation_purchase_preview_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

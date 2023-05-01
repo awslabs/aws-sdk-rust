@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelContact {
                         crate::protocol_serde::shape_cancel_contact::de_cancel_contact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

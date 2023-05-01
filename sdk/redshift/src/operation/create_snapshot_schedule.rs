@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSnapshotSchedule {
                         crate::protocol_serde::shape_create_snapshot_schedule::de_create_snapshot_schedule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

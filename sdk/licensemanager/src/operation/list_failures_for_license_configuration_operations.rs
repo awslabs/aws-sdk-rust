@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFailuresForLicenseCo
                         crate::protocol_serde::shape_list_failures_for_license_configuration_operations::de_list_failures_for_license_configuration_operations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

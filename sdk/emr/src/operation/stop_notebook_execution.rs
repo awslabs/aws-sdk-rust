@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopNotebookExecution {
                         crate::protocol_serde::shape_stop_notebook_execution::de_stop_notebook_execution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

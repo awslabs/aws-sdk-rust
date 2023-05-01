@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLicense {
                         crate::protocol_serde::shape_associate_license::de_associate_license_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

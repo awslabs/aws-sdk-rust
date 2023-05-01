@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContainerPolicy {
                         crate::protocol_serde::shape_get_container_policy::de_get_container_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

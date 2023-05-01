@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutChannelExpirationSett
                         crate::protocol_serde::shape_put_channel_expiration_settings::de_put_channel_expiration_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

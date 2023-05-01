@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCrawler {
                         crate::protocol_serde::shape_get_crawler::de_get_crawler_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

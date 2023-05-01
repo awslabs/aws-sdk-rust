@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceRequests {
                         crate::protocol_serde::shape_list_resource_requests::de_list_resource_requests_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

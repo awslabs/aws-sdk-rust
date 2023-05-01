@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMediaPipeline {
                         crate::protocol_serde::shape_get_media_pipeline::de_get_media_pipeline_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportImage {
                         crate::protocol_serde::shape_export_image::de_export_image_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

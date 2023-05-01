@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJob {
                         crate::protocol_serde::shape_delete_job::de_delete_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

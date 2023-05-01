@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFleetMetric {
                         crate::protocol_serde::shape_create_fleet_metric::de_create_fleet_metric_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

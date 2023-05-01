@@ -125,6 +125,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDevices {
                         crate::protocol_serde::shape_get_devices::de_get_devices_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

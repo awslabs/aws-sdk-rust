@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRetainedMessages {
                         crate::protocol_serde::shape_list_retained_messages::de_list_retained_messages_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

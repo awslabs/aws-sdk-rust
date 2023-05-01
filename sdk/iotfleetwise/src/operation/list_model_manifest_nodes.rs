@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListModelManifestNodes {
                         crate::protocol_serde::shape_list_model_manifest_nodes::de_list_model_manifest_nodes_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

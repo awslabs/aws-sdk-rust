@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDeployments {
                         crate::protocol_serde::shape_get_deployments::de_get_deployments_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

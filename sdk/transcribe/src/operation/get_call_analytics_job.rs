@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallAnalyticsJob {
                         crate::protocol_serde::shape_get_call_analytics_job::de_get_call_analytics_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

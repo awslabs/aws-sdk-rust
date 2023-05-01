@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomVerificationEm
                         crate::protocol_serde::shape_list_custom_verification_email_templates::de_list_custom_verification_email_templates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

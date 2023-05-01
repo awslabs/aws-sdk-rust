@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOpsMetadata {
                         crate::protocol_serde::shape_list_ops_metadata::de_list_ops_metadata_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

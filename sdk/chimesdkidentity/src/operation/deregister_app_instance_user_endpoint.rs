@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterAppInstanceUse
                         crate::protocol_serde::shape_deregister_app_instance_user_endpoint::de_deregister_app_instance_user_endpoint_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

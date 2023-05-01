@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchThings {
                         crate::protocol_serde::shape_search_things::de_search_things_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

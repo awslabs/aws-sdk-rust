@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrafficPolicyInstance
                         crate::protocol_serde::shape_get_traffic_policy_instance_count::de_get_traffic_policy_instance_count_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

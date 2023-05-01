@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWebACL {
                         crate::protocol_serde::shape_get_web_acl::de_get_web_acl_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

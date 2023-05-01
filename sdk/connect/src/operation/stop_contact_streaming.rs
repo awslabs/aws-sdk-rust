@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopContactStreaming {
                         crate::protocol_serde::shape_stop_contact_streaming::de_stop_contact_streaming_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

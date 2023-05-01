@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeControlPanel {
                         crate::protocol_serde::shape_describe_control_panel::de_describe_control_panel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

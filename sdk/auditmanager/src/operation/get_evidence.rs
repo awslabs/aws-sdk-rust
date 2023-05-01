@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEvidence {
                         crate::protocol_serde::shape_get_evidence::de_get_evidence_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -134,6 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualClusters {
                         crate::protocol_serde::shape_list_virtual_clusters::de_list_virtual_clusters_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

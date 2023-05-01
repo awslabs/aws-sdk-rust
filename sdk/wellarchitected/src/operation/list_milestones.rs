@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMilestones {
                         crate::protocol_serde::shape_list_milestones::de_list_milestones_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

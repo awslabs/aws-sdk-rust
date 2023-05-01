@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComputeAuthToken {
                         crate::protocol_serde::shape_get_compute_auth_token::de_get_compute_auth_token_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

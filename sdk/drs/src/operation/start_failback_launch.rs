@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartFailbackLaunch {
                         crate::protocol_serde::shape_start_failback_launch::de_start_failback_launch_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

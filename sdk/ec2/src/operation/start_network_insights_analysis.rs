@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartNetworkInsightsAnal
                         crate::protocol_serde::shape_start_network_insights_analysis::de_start_network_insights_analysis_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

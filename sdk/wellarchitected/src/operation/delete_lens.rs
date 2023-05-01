@@ -115,6 +115,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLens {
                         crate::protocol_serde::shape_delete_lens::de_delete_lens_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

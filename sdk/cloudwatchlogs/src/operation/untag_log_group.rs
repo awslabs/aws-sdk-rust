@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagLogGroup {
                         crate::protocol_serde::shape_untag_log_group::de_untag_log_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

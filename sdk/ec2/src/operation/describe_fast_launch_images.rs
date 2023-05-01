@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFastLaunchImages
                         crate::protocol_serde::shape_describe_fast_launch_images::de_describe_fast_launch_images_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

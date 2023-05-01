@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOpenIDConnectProvi
                         crate::protocol_serde::shape_delete_open_id_connect_provider::de_delete_open_id_connect_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

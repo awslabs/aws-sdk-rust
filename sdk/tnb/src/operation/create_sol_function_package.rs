@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSolFunctionPackage
                         crate::protocol_serde::shape_create_sol_function_package::de_create_sol_function_package_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

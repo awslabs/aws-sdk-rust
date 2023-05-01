@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReportTaskRunnerHeartbea
                         crate::protocol_serde::shape_report_task_runner_heartbeat::de_report_task_runner_heartbeat_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

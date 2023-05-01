@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveLayerVersionPermis
                         crate::protocol_serde::shape_remove_layer_version_permission::de_remove_layer_version_permission_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

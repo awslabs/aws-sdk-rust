@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInventoryEntries {
                         crate::protocol_serde::shape_list_inventory_entries::de_list_inventory_entries_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

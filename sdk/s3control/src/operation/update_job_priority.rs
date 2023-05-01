@@ -111,6 +111,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobPriority {
                         crate::protocol_serde::shape_update_job_priority::de_update_job_priority_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

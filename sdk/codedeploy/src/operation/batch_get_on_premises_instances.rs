@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetOnPremisesInstan
                         crate::protocol_serde::shape_batch_get_on_premises_instances::de_batch_get_on_premises_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

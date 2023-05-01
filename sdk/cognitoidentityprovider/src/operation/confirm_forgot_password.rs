@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmForgotPassword {
                         crate::protocol_serde::shape_confirm_forgot_password::de_confirm_forgot_password_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

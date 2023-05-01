@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopMonitoringMembers {
                         crate::protocol_serde::shape_stop_monitoring_members::de_stop_monitoring_members_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

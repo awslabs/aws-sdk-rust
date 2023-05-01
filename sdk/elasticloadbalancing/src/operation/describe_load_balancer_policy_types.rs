@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerPoli
                         crate::protocol_serde::shape_describe_load_balancer_policy_types::de_describe_load_balancer_policy_types_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

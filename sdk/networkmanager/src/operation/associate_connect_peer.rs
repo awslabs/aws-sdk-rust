@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateConnectPeer {
                         crate::protocol_serde::shape_associate_connect_peer::de_associate_connect_peer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

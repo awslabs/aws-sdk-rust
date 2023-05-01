@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGatewayInformation
                         crate::protocol_serde::shape_update_gateway_information::de_update_gateway_information_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDomainTransferToAn
                         crate::protocol_serde::shape_cancel_domain_transfer_to_another_aws_account::de_cancel_domain_transfer_to_another_aws_account_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

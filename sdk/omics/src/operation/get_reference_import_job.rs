@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetReferenceImportJob {
                         crate::protocol_serde::shape_get_reference_import_job::de_get_reference_import_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

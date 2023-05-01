@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAppLaunchConfiguratio
                         crate::protocol_serde::shape_get_app_launch_configuration::de_get_app_launch_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketAccessKeys {
                         crate::protocol_serde::shape_get_bucket_access_keys::de_get_bucket_access_keys_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableProfile {
                         crate::protocol_serde::shape_disable_profile::de_disable_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeICD10CMInference
                         crate::protocol_serde::shape_describe_icd10_cm_inference_job::de_describe_icd10_cm_inference_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

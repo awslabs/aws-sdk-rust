@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureLogsForPlayback
                         crate::protocol_serde::shape_configure_logs_for_playback_configuration::de_configure_logs_for_playback_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

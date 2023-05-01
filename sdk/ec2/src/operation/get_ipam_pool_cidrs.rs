@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetIpamPoolCidrs {
                         crate::protocol_serde::shape_get_ipam_pool_cidrs::de_get_ipam_pool_cidrs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

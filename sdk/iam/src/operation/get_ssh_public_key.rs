@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSSHPublicKey {
                         crate::protocol_serde::shape_get_ssh_public_key::de_get_ssh_public_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

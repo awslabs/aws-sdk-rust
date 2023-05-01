@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGovCloudAccount {
                         crate::protocol_serde::shape_create_gov_cloud_account::de_create_gov_cloud_account_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

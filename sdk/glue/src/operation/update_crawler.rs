@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCrawler {
                         crate::protocol_serde::shape_update_crawler::de_update_crawler_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

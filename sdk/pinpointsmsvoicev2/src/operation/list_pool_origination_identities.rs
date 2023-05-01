@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPoolOriginationIdent
                         crate::protocol_serde::shape_list_pool_origination_identities::de_list_pool_origination_identities_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

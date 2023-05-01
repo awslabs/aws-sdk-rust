@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartConnection {
                         crate::protocol_serde::shape_start_connection::de_start_connection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

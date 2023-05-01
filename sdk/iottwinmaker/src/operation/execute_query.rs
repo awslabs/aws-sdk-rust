@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteQuery {
                         crate::protocol_serde::shape_execute_query::de_execute_query_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

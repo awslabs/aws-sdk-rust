@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeReportPlan {
                         crate::protocol_serde::shape_describe_report_plan::de_describe_report_plan_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

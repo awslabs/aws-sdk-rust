@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InitializeService {
                         crate::protocol_serde::shape_initialize_service::de_initialize_service_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

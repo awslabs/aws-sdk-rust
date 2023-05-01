@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAcceleratorOffer
                         crate::protocol_serde::shape_describe_accelerator_offerings::de_describe_accelerator_offerings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

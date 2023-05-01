@@ -95,6 +95,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetView {
                         crate::protocol_serde::shape_get_view::de_get_view_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

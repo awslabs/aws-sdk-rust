@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAWSServiceAccessForO
                         crate::protocol_serde::shape_list_aws_service_access_for_organization::de_list_aws_service_access_for_organization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

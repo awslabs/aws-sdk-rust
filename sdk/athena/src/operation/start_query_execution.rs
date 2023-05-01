@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartQueryExecution {
                         crate::protocol_serde::shape_start_query_execution::de_start_query_execution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

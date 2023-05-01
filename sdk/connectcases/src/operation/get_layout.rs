@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLayout {
                         crate::protocol_serde::shape_get_layout::de_get_layout_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

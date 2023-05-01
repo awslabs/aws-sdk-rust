@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFpgaImages {
                         crate::protocol_serde::shape_describe_fpga_images::de_describe_fpga_images_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateVPCFromHoste
                         crate::protocol_serde::shape_disassociate_vpc_from_hosted_zone::de_disassociate_vpc_from_hosted_zone_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

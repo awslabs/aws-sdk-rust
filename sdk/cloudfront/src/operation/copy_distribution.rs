@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyDistribution {
                         crate::protocol_serde::shape_copy_distribution::de_copy_distribution_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

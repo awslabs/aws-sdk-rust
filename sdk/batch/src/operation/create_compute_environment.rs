@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComputeEnvironment
                         crate::protocol_serde::shape_create_compute_environment::de_create_compute_environment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

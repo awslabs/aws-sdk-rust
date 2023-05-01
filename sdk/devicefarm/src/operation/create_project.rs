@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateProject {
                         crate::protocol_serde::shape_create_project::de_create_project_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

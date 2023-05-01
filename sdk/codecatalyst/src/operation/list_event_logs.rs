@@ -95,6 +95,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventLogs {
                         crate::protocol_serde::shape_list_event_logs::de_list_event_logs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

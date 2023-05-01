@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTrustAnchor {
                         crate::protocol_serde::shape_update_trust_anchor::de_update_trust_anchor_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

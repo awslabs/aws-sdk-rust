@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SendRawEmail {
                         crate::protocol_serde::shape_send_raw_email::de_send_raw_email_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

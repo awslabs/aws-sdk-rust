@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLabelGroup {
                         crate::protocol_serde::shape_create_label_group::de_create_label_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

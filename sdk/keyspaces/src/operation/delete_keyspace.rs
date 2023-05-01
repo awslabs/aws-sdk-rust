@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeyspace {
                         crate::protocol_serde::shape_delete_keyspace::de_delete_keyspace_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

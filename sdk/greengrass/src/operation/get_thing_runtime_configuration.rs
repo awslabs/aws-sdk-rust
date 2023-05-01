@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetThingRuntimeConfigura
                         crate::protocol_serde::shape_get_thing_runtime_configuration::de_get_thing_runtime_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

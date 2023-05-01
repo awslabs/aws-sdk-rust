@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPortfolioSummary {
                         crate::protocol_serde::shape_get_portfolio_summary::de_get_portfolio_summary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

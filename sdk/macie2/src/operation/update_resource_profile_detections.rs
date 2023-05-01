@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceProfileDet
                         crate::protocol_serde::shape_update_resource_profile_detections::de_update_resource_profile_detections_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

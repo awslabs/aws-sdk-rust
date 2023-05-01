@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntitiesDetectionV2J
                         crate::protocol_serde::shape_list_entities_detection_v2_jobs::de_list_entities_detection_v2_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

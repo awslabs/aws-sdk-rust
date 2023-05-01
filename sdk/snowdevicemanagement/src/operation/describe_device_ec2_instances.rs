@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDeviceEc2Instanc
                         crate::protocol_serde::shape_describe_device_ec2_instances::de_describe_device_ec2_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeliverConfigSnapshot {
                         crate::protocol_serde::shape_deliver_config_snapshot::de_deliver_config_snapshot_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

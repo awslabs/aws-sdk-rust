@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAppInputSources {
                         crate::protocol_serde::shape_list_app_input_sources::de_list_app_input_sources_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

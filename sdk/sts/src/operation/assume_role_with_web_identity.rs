@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRoleWithWebIdentit
                         crate::protocol_serde::shape_assume_role_with_web_identity::de_assume_role_with_web_identity_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

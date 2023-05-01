@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContinuousDeployme
                         crate::protocol_serde::shape_update_continuous_deployment_policy::de_update_continuous_deployment_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFHIRDatastore {
                         crate::protocol_serde::shape_create_fhir_datastore::de_create_fhir_datastore_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

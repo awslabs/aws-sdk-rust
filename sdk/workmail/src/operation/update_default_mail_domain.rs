@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDefaultMailDomain 
                         crate::protocol_serde::shape_update_default_mail_domain::de_update_default_mail_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

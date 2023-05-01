@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateThemeAlias {
                         crate::protocol_serde::shape_create_theme_alias::de_create_theme_alias_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

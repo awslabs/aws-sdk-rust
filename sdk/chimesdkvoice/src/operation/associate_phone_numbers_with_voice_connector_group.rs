@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePhoneNumbersWit
                         crate::protocol_serde::shape_associate_phone_numbers_with_voice_connector_group::de_associate_phone_numbers_with_voice_connector_group_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

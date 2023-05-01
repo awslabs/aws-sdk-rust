@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMessagingStreamingCon
                         crate::protocol_serde::shape_put_messaging_streaming_configurations::de_put_messaging_streaming_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

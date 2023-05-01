@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDhcpOptions {
                         crate::protocol_serde::shape_describe_dhcp_options::de_describe_dhcp_options_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeprecateActivityType {
                         crate::protocol_serde::shape_deprecate_activity_type::de_deprecate_activity_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

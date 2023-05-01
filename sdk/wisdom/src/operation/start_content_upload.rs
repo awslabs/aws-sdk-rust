@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartContentUpload {
                         crate::protocol_serde::shape_start_content_upload::de_start_content_upload_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

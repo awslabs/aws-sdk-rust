@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveManagedScalingPoli
                         crate::protocol_serde::shape_remove_managed_scaling_policy::de_remove_managed_scaling_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

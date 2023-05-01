@@ -125,6 +125,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHealthEvents {
                         crate::protocol_serde::shape_list_health_events::de_list_health_events_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

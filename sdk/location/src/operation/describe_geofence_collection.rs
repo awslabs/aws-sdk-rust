@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGeofenceCollecti
                         crate::protocol_serde::shape_describe_geofence_collection::de_describe_geofence_collection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAvailabilityZones
                         crate::protocol_serde::shape_disable_availability_zones_for_load_balancer::de_disable_availability_zones_for_load_balancer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

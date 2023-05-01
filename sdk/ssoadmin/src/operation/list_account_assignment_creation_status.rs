@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssignmentCre
                         crate::protocol_serde::shape_list_account_assignment_creation_status::de_list_account_assignment_creation_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

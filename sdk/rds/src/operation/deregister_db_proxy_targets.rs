@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterDBProxyTargets
                         crate::protocol_serde::shape_deregister_db_proxy_targets::de_deregister_db_proxy_targets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

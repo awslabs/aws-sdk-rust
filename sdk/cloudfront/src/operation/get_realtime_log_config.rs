@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRealtimeLogConfig {
                         crate::protocol_serde::shape_get_realtime_log_config::de_get_realtime_log_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

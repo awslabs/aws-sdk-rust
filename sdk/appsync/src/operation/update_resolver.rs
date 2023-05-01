@@ -114,6 +114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResolver {
                         crate::protocol_serde::shape_update_resolver::de_update_resolver_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

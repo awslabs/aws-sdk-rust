@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateTrackerConsumer
                         crate::protocol_serde::shape_associate_tracker_consumer::de_associate_tracker_consumer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

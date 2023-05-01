@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceLastAccessedDe
                         crate::protocol_serde::shape_get_service_last_accessed_details_with_entities::de_get_service_last_accessed_details_with_entities_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

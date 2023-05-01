@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReportInstanceStatus {
                         crate::protocol_serde::shape_report_instance_status::de_report_instance_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

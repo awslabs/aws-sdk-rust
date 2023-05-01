@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchProfile {
                         crate::protocol_serde::shape_delete_launch_profile::de_delete_launch_profile_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetKeyGroup {
                         crate::protocol_serde::shape_get_key_group::de_get_key_group_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

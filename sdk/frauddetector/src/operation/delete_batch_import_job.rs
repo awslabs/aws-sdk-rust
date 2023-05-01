@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBatchImportJob {
                         crate::protocol_serde::shape_delete_batch_import_job::de_delete_batch_import_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

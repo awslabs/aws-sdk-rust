@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutScheduledAction {
                         crate::protocol_serde::shape_put_scheduled_action::de_put_scheduled_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

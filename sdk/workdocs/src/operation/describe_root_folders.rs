@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRootFolders {
                         crate::protocol_serde::shape_describe_root_folders::de_describe_root_folders_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

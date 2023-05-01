@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteOrganizationalUnit
                         crate::protocol_serde::shape_delete_organizational_unit::de_delete_organizational_unit_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

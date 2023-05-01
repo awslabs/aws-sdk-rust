@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetectProtectiveEquipmen
                         crate::protocol_serde::shape_detect_protective_equipment::de_detect_protective_equipment_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

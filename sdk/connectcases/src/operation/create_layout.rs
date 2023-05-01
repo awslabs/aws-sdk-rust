@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLayout {
                         crate::protocol_serde::shape_create_layout::de_create_layout_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAutoTerminationPolicy
                         crate::protocol_serde::shape_put_auto_termination_policy::de_put_auto_termination_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

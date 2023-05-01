@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAvailabilityMoni
                         crate::protocol_serde::shape_describe_availability_monitor_test::de_describe_availability_monitor_test_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

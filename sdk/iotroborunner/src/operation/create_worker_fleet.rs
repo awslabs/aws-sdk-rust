@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkerFleet {
                         crate::protocol_serde::shape_create_worker_fleet::de_create_worker_fleet_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

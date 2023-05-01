@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListScheduledAudits {
                         crate::protocol_serde::shape_list_scheduled_audits::de_list_scheduled_audits_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRemediationConfi
                         crate::protocol_serde::shape_describe_remediation_configurations::de_describe_remediation_configurations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

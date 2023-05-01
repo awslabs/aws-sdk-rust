@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCodeCoverages {
                         crate::protocol_serde::shape_describe_code_coverages::de_describe_code_coverages_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

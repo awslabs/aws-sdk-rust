@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateNotificationRule {
                         crate::protocol_serde::shape_create_notification_rule::de_create_notification_rule_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

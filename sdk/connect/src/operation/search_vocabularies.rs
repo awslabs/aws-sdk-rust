@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchVocabularies {
                         crate::protocol_serde::shape_search_vocabularies::de_search_vocabularies_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

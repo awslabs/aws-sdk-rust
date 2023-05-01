@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAlternateContact {
                         crate::protocol_serde::shape_delete_alternate_contact::de_delete_alternate_contact_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

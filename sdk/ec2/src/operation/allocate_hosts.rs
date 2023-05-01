@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateHosts {
                         crate::protocol_serde::shape_allocate_hosts::de_allocate_hosts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

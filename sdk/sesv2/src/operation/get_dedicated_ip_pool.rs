@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDedicatedIpPool {
                         crate::protocol_serde::shape_get_dedicated_ip_pool::de_get_dedicated_ip_pool_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

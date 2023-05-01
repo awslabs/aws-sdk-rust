@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptReservedInstancesE
                         crate::protocol_serde::shape_accept_reserved_instances_exchange_quote::de_accept_reserved_instances_exchange_quote_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

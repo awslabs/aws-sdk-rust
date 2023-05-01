@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResetServiceSetting {
                         crate::protocol_serde::shape_reset_service_setting::de_reset_service_setting_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

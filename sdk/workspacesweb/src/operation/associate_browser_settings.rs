@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateBrowserSettings
                         crate::protocol_serde::shape_associate_browser_settings::de_associate_browser_settings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

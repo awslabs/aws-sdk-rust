@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBulkPublishDetails {
                         crate::protocol_serde::shape_get_bulk_publish_details::de_get_bulk_publish_details_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnmonitorInstances {
                         crate::protocol_serde::shape_unmonitor_instances::de_unmonitor_instances_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

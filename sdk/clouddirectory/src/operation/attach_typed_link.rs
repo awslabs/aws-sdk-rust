@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachTypedLink {
                         crate::protocol_serde::shape_attach_typed_link::de_attach_typed_link_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

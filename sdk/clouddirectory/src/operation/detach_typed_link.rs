@@ -97,6 +97,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachTypedLink {
                         crate::protocol_serde::shape_detach_typed_link::de_detach_typed_link_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

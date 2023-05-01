@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyReplicationTask {
                         crate::protocol_serde::shape_modify_replication_task::de_modify_replication_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

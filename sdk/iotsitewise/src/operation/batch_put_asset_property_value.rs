@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchPutAssetPropertyVal
                         crate::protocol_serde::shape_batch_put_asset_property_value::de_batch_put_asset_property_value_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

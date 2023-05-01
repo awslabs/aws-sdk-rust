@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInfrastructureConfigu
                         crate::protocol_serde::shape_get_infrastructure_configuration::de_get_infrastructure_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

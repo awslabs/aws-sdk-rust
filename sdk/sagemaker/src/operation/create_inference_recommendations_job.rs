@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInferenceRecommend
                         crate::protocol_serde::shape_create_inference_recommendations_job::de_create_inference_recommendations_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

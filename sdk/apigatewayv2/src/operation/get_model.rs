@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetModel {
                         crate::protocol_serde::shape_get_model::de_get_model_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -120,6 +120,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchAssociatedTranscri
                         crate::protocol_serde::shape_search_associated_transcripts::de_search_associated_transcripts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

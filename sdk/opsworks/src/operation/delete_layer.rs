@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLayer {
                         crate::protocol_serde::shape_delete_layer::de_delete_layer_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

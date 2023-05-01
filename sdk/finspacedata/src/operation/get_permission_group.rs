@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPermissionGroup {
                         crate::protocol_serde::shape_get_permission_group::de_get_permission_group_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

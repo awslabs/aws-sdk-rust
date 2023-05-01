@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEventAggregates 
                         crate::protocol_serde::shape_describe_event_aggregates::de_describe_event_aggregates_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

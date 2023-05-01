@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyHapg {
                         crate::protocol_serde::shape_modify_hapg::de_modify_hapg_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

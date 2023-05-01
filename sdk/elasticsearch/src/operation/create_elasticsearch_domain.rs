@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateElasticsearchDomai
                         crate::protocol_serde::shape_create_elasticsearch_domain::de_create_elasticsearch_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

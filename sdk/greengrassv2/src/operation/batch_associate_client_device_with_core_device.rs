@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateClientDevi
                         crate::protocol_serde::shape_batch_associate_client_device_with_core_device::de_batch_associate_client_device_with_core_device_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

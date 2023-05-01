@@ -118,6 +118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteMultipartUpload 
                         crate::protocol_serde::shape_complete_multipart_upload::de_complete_multipart_upload_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

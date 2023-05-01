@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DownloadDBLogFilePortion
                         crate::protocol_serde::shape_download_db_log_file_portion::de_download_db_log_file_portion_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

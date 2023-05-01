@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMailboxPermissions
                         crate::protocol_serde::shape_delete_mailbox_permissions::de_delete_mailbox_permissions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

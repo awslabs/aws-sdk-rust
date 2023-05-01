@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPartnerEventSourceAc
                         crate::protocol_serde::shape_list_partner_event_source_accounts::de_list_partner_event_source_accounts_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

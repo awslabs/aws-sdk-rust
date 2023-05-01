@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdvertiseByoipCidr {
                         crate::protocol_serde::shape_advertise_byoip_cidr::de_advertise_byoip_cidr_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

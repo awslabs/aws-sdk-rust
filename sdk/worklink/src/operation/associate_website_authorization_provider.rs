@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateWebsiteAuthoriz
                         crate::protocol_serde::shape_associate_website_authorization_provider::de_associate_website_authorization_provider_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

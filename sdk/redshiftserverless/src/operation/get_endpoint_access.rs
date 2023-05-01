@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEndpointAccess {
                         crate::protocol_serde::shape_get_endpoint_access::de_get_endpoint_access_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

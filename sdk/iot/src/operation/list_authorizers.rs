@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAuthorizers {
                         crate::protocol_serde::shape_list_authorizers::de_list_authorizers_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

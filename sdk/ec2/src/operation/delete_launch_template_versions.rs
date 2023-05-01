@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLaunchTemplateVers
                         crate::protocol_serde::shape_delete_launch_template_versions::de_delete_launch_template_versions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEngagements {
                         crate::protocol_serde::shape_list_engagements::de_list_engagements_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutDraftAppVersionTempla
                         crate::protocol_serde::shape_put_draft_app_version_template::de_put_draft_app_version_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInventorySchema {
                         crate::protocol_serde::shape_get_inventory_schema::de_get_inventory_schema_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddNotificationChannel {
                         crate::protocol_serde::shape_add_notification_channel::de_add_notification_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

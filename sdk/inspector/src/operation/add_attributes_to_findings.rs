@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddAttributesToFindings 
                         crate::protocol_serde::shape_add_attributes_to_findings::de_add_attributes_to_findings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportCertificate {
                         crate::protocol_serde::shape_export_certificate::de_export_certificate_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

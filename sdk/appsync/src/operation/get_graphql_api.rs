@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGraphqlApi {
                         crate::protocol_serde::shape_get_graphql_api::de_get_graphql_api_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

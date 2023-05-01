@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkerFleets {
                         crate::protocol_serde::shape_list_worker_fleets::de_list_worker_fleets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

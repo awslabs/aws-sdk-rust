@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveKnowledgeBaseTempl
                         crate::protocol_serde::shape_remove_knowledge_base_template_uri::de_remove_knowledge_base_template_uri_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

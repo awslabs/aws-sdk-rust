@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUserAttributeVerifica
                         crate::protocol_serde::shape_get_user_attribute_verification_code::de_get_user_attribute_verification_code_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

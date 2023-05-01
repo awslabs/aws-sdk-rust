@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
                         crate::protocol_serde::shape_list_domains::de_list_domains_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

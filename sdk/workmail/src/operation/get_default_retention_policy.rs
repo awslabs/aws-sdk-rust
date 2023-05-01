@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDefaultRetentionPolic
                         crate::protocol_serde::shape_get_default_retention_policy::de_get_default_retention_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

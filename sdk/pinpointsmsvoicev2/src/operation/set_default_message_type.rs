@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetDefaultMessageType {
                         crate::protocol_serde::shape_set_default_message_type::de_set_default_message_type_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

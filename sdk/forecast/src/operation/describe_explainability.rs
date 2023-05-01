@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeExplainability {
                         crate::protocol_serde::shape_describe_explainability::de_describe_explainability_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

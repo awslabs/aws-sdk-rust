@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeNetworkInsightsP
                         crate::protocol_serde::shape_describe_network_insights_paths::de_describe_network_insights_paths_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

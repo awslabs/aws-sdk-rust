@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RefreshSchemas {
                         crate::protocol_serde::shape_refresh_schemas::de_refresh_schemas_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

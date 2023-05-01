@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RebootRelationalDatabase
                         crate::protocol_serde::shape_reboot_relational_database::de_reboot_relational_database_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

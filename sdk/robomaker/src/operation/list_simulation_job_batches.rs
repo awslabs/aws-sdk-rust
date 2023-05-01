@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSimulationJobBatches
                         crate::protocol_serde::shape_list_simulation_job_batches::de_list_simulation_job_batches_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

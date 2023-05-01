@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDocumentClassificati
                         crate::protocol_serde::shape_list_document_classification_jobs::de_list_document_classification_jobs_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

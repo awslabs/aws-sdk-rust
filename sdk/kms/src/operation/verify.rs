@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for Verify {
                         crate::protocol_serde::shape_verify::de_verify_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

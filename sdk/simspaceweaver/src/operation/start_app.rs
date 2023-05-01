@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartApp {
                         crate::protocol_serde::shape_start_app::de_start_app_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

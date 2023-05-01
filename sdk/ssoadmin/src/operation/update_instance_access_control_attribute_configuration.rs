@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInstanceAccessCont
                         crate::protocol_serde::shape_update_instance_access_control_attribute_configuration::de_update_instance_access_control_attribute_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAssets {
                         crate::protocol_serde::shape_associate_assets::de_associate_assets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

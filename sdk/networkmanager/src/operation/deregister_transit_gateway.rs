@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterTransitGateway
                         crate::protocol_serde::shape_deregister_transit_gateway::de_deregister_transit_gateway_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

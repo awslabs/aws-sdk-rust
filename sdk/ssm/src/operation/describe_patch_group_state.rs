@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePatchGroupState 
                         crate::protocol_serde::shape_describe_patch_group_state::de_describe_patch_group_state_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -107,6 +107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVoiceConnectorGroups
                         crate::protocol_serde::shape_list_voice_connector_groups::de_list_voice_connector_groups_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

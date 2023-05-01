@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCoreDefinitionVers
                         crate::protocol_serde::shape_create_core_definition_version::de_create_core_definition_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

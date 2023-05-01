@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSystemTemplate {
                         crate::protocol_serde::shape_delete_system_template::de_delete_system_template_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

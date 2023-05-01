@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMediaInsightsPipel
                         crate::protocol_serde::shape_update_media_insights_pipeline_status::de_update_media_insights_pipeline_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

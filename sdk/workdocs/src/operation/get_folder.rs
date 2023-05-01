@@ -109,6 +109,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFolder {
                         crate::protocol_serde::shape_get_folder::de_get_folder_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

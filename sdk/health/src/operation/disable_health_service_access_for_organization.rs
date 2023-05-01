@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableHealthServiceAcce
                         crate::protocol_serde::shape_disable_health_service_access_for_organization::de_disable_health_service_access_for_organization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

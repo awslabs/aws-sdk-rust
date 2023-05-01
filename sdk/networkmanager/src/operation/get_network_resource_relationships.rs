@@ -143,6 +143,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkResourceRelati
                         crate::protocol_serde::shape_get_network_resource_relationships::de_get_network_resource_relationships_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

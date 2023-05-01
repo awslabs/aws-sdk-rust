@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateScalingParameters 
                         crate::protocol_serde::shape_update_scaling_parameters::de_update_scaling_parameters_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

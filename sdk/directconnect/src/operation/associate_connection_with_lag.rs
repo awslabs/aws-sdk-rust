@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateConnectionWithL
                         crate::protocol_serde::shape_associate_connection_with_lag::de_associate_connection_with_lag_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

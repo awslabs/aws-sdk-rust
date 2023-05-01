@@ -134,6 +134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFolderContents {
                         crate::protocol_serde::shape_describe_folder_contents::de_describe_folder_contents_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

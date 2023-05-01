@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserPermissionsBou
                         crate::protocol_serde::shape_delete_user_permissions_boundary::de_delete_user_permissions_boundary_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

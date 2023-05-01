@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAssessmentRe
                         crate::protocol_serde::shape_disassociate_assessment_report_evidence_folder::de_disassociate_assessment_report_evidence_folder_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSourceRepositoryClone
                         crate::protocol_serde::shape_get_source_repository_clone_urls::de_get_source_repository_clone_urls_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

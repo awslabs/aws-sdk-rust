@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAffectedAccounts
                         crate::protocol_serde::shape_describe_affected_accounts_for_organization::de_describe_affected_accounts_for_organization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

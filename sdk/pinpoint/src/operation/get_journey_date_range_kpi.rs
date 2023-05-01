@@ -135,6 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJourneyDateRangeKpi {
                         crate::protocol_serde::shape_get_journey_date_range_kpi::de_get_journey_date_range_kpi_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

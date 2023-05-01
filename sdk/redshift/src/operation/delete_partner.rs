@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePartner {
                         crate::protocol_serde::shape_delete_partner::de_delete_partner_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

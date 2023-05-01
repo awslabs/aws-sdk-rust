@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreSnapshotFromRecyc
                         crate::protocol_serde::shape_restore_snapshot_from_recycle_bin::de_restore_snapshot_from_recycle_bin_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

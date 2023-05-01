@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetNetworkInsightsAccess
                         crate::protocol_serde::shape_get_network_insights_access_scope_analysis_findings::de_get_network_insights_access_scope_analysis_findings_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

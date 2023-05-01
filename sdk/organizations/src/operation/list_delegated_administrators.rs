@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDelegatedAdministrat
                         crate::protocol_serde::shape_list_delegated_administrators::de_list_delegated_administrators_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

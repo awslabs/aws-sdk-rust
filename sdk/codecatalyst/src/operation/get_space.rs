@@ -91,6 +91,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSpace {
                         crate::protocol_serde::shape_get_space::de_get_space_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

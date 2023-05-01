@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisconnectRecoveryInstan
                         crate::protocol_serde::shape_disconnect_recovery_instance::de_disconnect_recovery_instance_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

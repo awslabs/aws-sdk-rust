@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePullRequestEvent
                         crate::protocol_serde::shape_describe_pull_request_events::de_describe_pull_request_events_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

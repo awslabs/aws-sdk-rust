@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetProposal {
                         crate::protocol_serde::shape_get_proposal::de_get_proposal_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

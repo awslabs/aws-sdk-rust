@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJob {
                         crate::protocol_serde::shape_cancel_job::de_cancel_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJourney {
                         crate::protocol_serde::shape_delete_journey::de_delete_journey_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

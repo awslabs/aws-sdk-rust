@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachPrincipalPolicy {
                         crate::protocol_serde::shape_detach_principal_policy::de_detach_principal_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

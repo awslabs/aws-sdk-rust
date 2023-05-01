@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFunctions {
                         crate::protocol_serde::shape_list_functions::de_list_functions_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

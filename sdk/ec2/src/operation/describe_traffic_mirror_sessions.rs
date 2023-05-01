@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrafficMirrorSes
                         crate::protocol_serde::shape_describe_traffic_mirror_sessions::de_describe_traffic_mirror_sessions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

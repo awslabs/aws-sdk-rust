@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetClusterCredentialsWit
                         crate::protocol_serde::shape_get_cluster_credentials_with_iam::de_get_cluster_credentials_with_iam_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

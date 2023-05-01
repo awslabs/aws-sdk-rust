@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckDomainAvailability 
                         crate::protocol_serde::shape_check_domain_availability::de_check_domain_availability_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

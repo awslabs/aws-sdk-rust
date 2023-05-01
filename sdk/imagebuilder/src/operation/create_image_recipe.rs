@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateImageRecipe {
                         crate::protocol_serde::shape_create_image_recipe::de_create_image_recipe_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

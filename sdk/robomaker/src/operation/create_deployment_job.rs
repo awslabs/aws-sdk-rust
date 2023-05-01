@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeploymentJob {
                         crate::protocol_serde::shape_create_deployment_job::de_create_deployment_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

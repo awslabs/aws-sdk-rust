@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateTransitGatew
                         crate::protocol_serde::shape_disassociate_transit_gateway_policy_table::de_disassociate_transit_gateway_policy_table_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

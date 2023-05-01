@@ -113,6 +113,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventIntegrationAsso
                         crate::protocol_serde::shape_list_event_integration_associations::de_list_event_integration_associations_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

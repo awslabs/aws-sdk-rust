@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachCertificateToDistr
                         crate::protocol_serde::shape_attach_certificate_to_distribution::de_attach_certificate_to_distribution_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

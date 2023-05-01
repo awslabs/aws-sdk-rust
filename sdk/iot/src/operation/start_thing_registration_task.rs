@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartThingRegistrationTa
                         crate::protocol_serde::shape_start_thing_registration_task::de_start_thing_registration_task_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

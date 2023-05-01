@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUsageLimits {
                         crate::protocol_serde::shape_describe_usage_limits::de_describe_usage_limits_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

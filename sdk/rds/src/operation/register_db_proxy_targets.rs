@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDBProxyTargets {
                         crate::protocol_serde::shape_register_db_proxy_targets::de_register_db_proxy_targets_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

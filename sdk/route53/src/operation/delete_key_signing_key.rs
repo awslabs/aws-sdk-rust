@@ -105,6 +105,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteKeySigningKey {
                         crate::protocol_serde::shape_delete_key_signing_key::de_delete_key_signing_key_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

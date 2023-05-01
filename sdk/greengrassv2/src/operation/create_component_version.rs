@@ -99,6 +99,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComponentVersion {
                         crate::protocol_serde::shape_create_component_version::de_create_component_version_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

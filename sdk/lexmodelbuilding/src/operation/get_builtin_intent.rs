@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBuiltinIntent {
                         crate::protocol_serde::shape_get_builtin_intent::de_get_builtin_intent_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

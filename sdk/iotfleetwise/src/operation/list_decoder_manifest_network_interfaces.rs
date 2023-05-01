@@ -116,6 +116,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDecoderManifestNetwo
                         crate::protocol_serde::shape_list_decoder_manifest_network_interfaces::de_list_decoder_manifest_network_interfaces_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

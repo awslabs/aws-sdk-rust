@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartInstanceOnboardingJ
                         crate::protocol_serde::shape_start_instance_onboarding_job::de_start_instance_onboarding_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

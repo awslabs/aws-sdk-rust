@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCrossAccountAuthor
                         crate::protocol_serde::shape_delete_cross_account_authorization::de_delete_cross_account_authorization_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

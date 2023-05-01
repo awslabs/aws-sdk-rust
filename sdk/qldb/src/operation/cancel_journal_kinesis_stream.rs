@@ -104,6 +104,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelJournalKinesisStre
                         crate::protocol_serde::shape_cancel_journal_kinesis_stream::de_cancel_journal_kinesis_stream_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

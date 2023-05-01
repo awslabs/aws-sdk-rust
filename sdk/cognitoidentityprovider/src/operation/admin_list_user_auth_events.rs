@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AdminListUserAuthEvents 
                         crate::protocol_serde::shape_admin_list_user_auth_events::de_admin_list_user_auth_events_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

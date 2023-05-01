@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSeverityLevels {
                         crate::protocol_serde::shape_describe_severity_levels::de_describe_severity_levels_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

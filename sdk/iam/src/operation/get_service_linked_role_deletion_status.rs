@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetServiceLinkedRoleDele
                         crate::protocol_serde::shape_get_service_linked_role_deletion_status::de_get_service_linked_role_deletion_status_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

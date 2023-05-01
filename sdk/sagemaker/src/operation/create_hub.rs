@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHub {
                         crate::protocol_serde::shape_create_hub::de_create_hub_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

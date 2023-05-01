@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEntityRecognizerSumm
                         crate::protocol_serde::shape_list_entity_recognizer_summaries::de_list_entity_recognizer_summaries_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

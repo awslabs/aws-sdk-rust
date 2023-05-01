@@ -100,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDomainName {
                         crate::protocol_serde::shape_create_domain_name::de_create_domain_name_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

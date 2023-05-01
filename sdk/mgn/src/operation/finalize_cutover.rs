@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for FinalizeCutover {
                         crate::protocol_serde::shape_finalize_cutover::de_finalize_cutover_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

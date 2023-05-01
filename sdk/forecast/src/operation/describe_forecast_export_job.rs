@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeForecastExportJo
                         crate::protocol_serde::shape_describe_forecast_export_job::de_describe_forecast_export_job_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

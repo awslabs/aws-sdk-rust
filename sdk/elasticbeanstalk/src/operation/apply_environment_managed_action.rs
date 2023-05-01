@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplyEnvironmentManagedA
                         crate::protocol_serde::shape_apply_environment_managed_action::de_apply_environment_managed_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

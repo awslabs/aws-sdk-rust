@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOfferingTransactions
                         crate::protocol_serde::shape_list_offering_transactions::de_list_offering_transactions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

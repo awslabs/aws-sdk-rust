@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutCaseEventConfiguratio
                         crate::protocol_serde::shape_put_case_event_configuration::de_put_case_event_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

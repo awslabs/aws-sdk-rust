@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGlobalNetwork {
                         crate::protocol_serde::shape_create_global_network::de_create_global_network_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

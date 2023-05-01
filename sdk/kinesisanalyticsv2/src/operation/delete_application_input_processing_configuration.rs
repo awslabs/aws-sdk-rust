@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApplicationInputPr
                         crate::protocol_serde::shape_delete_application_input_processing_configuration::de_delete_application_input_processing_configuration_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

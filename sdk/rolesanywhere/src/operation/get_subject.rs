@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSubject {
                         crate::protocol_serde::shape_get_subject::de_get_subject_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWirelessDeviceStatist
                         crate::protocol_serde::shape_get_wireless_device_statistics::de_get_wireless_device_statistics_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

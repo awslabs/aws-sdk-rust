@@ -106,6 +106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCertificateFromCsr
                         crate::protocol_serde::shape_create_certificate_from_csr::de_create_certificate_from_csr_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

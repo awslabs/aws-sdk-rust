@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeImagePermissions
                         crate::protocol_serde::shape_describe_image_permissions::de_describe_image_permissions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

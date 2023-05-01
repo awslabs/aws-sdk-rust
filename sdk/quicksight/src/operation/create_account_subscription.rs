@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccountSubscriptio
                         crate::protocol_serde::shape_create_account_subscription::de_create_account_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

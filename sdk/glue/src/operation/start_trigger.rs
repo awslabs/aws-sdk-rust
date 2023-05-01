@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTrigger {
                         crate::protocol_serde::shape_start_trigger::de_start_trigger_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AddPartner {
                         crate::protocol_serde::shape_add_partner::de_add_partner_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

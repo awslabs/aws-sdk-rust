@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelServiceSoftwareUpd
                         crate::protocol_serde::shape_cancel_service_software_update::de_cancel_service_software_update_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

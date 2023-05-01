@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkflow {
                         crate::protocol_serde::shape_create_workflow::de_create_workflow_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

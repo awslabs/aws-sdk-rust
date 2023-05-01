@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoutingProfile {
                         crate::protocol_serde::shape_create_routing_profile::de_create_routing_profile_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

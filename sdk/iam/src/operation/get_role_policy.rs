@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRolePolicy {
                         crate::protocol_serde::shape_get_role_policy::de_get_role_policy_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

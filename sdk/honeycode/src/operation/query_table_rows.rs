@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for QueryTableRows {
                         crate::protocol_serde::shape_query_table_rows::de_query_table_rows_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

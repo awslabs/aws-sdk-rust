@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PublishRecipe {
                         crate::protocol_serde::shape_publish_recipe::de_publish_recipe_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

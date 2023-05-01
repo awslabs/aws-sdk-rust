@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutVerificationStateOnVi
                         crate::protocol_serde::shape_put_verification_state_on_violation::de_put_verification_state_on_violation_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

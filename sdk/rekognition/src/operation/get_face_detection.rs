@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFaceDetection {
                         crate::protocol_serde::shape_get_face_detection::de_get_face_detection_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

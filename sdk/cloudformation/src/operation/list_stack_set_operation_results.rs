@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStackSetOperationRes
                         crate::protocol_serde::shape_list_stack_set_operation_results::de_list_stack_set_operation_results_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

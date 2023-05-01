@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorker {
                         crate::protocol_serde::shape_get_worker::de_get_worker_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

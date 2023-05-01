@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreDBInstanceToPoint
                         crate::protocol_serde::shape_restore_db_instance_to_point_in_time::de_restore_db_instance_to_point_in_time_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

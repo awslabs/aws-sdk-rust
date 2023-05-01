@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMailboxQuota {
                         crate::protocol_serde::shape_update_mailbox_quota::de_update_mailbox_quota_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

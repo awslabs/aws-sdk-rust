@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeEgressOnlyIntern
                         crate::protocol_serde::shape_describe_egress_only_internet_gateways::de_describe_egress_only_internet_gateways_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

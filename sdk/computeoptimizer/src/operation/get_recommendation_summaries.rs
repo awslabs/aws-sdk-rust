@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendationSummari
                         crate::protocol_serde::shape_get_recommendation_summaries::de_get_recommendation_summaries_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

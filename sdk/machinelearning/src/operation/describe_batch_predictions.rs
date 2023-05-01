@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBatchPredictions
                         crate::protocol_serde::shape_describe_batch_predictions::de_describe_batch_predictions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

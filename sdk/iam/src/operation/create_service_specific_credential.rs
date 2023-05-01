@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateServiceSpecificCre
                         crate::protocol_serde::shape_create_service_specific_credential::de_create_service_specific_credential_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

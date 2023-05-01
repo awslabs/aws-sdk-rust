@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInventoryDeletio
                         crate::protocol_serde::shape_describe_inventory_deletions::de_describe_inventory_deletions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnabledStandards {
                         crate::protocol_serde::shape_get_enabled_standards::de_get_enabled_standards_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

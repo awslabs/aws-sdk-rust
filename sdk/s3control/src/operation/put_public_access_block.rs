@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
                         crate::protocol_serde::shape_put_public_access_block::de_put_public_access_block_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

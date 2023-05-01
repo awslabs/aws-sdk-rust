@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSipMediaApplicationAl
                         crate::protocol_serde::shape_get_sip_media_application_alexa_skill_configuration::de_get_sip_media_application_alexa_skill_configuration_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

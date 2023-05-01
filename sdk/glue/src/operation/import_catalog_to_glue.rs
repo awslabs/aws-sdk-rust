@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportCatalogToGlue {
                         crate::protocol_serde::shape_import_catalog_to_glue::de_import_catalog_to_glue_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -102,6 +102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ForgotPassword {
                         crate::protocol_serde::shape_forgot_password::de_forgot_password_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

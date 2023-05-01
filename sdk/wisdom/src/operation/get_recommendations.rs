@@ -117,6 +117,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendations {
                         crate::protocol_serde::shape_get_recommendations::de_get_recommendations_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

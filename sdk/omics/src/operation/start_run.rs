@@ -103,6 +103,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartRun {
                         crate::protocol_serde::shape_start_run::de_start_run_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMitigationAction {
                         crate::protocol_serde::shape_delete_mitigation_action::de_delete_mitigation_action_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

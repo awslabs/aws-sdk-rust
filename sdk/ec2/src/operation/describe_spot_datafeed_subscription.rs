@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSpotDatafeedSubs
                         crate::protocol_serde::shape_describe_spot_datafeed_subscription::de_describe_spot_datafeed_subscription_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

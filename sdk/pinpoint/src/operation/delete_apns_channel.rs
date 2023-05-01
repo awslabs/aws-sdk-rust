@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteApnsChannel {
                         crate::protocol_serde::shape_delete_apns_channel::de_delete_apns_channel_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

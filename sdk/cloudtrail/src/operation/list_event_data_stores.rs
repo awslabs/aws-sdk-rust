@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListEventDataStores {
                         crate::protocol_serde::shape_list_event_data_stores::de_list_event_data_stores_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSubscribersForNo
                         crate::protocol_serde::shape_describe_subscribers_for_notification::de_describe_subscribers_for_notification_http_response(status, headers, body)
                      }
                 }
+                fn sensitive(&self) -> bool { true }
             }
 
 /// Do not use this.

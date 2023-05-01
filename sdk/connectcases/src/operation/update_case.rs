@@ -108,6 +108,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCase {
                         crate::protocol_serde::shape_update_case::de_update_case_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

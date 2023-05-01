@@ -98,6 +98,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPendingJobExecutions 
                         crate::protocol_serde::shape_get_pending_job_executions::de_get_pending_job_executions_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

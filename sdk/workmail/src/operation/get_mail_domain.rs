@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMailDomain {
                         crate::protocol_serde::shape_get_mail_domain::de_get_mail_domain_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

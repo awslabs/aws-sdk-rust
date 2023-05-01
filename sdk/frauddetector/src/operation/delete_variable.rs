@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVariable {
                         crate::protocol_serde::shape_delete_variable::de_delete_variable_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

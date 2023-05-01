@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateQuerySuggestionsCo
                         crate::protocol_serde::shape_update_query_suggestions_config::de_update_query_suggestions_config_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

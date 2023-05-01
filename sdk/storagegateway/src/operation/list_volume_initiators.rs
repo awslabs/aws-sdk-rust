@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVolumeInitiators {
                         crate::protocol_serde::shape_list_volume_initiators::de_list_volume_initiators_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

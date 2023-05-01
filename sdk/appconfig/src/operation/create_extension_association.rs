@@ -96,6 +96,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateExtensionAssociati
                         crate::protocol_serde::shape_create_extension_association::de_create_extension_association_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

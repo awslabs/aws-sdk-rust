@@ -92,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPortfolioPreferences 
                         crate::protocol_serde::shape_get_portfolio_preferences::de_get_portfolio_preferences_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.

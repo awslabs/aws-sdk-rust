@@ -101,6 +101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOpenIdTokenForDevelop
                         crate::protocol_serde::shape_get_open_id_token_for_developer_identity::de_get_open_id_token_for_developer_identity_http_response(status, headers, body)
                      }
                 }
+                
             }
 
 /// Do not use this.
